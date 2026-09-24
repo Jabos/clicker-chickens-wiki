@@ -320,13 +320,24 @@
 
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const sidebar = document.getElementById('wikiSidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
     if (mobileBtn && sidebar) {
       mobileBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('mobile-open');
+        const isOpen = sidebar.classList.toggle('mobile-open');
+        if (backdrop) backdrop.classList.toggle('active', isOpen);
       });
+      if (backdrop) {
+        backdrop.addEventListener('click', () => {
+          sidebar.classList.remove('mobile-open');
+          backdrop.classList.remove('active');
+        });
+      }
       // Close sidebar when clicking links
       sidebar.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => sidebar.classList.remove('mobile-open'));
+        a.addEventListener('click', () => {
+          sidebar.classList.remove('mobile-open');
+          if (backdrop) backdrop.classList.remove('active');
+        });
       });
     }
 

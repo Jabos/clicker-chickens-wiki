@@ -1,5 +1,5 @@
 window.WIKI_DATA = {
-  "version": "0.94",
+  "version": "0.96",
   "chickens": [
     {
       "id": 0,
@@ -1748,15 +1748,15 @@ window.WIKI_DATA = {
       "sprite": "images/chickens/56.png",
       "default_item_id": 5,
       "power_max": 100,
-      "power_id": 17,
+      "power_id": 42,
       "passive_id": 56,
       "action_type": 0,
       "stats": {
         "life": 100,
-        "damage": 100,
+        "damage": 105,
         "armor": 10,
         "speed": 75,
-        "power_amount": 15
+        "power_amount": 10
       },
       "stat_total": 300,
       "habitats": {
@@ -5896,8 +5896,8 @@ window.WIKI_DATA = {
     {
       "id": 2,
       "description": {
-        "es": "Empieza con un huevo",
-        "en": "Start with a egg"
+        "es": "Comienza lanzando un huevo dorado y gana daño (+10%) y velocidad (+10%)",
+        "en": "Starts by throwing a golden egg and gains damage (+10%) and speed (+10%)"
       },
       "chickens": [
         {
@@ -6151,8 +6151,8 @@ window.WIKI_DATA = {
     {
       "id": 17,
       "description": {
-        "es": "25% de probabilidad de repetir el poder",
-        "en": "25% chance to repeat the power"
+        "es": "Al usar poder, aplica un estado aleatorio a todos los enemigos",
+        "en": "When using power, applies a random status to all enemies"
       },
       "chickens": [
         {
@@ -6185,8 +6185,8 @@ window.WIKI_DATA = {
     {
       "id": 19,
       "description": {
-        "es": "No puede ser envenenado",
-        "en": "Can't poison"
+        "es": "No puede ser envenenado. Si un enemigo envenenado lo ataca, gana armadura (+5%)",
+        "en": "Cannot be poisoned. If attacked by a poisoned enemy, gains armor (+5%)"
       },
       "chickens": [
         {
@@ -6219,8 +6219,8 @@ window.WIKI_DATA = {
     {
       "id": 21,
       "description": {
-        "es": "No puede ser paralizado",
-        "en": "Can't paralize"
+        "es": "No puede ser paralizado. Su primer ataque tiene velocidad aumentada (+50%)",
+        "en": "Cannot be paralyzed. First attack has increased speed (+50%)"
       },
       "chickens": [
         {
@@ -6270,8 +6270,8 @@ window.WIKI_DATA = {
     {
       "id": 24,
       "description": {
-        "es": "5% más de daño al ser golpeado",
-        "en": "5% extra damage when hit"
+        "es": "Al ser atacado se afila: su próximo ataque inflige daño crítico extra (30%)",
+        "en": "When attacked, sharpens: next attack deals extra critical damage (30%)"
       },
       "chickens": [
         {
@@ -6287,8 +6287,8 @@ window.WIKI_DATA = {
     {
       "id": 25,
       "description": {
-        "es": "Empieza con una bomba",
-        "en": "Start with a bomb"
+        "es": "Empieza con una bomba, y lanza una bomba cuando cualquier pollo usa su poder",
+        "en": "Starts with a bomb, and throws a bomb whenever any chicken uses power"
       },
       "chickens": [
         {
@@ -6559,8 +6559,8 @@ window.WIKI_DATA = {
     {
       "id": 41,
       "description": {
-        "es": "No puede ser quemado",
-        "en": "Can't burn"
+        "es": "No puede ser quemado. Si intentan quemarlo o ataca a un objetivo en llamas, gana daño (+10%)",
+        "en": "Cannot be burned. If burned or attacking a burning enemy, gains damage (+10%)"
       },
       "chickens": [
         {
@@ -6661,8 +6661,8 @@ window.WIKI_DATA = {
     {
       "id": 47,
       "description": {
-        "es": "1% más de armadura al ser golpeado",
-        "en": "1% extra armor when hit"
+        "es": "Al ser atacado, gana armadura (+3%) y poder (+5)",
+        "en": "When attacked, gains armor (+3%) and power (+5)"
       },
       "chickens": [
         {
@@ -6814,8 +6814,8 @@ window.WIKI_DATA = {
     {
       "id": 56,
       "description": {
-        "es": "Cuando sea derrotado, revive y se transforma en Gatarlos",
-        "en": "When is defeated, revive and transform into Gatarlos"
+        "es": "Al empezar, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos",
+        "en": "At start, grants 1 evasion to the team. When defeated, revives and transforms into Gatarlos"
       },
       "chickens": [
         {
@@ -7256,8 +7256,8 @@ window.WIKI_DATA = {
     {
       "id": 82,
       "description": {
-        "es": "Cuando ataca a un enemigo infectado, +2% de daño",
-        "en": "When attack a infected enemy, +2% damage"
+        "es": "Al atacar a un enemigo infectado, propaga la infección y drena poder (-10)",
+        "en": "Attacking an infected enemy spreads infection and drains power (-10)"
       },
       "chickens": [
         {
@@ -7307,8 +7307,8 @@ window.WIKI_DATA = {
     {
       "id": 85,
       "description": {
-        "es": "Con cada ataque pierde vida (5% de la vida máxima) y aumenta un 5% el daño",
-        "en": "Each attack lose life (5% max life) and +5% damage"
+        "es": "Al ser atacado, refleja 20% del daño y reduce la armadura del atacante (3%)",
+        "en": "When attacked, reflects 20% damage and reduces attacker's armor (3%)"
       },
       "chickens": [
         {
@@ -7392,8 +7392,8 @@ window.WIKI_DATA = {
     {
       "id": 90,
       "description": {
-        "es": "Cuando derrota a un enemigo, se cura a sí mismo (20% de la vida máxima) y obtiene poder completo",
-        "en": "When defeat an enemy, heal himself (20% max life) and full power"
+        "es": "Al derrotar un enemigo, se cura (25% de vida máxima) y otorga 1 de evasión al equipo",
+        "en": "When defeating an enemy, heals (25% max life) and grants 1 evasion to the team"
       },
       "chickens": [
         {
@@ -7562,8 +7562,8 @@ window.WIKI_DATA = {
     {
       "id": 100,
       "description": {
-        "es": "Cuando ataca a un enemigo congelado, +2% de daño",
-        "en": "When attacking a frozen enemy, +2% damage"
+        "es": "Atacar a un enemigo congelado inflige daño extra (30%) y reduce su armadura (5%)",
+        "en": "Attacking a frozen enemy deals extra damage (30%) and reduces armor (5%)"
       },
       "chickens": [
         {
@@ -7579,8 +7579,8 @@ window.WIKI_DATA = {
     {
       "id": 101,
       "description": {
-        "es": "Al comenzar, lanza un huevo helado",
-        "en": "When start, throws a frozen egg"
+        "es": "Cada 3 ataques, lanza un huevo helado",
+        "en": "Every 3 attacks, throws a frozen egg"
       },
       "chickens": [
         {
@@ -7647,8 +7647,8 @@ window.WIKI_DATA = {
     {
       "id": 105,
       "description": {
-        "es": "No puede congelarse",
-        "en": "Cannot be frozen"
+        "es": "No puede congelarse. Atacar a enemigos congelados aumenta su velocidad (20%) y daño (10%)",
+        "en": "Cannot be frozen. Attacking frozen enemies increases speed (20%) and damage (10%)"
       },
       "chickens": [
         {
@@ -7783,8 +7783,8 @@ window.WIKI_DATA = {
     {
       "id": 113,
       "description": {
-        "es": "Cuando ataca a un enemigo envenenado, aumenta el daño (2%)",
-        "en": "When attacking a poisoned enemy, increases damage (2%)"
+        "es": "Atacar a un enemigo envenenado lo cura (20% del daño)",
+        "en": "Attacking a poisoned enemy heals self (20% damage)"
       },
       "chickens": [
         {
@@ -7970,8 +7970,8 @@ window.WIKI_DATA = {
     {
       "id": 124,
       "description": {
-        "es": "Cada 5 ataques, lanza 2 misiles",
-        "en": "Every 5 attacks, launches 2 missiles"
+        "es": "Al tener menos del 50% de vida, lanza 3 misiles (una vez por combate)",
+        "en": "When below 50% health, launches 3 missiles (once per combat)"
       },
       "chickens": [
         {
@@ -7987,8 +7987,8 @@ window.WIKI_DATA = {
     {
       "id": 125,
       "description": {
-        "es": "Cuando ataca a un enemigo paralizado, aumenta el daño (2%)",
-        "en": "When attacking a paralyzed enemy, increases damage (2%)"
+        "es": "Atacar a un enemigo paralizado daña al resto de enemigos (30% del daño)",
+        "en": "Attacking a paralyzed enemy damages other enemies (30% damage)"
       },
       "chickens": [
         {
@@ -8021,8 +8021,8 @@ window.WIKI_DATA = {
     {
       "id": 127,
       "description": {
-        "es": "Al empezar el combate, lanza un hacha",
-        "en": "Al the start of combat, throw an axe"
+        "es": "Empieza lanzando un hacha, y cada ataque reduce la armadura enemiga (3%)",
+        "en": "Starts throwing an axe, and each attack reduces enemy armor (3%)"
       },
       "chickens": [
         {
@@ -8038,8 +8038,8 @@ window.WIKI_DATA = {
     {
       "id": 128,
       "description": {
-        "es": "Cada 5 ataques, lanza 2 bombas",
-        "en": "Every 5 attacks, launches 2 bombs"
+        "es": "Al ser atacado, lanza una bomba",
+        "en": "When attacked, launches a bomb"
       },
       "chickens": [
         {
@@ -8378,8 +8378,8 @@ window.WIKI_DATA = {
     {
       "id": 148,
       "description": {
-        "es": "Aumenta su daño (2%) al curarse de cualquier forma",
-        "en": "Increases damage (+2%) when healed by any source"
+        "es": "Al ser atacado, aumenta su daño (5%) y velocidad (5%)",
+        "en": "When attacked, gains damage (5%) and speed (5%)"
       },
       "chickens": [
         {
@@ -9341,14 +9341,6 @@ window.WIKI_DATA = {
           "sprite": "images/chickens/33.png"
         },
         {
-          "id": 56,
-          "name": {
-            "es": "Evil Gatarlos",
-            "en": "Evil Gatarlos"
-          },
-          "sprite": "images/chickens/56.png"
-        },
-        {
           "id": 62,
           "name": {
             "es": "Miedo",
@@ -10007,6 +9999,23 @@ window.WIKI_DATA = {
             "en": "Garra"
           },
           "sprite": "images/chickens/150.png"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "description": {
+        "es": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+5%)",
+        "en": "Grants 1 evasion to the team and increases team damage (+5%)"
+      },
+      "chickens": [
+        {
+          "id": 56,
+          "name": {
+            "es": "Evil Gatarlos",
+            "en": "Evil Gatarlos"
+          },
+          "sprite": "images/chickens/56.png"
         }
       ]
     }

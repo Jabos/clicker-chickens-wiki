@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Clicker Chickens - Enciclopedia Oficial</title>
+  <meta name="description" content="Enciclopedia oficial de Clicker Chickens: Pollopedia con 151 pollos, 70 objetos, habilidades pasivas, poderes especiales, efectos de estado, zonas, torneos y guías de crianza.">
+  <link rel="icon" type="image/png" href="images/chickens/0.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="wiki-header">
+    <div class="header-inner">
+      <div class="logo-group" onclick="location.hash='pollopedia'">
+        <img class="pixelated" src="images/chickens/0.png" alt="Pollier">
+        <div>
+          <div class="logo-title" data-i18n="siteTitle">Wiki Clicker Chickens</div>
+          <div class="logo-subtitle" data-i18n="siteSubtitle">Enciclopedia Oficial • v0.93</div>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="globalSearch" class="search-input" placeholder="Buscar pollos, objetos, poderes, pasivas..." autocomplete="off">
+        <div id="searchDropdown" class="search-dropdown"></div>
+      </div>
+
+      <div class="header-controls">
+        <button id="langBtn" class="btn-control" title="Cambiar Idioma">English</button>
+        <button id="themeBtn" class="btn-control" title="Tema">🌙 Modo Oscuro</button>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" title="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="wiki-container">
+    <!-- Sidebar Navigation -->
+    <aside id="wikiSidebar" class="wiki-sidebar">
+      <div class="nav-section-title">Enciclopedia</div>
+      <ul class="sidebar-nav">
+        <li data-view="pollopedia" class="active">
+          <a href="#pollopedia">
+            <span class="nav-icon">🐔</span>
+            <span data-i18n="navChickens">Pollopedia</span>
+            <span class="sidebar-count">151</span>
+          </a>
+        </li>
+        <li data-view="items">
+          <a href="#items">
+            <span class="nav-icon">🎒</span>
+            <span data-i18n="navItems">Objetos</span>
+            <span class="sidebar-count">70</span>
+          </a>
+        </li>
+        <li data-view="powers">
+          <a href="#powers">
+            <span class="nav-icon">✨</span>
+            <span data-i18n="navPowers">Poderes</span>
+            <span class="sidebar-count">42</span>
+          </a>
+        </li>
+        <li data-view="passives">
+          <a href="#passives">
+            <span class="nav-icon">⚡</span>
+            <span data-i18n="navPassives">Pasivas</span>
+            <span class="sidebar-count">151</span>
+          </a>
+        </li>
+        <li data-view="states">
+          <a href="#states">
+            <span class="nav-icon">🧪</span>
+            <span data-i18n="navStates">Efectos de Estado</span>
+            <span class="sidebar-count">7</span>
+          </a>
+        </li>
+        <li data-view="zones">
+          <a href="#zones">
+            <span class="nav-icon">🗺️</span>
+            <span data-i18n="navZones">Zonas y Torneos</span>
+            <span class="sidebar-count">9</span>
+          </a>
+        </li>
+        <li data-view="achievements">
+          <a href="#achievements">
+            <span class="nav-icon">🏆</span>
+            <span data-i18n="navAchievements">Logros</span>
+            <span class="sidebar-count">22</span>
+          </a>
+        </li>
+        <li data-view="mechanics">
+          <a href="#mechanics">
+            <span class="nav-icon">📖</span>
+            <span data-i18n="navMechanics">Guías y Mecánicas</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="wikiContent" class="wiki-content">
+      <!-- Dynamic views render here -->
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="wiki-footer">
+    <div><strong>Clicker Chickens Wiki</strong> • Generada directamente de los datos del juego v0.93</div>
+    <div style="margin-top: 6px;">Diseñada para alojarse gratis en <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> • Estilo clásico, rápido y ligero</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

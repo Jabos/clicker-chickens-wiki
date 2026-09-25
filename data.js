@@ -11265,6 +11265,90 @@ window.WIKI_DATA = {
         }
       ]
     },
+    "squad": {
+      "title": {
+        "es": "Escuadra y Suplentes",
+        "en": "Squad & Substitutes"
+      },
+      "sections": [
+        {
+          "title": {
+            "es": "Escuadra de 4 Pollos",
+            "en": "4-Chicken Squad"
+          },
+          "content": {
+            "es": "Ahora puedes formar una escuadra completa con 2 pollos titulares y hasta 2 suplentes elegidos desde tu granja. Los titulares inician la batalla en primera línea, mientras que los suplentes esperan en reserva listos para entrar.",
+            "en": "You can now assemble a full squad with 2 starter chickens and up to 2 substitutes chosen from your farm. Starters begin the battle in front, while substitutes wait in reserve ready to jump in."
+          }
+        },
+        {
+          "title": {
+            "es": "Relevos en Combate",
+            "en": "Battle Swaps"
+          },
+          "content": {
+            "es": "Durante el combate, puedes tocar el indicador de un pollo para sustituirlo por uno de tus refuerzos. El relevo permite adaptar tu estrategia contra las fortalezas y debilidades elementales del rival.",
+            "en": "During combat, tap a chicken's indicator to swap it with one of your substitutes. Swapping allows you to adapt your strategy against the rival's elemental strengths and weaknesses."
+          }
+        }
+      ]
+    },
+    "exchange": {
+      "title": {
+        "es": "Tablón de Intercambio (Contratos)",
+        "en": "Exchange Board (Contracts)"
+      },
+      "sections": [
+        {
+          "title": {
+            "es": "Contratos cada 12 Horas",
+            "en": "Contracts every 12 Hours"
+          },
+          "content": {
+            "es": "En la tienda encontrarás un tablón que ofrece 6 contratos de intercambio que se renuevan cada 12 horas. Los contratos solicitan pollos que cumplan condiciones específicas (Tier 2+, Tier 3+, zona de procedencia, un ítem equipado o una especie determinada).",
+            "en": "The shop features an exchange board offering 6 trade contracts that reset every 12 hours. Contracts request chickens meeting specific criteria (Tier 2+, Tier 3+, origin zone, an equipped item, or a specific species)."
+          }
+        },
+        {
+          "title": {
+            "es": "Recompensas de Intercambio",
+            "en": "Exchange Rewards"
+          },
+          "content": {
+            "es": "Al cumplir un contrato y entregar el pollo solicitado, abres una caja de recompensa con animación especial que puede contener: grandes cantidades de semillas (400-1600+), ítems de zona, huevos de crianza especiales o pollos de nivel 10 con genética mejorada.",
+            "en": "Fulfilling a contract and handing over the requested chicken opens a special reward box that can contain: abundant seeds (400-1600+), zone items, special breeding eggs, or level 10 chickens with enhanced genetics."
+          }
+        }
+      ]
+    },
+    "infinite": {
+      "title": {
+        "es": "Modo Infinito",
+        "en": "Infinite Mode"
+      },
+      "sections": [
+        {
+          "title": {
+            "es": "Desafío y Escalado de Pisos",
+            "en": "Floor Scaling & Challenge"
+          },
+          "content": {
+            "es": "Un modo de juego sin fin donde la dificultad escala continuamente. El piso 1 comienza con rivales de nivel 5, aumentando 1 nivel por cada piso superado hasta alcanzar el nivel 100.",
+            "en": "An endless battle mode where difficulty increases continuously. Floor 1 starts with level 5 rivals, increasing by 1 level per cleared floor up to level 100."
+          }
+        },
+        {
+          "title": {
+            "es": "Ítems en Rivales y Recompensas",
+            "en": "Rival Items & Rewards"
+          },
+          "content": {
+            "es": "A partir del piso 3, los rivales pueden aparecer equipados con ítems (escalando desde 35% hasta 80% de probabilidad en pisos altos). Hay un 5% de probabilidad de que lleven el exclusivo Fragmento Prohibido (+35% daño, +10% velocidad). Cada piso otorga semillas escaladas, y cada 10 pisos recibes un huevo especial con pollos exclusivos o shinies.",
+            "en": "From floor 3 onward, rivals can spawn equipped with items (scaling from 35% up to 80% chance at higher floors). There is a 5% chance they hold the exclusive Forbidden Fragment (+35% damage, +10% speed). Each cleared floor grants scaled seeds, and every 10 floors awards a special egg with exclusive chickens or shinies."
+          }
+        }
+      ]
+    },
     "formulas": {
       "title": {
         "es": "Fórmulas y Mecánicas de Combate",

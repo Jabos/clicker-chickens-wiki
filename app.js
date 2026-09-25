@@ -1229,38 +1229,31 @@
       </div>
 
       <div style="display:flex;flex-direction:column;gap:24px;">
-        <!-- Breeding -->
-        <div>
-          <h2 class="article-h2">🥚 ${getLocalized(m.breeding.title)}</h2>
-          ${m.breeding.sections.map(sec => `
-            <div class="article-box">
-              <h4>${getLocalized(sec.title)}</h4>
-              <p style="font-size:13px;line-height:1.5;">${getLocalized(sec.content)}</p>
-            </div>
-          `).join('')}
-        </div>
-
-        <!-- Fusion -->
-        <div>
-          <h2 class="article-h2">🧬 ${getLocalized(m.fusion.title)}</h2>
-          ${m.fusion.sections.map(sec => `
-            <div class="article-box">
-              <h4>${getLocalized(sec.title)}</h4>
-              <p style="font-size:13px;line-height:1.5;">${getLocalized(sec.content)}</p>
-            </div>
-          `).join('')}
-        </div>
-
-        <!-- Formulas -->
-        <div>
-          <h2 class="article-h2">📊 ${getLocalized(m.formulas.title)}</h2>
-          ${m.formulas.sections.map(sec => `
-            <div class="article-box">
-              <h4>${getLocalized(sec.title)}</h4>
-              <p style="font-size:13px;line-height:1.5;">${getLocalized(sec.content)}</p>
-            </div>
-          `).join('')}
-        </div>
+        ${(() => {
+          const defaultIcons = {
+            breeding: '🥚',
+            fusion: '🧬',
+            squad: '👥',
+            exchange: '📜',
+            infinite: '♾️',
+            formulas: '📊'
+          };
+          return Object.keys(m).map(key => {
+            const cat = m[key];
+            const icon = cat.icon || defaultIcons[key] || '📌';
+            return `
+              <div>
+                <h2 class="article-h2">${icon} ${getLocalized(cat.title)}</h2>
+                ${cat.sections.map(sec => `
+                  <div class="article-box">
+                    <h4>${getLocalized(sec.title)}</h4>
+                    <p style="font-size:13px;line-height:1.5;">${getLocalized(sec.content)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            `;
+          }).join('');
+        })()}
       </div>
     `;
   }

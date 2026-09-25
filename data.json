@@ -1,5 +1,5 @@
 {
-  "version": "0.98",
+  "version": "0.99",
   "chickens": [
     {
       "id": 0,
@@ -2400,7 +2400,7 @@
       },
       "sprite": "images/chickens/77.png",
       "default_item_id": 5,
-      "power_max": 100,
+      "power_max": 150,
       "power_id": 23,
       "passive_id": 77,
       "action_type": 0,
@@ -4388,7 +4388,7 @@
       },
       "sprite": "images/chickens/142.png",
       "default_item_id": 41,
-      "power_max": 100,
+      "power_max": 150,
       "power_id": 23,
       "passive_id": 142,
       "action_type": 0,
@@ -4440,7 +4440,7 @@
       },
       "sprite": "images/chickens/144.png",
       "default_item_id": 34,
-      "power_max": 100,
+      "power_max": 150,
       "power_id": 23,
       "passive_id": 144,
       "action_type": 0,
@@ -4466,7 +4466,7 @@
       },
       "sprite": "images/chickens/145.png",
       "default_item_id": 65,
-      "power_max": 100,
+      "power_max": 150,
       "power_id": 40,
       "passive_id": 145,
       "action_type": 0,
@@ -4570,7 +4570,7 @@
       },
       "sprite": "images/chickens/149.png",
       "default_item_id": 57,
-      "power_max": 100,
+      "power_max": 150,
       "power_id": 23,
       "passive_id": 149,
       "action_type": 0,
@@ -6814,8 +6814,8 @@
     {
       "id": 56,
       "description": {
-        "es": "Al empezar, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos",
-        "en": "At start, grants 1 evasion to the team. When defeated, revives and transforms into Gatarlos"
+        "es": "Al transformarse, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos",
+        "en": "Upon transforming, grants 1 evasion to the team. When defeated, revives and transforms into Gatarlos"
       },
       "chickens": [
         {
@@ -10005,8 +10005,8 @@
     {
       "id": 42,
       "description": {
-        "es": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+5%)",
-        "en": "Grants 1 evasion to the team and increases team damage (+5%)"
+        "es": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+13%)",
+        "en": "Grants 1 evasion to the team and increases team damage (+13%)"
       },
       "chickens": [
         {

@@ -1,5 +1,5 @@
 window.WIKI_DATA = {
-  "version": "0.97",
+  "version": "0.98",
   "chickens": [
     {
       "id": 0,

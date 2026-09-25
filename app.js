@@ -36,7 +36,7 @@
       secMechanicsDesc: "Fórmulas de experiencia, crianza de huevos, probabilidades shiny y laboratorio de fusión.",
       filterAllZones: "Todas las zonas",
       filterEvolutions: "Evoluciones",
-      sortIdAsc: "Número (#0-#150)",
+      sortIdAsc: "Número (#1-#151)",
       sortNameAsc: "Nombre (A-Z)",
       sortLifeDesc: "Vida más alta",
       sortDmgDesc: "Daño más alto",
@@ -129,7 +129,7 @@
       secMechanicsDesc: "Experience formula, egg breeding, shiny odds and laboratory fusion.",
       filterAllZones: "All Zones",
       filterEvolutions: "Evolutions",
-      sortIdAsc: "Number (#0-#150)",
+      sortIdAsc: "Number (#1-#151)",
       sortNameAsc: "Name (A-Z)",
       sortLifeDesc: "Highest Life",
       sortDmgDesc: "Highest Damage",
@@ -364,11 +364,11 @@
       // Search Chickens
       WIKI.chickens.forEach(c => {
         const name = getLocalized(c.name).toLowerCase();
-        if (name.includes(q) || c.id.toString() === q) {
+        if (name.includes(q) || c.id.toString() === q || (c.id + 1).toString() === q || String(c.id + 1).padStart(3, '0') === q) {
           results.push({
             type: 'chicken',
             badge: str('searchBadgeChicken'),
-            title: `#${String(c.id).padStart(3, '0')} ${getLocalized(c.name)}`,
+            title: `#${String(c.id + 1).padStart(3, '0')} ${getLocalized(c.name)}`,
             subtitle: `HP ${c.stats.life} | ATK ${c.stats.damage} | DEF ${c.stats.armor}`,
             image: c.sprite,
             hash: `chicken-${c.id}`
@@ -380,11 +380,11 @@
       WIKI.items.forEach(it => {
         const name = getLocalized(it.name).toLowerCase();
         const desc = getLocalized(it.description).toLowerCase();
-        if (name.includes(q) || desc.includes(q)) {
+        if (name.includes(q) || desc.includes(q) || it.id.toString() === q || (it.id + 1).toString() === q || String(it.id + 1).padStart(2, '0') === q) {
           results.push({
             type: 'item',
             badge: str('searchBadgeItem'),
-            title: getLocalized(it.name),
+            title: `#${String(it.id + 1).padStart(2, '0')} ${getLocalized(it.name)}`,
             subtitle: getLocalized(it.description).substring(0, 60) + '...',
             image: it.sprite,
             hash: 'items'
@@ -395,11 +395,11 @@
       // Search Passives
       WIKI.passives.forEach(p => {
         const desc = getLocalized(p.description).toLowerCase();
-        if (desc.includes(q)) {
+        if (desc.includes(q) || p.id.toString() === q || (p.id + 1).toString() === q) {
           results.push({
             type: 'passive',
             badge: str('searchBadgePassive'),
-            title: `Pasiva #${p.id}`,
+            title: `Pasiva #${p.id + 1}`,
             subtitle: getLocalized(p.description).substring(0, 60) + '...',
             image: 'images/items/21.png',
             hash: 'passives'
@@ -410,11 +410,11 @@
       // Search Powers
       WIKI.powers.forEach(pw => {
         const desc = getLocalized(pw.description).toLowerCase();
-        if (desc.includes(q)) {
+        if (desc.includes(q) || pw.id.toString() === q || (pw.id + 1).toString() === q) {
           results.push({
             type: 'power',
             badge: str('searchBadgePower'),
-            title: `Poder #${pw.id}`,
+            title: `Poder #${pw.id + 1}`,
             subtitle: getLocalized(pw.description).substring(0, 60) + '...',
             image: 'images/items/12.png',
             hash: 'powers'
@@ -476,7 +476,7 @@
         <div class="filter-group">
           <select id="chickenZoneFilter" class="filter-select">
             <option value="all">${str('filterAllZones')}</option>
-            ${WIKI.zones.map(z => `<option value="${z.id}" ${currentChickenFilterZone == z.id ? 'selected' : ''}>${getLocalized(z.name)}</option>`).join('')}
+            ${WIKI.zones.map(z => `<option value="${z.id}" ${currentChickenFilterZone == z.id ? 'selected' : ''}>Zona ${z.id + 1}: ${getLocalized(z.name)}</option>`).join('')}
             <option value="evolutions" ${currentChickenFilterZone === 'evolutions' ? 'selected' : ''}>⭐ ${str('filterEvolutions')}</option>
           </select>
 
@@ -556,7 +556,7 @@
     if (searchVal) {
       list = list.filter(c => {
         const name = getLocalized(c.name).toLowerCase();
-        return name.includes(searchVal) || c.id.toString() === searchVal;
+        return name.includes(searchVal) || c.id.toString() === searchVal || (c.id + 1).toString() === searchVal || String(c.id + 1).padStart(3, '0') === searchVal;
       });
     }
 
@@ -585,7 +585,7 @@
         <div class="chickens-grid">
           ${list.map(c => `
             <div class="chicken-card" onclick="location.hash='chicken-${c.id}'">
-              <span class="chicken-card-id">#${String(c.id).padStart(3, '0')}</span>
+              <span class="chicken-card-id">#${String(c.id + 1).padStart(3, '0')}</span>
               <img class="chicken-card-sprite pixelated" src="${c.sprite}" alt="${getLocalized(c.name)}">
               <div class="chicken-card-name">${getLocalized(c.name)}</div>
               <div class="chicken-card-stats">
@@ -626,7 +626,7 @@
                 const itName = (c.default_item_id >= 0 && WIKI.items[c.default_item_id]) ? getLocalized(WIKI.items[c.default_item_id].name) : "-";
                 return `
                   <tr onclick="location.hash='chicken-${c.id}'" style="cursor:pointer;">
-                    <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(c.id).padStart(3, '0')}</td>
+                    <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(c.id + 1).padStart(3, '0')}</td>
                     <td><img class="pixelated" src="${c.sprite}" width="32" height="32" alt=""></td>
                     <td style="font-weight:700;"><a href="#chicken-${c.id}">${getLocalized(c.name)}</a></td>
                     <td style="color:#c92a2a;font-weight:600;">${c.stats.life}</td>
@@ -673,8 +673,8 @@
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
         <a href="#pollopedia" class="btn-control">${str('backToList')}</a>
         <div style="display:flex;gap:8px;">
-          <a href="#chicken-${prevId}" class="btn-control">${str('prevBtn')} (#${String(prevId).padStart(3, '0')})</a>
-          <a href="#chicken-${nextId}" class="btn-control">${str('nextBtn')} (#${String(nextId).padStart(3, '0')})</a>
+          <a href="#chicken-${prevId}" class="btn-control">${str('prevBtn')} (#${String(prevId + 1).padStart(3, '0')})</a>
+          <a href="#chicken-${nextId}" class="btn-control">${str('nextBtn')} (#${String(nextId + 1).padStart(3, '0')})</a>
         </div>
       </div>
 
@@ -682,7 +682,7 @@
         <!-- Main Article Body -->
         <div class="wiki-article-main">
           <div class="page-header" style="border:none;margin-bottom:8px;">
-            <h1 class="page-title">#${String(c.id).padStart(3, '0')} ${getLocalized(c.name)}</h1>
+            <h1 class="page-title">#${String(c.id + 1).padStart(3, '0')} ${getLocalized(c.name)}</h1>
           </div>
 
           <!-- Evolution Warning if applicable -->
@@ -729,7 +729,7 @@
           <!-- Combat Skills -->
           <h2 class="article-h2">⚡ Habilidades de Combate</h2>
           <div class="article-box">
-            <h4>${str('passiveSkill')} (#${c.passive_id})</h4>
+            <h4>${str('passiveSkill')} (#${c.passive_id + 1})</h4>
             <p style="font-size:13px;line-height:1.5;">${passiveObj ? getLocalized(passiveObj.description) : '-'}</p>
             <div style="margin-top:8px;">
               <a href="#passives" style="font-size:12px;">→ Ver todos los pollos con esta pasiva</a>
@@ -737,7 +737,7 @@
           </div>
 
           <div class="article-box">
-            <h4>✨ ${str('activePower')} (#${c.power_id})</h4>
+            <h4>✨ ${str('activePower')} (#${c.power_id + 1})</h4>
             <p style="font-size:13px;line-height:1.5;">${powerObj ? getLocalized(powerObj.description) : '-'}</p>
             <div style="font-size:12px;color:var(--wiki-text-muted);margin-top:6px;">
               <strong>${str('powerCost')}:</strong> ${c.power_max} puntos de energía.
@@ -760,12 +760,12 @@
                   <span style="font-size:18px;">➔</span>
                   <div style="display:flex;align-items:center;gap:8px;cursor:pointer;" onclick="location.hash='chicken-${c.evolution.target_id}'">
                     <img class="pixelated" src="images/chickens/${c.evolution.target_id}.png" width="40" height="40" alt="">
-                    <a href="#chicken-${c.evolution.target_id}"><strong>${c.evolution.target_name} (#${c.evolution.target_id})</strong></a>
+                    <a href="#chicken-${c.evolution.target_id}"><strong>${c.evolution.target_name} (#${String(c.evolution.target_id + 1).padStart(3, '0')})</strong></a>
                   </div>
                 ` : `
                   <div style="display:flex;align-items:center;gap:8px;cursor:pointer;" onclick="location.hash='chicken-${c.evolution.source_id}'">
                     <img class="pixelated" src="images/chickens/${c.evolution.source_id}.png" width="40" height="40" alt="">
-                    <a href="#chicken-${c.evolution.source_id}"><strong>${c.evolution.source_name} (#${c.evolution.source_id})</strong></a>
+                    <a href="#chicken-${c.evolution.source_id}"><strong>${c.evolution.source_name} (#${String(c.evolution.source_id + 1).padStart(3, '0')})</strong></a>
                   </div>
                   <span style="font-size:18px;">➔</span>
                   <div style="display:flex;align-items:center;gap:8px;">
@@ -794,13 +794,13 @@
 
         <!-- Classic MediaWiki Infobox -->
         <div class="wiki-infobox">
-          <div class="infobox-title">#${String(c.id).padStart(3, '0')} - ${getLocalized(c.name)}</div>
+          <div class="infobox-title">#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</div>
           <div class="infobox-image-box">
             <img class="infobox-image pixelated" src="${c.sprite}" alt="${getLocalized(c.name)}">
           </div>
           <div class="infobox-row">
             <div class="infobox-label">${str('thId')}</div>
-            <div class="infobox-value">#${String(c.id).padStart(3, '0')}</div>
+            <div class="infobox-value">#${String(c.id + 1).padStart(3, '0')}</div>
           </div>
           <div class="infobox-row">
             <div class="infobox-label">${str('thHp')} / ${str('thAtk')}</div>
@@ -892,7 +892,7 @@
       list = list.filter(i => {
         const name = getLocalized(i.name).toLowerCase();
         const desc = getLocalized(i.description).toLowerCase();
-        return name.includes(searchVal) || desc.includes(searchVal);
+        return name.includes(searchVal) || desc.includes(searchVal) || i.id.toString() === searchVal || (i.id + 1).toString() === searchVal;
       });
     }
 
@@ -914,7 +914,7 @@
           <tbody>
             ${list.map(it => `
               <tr>
-                <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(it.id).padStart(2, '0')}</td>
+                <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(it.id + 1).padStart(2, '0')}</td>
                 <td><img class="pixelated" src="${it.sprite}" width="32" height="32" alt=""></td>
                 <td style="font-weight:700;white-space:nowrap;">${getLocalized(it.name)}</td>
                 <td><span class="badge ${it.consumable ? 'badge-evo' : 'badge-zone'}">${it.consumable ? str('consumable') : str('equipable')}</span></td>
@@ -951,7 +951,7 @@
           <tbody>
             ${WIKI.powers.map(p => `
               <tr>
-                <td style="font-weight:700;color:var(--wiki-text-muted);">#${p.id}</td>
+                <td style="font-weight:700;color:var(--wiki-text-muted);">#${p.id + 1}</td>
                 <td style="font-weight:600;font-size:13px;">${getLocalized(p.description)}</td>
                 <td>
                   <div class="mini-chicken-list">
@@ -992,7 +992,7 @@
           <tbody>
             ${WIKI.passives.map(p => `
               <tr>
-                <td style="font-weight:700;color:var(--wiki-text-muted);">#${p.id}</td>
+                <td style="font-weight:700;color:var(--wiki-text-muted);">#${p.id + 1}</td>
                 <td style="font-size:13px;line-height:1.4;">${getLocalized(p.description)}</td>
                 <td>
                   <div class="mini-chicken-list">
@@ -1029,7 +1029,7 @@
             <div class="article-box" style="border-left: 6px solid ${s.color};">
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
                 <span class="badge" style="background:${s.color};color:#fff;font-size:13px;padding:4px 10px;">${sName}</span>
-                <span style="font-size:12px;color:var(--wiki-text-muted);font-weight:600;">ID: ${s.id}</span>
+                <span style="font-size:12px;color:var(--wiki-text-muted);font-weight:600;">ID: ${s.id + 1}</span>
               </div>
               <p style="font-size:14px;font-weight:500;margin-bottom:8px;">${sDesc}</p>
               <div style="font-size:12px;color:var(--wiki-text-muted);background:var(--wiki-surface);padding:8px 12px;border-radius:4px;border:1px solid var(--wiki-border-light);">
@@ -1045,32 +1045,32 @@
   function getStatusTips(stateId, lang) {
     const tips = {
       0: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Miracle Drop (#47)</em> o <em>Magic Potion (#34)</em>. Pollier y armaduras altas sufren menos por turno. La pasiva de Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
-        en: "💡 <strong>Counters & Synergies:</strong> Cleansed by <em>Miracle Drop (#47)</em> or <em>Magic Potion (#34)</em>. High defense and regen help sustain through it. Several chickens heal when attacking poisoned foes."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Miracle Drop (#48)</em> o <em>Magic Potion (#35)</em>. Pollier y armaduras altas sufren menos por turno. La pasiva de Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
+        en: "💡 <strong>Counters & Synergies:</strong> Cleansed by <em>Miracle Drop (#48)</em> or <em>Magic Potion (#35)</em>. High defense and regen help sustain through it. Several chickens heal when attacking poisoned foes."
       },
       1: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Flame Fizz (#15)</em>. El objeto <em>Sizzle Heal (#10)</em> convierte el daño de quemadura en curación!",
-        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame Fizz (#15)</em>. Equipping <em>Sizzle Heal (#10)</em> reverses burn damage into healing!"
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Flame Fizz (#16)</em>. El objeto <em>Sizzle Heal (#11)</em> convierte el daño de quemadura en curación!",
+        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame Fizz (#16)</em>. Equipping <em>Sizzle Heal (#11)</em> reverses burn damage into healing!"
       },
       2: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide que el pollo actúe mientras está congelado. Curado por <em>Hot Tea (#40)</em>. Ciertos pollos helados causan daño extra a objetivos congelados (Critical Link #57).",
-        en: "💡 <strong>Counters & Synergies:</strong> Prevents the frozen chicken from taking actions. Cleansed by <em>Hot Tea (#40)</em>. Attacking frozen targets can trigger critical bonus damage."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide que el pollo actúe mientras está congelado. Curado por <em>Hot Tea (#41)</em>. Ciertos pollos helados causan daño extra a objetivos congelados (Critical Link #58).",
+        en: "💡 <strong>Counters & Synergies:</strong> Prevents the frozen chicken from taking actions. Cleansed by <em>Hot Tea (#41)</em>. Attacking frozen targets can trigger critical bonus damage."
       },
       3: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Neural Reboot (#54)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
-        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reboot (#54)</em>. Excellent for crippling high-speed or heavily armored foes."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Neural Reboot (#55)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
+        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reboot (#55)</em>. Excellent for crippling high-speed or heavily armored foes."
       },
       4: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Bloquea cualquier curación y causa 10% de daño si la criatura intenta curarse. Curado por <em>Magic Potion (#34)</em>. Letal contra equipos basados en pociones y regeneración.",
-        en: "💡 <strong>Counters & Synergies:</strong> Blocks all healing and inflicts 10% damage if the afflicted unit attempts to heal. Cleansed by <em>Magic Potion (#34)</em>."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Bloquea cualquier curación y causa 10% de daño si la criatura intenta curarse. Curado por <em>Magic Potion (#35)</em>. Letal contra equipos basados en pociones y regeneración.",
+        en: "💡 <strong>Counters & Synergies:</strong> Blocks all healing and inflicts 10% damage if the afflicted unit attempts to heal. Cleansed by <em>Magic Potion (#35)</em>."
       },
       5: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Big Beak (#17)</em>. Muy eficaz contra jefes con poderes devastadores.",
-        en: "💡 <strong>Counters & Synergies:</strong> Blocks charging power energy. Cleansed by <em>Big Beak (#17)</em>. Strong against boss encounters with devastating powers."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Big Beak (#18)</em>. Muy eficaz contra jefes con poderes devastadores.",
+        en: "💡 <strong>Counters & Synergies:</strong> Blocks charging power energy. Cleansed by <em>Big Beak (#18)</em>. Strong against boss encounters with devastating powers."
       },
       6: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Cure All (#26)</em>.",
-        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure All (#26)</em>."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Cure All (#27)</em>.",
+        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure All (#27)</em>."
       }
     };
     return tips[stateId] ? tips[stateId][lang] : "";
@@ -1092,7 +1092,7 @@
           return `
             <div class="zone-card">
               <div class="zone-header-banner" style="background-image: url('${z.banner}');">
-                <div class="zone-banner-title">Zona ${z.id}: ${zName}</div>
+                <div class="zone-banner-title">Zona ${z.id + 1}: ${zName}</div>
               </div>
               <div class="zone-body">
                 <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13px;margin-bottom:16px;color:var(--wiki-text-muted);">
@@ -1206,7 +1206,7 @@
           <tbody>
             ${WIKI.achievements.map(a => `
               <tr>
-                <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(a.id).padStart(2, '0')}</td>
+                <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(a.id + 1).padStart(2, '0')}</td>
                 <td><img class="pixelated" src="${a.sprite}" width="36" height="36" alt=""></td>
                 <td style="font-weight:700;font-size:14px;white-space:nowrap;">${getLocalized(a.name)}</td>
                 <td style="font-size:13px;line-height:1.4;">${getLocalized(a.description)}</td>

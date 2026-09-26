@@ -1,0 +1,27 @@
+name: Publicar Pollo Diario en Discord
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Botón para probarlo manualmente desde GitHub
+
+jobs:
+  enviar-aviso:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar script del pollo diario
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python script/daily_chicken.py

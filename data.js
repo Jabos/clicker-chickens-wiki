@@ -1,5 +1,5 @@
 window.WIKI_DATA = {
-  "version": "0.100",
+  "version": "0.105",
   "chickens": [
     {
       "id": 0,
@@ -5711,7 +5711,10 @@ window.WIKI_DATA = {
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/60.png",
-      "found_in_zones": []
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ]
     },
     {
       "id": 61,
@@ -5791,7 +5794,9 @@ window.WIKI_DATA = {
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/65.png",
-      "found_in_zones": []
+      "found_in_zones": [
+        "Tablón de Intercambios"
+      ]
     },
     {
       "id": 66,
@@ -5856,6 +5861,101 @@ window.WIKI_DATA = {
       "consumable": false,
       "sprite": "images/items/69.png",
       "found_in_zones": []
+    },
+    {
+      "id": 70,
+      "name": {
+        "es": "Pluma dorada",
+        "en": "Golden Feather"
+      },
+      "description": {
+        "es": "Acorta los turnos que tardan sus huevos en eclosionar (40%)",
+        "en": "Shortens egg hatch turns by 40%"
+      },
+      "price": 15,
+      "shop_price": 80,
+      "consumable": false,
+      "sprite": "images/items/70.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ]
+    },
+    {
+      "id": 71,
+      "name": {
+        "es": "Pluma de Brama",
+        "en": "Brahma Feather"
+      },
+      "description": {
+        "es": "Aumenta la probabilidad de que aparezcan pollos variocolor en combates (10%)",
+        "en": "Increases shiny chicken encounter rate in battles (+10%)"
+      },
+      "price": 15,
+      "shop_price": 80,
+      "consumable": false,
+      "sprite": "images/items/71.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ]
+    },
+    {
+      "id": 72,
+      "name": {
+        "es": "Garra derrochadora",
+        "en": "Wasteful Claw"
+      },
+      "description": {
+        "es": "Aumenta la cantidad de semillas ganadas en combate (20%)",
+        "en": "Increases seeds won from battles by 20%"
+      },
+      "price": 15,
+      "shop_price": 80,
+      "consumable": false,
+      "sprite": "images/items/72.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ]
+    },
+    {
+      "id": 73,
+      "name": {
+        "es": "Nido especial",
+        "en": "Special Nest"
+      },
+      "description": {
+        "es": "Aumenta la probabilidad de que los pollos pongan huevos variocolor (10%)",
+        "en": "Increases shiny egg hatch chance from breeding (+10%)"
+      },
+      "price": 15,
+      "shop_price": 80,
+      "consumable": false,
+      "sprite": "images/items/73.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ]
+    },
+    {
+      "id": 74,
+      "name": {
+        "es": "Ira",
+        "en": "Wrath"
+      },
+      "description": {
+        "es": "Obtiene 2 ataques extra al inicio del combate",
+        "en": "Gains 2 extra attacks at the start of battle"
+      },
+      "price": 15,
+      "shop_price": 80,
+      "consumable": false,
+      "sprite": "images/items/74.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ]
     }
   ],
   "passives": [
@@ -11244,6 +11344,16 @@ window.WIKI_DATA = {
             "es": "La probabilidad base de conseguir un pollo Shiny al abrir cualquier huevo es de 0.5% (1 en 200). Sin embargo, si el huevo proviene de un progenitor Shiny mediante crianza, ¡la probabilidad de heredar la variante Shiny aumenta drásticamente al 8% (1 en 12.5)!",
             "en": "The base chance to obtain a Shiny chicken from any egg is 0.5% (1 in 200). However, if an egg is bred from an already Shiny parent, the chance of inheriting the Shiny variant increases drastically to 8% (1 in 12.5)!"
           }
+        },
+        {
+          "title": {
+            "es": "Ítems Especiales de Crianza",
+            "en": "Special Breeding Items"
+          },
+          "content": {
+            "es": "Existen dos ítems raros exclusivos que potencian la crianza al tenerlos equipados en el progenitor: la Pluma dorada (Golden Feather) reduce en un 40% los turnos de combate necesarios para que eclosionen sus huevos, y el Nido especial (Special Nest) aumenta en un +10% la probabilidad de que sus huevos pongan una cría Variocolor (Shiny).",
+            "en": "There are two exclusive rare items that empower breeding when equipped on the parent: the Golden Feather reduces the battle turns required to hatch eggs by 40%, and the Special Nest increases the chance of laying a Shiny egg by +10%."
+          }
         }
       ]
     },
@@ -11315,8 +11425,8 @@ window.WIKI_DATA = {
             "en": "Exchange Rewards"
           },
           "content": {
-            "es": "Al cumplir un contrato y entregar el pollo solicitado, abres una caja de recompensa con animación especial que puede contener: grandes cantidades de semillas (400-1600+), ítems de zona, huevos de crianza especiales o pollos de nivel 10 con genética mejorada.",
-            "en": "Fulfilling a contract and handing over the requested chicken opens a special reward box that can contain: abundant seeds (400-1600+), zone items, special breeding eggs, or level 10 chickens with enhanced genetics."
+            "es": "Al cumplir un contrato y entregar el pollo solicitado, abres una caja de recompensa con animación especial que puede contener: grandes cantidades de semillas (5,000-10,000), ítems de zona, huevos de crianza especiales o pollos de nivel 10 con genética mejorada. En el Contrato 5, puedes obtener ítems míticos y raros exclusivos como Deseo, Fragmento Prohibido, Pluma dorada, Pluma de Brama, Garra derrochadora, Nido especial e Ira.",
+            "en": "Fulfilling a contract and handing over the requested chicken opens a special reward box that can contain: abundant seeds (5,000-10,000), zone items, special breeding eggs, or level 10 chickens with enhanced genetics. In Contract 5, you can obtain exclusive mythic and rare items like Wish, Forbidden Fragment, Golden Feather, Brahma Feather, Wasteful Claw, Special Nest, and Wrath."
           }
         }
       ]
@@ -11343,8 +11453,8 @@ window.WIKI_DATA = {
             "en": "Rival Items & Rewards"
           },
           "content": {
-            "es": "A partir del piso 3, los rivales pueden aparecer equipados con ítems (escalando desde 35% hasta 80% de probabilidad en pisos altos). Hay un 5% de probabilidad de que lleven el exclusivo Fragmento Prohibido (+35% daño, +10% velocidad). Cada piso otorga semillas escaladas, y cada 10 pisos recibes un huevo especial con pollos exclusivos o shinies.",
-            "en": "From floor 3 onward, rivals can spawn equipped with items (scaling from 35% up to 80% chance at higher floors). There is a 5% chance they hold the exclusive Forbidden Fragment (+35% damage, +10% speed). Each cleared floor grants scaled seeds, and every 10 floors awards a special egg with exclusive chickens or shinies."
+            "es": "A partir del piso 3, los rivales pueden aparecer equipados con ítems (escalando desde 35% hasta 80% de probabilidad en pisos altos). Hay un 5% de probabilidad de que lleven el Fragmento Prohibido (+35% daño, +10% velocidad) y un 10% de probabilidad de que lleven uno de los 5 ítems raros exclusivos: Pluma dorada, Pluma de Brama (+10% shinies en batalla), Garra derrochadora (+20% semillas), Nido especial o Ira (+2 ataques iniciales). Al derrotar y reclutar a un rival que los porte, ¡te quedarás con su ítem! Cada piso otorga semillas escaladas, y cada 10 pisos recibes un huevo especial con pollos exclusivos o shinies.",
+            "en": "From floor 3 onward, rivals can spawn equipped with items (scaling from 35% up to 80% chance at higher floors). There is a 5% chance they carry the Forbidden Fragment (+35% damage, +10% speed) and a 10% chance of carrying one of the 5 rare exclusive items: Golden Feather, Brahma Feather (+10% battle shinies), Wasteful Claw (+20% seeds), Special Nest, or Wrath (+2 initial attacks). By defeating and recruiting a rival who carries them, you keep their item! Each cleared floor grants scaled seeds, and every 10 floors awards a special egg with exclusive chickens or shinies."
           }
         }
       ]

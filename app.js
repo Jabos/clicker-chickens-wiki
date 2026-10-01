@@ -28,7 +28,7 @@
       navMechanics: "Guías y Mecánicas",
       secChickensDesc: "Lista completa de los 151 pollos, estadísticas base, habilidades y hábitats.",
       secItemsDesc: "Catálogo completo de los 75 objetos consumibles y equipables con sus efectos.",
-      secPowersDesc: "42 poderes especiales activables en combate y los pollos que los poseen.",
+      secPowersDesc: "52 poderes especiales activables en combate y los pollos que los poseen.",
       secPassivesDesc: "151 habilidades pasivas que alteran el combate y qué pollos las tienen.",
       secStatesDesc: "Los 7 efectos de estado, cómo funcionan por turno y cómo contrarrestarlos.",
       secZonesDesc: "Las 9 zonas del juego, costos de viaje, especies salvajes, tiendas y torneos.",
@@ -64,6 +64,7 @@
       thWhere: "Zonas",
       thEffect: "Efecto",
       thChickens: "Pollos con esta habilidad",
+      thChickensHidden: "Pollos con este Poder Oculto",
       consumable: "Consumible",
       equipable: "Equipable",
       allTypes: "Todos los tipos",
@@ -76,6 +77,8 @@
       statTotal: "Total de Stats",
       passiveSkill: "Habilidad Pasiva",
       activePower: "Poder Activo",
+      hiddenPower: "Poder Oculto",
+      noHiddenPower: "No puede poseer poder oculto (Transformación en combate)",
       powerCost: "Coste de Carga de Poder",
       defaultItem: "Objeto Inicial",
       evolutionHeader: "Línea de Evolución",
@@ -121,7 +124,7 @@
       navMechanics: "Guides & Mechanics",
       secChickensDesc: "Complete encyclopedia of all 151 chickens, base stats, skills and habitats.",
       secItemsDesc: "Complete catalog of all 75 consumable and equipable items and effects.",
-      secPowersDesc: "42 active powers usable during combat and which chickens possess them.",
+      secPowersDesc: "52 active powers usable during combat and which chickens possess them.",
       secPassivesDesc: "151 combat passive skills and the chickens that have them.",
       secStatesDesc: "The 7 status effects, turn triggers, damage formulas and counters.",
       secZonesDesc: "The 9 game zones, travel costs, wild encounters, shop catalogs and tournaments.",
@@ -157,6 +160,7 @@
       thWhere: "Zones",
       thEffect: "Effect",
       thChickens: "Chickens with this skill",
+      thChickensHidden: "Chickens with this Hidden Power",
       consumable: "Consumable",
       equipable: "Equipable",
       allTypes: "All Types",
@@ -169,6 +173,8 @@
       statTotal: "Total Stats",
       passiveSkill: "Passive Skill",
       activePower: "Active Power",
+      hiddenPower: "Hidden Power",
+      noHiddenPower: "Cannot possess hidden power (Combat transformation)",
       powerCost: "Power Energy Required",
       defaultItem: "Held Item",
       evolutionHeader: "Evolution Line",
@@ -663,6 +669,7 @@
 
     const passiveObj = WIKI.passives[c.passive_id];
     const powerObj = WIKI.powers[c.power_id];
+    const hiddenPowerObj = (c.hidden_power_id !== null && c.hidden_power_id !== undefined && c.hidden_power_id >= 0) ? WIKI.powers[c.hidden_power_id] : null;
     const itemObj = c.default_item_id >= 0 ? WIKI.items[c.default_item_id] : null;
 
     // Stat bars percentage based on max 100
@@ -745,6 +752,21 @@
             <div style="margin-top:8px;">
               <a href="#powers" style="font-size:12px;">→ Ver todos los pollos con este poder</a>
             </div>
+          </div>
+
+          <div class="article-box">
+            <h4>🔮 ${str('hiddenPower')} ${c.hidden_power_id !== null && c.hidden_power_id !== undefined && c.hidden_power_id >= 0 ? `(#${c.hidden_power_id + 1})` : ''}</h4>
+            ${hiddenPowerObj ? `
+              <p style="font-size:13px;line-height:1.5;">${getLocalized(hiddenPowerObj.description)}</p>
+              <div style="font-size:12px;color:var(--wiki-text-muted);margin-top:6px;">
+                <strong>${str('powerCost')}:</strong> ${hiddenPowerObj.cost} puntos de energía.
+              </div>
+              <div style="margin-top:8px;">
+                <a href="#powers" style="font-size:12px;">→ Ver poderes de combate</a>
+              </div>
+            ` : `
+              <p style="font-size:13px;line-height:1.5;color:var(--wiki-text-muted);">${str('noHiddenPower')}</p>
+            `}
           </div>
 
           <!-- Evolution Tree -->
@@ -954,14 +976,31 @@
                 <td style="font-weight:700;color:var(--wiki-text-muted);">#${p.id + 1}</td>
                 <td style="font-weight:600;font-size:13px;">${getLocalized(p.description)}</td>
                 <td>
-                  <div class="mini-chicken-list">
-                    ${p.chickens.map(ch => `
-                      <div class="mini-chicken-chip" onclick="location.hash='chicken-${ch.id}'">
-                        <img class="pixelated" src="${ch.sprite}" alt="">
-                        <span>${getLocalized(ch.name)}</span>
-                      </div>
-                    `).join('')}
-                  </div>
+                  ${p.chickens && p.chickens.length > 0 ? `
+                    <div style="font-size:11px;font-weight:700;margin-bottom:4px;color:var(--wiki-text-muted);">${str('thChickens')}:</div>
+                    <div class="mini-chicken-list">
+                      ${p.chickens.map(ch => `
+                        <div class="mini-chicken-chip" onclick="location.hash='chicken-${ch.id}'">
+                          <img class="pixelated" src="${ch.sprite}" alt="">
+                          <span>${getLocalized(ch.name)}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  ` : ''}
+                  ${p.chickens_hidden && p.chickens_hidden.length > 0 ? `
+                    <div style="font-size:11px;font-weight:700;margin-top:${p.chickens && p.chickens.length > 0 ? '8px' : '0'};margin-bottom:4px;color:var(--wiki-accent);">${str('thChickensHidden')}:</div>
+                    <div class="mini-chicken-list">
+                      ${p.chickens_hidden.map(ch => `
+                        <div class="mini-chicken-chip" style="border-color:#b197fc;" onclick="location.hash='chicken-${ch.id}'">
+                          <img class="pixelated" src="${ch.sprite}" alt="">
+                          <span>${getLocalized(ch.name)}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  ` : ''}
+                  ${(!p.chickens || p.chickens.length === 0) && (!p.chickens_hidden || p.chickens_hidden.length === 0) ? `
+                    <span style="font-size:12px;color:var(--wiki-text-muted);">-</span>
+                  ` : ''}
                 </td>
               </tr>
             `).join('')}

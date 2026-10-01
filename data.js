@@ -1,5 +1,5 @@
 window.WIKI_DATA = {
-  "version": "0.105",
+  "version": "0.106",
   "chickens": [
     {
       "id": 0,
@@ -11,6 +11,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 4,
       "passive_id": 0,
       "action_type": 0,
       "stats": {
@@ -39,6 +40,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 140,
       "power_id": 0,
+      "hidden_power_id": 3,
       "passive_id": 1,
       "action_type": 0,
       "stats": {
@@ -70,6 +72,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 11,
       "passive_id": 2,
       "action_type": 0,
       "stats": {
@@ -101,6 +104,7 @@ window.WIKI_DATA = {
       "default_item_id": 20,
       "power_max": 130,
       "power_id": 1,
+      "hidden_power_id": 10,
       "passive_id": 3,
       "action_type": 0,
       "stats": {
@@ -132,6 +136,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 4,
       "action_type": 0,
       "stats": {
@@ -163,6 +168,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 3,
+      "hidden_power_id": 46,
       "passive_id": 5,
       "action_type": 0,
       "stats": {
@@ -194,6 +200,7 @@ window.WIKI_DATA = {
       "default_item_id": 29,
       "power_max": 100,
       "power_id": 4,
+      "hidden_power_id": 30,
       "passive_id": 6,
       "action_type": 0,
       "stats": {
@@ -225,6 +232,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 19,
       "passive_id": 7,
       "action_type": 0,
       "stats": {
@@ -256,6 +264,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 120,
       "power_id": 5,
+      "hidden_power_id": 15,
       "passive_id": 8,
       "action_type": 0,
       "stats": {
@@ -287,6 +296,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 150,
       "power_id": 6,
+      "hidden_power_id": -1,
       "passive_id": 9,
       "action_type": 0,
       "stats": {
@@ -323,6 +333,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 90,
       "power_id": 7,
+      "hidden_power_id": -1,
       "passive_id": 10,
       "action_type": 0,
       "stats": {
@@ -356,6 +367,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 120,
       "power_id": 8,
+      "hidden_power_id": 18,
       "passive_id": 11,
       "action_type": 0,
       "stats": {
@@ -388,6 +400,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 3,
+      "hidden_power_id": 42,
       "passive_id": 12,
       "action_type": 0,
       "stats": {
@@ -419,6 +432,7 @@ window.WIKI_DATA = {
       "default_item_id": 27,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 20,
       "passive_id": 13,
       "action_type": 0,
       "stats": {
@@ -450,6 +464,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 130,
       "power_id": 0,
+      "hidden_power_id": 23,
       "passive_id": 14,
       "action_type": 0,
       "stats": {
@@ -481,6 +496,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 9,
+      "hidden_power_id": 51,
       "passive_id": 15,
       "action_type": 0,
       "stats": {
@@ -512,6 +528,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 10,
+      "hidden_power_id": 41,
       "passive_id": 16,
       "action_type": 0,
       "stats": {
@@ -543,6 +560,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 11,
+      "hidden_power_id": 32,
       "passive_id": 17,
       "action_type": 0,
       "stats": {
@@ -574,6 +592,7 @@ window.WIKI_DATA = {
       "default_item_id": 18,
       "power_max": 100,
       "power_id": 12,
+      "hidden_power_id": 49,
       "passive_id": 18,
       "action_type": 0,
       "stats": {
@@ -605,6 +624,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 10,
       "passive_id": 19,
       "action_type": 0,
       "stats": {
@@ -636,6 +656,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 36,
       "passive_id": 20,
       "action_type": 0,
       "stats": {
@@ -667,6 +688,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 27,
       "passive_id": 21,
       "action_type": 0,
       "stats": {
@@ -698,6 +720,7 @@ window.WIKI_DATA = {
       "default_item_id": 18,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 4,
       "passive_id": 22,
       "action_type": 0,
       "stats": {
@@ -729,6 +752,7 @@ window.WIKI_DATA = {
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 13,
+      "hidden_power_id": 48,
       "passive_id": 23,
       "action_type": 0,
       "stats": {
@@ -760,6 +784,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 9,
       "passive_id": 24,
       "action_type": 0,
       "stats": {
@@ -791,6 +816,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 14,
+      "hidden_power_id": 18,
       "passive_id": 25,
       "action_type": 0,
       "stats": {
@@ -822,6 +848,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 46,
       "passive_id": 26,
       "action_type": 0,
       "stats": {
@@ -853,6 +880,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 15,
+      "hidden_power_id": 16,
       "passive_id": 27,
       "action_type": 0,
       "stats": {
@@ -884,6 +912,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 16,
+      "hidden_power_id": 12,
       "passive_id": 28,
       "action_type": 0,
       "stats": {
@@ -915,6 +944,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 80,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 29,
       "action_type": 0,
       "stats": {
@@ -946,6 +976,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 13,
       "passive_id": 30,
       "action_type": 0,
       "stats": {
@@ -977,6 +1008,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 42,
       "passive_id": 31,
       "action_type": 0,
       "stats": {
@@ -1008,6 +1040,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 25,
       "passive_id": 32,
       "action_type": 0,
       "stats": {
@@ -1039,6 +1072,7 @@ window.WIKI_DATA = {
       "default_item_id": 20,
       "power_max": 100,
       "power_id": 17,
+      "hidden_power_id": 48,
       "passive_id": 33,
       "action_type": 0,
       "stats": {
@@ -1070,6 +1104,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 31,
       "passive_id": 34,
       "action_type": 0,
       "stats": {
@@ -1101,6 +1136,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 20,
       "passive_id": 35,
       "action_type": 0,
       "stats": {
@@ -1132,6 +1168,7 @@ window.WIKI_DATA = {
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 13,
+      "hidden_power_id": 44,
       "passive_id": 36,
       "action_type": 0,
       "stats": {
@@ -1163,6 +1200,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 8,
+      "hidden_power_id": 10,
       "passive_id": 37,
       "action_type": 0,
       "stats": {
@@ -1194,6 +1232,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 19,
       "passive_id": 38,
       "action_type": 0,
       "stats": {
@@ -1225,6 +1264,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 39,
       "action_type": 0,
       "stats": {
@@ -1256,6 +1296,7 @@ window.WIKI_DATA = {
       "default_item_id": 10,
       "power_max": 100,
       "power_id": 18,
+      "hidden_power_id": 8,
       "passive_id": 40,
       "action_type": 0,
       "stats": {
@@ -1287,6 +1328,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 18,
+      "hidden_power_id": 47,
       "passive_id": 41,
       "action_type": 0,
       "stats": {
@@ -1318,6 +1360,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 4,
+      "hidden_power_id": 18,
       "passive_id": 42,
       "action_type": 0,
       "stats": {
@@ -1349,6 +1392,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 8,
       "passive_id": 43,
       "action_type": 0,
       "stats": {
@@ -1380,6 +1424,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 18,
       "passive_id": 44,
       "action_type": 0,
       "stats": {
@@ -1411,6 +1456,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 18,
+      "hidden_power_id": 32,
       "passive_id": 45,
       "action_type": 0,
       "stats": {
@@ -1442,6 +1488,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 11,
+      "hidden_power_id": 12,
       "passive_id": 46,
       "action_type": 0,
       "stats": {
@@ -1473,6 +1520,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 19,
+      "hidden_power_id": 10,
       "passive_id": 47,
       "action_type": 0,
       "stats": {
@@ -1501,6 +1549,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 20,
+      "hidden_power_id": 3,
       "passive_id": 48,
       "action_type": 0,
       "stats": {
@@ -1529,6 +1578,7 @@ window.WIKI_DATA = {
       "default_item_id": 20,
       "power_max": 100,
       "power_id": 3,
+      "hidden_power_id": 46,
       "passive_id": 49,
       "action_type": 0,
       "stats": {
@@ -1557,6 +1607,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 50,
       "action_type": 0,
       "stats": {
@@ -1588,6 +1639,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 21,
+      "hidden_power_id": 23,
       "passive_id": 51,
       "action_type": 0,
       "stats": {
@@ -1619,6 +1671,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 4,
       "passive_id": 52,
       "action_type": 0,
       "stats": {
@@ -1650,6 +1703,7 @@ window.WIKI_DATA = {
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 20,
       "passive_id": 53,
       "action_type": 0,
       "stats": {
@@ -1681,6 +1735,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 17,
       "passive_id": 54,
       "action_type": 0,
       "stats": {
@@ -1712,6 +1767,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 200,
       "power_id": 22,
+      "hidden_power_id": -1,
       "passive_id": 55,
       "action_type": 0,
       "stats": {
@@ -1749,6 +1805,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 42,
+      "hidden_power_id": -1,
       "passive_id": 56,
       "action_type": 0,
       "stats": {
@@ -1782,6 +1839,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 20,
+      "hidden_power_id": 15,
       "passive_id": 57,
       "action_type": 0,
       "stats": {
@@ -1813,6 +1871,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 24,
+      "hidden_power_id": 42,
       "passive_id": 58,
       "action_type": 0,
       "stats": {
@@ -1844,6 +1903,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 150,
       "power_id": 0,
+      "hidden_power_id": 49,
       "passive_id": 59,
       "action_type": 0,
       "stats": {
@@ -1875,6 +1935,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 11,
       "passive_id": 60,
       "action_type": 0,
       "stats": {
@@ -1906,6 +1967,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 61,
       "action_type": 0,
       "stats": {
@@ -1937,6 +1999,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 17,
+      "hidden_power_id": 30,
       "passive_id": 62,
       "action_type": 0,
       "stats": {
@@ -1968,6 +2031,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 25,
+      "hidden_power_id": 47,
       "passive_id": 63,
       "action_type": 0,
       "stats": {
@@ -1999,6 +2063,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 41,
       "passive_id": 64,
       "action_type": 0,
       "stats": {
@@ -2030,6 +2095,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 65,
       "action_type": 0,
       "stats": {
@@ -2061,6 +2127,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 10,
       "passive_id": 66,
       "action_type": 0,
       "stats": {
@@ -2092,6 +2159,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 43,
       "passive_id": 67,
       "action_type": 0,
       "stats": {
@@ -2123,6 +2191,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 27,
+      "hidden_power_id": 45,
       "passive_id": 68,
       "action_type": 0,
       "stats": {
@@ -2154,6 +2223,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 69,
       "action_type": 0,
       "stats": {
@@ -2185,6 +2255,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 41,
       "passive_id": 70,
       "action_type": 0,
       "stats": {
@@ -2216,6 +2287,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 41,
       "passive_id": 71,
       "action_type": 0,
       "stats": {
@@ -2247,6 +2319,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 3,
       "passive_id": 72,
       "action_type": 0,
       "stats": {
@@ -2278,6 +2351,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 28,
+      "hidden_power_id": 50,
       "passive_id": 73,
       "action_type": 0,
       "stats": {
@@ -2309,6 +2383,7 @@ window.WIKI_DATA = {
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 11,
       "passive_id": 74,
       "action_type": 0,
       "stats": {
@@ -2340,6 +2415,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 11,
       "passive_id": 75,
       "action_type": 0,
       "stats": {
@@ -2371,6 +2447,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 2,
+      "hidden_power_id": 11,
       "passive_id": 76,
       "action_type": 0,
       "stats": {
@@ -2402,6 +2479,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 150,
       "power_id": 23,
+      "hidden_power_id": 40,
       "passive_id": 77,
       "action_type": 0,
       "stats": {
@@ -2433,6 +2511,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 90,
       "power_id": 20,
+      "hidden_power_id": 25,
       "passive_id": 78,
       "action_type": 0,
       "stats": {
@@ -2464,6 +2543,7 @@ window.WIKI_DATA = {
       "default_item_id": 21,
       "power_max": 90,
       "power_id": 25,
+      "hidden_power_id": 44,
       "passive_id": 79,
       "action_type": 0,
       "stats": {
@@ -2495,6 +2575,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 13,
+      "hidden_power_id": 12,
       "passive_id": 80,
       "action_type": 0,
       "stats": {
@@ -2526,6 +2607,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 4,
       "passive_id": 81,
       "action_type": 0,
       "stats": {
@@ -2557,6 +2639,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 30,
+      "hidden_power_id": 29,
       "passive_id": 82,
       "action_type": 0,
       "stats": {
@@ -2588,6 +2671,7 @@ window.WIKI_DATA = {
       "default_item_id": 19,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 43,
       "passive_id": 83,
       "action_type": 0,
       "stats": {
@@ -2619,6 +2703,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 20,
+      "hidden_power_id": 25,
       "passive_id": 84,
       "action_type": 0,
       "stats": {
@@ -2650,6 +2735,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 85,
       "action_type": 0,
       "stats": {
@@ -2681,6 +2767,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 200,
       "power_id": 31,
+      "hidden_power_id": 48,
       "passive_id": 86,
       "action_type": 0,
       "stats": {
@@ -2712,6 +2799,7 @@ window.WIKI_DATA = {
       "default_item_id": 10,
       "power_max": 100,
       "power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 87,
       "action_type": 0,
       "stats": {
@@ -2743,6 +2831,7 @@ window.WIKI_DATA = {
       "default_item_id": 17,
       "power_max": 100,
       "power_id": 30,
+      "hidden_power_id": 17,
       "passive_id": 88,
       "action_type": 0,
       "stats": {
@@ -2774,6 +2863,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 45,
       "passive_id": 89,
       "action_type": 0,
       "stats": {
@@ -2805,6 +2895,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 125,
       "power_id": 32,
+      "hidden_power_id": 39,
       "passive_id": 90,
       "action_type": 0,
       "stats": {
@@ -2836,6 +2927,7 @@ window.WIKI_DATA = {
       "default_item_id": 66,
       "power_max": 100,
       "power_id": 30,
+      "hidden_power_id": 12,
       "passive_id": 91,
       "action_type": 0,
       "stats": {
@@ -2867,6 +2959,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 9,
       "passive_id": 92,
       "action_type": 0,
       "stats": {
@@ -2898,6 +2991,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 30,
+      "hidden_power_id": 17,
       "passive_id": 93,
       "action_type": 0,
       "stats": {
@@ -2929,6 +3023,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 36,
       "passive_id": 94,
       "action_type": 0,
       "stats": {
@@ -2960,6 +3055,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 12,
       "passive_id": 95,
       "action_type": 0,
       "stats": {
@@ -2991,6 +3087,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 17,
+      "hidden_power_id": 12,
       "passive_id": 96,
       "action_type": 0,
       "stats": {
@@ -3022,6 +3119,7 @@ window.WIKI_DATA = {
       "default_item_id": 27,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 19,
       "passive_id": 97,
       "action_type": 0,
       "stats": {
@@ -3053,6 +3151,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 19,
+      "hidden_power_id": 45,
       "passive_id": 98,
       "action_type": 0,
       "stats": {
@@ -3079,6 +3178,7 @@ window.WIKI_DATA = {
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 30,
+      "hidden_power_id": 25,
       "passive_id": 99,
       "action_type": 0,
       "stats": {
@@ -3110,6 +3210,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 33,
+      "hidden_power_id": 23,
       "passive_id": 100,
       "action_type": 0,
       "stats": {
@@ -3141,6 +3242,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 33,
+      "hidden_power_id": 23,
       "passive_id": 101,
       "action_type": 0,
       "stats": {
@@ -3172,6 +3274,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 36,
       "passive_id": 102,
       "action_type": 0,
       "stats": {
@@ -3203,6 +3306,7 @@ window.WIKI_DATA = {
       "default_item_id": 19,
       "power_max": 100,
       "power_id": 33,
+      "hidden_power_id": 23,
       "passive_id": 103,
       "action_type": 0,
       "stats": {
@@ -3234,6 +3338,7 @@ window.WIKI_DATA = {
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 33,
+      "hidden_power_id": 23,
       "passive_id": 104,
       "action_type": 0,
       "stats": {
@@ -3265,6 +3370,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 33,
+      "hidden_power_id": 23,
       "passive_id": 105,
       "action_type": 0,
       "stats": {
@@ -3296,6 +3402,7 @@ window.WIKI_DATA = {
       "default_item_id": 34,
       "power_max": 100,
       "power_id": 33,
+      "hidden_power_id": 23,
       "passive_id": 106,
       "action_type": 0,
       "stats": {
@@ -3327,6 +3434,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 32,
+      "hidden_power_id": 5,
       "passive_id": 107,
       "action_type": 0,
       "stats": {
@@ -3358,6 +3466,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 9,
       "passive_id": 108,
       "action_type": 0,
       "stats": {
@@ -3389,6 +3498,7 @@ window.WIKI_DATA = {
       "default_item_id": 43,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 109,
       "action_type": 0,
       "stats": {
@@ -3420,6 +3530,7 @@ window.WIKI_DATA = {
       "default_item_id": 38,
       "power_max": 100,
       "power_id": 31,
+      "hidden_power_id": 46,
       "passive_id": 110,
       "action_type": 0,
       "stats": {
@@ -3451,6 +3562,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 12,
       "passive_id": 111,
       "action_type": 0,
       "stats": {
@@ -3482,6 +3594,7 @@ window.WIKI_DATA = {
       "default_item_id": 21,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 41,
       "passive_id": 112,
       "action_type": 0,
       "stats": {
@@ -3513,6 +3626,7 @@ window.WIKI_DATA = {
       "default_item_id": 36,
       "power_max": 100,
       "power_id": 13,
+      "hidden_power_id": 17,
       "passive_id": 113,
       "action_type": 0,
       "stats": {
@@ -3544,6 +3658,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 10,
       "passive_id": 114,
       "action_type": 0,
       "stats": {
@@ -3575,6 +3690,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 19,
+      "hidden_power_id": 45,
       "passive_id": 115,
       "action_type": 0,
       "stats": {
@@ -3606,6 +3722,7 @@ window.WIKI_DATA = {
       "default_item_id": 35,
       "power_max": 100,
       "power_id": 12,
+      "hidden_power_id": 49,
       "passive_id": 116,
       "action_type": 0,
       "stats": {
@@ -3637,6 +3754,7 @@ window.WIKI_DATA = {
       "default_item_id": 29,
       "power_max": 100,
       "power_id": 13,
+      "hidden_power_id": 29,
       "passive_id": 117,
       "action_type": 0,
       "stats": {
@@ -3668,6 +3786,7 @@ window.WIKI_DATA = {
       "default_item_id": 35,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 36,
       "passive_id": 118,
       "action_type": 0,
       "stats": {
@@ -3699,6 +3818,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 12,
       "passive_id": 119,
       "action_type": 0,
       "stats": {
@@ -3730,6 +3850,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 17,
+      "hidden_power_id": 13,
       "passive_id": 120,
       "action_type": 0,
       "stats": {
@@ -3761,6 +3882,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 12,
+      "hidden_power_id": 30,
       "passive_id": 121,
       "action_type": 0,
       "stats": {
@@ -3792,6 +3914,7 @@ window.WIKI_DATA = {
       "default_item_id": 43,
       "power_max": 100,
       "power_id": 8,
+      "hidden_power_id": 18,
       "passive_id": 122,
       "action_type": 0,
       "stats": {
@@ -3823,6 +3946,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 8,
+      "hidden_power_id": 18,
       "passive_id": 123,
       "action_type": 0,
       "stats": {
@@ -3854,6 +3978,7 @@ window.WIKI_DATA = {
       "default_item_id": 37,
       "power_max": 100,
       "power_id": 8,
+      "hidden_power_id": 18,
       "passive_id": 124,
       "action_type": 0,
       "stats": {
@@ -3885,6 +4010,7 @@ window.WIKI_DATA = {
       "default_item_id": 55,
       "power_max": 90,
       "power_id": 0,
+      "hidden_power_id": 21,
       "passive_id": 125,
       "action_type": 0,
       "stats": {
@@ -3916,6 +4042,7 @@ window.WIKI_DATA = {
       "default_item_id": 36,
       "power_max": 90,
       "power_id": 20,
+      "hidden_power_id": 25,
       "passive_id": 126,
       "action_type": 0,
       "stats": {
@@ -3942,6 +4069,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 21,
+      "hidden_power_id": 46,
       "passive_id": 127,
       "action_type": 0,
       "stats": {
@@ -3968,6 +4096,7 @@ window.WIKI_DATA = {
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 11,
+      "hidden_power_id": 49,
       "passive_id": 128,
       "action_type": 0,
       "stats": {
@@ -3996,6 +4125,7 @@ window.WIKI_DATA = {
       "default_item_id": 45,
       "power_max": 100,
       "power_id": 8,
+      "hidden_power_id": 18,
       "passive_id": 129,
       "action_type": 0,
       "stats": {
@@ -4025,6 +4155,7 @@ window.WIKI_DATA = {
       "default_item_id": 48,
       "power_max": 100,
       "power_id": 30,
+      "hidden_power_id": 13,
       "passive_id": 130,
       "action_type": 0,
       "stats": {
@@ -4058,6 +4189,7 @@ window.WIKI_DATA = {
       "default_item_id": 27,
       "power_max": 100,
       "power_id": 20,
+      "hidden_power_id": 25,
       "passive_id": 131,
       "action_type": 0,
       "stats": {
@@ -4090,6 +4222,7 @@ window.WIKI_DATA = {
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 14,
+      "hidden_power_id": 43,
       "passive_id": 132,
       "action_type": 0,
       "stats": {
@@ -4121,6 +4254,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 36,
+      "hidden_power_id": 51,
       "passive_id": 133,
       "action_type": 0,
       "stats": {
@@ -4152,6 +4286,7 @@ window.WIKI_DATA = {
       "default_item_id": 58,
       "power_max": 120,
       "power_id": 37,
+      "hidden_power_id": -1,
       "passive_id": 134,
       "action_type": 0,
       "stats": {
@@ -4184,6 +4319,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 38,
+      "hidden_power_id": -1,
       "passive_id": 135,
       "action_type": 0,
       "stats": {
@@ -4217,6 +4353,7 @@ window.WIKI_DATA = {
       "default_item_id": 67,
       "power_max": 100,
       "power_id": 39,
+      "hidden_power_id": 50,
       "passive_id": 136,
       "action_type": 0,
       "stats": {
@@ -4248,6 +4385,7 @@ window.WIKI_DATA = {
       "default_item_id": 34,
       "power_max": 100,
       "power_id": 20,
+      "hidden_power_id": 25,
       "passive_id": 137,
       "action_type": 0,
       "stats": {
@@ -4276,6 +4414,7 @@ window.WIKI_DATA = {
       "default_item_id": 43,
       "power_max": 100,
       "power_id": 21,
+      "hidden_power_id": 48,
       "passive_id": 138,
       "action_type": 0,
       "stats": {
@@ -4307,6 +4446,7 @@ window.WIKI_DATA = {
       "default_item_id": 35,
       "power_max": 100,
       "power_id": 36,
+      "hidden_power_id": 51,
       "passive_id": 139,
       "action_type": 0,
       "stats": {
@@ -4338,6 +4478,7 @@ window.WIKI_DATA = {
       "default_item_id": 61,
       "power_max": 100,
       "power_id": 4,
+      "hidden_power_id": 21,
       "passive_id": 140,
       "action_type": 0,
       "stats": {
@@ -4364,6 +4505,7 @@ window.WIKI_DATA = {
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 13,
+      "hidden_power_id": 30,
       "passive_id": 141,
       "action_type": 0,
       "stats": {
@@ -4390,6 +4532,7 @@ window.WIKI_DATA = {
       "default_item_id": 41,
       "power_max": 150,
       "power_id": 23,
+      "hidden_power_id": 40,
       "passive_id": 142,
       "action_type": 0,
       "stats": {
@@ -4416,6 +4559,7 @@ window.WIKI_DATA = {
       "default_item_id": 68,
       "power_max": 100,
       "power_id": 18,
+      "hidden_power_id": 46,
       "passive_id": 143,
       "action_type": 0,
       "stats": {
@@ -4442,6 +4586,7 @@ window.WIKI_DATA = {
       "default_item_id": 34,
       "power_max": 150,
       "power_id": 23,
+      "hidden_power_id": 40,
       "passive_id": 144,
       "action_type": 0,
       "stats": {
@@ -4468,6 +4613,7 @@ window.WIKI_DATA = {
       "default_item_id": 65,
       "power_max": 150,
       "power_id": 40,
+      "hidden_power_id": 23,
       "passive_id": 145,
       "action_type": 0,
       "stats": {
@@ -4494,6 +4640,7 @@ window.WIKI_DATA = {
       "default_item_id": 62,
       "power_max": 100,
       "power_id": 1,
+      "hidden_power_id": 48,
       "passive_id": 146,
       "action_type": 0,
       "stats": {
@@ -4520,6 +4667,7 @@ window.WIKI_DATA = {
       "default_item_id": 69,
       "power_max": 100,
       "power_id": 21,
+      "hidden_power_id": 47,
       "passive_id": 147,
       "action_type": 0,
       "stats": {
@@ -4546,6 +4694,7 @@ window.WIKI_DATA = {
       "default_item_id": 64,
       "power_max": 100,
       "power_id": 0,
+      "hidden_power_id": 4,
       "passive_id": 148,
       "action_type": 0,
       "stats": {
@@ -4572,6 +4721,7 @@ window.WIKI_DATA = {
       "default_item_id": 57,
       "power_max": 150,
       "power_id": 23,
+      "hidden_power_id": 40,
       "passive_id": 149,
       "action_type": 0,
       "stats": {
@@ -4598,6 +4748,7 @@ window.WIKI_DATA = {
       "default_item_id": 63,
       "power_max": 100,
       "power_id": 41,
+      "hidden_power_id": 10,
       "passive_id": 150,
       "action_type": 0,
       "stats": {
@@ -8530,6 +8681,7 @@ window.WIKI_DATA = {
   "powers": [
     {
       "id": 0,
+      "cost": 100,
       "description": {
         "es": "Ataque doble",
         "en": "Double attack"
@@ -8807,10 +8959,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/148.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 1,
+      "cost": 100,
       "description": {
         "es": "Autocuración (25% de su vida máxima)",
         "en": "Heal himself (25% max life)"
@@ -8960,10 +9114,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/146.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 2,
+      "cost": 100,
       "description": {
         "es": "Lanza un huevo (100% del daño)",
         "en": "Throw a egg (100% damage)"
@@ -9033,10 +9189,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/76.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 3,
+      "cost": 100,
       "description": {
         "es": "Lanza un shuriken (150% del daño)",
         "en": "Throw a shuriken (150% damage)"
@@ -9066,10 +9224,37 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/49.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 1,
+          "name": {
+            "es": "Chica",
+            "en": "Chica"
+          },
+          "sprite": "images/chickens/1.png"
+        },
+        {
+          "id": 48,
+          "name": {
+            "es": "Leci",
+            "en": "Leci"
+          },
+          "sprite": "images/chickens/48.png"
+        },
+        {
+          "id": 72,
+          "name": {
+            "es": "Gallimbus",
+            "en": "Gallimbus"
+          },
+          "sprite": "images/chickens/72.png"
+        }
       ]
     },
     {
       "id": 4,
+      "cost": 100,
       "description": {
         "es": "Pierde vida (-10% de su vida máxima), gana daño (+25%)",
         "en": "Lose life, gain damage (-10% max life, +25% damage)"
@@ -9099,10 +9284,53 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/140.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 0,
+          "name": {
+            "es": "Pollier",
+            "en": "Pollier"
+          },
+          "sprite": "images/chickens/0.png"
+        },
+        {
+          "id": 22,
+          "name": {
+            "es": "Mega",
+            "en": "Mega"
+          },
+          "sprite": "images/chickens/22.png"
+        },
+        {
+          "id": 52,
+          "name": {
+            "es": "Sharky",
+            "en": "Sharky"
+          },
+          "sprite": "images/chickens/52.png"
+        },
+        {
+          "id": 81,
+          "name": {
+            "es": "Egi",
+            "en": "Egi"
+          },
+          "sprite": "images/chickens/81.png"
+        },
+        {
+          "id": 148,
+          "name": {
+            "es": "Toro",
+            "en": "Toro"
+          },
+          "sprite": "images/chickens/148.png"
+        }
       ]
     },
     {
       "id": 5,
+      "cost": 120,
       "description": {
         "es": "Copia el último poder visto",
         "en": "Copy last power"
@@ -9116,10 +9344,21 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/8.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 107,
+          "name": {
+            "es": "Derp",
+            "en": "Derp"
+          },
+          "sprite": "images/chickens/107.png"
+        }
       ]
     },
     {
       "id": 6,
+      "cost": 150,
       "description": {
         "es": "Transforma en Pollisaur",
         "en": "Transform into Pollisaur"
@@ -9133,10 +9372,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/9.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 7,
+      "cost": 90,
       "description": {
         "es": "Transforma en Pollisor",
         "en": "Transform into Pollisor"
@@ -9150,10 +9391,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/10.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 8,
+      "cost": 100,
       "description": {
         "es": "Lanza un misíl (Quema)",
         "en": "Launch a missile, apply burn"
@@ -9207,10 +9450,29 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/129.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 40,
+          "name": {
+            "es": "Candle",
+            "en": "Candle"
+          },
+          "sprite": "images/chickens/40.png"
+        },
+        {
+          "id": 43,
+          "name": {
+            "es": "Ignarto",
+            "en": "Ignarto"
+          },
+          "sprite": "images/chickens/43.png"
+        }
       ]
     },
     {
       "id": 9,
+      "cost": 100,
       "description": {
         "es": "+10% en un valor aleatorio",
         "en": "Gain 10% extra in a random stat"
@@ -9224,10 +9486,37 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/15.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 24,
+          "name": {
+            "es": "Lapiz",
+            "en": "Lapiz"
+          },
+          "sprite": "images/chickens/24.png"
+        },
+        {
+          "id": 92,
+          "name": {
+            "es": "Galland",
+            "en": "Galland"
+          },
+          "sprite": "images/chickens/92.png"
+        },
+        {
+          "id": 108,
+          "name": {
+            "es": "Plumillas",
+            "en": "Plumillas"
+          },
+          "sprite": "images/chickens/108.png"
+        }
       ]
     },
     {
       "id": 10,
+      "cost": 100,
       "description": {
         "es": "El equipo gana armadura (+10%)",
         "en": "The team gain armor (+10% armor)"
@@ -9241,10 +9530,69 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/16.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 3,
+          "name": {
+            "es": "Ponk",
+            "en": "Ponk"
+          },
+          "sprite": "images/chickens/3.png"
+        },
+        {
+          "id": 19,
+          "name": {
+            "es": "Armor",
+            "en": "Armor"
+          },
+          "sprite": "images/chickens/19.png"
+        },
+        {
+          "id": 37,
+          "name": {
+            "es": "Pastank",
+            "en": "Pastank"
+          },
+          "sprite": "images/chickens/37.png"
+        },
+        {
+          "id": 47,
+          "name": {
+            "es": "Clusio",
+            "en": "Clusio"
+          },
+          "sprite": "images/chickens/47.png"
+        },
+        {
+          "id": 66,
+          "name": {
+            "es": "Ashy",
+            "en": "Ashy"
+          },
+          "sprite": "images/chickens/66.png"
+        },
+        {
+          "id": 114,
+          "name": {
+            "es": "Chird",
+            "en": "Chird"
+          },
+          "sprite": "images/chickens/114.png"
+        },
+        {
+          "id": 150,
+          "name": {
+            "es": "Garra",
+            "en": "Garra"
+          },
+          "sprite": "images/chickens/150.png"
+        }
       ]
     },
     {
       "id": 11,
+      "cost": 100,
       "description": {
         "es": "Lanza una bomba (80% del daño, 40% a otros objetivos)",
         "en": "Throw a bomb (80% damage to target, 40% to others)"
@@ -9274,10 +9622,69 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/128.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 2,
+          "name": {
+            "es": "McDuck",
+            "en": "McDuck"
+          },
+          "sprite": "images/chickens/2.png"
+        },
+        {
+          "id": 60,
+          "name": {
+            "es": "Boomy",
+            "en": "Boomy"
+          },
+          "sprite": "images/chickens/60.png"
+        },
+        {
+          "id": 65,
+          "name": {
+            "es": "Vapollo",
+            "en": "Vapollo"
+          },
+          "sprite": "images/chickens/65.png"
+        },
+        {
+          "id": 74,
+          "name": {
+            "es": "Aery",
+            "en": "Aery"
+          },
+          "sprite": "images/chickens/74.png"
+        },
+        {
+          "id": 75,
+          "name": {
+            "es": "Titiro",
+            "en": "Titiro"
+          },
+          "sprite": "images/chickens/75.png"
+        },
+        {
+          "id": 76,
+          "name": {
+            "es": "Luso",
+            "en": "Luso"
+          },
+          "sprite": "images/chickens/76.png"
+        },
+        {
+          "id": 87,
+          "name": {
+            "es": "Plass",
+            "en": "Plass"
+          },
+          "sprite": "images/chickens/87.png"
+        }
       ]
     },
     {
       "id": 12,
+      "cost": 100,
       "description": {
         "es": "Paraliza al objetivo",
         "en": "Paralyze the target"
@@ -9307,10 +9714,77 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/121.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 28,
+          "name": {
+            "es": "Alien",
+            "en": "Alien"
+          },
+          "sprite": "images/chickens/28.png"
+        },
+        {
+          "id": 46,
+          "name": {
+            "es": "Robotop",
+            "en": "Robotop"
+          },
+          "sprite": "images/chickens/46.png"
+        },
+        {
+          "id": 80,
+          "name": {
+            "es": "Mucken",
+            "en": "Mucken"
+          },
+          "sprite": "images/chickens/80.png"
+        },
+        {
+          "id": 91,
+          "name": {
+            "es": "Darkus",
+            "en": "Darkus"
+          },
+          "sprite": "images/chickens/91.png"
+        },
+        {
+          "id": 95,
+          "name": {
+            "es": "Rocko",
+            "en": "Rocko"
+          },
+          "sprite": "images/chickens/95.png"
+        },
+        {
+          "id": 96,
+          "name": {
+            "es": "Garry",
+            "en": "Garry"
+          },
+          "sprite": "images/chickens/96.png"
+        },
+        {
+          "id": 111,
+          "name": {
+            "es": "Lock",
+            "en": "Lock"
+          },
+          "sprite": "images/chickens/111.png"
+        },
+        {
+          "id": 119,
+          "name": {
+            "es": "Rhafa",
+            "en": "Rhafa"
+          },
+          "sprite": "images/chickens/119.png"
+        }
       ]
     },
     {
       "id": 13,
+      "cost": 100,
       "description": {
         "es": "Envenena al objetivo",
         "en": "Poison the target"
@@ -9364,10 +9838,37 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/141.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 30,
+          "name": {
+            "es": "Mosca",
+            "en": "Mosca"
+          },
+          "sprite": "images/chickens/30.png"
+        },
+        {
+          "id": 120,
+          "name": {
+            "es": "Rick",
+            "en": "Rick"
+          },
+          "sprite": "images/chickens/120.png"
+        },
+        {
+          "id": 130,
+          "name": {
+            "es": "Jacko",
+            "en": "Jacko"
+          },
+          "sprite": "images/chickens/130.png"
+        }
       ]
     },
     {
       "id": 14,
+      "cost": 100,
       "description": {
         "es": "Pierde vida (-10% de su vida máxima), aliado consigue poder al máximo",
         "en": "Lose life, ally get full power (-10% max life)"
@@ -9389,10 +9890,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/132.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 15,
+      "cost": 100,
       "description": {
         "es": "Todos los multiplicadores obtienen valores al azar (25% a 175%)",
         "en": "Randomize all multis (0.25 to 1.75)"
@@ -9406,10 +9909,29 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/27.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 8,
+          "name": {
+            "es": "Iris",
+            "en": "Iris"
+          },
+          "sprite": "images/chickens/8.png"
+        },
+        {
+          "id": 57,
+          "name": {
+            "es": "Prisma",
+            "en": "Prisma"
+          },
+          "sprite": "images/chickens/57.png"
+        }
       ]
     },
     {
       "id": 16,
+      "cost": 100,
       "description": {
         "es": "Intercambia multiplicador de daño con el objetivo",
         "en": "Swap damage multi with target"
@@ -9423,10 +9945,21 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/28.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 27,
+          "name": {
+            "es": "Invert",
+            "en": "Invert"
+          },
+          "sprite": "images/chickens/27.png"
+        }
       ]
     },
     {
       "id": 17,
+      "cost": 100,
       "description": {
         "es": "Maldice al objetivo",
         "en": "Curse the target"
@@ -9464,10 +9997,45 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/120.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 54,
+          "name": {
+            "es": "Monocrom",
+            "en": "Monocrom"
+          },
+          "sprite": "images/chickens/54.png"
+        },
+        {
+          "id": 88,
+          "name": {
+            "es": "Trinagle",
+            "en": "Trinagle"
+          },
+          "sprite": "images/chickens/88.png"
+        },
+        {
+          "id": 93,
+          "name": {
+            "es": "Drillen",
+            "en": "Drillen"
+          },
+          "sprite": "images/chickens/93.png"
+        },
+        {
+          "id": 113,
+          "name": {
+            "es": "Chick",
+            "en": "Chick"
+          },
+          "sprite": "images/chickens/113.png"
+        }
       ]
     },
     {
       "id": 18,
+      "cost": 100,
       "description": {
         "es": "Quema al objetivo",
         "en": "Burn the target"
@@ -9521,10 +10089,77 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/143.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 11,
+          "name": {
+            "es": "Vio",
+            "en": "Vio"
+          },
+          "sprite": "images/chickens/11.png"
+        },
+        {
+          "id": 25,
+          "name": {
+            "es": "Manic",
+            "en": "Manic"
+          },
+          "sprite": "images/chickens/25.png"
+        },
+        {
+          "id": 42,
+          "name": {
+            "es": "Tiza",
+            "en": "Tiza"
+          },
+          "sprite": "images/chickens/42.png"
+        },
+        {
+          "id": 44,
+          "name": {
+            "es": "Lava",
+            "en": "Lava"
+          },
+          "sprite": "images/chickens/44.png"
+        },
+        {
+          "id": 122,
+          "name": {
+            "es": "Meta",
+            "en": "Meta"
+          },
+          "sprite": "images/chickens/122.png"
+        },
+        {
+          "id": 123,
+          "name": {
+            "es": "MetaSoldier",
+            "en": "MetaSoldier"
+          },
+          "sprite": "images/chickens/123.png"
+        },
+        {
+          "id": 124,
+          "name": {
+            "es": "Inger",
+            "en": "Inger"
+          },
+          "sprite": "images/chickens/124.png"
+        },
+        {
+          "id": 129,
+          "name": {
+            "es": "Cyborg",
+            "en": "Cyborg"
+          },
+          "sprite": "images/chickens/129.png"
+        }
       ]
     },
     {
       "id": 19,
+      "cost": 100,
       "description": {
         "es": "Autocuración (20% de su vida máxima) y gana armadura (5%)",
         "en": "Heal himself (20% max life) and armor (+5%)"
@@ -9554,10 +10189,37 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/115.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 7,
+          "name": {
+            "es": "Pasti",
+            "en": "Pasti"
+          },
+          "sprite": "images/chickens/7.png"
+        },
+        {
+          "id": 38,
+          "name": {
+            "es": "Grassy",
+            "en": "Grassy"
+          },
+          "sprite": "images/chickens/38.png"
+        },
+        {
+          "id": 97,
+          "name": {
+            "es": "Terra",
+            "en": "Terra"
+          },
+          "sprite": "images/chickens/97.png"
+        }
       ]
     },
     {
       "id": 20,
+      "cost": 100,
       "description": {
         "es": "Cura un aliado (50% de su poder + 25% de su vida máxima)",
         "en": "Heal an ally (50% damage + 25% max life)"
@@ -9619,10 +10281,37 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/137.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 13,
+          "name": {
+            "es": "Easy East",
+            "en": "Easy East"
+          },
+          "sprite": "images/chickens/13.png"
+        },
+        {
+          "id": 35,
+          "name": {
+            "es": "Pais",
+            "en": "Pais"
+          },
+          "sprite": "images/chickens/35.png"
+        },
+        {
+          "id": 53,
+          "name": {
+            "es": "Queso",
+            "en": "Queso"
+          },
+          "sprite": "images/chickens/53.png"
+        }
       ]
     },
     {
       "id": 21,
+      "cost": 100,
       "description": {
         "es": "Lanza un hacha (80% de daño) y se cura a sí mismo (40% de daño)",
         "en": "Throw an axe (80% damage) and heal himself (40% damage)"
@@ -9660,10 +10349,93 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/147.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 4,
+          "name": {
+            "es": "Mali",
+            "en": "Mali"
+          },
+          "sprite": "images/chickens/4.png"
+        },
+        {
+          "id": 29,
+          "name": {
+            "es": "Iguanarto",
+            "en": "Iguanarto"
+          },
+          "sprite": "images/chickens/29.png"
+        },
+        {
+          "id": 39,
+          "name": {
+            "es": "Cacho",
+            "en": "Cacho"
+          },
+          "sprite": "images/chickens/39.png"
+        },
+        {
+          "id": 50,
+          "name": {
+            "es": "Rufus",
+            "en": "Rufus"
+          },
+          "sprite": "images/chickens/50.png"
+        },
+        {
+          "id": 61,
+          "name": {
+            "es": "Shiken",
+            "en": "Shiken"
+          },
+          "sprite": "images/chickens/61.png"
+        },
+        {
+          "id": 69,
+          "name": {
+            "es": "Pinzon",
+            "en": "Pinzon"
+          },
+          "sprite": "images/chickens/69.png"
+        },
+        {
+          "id": 85,
+          "name": {
+            "es": "Vidro",
+            "en": "Vidro"
+          },
+          "sprite": "images/chickens/85.png"
+        },
+        {
+          "id": 109,
+          "name": {
+            "es": "Max",
+            "en": "Max"
+          },
+          "sprite": "images/chickens/109.png"
+        },
+        {
+          "id": 125,
+          "name": {
+            "es": "Rama",
+            "en": "Rama"
+          },
+          "sprite": "images/chickens/125.png"
+        },
+        {
+          "id": 140,
+          "name": {
+            "es": "Skull",
+            "en": "Skull"
+          },
+          "sprite": "images/chickens/140.png"
+        }
       ]
     },
     {
       "id": 22,
+      "cost": 200,
       "description": {
         "es": "Se transforma en Evil Gatarlos",
         "en": "Transform into Evil Gatarlos"
@@ -9677,10 +10449,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/55.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 23,
+      "cost": 150,
       "description": {
         "es": "Congela al objetivo",
         "en": "Freeze the target"
@@ -9718,10 +10492,85 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/149.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 14,
+          "name": {
+            "es": "Snow",
+            "en": "Snow"
+          },
+          "sprite": "images/chickens/14.png"
+        },
+        {
+          "id": 51,
+          "name": {
+            "es": "Bjorn",
+            "en": "Bjorn"
+          },
+          "sprite": "images/chickens/51.png"
+        },
+        {
+          "id": 100,
+          "name": {
+            "es": "Cloudy",
+            "en": "Cloudy"
+          },
+          "sprite": "images/chickens/100.png"
+        },
+        {
+          "id": 101,
+          "name": {
+            "es": "Drago",
+            "en": "Drago"
+          },
+          "sprite": "images/chickens/101.png"
+        },
+        {
+          "id": 103,
+          "name": {
+            "es": "Grey",
+            "en": "Grey"
+          },
+          "sprite": "images/chickens/103.png"
+        },
+        {
+          "id": 104,
+          "name": {
+            "es": "Friozero",
+            "en": "Friozero"
+          },
+          "sprite": "images/chickens/104.png"
+        },
+        {
+          "id": 105,
+          "name": {
+            "es": "Pengui",
+            "en": "Pengui"
+          },
+          "sprite": "images/chickens/105.png"
+        },
+        {
+          "id": 106,
+          "name": {
+            "es": "Snick",
+            "en": "Snick"
+          },
+          "sprite": "images/chickens/106.png"
+        },
+        {
+          "id": 145,
+          "name": {
+            "es": "Evelyn",
+            "en": "Evelyn"
+          },
+          "sprite": "images/chickens/145.png"
+        }
       ]
     },
     {
       "id": 24,
+      "cost": 100,
       "description": {
         "es": "Lanza una caca (envenena y -5% de velocidad)",
         "en": "Throw a poop (poison and -5% speed)"
@@ -9735,10 +10584,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/58.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 25,
+      "cost": 100,
       "description": {
         "es": "Elimina los efectos del equipo",
         "en": "Cleanup team effects"
@@ -9760,18 +10611,79 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/79.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 32,
+          "name": {
+            "es": "Toraishi",
+            "en": "Toraishi"
+          },
+          "sprite": "images/chickens/32.png"
+        },
+        {
+          "id": 78,
+          "name": {
+            "es": "Wicken",
+            "en": "Wicken"
+          },
+          "sprite": "images/chickens/78.png"
+        },
+        {
+          "id": 84,
+          "name": {
+            "es": "Policus",
+            "en": "Policus"
+          },
+          "sprite": "images/chickens/84.png"
+        },
+        {
+          "id": 99,
+          "name": {
+            "es": "Toka",
+            "en": "Toka"
+          },
+          "sprite": "images/chickens/99.png"
+        },
+        {
+          "id": 126,
+          "name": {
+            "es": "Hueva",
+            "en": "Hueva"
+          },
+          "sprite": "images/chickens/126.png"
+        },
+        {
+          "id": 131,
+          "name": {
+            "es": "Cori",
+            "en": "Cori"
+          },
+          "sprite": "images/chickens/131.png"
+        },
+        {
+          "id": 137,
+          "name": {
+            "es": "Elfen",
+            "en": "Elfen"
+          },
+          "sprite": "images/chickens/137.png"
+        }
       ]
     },
     {
       "id": 26,
+      "cost": 100,
       "description": {
         "es": "Se transforma en Gatarlos",
         "en": "Transform into Gatarlos"
       },
-      "chickens": []
+      "chickens": [],
+      "chickens_hidden": []
     },
     {
       "id": 27,
+      "cost": 100,
       "description": {
         "es": "Se cura a sí mismo (20% de vida máxima), más daño (+5%) y reduce la velocidad (-5%)",
         "en": "Heal himself (20% max life), more damage (+5%) and reduce speed (-5%)"
@@ -9785,10 +10697,21 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/68.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 21,
+          "name": {
+            "es": "Jhona",
+            "en": "Jhona"
+          },
+          "sprite": "images/chickens/21.png"
+        }
       ]
     },
     {
       "id": 28,
+      "cost": 100,
       "description": {
         "es": "Obtiene una poción aleatoria",
         "en": "Obtain a random potion"
@@ -9802,18 +10725,39 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/73.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 29,
+      "cost": 100,
       "description": {
         "es": "Silencia al objetivo",
         "en": "Silence the target"
       },
-      "chickens": []
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 82,
+          "name": {
+            "es": "Fingie",
+            "en": "Fingie"
+          },
+          "sprite": "images/chickens/82.png"
+        },
+        {
+          "id": 117,
+          "name": {
+            "es": "Monstruollo",
+            "en": "Monstruollo"
+          },
+          "sprite": "images/chickens/117.png"
+        }
+      ]
     },
     {
       "id": 30,
+      "cost": 100,
       "description": {
         "es": "Infecta al objetivo",
         "en": "Infect the target"
@@ -9867,10 +10811,45 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/130.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 6,
+          "name": {
+            "es": "Zombie",
+            "en": "Zombie"
+          },
+          "sprite": "images/chickens/6.png"
+        },
+        {
+          "id": 62,
+          "name": {
+            "es": "Miedo",
+            "en": "Miedo"
+          },
+          "sprite": "images/chickens/62.png"
+        },
+        {
+          "id": 121,
+          "name": {
+            "es": "Javo",
+            "en": "Javo"
+          },
+          "sprite": "images/chickens/121.png"
+        },
+        {
+          "id": 141,
+          "name": {
+            "es": "Toxic",
+            "en": "Toxic"
+          },
+          "sprite": "images/chickens/141.png"
+        }
       ]
     },
     {
       "id": 31,
+      "cost": 200,
       "description": {
         "es": "Obtiene revivir",
         "en": "Get revive"
@@ -9892,10 +10871,21 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/110.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 34,
+          "name": {
+            "es": "Phantom",
+            "en": "Phantom"
+          },
+          "sprite": "images/chickens/34.png"
+        }
       ]
     },
     {
       "id": 32,
+      "cost": 100,
       "description": {
         "es": "Explota. Todos los pollos reciben daño (25% de su vida máxima)",
         "en": "Explodes. Hurt all chickens (25% max life)"
@@ -9917,10 +10907,29 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/107.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 17,
+          "name": {
+            "es": "Raro",
+            "en": "Raro"
+          },
+          "sprite": "images/chickens/17.png"
+        },
+        {
+          "id": 45,
+          "name": {
+            "es": "Vulcano",
+            "en": "Vulcano"
+          },
+          "sprite": "images/chickens/45.png"
+        }
       ]
     },
     {
       "id": 33,
+      "cost": 100,
       "description": {
         "es": "Lanza un huevo helado (100% de daño y congela)",
         "en": "Throw a frozen egg (100% damage and freeze)"
@@ -9974,26 +10983,32 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/106.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 34,
+      "cost": 100,
       "description": {
         "es": "Revive como Zombie",
         "en": "Revive as Zombie"
       },
-      "chickens": []
+      "chickens": [],
+      "chickens_hidden": []
     },
     {
       "id": 35,
+      "cost": 100,
       "description": {
         "es": "Revive como Mali",
         "en": "Revive as Mali"
       },
-      "chickens": []
+      "chickens": [],
+      "chickens_hidden": []
     },
     {
       "id": 36,
+      "cost": 100,
       "description": {
         "es": "Lanza una estrella (100% de daño y restablece el poder del objetivo)",
         "en": "Throw a star (100% damage and reset target power)"
@@ -10015,10 +11030,45 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/139.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 20,
+          "name": {
+            "es": "Zeo",
+            "en": "Zeo"
+          },
+          "sprite": "images/chickens/20.png"
+        },
+        {
+          "id": 94,
+          "name": {
+            "es": "Estepi",
+            "en": "Estepi"
+          },
+          "sprite": "images/chickens/94.png"
+        },
+        {
+          "id": 102,
+          "name": {
+            "es": "Niwato",
+            "en": "Niwato"
+          },
+          "sprite": "images/chickens/102.png"
+        },
+        {
+          "id": 118,
+          "name": {
+            "es": "Nave",
+            "en": "Nave"
+          },
+          "sprite": "images/chickens/118.png"
+        }
       ]
     },
     {
       "id": 37,
+      "cost": 120,
       "description": {
         "es": "Transforma en Mechalex",
         "en": "Transform into Mechalex"
@@ -10032,10 +11082,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/134.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 38,
+      "cost": 100,
       "description": {
         "es": "Transforma en Eggalex",
         "en": "Transform into Eggalex"
@@ -10049,10 +11101,12 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/135.png"
         }
-      ]
+      ],
+      "chickens_hidden": []
     },
     {
       "id": 39,
+      "cost": 100,
       "description": {
         "es": "Lanza un búmeran (100% daño y agrega dos turnos de efectos al objetivo)",
         "en": "Throws a boomerang (100% damage and adds two turns of effects to the target)"
@@ -10066,10 +11120,21 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/136.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 90,
+          "name": {
+            "es": "Ploom",
+            "en": "Ploom"
+          },
+          "sprite": "images/chickens/90.png"
+        }
       ]
     },
     {
       "id": 40,
+      "cost": 150,
       "description": {
         "es": "Lanza un helado (20% de daño) a cada enemigo y congela",
         "en": "Throws ice cream (20% damage) at all enemies and freezes"
@@ -10083,10 +11148,45 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/145.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 77,
+          "name": {
+            "es": "Menta",
+            "en": "Menta"
+          },
+          "sprite": "images/chickens/77.png"
+        },
+        {
+          "id": 142,
+          "name": {
+            "es": "Hium",
+            "en": "Hium"
+          },
+          "sprite": "images/chickens/142.png"
+        },
+        {
+          "id": 144,
+          "name": {
+            "es": "Gice",
+            "en": "Gice"
+          },
+          "sprite": "images/chickens/144.png"
+        },
+        {
+          "id": 149,
+          "name": {
+            "es": "Chimir",
+            "en": "Chimir"
+          },
+          "sprite": "images/chickens/149.png"
+        }
       ]
     },
     {
       "id": 41,
+      "cost": 100,
       "description": {
         "es": "Cura al equipo (50% del poder)",
         "en": "Heals the team (50% of power)"
@@ -10100,10 +11200,53 @@ window.WIKI_DATA = {
           },
           "sprite": "images/chickens/150.png"
         }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 16,
+          "name": {
+            "es": "Gallo",
+            "en": "Gallo"
+          },
+          "sprite": "images/chickens/16.png"
+        },
+        {
+          "id": 64,
+          "name": {
+            "es": "Nama",
+            "en": "Nama"
+          },
+          "sprite": "images/chickens/64.png"
+        },
+        {
+          "id": 70,
+          "name": {
+            "es": "Galligno",
+            "en": "Galligno"
+          },
+          "sprite": "images/chickens/70.png"
+        },
+        {
+          "id": 71,
+          "name": {
+            "es": "Nube",
+            "en": "Nube"
+          },
+          "sprite": "images/chickens/71.png"
+        },
+        {
+          "id": 112,
+          "name": {
+            "es": "Law",
+            "en": "Law"
+          },
+          "sprite": "images/chickens/112.png"
+        }
       ]
     },
     {
       "id": 42,
+      "cost": 100,
       "description": {
         "es": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+13%)",
         "en": "Grants 1 evasion to the team and increases team damage (+13%)"
@@ -10116,6 +11259,387 @@ window.WIKI_DATA = {
             "en": "Evil Gatarlos"
           },
           "sprite": "images/chickens/56.png"
+        }
+      ],
+      "chickens_hidden": [
+        {
+          "id": 12,
+          "name": {
+            "es": "Polliro",
+            "en": "Polliro"
+          },
+          "sprite": "images/chickens/12.png"
+        },
+        {
+          "id": 31,
+          "name": {
+            "es": "Poggie",
+            "en": "Poggie"
+          },
+          "sprite": "images/chickens/31.png"
+        },
+        {
+          "id": 58,
+          "name": {
+            "es": "Duncan",
+            "en": "Duncan"
+          },
+          "sprite": "images/chickens/58.png"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "cost": 100,
+      "description": {
+        "es": "Otorga +5% daño a un aliado y limpia sus efectos",
+        "en": "Grant 5% damage to an ally and clean their effects"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 67,
+          "name": {
+            "es": "Pollulu",
+            "en": "Pollulu"
+          },
+          "sprite": "images/chickens/67.png"
+        },
+        {
+          "id": 83,
+          "name": {
+            "es": "Corny",
+            "en": "Corny"
+          },
+          "sprite": "images/chickens/83.png"
+        },
+        {
+          "id": 132,
+          "name": {
+            "es": "Pipasol",
+            "en": "Pipasol"
+          },
+          "sprite": "images/chickens/132.png"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "cost": 100,
+      "description": {
+        "es": "Ataque con 100% de daño; si el objetivo tiene efectos, los limpia y se cura (20% daño)",
+        "en": "Attack for 100% damage; if target has effects, cleans them and heals (20% damage)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 36,
+          "name": {
+            "es": "Valu",
+            "en": "Valu"
+          },
+          "sprite": "images/chickens/36.png"
+        },
+        {
+          "id": 79,
+          "name": {
+            "es": "Gota",
+            "en": "Gota"
+          },
+          "sprite": "images/chickens/79.png"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "cost": 100,
+      "description": {
+        "es": "Obtiene focus, +3% armadura y se cura (10% vida máxima)",
+        "en": "Gain focus, +3% armor, and heal himself (10% max life)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 68,
+          "name": {
+            "es": "Cocore",
+            "en": "Cocore"
+          },
+          "sprite": "images/chickens/68.png"
+        },
+        {
+          "id": 89,
+          "name": {
+            "es": "Cactus",
+            "en": "Cactus"
+          },
+          "sprite": "images/chickens/89.png"
+        },
+        {
+          "id": 98,
+          "name": {
+            "es": "Crystal",
+            "en": "Crystal"
+          },
+          "sprite": "images/chickens/98.png"
+        },
+        {
+          "id": 115,
+          "name": {
+            "es": "Cow",
+            "en": "Cow"
+          },
+          "sprite": "images/chickens/115.png"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "cost": 100,
+      "description": {
+        "es": "Aumenta la velocidad (+7%) y el daño (+7%)",
+        "en": "Increase speed (+7%) and damage (+7%)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 5,
+          "name": {
+            "es": "Cay",
+            "en": "Cay"
+          },
+          "sprite": "images/chickens/5.png"
+        },
+        {
+          "id": 26,
+          "name": {
+            "es": "Jeff",
+            "en": "Jeff"
+          },
+          "sprite": "images/chickens/26.png"
+        },
+        {
+          "id": 49,
+          "name": {
+            "es": "Cerol",
+            "en": "Cerol"
+          },
+          "sprite": "images/chickens/49.png"
+        },
+        {
+          "id": 110,
+          "name": {
+            "es": "Springy",
+            "en": "Springy"
+          },
+          "sprite": "images/chickens/110.png"
+        },
+        {
+          "id": 127,
+          "name": {
+            "es": "Jamer",
+            "en": "Jamer"
+          },
+          "sprite": "images/chickens/127.png"
+        },
+        {
+          "id": 143,
+          "name": {
+            "es": "Blade",
+            "en": "Blade"
+          },
+          "sprite": "images/chickens/143.png"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "cost": 100,
+      "description": {
+        "es": "Lanza un huevo ígneo (100% daño, quemadura y -3% armadura)",
+        "en": "Throw a fire egg (100% damage, burn, -3% armor)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 41,
+          "name": {
+            "es": "Magni",
+            "en": "Magni"
+          },
+          "sprite": "images/chickens/41.png"
+        },
+        {
+          "id": 63,
+          "name": {
+            "es": "Volcken",
+            "en": "Volcken"
+          },
+          "sprite": "images/chickens/63.png"
+        },
+        {
+          "id": 147,
+          "name": {
+            "es": "Intiken",
+            "en": "Intiken"
+          },
+          "sprite": "images/chickens/147.png"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "cost": 120,
+      "description": {
+        "es": "Roba 15% de vida máxima del objetivo",
+        "en": "Steal 15% max life from target"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 23,
+          "name": {
+            "es": "Porky",
+            "en": "Porky"
+          },
+          "sprite": "images/chickens/23.png"
+        },
+        {
+          "id": 33,
+          "name": {
+            "es": "Nevermore",
+            "en": "Nevermore"
+          },
+          "sprite": "images/chickens/33.png"
+        },
+        {
+          "id": 86,
+          "name": {
+            "es": "Yuntan",
+            "en": "Yuntan"
+          },
+          "sprite": "images/chickens/86.png"
+        },
+        {
+          "id": 138,
+          "name": {
+            "es": "Felicie",
+            "en": "Felicie"
+          },
+          "sprite": "images/chickens/138.png"
+        },
+        {
+          "id": 146,
+          "name": {
+            "es": "Sinestrer",
+            "en": "Sinestrer"
+          },
+          "sprite": "images/chickens/146.png"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "cost": 110,
+      "description": {
+        "es": "Lanza un huevo eléctrico (100% daño, paraliza y +15 poder a aliados)",
+        "en": "Throw an electric egg (100% damage, paralyze, +15 power to allies)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 18,
+          "name": {
+            "es": "Polliwatt",
+            "en": "Polliwatt"
+          },
+          "sprite": "images/chickens/18.png"
+        },
+        {
+          "id": 59,
+          "name": {
+            "es": "Siul",
+            "en": "Siul"
+          },
+          "sprite": "images/chickens/59.png"
+        },
+        {
+          "id": 116,
+          "name": {
+            "es": "Electron",
+            "en": "Electron"
+          },
+          "sprite": "images/chickens/116.png"
+        },
+        {
+          "id": 128,
+          "name": {
+            "es": "Jeraz",
+            "en": "Jeraz"
+          },
+          "sprite": "images/chickens/128.png"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "cost": 100,
+      "description": {
+        "es": "Absorbe los efectos del objetivo, limpiándolo y ganando +4% en cada stat",
+        "en": "Absorb target effects to clean them and gain +4% to all stats"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 73,
+          "name": {
+            "es": "Ventora",
+            "en": "Ventora"
+          },
+          "sprite": "images/chickens/73.png"
+        },
+        {
+          "id": 136,
+          "name": {
+            "es": "Mayel",
+            "en": "Mayel"
+          },
+          "sprite": "images/chickens/136.png"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "cost": 100,
+      "description": {
+        "es": "Reduce el límite de poder máximo del equipo en 10 (mínimo 60)",
+        "en": "Reduce team power limit by 10 (min 60)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 15,
+          "name": {
+            "es": "Eustavio",
+            "en": "Eustavio"
+          },
+          "sprite": "images/chickens/15.png"
+        },
+        {
+          "id": 133,
+          "name": {
+            "es": "Astro",
+            "en": "Astro"
+          },
+          "sprite": "images/chickens/133.png"
+        },
+        {
+          "id": 139,
+          "name": {
+            "es": "Star",
+            "en": "Star"
+          },
+          "sprite": "images/chickens/139.png"
         }
       ]
     }

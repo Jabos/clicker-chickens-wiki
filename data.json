@@ -40,7 +40,7 @@
       "default_item_id": 3,
       "power_max": 140,
       "power_id": 0,
-      "hidden_power_id": 3,
+      "hidden_power_id": 4,
       "passive_id": 1,
       "action_type": 0,
       "stats": {
@@ -367,7 +367,7 @@
       "default_item_id": 9,
       "power_max": 120,
       "power_id": 8,
-      "hidden_power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 11,
       "action_type": 0,
       "stats": {
@@ -432,7 +432,7 @@
       "default_item_id": 27,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 20,
+      "hidden_power_id": 4,
       "passive_id": 13,
       "action_type": 0,
       "stats": {
@@ -656,7 +656,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 36,
+      "hidden_power_id": 46,
       "passive_id": 20,
       "action_type": 0,
       "stats": {
@@ -784,7 +784,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 9,
+      "hidden_power_id": 46,
       "passive_id": 24,
       "action_type": 0,
       "stats": {
@@ -816,7 +816,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 14,
-      "hidden_power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 25,
       "action_type": 0,
       "stats": {
@@ -912,7 +912,7 @@
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 16,
-      "hidden_power_id": 12,
+      "hidden_power_id": 36,
       "passive_id": 28,
       "action_type": 0,
       "stats": {
@@ -944,7 +944,7 @@
       "default_item_id": 3,
       "power_max": 80,
       "power_id": 0,
-      "hidden_power_id": 21,
+      "hidden_power_id": 27,
       "passive_id": 29,
       "action_type": 0,
       "stats": {
@@ -1225,8 +1225,8 @@
     {
       "id": 38,
       "name": {
-        "es": "Grassy",
-        "en": "Grassy"
+        "es": "Pastinni",
+        "en": "Pastinni"
       },
       "sprite": "images/chickens/38.png",
       "default_item_id": 1,
@@ -1296,7 +1296,7 @@
       "default_item_id": 10,
       "power_max": 100,
       "power_id": 18,
-      "hidden_power_id": 8,
+      "hidden_power_id": 1,
       "passive_id": 40,
       "action_type": 0,
       "stats": {
@@ -1488,7 +1488,7 @@
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 11,
-      "hidden_power_id": 12,
+      "hidden_power_id": 8,
       "passive_id": 46,
       "action_type": 0,
       "stats": {
@@ -1549,7 +1549,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 20,
-      "hidden_power_id": 3,
+      "hidden_power_id": 31,
       "passive_id": 48,
       "action_type": 0,
       "stats": {
@@ -1639,7 +1639,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 21,
-      "hidden_power_id": 23,
+      "hidden_power_id": 31,
       "passive_id": 51,
       "action_type": 0,
       "stats": {
@@ -1703,7 +1703,7 @@
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 20,
+      "hidden_power_id": 13,
       "passive_id": 53,
       "action_type": 0,
       "stats": {
@@ -1935,7 +1935,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 2,
-      "hidden_power_id": 11,
+      "hidden_power_id": 15,
       "passive_id": 60,
       "action_type": 0,
       "stats": {
@@ -1967,7 +1967,7 @@
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 21,
+      "hidden_power_id": 3,
       "passive_id": 61,
       "action_type": 0,
       "stats": {
@@ -2063,7 +2063,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 41,
+      "hidden_power_id": 31,
       "passive_id": 64,
       "action_type": 0,
       "stats": {
@@ -2095,7 +2095,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 18,
-      "hidden_power_id": 11,
+      "hidden_power_id": 32,
       "passive_id": 65,
       "action_type": 0,
       "stats": {
@@ -2223,7 +2223,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 21,
+      "hidden_power_id": 47,
       "passive_id": 69,
       "action_type": 0,
       "stats": {
@@ -2255,7 +2255,7 @@
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 41,
+      "hidden_power_id": 47,
       "passive_id": 70,
       "action_type": 0,
       "stats": {
@@ -2319,7 +2319,7 @@
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 3,
+      "hidden_power_id": 42,
       "passive_id": 72,
       "action_type": 0,
       "stats": {
@@ -2383,7 +2383,7 @@
       "default_item_id": 4,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 11,
+      "hidden_power_id": 41,
       "passive_id": 74,
       "action_type": 0,
       "stats": {
@@ -2415,7 +2415,7 @@
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 2,
-      "hidden_power_id": 11,
+      "hidden_power_id": 28,
       "passive_id": 75,
       "action_type": 0,
       "stats": {
@@ -2447,7 +2447,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 2,
-      "hidden_power_id": 11,
+      "hidden_power_id": 4,
       "passive_id": 76,
       "action_type": 0,
       "stats": {
@@ -2575,7 +2575,7 @@
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 13,
-      "hidden_power_id": 12,
+      "hidden_power_id": 30,
       "passive_id": 80,
       "action_type": 0,
       "stats": {
@@ -2735,7 +2735,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 21,
+      "hidden_power_id": 4,
       "passive_id": 85,
       "action_type": 0,
       "stats": {
@@ -2799,7 +2799,7 @@
       "default_item_id": 10,
       "power_max": 100,
       "power_id": 18,
-      "hidden_power_id": 11,
+      "hidden_power_id": 32,
       "passive_id": 87,
       "action_type": 0,
       "stats": {
@@ -2831,7 +2831,7 @@
       "default_item_id": 17,
       "power_max": 100,
       "power_id": 30,
-      "hidden_power_id": 17,
+      "hidden_power_id": 50,
       "passive_id": 88,
       "action_type": 0,
       "stats": {
@@ -2863,7 +2863,7 @@
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 45,
+      "hidden_power_id": 19,
       "passive_id": 89,
       "action_type": 0,
       "stats": {
@@ -2927,7 +2927,7 @@
       "default_item_id": 66,
       "power_max": 100,
       "power_id": 30,
-      "hidden_power_id": 12,
+      "hidden_power_id": 4,
       "passive_id": 91,
       "action_type": 0,
       "stats": {
@@ -2959,7 +2959,7 @@
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 9,
+      "hidden_power_id": 1,
       "passive_id": 92,
       "action_type": 0,
       "stats": {
@@ -2991,7 +2991,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 30,
-      "hidden_power_id": 17,
+      "hidden_power_id": 0,
       "passive_id": 93,
       "action_type": 0,
       "stats": {
@@ -3023,7 +3023,7 @@
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 36,
+      "hidden_power_id": 50,
       "passive_id": 94,
       "action_type": 0,
       "stats": {
@@ -3055,7 +3055,7 @@
       "default_item_id": 9,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 12,
+      "hidden_power_id": 19,
       "passive_id": 95,
       "action_type": 0,
       "stats": {
@@ -3087,7 +3087,7 @@
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 17,
-      "hidden_power_id": 12,
+      "hidden_power_id": 4,
       "passive_id": 96,
       "action_type": 0,
       "stats": {
@@ -3242,7 +3242,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 33,
-      "hidden_power_id": 23,
+      "hidden_power_id": 31,
       "passive_id": 101,
       "action_type": 0,
       "stats": {
@@ -3274,7 +3274,7 @@
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 36,
+      "hidden_power_id": 4,
       "passive_id": 102,
       "action_type": 0,
       "stats": {
@@ -3306,7 +3306,7 @@
       "default_item_id": 19,
       "power_max": 100,
       "power_id": 33,
-      "hidden_power_id": 23,
+      "hidden_power_id": 4,
       "passive_id": 103,
       "action_type": 0,
       "stats": {
@@ -3402,7 +3402,7 @@
       "default_item_id": 34,
       "power_max": 100,
       "power_id": 33,
-      "hidden_power_id": 23,
+      "hidden_power_id": 40,
       "passive_id": 106,
       "action_type": 0,
       "stats": {
@@ -3434,7 +3434,7 @@
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 32,
-      "hidden_power_id": 5,
+      "hidden_power_id": 0,
       "passive_id": 107,
       "action_type": 0,
       "stats": {
@@ -3466,7 +3466,7 @@
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 9,
+      "hidden_power_id": 21,
       "passive_id": 108,
       "action_type": 0,
       "stats": {
@@ -3498,7 +3498,7 @@
       "default_item_id": 43,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 21,
+      "hidden_power_id": 48,
       "passive_id": 109,
       "action_type": 0,
       "stats": {
@@ -3530,7 +3530,7 @@
       "default_item_id": 38,
       "power_max": 100,
       "power_id": 31,
-      "hidden_power_id": 46,
+      "hidden_power_id": 4,
       "passive_id": 110,
       "action_type": 0,
       "stats": {
@@ -3594,7 +3594,7 @@
       "default_item_id": 21,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 41,
+      "hidden_power_id": 31,
       "passive_id": 112,
       "action_type": 0,
       "stats": {
@@ -3754,7 +3754,7 @@
       "default_item_id": 29,
       "power_max": 100,
       "power_id": 13,
-      "hidden_power_id": 29,
+      "hidden_power_id": 31,
       "passive_id": 117,
       "action_type": 0,
       "stats": {
@@ -3786,7 +3786,7 @@
       "default_item_id": 35,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 36,
+      "hidden_power_id": 46,
       "passive_id": 118,
       "action_type": 0,
       "stats": {
@@ -3818,7 +3818,7 @@
       "default_item_id": 5,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 12,
+      "hidden_power_id": 28,
       "passive_id": 119,
       "action_type": 0,
       "stats": {
@@ -3882,7 +3882,7 @@
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 12,
-      "hidden_power_id": 30,
+      "hidden_power_id": 19,
       "passive_id": 121,
       "action_type": 0,
       "stats": {
@@ -3914,7 +3914,7 @@
       "default_item_id": 43,
       "power_max": 100,
       "power_id": 8,
-      "hidden_power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 122,
       "action_type": 0,
       "stats": {
@@ -3946,7 +3946,7 @@
       "default_item_id": 6,
       "power_max": 100,
       "power_id": 8,
-      "hidden_power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 123,
       "action_type": 0,
       "stats": {
@@ -3978,7 +3978,7 @@
       "default_item_id": 37,
       "power_max": 100,
       "power_id": 8,
-      "hidden_power_id": 18,
+      "hidden_power_id": 11,
       "passive_id": 124,
       "action_type": 0,
       "stats": {
@@ -4010,7 +4010,7 @@
       "default_item_id": 55,
       "power_max": 90,
       "power_id": 0,
-      "hidden_power_id": 21,
+      "hidden_power_id": 4,
       "passive_id": 125,
       "action_type": 0,
       "stats": {
@@ -4125,7 +4125,7 @@
       "default_item_id": 45,
       "power_max": 100,
       "power_id": 8,
-      "hidden_power_id": 18,
+      "hidden_power_id": 49,
       "passive_id": 129,
       "action_type": 0,
       "stats": {
@@ -4222,7 +4222,7 @@
       "default_item_id": 1,
       "power_max": 100,
       "power_id": 14,
-      "hidden_power_id": 43,
+      "hidden_power_id": 51,
       "passive_id": 132,
       "action_type": 0,
       "stats": {
@@ -4353,7 +4353,7 @@
       "default_item_id": 67,
       "power_max": 100,
       "power_id": 39,
-      "hidden_power_id": 50,
+      "hidden_power_id": 0,
       "passive_id": 136,
       "action_type": 0,
       "stats": {
@@ -4478,7 +4478,7 @@
       "default_item_id": 61,
       "power_max": 100,
       "power_id": 4,
-      "hidden_power_id": 21,
+      "hidden_power_id": 31,
       "passive_id": 140,
       "action_type": 0,
       "stats": {
@@ -4559,7 +4559,7 @@
       "default_item_id": 68,
       "power_max": 100,
       "power_id": 18,
-      "hidden_power_id": 46,
+      "hidden_power_id": 47,
       "passive_id": 143,
       "action_type": 0,
       "stats": {
@@ -6766,8 +6766,8 @@
         {
           "id": 38,
           "name": {
-            "es": "Grassy",
-            "en": "Grassy"
+            "es": "Pastinni",
+            "en": "Pastinni"
           },
           "sprite": "images/chickens/38.png"
         }
@@ -8960,7 +8960,32 @@
           "sprite": "images/chickens/148.png"
         }
       ],
-      "chickens_hidden": []
+      "chickens_hidden": [
+        {
+          "id": 93,
+          "name": {
+            "es": "Drillen",
+            "en": "Drillen"
+          },
+          "sprite": "images/chickens/93.png"
+        },
+        {
+          "id": 107,
+          "name": {
+            "es": "Derp",
+            "en": "Derp"
+          },
+          "sprite": "images/chickens/107.png"
+        },
+        {
+          "id": 136,
+          "name": {
+            "es": "Mayel",
+            "en": "Mayel"
+          },
+          "sprite": "images/chickens/136.png"
+        }
+      ]
     },
     {
       "id": 1,
@@ -9005,8 +9030,8 @@
         {
           "id": 38,
           "name": {
-            "es": "Grassy",
-            "en": "Grassy"
+            "es": "Pastinni",
+            "en": "Pastinni"
           },
           "sprite": "images/chickens/38.png"
         },
@@ -9115,7 +9140,24 @@
           "sprite": "images/chickens/146.png"
         }
       ],
-      "chickens_hidden": []
+      "chickens_hidden": [
+        {
+          "id": 40,
+          "name": {
+            "es": "Candle",
+            "en": "Candle"
+          },
+          "sprite": "images/chickens/40.png"
+        },
+        {
+          "id": 92,
+          "name": {
+            "es": "Galland",
+            "en": "Galland"
+          },
+          "sprite": "images/chickens/92.png"
+        }
+      ]
     },
     {
       "id": 2,
@@ -9227,28 +9269,12 @@
       ],
       "chickens_hidden": [
         {
-          "id": 1,
+          "id": 61,
           "name": {
-            "es": "Chica",
-            "en": "Chica"
+            "es": "Shiken",
+            "en": "Shiken"
           },
-          "sprite": "images/chickens/1.png"
-        },
-        {
-          "id": 48,
-          "name": {
-            "es": "Leci",
-            "en": "Leci"
-          },
-          "sprite": "images/chickens/48.png"
-        },
-        {
-          "id": 72,
-          "name": {
-            "es": "Gallimbus",
-            "en": "Gallimbus"
-          },
-          "sprite": "images/chickens/72.png"
+          "sprite": "images/chickens/61.png"
         }
       ]
     },
@@ -9295,6 +9321,22 @@
           "sprite": "images/chickens/0.png"
         },
         {
+          "id": 1,
+          "name": {
+            "es": "Chica",
+            "en": "Chica"
+          },
+          "sprite": "images/chickens/1.png"
+        },
+        {
+          "id": 13,
+          "name": {
+            "es": "Easy East",
+            "en": "Easy East"
+          },
+          "sprite": "images/chickens/13.png"
+        },
+        {
           "id": 22,
           "name": {
             "es": "Mega",
@@ -9311,12 +9353,76 @@
           "sprite": "images/chickens/52.png"
         },
         {
+          "id": 76,
+          "name": {
+            "es": "Luso",
+            "en": "Luso"
+          },
+          "sprite": "images/chickens/76.png"
+        },
+        {
           "id": 81,
           "name": {
             "es": "Egi",
             "en": "Egi"
           },
           "sprite": "images/chickens/81.png"
+        },
+        {
+          "id": 85,
+          "name": {
+            "es": "Vidro",
+            "en": "Vidro"
+          },
+          "sprite": "images/chickens/85.png"
+        },
+        {
+          "id": 91,
+          "name": {
+            "es": "Darkus",
+            "en": "Darkus"
+          },
+          "sprite": "images/chickens/91.png"
+        },
+        {
+          "id": 96,
+          "name": {
+            "es": "Garry",
+            "en": "Garry"
+          },
+          "sprite": "images/chickens/96.png"
+        },
+        {
+          "id": 102,
+          "name": {
+            "es": "Niwato",
+            "en": "Niwato"
+          },
+          "sprite": "images/chickens/102.png"
+        },
+        {
+          "id": 103,
+          "name": {
+            "es": "Grey",
+            "en": "Grey"
+          },
+          "sprite": "images/chickens/103.png"
+        },
+        {
+          "id": 110,
+          "name": {
+            "es": "Springy",
+            "en": "Springy"
+          },
+          "sprite": "images/chickens/110.png"
+        },
+        {
+          "id": 125,
+          "name": {
+            "es": "Rama",
+            "en": "Rama"
+          },
+          "sprite": "images/chickens/125.png"
         },
         {
           "id": 148,
@@ -9345,16 +9451,7 @@
           "sprite": "images/chickens/8.png"
         }
       ],
-      "chickens_hidden": [
-        {
-          "id": 107,
-          "name": {
-            "es": "Derp",
-            "en": "Derp"
-          },
-          "sprite": "images/chickens/107.png"
-        }
-      ]
+      "chickens_hidden": []
     },
     {
       "id": 6,
@@ -9453,20 +9550,20 @@
       ],
       "chickens_hidden": [
         {
-          "id": 40,
-          "name": {
-            "es": "Candle",
-            "en": "Candle"
-          },
-          "sprite": "images/chickens/40.png"
-        },
-        {
           "id": 43,
           "name": {
             "es": "Ignarto",
             "en": "Ignarto"
           },
           "sprite": "images/chickens/43.png"
+        },
+        {
+          "id": 46,
+          "name": {
+            "es": "Robotop",
+            "en": "Robotop"
+          },
+          "sprite": "images/chickens/46.png"
         }
       ]
     },
@@ -9487,32 +9584,7 @@
           "sprite": "images/chickens/15.png"
         }
       ],
-      "chickens_hidden": [
-        {
-          "id": 24,
-          "name": {
-            "es": "Lapiz",
-            "en": "Lapiz"
-          },
-          "sprite": "images/chickens/24.png"
-        },
-        {
-          "id": 92,
-          "name": {
-            "es": "Galland",
-            "en": "Galland"
-          },
-          "sprite": "images/chickens/92.png"
-        },
-        {
-          "id": 108,
-          "name": {
-            "es": "Plumillas",
-            "en": "Plumillas"
-          },
-          "sprite": "images/chickens/108.png"
-        }
-      ]
+      "chickens_hidden": []
     },
     {
       "id": 10,
@@ -9633,52 +9705,44 @@
           "sprite": "images/chickens/2.png"
         },
         {
-          "id": 60,
+          "id": 11,
           "name": {
-            "es": "Boomy",
-            "en": "Boomy"
+            "es": "Vio",
+            "en": "Vio"
           },
-          "sprite": "images/chickens/60.png"
+          "sprite": "images/chickens/11.png"
         },
         {
-          "id": 65,
+          "id": 25,
           "name": {
-            "es": "Vapollo",
-            "en": "Vapollo"
+            "es": "Manic",
+            "en": "Manic"
           },
-          "sprite": "images/chickens/65.png"
+          "sprite": "images/chickens/25.png"
         },
         {
-          "id": 74,
+          "id": 122,
           "name": {
-            "es": "Aery",
-            "en": "Aery"
+            "es": "Meta",
+            "en": "Meta"
           },
-          "sprite": "images/chickens/74.png"
+          "sprite": "images/chickens/122.png"
         },
         {
-          "id": 75,
+          "id": 123,
           "name": {
-            "es": "Titiro",
-            "en": "Titiro"
+            "es": "MetaSoldier",
+            "en": "MetaSoldier"
           },
-          "sprite": "images/chickens/75.png"
+          "sprite": "images/chickens/123.png"
         },
         {
-          "id": 76,
+          "id": 124,
           "name": {
-            "es": "Luso",
-            "en": "Luso"
+            "es": "Inger",
+            "en": "Inger"
           },
-          "sprite": "images/chickens/76.png"
-        },
-        {
-          "id": 87,
-          "name": {
-            "es": "Plass",
-            "en": "Plass"
-          },
-          "sprite": "images/chickens/87.png"
+          "sprite": "images/chickens/124.png"
         }
       ]
     },
@@ -9717,68 +9781,12 @@
       ],
       "chickens_hidden": [
         {
-          "id": 28,
-          "name": {
-            "es": "Alien",
-            "en": "Alien"
-          },
-          "sprite": "images/chickens/28.png"
-        },
-        {
-          "id": 46,
-          "name": {
-            "es": "Robotop",
-            "en": "Robotop"
-          },
-          "sprite": "images/chickens/46.png"
-        },
-        {
-          "id": 80,
-          "name": {
-            "es": "Mucken",
-            "en": "Mucken"
-          },
-          "sprite": "images/chickens/80.png"
-        },
-        {
-          "id": 91,
-          "name": {
-            "es": "Darkus",
-            "en": "Darkus"
-          },
-          "sprite": "images/chickens/91.png"
-        },
-        {
-          "id": 95,
-          "name": {
-            "es": "Rocko",
-            "en": "Rocko"
-          },
-          "sprite": "images/chickens/95.png"
-        },
-        {
-          "id": 96,
-          "name": {
-            "es": "Garry",
-            "en": "Garry"
-          },
-          "sprite": "images/chickens/96.png"
-        },
-        {
           "id": 111,
           "name": {
             "es": "Lock",
             "en": "Lock"
           },
           "sprite": "images/chickens/111.png"
-        },
-        {
-          "id": 119,
-          "name": {
-            "es": "Rhafa",
-            "en": "Rhafa"
-          },
-          "sprite": "images/chickens/119.png"
         }
       ]
     },
@@ -9847,6 +9855,14 @@
             "en": "Mosca"
           },
           "sprite": "images/chickens/30.png"
+        },
+        {
+          "id": 53,
+          "name": {
+            "es": "Queso",
+            "en": "Queso"
+          },
+          "sprite": "images/chickens/53.png"
         },
         {
           "id": 120,
@@ -9926,6 +9942,14 @@
             "en": "Prisma"
           },
           "sprite": "images/chickens/57.png"
+        },
+        {
+          "id": 60,
+          "name": {
+            "es": "Boomy",
+            "en": "Boomy"
+          },
+          "sprite": "images/chickens/60.png"
         }
       ]
     },
@@ -10008,22 +10032,6 @@
           "sprite": "images/chickens/54.png"
         },
         {
-          "id": 88,
-          "name": {
-            "es": "Trinagle",
-            "en": "Trinagle"
-          },
-          "sprite": "images/chickens/88.png"
-        },
-        {
-          "id": 93,
-          "name": {
-            "es": "Drillen",
-            "en": "Drillen"
-          },
-          "sprite": "images/chickens/93.png"
-        },
-        {
           "id": 113,
           "name": {
             "es": "Chick",
@@ -10092,22 +10100,6 @@
       ],
       "chickens_hidden": [
         {
-          "id": 11,
-          "name": {
-            "es": "Vio",
-            "en": "Vio"
-          },
-          "sprite": "images/chickens/11.png"
-        },
-        {
-          "id": 25,
-          "name": {
-            "es": "Manic",
-            "en": "Manic"
-          },
-          "sprite": "images/chickens/25.png"
-        },
-        {
           "id": 42,
           "name": {
             "es": "Tiza",
@@ -10122,38 +10114,6 @@
             "en": "Lava"
           },
           "sprite": "images/chickens/44.png"
-        },
-        {
-          "id": 122,
-          "name": {
-            "es": "Meta",
-            "en": "Meta"
-          },
-          "sprite": "images/chickens/122.png"
-        },
-        {
-          "id": 123,
-          "name": {
-            "es": "MetaSoldier",
-            "en": "MetaSoldier"
-          },
-          "sprite": "images/chickens/123.png"
-        },
-        {
-          "id": 124,
-          "name": {
-            "es": "Inger",
-            "en": "Inger"
-          },
-          "sprite": "images/chickens/124.png"
-        },
-        {
-          "id": 129,
-          "name": {
-            "es": "Cyborg",
-            "en": "Cyborg"
-          },
-          "sprite": "images/chickens/129.png"
         }
       ]
     },
@@ -10202,10 +10162,26 @@
         {
           "id": 38,
           "name": {
-            "es": "Grassy",
-            "en": "Grassy"
+            "es": "Pastinni",
+            "en": "Pastinni"
           },
           "sprite": "images/chickens/38.png"
+        },
+        {
+          "id": 89,
+          "name": {
+            "es": "Cactus",
+            "en": "Cactus"
+          },
+          "sprite": "images/chickens/89.png"
+        },
+        {
+          "id": 95,
+          "name": {
+            "es": "Rocko",
+            "en": "Rocko"
+          },
+          "sprite": "images/chickens/95.png"
         },
         {
           "id": 97,
@@ -10214,6 +10190,14 @@
             "en": "Terra"
           },
           "sprite": "images/chickens/97.png"
+        },
+        {
+          "id": 121,
+          "name": {
+            "es": "Javo",
+            "en": "Javo"
+          },
+          "sprite": "images/chickens/121.png"
         }
       ]
     },
@@ -10284,28 +10268,12 @@
       ],
       "chickens_hidden": [
         {
-          "id": 13,
-          "name": {
-            "es": "Easy East",
-            "en": "Easy East"
-          },
-          "sprite": "images/chickens/13.png"
-        },
-        {
           "id": 35,
           "name": {
             "es": "Pais",
             "en": "Pais"
           },
           "sprite": "images/chickens/35.png"
-        },
-        {
-          "id": 53,
-          "name": {
-            "es": "Queso",
-            "en": "Queso"
-          },
-          "sprite": "images/chickens/53.png"
         }
       ]
     },
@@ -10360,14 +10328,6 @@
           "sprite": "images/chickens/4.png"
         },
         {
-          "id": 29,
-          "name": {
-            "es": "Iguanarto",
-            "en": "Iguanarto"
-          },
-          "sprite": "images/chickens/29.png"
-        },
-        {
           "id": 39,
           "name": {
             "es": "Cacho",
@@ -10384,52 +10344,12 @@
           "sprite": "images/chickens/50.png"
         },
         {
-          "id": 61,
+          "id": 108,
           "name": {
-            "es": "Shiken",
-            "en": "Shiken"
+            "es": "Plumillas",
+            "en": "Plumillas"
           },
-          "sprite": "images/chickens/61.png"
-        },
-        {
-          "id": 69,
-          "name": {
-            "es": "Pinzon",
-            "en": "Pinzon"
-          },
-          "sprite": "images/chickens/69.png"
-        },
-        {
-          "id": 85,
-          "name": {
-            "es": "Vidro",
-            "en": "Vidro"
-          },
-          "sprite": "images/chickens/85.png"
-        },
-        {
-          "id": 109,
-          "name": {
-            "es": "Max",
-            "en": "Max"
-          },
-          "sprite": "images/chickens/109.png"
-        },
-        {
-          "id": 125,
-          "name": {
-            "es": "Rama",
-            "en": "Rama"
-          },
-          "sprite": "images/chickens/125.png"
-        },
-        {
-          "id": 140,
-          "name": {
-            "es": "Skull",
-            "en": "Skull"
-          },
-          "sprite": "images/chickens/140.png"
+          "sprite": "images/chickens/108.png"
         }
       ]
     },
@@ -10503,36 +10423,12 @@
           "sprite": "images/chickens/14.png"
         },
         {
-          "id": 51,
-          "name": {
-            "es": "Bjorn",
-            "en": "Bjorn"
-          },
-          "sprite": "images/chickens/51.png"
-        },
-        {
           "id": 100,
           "name": {
             "es": "Cloudy",
             "en": "Cloudy"
           },
           "sprite": "images/chickens/100.png"
-        },
-        {
-          "id": 101,
-          "name": {
-            "es": "Drago",
-            "en": "Drago"
-          },
-          "sprite": "images/chickens/101.png"
-        },
-        {
-          "id": 103,
-          "name": {
-            "es": "Grey",
-            "en": "Grey"
-          },
-          "sprite": "images/chickens/103.png"
         },
         {
           "id": 104,
@@ -10549,14 +10445,6 @@
             "en": "Pengui"
           },
           "sprite": "images/chickens/105.png"
-        },
-        {
-          "id": 106,
-          "name": {
-            "es": "Snick",
-            "en": "Snick"
-          },
-          "sprite": "images/chickens/106.png"
         },
         {
           "id": 145,
@@ -10706,6 +10594,14 @@
             "en": "Jhona"
           },
           "sprite": "images/chickens/21.png"
+        },
+        {
+          "id": 29,
+          "name": {
+            "es": "Iguanarto",
+            "en": "Iguanarto"
+          },
+          "sprite": "images/chickens/29.png"
         }
       ]
     },
@@ -10726,7 +10622,24 @@
           "sprite": "images/chickens/73.png"
         }
       ],
-      "chickens_hidden": []
+      "chickens_hidden": [
+        {
+          "id": 75,
+          "name": {
+            "es": "Titiro",
+            "en": "Titiro"
+          },
+          "sprite": "images/chickens/75.png"
+        },
+        {
+          "id": 119,
+          "name": {
+            "es": "Rhafa",
+            "en": "Rhafa"
+          },
+          "sprite": "images/chickens/119.png"
+        }
+      ]
     },
     {
       "id": 29,
@@ -10744,14 +10657,6 @@
             "en": "Fingie"
           },
           "sprite": "images/chickens/82.png"
-        },
-        {
-          "id": 117,
-          "name": {
-            "es": "Monstruollo",
-            "en": "Monstruollo"
-          },
-          "sprite": "images/chickens/117.png"
         }
       ]
     },
@@ -10830,12 +10735,12 @@
           "sprite": "images/chickens/62.png"
         },
         {
-          "id": 121,
+          "id": 80,
           "name": {
-            "es": "Javo",
-            "en": "Javo"
+            "es": "Mucken",
+            "en": "Mucken"
           },
-          "sprite": "images/chickens/121.png"
+          "sprite": "images/chickens/80.png"
         },
         {
           "id": 141,
@@ -10880,6 +10785,62 @@
             "en": "Phantom"
           },
           "sprite": "images/chickens/34.png"
+        },
+        {
+          "id": 48,
+          "name": {
+            "es": "Leci",
+            "en": "Leci"
+          },
+          "sprite": "images/chickens/48.png"
+        },
+        {
+          "id": 51,
+          "name": {
+            "es": "Bjorn",
+            "en": "Bjorn"
+          },
+          "sprite": "images/chickens/51.png"
+        },
+        {
+          "id": 64,
+          "name": {
+            "es": "Nama",
+            "en": "Nama"
+          },
+          "sprite": "images/chickens/64.png"
+        },
+        {
+          "id": 101,
+          "name": {
+            "es": "Drago",
+            "en": "Drago"
+          },
+          "sprite": "images/chickens/101.png"
+        },
+        {
+          "id": 112,
+          "name": {
+            "es": "Law",
+            "en": "Law"
+          },
+          "sprite": "images/chickens/112.png"
+        },
+        {
+          "id": 117,
+          "name": {
+            "es": "Monstruollo",
+            "en": "Monstruollo"
+          },
+          "sprite": "images/chickens/117.png"
+        },
+        {
+          "id": 140,
+          "name": {
+            "es": "Skull",
+            "en": "Skull"
+          },
+          "sprite": "images/chickens/140.png"
         }
       ]
     },
@@ -10924,6 +10885,22 @@
             "en": "Vulcano"
           },
           "sprite": "images/chickens/45.png"
+        },
+        {
+          "id": 65,
+          "name": {
+            "es": "Vapollo",
+            "en": "Vapollo"
+          },
+          "sprite": "images/chickens/65.png"
+        },
+        {
+          "id": 87,
+          "name": {
+            "es": "Plass",
+            "en": "Plass"
+          },
+          "sprite": "images/chickens/87.png"
         }
       ]
     },
@@ -11033,36 +11010,12 @@
       ],
       "chickens_hidden": [
         {
-          "id": 20,
+          "id": 28,
           "name": {
-            "es": "Zeo",
-            "en": "Zeo"
+            "es": "Alien",
+            "en": "Alien"
           },
-          "sprite": "images/chickens/20.png"
-        },
-        {
-          "id": 94,
-          "name": {
-            "es": "Estepi",
-            "en": "Estepi"
-          },
-          "sprite": "images/chickens/94.png"
-        },
-        {
-          "id": 102,
-          "name": {
-            "es": "Niwato",
-            "en": "Niwato"
-          },
-          "sprite": "images/chickens/102.png"
-        },
-        {
-          "id": 118,
-          "name": {
-            "es": "Nave",
-            "en": "Nave"
-          },
-          "sprite": "images/chickens/118.png"
+          "sprite": "images/chickens/28.png"
         }
       ]
     },
@@ -11159,6 +11112,14 @@
           "sprite": "images/chickens/77.png"
         },
         {
+          "id": 106,
+          "name": {
+            "es": "Snick",
+            "en": "Snick"
+          },
+          "sprite": "images/chickens/106.png"
+        },
+        {
           "id": 142,
           "name": {
             "es": "Hium",
@@ -11211,22 +11172,6 @@
           "sprite": "images/chickens/16.png"
         },
         {
-          "id": 64,
-          "name": {
-            "es": "Nama",
-            "en": "Nama"
-          },
-          "sprite": "images/chickens/64.png"
-        },
-        {
-          "id": 70,
-          "name": {
-            "es": "Galligno",
-            "en": "Galligno"
-          },
-          "sprite": "images/chickens/70.png"
-        },
-        {
           "id": 71,
           "name": {
             "es": "Nube",
@@ -11235,12 +11180,12 @@
           "sprite": "images/chickens/71.png"
         },
         {
-          "id": 112,
+          "id": 74,
           "name": {
-            "es": "Law",
-            "en": "Law"
+            "es": "Aery",
+            "en": "Aery"
           },
-          "sprite": "images/chickens/112.png"
+          "sprite": "images/chickens/74.png"
         }
       ]
     },
@@ -11285,6 +11230,14 @@
             "en": "Duncan"
           },
           "sprite": "images/chickens/58.png"
+        },
+        {
+          "id": 72,
+          "name": {
+            "es": "Gallimbus",
+            "en": "Gallimbus"
+          },
+          "sprite": "images/chickens/72.png"
         }
       ]
     },
@@ -11312,14 +11265,6 @@
             "en": "Corny"
           },
           "sprite": "images/chickens/83.png"
-        },
-        {
-          "id": 132,
-          "name": {
-            "es": "Pipasol",
-            "en": "Pipasol"
-          },
-          "sprite": "images/chickens/132.png"
         }
       ]
     },
@@ -11368,14 +11313,6 @@
           "sprite": "images/chickens/68.png"
         },
         {
-          "id": 89,
-          "name": {
-            "es": "Cactus",
-            "en": "Cactus"
-          },
-          "sprite": "images/chickens/89.png"
-        },
-        {
           "id": 98,
           "name": {
             "es": "Crystal",
@@ -11411,6 +11348,22 @@
           "sprite": "images/chickens/5.png"
         },
         {
+          "id": 20,
+          "name": {
+            "es": "Zeo",
+            "en": "Zeo"
+          },
+          "sprite": "images/chickens/20.png"
+        },
+        {
+          "id": 24,
+          "name": {
+            "es": "Lapiz",
+            "en": "Lapiz"
+          },
+          "sprite": "images/chickens/24.png"
+        },
+        {
           "id": 26,
           "name": {
             "es": "Jeff",
@@ -11427,12 +11380,12 @@
           "sprite": "images/chickens/49.png"
         },
         {
-          "id": 110,
+          "id": 118,
           "name": {
-            "es": "Springy",
-            "en": "Springy"
+            "es": "Nave",
+            "en": "Nave"
           },
-          "sprite": "images/chickens/110.png"
+          "sprite": "images/chickens/118.png"
         },
         {
           "id": 127,
@@ -11441,14 +11394,6 @@
             "en": "Jamer"
           },
           "sprite": "images/chickens/127.png"
-        },
-        {
-          "id": 143,
-          "name": {
-            "es": "Blade",
-            "en": "Blade"
-          },
-          "sprite": "images/chickens/143.png"
         }
       ]
     },
@@ -11476,6 +11421,30 @@
             "en": "Volcken"
           },
           "sprite": "images/chickens/63.png"
+        },
+        {
+          "id": 69,
+          "name": {
+            "es": "Pinzon",
+            "en": "Pinzon"
+          },
+          "sprite": "images/chickens/69.png"
+        },
+        {
+          "id": 70,
+          "name": {
+            "es": "Galligno",
+            "en": "Galligno"
+          },
+          "sprite": "images/chickens/70.png"
+        },
+        {
+          "id": 143,
+          "name": {
+            "es": "Blade",
+            "en": "Blade"
+          },
+          "sprite": "images/chickens/143.png"
         },
         {
           "id": 147,
@@ -11519,6 +11488,14 @@
             "en": "Yuntan"
           },
           "sprite": "images/chickens/86.png"
+        },
+        {
+          "id": 109,
+          "name": {
+            "es": "Max",
+            "en": "Max"
+          },
+          "sprite": "images/chickens/109.png"
         },
         {
           "id": 138,
@@ -11578,6 +11555,14 @@
             "en": "Jeraz"
           },
           "sprite": "images/chickens/128.png"
+        },
+        {
+          "id": 129,
+          "name": {
+            "es": "Cyborg",
+            "en": "Cyborg"
+          },
+          "sprite": "images/chickens/129.png"
         }
       ]
     },
@@ -11599,12 +11584,20 @@
           "sprite": "images/chickens/73.png"
         },
         {
-          "id": 136,
+          "id": 88,
           "name": {
-            "es": "Mayel",
-            "en": "Mayel"
+            "es": "Trinagle",
+            "en": "Trinagle"
           },
-          "sprite": "images/chickens/136.png"
+          "sprite": "images/chickens/88.png"
+        },
+        {
+          "id": 94,
+          "name": {
+            "es": "Estepi",
+            "en": "Estepi"
+          },
+          "sprite": "images/chickens/94.png"
         }
       ]
     },
@@ -11624,6 +11617,14 @@
             "en": "Eustavio"
           },
           "sprite": "images/chickens/15.png"
+        },
+        {
+          "id": 132,
+          "name": {
+            "es": "Pipasol",
+            "en": "Pipasol"
+          },
+          "sprite": "images/chickens/132.png"
         },
         {
           "id": 133,

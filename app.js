@@ -268,8 +268,33 @@
     if (searchInput) searchInput.placeholder = str('searchPlaceholder');
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const k = el.getAttribute('data-i18n');
-      if (k) el.textContent = str(k);
+      if (k) {
+        if (k === 'siteSubtitle') {
+          const v = (WIKI && WIKI.version) ? ` • v${WIKI.version}` : ' • v0.107';
+          el.textContent = str(k) + v;
+        } else {
+          el.textContent = str(k);
+        }
+      }
     });
+
+    if (WIKI) {
+      const countMap = {
+        pollopedia: WIKI.chickens ? WIKI.chickens.length : null,
+        items: WIKI.items ? WIKI.items.length : null,
+        powers: WIKI.powers ? WIKI.powers.length : null,
+        passives: WIKI.passives ? WIKI.passives.length : null,
+        states: WIKI.states ? WIKI.states.length : null,
+        zones: WIKI.zones ? WIKI.zones.length : null,
+        achievements: WIKI.achievements ? WIKI.achievements.length : null
+      };
+      Object.keys(countMap).forEach(view => {
+        if (countMap[view] !== null) {
+          const badge = document.querySelector(`li[data-view="${view}"] .sidebar-count`);
+          if (badge) badge.textContent = countMap[view];
+        }
+      });
+    }
   }
 
   // Routing

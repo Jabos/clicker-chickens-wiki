@@ -12743,7 +12743,7 @@
         "en": "Infinite Cacho"
       },
       "description": {
-        "es": "Alcanzar el nivel 100 del Modo Infinito con Cacho en el equipo",
+        "es": "Alcanzar el piso 100 del Modo Infinito con Cacho en el equipo",
         "en": "Reach floor 100 in Infinite Mode with Cacho in your team"
       },
       "sprite": "images/achievements/14.png"
@@ -12755,7 +12755,7 @@
         "en": "Infinite Garra"
       },
       "description": {
-        "es": "Alcanzar el nivel 100 del Modo Infinito con Garra en el equipo",
+        "es": "Alcanzar el piso 100 del Modo Infinito con Garra en el equipo",
         "en": "Reach floor 100 in Infinite Mode with Garra in your team"
       },
       "sprite": "images/achievements/15.png"

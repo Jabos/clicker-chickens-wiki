@@ -6249,8 +6249,8 @@ window.WIKI_DATA = {
     {
       "id": 8,
       "description": {
-        "es": "Al derrotar a un enemigo, +10 de poder",
-        "en": "When defeat an enemy, +10 power amount"
+        "es": "Al derrotar a un enemigo, gana +50 de poder y +25 de carga de poder",
+        "en": "When defeating an enemy, gain +50 power and +25 power amount"
       },
       "chickens": [
         {
@@ -6640,8 +6640,8 @@ window.WIKI_DATA = {
     {
       "id": 31,
       "description": {
-        "es": "Reduce en 5% la velocidad del enemigo al atacar",
-        "en": "Less 5% speed to the enemy when attacking"
+        "es": "Al ser atacado, reduce la velocidad del atacante (12%) y gana velocidad (+5%)",
+        "en": "When attacked, reduces attacker's speed (12%) and gains speed (+5%)"
       },
       "chickens": [
         {
@@ -6895,8 +6895,8 @@ window.WIKI_DATA = {
     {
       "id": 46,
       "description": {
-        "es": "Cuando usa poder, 5% más de armadura",
-        "en": "When use power, 5% extra armor"
+        "es": "Cuando usa poder, +15% de armadura y evita el próximo ataque",
+        "en": "When using power, +15% armor and avoids next attack"
       },
       "chickens": [
         {
@@ -6963,8 +6963,8 @@ window.WIKI_DATA = {
     {
       "id": 50,
       "description": {
-        "es": "Cada 3 golpes, 5% de daño extra",
-        "en": "Each 3 hits, 5% extra damage"
+        "es": "Cada 3 golpes, 15% de daño extra",
+        "en": "Every 3 hits, 15% extra damage"
       },
       "chickens": [
         {
@@ -7048,8 +7048,8 @@ window.WIKI_DATA = {
     {
       "id": 55,
       "description": {
-        "es": "No puede ser maldecido",
-        "en": "Can't curse"
+        "es": "No puede ser maldecido y comienza el combate con +15% de daño",
+        "en": "Cannot be cursed and starts combat with +15% extra damage"
       },
       "chickens": [
         {
@@ -7150,8 +7150,8 @@ window.WIKI_DATA = {
     {
       "id": 61,
       "description": {
-        "es": "Puede evitar el enfoque",
-        "en": "Can avoid focus"
+        "es": "Ignora el enfoque y comienza el combate con 1 punto de evasión",
+        "en": "Ignores focus and starts combat with 1 point of evasion"
       },
       "chickens": [
         {
@@ -7235,8 +7235,8 @@ window.WIKI_DATA = {
     {
       "id": 66,
       "description": {
-        "es": "Cuando use poder, -5% de velocidad a todos los enemigos",
-        "en": "When use power, -5% speed to all enemies"
+        "es": "Cuando use poder, -15% de velocidad a todos los enemigos y los quema",
+        "en": "When using power, -15% speed to all enemies and burns them"
       },
       "chickens": [
         {
@@ -7286,8 +7286,8 @@ window.WIKI_DATA = {
     {
       "id": 69,
       "description": {
-        "es": "Cada turno, +1% de daño y +1% de velocidad",
-        "en": "Each turn, +1% damage and +1% speed"
+        "es": "Cada turno, +3% de daño y +3% de velocidad",
+        "en": "Each turn, +3% damage and +3% speed"
       },
       "chickens": [
         {
@@ -7303,8 +7303,8 @@ window.WIKI_DATA = {
     {
       "id": 70,
       "description": {
-        "es": "Cada turno, +1% de armadura",
-        "en": "Each turn, +1% armor"
+        "es": "Cada turno, +4% de armadura",
+        "en": "Each turn, +4% armor"
       },
       "chickens": [
         {
@@ -7337,8 +7337,8 @@ window.WIKI_DATA = {
     {
       "id": 72,
       "description": {
-        "es": "Cada turno se cura a sí mismo (2% de vida máxima)",
-        "en": "Each turn, heal himself (2% max life)"
+        "es": "Cada turno se cura a sí mismo (6% de vida máxima)",
+        "en": "Each turn heals himself (6% max life)"
       },
       "chickens": [
         {
@@ -7456,8 +7456,8 @@ window.WIKI_DATA = {
     {
       "id": 79,
       "description": {
-        "es": "Cuando ataca, se cura a sí mismo (2% de vida máxima) y gana velocidad (1%)",
-        "en": "When attack, heal himself (2% max life) and 1% extra speed"
+        "es": "Cuando ataca, se cura a sí mismo (5% de vida máxima) y gana velocidad (+3%)",
+        "en": "When attacking, heals himself (5% max life) and gains speed (+3%)"
       },
       "chickens": [
         {
@@ -7932,8 +7932,8 @@ window.WIKI_DATA = {
     {
       "id": 107,
       "description": {
-        "es": "25% de probabilidad de empezar con el poder al máximo",
-        "en": "25% chance to start with maximum power"
+        "es": "50% de probabilidad de empezar con poder al máximo (en caso contrario, 50% de poder)",
+        "en": "50% chance to start with full power (otherwise, 50% power)"
       },
       "chickens": [
         {
@@ -8000,8 +8000,8 @@ window.WIKI_DATA = {
     {
       "id": 111,
       "description": {
-        "es": "Cada ataque aumenta una estadística aleatoria (1%)",
-        "en": "Each attack increases a random stat (1%)"
+        "es": "Cada ataque aumenta una estadística aleatoria (5%)",
+        "en": "Each attack increases a random stat (5%)"
       },
       "chickens": [
         {
@@ -8068,8 +8068,8 @@ window.WIKI_DATA = {
     {
       "id": 115,
       "description": {
-        "es": "Al empezar el combate, pierde armadura (10%) y otorga armadura a un aliado (10%)",
-        "en": "At the start of combat, loses armor (10%) and grants armor to an ally (10%)"
+        "es": "Al empezar el combate, otorga armadura al equipo (15%)",
+        "en": "At the start of combat, grants armor to the team (15%)"
       },
       "chickens": [
         {
@@ -8170,8 +8170,8 @@ window.WIKI_DATA = {
     {
       "id": 121,
       "description": {
-        "es": "Cada turno, aumenta el daño (1%) y velocidad (1%) de un aliado",
-        "en": "Each turn, increases an ally's damage (1%) and speed (1%)"
+        "es": "Cada turno, aumenta el daño (3%) y velocidad (3%) de los aliados",
+        "en": "Each turn, increases damage (3%) and speed (3%) of allies"
       },
       "chickens": [
         {
@@ -8391,8 +8391,8 @@ window.WIKI_DATA = {
     {
       "id": 134,
       "description": {
-        "es": "Cada ataque reduce la armadura del objetivo (-2%)",
-        "en": "Each attack reduce target armor (-2%)"
+        "es": "Cada ataque reduce la armadura del objetivo (-5%)",
+        "en": "Each attack reduces target's armor (-5%)"
       },
       "chickens": [
         {
@@ -8646,8 +8646,8 @@ window.WIKI_DATA = {
     {
       "id": 149,
       "description": {
-        "es": "Atacar a un enemigo congelado aumenta el daño (+8%) y limpia el efecto de congelamiento",
-        "en": "Attacking a frozen enemy increases damage (+8%) and cleanses freeze"
+        "es": "Atacar a un enemigo congelado inflige daño extra (+30%)",
+        "en": "Attacking a frozen enemy deals extra damage (+30%)"
       },
       "chickens": [
         {

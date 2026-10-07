@@ -7048,8 +7048,8 @@ window.WIKI_DATA = {
     {
       "id": 55,
       "description": {
-        "es": "No puede ser maldecido y comienza el combate con +15% de daño",
-        "en": "Cannot be cursed and starts combat with +15% extra damage"
+        "es": "No puede ser maldecido y comienza con +15% de daño. Si empieza el turno con un efecto negativo, gana +20 de poder",
+        "en": "Cannot be cursed and starts combat with +15% extra damage. Gains +20 power if starting turn with a negative effect"
       },
       "chickens": [
         {
@@ -8391,8 +8391,8 @@ window.WIKI_DATA = {
     {
       "id": 134,
       "description": {
-        "es": "Cada ataque reduce la armadura del objetivo (-5%)",
-        "en": "Each attack reduces target's armor (-5%)"
+        "es": "Cada ataque reduce la armadura del objetivo (-5%). Al ser golpeado, gana +20 de poder",
+        "en": "Each attack reduces target's armor (-5%). When hit, gains +20 power"
       },
       "chickens": [
         {
@@ -9886,8 +9886,8 @@ window.WIKI_DATA = {
       "id": 14,
       "cost": 100,
       "description": {
-        "es": "Pierde vida (-10% de su vida máxima), aliado consigue poder al máximo",
-        "en": "Lose life, ally get full power (-10% max life)"
+        "es": "Pierde vida (-10% de su vida máxima), el aliado obtiene poder al máximo y el próximo turno",
+        "en": "Lose life (-10% max life), ally gets full power and takes the next turn"
       },
       "chickens": [
         {
@@ -10121,8 +10121,8 @@ window.WIKI_DATA = {
       "id": 19,
       "cost": 100,
       "description": {
-        "es": "Autocuración (20% de su vida máxima) y gana armadura (5%)",
-        "en": "Heal himself (20% max life) and armor (+5%)"
+        "es": "Autocuración (25% de su vida máxima) y gana armadura (+15%)",
+        "en": "Heal himself (25% max life) and gain armor (+15%)"
       },
       "chickens": [
         {

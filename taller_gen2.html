@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de Diseño Gen 2 - Clicker Chickens</title>
+  <link rel="icon" type="image/png" href="images/chickens/0.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+    }
+    body.light-theme {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --accent: #d97706;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    .pixelated {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+    /* Custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+    .stat-input::-webkit-inner-spin-button,
+    .stat-input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .radar-polygon {
+      transition: points 0.15s ease-out;
+    }
+
+    .badge-archetype {
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
+
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-40 bg-[var(--card)]/90 backdrop-blur border-b border-[var(--border)] px-4 py-3">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-xl shadow-inner">
+          🐣
+        </div>
+        <div>
+          <h1 class="text-base font-bold flex items-center gap-2 leading-none">
+            Taller Creativo Gen 2
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">DEV STUDIO</span>
+          </h1>
+          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseñador de Pollos, Calculadora de Balance & Detector de Arquetipos</p>
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button id="btn-new" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1.5 shadow transition">
+          <span>✨</span> Nuevo Boceto
+        </button>
+        <button id="btn-save" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition">
+          <span>💾</span> Guardar Boceto
+        </button>
+        <button id="btn-my-sketches" class="px-3 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+          <span>📁</span> Mis Bocetos <span id="sketches-count-badge" class="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-400 font-mono text-[10px]">0</span>
+        </button>
+        <button id="btn-browse-gen1" class="px-3 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+          <span>🐔</span> Ver Gen 1 (151)
+        </button>
+        <div class="h-6 w-px bg-[var(--border)] mx-1"></div>
+        <button id="btn-export-csv" title="Descargar en CSV para Google Sheets" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold transition">
+          📊 Exportar Sheets
+        </button>
+        <button id="btn-theme" class="p-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs transition" title="Cambiar Tema">
+          🌙
+        </button>
+        <a href="index.html" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text-muted)] hover:text-[var(--text)] border border-[var(--border)] text-xs transition">
+          Wiki ➔
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WORKSPACE -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+    <!-- LEFT COLUMN: BUILDER & CONTROLS (7 Cols) -->
+    <div class="lg:col-span-7 space-y-6">
+
+      <!-- 1. IDENTIDAD Y ARTE -->
+      <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+          <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
+            <span>🎨</span> Identidad & Concepto Visual
+          </h2>
+          <span id="sketch-id-badge" class="font-mono text-xs text-[var(--text-muted)]">Boceto #151</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-start">
+          <!-- Sprite Preview & Picker -->
+          <div class="sm:col-span-4 flex flex-col items-center">
+            <div id="sprite-dropzone" class="relative group w-32 h-32 rounded-2xl bg-[var(--bg)] border-2 border-dashed border-[var(--border)] hover:border-amber-500/60 transition flex flex-col items-center justify-center overflow-hidden cursor-pointer shadow-inner">
+              <img id="chicken-sprite-preview" class="w-24 h-24 object-contain pixelated transition-transform group-hover:scale-105" src="images/chickens/0.png" alt="Sprite">
+              <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white text-[10px] font-medium transition p-2 text-center">
+                <span>📁 Clic para subir o arrastra</span>
+                <span class="text-amber-400 mt-1">O Ctrl+V para pegar</span>
+              </div>
+              <input type="file" id="file-sprite-input" accept="image/*" class="hidden">
+            </div>
+
+            <!-- Sprite tools -->
+            <div class="flex items-center gap-1.5 mt-2 w-full justify-center">
+              <button id="btn-pick-gen1-sprite" class="px-2 py-1 text-[11px] rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/50 text-[var(--text-muted)] hover:text-amber-400 transition" title="Elegir Sprite existente de Gen 1">
+                Elegir Base
+              </button>
+              <button id="btn-random-sprite" class="px-2 py-1 text-[11px] rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/50 text-[var(--text-muted)] hover:text-amber-400 transition" title="Sprite Aleatorio">
+                🎲 Random
+              </button>
+            </div>
+          </div>
+
+          <!-- Basic Info Fields -->
+          <div class="sm:col-span-8 space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Nombre del Pollo</label>
+              <input type="text" id="input-name" placeholder="Ej: Cosmochick, Titanium, Pyroclaw..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] font-bold text-sm focus:outline-none focus:border-amber-500 transition">
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Zona / Hábitat Sugerido</label>
+                <input type="text" id="input-zone" placeholder="Ej: Laboratorio, Selva, Mina..." class="w-full px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Estado de Diseño</label>
+                <select id="select-status" class="w-full px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+                  <option value="Idea">💡 Idea inicial</option>
+                  <option value="Boceto" selected>✏️ Boceto conceptual</option>
+                  <option value="En Desarrollo">⚙️ En desarrollo</option>
+                  <option value="Listo">✅ Listo para el juego</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Concepto, Lore & Notas de Sprite</label>
+              <textarea id="input-concept" rows="2" placeholder="Describe la apariencia física, elementos clave, animaciones o inspiración..." class="w-full px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 resize-none transition"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ESTADÍSTICAS BASE & CONTROL DE BALANCE -->
+      <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+        <!-- Header with Live Total Budget Tracker -->
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)] pb-3">
+          <div>
+            <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
+              <span>⚖️</span> Estadísticas Base (Nivel 1)
+            </h2>
+            <p class="text-xs text-[var(--text-muted)]">El estándar oficial de Gen 1 es exactamente <strong>200 puntos</strong>.</p>
+          </div>
+
+          <!-- Total Counter Badge -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold text-[var(--text-muted)]">Presupuesto:</span>
+            <div id="stat-budget-badge" class="px-3 py-1 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono font-black text-sm flex items-center gap-1.5">
+              <span id="stat-sum-val">200</span> / 200 pts
+            </div>
+            <button id="btn-autobalance" class="px-2.5 py-1 text-xs rounded-lg bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 transition" title="Ajusta proporcionalmente los stats para sumar exactamente 200 puntos">
+              ⚖️ Nivelar a 200
+            </button>
+          </div>
+        </div>
+
+        <!-- Budget Progress Bar -->
+        <div class="w-full h-2 rounded-full bg-[var(--bg)] overflow-hidden border border-[var(--border)]/60">
+          <div id="stat-budget-bar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 100%;"></div>
+        </div>
+
+        <!-- Sliders & Inputs Grid -->
+        <div class="space-y-3 pt-1">
+          <!-- Vida (HP) -->
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold flex items-center gap-1.5 text-rose-400">
+                <span>❤️</span> Vida (HP)
+                <span class="text-[10px] font-normal text-[var(--text-muted)]">(Promedio Gen 1: 42)</span>
+              </span>
+              <input type="number" id="num-life" min="10" max="130" value="60" class="stat-input w-16 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-rose-400 focus:outline-none focus:border-rose-500">
+            </div>
+            <input type="range" id="range-life" min="10" max="130" value="60" class="w-full accent-rose-500 h-1.5 bg-[var(--bg)] rounded-lg cursor-pointer">
+          </div>
+
+          <!-- Daño (ATK) -->
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold flex items-center gap-1.5 text-orange-400">
+                <span>🗡️</span> Daño (ATK)
+                <span class="text-[10px] font-normal text-[var(--text-muted)]">(Promedio Gen 1: 48)</span>
+              </span>
+              <input type="number" id="num-damage" min="10" max="130" value="40" class="stat-input w-16 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-orange-400 focus:outline-none focus:border-orange-500">
+            </div>
+            <input type="range" id="range-damage" min="10" max="130" value="40" class="w-full accent-orange-500 h-1.5 bg-[var(--bg)] rounded-lg cursor-pointer">
+          </div>
+
+          <!-- Armadura (DEF) -->
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold flex items-center gap-1.5 text-blue-400">
+                <span>🛡️</span> Armadura (DEF)
+                <span class="text-[10px] font-normal text-[var(--text-muted)]">(Promedio Gen 1: 38)</span>
+              </span>
+              <input type="number" id="num-armor" min="0" max="100" value="40" class="stat-input w-16 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-blue-400 focus:outline-none focus:border-blue-500">
+            </div>
+            <input type="range" id="range-armor" min="0" max="100" value="40" class="w-full accent-blue-500 h-1.5 bg-[var(--bg)] rounded-lg cursor-pointer">
+          </div>
+
+          <!-- Velocidad (SPD) -->
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold flex items-center gap-1.5 text-emerald-400">
+                <span>⚡</span> Velocidad (SPD)
+                <span class="text-[10px] font-normal text-[var(--text-muted)]">(Promedio Gen 1: 46)</span>
+              </span>
+              <input type="number" id="num-speed" min="5" max="120" value="40" class="stat-input w-16 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-emerald-400 focus:outline-none focus:border-emerald-500">
+            </div>
+            <input type="range" id="range-speed" min="5" max="120" value="40" class="w-full accent-emerald-500 h-1.5 bg-[var(--bg)] rounded-lg cursor-pointer">
+          </div>
+
+          <!-- Poder Base (PWR) -->
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold flex items-center gap-1.5 text-purple-400">
+                <span>✨</span> Poder Base (PWR / Carga)
+                <span class="text-[10px] font-normal text-[var(--text-muted)]">(Promedio Gen 1: 36)</span>
+              </span>
+              <input type="number" id="num-power" min="10" max="100" value="20" class="stat-input w-16 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-purple-400 focus:outline-none focus:border-purple-500">
+            </div>
+            <input type="range" id="range-power" min="10" max="100" value="20" class="w-full accent-purple-500 h-1.5 bg-[var(--bg)] rounded-lg cursor-pointer">
+          </div>
+
+          <!-- Coste de Poder Máximo -->
+          <div class="pt-2 border-t border-[var(--border)]/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-[var(--text-muted)] flex items-center gap-1.5">
+              <span>🔋</span> Coste Energía del Poder Activo:
+            </span>
+            <div class="flex items-center gap-2">
+              <select id="select-power-cost" class="px-2.5 py-1 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs font-mono font-bold text-amber-400 focus:outline-none focus:border-amber-500">
+                <option value="90">90 (Ultra Rápido - 1~2 turnos)</option>
+                <option value="100" selected>100 (Estándar competitivo)</option>
+                <option value="120">120 (Poder Fuerte)</option>
+                <option value="140">140 (Poder Devastador)</option>
+                <option value="150">150 (Poder Supremo / Nuke)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. DETECTOR DE DUPLICADOS EN TIEMPO REAL -->
+        <div id="duplicate-detector-card" class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs transition space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-bold flex items-center gap-1.5" id="dup-status-title">
+              <span>🔍</span> Verificador de Originalidad:
+            </span>
+            <span id="dup-badge" class="px-2 py-0.5 rounded text-[10px] font-bold font-mono">Comprobando...</span>
+          </div>
+          <p id="dup-detail" class="text-[var(--text-muted)] text-[11px] leading-relaxed">
+            Analizando similitud con los 151 pollos existentes de Gen 1...
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. HABILIDADES, PODERES & OBJETO -->
+      <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+        <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400 border-b border-[var(--border)] pb-3">
+          <span>⚡</span> Habilidades & Poderes de Combate
+        </h2>
+
+        <div class="space-y-4 text-xs">
+          <!-- Habilidad Pasiva -->
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="font-bold text-[var(--text)] flex items-center gap-1.5">
+                <span>🛡️</span> Habilidad Pasiva
+              </label>
+              <select id="preset-passive-select" class="text-[11px] bg-[var(--bg)] text-[var(--text-muted)] border border-[var(--border)] rounded px-2 py-0.5 max-w-[200px] truncate">
+                <option value="">-- Cargar de Gen 1 --</option>
+              </select>
+            </div>
+            <textarea id="input-passive" rows="2" placeholder="Efecto pasivo que se activa en combate..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:border-amber-500 resize-none transition">El primer ataque hace 50% más de daño</textarea>
+          </div>
+
+          <!-- Poder Activo -->
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="font-bold text-[var(--text)] flex items-center gap-1.5">
+                <span>🔥</span> Poder Activo Principal
+              </label>
+              <select id="preset-power-select" class="text-[11px] bg-[var(--bg)] text-[var(--text-muted)] border border-[var(--border)] rounded px-2 py-0.5 max-w-[200px] truncate">
+                <option value="">-- Cargar de Gen 1 --</option>
+              </select>
+            </div>
+            <input type="text" id="input-active-power" value="Ataque doble" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+          </div>
+
+          <!-- Poder Oculto -->
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="font-bold text-[var(--text)] flex items-center gap-1.5 text-purple-400">
+                <span>🔮</span> Poder Oculto Asignado
+              </label>
+              <span class="text-[10px] text-[var(--text-muted)]">Catálogo de 52 poderes ocultos</span>
+            </div>
+            <select id="select-hidden-power" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-purple-300 font-semibold focus:outline-none focus:border-purple-500 transition">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+
+          <!-- Objeto Inicial -->
+          <div>
+            <label class="block font-bold text-[var(--text)] mb-1">🎒 Objeto Inicial Equipado</label>
+            <select id="select-default-item" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- RIGHT COLUMN: LIVE CARD, ARQUETIPO & SCALING CALCULATOR (5 Cols) -->
+    <div class="lg:col-span-5 space-y-6">
+
+      <!-- 1. LIVE TRADING CARD PREVIEW -->
+      <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+          <span class="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider flex items-center gap-1.5">
+            <span>🎴</span> Ficha de Combate (Vista Previa)
+          </span>
+          <span id="preview-archetype-badge" class="badge-archetype px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40 font-mono">
+            Equilibrado
+          </span>
+        </div>
+
+        <!-- Combat Card Body -->
+        <div class="rounded-2xl p-4 bg-gradient-to-b from-[var(--bg)] to-[var(--card)] border border-[var(--border)] space-y-4 shadow-md">
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 rounded-xl bg-[var(--card)] border border-[var(--border)] p-1 flex items-center justify-center shadow-inner relative overflow-hidden">
+              <img id="card-sprite" class="w-16 h-16 object-contain pixelated" src="images/chickens/0.png" alt="">
+              <span id="card-cost-badge" class="absolute bottom-1 right-1 px-1.5 py-0.2 rounded bg-purple-500/80 text-[9px] font-mono font-bold text-white">100🔋</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 id="card-name" class="text-lg font-black text-[var(--text)] truncate leading-tight">Pollier</h3>
+              <p id="card-archetype-sub" class="text-xs text-amber-400 font-medium">Todoterreno Equilibrado</p>
+              <div class="flex items-center gap-2 mt-1.5 text-[11px] font-mono">
+                <span class="text-rose-400 font-bold">HP <span id="card-hp">60</span></span>
+                <span class="text-orange-400 font-bold">ATK <span id="card-atk">40</span></span>
+                <span class="text-blue-400 font-bold">DEF <span id="card-def">40</span></span>
+                <span class="text-emerald-400 font-bold">SPD <span id="card-spd">40</span></span>
+                <span class="text-purple-400 font-bold">PWR <span id="card-pwr">20</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills box -->
+          <div class="space-y-2 text-xs border-t border-[var(--border)]/60 pt-3">
+            <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
+              <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider block mb-0.5">Pasiva:</span>
+              <p id="card-passive" class="text-[11px] text-[var(--text)] leading-relaxed">El primer ataque hace 50% más de daño</p>
+            </div>
+            <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
+              <span class="text-[10px] font-bold text-orange-400 uppercase tracking-wider block mb-0.5">Poder Activo:</span>
+              <p id="card-active" class="text-[11px] text-[var(--text)] font-semibold">Ataque doble</p>
+            </div>
+            <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
+              <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider block mb-0.5">Poder Oculto:</span>
+              <p id="card-hidden" class="text-[11px] text-purple-300">Pierde vida (-10% de su vida máxima), gana daño (+25%)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. MOTOR TÁCTICO & PREDICCIÓN DE ARQUETIPO -->
+      <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+          <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
+            <span>🧠</span> Diagnóstico Táctico 2vs2
+          </h2>
+          <span id="power-cycle-badge" class="font-mono text-xs text-purple-400 font-bold">~5 turnos de carga</span>
+        </div>
+
+        <div class="space-y-3 text-xs leading-relaxed">
+          <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+            <span class="text-amber-400 font-bold block mb-1">⚔️ Función en el Dúo:</span>
+            <p id="diag-duo-role" class="text-[var(--text)] text-[11px]"></p>
+          </div>
+
+          <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+            <span class="text-emerald-400 font-bold block mb-1">🤝 Sinergias & Compañeros Ideales:</span>
+            <p id="diag-allies" class="text-[var(--text-muted)] text-[11px]"></p>
+          </div>
+
+          <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+            <span class="text-rose-400 font-bold block mb-1">🔴 Vulnerabilidad / Cómo Contrarrestarlo:</span>
+            <p id="diag-counter" class="text-[var(--text-muted)] text-[11px]"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RADAR POLIGONAL JOJO & ESCALADO DE NIVEL -->
+      <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+          <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
+            <span>📊</span> Radar JoJo & Simulación de Stats
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-[var(--text-muted)]">Nivel:</span>
+            <input type="number" id="sim-level-input" min="1" max="100" value="50" class="w-14 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-amber-400 text-xs">
+          </div>
+        </div>
+
+        <!-- Level presets -->
+        <div class="flex items-center justify-between gap-1 text-[11px]">
+          <span class="text-[var(--text-muted)]">Preajustes:</span>
+          <div class="flex gap-1">
+            <button class="btn-lvl-preset px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 font-mono text-[10px]" data-lvl="1">Lv 1 (Base)</button>
+            <button class="btn-lvl-preset px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 font-mono text-[10px]" data-lvl="50">Lv 50 (PvP)</button>
+            <button class="btn-lvl-preset px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 font-mono text-[10px]" data-lvl="100">Lv 100 (Max)</button>
+          </div>
+        </div>
+
+        <!-- Animated SVG Radar -->
+        <div class="flex justify-center py-2 bg-[var(--bg)] rounded-xl border border-[var(--border)] overflow-hidden">
+          <svg id="radar-svg" width="300" height="260" viewBox="0 0 300 260" class="overflow-visible select-none">
+            <!-- Radar Background Grid Web -->
+            <g id="radar-web" stroke="var(--border)" stroke-width="1" fill="none" opacity="0.6">
+              <!-- Circles/Polygons generated by JS -->
+            </g>
+            <!-- Filled Stat Polygon -->
+            <polygon id="radar-polygon" class="radar-polygon" points="" fill="rgba(245, 158, 11, 0.3)" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round" />
+            <!-- Vertex nodes -->
+            <g id="radar-nodes"></g>
+            <!-- Vertex labels & ranks -->
+            <g id="radar-labels" font-size="10" font-family="system-ui, sans-serif" font-weight="bold"></g>
+          </svg>
+        </div>
+
+        <!-- Scaled In-Battle Stats Results -->
+        <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+          <div class="p-2 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex justify-between items-center">
+            <span class="text-rose-400 font-bold">HP en Batalla:</span>
+            <span id="scaled-hp" class="font-black text-sm">--</span>
+          </div>
+          <div class="p-2 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex justify-between items-center">
+            <span class="text-orange-400 font-bold">Daño (ATK):</span>
+            <span id="scaled-atk" class="font-black text-sm">--</span>
+          </div>
+          <div class="p-2 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex justify-between items-center">
+            <span class="text-blue-400 font-bold">Armadura:</span>
+            <span id="scaled-def" class="font-black text-sm">--%</span>
+          </div>
+          <div class="p-2 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex justify-between items-center">
+            <span class="text-emerald-400 font-bold">Velocidad:</span>
+            <span id="scaled-spd" class="font-black text-sm">--</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- MODAL: BROWSE GEN 1 (151 CHICKENS) -->
+  <div id="modal-gen1" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-4xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-[var(--border)] flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🐔</span>
+          <div>
+            <h3 class="text-sm font-bold">Catálogo Oficial de Gen 1 (151 Pollos)</h3>
+            <p class="text-xs text-[var(--text-muted)]">Consulta stats, pasivas y poderes para comparar o clonar como base</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="text" id="gen1-search" placeholder="Buscar por nombre, ID o stat..." class="px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 w-48">
+          <button id="btn-close-gen1" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-xs font-bold transition">✕</button>
+        </div>
+      </div>
+      <div id="gen1-grid" class="flex-1 overflow-y-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: MY SAVED SKETCHES -->
+  <div id="modal-sketches" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-[var(--border)] flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">📁</span>
+          <h3 class="text-sm font-bold">Bocetos Guardados en tu Navegador</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-backup-json" class="px-2.5 py-1 text-xs rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 transition">
+            💾 Respaldar JSON
+          </button>
+          <label class="px-2.5 py-1 text-xs rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 transition cursor-pointer">
+            📥 Importar JSON
+            <input type="file" id="file-import-json" accept=".json" class="hidden">
+          </label>
+          <button id="btn-close-sketches" class="px-2.5 py-1 rounded bg-[var(--bg)] hover:bg-[var(--border)] text-xs font-bold transition">✕</button>
+        </div>
+      </div>
+      <div id="sketches-list-container" class="flex-1 overflow-y-auto p-4 space-y-3">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- LOAD WIKI DATA -->
+  <script src="data.js"></script>
+  <script src="docs/data.js"></script>
+
+  <!-- APP ENGINE -->
+  <script>
+    
+    function getSpriteUrl(path) {
+      if (!path) return (window.location.pathname.includes('/docs/') || window.location.pathname.includes('\\docs\\') ? 'images/chickens/0.png' : 'docs/images/chickens/0.png');
+      if (path.startsWith('data:') || path.startsWith('http')) return path;
+      const inDocs = window.location.pathname.includes('/docs/') || window.location.pathname.includes('\\docs\\');
+      if (!inDocs && path.startsWith('images/')) {
+        return 'docs/' + path;
+      }
+      return path;
+    }
+
+    // Embedded or linked WIKI data fallback
+    const WIKI = window.WIKI_DATA || { chickens: [], passives: [], powers: [], items: [] };
+
+    // Current Editing Sketch State
+    let currentSketch = {
+      id: 151,
+      name: "Cosmochick",
+      sprite: "images/chickens/0.png",
+      zone: "Zona 10 (Espacio)",
+      status: "Boceto",
+      concept: "Pollo astronauta con casco transparente y plumas galácticas estelares.",
+      stats: {
+        life: 60,
+        damage: 40,
+        armor: 40,
+        speed: 40,
+        power_amount: 20
+      },
+      power_max: 100,
+      passive: "El primer ataque hace 50% más de daño",
+      active_power: "Ataque doble",
+      hidden_power_id: 4,
+      default_item_id: 1
+    };
+
+    let savedSketches = [];
+    try {
+      savedSketches = JSON.parse(localStorage.getItem('cc_gen2_sketches') || '[]');
+    } catch(e) {
+      savedSketches = [];
+    }
+
+    // Radar Geometry constants
+    const RADAR_CX = 150, RADAR_CY = 130, RADAR_R = 85;
+    const RADAR_ANGLES = [-90, -18, 54, 126, 198].map(a => a * Math.PI / 180);
+
+    // Initialize UI
+    function init() {
+      setupTheme();
+      populateDropdowns();
+      setupEventListeners();
+      buildRadarGrid();
+      loadSketch(currentSketch);
+      updateSketchesCount();
+    }
+
+    function setupTheme() {
+      const savedTheme = localStorage.getItem('cc_wiki_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        document.getElementById('btn-theme').textContent = '☀️';
+      }
+      document.getElementById('btn-theme').addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-theme');
+        localStorage.setItem('cc_wiki_theme', isLight ? 'light' : 'dark');
+        document.getElementById('btn-theme').textContent = isLight ? '☀️' : '🌙';
+      });
+    }
+
+    function populateDropdowns() {
+      // Hidden powers dropdown
+      const hpSelect = document.getElementById('select-hidden-power');
+      hpSelect.innerHTML = '';
+      if (WIKI.powers) {
+        WIKI.powers.forEach((pw, idx) => {
+          const opt = document.createElement('option');
+          opt.value = idx;
+          const desc = pw.description && (pw.description.es || pw.description);
+          opt.textContent = `#${idx + 1} - ${desc}`;
+          hpSelect.appendChild(opt);
+        });
+      }
+
+      // Default items dropdown
+      const itemSelect = document.getElementById('select-default-item');
+      itemSelect.innerHTML = '<option value="-1">-- Ninguno --</option>';
+      if (WIKI.items) {
+        WIKI.items.forEach(it => {
+          const opt = document.createElement('option');
+          opt.value = it.id;
+          const name = it.name && (it.name.es || it.name);
+          opt.textContent = `#${it.id + 1} - ${name}`;
+          itemSelect.appendChild(opt);
+        });
+      }
+
+      // Presets dropdowns for passives and powers
+      const passSelect = document.getElementById('preset-passive-select');
+      if (WIKI.passives) {
+        WIKI.passives.forEach(p => {
+          const opt = document.createElement('option');
+          const desc = p.description && (p.description.es || p.description);
+          opt.value = desc;
+          opt.textContent = `#${p.id + 1} ${desc.substring(0, 35)}...`;
+          passSelect.appendChild(opt);
+        });
+      }
+
+      const powSelect = document.getElementById('preset-power-select');
+      if (WIKI.powers) {
+        WIKI.powers.forEach(pw => {
+          const opt = document.createElement('option');
+          const desc = pw.description && (pw.description.es || pw.description);
+          opt.value = desc;
+          opt.textContent = `#${pw.id + 1} ${desc.substring(0, 35)}...`;
+          powSelect.appendChild(opt);
+        });
+      }
+    }
+
+    // Build Static Radar Grid Web
+    function buildRadarGrid() {
+      const g = document.getElementById('radar-web');
+      g.innerHTML = '';
+      const levels = [0.25, 0.5, 0.75, 1.0];
+      levels.forEach(lvl => {
+        const pts = RADAR_ANGLES.map(a => {
+          const x = RADAR_CX + RADAR_R * lvl * Math.cos(a);
+          const y = RADAR_CY + RADAR_R * lvl * Math.sin(a);
+          return `${x.toFixed(1)},${y.toFixed(1)}`;
+        }).join(' ');
+        const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        poly.setAttribute('points', pts);
+        poly.setAttribute('stroke', 'currentColor');
+        poly.setAttribute('stroke-width', lvl === 1.0 ? '1.5' : '1');
+        poly.setAttribute('stroke-dasharray', lvl === 1.0 ? '' : '3 3');
+        g.appendChild(poly);
+      });
+
+      // Axis lines
+      RADAR_ANGLES.forEach(a => {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', RADAR_CX);
+        line.setAttribute('y1', RADAR_CY);
+        line.setAttribute('x2', (RADAR_CX + RADAR_R * Math.cos(a)).toFixed(1));
+        line.setAttribute('y2', (RADAR_CY + RADAR_R * Math.sin(a)).toFixed(1));
+        line.setAttribute('stroke', 'currentColor');
+        g.appendChild(line);
+      });
+    }
+
+    // Synchronize inputs & recalculate everything
+    function syncStatInputs(key, val) {
+      val = Math.max(0, parseInt(val, 10) || 0);
+      currentSketch.stats[key] = val;
+      document.getElementById(`num-${key}`).value = val;
+      document.getElementById(`range-${key}`).value = val;
+      onDataChanged();
+    }
+
+    function onDataChanged() {
+      // Collect current inputs
+      currentSketch.name = document.getElementById('input-name').value.trim() || 'Sin Nombre';
+      currentSketch.zone = document.getElementById('input-zone').value.trim();
+      currentSketch.status = document.getElementById('select-status').value;
+      currentSketch.concept = document.getElementById('input-concept').value.trim();
+      currentSketch.power_max = parseInt(document.getElementById('select-power-cost').value, 10) || 100;
+      currentSketch.passive = document.getElementById('input-passive').value.trim();
+      currentSketch.active_power = document.getElementById('input-active-power').value.trim();
+      currentSketch.hidden_power_id = parseInt(document.getElementById('select-hidden-power').value, 10);
+      currentSketch.default_item_id = parseInt(document.getElementById('select-default-item').value, 10);
+
+      // 1. Budget total & balance check
+      const sum = Object.values(currentSketch.stats).reduce((a, b) => a + b, 0);
+      document.getElementById('stat-sum-val').textContent = sum;
+      const budgetPct = Math.min(100, (sum / 200) * 100);
+      const budgetBar = document.getElementById('stat-budget-bar');
+      const budgetBadge = document.getElementById('stat-budget-badge');
+      budgetBar.style.width = `${budgetPct}%`;
+
+      if (sum === 200) {
+        budgetBadge.className = 'px-3 py-1 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono font-black text-sm flex items-center gap-1.5';
+        budgetBar.className = 'h-full bg-emerald-500 transition-all duration-300';
+      } else if (sum >= 190 && sum <= 215) {
+        budgetBadge.className = 'px-3 py-1 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 font-mono font-black text-sm flex items-center gap-1.5';
+        budgetBar.className = 'h-full bg-amber-500 transition-all duration-300';
+      } else {
+        budgetBadge.className = 'px-3 py-1 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 font-mono font-black text-sm flex items-center gap-1.5';
+        budgetBar.className = 'h-full bg-rose-500 transition-all duration-300';
+      }
+
+      // 2. Duplicate & Similarity Detector
+      checkDuplicates();
+
+      // 3. Archetype Diagnosis & Turn Cycle
+      const diag = diagnoseArchetype(currentSketch);
+      updateTacticalUI(diag);
+
+      // 4. Update Trading Card Preview
+      updateCardPreview(diag);
+
+      // 5. Update Radar Chart & Scaled Battle Stats
+      updateRadarAndSimulation();
+    }
+
+    // Duplicate detection algorithm
+    function checkDuplicates() {
+      const s = currentSketch.stats;
+      const curVec = [s.life, s.damage, s.armor, s.speed, s.power_amount];
+      const dupBadge = document.getElementById('dup-badge');
+      const dupTitle = document.getElementById('dup-status-title');
+      const dupDetail = document.getElementById('dup-detail');
+      const dupCard = document.getElementById('duplicate-detector-card');
+
+      if (!WIKI.chickens || WIKI.chickens.length === 0) return;
+
+      let exactMatches = [];
+      let closest = null;
+      let minDistance = 999999;
+
+      WIKI.chickens.forEach(c => {
+        const cVec = [c.stats.life, c.stats.damage, c.stats.armor, c.stats.speed, c.stats.power_amount];
+        const isExact = curVec.every((val, idx) => val === cVec[idx]);
+        if (isExact) {
+          const cName = c.name && (c.name.es || c.name);
+          exactMatches.push({ id: c.id, name: cName, stats: c.stats });
+        }
+        // Euclidean distance
+        const dist = Math.sqrt(curVec.reduce((acc, val, idx) => acc + Math.pow(val - cVec[idx], 2), 0));
+        if (dist < minDistance) {
+          minDistance = dist;
+          const cName = c.name && (c.name.es || c.name);
+          closest = { id: c.id, name: cName, dist: Math.round(dist), stats: c.stats };
+        }
+      });
+
+      if (exactMatches.length > 0) {
+        dupCard.className = 'p-3 rounded-xl bg-rose-500/10 border border-rose-500/40 text-xs transition space-y-1';
+        dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-rose-500 text-white';
+        dupBadge.textContent = '🚨 DUPLICADO IDÉNTICO';
+        const em = exactMatches[0];
+        dupDetail.innerHTML = `⚠️ <strong>¡Mismos stats exactos que #${em.id} ${em.name}!</strong> (HP: ${em.stats.life}, ATK: ${em.stats.damage}, DEF: ${em.stats.armor}, SPD: ${em.stats.speed}, PWR: ${em.stats.power_amount}). Modifica algunos valores para que tu pollo tenga una identidad única en combate.`;
+      } else if (minDistance <= 15 && closest) {
+        dupCard.className = 'p-3 rounded-xl bg-amber-500/10 border border-amber-500/40 text-xs transition space-y-1';
+        dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40';
+        dupBadge.textContent = `⚠️ SIMILAR A #${closest.id}`;
+        dupDetail.innerHTML = `Se asemeja mucho al perfil de <strong>#${closest.id} ${closest.name}</strong> (diferencia de solo ~${closest.dist} pts globales: HP ${closest.stats.life}, ATK ${closest.stats.damage}, DEF ${closest.stats.armor}, SPD ${closest.stats.speed}, PWR ${closest.stats.power_amount}).`;
+      } else if (closest) {
+        dupCard.className = 'p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-xs transition space-y-1';
+        dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40';
+        dupBadge.textContent = '✅ PERFIL ÚNICO';
+        dupDetail.innerHTML = `Distribución de estadísticas original y distinguible. El pollo más cercano es <em>#${closest.id} ${closest.name}</em> con una diferencia de ${closest.dist} pts.`;
+      }
+    }
+
+    // Smart Archetype Diagnostic Engine
+    function diagnoseArchetype(s) {
+      const bs = s.stats;
+      const turns = Math.max(1, Math.ceil(s.power_max / Math.max(1, bs.power_amount)));
+      const pText = (s.passive + " " + s.active_power).toLowerCase();
+
+      let archetype = "Todoterreno";
+      let archetypeDesc = "Equilibrado";
+      let roleDuo = "";
+      let allies = "";
+      let counter = "";
+
+      const isHealer = pText.includes('curac') || pText.includes('cura') || pText.includes('recupera');
+      const isControl = pText.includes('congel') || pText.includes('quema') || pText.includes('venen') || pText.includes('aturd');
+
+      if (bs.armor >= 55 || (bs.life >= 70 && bs.armor >= 40)) {
+        archetype = "Tanque Muralla";
+        archetypeDesc = "Muro Defensivo";
+        roleDuo = "Absorbe el daño enemigo en Vanguardia y bloquea rematadores con su armadura natural.";
+        allies = "Combina perfecto con DPS rápidos y frágiles (Chica, Mosca, Cay) que limpien rivales mientras él resiste.";
+        counter = "Vulnerable a daño penetrante de veneno y fuego, o poderes especiales que ignoren la armadura.";
+      } else if (bs.damage >= 70 && bs.speed >= 65) {
+        archetype = "Asesino Veloz";
+        archetypeDesc = "Burst DPS";
+        roleDuo = "Golpea en los primeros turnos para noquear objetivos clave antes de que activen su poder.";
+        allies = "Requiere un Tanque o Soporte que lo cubra (Pastank, Armor, Ponk) ya que no resiste combates largos.";
+        counter = "Enfocarlo en turno 1. Tiende a tener baja vida o armadura; un ataque doble veloz lo elimina.";
+      } else if (bs.damage >= 75 && bs.speed < 45) {
+        archetype = "Ariete Pesado";
+        archetypeDesc = "Glass Cannon";
+        roleDuo = "Inflige un castigo devastador turno a turno. Excelente rematador si logra sobrevivir.";
+        allies = "Imprescindible acompañarlo con un Soporte con Curación/Escudo o un Velocista que debilite.";
+        counter = "Atacarlo con velocistas antes de que mueva o congelarlo/aturdirlo para negar sus golpes.";
+      } else if (bs.power_amount >= 50 || (turns <= 2 && bs.damage >= 45)) {
+        archetype = "Mago de Ráfaga";
+        archetypeDesc = "Nuke de Poder";
+        roleDuo = "Especialista en desatar su poder activo repetidamente cada 1 o 2 turnos, volteando la partida.";
+        allies = "Compañeros con Palo de raíz, generadores de energía o atacantes de distracción.";
+        counter = "Drenar su poder con habilidades de bloqueo de energía o noquearlo antes de su primer ciclo.";
+      } else if (bs.speed >= 75) {
+        archetype = "Velocista Táctico";
+        archetypeDesc = "Iniciador / Abridor";
+        roleDuo = "Garantiza tomar la iniciativa en la ronda 1 para colocar estados o desgastar la vanguardia.";
+        allies = "Cualquier pollo pesado que aproveche las aperturas que deja en las defensas rivales.";
+        counter = "Aguantar su primera oleada con armadura pesada y contraatacar en los turnos posteriores.";
+      } else if (isHealer) {
+        archetype = "Soporte Sanador";
+        archetypeDesc = "Sostén de Equipo";
+        roleDuo = "Mantiene al equipo con vida en Retaguardia mientras regenera salud y limpia penalizaciones.";
+        allies = "Tanques masivos y luchadores que ganen stats al recibir golpes o curarse (Zombie, Toro).";
+        counter = "Aislarlo y eliminar a su compañero para dejarlo indefenso en un 2 contra 1.";
+      } else if (isControl) {
+        archetype = "Disruptor de Estados";
+        archetypeDesc = "Controlador";
+        roleDuo = "Inutiliza o quema el ritmo del combate enemigo aplicando congelamiento, veneno o quemadura.";
+        allies = "Pollos con sinergias elementales que hagan más daño contra enemigos con estados.";
+        counter = "Llevar objetos de limpieza (Gota milagro, Poción mágica) para nulificar sus estados.";
+      } else {
+        archetype = "Todoterreno";
+        archetypeDesc = "Equilibrado";
+        roleDuo = "Versátil en cualquier posición del dúo 2vs2. Adapta su juego según el compañero.";
+        allies = "Combina con cualquier arquetipo sin penalizar la sinergia general del equipo.";
+        counter = "Identificar qué objeto lleva equipado y contrarrestar su mecánica principal.";
+      }
+
+      return { archetype, archetypeDesc, turns, roleDuo, allies, counter };
+    }
+
+    function updateTacticalUI(diag) {
+      document.getElementById('preview-archetype-badge').textContent = diag.archetype;
+      document.getElementById('card-archetype-sub').textContent = `${diag.archetype} (${diag.archetypeDesc})`;
+      document.getElementById('power-cycle-badge').textContent = `~${diag.turns} ${diag.turns === 1 ? 'turno' : 'turnos'} de carga`;
+      document.getElementById('diag-duo-role').textContent = diag.roleDuo;
+      document.getElementById('diag-allies').textContent = diag.allies;
+      document.getElementById('diag-counter').textContent = diag.counter;
+    }
+
+    function updateCardPreview(diag) {
+      document.getElementById('card-name').textContent = currentSketch.name || 'Sin Nombre';
+      document.getElementById('card-sprite').src = getSpriteUrl(currentSketch.sprite);
+      document.getElementById('chicken-sprite-preview').src = getSpriteUrl(currentSketch.sprite);
+      document.getElementById('card-cost-badge').textContent = `${currentSketch.power_max}🔋`;
+
+      const s = currentSketch.stats;
+      document.getElementById('card-hp').textContent = s.life;
+      document.getElementById('card-atk').textContent = s.damage;
+      document.getElementById('card-def').textContent = s.armor;
+      document.getElementById('card-spd').textContent = s.speed;
+      document.getElementById('card-pwr').textContent = s.power_amount;
+
+      document.getElementById('card-passive').textContent = currentSketch.passive;
+      document.getElementById('card-active').textContent = currentSketch.active_power;
+
+      // Hidden power string
+      let hpDesc = "Ninguno";
+      if (WIKI.powers && WIKI.powers[currentSketch.hidden_power_id]) {
+        const p = WIKI.powers[currentSketch.hidden_power_id];
+        hpDesc = p.description && (p.description.es || p.description);
+      }
+      document.getElementById('card-hidden').textContent = hpDesc;
+    }
+
+    // Radar math & 60fps polygon update + Level simulation
+    function updateRadarAndSimulation() {
+      const s = currentSketch.stats;
+      const lvl = parseInt(document.getElementById('sim-level-input').value, 10) || 50;
+
+      // Official GameMaker formula engine scr_calculate_stats
+      const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+      const lifeBase = 50, lifeMax = 2500;
+      const lifeFactor = ((s.life * 0.55) + (50 * 0.25) + (0)) / 100;
+      const life = clamp(lifeBase + (lifeMax - lifeBase) * Math.pow(lvl / 100, 1.15) * lifeFactor, lifeBase, lifeMax);
+
+      const damageBase = 5, damageMax = 300;
+      const damageFactor = ((s.damage * 0.55) + (50 * 0.25) + (0)) / 100;
+      const damage = clamp(damageBase + (damageMax - damageBase) * Math.pow(lvl / 100, 0.85) * damageFactor, damageBase, damageMax);
+
+      const speedBase = 10, speedMax = 500;
+      const speedFactor = ((s.speed * 0.55) + (50 * 0.25) + (0)) / 100;
+      const speed = clamp(speedBase + (speedMax - speedBase) * Math.pow(lvl / 100, 0.65) * speedFactor, speedBase, speedMax);
+
+      const armorFactor = ((s.armor * 0.55) + (50 * 0.25) + (0)) / 100;
+      const armor = clamp(80 * Math.pow(lvl / 100, 1.30) * armorFactor, 0, 80);
+
+      document.getElementById('scaled-hp').textContent = Math.round(life).toLocaleString();
+      document.getElementById('scaled-atk').textContent = Math.round(damage).toLocaleString();
+      document.getElementById('scaled-def').textContent = `${Math.round(armor)}%`;
+      document.getElementById('scaled-spd').textContent = Math.round(speed).toLocaleString();
+
+      // Radar polygon vertices: [HP, ATK, SPD, DEF, PWR]
+      const statPcts = [
+        Math.min(1.0, Math.max(0.1, s.life / 100)),
+        Math.min(1.0, Math.max(0.1, s.damage / 100)),
+        Math.min(1.0, Math.max(0.1, s.speed / 100)),
+        Math.min(1.0, Math.max(0.1, s.armor / 100)),
+        Math.min(1.0, Math.max(0.1, s.power_amount / 80))
+      ];
+
+      const pts = RADAR_ANGLES.map((a, i) => {
+        const r = RADAR_R * statPcts[i];
+        const x = RADAR_CX + r * Math.cos(a);
+        const y = RADAR_CY + r * Math.sin(a);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(' ');
+
+      document.getElementById('radar-polygon').setAttribute('points', pts);
+
+      // Node circles & labels
+      const nodesG = document.getElementById('radar-nodes');
+      const labelsG = document.getElementById('radar-labels');
+      nodesG.innerHTML = '';
+      labelsG.innerHTML = '';
+
+      const labels = [
+        { name: "HP", color: "#f43f5e", val: s.life },
+        { name: "ATK", color: "#fb923c", val: s.damage },
+        { name: "SPD", color: "#34d399", val: s.speed },
+        { name: "DEF", color: "#60a5fa", val: s.armor },
+        { name: "PWR", color: "#c084fc", val: s.power_amount }
+      ];
+
+      RADAR_ANGLES.forEach((a, i) => {
+        const r = RADAR_R * statPcts[i];
+        const x = RADAR_CX + r * Math.cos(a);
+        const y = RADAR_CY + r * Math.sin(a);
+
+        // Circle node
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', x.toFixed(1));
+        c.setAttribute('cy', y.toFixed(1));
+        c.setAttribute('r', '4');
+        c.setAttribute('fill', labels[i].color);
+        c.setAttribute('stroke', '#ffffff');
+        c.setAttribute('stroke-width', '1.5');
+        nodesG.appendChild(c);
+
+        // Text label around perimeter
+        const lx = RADAR_CX + (RADAR_R + 18) * Math.cos(a);
+        const ly = RADAR_CY + (RADAR_R + 18) * Math.sin(a);
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', lx.toFixed(1));
+        text.setAttribute('y', (ly + 4).toFixed(1));
+        text.setAttribute('text-anchor', Math.abs(Math.cos(a)) < 0.2 ? 'middle' : (Math.cos(a) > 0 ? 'start' : 'end'));
+        text.setAttribute('fill', labels[i].color);
+        text.textContent = `${labels[i].name} (${labels[i].val})`;
+        labelsG.appendChild(text);
+      });
+    }
+
+    // Auto-balance to 200 pts
+    function autobalanceStats() {
+      const s = currentSketch.stats;
+      const currentSum = Object.values(s).reduce((a, b) => a + b, 0);
+      if (currentSum === 0) return;
+      const targetSum = 200;
+      const factor = targetSum / currentSum;
+
+      s.life = Math.round(s.life * factor);
+      s.damage = Math.round(s.damage * factor);
+      s.armor = Math.round(s.armor * factor);
+      s.speed = Math.round(s.speed * factor);
+      s.power_amount = Math.round(s.power_amount * factor);
+
+      // Handle small rounding delta
+      let delta = targetSum - Object.values(s).reduce((a, b) => a + b, 0);
+      s.life += delta;
+
+      // Update inputs
+      ['life', 'damage', 'armor', 'speed', 'power'].forEach(k => {
+        const v = s[k === 'power' ? 'power_amount' : k];
+        document.getElementById(`num-${k}`).value = v;
+        document.getElementById(`range-${k}`).value = v;
+      });
+
+      onDataChanged();
+    }
+
+    // Load sketch into editor
+    function loadSketch(sk) {
+      currentSketch = JSON.parse(JSON.stringify(sk));
+      document.getElementById('sketch-id-badge').textContent = `Boceto #${sk.id || 151}`;
+      document.getElementById('input-name').value = sk.name || '';
+      document.getElementById('input-zone').value = sk.zone || '';
+      document.getElementById('select-status').value = sk.status || 'Boceto';
+      document.getElementById('input-concept').value = sk.concept || '';
+      document.getElementById('select-power-cost').value = sk.power_max || 100;
+      document.getElementById('input-passive').value = sk.passive || '';
+      document.getElementById('input-active-power').value = sk.active_power || '';
+      document.getElementById('select-hidden-power').value = sk.hidden_power_id ?? 4;
+      document.getElementById('select-default-item').value = sk.default_item_id ?? 1;
+
+      ['life', 'damage', 'armor', 'speed'].forEach(k => {
+        document.getElementById(`num-${k}`).value = sk.stats[k] || 40;
+        document.getElementById(`range-${k}`).value = sk.stats[k] || 40;
+      });
+      document.getElementById('num-power').value = sk.stats.power_amount || 20;
+      document.getElementById('range-power').value = sk.stats.power_amount || 20;
+
+      onDataChanged();
+    }
+
+    // Save current sketch to LocalStorage
+    function saveCurrentSketch() {
+      const idx = savedSketches.findIndex(s => s.id === currentSketch.id);
+      if (idx >= 0) {
+        savedSketches[idx] = JSON.parse(JSON.stringify(currentSketch));
+      } else {
+        savedSketches.push(JSON.parse(JSON.stringify(currentSketch)));
+      }
+      localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+      updateSketchesCount();
+      alert(`✅ ¡Boceto "${currentSketch.name}" (#${currentSketch.id}) guardado con éxito!`);
+    }
+
+    function updateSketchesCount() {
+      document.getElementById('sketches-count-badge').textContent = savedSketches.length;
+    }
+
+    // Setup All Event Listeners
+    function setupEventListeners() {
+      // Stat inputs linking
+      ['life', 'damage', 'armor', 'speed'].forEach(k => {
+        document.getElementById(`num-${k}`).addEventListener('input', (e) => syncStatInputs(k, e.target.value));
+        document.getElementById(`range-${k}`).addEventListener('input', (e) => syncStatInputs(k, e.target.value));
+      });
+      document.getElementById('num-power').addEventListener('input', (e) => syncStatInputs('power_amount', e.target.value));
+      document.getElementById('range-power').addEventListener('input', (e) => syncStatInputs('power_amount', e.target.value));
+
+      // Info inputs
+      ['input-name', 'input-zone', 'select-status', 'input-concept', 'select-power-cost', 'input-passive', 'input-active-power', 'select-hidden-power', 'select-default-item'].forEach(id => {
+        document.getElementById(id).addEventListener('input', onDataChanged);
+        document.getElementById(id).addEventListener('change', onDataChanged);
+      });
+
+      // Presets
+      document.getElementById('preset-passive-select').addEventListener('change', (e) => {
+        if (e.target.value) {
+          document.getElementById('input-passive').value = e.target.value;
+          onDataChanged();
+        }
+      });
+      document.getElementById('preset-power-select').addEventListener('change', (e) => {
+        if (e.target.value) {
+          document.getElementById('input-active-power').value = e.target.value;
+          onDataChanged();
+        }
+      });
+
+      // Level slider & presets
+      document.getElementById('sim-level-input').addEventListener('input', updateRadarAndSimulation);
+      document.querySelectorAll('.btn-lvl-preset').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.getElementById('sim-level-input').value = e.target.getAttribute('data-lvl');
+          updateRadarAndSimulation();
+        });
+      });
+
+      // Autobalance
+      document.getElementById('btn-autobalance').addEventListener('click', autobalanceStats);
+
+      // Save & New buttons
+      document.getElementById('btn-save').addEventListener('click', saveCurrentSketch);
+      document.getElementById('btn-new').addEventListener('click', () => {
+        const nextId = savedSketches.length > 0 ? Math.max(...savedSketches.map(s => s.id || 151)) + 1 : 151;
+        loadSketch({
+          id: nextId,
+          name: "Nuevo Pollo " + nextId,
+          sprite: "images/chickens/0.png",
+          zone: "Nueva Zona",
+          status: "Idea",
+          concept: "",
+          stats: { life: 40, damage: 45, armor: 35, speed: 45, power_amount: 35 },
+          power_max: 100,
+          passive: "Habilidad pasiva única...",
+          active_power: "Poder activo...",
+          hidden_power_id: 4,
+          default_item_id: -1
+        });
+      });
+
+      // Image upload & drag drop
+      const dropzone = document.getElementById('sprite-dropzone');
+      const fileInput = document.getElementById('file-sprite-input');
+
+      dropzone.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          reader.onload = (re) => {
+            currentSketch.sprite = re.target.result;
+            onDataChanged();
+          };
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+
+      // Drag and Drop
+      dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('border-amber-500'); });
+      dropzone.addEventListener('dragleave', () => dropzone.classList.remove('border-amber-500'));
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('border-amber-500');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const reader = new FileReader();
+          reader.onload = (re) => {
+            currentSketch.sprite = re.target.result;
+            onDataChanged();
+          };
+          reader.readAsDataURL(e.dataTransfer.files[0]);
+        }
+      });
+
+      // Paste handler (Ctrl + V for images)
+      window.addEventListener('paste', (e) => {
+        if (e.clipboardData && e.clipboardData.items) {
+          for (let item of e.clipboardData.items) {
+            if (item.type.indexOf('image') !== -1) {
+              const file = item.getAsFile();
+              const reader = new FileReader();
+              reader.onload = (re) => {
+                currentSketch.sprite = re.target.result;
+                onDataChanged();
+              };
+              reader.readAsDataURL(file);
+              break;
+            }
+          }
+        }
+      });
+
+      // Random sprite from Gen 1
+      document.getElementById('btn-random-sprite').addEventListener('click', () => {
+        const randId = Math.floor(Math.random() * (WIKI.chickens ? WIKI.chickens.length : 151));
+        currentSketch.sprite = `images/chickens/${randId}.png`;
+        onDataChanged();
+      });
+
+      // Modal Gen 1 Browser
+      const modalGen1 = document.getElementById('modal-gen1');
+      document.getElementById('btn-browse-gen1').addEventListener('click', () => {
+        renderGen1Grid();
+        modalGen1.classList.remove('hidden');
+      });
+      document.getElementById('btn-pick-gen1-sprite').addEventListener('click', () => {
+        renderGen1Grid(true); // Pick mode
+        modalGen1.classList.remove('hidden');
+      });
+      document.getElementById('btn-close-gen1').addEventListener('click', () => modalGen1.classList.add('hidden'));
+
+      // Modal Sketches Browser
+      const modalSketches = document.getElementById('modal-sketches');
+      document.getElementById('btn-my-sketches').addEventListener('click', () => {
+        renderSketchesList();
+        modalSketches.classList.remove('hidden');
+      });
+      document.getElementById('btn-close-sketches').addEventListener('click', () => modalSketches.classList.add('hidden'));
+
+      // Export CSV (for Google Sheets)
+      document.getElementById('btn-export-csv').addEventListener('click', exportToGoogleSheetsCSV);
+
+      // JSON backup & import
+      document.getElementById('btn-backup-json').addEventListener('click', () => {
+        const blob = new Blob([JSON.stringify(savedSketches, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `Clicker_Chickens_Gen2_Bocetos_${new Date().toISOString().slice(0, 10)}.json`;
+        a.click();
+      });
+
+      document.getElementById('file-import-json').addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          reader.onload = (re) => {
+            try {
+              const data = JSON.parse(re.target.result);
+              if (Array.isArray(data)) {
+                savedSketches = data;
+                localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+                updateSketchesCount();
+                renderSketchesList();
+                alert(`✅ ¡${savedSketches.length} bocetos importados con éxito!`);
+              }
+            } catch(err) {
+              alert('Error al leer el archivo JSON.');
+            }
+          };
+          reader.readAsText(e.target.files[0]);
+        }
+      });
+    }
+
+    // Render Gen 1 Grid in Modal
+    function renderGen1Grid(pickSpriteMode = false) {
+      const container = document.getElementById('gen1-grid');
+      const searchVal = (document.getElementById('gen1-search').value || '').toLowerCase().trim();
+      container.innerHTML = '';
+
+      if (!WIKI.chickens) return;
+
+      const filtered = WIKI.chickens.filter(c => {
+        const name = (c.name && (c.name.es || c.name) || '').toLowerCase();
+        return name.includes(searchVal) || c.id.toString() === searchVal;
+      });
+
+      filtered.forEach(c => {
+        const name = c.name && (c.name.es || c.name);
+        const card = document.createElement('div');
+        card.className = 'p-2.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/60 transition flex items-center justify-between gap-3 cursor-pointer group';
+        card.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0">
+            <img class="w-10 h-10 object-contain pixelated" src="${getSpriteUrl(c.sprite)}" alt="">
+            <div class="truncate">
+              <span class="font-mono text-[10px] text-[var(--text-muted)]">#${String(c.id).padStart(3, '0')}</span>
+              <h4 class="text-xs font-bold truncate group-hover:text-amber-400 transition">${name}</h4>
+              <span class="text-[10px] font-mono text-amber-500">${c.stat_total || 200} pts</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 items-end">
+            <button class="px-2 py-1 rounded bg-[var(--card)] hover:bg-amber-500 hover:text-black text-[10px] font-bold transition">
+              ${pickSpriteMode ? 'Usar Sprite' : 'Clonar Stats'}
+            </button>
+          </div>
+        `;
+        card.addEventListener('click', () => {
+          if (pickSpriteMode) {
+            currentSketch.sprite = c.sprite;
+            onDataChanged();
+          } else {
+            // Clone as base for Gen 2
+            currentSketch.stats = { ...c.stats };
+            currentSketch.power_max = c.power_max || 100;
+            if (WIKI.passives && WIKI.passives[c.passive_id]) {
+              currentSketch.passive = WIKI.passives[c.passive_id].description.es || WIKI.passives[c.passive_id].description;
+            }
+            if (WIKI.powers && WIKI.powers[c.power_id]) {
+              currentSketch.active_power = WIKI.powers[c.power_id].description.es || WIKI.powers[c.power_id].description;
+            }
+            currentSketch.hidden_power_id = c.hidden_power_id ?? 4;
+            loadSketch(currentSketch);
+          }
+          document.getElementById('modal-gen1').classList.add('hidden');
+        });
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById('gen1-search').addEventListener('input', () => renderGen1Grid());
+
+    // Render Saved Sketches
+    function renderSketchesList() {
+      const container = document.getElementById('sketches-list-container');
+      container.innerHTML = '';
+
+      if (savedSketches.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center text-[var(--text-muted)] space-y-2">
+            <span class="text-3xl block">📭</span>
+            <p>Aún no has guardado ningún boceto de Gen 2.</p>
+            <p class="text-xs">Usa el botón "💾 Guardar Boceto" arriba para almacenar tus creaciones.</p>
+          </div>
+        `;
+        return;
+      }
+
+      savedSketches.forEach((sk, idx) => {
+        const s = sk.stats || {};
+        const sum = Object.values(s).reduce((a, b) => a + b, 0);
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/40 transition flex items-center justify-between gap-4';
+        item.innerHTML = `
+          <div class="flex items-center gap-3 min-w-0">
+            <img class="w-12 h-12 object-contain pixelated bg-[var(--card)] rounded-lg p-1 border border-[var(--border)]" src="${getSpriteUrl(sk.sprite)}" alt="">
+            <div class="truncate">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs text-amber-400 font-bold">#${sk.id || 151}</span>
+                <h4 class="text-sm font-bold truncate">${sk.name}</h4>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[var(--card)] border border-[var(--border)] text-[var(--text-muted)]">${sk.status || 'Boceto'}</span>
+              </div>
+              <div class="text-[11px] font-mono text-[var(--text-muted)] mt-0.5">
+                HP ${s.life} · ATK ${s.damage} · DEF ${s.armor} · SPD ${s.speed} · PWR ${s.power_amount} · <strong>${sum} pts</strong>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="btn-load-sk px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs transition">
+              Cargar
+            </button>
+            <button class="btn-del-sk px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-rose-500 hover:text-white text-rose-400 border border-[var(--border)] text-xs transition">
+              🗑️
+            </button>
+          </div>
+        `;
+
+        item.querySelector('.btn-load-sk').addEventListener('click', () => {
+          loadSketch(sk);
+          document.getElementById('modal-sketches').classList.add('hidden');
+        });
+
+        item.querySelector('.btn-del-sk').addEventListener('click', () => {
+          if (confirm(`¿Eliminar boceto "${sk.name}"?`)) {
+            savedSketches.splice(idx, 1);
+            localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+            updateSketchesCount();
+            renderSketchesList();
+          }
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    // Export to CSV for Google Sheets
+    function exportToGoogleSheetsCSV() {
+      const listToExport = savedSketches.length > 0 ? savedSketches : [currentSketch];
+      const headers = [
+        "#", "Nombre Propuesto", "Concepto / Boceto", "Rol Táctico", 
+        "Pasiva Propuesta", "Poder Activo Propuesto", "Poder Oculto Sugerido", 
+        "Vida (HP)", "Daño (ATK)", "Armadura (DEF)", "Velocidad (SPD)", "Poder Base (PWR)", 
+        "Poder Máx (Coste)", "Total Stats", "Zona / Origen Sugerido", "Estado del Diseño"
+      ];
+
+      const rows = [headers];
+
+      listToExport.forEach(sk => {
+        const s = sk.stats || {};
+        const sum = Object.values(s).reduce((a, b) => a + b, 0);
+        const diag = diagnoseArchetype(sk);
+        let hpDesc = "Ninguno";
+        if (WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
+          const p = WIKI.powers[sk.hidden_power_id];
+          hpDesc = p.description && (p.description.es || p.description);
+        }
+
+        rows.push([
+          sk.id || 151,
+          sk.name || "Sin Nombre",
+          sk.concept || "",
+          diag.archetype,
+          sk.passive || "",
+          sk.active_power || "",
+          hpDesc,
+          s.life || 0,
+          s.damage || 0,
+          s.armor || 0,
+          s.speed || 0,
+          s.power_amount || 0,
+          sk.power_max || 100,
+          sum,
+          sk.zone || "",
+          sk.status || "Boceto"
+        ]);
+      });
+
+      // Build CSV with UTF-8 BOM
+      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `Clicker_Chickens_Gen2_Bocetos_Sheets_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+    }
+
+    // Run on load
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

@@ -137,27 +137,58 @@
       </div>
     </section>
 
+    <!-- BARRA GESTOR DE EQUIPOS Y CÓDIGOS -->
+    <div class="flex flex-wrap items-center justify-between gap-3 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-3.5 shadow-sm text-xs">
+      <div class="flex items-center gap-2.5">
+        <span class="text-lg">💾</span>
+        <div>
+          <div class="font-bold text-amber-500">Gestor de Equipos y Códigos Compartibles</div>
+          <div class="text-[var(--muted-foreground)] text-[11px] hidden sm:block">Guarda tus combinaciones favoritas o compártelas fácilmente mediante códigos de texto.</div>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="copyFullMatchCode()" class="px-3 py-1.5 rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] font-medium transition flex items-center gap-1.5 text-blue-400" title="Copia el enfrentamiento 2vs2 completo (4 pollos)">
+          <span>📋</span> Copiar Combate Completo
+        </button>
+        <button onclick="importCodePrompt(-1)" class="px-3 py-1.5 rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] font-medium transition flex items-center gap-1.5" title="Pega un código de equipo o combate">
+          <span>📥</span> Importar Código
+        </button>
+        <button onclick="openManageSavedModal()" class="px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/30 font-semibold transition flex items-center gap-1.5" title="Ver y gestionar todos tus equipos guardados">
+          <span>⭐</span> Mis Equipos (<span id="saved-teams-count">0</span>)
+        </button>
+      </div>
+    </div>
+
     <!-- TEAMS GRID (EQUIPO AZUL VS EQUIPO ROJO) -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
       <!-- ================= EQUIPO AZUL (JUGADOR) ================= -->
       <div class="bg-[var(--card)] border-2 border-blue-500/30 rounded-2xl p-4 md:p-5 shadow-sm space-y-4">
-        <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+        <div class="flex flex-wrap items-center justify-between border-b border-[var(--border)] pb-3 gap-2">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span>
             <h2 class="text-base font-bold text-blue-400 uppercase tracking-wide">
               Equipo Azul (Tu Bando)
             </h2>
           </div>
-          <div class="flex items-center gap-1.5">
-            <button onclick="applyTeamPreset(0, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
-              👑 Max Lv.100
+          <div class="flex flex-wrap items-center gap-1.5">
+            <select id="load-team-select-0" onchange="onSelectTeamPreset(0, this.value); this.value='';" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500">
+              <!-- populated dynamically -->
+            </select>
+            <button onclick="saveTeamPrompt(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Guardar este equipo localmente">
+              💾 Guardar
             </button>
-            <button onclick="applyTeamPreset(0, 'mid')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
-              ⚔️ Lv.50
+            <button onclick="copyTeamCode(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código de este equipo">
+              📋 Código
             </button>
-            <button onclick="randomizeTeam(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
-              🎲 Random
+            <button onclick="importCodePrompt(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pegar código en este equipo">
+              📥 Pegar
+            </button>
+            <button onclick="applyTeamPreset(0, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Nivel 100 y Genética 100">
+              👑 Max
+            </button>
+            <button onclick="randomizeTeam(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pollos y stats aleatorios">
+              🎲
             </button>
           </div>
         </div>
@@ -171,22 +202,31 @@
 
       <!-- ================= EQUIPO ROJO (RIVAL) ================= -->
       <div class="bg-[var(--card)] border-2 border-red-500/30 rounded-2xl p-4 md:p-5 shadow-sm space-y-4">
-        <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+        <div class="flex flex-wrap items-center justify-between border-b border-[var(--border)] pb-3 gap-2">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
             <h2 class="text-base font-bold text-red-400 uppercase tracking-wide">
               Equipo Rojo (Rival)
             </h2>
           </div>
-          <div class="flex items-center gap-1.5">
-            <button onclick="applyTeamPreset(1, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
-              👑 Max Lv.100
+          <div class="flex flex-wrap items-center gap-1.5">
+            <select id="load-team-select-1" onchange="onSelectTeamPreset(1, this.value); this.value='';" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-red-500">
+              <!-- populated dynamically -->
+            </select>
+            <button onclick="saveTeamPrompt(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Guardar este equipo localmente">
+              💾 Guardar
             </button>
-            <button onclick="applyTeamPreset(1, 'mid')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
-              ⚔️ Lv.50
+            <button onclick="copyTeamCode(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código de este equipo">
+              📋 Código
             </button>
-            <button onclick="randomizeTeam(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
-              🎲 Random
+            <button onclick="importCodePrompt(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pegar código en este equipo">
+              📥 Pegar
+            </button>
+            <button onclick="applyTeamPreset(1, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Nivel 100 y Genética 100">
+              👑 Max
+            </button>
+            <button onclick="randomizeTeam(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pollos y stats aleatorios">
+              🎲
             </button>
           </div>
         </div>
@@ -617,7 +657,7 @@
     function updateTargetAI(t, s, ai) { teamConfigs[t][s].targetAI = ai; }
     function toggleHiddenPower(t, s, val) { teamConfigs[t][s].useHiddenPower = val; applyChickenPreview(t, s, teamConfigs[t][s].chickenId); }
 
-    function applyTeamPreset(team, type) {
+        function applyTeamPreset(team, type) {
       for (let s = 0; s < 2; s++) {
         if (type === 'max') {
           teamConfigs[team][s].level = 100;
@@ -2097,7 +2137,424 @@
     }
 
     // INIT
+    // =========================================================================
+    // SAVED TEAMS & PRESETS SYSTEM (LOCALSTORAGE & CODE SHARING)
+    // =========================================================================
+    const META_PRESETS = [
+      {
+        id: "meta_mechalex",
+        name: "🤖 Dúo Mecánico (Mechalex & Eggalex)",
+        team: [
+          { chickenId: 135, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false },
+          { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_toxic",
+        name: "🧪 Dúo Veneno & Parálisis (Pasti & Polliwatt)",
+        team: [
+          { chickenId: 7, level: 100, born: 100, training: 2.0, itemId: 25, targetAI: 1, useHiddenPower: false },
+          { chickenId: 18, level: 100, born: 100, training: 2.0, itemId: 55, targetAI: 2, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_immortal",
+        name: "🛡️ Dúo Tanque & Inmortal (Iguanarto & Easy East)",
+        team: [
+          { chickenId: 29, level: 100, born: 100, training: 2.0, itemId: 6, targetAI: 2, useHiddenPower: false },
+          { chickenId: 13, level: 100, born: 100, training: 2.0, itemId: 23, targetAI: 1, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_zombie",
+        name: "🧟 Dúo Infección Zombie (Mali & Zombie)",
+        team: [
+          { chickenId: 4, level: 100, born: 100, training: 2.0, itemId: 31, targetAI: 1, useHiddenPower: false },
+          { chickenId: 6, level: 100, born: 100, training: 2.0, itemId: 52, targetAI: 1, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_evasion",
+        name: "💨 Dúo Evasión & Velocidad (Evil Gatarlos & Shiken)",
+        team: [
+          { chickenId: 56, level: 100, born: 100, training: 2.0, itemId: 4, targetAI: 1, useHiddenPower: false },
+          { chickenId: 61, level: 100, born: 100, training: 2.0, itemId: 18, targetAI: 1, useHiddenPower: false }
+        ]
+      }
+    ];
+
+    function showToast(msg, isSuccess = true) {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = `px-4 py-2.5 rounded-xl shadow-xl text-xs font-semibold flex items-center gap-2 border transition-all duration-300 pointer-events-auto transform translate-y-2 opacity-0 ${isSuccess ? 'bg-emerald-950/90 border-emerald-500/40 text-emerald-300' : 'bg-red-950/90 border-red-500/40 text-red-300'}`;
+      toast.innerHTML = `<span>${isSuccess ? '✅' : '⚠️'}</span> <span>${msg}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.classList.remove('translate-y-2', 'opacity-0'); }, 10);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => {
+          if (toast && toast.parentNode) toast.parentNode.removeChild(toast);
+        }, 300);
+      }, 3500);
+    }
+
+    function getSavedTeams() {
+      try {
+        const raw = localStorage.getItem('cc_saved_teams');
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveTeamsToStorage(teams) {
+      try {
+        localStorage.setItem('cc_saved_teams', JSON.stringify(teams));
+      } catch(e) {}
+      updateSavedTeamsUI();
+    }
+
+    function serializeSlot(cfg) {
+      return `${cfg.chickenId}.${cfg.level}.${cfg.born}.${cfg.training.toFixed(1)}.${cfg.itemId}.${cfg.targetAI}.${cfg.useHiddenPower ? 1 : 0}`;
+    }
+
+    function deserializeSlot(str) {
+      const p = str.split('.');
+      if (p.length < 5) return null;
+      return {
+        chickenId: parseInt(p[0]) || 0,
+        level: clamp(parseInt(p[1]) || 50, 1, 100),
+        born: clamp(parseInt(p[2]) || 50, 1, 100),
+        training: clamp(parseFloat(p[3]) || 1.0, 1.0, 2.0),
+        itemId: parseInt(p[4]) !== undefined ? parseInt(p[4]) : -1,
+        targetAI: parseInt(p[5]) || 0,
+        useHiddenPower: p[6] === '1',
+        searchQuery: ''
+      };
+    }
+
+    function exportTeamCode(t) {
+      const s0 = serializeSlot(teamConfigs[t][0]);
+      const s1 = serializeSlot(teamConfigs[t][1]);
+      return `CC-T1_${s0}_${s1}`;
+    }
+
+    function exportMatchCode() {
+      const t0_0 = serializeSlot(teamConfigs[0][0]);
+      const t0_1 = serializeSlot(teamConfigs[0][1]);
+      const t1_0 = serializeSlot(teamConfigs[1][0]);
+      const t1_1 = serializeSlot(teamConfigs[1][1]);
+      return `CC-M1_${t0_0}_${t0_1}__${t1_0}_${t1_1}`;
+    }
+
+    function parseTeamOrMatchCode(raw) {
+      const code = (raw || '').trim();
+      if (!code) return null;
+
+      // Full Match format
+      if (code.startsWith('CC-M1_')) {
+        const body = code.slice(6);
+        const [team0Str, team1Str] = body.split('__');
+        if (!team0Str || !team1Str) return null;
+        const [s00, s01] = team0Str.split('_');
+        const [s10, s11] = team1Str.split('_');
+        const d00 = deserializeSlot(s00);
+        const d01 = deserializeSlot(s01);
+        const d10 = deserializeSlot(s10);
+        const d11 = deserializeSlot(s11);
+        if (d00 && d01 && d10 && d11) {
+          return { type: 'match', team0: [d00, d01], team1: [d10, d11] };
+        }
+      }
+
+      // Single Team format
+      if (code.startsWith('CC-T1_')) {
+        const body = code.slice(6);
+        const [s0, s1] = body.split('_');
+        const d0 = deserializeSlot(s0);
+        const d1 = deserializeSlot(s1);
+        if (d0 && d1) {
+          return { type: 'team', team: [d0, d1] };
+        }
+      }
+
+      // JSON Fallback
+      try {
+        const parsed = JSON.parse(code);
+        if (Array.isArray(parsed) && parsed.length === 2) {
+          if (Array.isArray(parsed[0]) && Array.isArray(parsed[1])) {
+            return { type: 'match', team0: parsed[0], team1: parsed[1] };
+          }
+          if (parsed[0].chickenId !== undefined) {
+            return { type: 'team', team: parsed };
+          }
+        }
+      } catch (e) {}
+
+      return null;
+    }
+
+    function copyToClipboard(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg);
+        }).catch(() => {
+          prompt("Copia este código:", text);
+        });
+      } else {
+        prompt("Copia este código:", text);
+      }
+    }
+
+    function copyTeamCode(t) {
+      const code = exportTeamCode(t);
+      const teamName = (t === 0) ? "Equipo Azul" : "Equipo Rojo";
+      copyToClipboard(code, `¡Código de ${teamName} copiado!`);
+    }
+
+    function copyFullMatchCode() {
+      const code = exportMatchCode();
+      copyToClipboard(code, "¡Código del Combate 2vs2 Completo copiado!");
+    }
+
+    function saveTeamPrompt(t) {
+      const c0 = CHICKENS.find(c => c.id === teamConfigs[t][0].chickenId) || { name: 'P1' };
+      const c1 = CHICKENS.find(c => c.id === teamConfigs[t][1].chickenId) || { name: 'P2' };
+      const defaultName = `${c0.name} + ${c1.name}`;
+      const name = prompt("Escribe un nombre para guardar este equipo:", defaultName);
+      if (!name || !name.trim()) return;
+
+      const saved = getSavedTeams();
+      saved.push({
+        id: 'team_' + Date.now(),
+        name: name.trim(),
+        date: new Date().toLocaleDateString(),
+        team: [
+          JSON.parse(JSON.stringify(teamConfigs[t][0])),
+          JSON.parse(JSON.stringify(teamConfigs[t][1]))
+        ]
+      });
+
+      saveTeamsToStorage(saved);
+      showToast(`Equipo "${name.trim()}" guardado con éxito!`);
+    }
+
+    function loadSavedTeam(targetTeam, savedId) {
+      // 1. Check meta presets
+      const meta = META_PRESETS.find(m => m.id === savedId);
+      if (meta) {
+        applyPresetToTeam(targetTeam, meta.team);
+        showToast(`Cargado: "${meta.name}" en Equipo ${targetTeam === 0 ? 'Azul' : 'Rojo'}`);
+        return;
+      }
+
+      // 2. Check user saved teams
+      const saved = getSavedTeams();
+      const found = saved.find(s => s.id === savedId);
+      if (found) {
+        applyPresetToTeam(targetTeam, found.team);
+        showToast(`Cargado: "${found.name}" en Equipo ${targetTeam === 0 ? 'Azul' : 'Rojo'}`);
+        return;
+      }
+    }
+
+    function applyPresetToTeam(t, teamArray) {
+      for (let s = 0; s < 2; s++) {
+        if (teamArray[s]) {
+          teamConfigs[t][s].chickenId = teamArray[s].chickenId || 0;
+          teamConfigs[t][s].level = teamArray[s].level || 50;
+          teamConfigs[t][s].born = teamArray[s].born || 50;
+          teamConfigs[t][s].training = teamArray[s].training || 1.0;
+          teamConfigs[t][s].itemId = (teamArray[s].itemId !== undefined) ? teamArray[s].itemId : -1;
+          teamConfigs[t][s].targetAI = teamArray[s].targetAI || 0;
+          teamConfigs[t][s].useHiddenPower = !!teamArray[s].useHiddenPower;
+          teamConfigs[t][s].searchQuery = '';
+        }
+      }
+      renderConfigCards();
+    }
+
+    function onSelectTeamPreset(t, val) {
+      if (!val) return;
+      loadSavedTeam(t, val);
+    }
+
+    function deleteSavedTeam(savedId) {
+      if (!confirm("¿Deseas eliminar este equipo guardado?")) return;
+      const saved = getSavedTeams().filter(s => s.id !== savedId);
+      saveTeamsToStorage(saved);
+      showToast("Equipo eliminado");
+      renderSavedTeamsListModal();
+    }
+
+    function importCodePrompt(targetTeam) {
+      const code = prompt("Pega aquí el código de equipo o combate:");
+      if (!code) return;
+
+      const res = parseTeamOrMatchCode(code);
+      if (!res) {
+        alert("Código no reconocido. Asegúrate de pegar el código completo que empieza por CC-T1_ o CC-M1_");
+        return;
+      }
+
+      if (res.type === 'match') {
+        applyPresetToTeam(0, res.team0);
+        applyPresetToTeam(1, res.team1);
+        showToast("¡Combate Completo (Azul y Rojo) importado con éxito!");
+      } else if (res.type === 'team') {
+        let t = targetTeam;
+        if (t === -1) {
+          const choice = confirm("¿Deseas cargarlo en el EQUIPO AZUL? (Aceptar = Azul, Cancelar = Rojo)");
+          t = choice ? 0 : 1;
+        }
+        applyPresetToTeam(t, res.team);
+        showToast(`¡Equipo importado con éxito en Equipo ${t === 0 ? 'Azul' : 'Rojo'}!`);
+      }
+    }
+
+    function updateSavedTeamsUI() {
+      const saved = getSavedTeams();
+      const countEl = document.getElementById('saved-teams-count');
+      if (countEl) countEl.textContent = saved.length;
+
+      // Update both selects
+      [0, 1].forEach(t => {
+        const sel = document.getElementById(`load-team-select-${t}`);
+        if (!sel) return;
+
+        let html = '<option value="">📂 Cargar Preset...</option>';
+
+        if (saved.length > 0) {
+          html += '<optgroup label="⭐ Mis Equipos Guardados">';
+          saved.forEach(s => {
+            html += `<option value="${s.id}">${s.name}</option>`;
+          });
+          html += '</optgroup>';
+        }
+
+        html += '<optgroup label="🔥 Presets Meta Competitivo">';
+        META_PRESETS.forEach(m => {
+          html += `<option value="${m.id}">${m.name}</option>`;
+        });
+        html += '</optgroup>';
+
+        sel.innerHTML = html;
+      });
+    }
+
+    function openManageSavedModal() {
+      const modal = document.getElementById('modal-saved-teams');
+      if (modal) {
+        modal.classList.remove('hidden');
+        renderSavedTeamsListModal();
+      }
+    }
+
+    function closeManageSavedModal() {
+      const modal = document.getElementById('modal-saved-teams');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function renderSavedTeamsListModal() {
+      const container = document.getElementById('saved-teams-list');
+      if (!container) return;
+
+      const saved = getSavedTeams();
+      if (saved.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-[var(--muted-foreground)] space-y-2">
+            <span class="text-3xl block">🐔</span>
+            <p class="font-semibold">No tienes ningún equipo guardado todavía.</p>
+            <p class="text-[11px]">Configura un bando y presiona "💾 Guardar Azul" o "💾 Guardar Rojo" para guardarlo aquí.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = saved.map(s => {
+        const c0 = CHICKENS.find(c => c.id === s.team[0].chickenId) || { id: 0, name: 'Pollo 1' };
+        const c1 = CHICKENS.find(c => c.id === s.team[1].chickenId) || { id: 0, name: 'Pollo 2' };
+        return `
+          <div class="p-3 rounded-xl bg-[var(--background)] border border-[var(--border)] flex flex-wrap items-center justify-between gap-3 hover:border-amber-500/40 transition">
+            <div class="flex items-center gap-3 min-w-[200px]">
+              <div class="flex items-center -space-x-2 shrink-0">
+                <img src="images/chickens/${c0.id}.png" class="w-8 h-8 object-contain pixelated bg-[var(--card)] rounded-full border border-[var(--border)] p-0.5" alt="${c0.name}">
+                <img src="images/chickens/${c1.id}.png" class="w-8 h-8 object-contain pixelated bg-[var(--card)] rounded-full border border-[var(--border)] p-0.5" alt="${c1.name}">
+              </div>
+              <div class="min-w-0">
+                <div class="font-bold text-sm text-[var(--foreground)] truncate">${s.name}</div>
+                <div class="text-[11px] text-[var(--muted-foreground)]">${c0.name} (Lv.${s.team[0].level}) + ${c1.name} (Lv.${s.team[1].level}) • ${s.date || 'Reciente'}</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button onclick="loadSavedTeam(0, '${s.id}'); closeManageSavedModal();" class="px-2.5 py-1 text-xs rounded bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 font-medium">
+                Azul
+              </button>
+              <button onclick="loadSavedTeam(1, '${s.id}'); closeManageSavedModal();" class="px-2.5 py-1 text-xs rounded bg-red-600/20 text-red-400 hover:bg-red-600/30 border border-red-500/30 font-medium">
+                Rojo
+              </button>
+              <button onclick="copyToClipboard(exportSingleSavedTeamCode('${s.id}'), '¡Código del equipo copiado!');" class="px-2 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código">
+                📋
+              </button>
+              <button onclick="deleteSavedTeam('${s.id}')" class="px-2 py-1 text-xs rounded bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/30" title="Eliminar">
+                🗑️
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function exportSingleSavedTeamCode(savedId) {
+      const saved = getSavedTeams().find(s => s.id === savedId);
+      if (!saved) return "";
+      const s0 = serializeSlot(saved.team[0]);
+      const s1 = serializeSlot(saved.team[1]);
+      return `CC-T1_${s0}_${s1}`;
+    }
+
+    // INIT
+    updateSavedTeamsUI();
     renderConfigCards();
+  
   </script>
+<!-- MODAL GESTOR DE EQUIPOS GUARDADOS -->
+  <div id="modal-saved-teams" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between p-4 border-b border-[var(--border)]">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">⭐</span>
+          <div>
+            <h3 class="font-bold text-sm text-[var(--foreground)]">Mis Equipos Guardados</h3>
+            <p class="text-[11px] text-[var(--muted-foreground)]">Equipos almacenados en tu navegador listos para cargar en batalla</p>
+          </div>
+        </div>
+        <button onclick="closeManageSavedModal()" class="text-[var(--muted-foreground)] hover:text-[var(--foreground)] text-2xl leading-none px-2 py-1 rounded-lg">&times;</button>
+      </div>
+      
+      <div id="saved-teams-list" class="p-4 space-y-3 overflow-y-auto flex-1 text-xs">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="p-3 border-t border-[var(--border)] bg-[var(--background)] flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <button onclick="saveTeamPrompt(0)" class="px-3 py-1.5 text-xs rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600/30 font-medium">
+            💾 Guardar Azul
+          </button>
+          <button onclick="saveTeamPrompt(1)" class="px-3 py-1.5 text-xs rounded-lg bg-red-600/20 text-red-400 border border-red-500/30 hover:bg-red-600/30 font-medium">
+            💾 Guardar Rojo
+          </button>
+        </div>
+        <button onclick="closeManageSavedModal()" class="px-4 py-1.5 text-xs rounded-lg bg-[var(--border)] hover:bg-[var(--muted-foreground)]/20 font-bold">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 </body>
 </html>

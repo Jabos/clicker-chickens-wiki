@@ -1545,16 +1545,16 @@
     lang = lang || currentLang || 'es';
     const tips = {
       0: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Gota milagrosa (#48)</em> o <em>Poción mágica (#35)</em>. Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Gota milagro (#48)</em> o <em>Poción mágica (#35)</em>. Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
         en: "💡 <strong>Counters & Synergies:</strong> Cleansed by <em>Miracle Drop (#48)</em> or <em>Magic Potion (#35)</em>. Rufux and other chickens heal when attacking poisoned foes.",
         pt: "💡 <strong>Contramedidas e Sinergias:</strong> Curado por <em>Gota Milagrosa (#48)</em> ou <em>Poção Mágica (#35)</em>. Rufux e outros frangos recuperam vida ao atingir inimigos envenenados.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Снимается предметами <em>Чудодейственная капля (#48)</em> или <em>Волшебное зелье (#35)</em>. Rufux и другие восстанавливают здоровье при атаке отравленных врагов."
+        ru: "💡 <strong>Противодействие и синергия:</strong> Снимается предметами <em>Чудо-капля (#48)</em> или <em>Волшебное зелье (#35)</em>. Rufux и другие восстанавливают здоровье при атаке отравленных врагов."
       },
       1: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Bebida burbujeante (#16)</em>. El objeto <em>Curación abrasadora (#11)</em> convierte el daño de quemadura en curación!",
-        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame Fizz (#16)</em>. Equipping <em>Sizzle Heal (#11)</em> reverses burn damage into healing!",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Ativa ao atacar e ao receber dano. Curado por <em>Refrigerante Flamejante (#16)</em>. O item <em>Cura Crepitante (#11)</em> converte o dano de queimadura em cura!",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Срабатывает при атаке и получении урона. Снимается <em>Огненная шипучка (#16)</em>. Предмет <em>Шкворчащее исцеление (#11)</em> превращает ожог в исцеление!"
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Flama burbujeante (#16)</em>. El objeto <em>Sanación ardiente (#11)</em> convierte el daño de quemadura en curación!",
+        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame fizz (#16)</em>. Equipping <em>Sizzle heal (#11)</em> reverses burn damage into healing!",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Ativa ao atacar e ao receber dano. Curado por <em>Chama Efervescente (#16)</em>. O item <em>Cura Ardente (#11)</em> converte o dano de queimadura em cura!",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Срабатывает при атаке и получении урона. Снимается <em>Гаситель пламени (#16)</em>. Предмет <em>Жгучее лечение (#11)</em> превращает ожог в исцеление!"
       },
       2: {
         es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide que el pollo actúe mientras está congelado. Curado por <em>Té caliente (#41)</em>. Ciertos pollos helados causan daño extra a objetivos congelados.",
@@ -1563,8 +1563,8 @@
         ru: "💡 <strong>Противодействие и синергия:</strong> Полностью блокирует действия цели. Снимается <em>Горячий чай (#41)</em>. Атаки по замороженным врагам могут наносить повышенный урон."
       },
       3: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Reinicio neural (#55)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
-        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reboot (#55)</em>. Excellent for crippling high-speed or heavily armored foes.",
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Reinicio Neural (#55)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
+        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reset (#55)</em>. Excellent for crippling high-speed or heavily armored foes.",
         pt: "💡 <strong>Contramedidas e Sinergias:</strong> Reduz dano, velocidade e armadura pela metade (50%). Curado por <em>Reinício Neural (#55)</em>. Excelente para neutralizar alvos velozes.",
         ru: "💡 <strong>Противодействие и синергия:</strong> Снижает урон, скорость и броню вдвое (50%). Снимается <em>Нейроперезагрузка (#55)</em>. Идеально против быстрых и бронированных врагов."
       },
@@ -1575,15 +1575,15 @@
         ru: "💡 <strong>Противодействие и синергия:</strong> Блокирует любое лечение и наносит 10% урона при попытке исцелиться. Снимается <em>Волшебное зелье (#35)</em>."
       },
       5: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Pico grande (#18)</em>. Muy eficaz contra jefes con poderes devastadores.",
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Gran pico (#18)</em>. Muy eficaz contra jefes con poderes devastadores.",
         en: "💡 <strong>Counters & Synergies:</strong> Blocks charging power energy. Cleansed by <em>Big Beak (#18)</em>. Strong against boss encounters with devastating powers.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Impede o carregamento de energia para usar poderes especiais. Curado por <em>Bico Grande (#18)</em>.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Impede o carregamento de energia para usar poderes especiais. Curado por <em>Grande Bico (#18)</em>.",
         ru: "💡 <strong>Противодействие и синергия:</strong> Не дает накапливать энергию для применения способностей. Снимается <em>Большой клюв (#18)</em>."
       },
       6: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Cura todo (#27)</em>.",
-        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure All (#27)</em>.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Drena a vida da vítima e cura a equipe adversária em 5% da vida máxima a cada ação. Curado por <em>Cura Tudo (#27)</em>.",
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Medicina (#27)</em>.",
+        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure-All (#27)</em>.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Drena a vida da vítima e cura a equipe adversária em 5% da vida máxima a cada ação. Curado por <em>Cura-Tudo (#27)</em>.",
         ru: "💡 <strong>Противодействие и синергия:</strong> Истощает здоровье жертвы и лечит команду врага на 5% от макс. здоровья за каждое действие. Снимается <em>Панацея (#27)</em>."
       }
     };

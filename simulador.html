@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Combate 2vs2 - Clicker Chickens</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    :root, [data-theme="dark"] {
+      --background: #10141a;
+      --card: #181d24;
+      --border: #262e38;
+      --border-light: #38434f;
+      --foreground: #e6edf3;
+      --muted-foreground: #8b949e;
+      --input-bg: #12161d;
+      --blue-team: #1e3a8a;
+      --red-team: #7f1d1d;
+      color-scheme: dark;
+    }
+    [data-theme="light"] {
+      --background: #f8f9fa;
+      --card: #ffffff;
+      --border: #eaecf0;
+      --border-light: #a2a9b1;
+      --foreground: #202122;
+      --muted-foreground: #54595d;
+      --input-bg: #f0f2f5;
+      --blue-team: #dbeafe;
+      --red-team: #fee2e2;
+      color-scheme: light;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(150, 150, 150, 0.3); border-radius: 3px; }
+    input[type=range] { accent-color: #f59e0b; }
+    
+    .pixelated {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+
+    @keyframes hit-shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-4px); }
+      40%, 80% { transform: translateX(4px); }
+    }
+    .anim-hit { animation: hit-shake 0.25s ease; }
+
+    @keyframes power-glow {
+      0%, 100% { box-shadow: 0 0 0 rgba(245, 158, 11, 0); }
+      50% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.8); }
+    }
+    .anim-power { animation: power-glow 0.5s ease; }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-3 md:p-6 min-h-screen transition-colors duration-200">
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 md:p-5 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">⚔️</span>
+        <div>
+          <h1 class="text-xl md:text-2xl font-bold tracking-tight text-[var(--foreground)]">
+            Simulador de Combate 2vs2
+          </h1>
+          <p class="text-xs md:text-sm text-[var(--muted-foreground)]">
+            Arena táctica oficial de Clicker Chickens: Poderes, Pasivas, Transformaciones y Targeting
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="index.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          <span>←</span> Volver a la Wiki
+        </a>
+        <a href="calculadora.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          <span>🧮</span> Calculadora Stats
+        </a>
+        <button id="theme-btn" onclick="toggleTheme()" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--foreground)]">
+          🌙 Modo Oscuro
+        </button>
+      </div>
+    </header>
+
+    <!-- CONFIGURACIÓN GLOBAL DE COMBATE -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Modo de Combate:</span>
+        <select id="battle-mode" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-amber-500/40 cursor-pointer" onchange="onBattleModeChange()">
+          <option value="-1">⚔️ Combate Estándar (PvP / Wild)</option>
+          <option value="0">🏆 Torneo 0: Pradera (Curación total al matar)</option>
+          <option value="1">🏆 Torneo 1: Volcán (La quemadura aplica doble)</option>
+          <option value="2">🏆 Torneo 2: Cielo (Ataques aliados dan 25% poder)</option>
+          <option value="3">🏆 Torneo 3: Desierto (Todos inician Infectados)</option>
+          <option value="4">🏆 Torneo 4: Rocosos (Resistencia mejorada)</option>
+          <option value="5">🏆 Torneo 5: Nevados (Glaciación)</option>
+          <option value="6">🏆 Torneo 6: Cementerio (Todos obtienen 1 Revivir)</option>
+          <option value="7">🏆 Torneo 7: La Fábrica (Sobrecarga de poder)</option>
+          <option value="8">🏆 Torneo 8: Arcana (Poder Arcano)</option>
+        </select>
+        <span id="tournament-badge" class="text-xs px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-500 border border-amber-500/30 hidden font-medium"></span>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN PRINCIPALES -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="startVisualBattle()" class="px-4 py-2 text-xs font-bold rounded-xl bg-amber-500 hover:bg-amber-600 text-black shadow transition flex items-center gap-1.5">
+          <span>⚔️</span> Simular Combate
+        </button>
+        <button onclick="runMonteCarlo(500)" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 transition flex items-center gap-1.5">
+          <span>⚡</span> Simular 500 Partidas
+        </button>
+        <button onclick="randomizeAllTeams()" class="px-3 py-2 text-xs font-medium rounded-xl bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
+          🎲 Todo Aleatorio
+        </button>
+      </div>
+    </section>
+
+    <!-- TEAMS GRID (EQUIPO AZUL VS EQUIPO ROJO) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- ================= EQUIPO AZUL (JUGADOR) ================= -->
+      <div class="bg-[var(--card)] border-2 border-blue-500/30 rounded-2xl p-4 md:p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span>
+            <h2 class="text-base font-bold text-blue-400 uppercase tracking-wide">
+              Equipo Azul (Tu Bando)
+            </h2>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="applyTeamPreset(0, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
+              👑 Max Lv.100
+            </button>
+            <button onclick="applyTeamPreset(0, 'mid')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
+              ⚔️ Lv.50
+            </button>
+            <button onclick="randomizeTeam(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
+              🎲 Random
+            </button>
+          </div>
+        </div>
+
+        <!-- BLUE SLOT 0 & SLOT 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div id="card-config-0-0" class="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-3"></div>
+          <div id="card-config-0-1" class="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-3"></div>
+        </div>
+      </div>
+
+      <!-- ================= EQUIPO ROJO (RIVAL) ================= -->
+      <div class="bg-[var(--card)] border-2 border-red-500/30 rounded-2xl p-4 md:p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <h2 class="text-base font-bold text-red-400 uppercase tracking-wide">
+              Equipo Rojo (Rival)
+            </h2>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="applyTeamPreset(1, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
+              👑 Max Lv.100
+            </button>
+            <button onclick="applyTeamPreset(1, 'mid')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
+              ⚔️ Lv.50
+            </button>
+            <button onclick="randomizeTeam(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]">
+              🎲 Random
+            </button>
+          </div>
+        </div>
+
+        <!-- RED SLOT 0 & SLOT 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div id="card-config-1-0" class="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-3"></div>
+          <div id="card-config-1-1" class="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-3"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= ARENA DE COMBATE EN VIVO ================= -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] pb-3">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🏟️</span>
+          <h2 class="text-base font-bold">Arena de Batalla</h2>
+          <span id="arena-round-badge" class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-500 font-mono font-semibold">
+            Ronda 0
+          </span>
+        </div>
+
+        <!-- PLAYBACK SPEED & CONTROLS -->
+        <div class="flex items-center gap-2">
+          <div class="flex items-center rounded-lg bg-[var(--background)] border border-[var(--border)] p-0.5 text-xs">
+            <button onclick="setSpeed(1)" id="spd-btn-1" class="px-2 py-1 rounded font-semibold bg-amber-500/20 text-amber-500">1x</button>
+            <button onclick="setSpeed(2)" id="spd-btn-2" class="px-2 py-1 rounded text-[var(--muted-foreground)]">2x</button>
+            <button onclick="setSpeed(4)" id="spd-btn-4" class="px-2 py-1 rounded text-[var(--muted-foreground)]">4x</button>
+          </div>
+          <button id="btn-pause-resume" onclick="togglePause()" class="px-3 py-1.5 text-xs rounded-lg bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] disabled:opacity-40" disabled>
+            ⏸ Pausar
+          </button>
+          <button id="btn-step" onclick="stepAction()" class="px-3 py-1.5 text-xs rounded-lg bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] disabled:opacity-40" disabled>
+            ⏭ Paso
+          </button>
+        </div>
+      </div>
+
+      <!-- ARENA 4 COMBATANTS CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- BLUE 1 -->
+        <div id="arena-entity-0-0" class="p-4 rounded-xl bg-[var(--background)] border-2 border-blue-500/40 relative overflow-hidden transition"></div>
+        <!-- BLUE 2 -->
+        <div id="arena-entity-0-1" class="p-4 rounded-xl bg-[var(--background)] border-2 border-blue-500/40 relative overflow-hidden transition"></div>
+        <!-- RED 1 -->
+        <div id="arena-entity-1-0" class="p-4 rounded-xl bg-[var(--background)] border-2 border-red-500/40 relative overflow-hidden transition"></div>
+        <!-- RED 2 -->
+        <div id="arena-entity-1-1" class="p-4 rounded-xl bg-[var(--background)] border-2 border-red-500/40 relative overflow-hidden transition"></div>
+      </div>
+
+      <!-- COMBAT LOG CONSOLE -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs text-[var(--muted-foreground)]">
+          <span class="font-semibold uppercase tracking-wider">Registro de Combate (Battle Log):</span>
+          <button onclick="clearLog()" class="hover:text-[var(--foreground)]">Limpiar Log</button>
+        </div>
+        <div id="combat-log" class="h-48 overflow-y-auto rounded-xl bg-[var(--input-bg)] border border-[var(--border)] p-3 text-xs font-mono space-y-1">
+          <div class="text-[var(--muted-foreground)] italic">Configura los equipos y presiona "Simular Combate" para comenzar...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MONTE CARLO RESULTS MODAL / PANEL ================= -->
+    <section id="monte-carlo-panel" class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4 hidden">
+      <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+        <h3 class="text-base font-bold flex items-center gap-2">
+          <span>📊</span> Resultados de Simulación Masiva (500 Partidas)
+        </h3>
+        <button onclick="document.getElementById('monte-carlo-panel').classList.add('hidden')" class="text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          ✕ Cerrar
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2">
+          <div class="text-xs text-blue-400 font-semibold uppercase">Victorias Equipo Azul</div>
+          <div id="mc-blue-pct" class="text-3xl font-black text-blue-400">0%</div>
+          <div id="mc-blue-count" class="text-xs text-[var(--muted-foreground)] font-mono">0 / 500</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2">
+          <div class="text-xs text-red-400 font-semibold uppercase">Victorias Equipo Rojo</div>
+          <div id="mc-red-pct" class="text-3xl font-black text-red-400">0%</div>
+          <div id="mc-red-count" class="text-xs text-[var(--muted-foreground)] font-mono">0 / 500</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2">
+          <div class="text-xs text-amber-400 font-semibold uppercase">Estadísticas Promedio</div>
+          <div id="mc-avg-rounds" class="text-3xl font-black text-amber-400">0</div>
+          <div class="text-xs text-[var(--muted-foreground)]">Rondas promedio por combate</div>
+        </div>
+      </div>
+
+      <!-- WINRATE BAR -->
+      <div class="space-y-1">
+        <div class="flex justify-between text-xs font-semibold">
+          <span class="text-blue-400">Equipo Azul</span>
+          <span class="text-red-400">Equipo Rojo</span>
+        </div>
+        <div class="w-full h-3 rounded-full bg-[var(--border)] overflow-hidden flex">
+          <div id="mc-bar-blue" class="h-full bg-blue-500 transition-all duration-300" style="width: 50%;"></div>
+          <div id="mc-bar-red" class="h-full bg-red-500 transition-all duration-300" style="width: 50%;"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SCRIPT ENGINE -->
+  <script>
+    // DATA INJECTED
+    const CHICKENS = [{"id": 0, "name": "Pollier", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 0, "stats": {"life": 60, "damage": 40, "armor": 40, "speed": 40, "power_amount": 20}}, {"id": 1, "name": "Chica", "power_max": 140, "power_id": 0, "hidden_power_id": 4, "passive_id": 1, "stats": {"life": 25, "damage": 80, "armor": 5, "speed": 80, "power_amount": 10}}, {"id": 2, "name": "McDuck", "power_max": 100, "power_id": 2, "hidden_power_id": 11, "passive_id": 2, "stats": {"life": 50, "damage": 50, "armor": 20, "speed": 60, "power_amount": 20}}, {"id": 3, "name": "Ponk", "power_max": 130, "power_id": 1, "hidden_power_id": 10, "passive_id": 3, "stats": {"life": 90, "damage": 20, "armor": 40, "speed": 30, "power_amount": 20}}, {"id": 4, "name": "Mali", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 4, "stats": {"life": 45, "damage": 45, "armor": 35, "speed": 35, "power_amount": 40}}, {"id": 5, "name": "Cay", "power_max": 100, "power_id": 3, "hidden_power_id": 46, "passive_id": 5, "stats": {"life": 20, "damage": 70, "armor": 10, "speed": 90, "power_amount": 10}}, {"id": 6, "name": "Zombie", "power_max": 100, "power_id": 4, "hidden_power_id": 30, "passive_id": 6, "stats": {"life": 30, "damage": 100, "armor": 30, "speed": 30, "power_amount": 10}}, {"id": 7, "name": "Pasti", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 7, "stats": {"life": 60, "damage": 30, "armor": 30, "speed": 50, "power_amount": 30}}, {"id": 8, "name": "Iris", "power_max": 120, "power_id": 5, "hidden_power_id": 15, "passive_id": 8, "stats": {"life": 10, "damage": 50, "armor": 10, "speed": 80, "power_amount": 50}}, {"id": 9, "name": "Pollisor", "power_max": 150, "power_id": 6, "hidden_power_id": -1, "passive_id": 9, "stats": {"life": 10, "damage": 20, "armor": 30, "speed": 90, "power_amount": 50}}, {"id": 10, "name": "Pollisaur", "power_max": 90, "power_id": 7, "hidden_power_id": -1, "passive_id": 10, "stats": {"life": 100, "damage": 100, "armor": 100, "speed": 20, "power_amount": 80}}, {"id": 11, "name": "Vio", "power_max": 120, "power_id": 8, "hidden_power_id": 11, "passive_id": 11, "stats": {"life": 60, "damage": 40, "armor": 60, "speed": 20, "power_amount": 20}}, {"id": 12, "name": "Polliro", "power_max": 100, "power_id": 3, "hidden_power_id": 42, "passive_id": 12, "stats": {"life": 15, "damage": 65, "armor": 10, "speed": 100, "power_amount": 10}}, {"id": 13, "name": "Easy East", "power_max": 100, "power_id": 1, "hidden_power_id": 4, "passive_id": 13, "stats": {"life": 60, "damage": 50, "armor": 50, "speed": 20, "power_amount": 20}}, {"id": 14, "name": "Snow", "power_max": 130, "power_id": 0, "hidden_power_id": 23, "passive_id": 14, "stats": {"life": 50, "damage": 50, "armor": 40, "speed": 10, "power_amount": 50}}, {"id": 15, "name": "Eustavio", "power_max": 100, "power_id": 9, "hidden_power_id": 51, "passive_id": 15, "stats": {"life": 80, "damage": 20, "armor": 10, "speed": 10, "power_amount": 80}}, {"id": 16, "name": "Gallo", "power_max": 100, "power_id": 10, "hidden_power_id": 41, "passive_id": 16, "stats": {"life": 80, "damage": 90, "armor": 10, "speed": 10, "power_amount": 10}}, {"id": 17, "name": "Raro", "power_max": 100, "power_id": 11, "hidden_power_id": 32, "passive_id": 17, "stats": {"life": 40, "damage": 60, "armor": 10, "speed": 30, "power_amount": 60}}, {"id": 18, "name": "Polliwatt", "power_max": 100, "power_id": 12, "hidden_power_id": 49, "passive_id": 18, "stats": {"life": 20, "damage": 40, "armor": 20, "speed": 100, "power_amount": 20}}, {"id": 19, "name": "Armor", "power_max": 100, "power_id": 0, "hidden_power_id": 10, "passive_id": 19, "stats": {"life": 65, "damage": 20, "armor": 100, "speed": 5, "power_amount": 10}}, {"id": 20, "name": "Zeo", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 20, "stats": {"life": 10, "damage": 80, "armor": 10, "speed": 80, "power_amount": 20}}, {"id": 21, "name": "Jhona", "power_max": 100, "power_id": 2, "hidden_power_id": 27, "passive_id": 21, "stats": {"life": 75, "damage": 25, "armor": 85, "speed": 5, "power_amount": 10}}, {"id": 22, "name": "Mega", "power_max": 100, "power_id": 2, "hidden_power_id": 4, "passive_id": 22, "stats": {"life": 20, "damage": 60, "armor": 20, "speed": 20, "power_amount": 80}}, {"id": 23, "name": "Porky", "power_max": 100, "power_id": 13, "hidden_power_id": 48, "passive_id": 23, "stats": {"life": 100, "damage": 50, "armor": 20, "speed": 10, "power_amount": 20}}, {"id": 24, "name": "Lapiz", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 24, "stats": {"life": 20, "damage": 80, "armor": 30, "speed": 50, "power_amount": 20}}, {"id": 25, "name": "Manic", "power_max": 100, "power_id": 14, "hidden_power_id": 11, "passive_id": 25, "stats": {"life": 30, "damage": 60, "armor": 20, "speed": 70, "power_amount": 20}}, {"id": 26, "name": "Jeff", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 26, "stats": {"life": 25, "damage": 55, "armor": 15, "speed": 60, "power_amount": 45}}, {"id": 27, "name": "Invert", "power_max": 100, "power_id": 15, "hidden_power_id": 16, "passive_id": 27, "stats": {"life": 40, "damage": 30, "armor": 45, "speed": 45, "power_amount": 40}}, {"id": 28, "name": "Alien", "power_max": 100, "power_id": 16, "hidden_power_id": 36, "passive_id": 28, "stats": {"life": 40, "damage": 70, "armor": 10, "speed": 40, "power_amount": 40}}, {"id": 29, "name": "Iguanarto", "power_max": 80, "power_id": 0, "hidden_power_id": 27, "passive_id": 29, "stats": {"life": 60, "damage": 80, "armor": 20, "speed": 20, "power_amount": 20}}, {"id": 30, "name": "Mosca", "power_max": 100, "power_id": 0, "hidden_power_id": 13, "passive_id": 30, "stats": {"life": 15, "damage": 75, "armor": 5, "speed": 90, "power_amount": 15}}, {"id": 31, "name": "Poggie", "power_max": 100, "power_id": 1, "hidden_power_id": 42, "passive_id": 31, "stats": {"life": 100, "damage": 10, "armor": 70, "speed": 10, "power_amount": 10}}, {"id": 32, "name": "Toraishi", "power_max": 100, "power_id": 2, "hidden_power_id": 25, "passive_id": 32, "stats": {"life": 20, "damage": 80, "armor": 20, "speed": 40, "power_amount": 40}}, {"id": 33, "name": "Nevermore", "power_max": 100, "power_id": 17, "hidden_power_id": 48, "passive_id": 33, "stats": {"life": 10, "damage": 100, "armor": 40, "speed": 30, "power_amount": 20}}, {"id": 34, "name": "Phantom", "power_max": 100, "power_id": 0, "hidden_power_id": 31, "passive_id": 34, "stats": {"life": 50, "damage": 30, "armor": 40, "speed": 40, "power_amount": 40}}, {"id": 35, "name": "Pais", "power_max": 100, "power_id": 2, "hidden_power_id": 20, "passive_id": 35, "stats": {"life": 50, "damage": 70, "armor": 20, "speed": 50, "power_amount": 10}}, {"id": 36, "name": "Valu", "power_max": 100, "power_id": 13, "hidden_power_id": 44, "passive_id": 36, "stats": {"life": 130, "damage": 10, "armor": 45, "speed": 5, "power_amount": 10}}, {"id": 37, "name": "Pastank", "power_max": 100, "power_id": 8, "hidden_power_id": 10, "passive_id": 37, "stats": {"life": 50, "damage": 20, "armor": 100, "speed": 10, "power_amount": 20}}, {"id": 38, "name": "Pastinni", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 38, "stats": {"life": 30, "damage": 20, "armor": 10, "speed": 70, "power_amount": 70}}, {"id": 39, "name": "Cacho", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 39, "stats": {"life": 20, "damage": 130, "armor": 20, "speed": 20, "power_amount": 10}}, {"id": 40, "name": "Candle", "power_max": 100, "power_id": 18, "hidden_power_id": 1, "passive_id": 40, "stats": {"life": 40, "damage": 50, "armor": 30, "speed": 10, "power_amount": 70}}, {"id": 41, "name": "Magni", "power_max": 100, "power_id": 18, "hidden_power_id": 47, "passive_id": 41, "stats": {"life": 50, "damage": 40, "armor": 60, "speed": 30, "power_amount": 20}}, {"id": 42, "name": "Tiza", "power_max": 100, "power_id": 4, "hidden_power_id": 18, "passive_id": 42, "stats": {"life": 15, "damage": 110, "armor": 10, "speed": 50, "power_amount": 15}}, {"id": 43, "name": "Ignarto", "power_max": 100, "power_id": 0, "hidden_power_id": 8, "passive_id": 43, "stats": {"life": 60, "damage": 20, "armor": 10, "speed": 60, "power_amount": 50}}, {"id": 44, "name": "Lava", "power_max": 100, "power_id": 1, "hidden_power_id": 18, "passive_id": 44, "stats": {"life": 60, "damage": 40, "armor": 50, "speed": 30, "power_amount": 20}}, {"id": 45, "name": "Vulcano", "power_max": 100, "power_id": 18, "hidden_power_id": 32, "passive_id": 45, "stats": {"life": 100, "damage": 20, "armor": 50, "speed": 10, "power_amount": 20}}, {"id": 46, "name": "Robotop", "power_max": 100, "power_id": 11, "hidden_power_id": 8, "passive_id": 46, "stats": {"life": 30, "damage": 50, "armor": 100, "speed": 10, "power_amount": 10}}, {"id": 47, "name": "Clusio", "power_max": 100, "power_id": 19, "hidden_power_id": 10, "passive_id": 47, "stats": {"life": 70, "damage": 30, "armor": 70, "speed": 15, "power_amount": 15}}, {"id": 48, "name": "Leci", "power_max": 100, "power_id": 20, "hidden_power_id": 31, "passive_id": 48, "stats": {"life": 30, "damage": 30, "armor": 30, "speed": 30, "power_amount": 80}}, {"id": 49, "name": "Cerol", "power_max": 100, "power_id": 3, "hidden_power_id": 46, "passive_id": 49, "stats": {"life": 15, "damage": 85, "armor": 15, "speed": 65, "power_amount": 20}}, {"id": 50, "name": "Rufus", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 50, "stats": {"life": 20, "damage": 45, "armor": 15, "speed": 90, "power_amount": 30}}, {"id": 51, "name": "Bjorn", "power_max": 100, "power_id": 21, "hidden_power_id": 31, "passive_id": 51, "stats": {"life": 20, "damage": 80, "armor": 20, "speed": 20, "power_amount": 60}}, {"id": 52, "name": "Sharky", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 52, "stats": {"life": 10, "damage": 100, "armor": 10, "speed": 60, "power_amount": 20}}, {"id": 53, "name": "Queso", "power_max": 100, "power_id": 1, "hidden_power_id": 13, "passive_id": 53, "stats": {"life": 10, "damage": 20, "armor": 10, "speed": 100, "power_amount": 60}}, {"id": 54, "name": "Monocrom", "power_max": 100, "power_id": 1, "hidden_power_id": 17, "passive_id": 54, "stats": {"life": 40, "damage": 60, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 55, "name": "Gatarlos", "power_max": 200, "power_id": 22, "hidden_power_id": -1, "passive_id": 55, "stats": {"life": 10, "damage": 60, "armor": 20, "speed": 90, "power_amount": 20}}, {"id": 56, "name": "Evil Gatarlos", "power_max": 100, "power_id": 42, "hidden_power_id": -1, "passive_id": 56, "stats": {"life": 100, "damage": 105, "armor": 10, "speed": 75, "power_amount": 10}}, {"id": 57, "name": "Prisma", "power_max": 100, "power_id": 20, "hidden_power_id": 15, "passive_id": 57, "stats": {"life": 80, "damage": 20, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 58, "name": "Duncan", "power_max": 100, "power_id": 24, "hidden_power_id": 42, "passive_id": 58, "stats": {"life": 10, "damage": 40, "armor": 10, "speed": 120, "power_amount": 20}}, {"id": 59, "name": "Siul", "power_max": 150, "power_id": 0, "hidden_power_id": 49, "passive_id": 59, "stats": {"life": 30, "damage": 80, "armor": 10, "speed": 20, "power_amount": 60}}, {"id": 60, "name": "Boomy", "power_max": 100, "power_id": 2, "hidden_power_id": 15, "passive_id": 60, "stats": {"life": 20, "damage": 10, "armor": 50, "speed": 20, "power_amount": 100}}, {"id": 61, "name": "Shiken", "power_max": 100, "power_id": 0, "hidden_power_id": 3, "passive_id": 61, "stats": {"life": 10, "damage": 120, "armor": 10, "speed": 50, "power_amount": 10}}, {"id": 62, "name": "Miedo", "power_max": 100, "power_id": 17, "hidden_power_id": 30, "passive_id": 62, "stats": {"life": 60, "damage": 100, "armor": 10, "speed": 10, "power_amount": 20}}, {"id": 63, "name": "Volcken", "power_max": 100, "power_id": 25, "hidden_power_id": 47, "passive_id": 63, "stats": {"life": 80, "damage": 15, "armor": 70, "speed": 20, "power_amount": 15}}, {"id": 64, "name": "Nama", "power_max": 100, "power_id": 1, "hidden_power_id": 31, "passive_id": 64, "stats": {"life": 25, "damage": 85, "armor": 15, "speed": 65, "power_amount": 10}}, {"id": 65, "name": "Vapollo", "power_max": 100, "power_id": 18, "hidden_power_id": 32, "passive_id": 65, "stats": {"life": 10, "damage": 50, "armor": 30, "speed": 65, "power_amount": 45}}, {"id": 66, "name": "Ashy", "power_max": 100, "power_id": 1, "hidden_power_id": 10, "passive_id": 66, "stats": {"life": 50, "damage": 30, "armor": 50, "speed": 30, "power_amount": 40}}, {"id": 67, "name": "Pollulu", "power_max": 100, "power_id": 0, "hidden_power_id": 43, "passive_id": 67, "stats": {"life": 50, "damage": 70, "armor": 20, "speed": 30, "power_amount": 30}}, {"id": 68, "name": "Cocore", "power_max": 100, "power_id": 27, "hidden_power_id": 45, "passive_id": 68, "stats": {"life": 50, "damage": 20, "armor": 20, "speed": 70, "power_amount": 40}}, {"id": 69, "name": "Pinzon", "power_max": 100, "power_id": 0, "hidden_power_id": 47, "passive_id": 69, "stats": {"life": 20, "damage": 80, "armor": 10, "speed": 40, "power_amount": 50}}, {"id": 70, "name": "Galligno", "power_max": 100, "power_id": 1, "hidden_power_id": 47, "passive_id": 70, "stats": {"life": 60, "damage": 30, "armor": 60, "speed": 10, "power_amount": 40}}, {"id": 71, "name": "Nube", "power_max": 100, "power_id": 1, "hidden_power_id": 41, "passive_id": 71, "stats": {"life": 30, "damage": 30, "armor": 10, "speed": 90, "power_amount": 40}}, {"id": 72, "name": "Gallimbus", "power_max": 100, "power_id": 0, "hidden_power_id": 42, "passive_id": 72, "stats": {"life": 80, "damage": 25, "armor": 80, "speed": 5, "power_amount": 10}}, {"id": 73, "name": "Ventora", "power_max": 100, "power_id": 28, "hidden_power_id": 50, "passive_id": 73, "stats": {"life": 45, "damage": 55, "armor": 15, "speed": 50, "power_amount": 35}}, {"id": 74, "name": "Aery", "power_max": 100, "power_id": 0, "hidden_power_id": 41, "passive_id": 74, "stats": {"life": 10, "damage": 30, "armor": 20, "speed": 80, "power_amount": 60}}, {"id": 75, "name": "Titiro", "power_max": 100, "power_id": 2, "hidden_power_id": 28, "passive_id": 75, "stats": {"life": 40, "damage": 40, "armor": 30, "speed": 50, "power_amount": 40}}, {"id": 76, "name": "Luso", "power_max": 100, "power_id": 2, "hidden_power_id": 4, "passive_id": 76, "stats": {"life": 60, "damage": 90, "armor": 20, "speed": 10, "power_amount": 20}}, {"id": 77, "name": "Menta", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 77, "stats": {"life": 50, "damage": 20, "armor": 80, "speed": 20, "power_amount": 30}}, {"id": 78, "name": "Wicken", "power_max": 90, "power_id": 20, "hidden_power_id": 25, "passive_id": 78, "stats": {"life": 80, "damage": 10, "armor": 10, "speed": 20, "power_amount": 80}}, {"id": 79, "name": "Gota", "power_max": 90, "power_id": 25, "hidden_power_id": 44, "passive_id": 79, "stats": {"life": 30, "damage": 90, "armor": 25, "speed": 45, "power_amount": 10}}, {"id": 80, "name": "Mucken", "power_max": 100, "power_id": 13, "hidden_power_id": 30, "passive_id": 80, "stats": {"life": 50, "damage": 50, "armor": 15, "speed": 55, "power_amount": 30}}, {"id": 81, "name": "Egi", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 81, "stats": {"life": 50, "damage": 100, "armor": 10, "speed": 30, "power_amount": 10}}, {"id": 82, "name": "Fingie", "power_max": 100, "power_id": 30, "hidden_power_id": 29, "passive_id": 82, "stats": {"life": 50, "damage": 50, "armor": 20, "speed": 30, "power_amount": 50}}, {"id": 83, "name": "Corny", "power_max": 100, "power_id": 1, "hidden_power_id": 43, "passive_id": 83, "stats": {"life": 30, "damage": 65, "armor": 30, "speed": 50, "power_amount": 25}}, {"id": 84, "name": "Policus", "power_max": 100, "power_id": 20, "hidden_power_id": 25, "passive_id": 84, "stats": {"life": 40, "damage": 30, "armor": 20, "speed": 30, "power_amount": 80}}, {"id": 85, "name": "Vidro", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 85, "stats": {"life": 20, "damage": 80, "armor": 20, "speed": 60, "power_amount": 20}}, {"id": 86, "name": "Yuntan", "power_max": 200, "power_id": 31, "hidden_power_id": 48, "passive_id": 86, "stats": {"life": 80, "damage": 40, "armor": 20, "speed": 40, "power_amount": 20}}, {"id": 87, "name": "Plass", "power_max": 100, "power_id": 18, "hidden_power_id": 32, "passive_id": 87, "stats": {"life": 35, "damage": 60, "armor": 25, "speed": 40, "power_amount": 40}}, {"id": 88, "name": "Trinagle", "power_max": 100, "power_id": 30, "hidden_power_id": 50, "passive_id": 88, "stats": {"life": 30, "damage": 30, "armor": 30, "speed": 80, "power_amount": 30}}, {"id": 89, "name": "Cactus", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 89, "stats": {"life": 60, "damage": 40, "armor": 30, "speed": 40, "power_amount": 30}}, {"id": 90, "name": "Ploom", "power_max": 125, "power_id": 32, "hidden_power_id": 39, "passive_id": 90, "stats": {"life": 100, "damage": 40, "armor": 10, "speed": 40, "power_amount": 10}}, {"id": 91, "name": "Darkus", "power_max": 100, "power_id": 30, "hidden_power_id": 4, "passive_id": 91, "stats": {"life": 20, "damage": 50, "armor": 50, "speed": 60, "power_amount": 20}}, {"id": 92, "name": "Galland", "power_max": 100, "power_id": 0, "hidden_power_id": 1, "passive_id": 92, "stats": {"life": 50, "damage": 60, "armor": 70, "speed": 10, "power_amount": 10}}, {"id": 93, "name": "Drillen", "power_max": 100, "power_id": 30, "hidden_power_id": 0, "passive_id": 93, "stats": {"life": 30, "damage": 90, "armor": 20, "speed": 40, "power_amount": 20}}, {"id": 94, "name": "Estepi", "power_max": 100, "power_id": 0, "hidden_power_id": 50, "passive_id": 94, "stats": {"life": 60, "damage": 40, "armor": 10, "speed": 80, "power_amount": 10}}, {"id": 95, "name": "Rocko", "power_max": 100, "power_id": 0, "hidden_power_id": 19, "passive_id": 95, "stats": {"life": 70, "damage": 30, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 96, "name": "Garry", "power_max": 100, "power_id": 17, "hidden_power_id": 4, "passive_id": 96, "stats": {"life": 30, "damage": 80, "armor": 40, "speed": 30, "power_amount": 20}}, {"id": 97, "name": "Terra", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 97, "stats": {"life": 35, "damage": 40, "armor": 60, "speed": 5, "power_amount": 60}}, {"id": 98, "name": "Crystal", "power_max": 100, "power_id": 19, "hidden_power_id": 45, "passive_id": 98, "stats": {"life": 30, "damage": 50, "armor": 80, "speed": 30, "power_amount": 10}}, {"id": 99, "name": "Toka", "power_max": 100, "power_id": 30, "hidden_power_id": 25, "passive_id": 99, "stats": {"life": 30, "damage": 35, "armor": 30, "speed": 65, "power_amount": 40}}, {"id": 100, "name": "Cloudy", "power_max": 100, "power_id": 33, "hidden_power_id": 23, "passive_id": 100, "stats": {"life": 50, "damage": 70, "armor": 30, "speed": 30, "power_amount": 20}}, {"id": 101, "name": "Drago", "power_max": 100, "power_id": 33, "hidden_power_id": 31, "passive_id": 101, "stats": {"life": 75, "damage": 85, "armor": 5, "speed": 25, "power_amount": 10}}, {"id": 102, "name": "Niwato", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 102, "stats": {"life": 40, "damage": 100, "armor": 5, "speed": 50, "power_amount": 5}}, {"id": 103, "name": "Grey", "power_max": 100, "power_id": 33, "hidden_power_id": 4, "passive_id": 103, "stats": {"life": 40, "damage": 40, "armor": 80, "speed": 20, "power_amount": 20}}, {"id": 104, "name": "Friozero", "power_max": 100, "power_id": 33, "hidden_power_id": 23, "passive_id": 104, "stats": {"life": 20, "damage": 60, "armor": 40, "speed": 40, "power_amount": 40}}, {"id": 105, "name": "Pengui", "power_max": 100, "power_id": 33, "hidden_power_id": 23, "passive_id": 105, "stats": {"life": 60, "damage": 20, "armor": 60, "speed": 20, "power_amount": 40}}, {"id": 106, "name": "Snick", "power_max": 100, "power_id": 33, "hidden_power_id": 40, "passive_id": 106, "stats": {"life": 80, "damage": 30, "armor": 5, "speed": 5, "power_amount": 80}}, {"id": 107, "name": "Derp", "power_max": 100, "power_id": 32, "hidden_power_id": 0, "passive_id": 107, "stats": {"life": 70, "damage": 60, "armor": 60, "speed": 5, "power_amount": 5}}, {"id": 108, "name": "Plumillas", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 108, "stats": {"life": 30, "damage": 60, "armor": 20, "speed": 60, "power_amount": 30}}, {"id": 109, "name": "Max", "power_max": 100, "power_id": 0, "hidden_power_id": 48, "passive_id": 109, "stats": {"life": 90, "damage": 80, "armor": 10, "speed": 10, "power_amount": 10}}, {"id": 110, "name": "Springy", "power_max": 100, "power_id": 31, "hidden_power_id": 4, "passive_id": 110, "stats": {"life": 20, "damage": 120, "armor": 5, "speed": 50, "power_amount": 5}}, {"id": 111, "name": "Lock", "power_max": 100, "power_id": 0, "hidden_power_id": 12, "passive_id": 111, "stats": {"life": 50, "damage": 55, "armor": 35, "speed": 40, "power_amount": 20}}, {"id": 112, "name": "Law", "power_max": 100, "power_id": 1, "hidden_power_id": 31, "passive_id": 112, "stats": {"life": 60, "damage": 55, "armor": 45, "speed": 20, "power_amount": 20}}, {"id": 113, "name": "Chick", "power_max": 100, "power_id": 13, "hidden_power_id": 17, "passive_id": 113, "stats": {"life": 20, "damage": 70, "armor": 10, "speed": 60, "power_amount": 40}}, {"id": 114, "name": "Chird", "power_max": 100, "power_id": 1, "hidden_power_id": 10, "passive_id": 114, "stats": {"life": 40, "damage": 50, "armor": 10, "speed": 30, "power_amount": 70}}, {"id": 115, "name": "Cow", "power_max": 100, "power_id": 19, "hidden_power_id": 45, "passive_id": 115, "stats": {"life": 90, "damage": 15, "armor": 75, "speed": 10, "power_amount": 10}}, {"id": 116, "name": "Electron", "power_max": 100, "power_id": 12, "hidden_power_id": 49, "passive_id": 116, "stats": {"life": 40, "damage": 65, "armor": 10, "speed": 80, "power_amount": 5}}, {"id": 117, "name": "Monstruollo", "power_max": 100, "power_id": 13, "hidden_power_id": 31, "passive_id": 117, "stats": {"life": 70, "damage": 80, "armor": 10, "speed": 20, "power_amount": 20}}, {"id": 118, "name": "Nave", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 118, "stats": {"life": 20, "damage": 80, "armor": 15, "speed": 80, "power_amount": 5}}, {"id": 119, "name": "Rhafa", "power_max": 100, "power_id": 0, "hidden_power_id": 28, "passive_id": 119, "stats": {"life": 20, "damage": 70, "armor": 20, "speed": 70, "power_amount": 20}}, {"id": 120, "name": "Rick", "power_max": 100, "power_id": 17, "hidden_power_id": 13, "passive_id": 120, "stats": {"life": 30, "damage": 75, "armor": 10, "speed": 5, "power_amount": 80}}, {"id": 121, "name": "Javo", "power_max": 100, "power_id": 12, "hidden_power_id": 19, "passive_id": 121, "stats": {"life": 70, "damage": 5, "armor": 70, "speed": 5, "power_amount": 50}}, {"id": 122, "name": "Meta", "power_max": 100, "power_id": 8, "hidden_power_id": 11, "passive_id": 122, "stats": {"life": 20, "damage": 40, "armor": 100, "speed": 5, "power_amount": 35}}, {"id": 123, "name": "MetaSoldier", "power_max": 100, "power_id": 8, "hidden_power_id": 11, "passive_id": 123, "stats": {"life": 70, "damage": 30, "armor": 90, "speed": 5, "power_amount": 5}}, {"id": 124, "name": "Inger", "power_max": 100, "power_id": 8, "hidden_power_id": 11, "passive_id": 124, "stats": {"life": 25, "damage": 70, "armor": 5, "speed": 30, "power_amount": 70}}, {"id": 125, "name": "Rama", "power_max": 90, "power_id": 0, "hidden_power_id": 4, "passive_id": 125, "stats": {"life": 30, "damage": 65, "armor": 10, "speed": 30, "power_amount": 65}}, {"id": 126, "name": "Hueva", "power_max": 90, "power_id": 20, "hidden_power_id": 25, "passive_id": 126, "stats": {"life": 80, "damage": 20, "armor": 80, "speed": 5, "power_amount": 15}}, {"id": 127, "name": "Jamer", "power_max": 100, "power_id": 21, "hidden_power_id": 46, "passive_id": 127, "stats": {"life": 85, "damage": 75, "armor": 10, "speed": 25, "power_amount": 5}}, {"id": 128, "name": "Jeraz", "power_max": 100, "power_id": 11, "hidden_power_id": 49, "passive_id": 128, "stats": {"life": 60, "damage": 60, "armor": 40, "speed": 30, "power_amount": 10}}, {"id": 129, "name": "Cyborg", "power_max": 100, "power_id": 8, "hidden_power_id": 49, "passive_id": 129, "stats": {"life": 40, "damage": 70, "armor": 10, "speed": 50, "power_amount": 30}}, {"id": 130, "name": "Jacko", "power_max": 100, "power_id": 30, "hidden_power_id": 13, "passive_id": 130, "stats": {"life": 100, "damage": 40, "armor": 30, "speed": 10, "power_amount": 20}}, {"id": 131, "name": "Cori", "power_max": 100, "power_id": 20, "hidden_power_id": 25, "passive_id": 131, "stats": {"life": 40, "damage": 10, "armor": 40, "speed": 10, "power_amount": 100}}, {"id": 132, "name": "Pipasol", "power_max": 100, "power_id": 14, "hidden_power_id": 51, "passive_id": 132, "stats": {"life": 40, "damage": 40, "armor": 70, "speed": 20, "power_amount": 30}}, {"id": 133, "name": "Astro", "power_max": 100, "power_id": 36, "hidden_power_id": 51, "passive_id": 133, "stats": {"life": 40, "damage": 100, "armor": 30, "speed": 10, "power_amount": 20}}, {"id": 134, "name": "Eggalex", "power_max": 120, "power_id": 37, "hidden_power_id": -1, "passive_id": 134, "stats": {"life": 10, "damage": 20, "armor": 10, "speed": 100, "power_amount": 60}}, {"id": 135, "name": "Mechalex", "power_max": 100, "power_id": 38, "hidden_power_id": -1, "passive_id": 135, "stats": {"life": 100, "damage": 100, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 136, "name": "Mayel", "power_max": 100, "power_id": 39, "hidden_power_id": 0, "passive_id": 136, "stats": {"life": 25, "damage": 40, "armor": 25, "speed": 10, "power_amount": 100}}, {"id": 137, "name": "Elfen", "power_max": 100, "power_id": 20, "hidden_power_id": 25, "passive_id": 137, "stats": {"life": 50, "damage": 25, "armor": 25, "speed": 50, "power_amount": 50}}, {"id": 138, "name": "Felicie", "power_max": 100, "power_id": 21, "hidden_power_id": 48, "passive_id": 138, "stats": {"life": 30, "damage": 90, "armor": 20, "speed": 50, "power_amount": 10}}, {"id": 139, "name": "Star", "power_max": 100, "power_id": 36, "hidden_power_id": 51, "passive_id": 139, "stats": {"life": 20, "damage": 100, "armor": 15, "speed": 50, "power_amount": 15}}, {"id": 140, "name": "Skull", "power_max": 100, "power_id": 4, "hidden_power_id": 31, "passive_id": 140, "stats": {"life": 60, "damage": 45, "armor": 50, "speed": 20, "power_amount": 25}}, {"id": 141, "name": "Toxic", "power_max": 100, "power_id": 13, "hidden_power_id": 30, "passive_id": 141, "stats": {"life": 40, "damage": 35, "armor": 25, "speed": 45, "power_amount": 55}}, {"id": 142, "name": "Hium", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 142, "stats": {"life": 55, "damage": 30, "armor": 30, "speed": 35, "power_amount": 50}}, {"id": 143, "name": "Blade", "power_max": 100, "power_id": 18, "hidden_power_id": 47, "passive_id": 143, "stats": {"life": 35, "damage": 70, "armor": 20, "speed": 40, "power_amount": 35}}, {"id": 144, "name": "Gice", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 144, "stats": {"life": 45, "damage": 25, "armor": 35, "speed": 30, "power_amount": 65}}, {"id": 145, "name": "Evelyn", "power_max": 150, "power_id": 40, "hidden_power_id": 23, "passive_id": 145, "stats": {"life": 30, "damage": 65, "armor": 15, "speed": 30, "power_amount": 60}}, {"id": 146, "name": "Sinestrer", "power_max": 100, "power_id": 1, "hidden_power_id": 48, "passive_id": 146, "stats": {"life": 65, "damage": 40, "armor": 40, "speed": 30, "power_amount": 25}}, {"id": 147, "name": "Intiken", "power_max": 100, "power_id": 21, "hidden_power_id": 47, "passive_id": 147, "stats": {"life": 75, "damage": 60, "armor": 15, "speed": 30, "power_amount": 20}}, {"id": 148, "name": "Toro", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 148, "stats": {"life": 50, "damage": 80, "armor": 20, "speed": 20, "power_amount": 30}}, {"id": 149, "name": "Chimir", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 149, "stats": {"life": 30, "damage": 55, "armor": 25, "speed": 55, "power_amount": 35}}, {"id": 150, "name": "Garra", "power_max": 100, "power_id": 41, "hidden_power_id": 10, "passive_id": 150, "stats": {"life": 50, "damage": 45, "armor": 35, "speed": 25, "power_amount": 45}}];
+    const POWERS = [{"id": 0, "cost": 100, "desc": "Ataque doble"}, {"id": 1, "cost": 100, "desc": "Autocuración (25% de su vida máxima)"}, {"id": 2, "cost": 100, "desc": "Lanza un huevo (100% del daño)"}, {"id": 3, "cost": 100, "desc": "Lanza un shuriken (150% del daño)"}, {"id": 4, "cost": 100, "desc": "Pierde vida (-10% de su vida máxima), gana daño (+25%)"}, {"id": 5, "cost": 120, "desc": "Copia el último poder visto"}, {"id": 6, "cost": 150, "desc": "Transforma en Pollisaur"}, {"id": 7, "cost": 90, "desc": "Transforma en Pollisor"}, {"id": 8, "cost": 100, "desc": "Lanza un misíl (Quema)"}, {"id": 9, "cost": 100, "desc": "+10% en un valor aleatorio"}, {"id": 10, "cost": 100, "desc": "El equipo gana armadura (+10%)"}, {"id": 11, "cost": 100, "desc": "Lanza una bomba (80% del daño, 40% a otros objetivos)"}, {"id": 12, "cost": 100, "desc": "Paraliza al objetivo"}, {"id": 13, "cost": 100, "desc": "Envenena al objetivo"}, {"id": 14, "cost": 100, "desc": "Pierde vida (-10% de su vida máxima), el aliado obtiene poder al máximo y el próximo turno"}, {"id": 15, "cost": 100, "desc": "Todos los multiplicadores obtienen valores al azar (25% a 175%)"}, {"id": 16, "cost": 100, "desc": "Intercambia multiplicador de daño con el objetivo"}, {"id": 17, "cost": 100, "desc": "Maldice al objetivo"}, {"id": 18, "cost": 100, "desc": "Quema al objetivo"}, {"id": 19, "cost": 100, "desc": "Autocuración (25% de su vida máxima) y gana armadura (+15%)"}, {"id": 20, "cost": 100, "desc": "Cura un aliado (50% de su poder + 25% de su vida máxima)"}, {"id": 21, "cost": 100, "desc": "Lanza un hacha (80% de daño) y se cura a sí mismo (40% de daño)"}, {"id": 22, "cost": 200, "desc": "Se transforma en Evil Gatarlos"}, {"id": 23, "cost": 150, "desc": "Congela al objetivo"}, {"id": 24, "cost": 100, "desc": "Lanza una caca (envenena y -5% de velocidad)"}, {"id": 25, "cost": 100, "desc": "Elimina los efectos del equipo"}, {"id": 26, "cost": 100, "desc": "Se transforma en Gatarlos"}, {"id": 27, "cost": 100, "desc": "Se cura a sí mismo (20% de vida máxima), más daño (+5%) y reduce la velocidad (-5%)"}, {"id": 28, "cost": 100, "desc": "Obtiene una poción aleatoria"}, {"id": 29, "cost": 100, "desc": "Silencia al objetivo"}, {"id": 30, "cost": 100, "desc": "Infecta al objetivo"}, {"id": 31, "cost": 200, "desc": "Obtiene revivir"}, {"id": 32, "cost": 100, "desc": "Explota. Todos los pollos reciben daño (25% de su vida máxima)"}, {"id": 33, "cost": 100, "desc": "Lanza un huevo helado (100% de daño y congela)"}, {"id": 34, "cost": 100, "desc": "Revive como Zombie"}, {"id": 35, "cost": 100, "desc": "Revive como Mali"}, {"id": 36, "cost": 100, "desc": "Lanza una estrella (100% de daño y restablece el poder del objetivo)"}, {"id": 37, "cost": 120, "desc": "Transforma en Mechalex"}, {"id": 38, "cost": 100, "desc": "Transforma en Eggalex"}, {"id": 39, "cost": 100, "desc": "Lanza un búmeran (100% daño y agrega dos turnos de efectos al objetivo)"}, {"id": 40, "cost": 150, "desc": "Lanza un helado (20% de daño) a cada enemigo y congela"}, {"id": 41, "cost": 100, "desc": "Cura al equipo (50% del poder)"}, {"id": 42, "cost": 100, "desc": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+13%)"}, {"id": 43, "cost": 100, "desc": "Otorga +5% daño a un aliado y limpia sus efectos"}, {"id": 44, "cost": 100, "desc": "Ataque con 100% de daño; si el objetivo tiene efectos, los limpia y se cura (20% daño)"}, {"id": 45, "cost": 100, "desc": "Obtiene focus, +3% armadura y se cura (10% vida máxima)"}, {"id": 46, "cost": 100, "desc": "Aumenta la velocidad (+7%) y el daño (+7%)"}, {"id": 47, "cost": 100, "desc": "Lanza un huevo ígneo (100% daño, quemadura y -3% armadura)"}, {"id": 48, "cost": 120, "desc": "Roba 15% de vida máxima del objetivo"}, {"id": 49, "cost": 110, "desc": "Lanza un huevo eléctrico (100% daño, paraliza y +15 poder a aliados)"}, {"id": 50, "cost": 100, "desc": "Absorbe los efectos del objetivo, limpiándolo y ganando +4% en cada stat"}, {"id": 51, "cost": 100, "desc": "Reduce el límite de poder máximo del equipo en 10 (mínimo 60)"}];
+    const ITEMS = [{"id": 0, "name": "Jugo de pollo", "desc": "Cura 100 puntos de vida, se activa con 25% de vida o menos"}, {"id": 1, "name": "Semilla rompepicos", "desc": "Empieza la batalla con 15% más de vida máxima"}, {"id": 2, "name": "Diente de cuervo", "desc": "Empieza la batalla con 15% más de armadura"}, {"id": 3, "name": "Ojo loco", "desc": "Empieza la batalla con 15% más de daño"}, {"id": 4, "name": "Guante de gallina", "desc": "Empieza la batalla con 15% más de velocidad"}, {"id": 5, "name": "Palo de raíz", "desc": "Empieza la batalla con poder lleno. +50 poder máximo"}, {"id": 6, "name": "Picoteador dorado", "desc": "Obtiene el enfoque de los enemigos"}, {"id": 7, "name": "Elixir de pollo", "desc": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de daño"}, {"id": 8, "name": "Disparo eggspresso", "desc": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de velocidad"}, {"id": 9, "name": "Brebaje armadura de plumas", "desc": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de armadura"}, {"id": 10, "name": "Sanación ardiente", "desc": "Las quemaduras curan"}, {"id": 11, "name": "Pollo limpio", "desc": "Elimina efectos al usar poder"}, {"id": 12, "name": "Poder eggs-tra", "desc": "2% más de daño cada turno"}, {"id": 13, "name": "Mega jugo de pollo", "desc": "Cura 200 puntos de vida, se activa con 25% de vida o menos"}, {"id": 14, "name": "Flama potenciada", "desc": "Cada turno, 1% extra de daño si está quemado"}, {"id": 15, "name": "Flama burbujeante", "desc": "Limpia la quemadura"}, {"id": 16, "name": "Giga jugo de pollo", "desc": "Cura 275 puntos de vida, se activa con 25% de vida o menos"}, {"id": 17, "name": "Gran pico", "desc": "Limpia el silencio"}, {"id": 18, "name": "Zapapollos", "desc": "5% de poder esquivar en cada turno"}, {"id": 19, "name": "Arreglanube", "desc": "Al empezar un combate, se cura a sí mismo (35% de vida máxima)"}, {"id": 20, "name": "Pergamino del silencio", "desc": "Cuando empieza el combate, silencia a un enemigo"}, {"id": 21, "name": "Libro potenciado", "desc": "Al ser afectado obtienes 10% de daño extra"}, {"id": 22, "name": "Manual de curación", "desc": "Al ser afectado se cura a sí mismo (5% de vida máxima)"}, {"id": 23, "name": "Páginas del fénix", "desc": "Puede revivir"}, {"id": 24, "name": "Tera jugo de pollo", "desc": "Cura 350 puntos de vida, se activa con 25% de vida o menos"}, {"id": 25, "name": "Gota peligrosa", "desc": "Cuando empieza el combate, envenena a un enemigo"}, {"id": 26, "name": "Medicina", "desc": "Limpia la infección"}, {"id": 27, "name": "Arena milagrosa", "desc": "Cada ataque otorga +5 poder"}, {"id": 28, "name": "Mirador dorado", "desc": "Primer ataque hace 25% de daño extra y cura (50% del ataque)"}, {"id": 29, "name": "Pico podrido", "desc": "Cada turno, +1% extra de daño si está infectado"}, {"id": 30, "name": "Ala podrida", "desc": "Derrotar a un enemigo infectado te cura por completo"}, {"id": 31, "name": "Moco problemático", "desc": "Cuando empieza el combate, infecta a un enemigo"}, {"id": 32, "name": "Roca jugosa", "desc": "Cura 400 puntos de vida, se activa con 35% de vida o menos"}, {"id": 33, "name": "triflor", "desc": "Cuando empieza el combate, obtiene daño (+5%), armadura (+5%) y velocidad (+5%)"}, {"id": 34, "name": "Poción mágica", "desc": "Limpia cualquier estado"}, {"id": 35, "name": "Roca atómica", "desc": "Cuando empieza el combate, obtiene daño (+20%) o armadura (+20%)"}, {"id": 36, "name": "Primer huevo", "desc": "Cuando empieza el combate, lanza un huevo"}, {"id": 37, "name": "Primer bomba", "desc": "Cuando empieza el combate, lanza una bomba"}, {"id": 38, "name": "Primer shuriken", "desc": "Cuando empieza el combate, lanza un shuriken"}, {"id": 39, "name": "Jugo congelado", "desc": "Cura 500 puntos de vida, se activa con 35% de vida o menos"}, {"id": 40, "name": "Té caliente", "desc": "Limpia el congelamiento y cura 100 puntos de vida"}, {"id": 41, "name": "Pico hleado", "desc": "20% de congelar al atacante cuando es golpeado"}, {"id": 42, "name": "Ojo helado", "desc": "Cuando empieza el combate, lanza un huevo helado"}, {"id": 43, "name": "Cristal de daño", "desc": "Cuando empieza el combate, +%25 de daño pero pierde vida (25% de la vida máxima)"}, {"id": 44, "name": "Cristal de velocidad", "desc": "Cuando empieza el combate, +%25 de velocidad pero pierde vida (25% de la vida máxima)"}, {"id": 45, "name": "Cristal de armadura", "desc": "Cuando empieza el combate, +%25 de armadura pero pierde vida (25% de la vida máxima)"}, {"id": 46, "name": "Poción pútrida", "desc": "Cura 600 puntos de vida, se activa con 35% de vida o menos"}, {"id": 47, "name": "Gota milagro", "desc": "Limpia el envenenamiento"}, {"id": 48, "name": "Pico roto", "desc": "Cuando empieza el combate, pierde vida (5% de la vida máxima) infecta y otorga daño (20%)"}, {"id": 49, "name": "Ojo maldito", "desc": "Cuando empieza el combate, maldice"}, {"id": 50, "name": "Ojos locos", "desc": "El equipo obtiene daño (10%)"}, {"id": 51, "name": "Libro maldito", "desc": "Al empezar el combate, maldice a todos"}, {"id": 52, "name": "Infección", "desc": "Revive como Zombie"}, {"id": 53, "name": "Circuito Vital", "desc": "Cura 700 puntos de vida, se activa con 35% de vida o menos"}, {"id": 54, "name": "Reinicio Neural", "desc": "Limpia la paralización"}, {"id": 55, "name": "Pico Electrostático", "desc": "Cuando empieza el combate, paraliza"}, {"id": 56, "name": "Descarga Masiva", "desc": "Al empezar el combate, paraliza a todos"}, {"id": 57, "name": "Conexión Crítica", "desc": "Atacar a enemigos paralizados aumenta daño (2%)"}, {"id": 58, "name": "Impulso Balístico", "desc": "Lanzar misiles aumenta el daño (4%)"}, {"id": 59, "name": "Conversión Vital", "desc": "Siempre que pierda vida, aumenta su daño (1%), pero baja su velocidad (1%)"}, {"id": 60, "name": "Fragmento prohibido", "desc": "Aumenta el daño (+35%) y velocidad (+10%), pero nunca carga ni podés usar poder"}, {"id": 61, "name": "Pico blindado", "desc": "Misiles y bombas le hacen 66% menos daño"}, {"id": 62, "name": "Ojo del vacío", "desc": "Si un aliado cae derrotado, aumenta todos tus stats un 15%"}, {"id": 63, "name": "Ala de Garra", "desc": "Cada turno cura al equipo (5% vida máxima)"}, {"id": 64, "name": "Guantes de pelea", "desc": "Obtienes 2 puntos de entrenamiento extra al ganar combates"}, {"id": 65, "name": "Deseo", "desc": "Al tenerlo equipado, aumenta las estadísticas de los huevos que ponga este pollo"}, {"id": 66, "name": "Pico vampiro", "desc": "Cura al atacar (15% del daño)"}, {"id": 67, "name": "Primer boomerang", "desc": "Al empezar el combate lanza un boomerang"}, {"id": 68, "name": "Ojos en sincronía", "desc": "Comparte efecto con su atacante"}, {"id": 69, "name": "Primera hacha", "desc": "Al empezar el combate lanza un hacha"}, {"id": 70, "name": "Pluma dorada", "desc": "Acorta los turnos que tardan sus huevos en eclosionar (40%)"}, {"id": 71, "name": "Pluma de Brama", "desc": "Aumenta la probabilidad de que aparezcan pollos variocolor en combates (10%)"}, {"id": 72, "name": "Garra derrochadora", "desc": "Aumenta la cantidad de semillas ganadas en combate (20%)"}, {"id": 73, "name": "Nido especial", "desc": "Aumenta la probabilidad de que los pollos pongan huevos variocolor (10%)"}, {"id": 74, "name": "Ira", "desc": "Obtiene 2 ataques extra al inicio del combate"}];
+    const PASSIVES = [{"id": 0, "desc": "El primer ataque hace 50% más de daño"}, {"id": 1, "desc": "Empieza con un ataque doble"}, {"id": 2, "desc": "Comienza lanzando un huevo dorado y gana daño (+10%) y velocidad (+10%)"}, {"id": 3, "desc": "Cuando se cura, cura a los aliados (50% del daño)"}, {"id": 4, "desc": "Cuando usa poder, se cura (50% del daño)"}, {"id": 5, "desc": "Al derrotar a un enemigo, lanza un shuriken (150% de daño)"}, {"id": 6, "desc": "Al atacar, se cura (20% de la vida faltante)"}, {"id": 7, "desc": "Cada 3 ataques, envenena"}, {"id": 8, "desc": "Al derrotar a un enemigo, gana +50 de poder y +25 de carga de poder"}, {"id": 9, "desc": "Al derrotar a un enemigo, gana poder máximo"}, {"id": 10, "desc": "Al derrotar a un enemigo, reinicia el poder"}, {"id": 11, "desc": "Cuando usa poder, hace 10% más de daño"}, {"id": 12, "desc": "Después de lanzar un shuriken, evita el próximo ataque"}, {"id": 13, "desc": "Al revivir gana 25% más de daño"}, {"id": 14, "desc": "Cuando usa poder, congela al objetivo"}, {"id": 15, "desc": "5% más de velocidad al golpear"}, {"id": 16, "desc": "Al derrotar a un enemigo, se cura (33% de su vida máxima)"}, {"id": 17, "desc": "Al usar poder, aplica un estado aleatorio a todos los enemigos"}, {"id": 18, "desc": "Al ser derrotado, paraliza a todos los enemigos"}, {"id": 19, "desc": "No puede ser envenenado. Si un enemigo envenenado lo ataca, gana armadura (+5%)"}, {"id": 20, "desc": "5% más de daño cuando un aliado usa poder"}, {"id": 21, "desc": "No puede ser paralizado. Su primer ataque tiene velocidad aumentada (+50%)"}, {"id": 22, "desc": "Evita proyectiles"}, {"id": 23, "desc": "Al ser derrotado, envenena a todos los enemigos"}, {"id": 24, "desc": "Al ser atacado se afila: su próximo ataque inflige daño crítico extra (30%)"}, {"id": 25, "desc": "Empieza con una bomba, y lanza una bomba cuando cualquier pollo usa su poder"}, {"id": 26, "desc": "Cada 3 ataques, lanza un huevo"}, {"id": 27, "desc": "Cuando usa poder, +5% en una estadística aleatoria de un aliado"}, {"id": 28, "desc": "Evita el primer ataque"}, {"id": 29, "desc": "Obtiene enfoque"}, {"id": 30, "desc": "Cuando usa poder, lanza 2 moscas (50% de daño, 50% de envenenar)"}, {"id": 31, "desc": "Al ser atacado, reduce la velocidad del atacante (12%) y gana velocidad (+5%)"}, {"id": 32, "desc": "Después de lanzar un huevo, hace 10% más de daño"}, {"id": 33, "desc": "Cada ataque tiene 25% de probabilidad de lanzar una mosca (50% de daño, 50% de envenenar)"}, {"id": 34, "desc": "Copia el poder de un aliado"}, {"id": 35, "desc": "Al derrotar a un enemigo, gana 25% más de velocidad"}, {"id": 36, "desc": "Empieza la batalla con poder máximo"}, {"id": 37, "desc": "Repite el poder"}, {"id": 38, "desc": "Al ser derrotado, cura a un aliado (50% de su vida máxima)"}, {"id": 39, "desc": "Puede apuntar a aliados"}, {"id": 40, "desc": "Cada 3 ataques, se cura (10% de su vida máxima)"}, {"id": 41, "desc": "No puede ser quemado. Si intentan quemarlo o ataca a un objetivo en llamas, gana daño (+10%)"}, {"id": 42, "desc": "Al ser derrotado, quema a todos los enemigos"}, {"id": 43, "desc": "Cada 3 ataques, quema al enemigo"}, {"id": 44, "desc": "25% de probabilidad de quemar al ser atacado"}, {"id": 45, "desc": "Cuando usa poder, 5% más de daño y se cura (10% de su vida máxima)"}, {"id": 46, "desc": "Cuando usa poder, +15% de armadura y evita el próximo ataque"}, {"id": 47, "desc": "Al ser atacado, gana armadura (+3%) y poder (+5)"}, {"id": 48, "desc": "Cuando un aliado es derrotado, intercambia sus porcentajes de vida"}, {"id": 49, "desc": "Al atacar 3 veces, evita el próximo ataque"}, {"id": 50, "desc": "Cada 3 golpes, 15% de daño extra"}, {"id": 51, "desc": "Al revivir se cura (100% de vida máxima)"}, {"id": 52, "desc": "Cuando derrote a un enemigo, 33% de daño extra"}, {"id": 53, "desc": "Cuando use poder, envenena a todos los enemigos"}, {"id": 54, "desc": "Cuando use poder, maldice a todos los enemigos"}, {"id": 55, "desc": "No puede ser maldecido y comienza con +15% de daño. Si empieza el turno con un efecto negativo, gana +20 de poder"}, {"id": 56, "desc": "Al transformarse, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos"}, {"id": 57, "desc": "Cuando sea derrotado, da poder total a un aliado"}, {"id": 58, "desc": "50% de probabilidad de repetir projectiles"}, {"id": 59, "desc": "Cada 4 golpes, obtiene poder total"}, {"id": 60, "desc": "Cuando lance un huevo, se cura a sí mismo (10% de vida máxima)"}, {"id": 61, "desc": "Ignora el enfoque y comienza el combate con 1 punto de evasión"}, {"id": 62, "desc": "Primer ataque paraliza"}, {"id": 63, "desc": "Cuando use poder, cura a los aliados (15% de vida máxima + 15% de daño)"}, {"id": 64, "desc": "Cada ataque da 5% de daño extra y se hace daño a sí mismo (5% de vida máxima)"}, {"id": 65, "desc": "Cuando derrote a un enemigo, +2 de evitar"}, {"id": 66, "desc": "Cuando use poder, -15% de velocidad a todos los enemigos y los quema"}, {"id": 67, "desc": "Cuando use poder, evita"}, {"id": 68, "desc": "Primer ataque quema"}, {"id": 69, "desc": "Cada turno, +3% de daño y +3% de velocidad"}, {"id": 70, "desc": "Cada turno, +4% de armadura"}, {"id": 71, "desc": "Cuando use poder, silencia a todos los enemigos"}, {"id": 72, "desc": "Cada turno se cura a sí mismo (6% de vida máxima)"}, {"id": 73, "desc": "El primer ataque tiene 100% de velocidad"}, {"id": 74, "desc": "Cada 3 ataques, cura a un aliado"}, {"id": 75, "desc": "Cuando una un ítem, gana poder máximo"}, {"id": 76, "desc": "Cada 5 ataques, lanza 2 huevos"}, {"id": 77, "desc": "Cuando ataca a un enemigo congelado, se cura (5% de vida máxima)"}, {"id": 78, "desc": "Cada 2 poderes, esquiva"}, {"id": 79, "desc": "Cuando ataca, se cura a sí mismo (5% de vida máxima) y gana velocidad (+3%)"}, {"id": 80, "desc": "Cuando ataca a un enemigo envenenado, se cura (5% de vida máxima)"}, {"id": 81, "desc": "Cada 2 ataques, +15 poder"}, {"id": 82, "desc": "Al atacar a un enemigo infectado, propaga la infección y drena poder (-10)"}, {"id": 83, "desc": "Al comenzar, cura al equipo (35% de la vida máxima)"}, {"id": 84, "desc": "Al comenzar, otorga poder completo a un aliado"}, {"id": 85, "desc": "Al ser atacado, refleja 20% del daño y reduce la armadura del atacante (3%)"}, {"id": 86, "desc": "Cada 5 ataques, envenena y se cura a sí mismo (33% de la vida máxima)"}, {"id": 87, "desc": "Cuando un aliado usa su poder, obtiene poder completo"}, {"id": 88, "desc": "Comienza con un 33% de daño extra y silenciado"}, {"id": 89, "desc": "Cuando es golpeado, hiere al enemigo (25% del daño recibido)"}, {"id": 90, "desc": "Al derrotar un enemigo, se cura (25% de vida máxima) y otorga 1 de evasión al equipo"}, {"id": 91, "desc": "Cuando un enemigo usa su poder, gana +5 de daño"}, {"id": 92, "desc": "Cuando usa su poder, se cura a sí mismo (10% de la vida máxima) y gana +5 de armadura"}, {"id": 93, "desc": "Cada ataque lo cura a sí mismo (25% del daño infligido)"}, {"id": 94, "desc": "Cada ataque aumenta +3% la velocidad y +5 el valor de poder"}, {"id": 95, "desc": "Al comenzar, +1% de daño por cada 50 puntos de vida máxima"}, {"id": 96, "desc": "Cada ataque reduce el poder del objetivo (-5)"}, {"id": 97, "desc": "Cuando usa su poder, baja el poder de los enemigos a 0"}, {"id": 98, "desc": "Cuando usa su poder, lanza una bomba"}, {"id": 99, "desc": "Cuando es golpeado, +10 de poder y -1% de armadura"}, {"id": 100, "desc": "Atacar a un enemigo congelado inflige daño extra (30%) y reduce su armadura (5%)"}, {"id": 101, "desc": "Cada 3 ataques, lanza un huevo helado"}, {"id": 102, "desc": "Cuando derrota a un enemigo, +15% de velocidad y +15% de daño"}, {"id": 103, "desc": "Al comenzar, -10% de velocidad a los enemigos"}, {"id": 104, "desc": "Al revivir obtiene 25% de armadura"}, {"id": 105, "desc": "No puede congelarse. Atacar a enemigos congelados aumenta su velocidad (20%) y daño (10%)"}, {"id": 106, "desc": "Cuando ataca a un enemigo congelado, +2% de armadura y +5 de poder"}, {"id": 107, "desc": "50% de probabilidad de empezar con poder al máximo (en caso contrario, 50% de poder)"}, {"id": 108, "desc": "Cada 3 ataques, lanza una bomba"}, {"id": 109, "desc": "Revive como Mali"}, {"id": 110, "desc": "Al usar su poder, obtiene ataque doble"}, {"id": 111, "desc": "Cada ataque aumenta una estadística aleatoria (5%)"}, {"id": 112, "desc": "Cuando un aliado es derrotado, obtiene sus multis"}, {"id": 113, "desc": "Atacar a un enemigo envenenado lo cura (20% del daño)"}, {"id": 114, "desc": "Al usar su poder, aumenta una estadística aleatoria (5%)"}, {"id": 115, "desc": "Al empezar el combate, otorga armadura al equipo (15%)"}, {"id": 116, "desc": "Al morir, explota (25% de la vida máxima)"}, {"id": 117, "desc": "Al derrotar un enemigo, obtiene vida máxima y pierde velocidad (15%)"}, {"id": 118, "desc": "Al empezar el combate, aumenta la velocidad del equipo (5%)"}, {"id": 119, "desc": "Cuando la vida baje del 35% de la vida máxima, se cura por completo la vida (Una vez por combate)"}, {"id": 120, "desc": "Al empezar el combate, lanza una mosca"}, {"id": 121, "desc": "Cada turno, aumenta el daño (3%) y velocidad (3%) de los aliados"}, {"id": 122, "desc": "Revive siempre que haya un aliado vivo (3 veces por combate)"}, {"id": 123, "desc": "Al ser golpeado, cura a un aliado (5% vida máxima)"}, {"id": 124, "desc": "Al tener menos del 50% de vida, lanza 3 misiles (una vez por combate)"}, {"id": 125, "desc": "Atacar a un enemigo paralizado daña al resto de enemigos (30% del daño)"}, {"id": 126, "desc": "Al empezar el combate, cura a un aliado (100% vida máxima)"}, {"id": 127, "desc": "Empieza lanzando un hacha, y cada ataque reduce la armadura enemiga (3%)"}, {"id": 128, "desc": "Al ser atacado, lanza una bomba"}, {"id": 129, "desc": "El equipo obtiene daño (10%)"}, {"id": 130, "desc": "Cuando usa poder, -5% en una estadística aleatoria cada enemigo"}, {"id": 131, "desc": "Cada ataque otorga poder al aliado (+10)"}, {"id": 132, "desc": "Cada turno, cura al equipo (5% vida máxima)"}, {"id": 133, "desc": "Cuando se cura, aumenta el daño (+3%)"}, {"id": 134, "desc": "Cada ataque reduce la armadura del objetivo (-5%). Al ser golpeado, gana +20 de poder"}, {"id": 135, "desc": "Cada turno lanza un misil y pierde armadura (-4%)"}, {"id": 136, "desc": "Cuando un aliado revive obtienes daño (+15%) y un esquive."}, {"id": 137, "desc": "Atacar enemigos con infección aumenta el poder (+25)"}, {"id": 138, "desc": "Al usar un item, aumenta el daño (+25%) y poder (+50)"}, {"id": 139, "desc": "Si derrota a un enemigo, aumenta el poder (+100) y se cura (50% del daño)"}, {"id": 140, "desc": "Al recibir un ataque aumenta su armadura y daño (+3%)"}, {"id": 141, "desc": "Atacar enemigos con envenenamiento lo cura (33% del daño)"}, {"id": 142, "desc": "Atacar enemigos congelados lo cura a el y a su aliado (20% del daño)"}, {"id": 143, "desc": "Atacar enemigos con quemadura te cura (20% del daño) y aumenta el poder (+20)"}, {"id": 144, "desc": "Al usar su poder, el equipo obtiene una poción aleatoria si no tienen objetos"}, {"id": 145, "desc": "Cura a su aliado si este aliado usa su poder (33% del daño propio)"}, {"id": 146, "desc": "Lanza una bomba siempre que un enemigo use su poder"}, {"id": 147, "desc": "Cada turno pierde vida (10% de vida máxima) pero aumenta su poder (+20)"}, {"id": 148, "desc": "Al ser atacado, aumenta su daño (5%) y velocidad (5%)"}, {"id": 149, "desc": "Atacar a un enemigo congelado inflige daño extra (+30%)"}, {"id": 150, "desc": "Al empezar el combate, el equipo obtiene revivir"}];
+
+    // TARGET TYPES (matching scr_battle_get_target)
+    const TARGET_OPTIONS = [
+      { id: 1, name: "🎯 Menos Vida (Rematar)" },
+      { id: 2, name: "🎯 Más Vida (Desgastar)" },
+      { id: 6, name: "🎯 Más Daño" },
+      { id: 8, name: "🎯 Más Velocidad" },
+      { id: 9, name: "🎯 Menos Armadura" },
+      { id: 15, name: "🎯 Venganza (Al que me atacó)" },
+      { id: 0, name: "🎲 Aleatorio" }
+    ];
+
+    // TOURNAMENT RULES
+    const TOURNAMENT_RULES = {
+      0: "Cura toda la salud al derrotar un enemigo.",
+      1: "La quemadura aplica el doble de efecto.",
+      2: "Los ataques de aliados otorgan +25% de poder.",
+      3: "Todos los pollos inician con el estado Infección.",
+      4: "Defensa pesada: Armadura multiplicada.",
+      5: "Clima helado: Probabilidad aumentada de congelar.",
+      6: "Todos los pollos obtienen 1 auto-revivir al 50% HP.",
+      7: "Sobrecarga de poder: Carga aumentada.",
+      8: "Arcana: Bonificaciones mágicas aleatorias."
+    };
+
+    // TEAM CONFIGURATIONS [team][slot]
+    const teamConfigs = [
+      [ // Team 0 (Blue)
+        { chickenId: 0, level: 50, born: 80, training: 1.5, itemId: 1, useHiddenPower: false, targetAI: 1 },
+        { chickenId: 1, level: 50, born: 80, training: 1.5, itemId: 3, useHiddenPower: false, targetAI: 1 }
+      ],
+      [ // Team 1 (Red)
+        { chickenId: 2, level: 50, born: 80, training: 1.5, itemId: 2, useHiddenPower: false, targetAI: 1 },
+        { chickenId: 3, level: 50, born: 80, training: 1.5, itemId: 4, useHiddenPower: false, targetAI: 1 }
+      ]
+    ];
+
+    // HELPER: CLAMP
+    function clamp(val, min, max) { return Math.max(min, Math.min(max, val)); }
+
+    // STATS CALCULATION (1:1 with scr_calculate_stats)
+    function calculateStats(chicken, level, born, training) {
+      const lvl = clamp(level, 1, 100);
+      const b = born || 50;
+      const t = training || 1.0;
+
+      // Stats factor (Especie 55% + Born 25% + Training 20%)
+      const calcFactor = (baseVal) => ((baseVal * 0.55) + (b * 0.25) + ((t - 1.0) * 20.0)) / 100;
+
+      // 1. Vida
+      const lifeFactor = calcFactor(chicken.stats.life);
+      const lifeLvlFactor = Math.pow(lvl / 100, 1.15);
+      const life = clamp(50 + (2500 - 50) * lifeLvlFactor * lifeFactor, 50, 2500);
+
+      // 2. Daño
+      const dmgFactor = calcFactor(chicken.stats.damage);
+      const dmgLvlFactor = Math.pow(lvl / 100, 0.85);
+      const damage = clamp(5 + (300 - 5) * dmgLvlFactor * dmgFactor, 5, 300);
+
+      // 3. Velocidad
+      const spdFactor = calcFactor(chicken.stats.speed);
+      const spdLvlFactor = Math.pow(lvl / 100, 0.65);
+      const speed = clamp(10 + (500 - 10) * spdLvlFactor * spdFactor, 10, 500);
+
+      // 4. Armadura (0 a 80)
+      const armFactor = calcFactor(chicken.stats.armor);
+      const armLvlFactor = Math.pow(lvl / 100, 1.30);
+      const armor = clamp(80 * armLvlFactor * armFactor, 0, 80);
+
+      // 5. Carga Poder
+      const maxPwr = Math.max(20, Math.min(70, chicken.power_max || 100));
+      const pwrFactor = calcFactor(chicken.stats.power_amount);
+      const pwrLvlFactor = Math.pow(lvl / 100, 1.10);
+      const pwrT = clamp(pwrLvlFactor * pwrFactor, 0, 1);
+      const powerAmount = 20 + (maxPwr - 20) * pwrT;
+
+      return {
+        life: Math.round(life),
+        damage: Math.round(damage),
+        speed: Math.round(speed),
+        armor: armor / 100, // Armadura como proporción 0..0.8 en combate
+        powerAmount: Math.round(powerAmount),
+        powerMax: chicken.power_max || 100
+      };
+    }
+
+    // THEME HANDLING
+    let currentTheme = localStorage.getItem('cc_wiki_theme') || 'dark';
+    function applyTheme(t) {
+      currentTheme = t;
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('cc_wiki_theme', t);
+      const btn = document.getElementById('theme-btn');
+      if (btn) btn.innerHTML = (t === 'dark') ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
+    }
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+    applyTheme(currentTheme);
+
+    // MODE CHANGE
+    function onBattleModeChange() {
+      const mode = parseInt(document.getElementById('battle-mode').value);
+      const badge = document.getElementById('tournament-badge');
+      if (mode >= 0) {
+        badge.textContent = `Regla: ${TOURNAMENT_RULES[mode] || "Especial"}`;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // RENDER SLOT CONFIG CARDS
+    function renderConfigCards() {
+      for (let t = 0; t < 2; t++) {
+        for (let s = 0; s < 2; s++) {
+          const cfg = teamConfigs[t][s];
+          const chicken = CHICKENS.find(c => c.id === cfg.chickenId) || CHICKENS[0];
+          const container = document.getElementById(`card-config-${t}-${s}`);
+          if (!container) continue;
+
+          const slotTitle = (s === 0) ? "Líder (Pos 0)" : "Acompañante (Pos 1)";
+          const teamColor = (t === 0) ? "text-blue-400" : "text-red-400";
+          const pwrDesc = (cfg.useHiddenPower && chicken.hidden_power_id >= 0)
+            ? (POWERS.find(p => p.id === chicken.hidden_power_id)?.desc || "Poder Oculto")
+            : (POWERS.find(p => p.id === chicken.power_id)?.desc || "Poder Base");
+
+          const pasDesc = PASSIVES.find(p => p.id === chicken.passive_id)?.desc || "Sin pasiva";
+
+          // Calculate current base battle stats
+          const stats = calculateStats(chicken, cfg.level, cfg.born, cfg.training);
+
+          container.innerHTML = `
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold ${teamColor} uppercase">${slotTitle}</span>
+              <span class="text-xs font-mono text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>
+            </div>
+
+            <!-- Chicken Info & Sprite -->
+            <div class="flex items-center gap-3 p-2 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+              <img src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated" onerror="this.src=''; this.alt='🐔';" alt="Pollo">
+              <div class="flex-1 min-w-0">
+                <select class="w-full text-xs font-bold rounded bg-transparent text-[var(--foreground)] border-none focus:outline-none cursor-pointer" onchange="updateChicken(${t}, ${s}, parseInt(this.value))">
+                  ${CHICKENS.map(c => `<option value="${c.id}" ${c.id === chicken.id ? 'selected' : ''}>${c.name}</option>`).join('')}
+                </select>
+                <div class="text-[12px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">Pasiva: ${pasDesc}</div>
+              </div>
+            </div>
+
+            <!-- Level / Born / Training -->
+            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+              <div class="p-1.5 rounded bg-[var(--card)] border border-[var(--border)]">
+                <div class="text-[var(--muted-foreground)]">Nivel</div>
+                <input type="number" min="1" max="100" value="${cfg.level}" class="w-full font-bold text-center bg-transparent focus:outline-none text-amber-500" onchange="updateLevel(${t}, ${s}, this.value)">
+              </div>
+              <div class="p-1.5 rounded bg-[var(--card)] border border-[var(--border)]">
+                <div class="text-[var(--muted-foreground)]">Genética</div>
+                <input type="number" min="1" max="100" value="${cfg.born}" class="w-full font-bold text-center bg-transparent focus:outline-none text-emerald-400" onchange="updateBorn(${t}, ${s}, this.value)">
+              </div>
+              <div class="p-1.5 rounded bg-[var(--card)] border border-[var(--border)]">
+                <div class="text-[var(--muted-foreground)]">Entren.</div>
+                <input type="number" step="0.1" min="1.0" max="2.0" value="${cfg.training.toFixed(1)}" class="w-full font-bold text-center bg-transparent focus:outline-none text-purple-400" onchange="updateTraining(${t}, ${s}, this.value)">
+              </div>
+            </div>
+
+            <!-- Item & Target AI -->
+            <div class="space-y-1.5 text-xs">
+              <div>
+                <label class="block text-[11px] text-[var(--muted-foreground)]">Objeto Equipado:</label>
+                <select class="w-full px-2 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none" onchange="updateItem(${t}, ${s}, parseInt(this.value))">
+                  <option value="-1">Sin objeto</option>
+                  ${ITEMS.map(it => `<option value="${it.id}" ${it.id === cfg.itemId ? 'selected' : ''}>${it.name}</option>`).join('')}
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[11px] text-[var(--muted-foreground)]">Estrategia Objetivo (Target AI):</label>
+                <select class="w-full px-2 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none font-medium" onchange="updateTargetAI(${t}, ${s}, parseInt(this.value))">
+                  ${TARGET_OPTIONS.map(opt => `<option value="${opt.id}" ${opt.id === cfg.targetAI ? 'selected' : ''}>${opt.name}</option>`).join('')}
+                </select>
+              </div>
+            </div>
+
+            <!-- Power Toggle (Base / Oculto) -->
+            <div class="p-2 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-amber-500">Poder:</span>
+                <label class="flex items-center gap-1 cursor-pointer">
+                  <input type="checkbox" ${cfg.useHiddenPower ? 'checked' : ''} onchange="toggleHiddenPower(${t}, ${s}, this.checked)">
+                  <span class="text-[11px] text-[var(--muted-foreground)]">Oculto</span>
+                </label>
+              </div>
+              <div class="text-[12px] text-[var(--foreground)] leading-tight">${pwrDesc}</div>
+            </div>
+
+            <!-- Stats Preview Chips -->
+            <div class="grid grid-cols-4 gap-1 text-center font-mono text-[11px]">
+              <span class="text-red-400">HP:${stats.life}</span>
+              <span class="text-orange-400">ATK:${stats.damage}</span>
+              <span class="text-blue-400">SPD:${stats.speed}</span>
+              <span class="text-emerald-400">DEF:${Math.round(stats.armor * 100)}%</span>
+            </div>
+          `;
+        }
+      }
+    }
+
+    // UPDATE HANDLERS
+    function updateChicken(t, s, cid) { teamConfigs[t][s].chickenId = cid; renderConfigCards(); }
+    function updateLevel(t, s, val) { teamConfigs[t][s].level = clamp(parseInt(val) || 1, 1, 100); renderConfigCards(); }
+    function updateBorn(t, s, val) { teamConfigs[t][s].born = clamp(parseInt(val) || 1, 1, 100); renderConfigCards(); }
+    function updateTraining(t, s, val) { teamConfigs[t][s].training = clamp(parseFloat(val) || 1.0, 1.0, 2.0); renderConfigCards(); }
+    function updateItem(t, s, iid) { teamConfigs[t][s].itemId = iid; renderConfigCards(); }
+    function updateTargetAI(t, s, ai) { teamConfigs[t][s].targetAI = ai; renderConfigCards(); }
+    function toggleHiddenPower(t, s, val) { teamConfigs[t][s].useHiddenPower = val; renderConfigCards(); }
+
+    function applyTeamPreset(team, type) {
+      for (let s = 0; s < 2; s++) {
+        if (type === 'max') {
+          teamConfigs[team][s].level = 100;
+          teamConfigs[team][s].born = 100;
+          teamConfigs[team][s].training = 2.0;
+        } else if (type === 'mid') {
+          teamConfigs[team][s].level = 50;
+          teamConfigs[team][s].born = 70;
+          teamConfigs[team][s].training = 1.3;
+        }
+      }
+      renderConfigCards();
+    }
+
+    function randomizeTeam(team) {
+      for (let s = 0; s < 2; s++) {
+        const randC = CHICKENS[Math.floor(Math.random() * CHICKENS.length)];
+        const randIt = (Math.random() > 0.3) ? ITEMS[Math.floor(Math.random() * ITEMS.length)].id : -1;
+        teamConfigs[team][s].chickenId = randC.id;
+        teamConfigs[team][s].level = Math.floor(Math.random() * 80) + 20;
+        teamConfigs[team][s].born = Math.floor(Math.random() * 80) + 20;
+        teamConfigs[team][s].training = +(1.0 + Math.random()).toFixed(1);
+        teamConfigs[team][s].itemId = randIt;
+        teamConfigs[team][s].targetAI = TARGET_OPTIONS[Math.floor(Math.random() * TARGET_OPTIONS.length)].id;
+      }
+      renderConfigCards();
+    }
+
+    function randomizeAllTeams() {
+      randomizeTeam(0);
+      randomizeTeam(1);
+    }
+
+    // =========================================================================
+    // COMBAT ENGINE IMPLEMENTATION
+    // =========================================================================
+    let battleState = null;
+    let isSimulationRunning = false;
+    let simulationSpeed = 1;
+    let isPaused = false;
+    let simulationTimer = null;
+
+    function createBattleEntity(team, slot, cfg) {
+      const chicken = CHICKENS.find(c => c.id === cfg.chickenId) || CHICKENS[0];
+      const stats = calculateStats(chicken, cfg.level, cfg.born, cfg.training);
+      const powerId = (cfg.useHiddenPower && chicken.hidden_power_id >= 0) ? chicken.hidden_power_id : chicken.power_id;
+
+      return {
+        id: `${team}-${slot}`,
+        team: team,
+        slot: slot,
+        chickenId: chicken.id,
+        name: chicken.name,
+        level: cfg.level,
+        born: cfg.born,
+        training: cfg.training,
+        itemId: cfg.itemId,
+        targetAI: cfg.targetAI,
+        powerId: powerId,
+        passiveId: chicken.passive_id,
+        
+        // Dynamic battle stats
+        lifeMax: stats.life,
+        life: stats.life,
+        damage: stats.damage,
+        damageMulti: 1.0,
+        armor: stats.armor, // 0..0.8
+        armorMulti: 1.0,
+        speed: stats.speed,
+        speedMulti: 1.0,
+        powerMax: stats.powerMax,
+        powerAmount: stats.powerAmount,
+        powerValue: 0,
+        
+        // Status & state
+        alive: true,
+        revive: false,
+        states: { poison: 0, burn: 0, paralysis: 0, freeze: 0, infect: 0, curse: 0 },
+        avoid: 0,
+        firstAttack: true,
+        lastAttackedMe: null,
+        hasFocus: false,
+        kills: 0,
+        damageDealt: 0
+      };
+    }
+
+    // TARGET SELECTION (matching scr_battle_get_target)
+    function getTarget(attacker, entities) {
+      const enemies = entities.filter(e => e.team !== attacker.team && e.alive);
+      if (enemies.length === 0) return null;
+
+      // 1. Force focus (Taunt) - Golden Pickinator (item 40) or Iguanarto passive (id 29)
+      const focusTarget = enemies.find(e => e.hasFocus || e.itemId === 40 || e.passiveId === 29);
+      if (focusTarget && attacker.passiveId !== 61) { // 61 = Shiken (ignora focus)
+        return focusTarget;
+      }
+
+      switch (attacker.targetAI) {
+        case 1: // Less life
+          return [...enemies].sort((a, b) => a.life - b.life)[0];
+        case 2: // More life
+          return [...enemies].sort((a, b) => b.life - a.life)[0];
+        case 6: // More damage
+          return [...enemies].sort((a, b) => (b.damage * b.damageMulti) - (a.damage * a.damageMulti))[0];
+        case 8: // More speed
+          return [...enemies].sort((a, b) => (b.speed * b.speedMulti) - (a.speed * a.speedMulti))[0];
+        case 9: // Less armor
+          return [...enemies].sort((a, b) => (a.armor * a.armorMulti) - (b.armor * b.armorMulti))[0];
+        case 15: // Revenge
+          if (attacker.lastAttackedMe && attacker.lastAttackedMe.alive && attacker.lastAttackedMe.team !== attacker.team) {
+            return attacker.lastAttackedMe;
+          }
+          return enemies[Math.floor(Math.random() * enemies.length)];
+        case 0: // Random
+        default:
+          return enemies[Math.floor(Math.random() * enemies.length)];
+      }
+    }
+
+    // LOGGING
+    function logEvent(text, color = "text-[var(--foreground)]") {
+      const logBox = document.getElementById('combat-log');
+      if (!logBox) return;
+      const div = document.createElement('div');
+      div.className = `${color} leading-relaxed`;
+      div.innerHTML = text;
+      logBox.appendChild(div);
+      logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    function clearLog() {
+      const logBox = document.getElementById('combat-log');
+      if (logBox) logBox.innerHTML = '';
+    }
+
+    // START OF BATTLE (Items & Passives & Tournament modifiers)
+    function applyStartOfBattle(entities, mode, log = true) {
+      entities.forEach(ent => {
+        // Tournament modifiers
+        if (mode === 3) { // Desierto: Infección para todos
+          ent.states.infect = 3;
+          if (log) logEvent(`🌵 [Torneo Desierto] <b>${ent.name}</b> comienza Infectado.`, "text-green-400");
+        }
+        if (mode === 6) { // Cementerio: Revivir
+          ent.revive = true;
+          if (log) logEvent(`💀 [Torneo Cementerio] <b>${ent.name}</b> obtiene bendición de Revivir.`, "text-purple-400");
+        }
+
+        // Items on-start
+        switch (ent.itemId) {
+          case 1: // Beak breaker seed (+15% max HP)
+            const addHp = Math.round(ent.lifeMax * 0.15);
+            ent.lifeMax += addHp;
+            ent.life += addHp;
+            break;
+          case 2: // Raven's tooth (+15% armor)
+            ent.armorMulti += 0.15;
+            break;
+          case 3: // Crazy eye (+15% damage)
+            ent.damageMulti += 0.15;
+            break;
+          case 4: // Hen's glove (+15% speed)
+            ent.speedMulti += 0.15;
+            break;
+          case 5: // Roost stick (+50 powerMax, starts full)
+            ent.powerMax += 50;
+            ent.powerValue = ent.powerMax;
+            break;
+          case 10: // Phoenix Pages (revive)
+            ent.revive = true;
+            if (log) logEvent(`✨ <b>${ent.name}</b> equipa Phoenix Pages: revivirá al morir.`, "text-amber-400");
+            break;
+          case 40: // Golden Pickinator (Focus)
+            ent.hasFocus = true;
+            if (log) logEvent(`🧲 <b>${ent.name}</b> equipa Golden Pickinator y atrae los ataques.`, "text-yellow-400");
+            break;
+        }
+
+        // Passives on-start
+        if (ent.passiveId === 250) { // Easy East (id_easy_east: revive)
+          ent.revive = true;
+        }
+      });
+    }
+
+    // RESOLVE POWER (All 52 powers + transformations)
+    function executePower(attacker, allEntities, log = true) {
+      const allies = allEntities.filter(e => e.team === attacker.team && e.alive);
+      const enemies = allEntities.filter(e => e.team !== attacker.team && e.alive);
+      const target = getTarget(attacker, allEntities);
+
+      if (log) logEvent(`✨ <b>${attacker.name}</b> activa su PODER ESPECIAL (ID ${attacker.powerId})!`, "text-amber-400 font-bold");
+
+      switch (attacker.powerId) {
+        case 0: // Doble ataque
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, log);
+            if (target.alive) dealDamage(attacker, target, attacker.damage, log);
+          }
+          break;
+
+        case 1: // Autocuración 25% max HP
+          healEntity(attacker, Math.round(attacker.lifeMax * 0.25), log);
+          break;
+
+        case 2: // Lanza un huevo (100% daño)
+          if (target) dealDamage(attacker, target, attacker.damage, log);
+          break;
+
+        case 3: // Shuriken (150% daño)
+          if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.5), log);
+          break;
+
+        case 4: // Zombie: -10% max HP, +25% dmg
+          attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
+          attacker.damageMulti += 0.25;
+          if (log) logEvent(`🧟 <b>${attacker.name}</b> sacrifica vida y gana +25% daño permanente.`, "text-orange-400");
+          break;
+
+        case 6: // Transforma en Pollisaur (ID 10)
+          transformEntity(attacker, 10, log);
+          break;
+
+        case 7: // Transforma en Pollisor (ID 9)
+          transformEntity(attacker, 9, log);
+          break;
+
+        case 8: // Misil (quema)
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, log);
+            target.states.burn = 3;
+            if (log) logEvent(`🔥 <b>${target.name}</b> sufre Quemadura por 3 turnos.`, "text-orange-400");
+          }
+          break;
+
+        case 9: // +10% stat aleatorio
+          const statChoice = Math.floor(Math.random() * 3);
+          if (statChoice === 0) attacker.damageMulti += 0.1;
+          else if (statChoice === 1) attacker.armorMulti += 0.1;
+          else attacker.speedMulti += 0.1;
+          if (log) logEvent(`🎲 <b>${attacker.name}</b> potencia un atributo en +10%.`, "text-purple-400");
+          break;
+
+        case 10: // El equipo gana +10% armadura
+          allies.forEach(a => a.armorMulti += 0.1);
+          if (log) logEvent(`🛡️ El equipo de <b>${attacker.name}</b> gana +10% de armadura.`, "text-emerald-400");
+          break;
+
+        case 11: // Bomba (80% a target, 40% a otros)
+          if (target) {
+            dealDamage(attacker, target, Math.round(attacker.damage * 0.8), log);
+            enemies.filter(e => e.id !== target.id).forEach(other => {
+              dealDamage(attacker, other, Math.round(attacker.damage * 0.4), log);
+            });
+          }
+          break;
+
+        case 12: // Paraliza
+          if (target) {
+            target.states.paralysis = 3;
+            if (log) logEvent(`⚡ <b>${target.name}</b> queda Paralizado.`, "text-yellow-400");
+          }
+          break;
+
+        case 13: // Envenena
+          if (target) {
+            target.states.poison = 3;
+            if (log) logEvent(`🧪 <b>${target.name}</b> queda Envenenado.`, "text-purple-400");
+          }
+          break;
+
+        case 14: // Manic: -10% HP, aliado full power
+          attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
+          const ally = allies.find(a => a.id !== attacker.id);
+          if (ally) {
+            ally.powerValue = ally.powerMax;
+            if (log) logEvent(`💥 <b>${attacker.name}</b> llena al máximo el poder de <b>${ally.name}</b>!`, "text-blue-400");
+          }
+          break;
+
+        case 18: // Quema
+          if (target) {
+            target.states.burn = 3;
+            if (log) logEvent(`🔥 <b>${target.name}</b> comienza a Quemarse.`, "text-orange-400");
+          }
+          break;
+
+        case 19: // Cura 25% max HP y +15% armadura
+          healEntity(attacker, Math.round(attacker.lifeMax * 0.25), log);
+          attacker.armorMulti += 0.15;
+          break;
+
+        case 20: // Cura aliado
+          const injuredAlly = [...allies].sort((a, b) => (a.life / a.lifeMax) - (b.life / b.lifeMax))[0];
+          if (injuredAlly) {
+            healEntity(injuredAlly, Math.round(injuredAlly.lifeMax * 0.35), log);
+          }
+          break;
+
+        case 21: // Hacha 80% dmg y cura 40% dmg
+          if (target) {
+            const dealt = dealDamage(attacker, target, Math.round(attacker.damage * 0.8), log);
+            healEntity(attacker, Math.round(dealt * 0.4), log);
+          }
+          break;
+
+        case 22: // Transforma en Evil Gatarlos (ID 56)
+          transformEntity(attacker, 56, log);
+          break;
+
+        case 23: // Congela
+          if (target) {
+            target.states.freeze = 2;
+            if (log) logEvent(`❄️ <b>${target.name}</b> queda Congelado (2 turnos).`, "text-cyan-400");
+          }
+          break;
+
+        case 26: // Transforma en Gatarlos (ID 55)
+          transformEntity(attacker, 55, log);
+          break;
+
+        case 30: // Infecta
+          if (target) {
+            target.states.infect = 4;
+            if (log) logEvent(`💀 <b>${target.name}</b> es Infectado.`, "text-green-500");
+          }
+          break;
+
+        case 31: // Obtiene revivir
+          attacker.revive = true;
+          if (log) logEvent(`✨ <b>${attacker.name}</b> obtiene una vida extra (Revivir).`, "text-amber-400");
+          break;
+
+        case 32: // Explota (25% max HP a todos)
+          allEntities.filter(e => e.alive).forEach(e => {
+            e.life = Math.max(0, e.life - Math.round(e.lifeMax * 0.25));
+            checkDeath(e, log);
+          });
+          if (log) logEvent(`💥 ¡EXPLOSIÓN MASIVA! Todos los pollos pierden 25% de vida máxima.`, "text-red-500 font-bold");
+          break;
+
+        case 37: // Transforma en Mechalex (ID 80)
+          transformEntity(attacker, 80, log);
+          break;
+
+        case 38: // Transforma en Eggalex (ID 79)
+          transformEntity(attacker, 79, log);
+          break;
+
+        case 41: // Cura equipo
+          allies.forEach(a => healEntity(a, Math.round(a.lifeMax * 0.2), log));
+          break;
+
+        case 42: // +1 evasión y +13% daño equipo
+          allies.forEach(a => {
+            a.avoid += 1;
+            a.damageMulti += 0.13;
+          });
+          if (log) logEvent(`💨 El equipo gana 1 evasión y +13% de daño.`, "text-blue-400");
+          break;
+
+        case 48: // Roba 15% max HP
+          if (target) {
+            const stolen = Math.round(target.lifeMax * 0.15);
+            target.life = Math.max(0, target.life - stolen);
+            healEntity(attacker, stolen, log);
+            checkDeath(target, log);
+            if (log) logEvent(`🧛 <b>${attacker.name}</b> drena ${stolen} de vida de <b>${target.name}</b>.`, "text-red-400");
+          }
+          break;
+
+        default: // Fallback poder base (120% daño)
+          if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.2), log);
+          break;
+      }
+    }
+
+    // DAMAGE RESOLUTION WITH ARMOR MITIGATION & PASSIVES
+    function dealDamage(attacker, target, rawDmg, log = true) {
+      if (!target.alive) return 0;
+
+      // Evasion check
+      if (target.avoid > 0) {
+        target.avoid--;
+        if (log) logEvent(`💨 ¡<b>${target.name}</b> evadió el ataque!`, "text-cyan-400");
+        return 0;
+      }
+
+      // First attack passive bonus (Pollier: +50% dmg)
+      let dmgMulti = attacker.damageMulti;
+      if (attacker.firstAttack && attacker.passiveId === 0) { // Pollier passive
+        dmgMulti += 0.5;
+        if (log) logEvent(`💥 [Pasiva Pollier] ¡Primer ataque con +50% de daño!`, "text-orange-400");
+      }
+      attacker.firstAttack = false;
+
+      // Paralysis debuff (attacker deals 50% dmg)
+      if (attacker.states.paralysis > 0) {
+        dmgMulti *= 0.5;
+      }
+
+      const totalDmg = rawDmg * dmgMulti;
+
+      // Armor mitigation (clamp 0..0.90)
+      let targetArmor = target.armor * target.armorMulti;
+      if (target.states.paralysis > 0) targetArmor *= 0.5;
+      const armorClamped = clamp(targetArmor, 0, 0.90);
+
+      let realDamage = Math.max(1, Math.round(totalDmg * (1 - armorClamped)));
+
+      // Curse: +25% damage taken
+      if (target.states.curse > 0) {
+        realDamage = Math.round(realDamage * 1.25);
+      }
+
+      target.life = Math.max(0, target.life - realDamage);
+      target.lastAttackedMe = attacker;
+      attacker.damageDealt += realDamage;
+
+      if (log) {
+        const teamColor = (attacker.team === 0) ? "text-blue-400" : "text-red-400";
+        logEvent(`⚔️ <b class="${teamColor}">${attacker.name}</b> golpea a <b>${target.name}</b> por <b class="text-red-400">${realDamage}</b> daño <span class="text-[var(--muted-foreground)]">(${Math.round(armorClamped * 100)}% mitigado)</span>.`);
+      }
+
+      // Vampire beak lifesteal (item 15)
+      if (attacker.itemId === 15 && realDamage > 0) {
+        const healAmt = Math.max(1, Math.round(realDamage * 0.15));
+        healEntity(attacker, healAmt, log);
+      }
+
+      checkDeath(target, log);
+      return realDamage;
+    }
+
+    // HEAL HELPER
+    function healEntity(entity, amount, log = true) {
+      if (!entity.alive) return;
+      const prevLife = entity.life;
+      entity.life = Math.min(entity.lifeMax, entity.life + amount);
+      const actualHealed = entity.life - prevLife;
+      if (actualHealed > 0 && log) {
+        logEvent(`💚 <b>${entity.name}</b> se cura <b class="text-emerald-400">+${actualHealed}</b> HP (${entity.life}/${entity.lifeMax}).`, "text-emerald-400");
+      }
+    }
+
+    // TRANSFORMATION (matching scr_battle_transform)
+    function transformEntity(entity, newId, log = true) {
+      const newChicken = CHICKENS.find(c => c.id === newId);
+      if (!newChicken) return;
+
+      const oldName = entity.name;
+      const hpRatio = (entity.lifeMax > 0) ? (entity.life / entity.lifeMax) : 0.5;
+
+      entity.chickenId = newId;
+      entity.name = newChicken.name;
+      entity.powerId = newChicken.power_id;
+      entity.passiveId = newChicken.passive_id;
+
+      // Recalculate stats
+      const newStats = calculateStats(newChicken, entity.level, entity.born, entity.training);
+      entity.lifeMax = newStats.life;
+      entity.life = Math.max(1, Math.round(entity.lifeMax * hpRatio));
+      entity.damage = newStats.damage;
+      entity.armor = newStats.armor;
+      entity.speed = newStats.speed;
+      entity.powerAmount = newStats.powerAmount;
+      entity.powerMax = newStats.powerMax;
+      entity.powerValue = 0; // reset power bar
+
+      if (log) logEvent(`✨🌀 ¡<b>${oldName}</b> SE TRANSFORMA en <b class="text-purple-400">${entity.name}</b>! Conserva ${Math.round(hpRatio * 100)}% de vida.`, "text-purple-400 font-bold");
+    }
+
+    // DEATH & REVIVE CHECK
+    function checkDeath(entity, log = true) {
+      if (entity.life <= 0 && entity.alive) {
+        if (entity.revive) {
+          entity.revive = false;
+          entity.life = Math.round(entity.lifeMax * 0.5);
+          if (log) logEvent(`✨ ¡<b>${entity.name}</b> ha REVIVIDO con 50% de salud (${entity.life} HP)!`, "text-amber-400 font-bold");
+        } else {
+          entity.alive = false;
+          entity.life = 0;
+          if (log) logEvent(`💀 <b>${entity.name}</b> ha sido derrotado.`, "text-red-500 font-semibold");
+        }
+      }
+    }
+
+    // INIT A NEW BATTLE
+    function initBattleState() {
+      const mode = parseInt(document.getElementById('battle-mode').value);
+      const entities = [
+        createBattleEntity(0, 0, teamConfigs[0][0]),
+        createBattleEntity(0, 1, teamConfigs[0][1]),
+        createBattleEntity(1, 0, teamConfigs[1][0]),
+        createBattleEntity(1, 1, teamConfigs[1][1])
+      ];
+
+      applyStartOfBattle(entities, mode, true);
+
+      return {
+        round: 1,
+        entities: entities,
+        mode: mode,
+        isFinished: false,
+        winnerTeam: null
+      };
+    }
+
+    // RUN SINGLE TURN
+    function runBattleTurn(state, log = true) {
+      if (state.isFinished) return;
+
+      if (log) logEvent(`<hr class="border-[var(--border)] my-1"><span class="text-amber-500 font-bold">--- RONDA ${state.round} ---</span>`);
+
+      // 1. Sort alive entities by current speed descending
+      const turnOrder = [...state.entities]
+        .filter(e => e.alive)
+        .sort((a, b) => (b.speed * b.speedMulti) - (a.speed * a.speedMulti));
+
+      for (let i = 0; i < turnOrder.length; i++) {
+        const ent = turnOrder[i];
+        if (!ent.alive) continue;
+
+        // Check if battle already ended mid-round
+        const blueAlive = state.entities.filter(e => e.team === 0 && e.alive).length;
+        const redAlive = state.entities.filter(e => e.team === 1 && e.alive).length;
+        if (blueAlive === 0 || redAlive === 0) break;
+
+        // A. Start of turn status effects (poison, burn, infect)
+        if (ent.states.poison > 0) {
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.08));
+          ent.life = Math.max(0, ent.life - dmg);
+          ent.states.poison--;
+          if (log) logEvent(`🧪 <b>${ent.name}</b> sufre ${dmg} daño por Veneno.`, "text-purple-400");
+          checkDeath(ent, log);
+          if (!ent.alive) continue;
+        }
+
+        if (ent.states.burn > 0) {
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.07));
+          ent.life = Math.max(0, ent.life - dmg);
+          ent.states.burn--;
+          if (log) logEvent(`🔥 <b>${ent.name}</b> sufre ${dmg} daño por Quemadura.`, "text-orange-400");
+          checkDeath(ent, log);
+          if (!ent.alive) continue;
+        }
+
+        if (ent.states.infect > 0) {
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.10));
+          ent.life = Math.max(0, ent.life - dmg);
+          ent.states.infect--;
+          if (log) logEvent(`💀 <b>${ent.name}</b> sufre ${dmg} daño por Infección.`, "text-green-500");
+          checkDeath(ent, log);
+          if (!ent.alive) continue;
+        }
+
+        // B. Freeze check
+        if (ent.states.freeze > 0) {
+          ent.states.freeze--;
+          if (log) logEvent(`❄️ <b>${ent.name}</b> está Congelado y pierde su turno.`, "text-cyan-400");
+          continue;
+        }
+
+        // C. Paralysis 25% skip turn
+        if (ent.states.paralysis > 0) {
+          ent.states.paralysis--;
+          if (Math.random() < 0.25) {
+            if (log) logEvent(`⚡ <b>${ent.name}</b> está totalmente paralizado y no puede moverse!`, "text-yellow-400");
+            continue;
+          }
+        }
+
+        // D. Charge power & Action
+        if (ent.powerValue >= ent.powerMax) {
+          // Cast Power!
+          executePower(ent, state.entities, log);
+          ent.powerValue = 0;
+        } else {
+          // Normal attack
+          const target = getTarget(ent, state.entities);
+          if (target) {
+            dealDamage(ent, target, ent.damage, log);
+            // Power charge
+            ent.powerValue = Math.min(ent.powerMax, ent.powerValue + ent.powerAmount);
+          }
+        }
+      }
+
+      // Check win condition
+      const blueAliveEnd = state.entities.filter(e => e.team === 0 && e.alive).length;
+      const redAliveEnd = state.entities.filter(e => e.team === 1 && e.alive).length;
+
+      if (blueAliveEnd === 0 && redAliveEnd === 0) {
+        state.isFinished = true;
+        state.winnerTeam = -1; // Empate
+        if (log) logEvent(`⚖️ ¡COMBATE EMPATADO! Ambos equipos cayeron a la vez.`, "text-amber-500 font-black text-sm");
+      } else if (redAliveEnd === 0) {
+        state.isFinished = true;
+        state.winnerTeam = 0;
+        if (log) logEvent(`🏆 ¡VICTORIA DEL EQUIPO AZUL en la Ronda ${state.round}!`, "text-blue-400 font-black text-sm");
+      } else if (blueAliveEnd === 0) {
+        state.isFinished = true;
+        state.winnerTeam = 1;
+        if (log) logEvent(`🏆 ¡VICTORIA DEL EQUIPO ROJO en la Ronda ${state.round}!`, "text-red-400 font-black text-sm");
+      } else if (state.round >= 50) {
+        // Max rounds cutoff
+        state.isFinished = true;
+        // Decision by total remaining HP
+        const blueHp = state.entities.filter(e => e.team === 0).reduce((acc, c) => acc + c.life, 0);
+        const redHp = state.entities.filter(e => e.team === 1).reduce((acc, c) => acc + c.life, 0);
+        state.winnerTeam = (blueHp >= redHp) ? 0 : 1;
+        if (log) logEvent(`⏱️ Límite de 50 rondas alcanzado. Victoria por decisión para Equipo ${state.winnerTeam === 0 ? 'Azul' : 'Rojo'}.`, "text-amber-400 font-bold");
+      }
+
+      state.round++;
+    }
+
+    // =========================================================================
+    // VISUAL ARENA CONTROLLER
+    // =========================================================================
+    function renderArenaCards() {
+      if (!battleState) return;
+
+      document.getElementById('arena-round-badge').textContent = `Ronda ${battleState.round}`;
+
+      battleState.entities.forEach(ent => {
+        const card = document.getElementById(`arena-entity-${ent.team}-${ent.slot}`);
+        if (!card) return;
+
+        const hpPct = clamp((ent.life / ent.lifeMax) * 100, 0, 100);
+        const pwrPct = clamp((ent.powerValue / ent.powerMax) * 100, 0, 100);
+        const teamBg = (ent.team === 0) ? "border-blue-500/50" : "border-red-500/50";
+        const isDead = !ent.alive;
+
+        let statusBadges = [];
+        if (ent.states.poison > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 text-[10px]">🧪 ${ent.states.poison}</span>`);
+        if (ent.states.burn > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-400 text-[10px]">🔥 ${ent.states.burn}</span>`);
+        if (ent.states.paralysis > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-yellow-500/20 text-yellow-400 text-[10px]">⚡ ${ent.states.paralysis}</span>`);
+        if (ent.states.freeze > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-400 text-[10px]">❄️ ${ent.states.freeze}</span>`);
+        if (ent.states.infect > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-green-500/20 text-green-400 text-[10px]">💀 ${ent.states.infect}</span>`);
+        if (ent.avoid > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 text-[10px]">💨 ${ent.avoid}</span>`);
+        if (ent.revive) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px]">✨ Revivir</span>`);
+
+        card.className = `p-4 rounded-xl bg-[var(--background)] border-2 ${teamBg} relative overflow-hidden transition ${isDead ? 'opacity-40 grayscale' : ''}`;
+
+        card.innerHTML = `
+          <div class="flex items-center gap-3 mb-2">
+            <img src="images/chickens/${ent.chickenId}.png" class="w-12 h-12 object-contain pixelated" alt="Pollo">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold truncate">${ent.name}</h4>
+                <span class="text-[11px] font-mono font-bold ${ent.team === 0 ? 'text-blue-400' : 'text-red-400'}">Nv.${ent.level}</span>
+              </div>
+              <div class="text-[11px] text-[var(--muted-foreground)]">Posición ${ent.slot} ${isDead ? '• 💀 CAÍDO' : ''}</div>
+            </div>
+          </div>
+
+          <!-- HP BAR -->
+          <div class="space-y-1 mb-2">
+            <div class="flex justify-between text-[11px] font-mono">
+              <span class="text-red-400 font-bold">HP</span>
+              <span>${ent.life} / ${ent.lifeMax}</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-[var(--border)] overflow-hidden">
+              <div class="h-full ${hpPct > 50 ? 'bg-emerald-500' : hpPct > 20 ? 'bg-amber-500' : 'bg-red-500'} transition-all duration-200" style="width: ${hpPct}%;"></div>
+            </div>
+          </div>
+
+          <!-- POWER BAR -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-[11px] font-mono">
+              <span class="text-purple-400 font-bold">PODER</span>
+              <span>${ent.powerValue} / ${ent.powerMax}</span>
+            </div>
+            <div class="w-full h-1.5 rounded-full bg-[var(--border)] overflow-hidden">
+              <div class="h-full bg-purple-500 transition-all duration-200" style="width: ${pwrPct}%;"></div>
+            </div>
+          </div>
+
+          <!-- STATUS BADGES -->
+          <div class="flex flex-wrap gap-1 mt-2 min-h-[20px]">
+            ${statusBadges.join('')}
+          </div>
+        `;
+      });
+    }
+
+    function startVisualBattle() {
+      if (simulationTimer) clearInterval(simulationTimer);
+      clearLog();
+      battleState = initBattleState();
+      renderArenaCards();
+
+      isPaused = false;
+      document.getElementById('btn-pause-resume').disabled = false;
+      document.getElementById('btn-step').disabled = false;
+      document.getElementById('btn-pause-resume').textContent = "⏸ Pausar";
+
+      const delay = (simulationSpeed === 1) ? 600 : (simulationSpeed === 2) ? 300 : 120;
+
+      simulationTimer = setInterval(() => {
+        if (isPaused) return;
+
+        if (battleState && !battleState.isFinished) {
+          runBattleTurn(battleState, true);
+          renderArenaCards();
+        } else {
+          clearInterval(simulationTimer);
+          document.getElementById('btn-pause-resume').disabled = true;
+          document.getElementById('btn-step').disabled = true;
+        }
+      }, delay);
+    }
+
+    function togglePause() {
+      isPaused = !isPaused;
+      document.getElementById('btn-pause-resume').textContent = isPaused ? "▶ Reanudar" : "⏸ Pausar";
+    }
+
+    function stepAction() {
+      if (battleState && !battleState.isFinished) {
+        runBattleTurn(battleState, true);
+        renderArenaCards();
+        if (battleState.isFinished) {
+          document.getElementById('btn-pause-resume').disabled = true;
+          document.getElementById('btn-step').disabled = true;
+        }
+      }
+    }
+
+    function setSpeed(spd) {
+      simulationSpeed = spd;
+      [1, 2, 4].forEach(s => {
+        const btn = document.getElementById(`spd-btn-${s}`);
+        if (btn) {
+          if (s === spd) {
+            btn.className = "px-2 py-1 rounded font-semibold bg-amber-500/20 text-amber-500";
+          } else {
+            btn.className = "px-2 py-1 rounded text-[var(--muted-foreground)]";
+          }
+        }
+      });
+      if (simulationTimer && !battleState.isFinished) {
+        startVisualBattle();
+      }
+    }
+
+    // =========================================================================
+    // MONTE CARLO BATCH SIMULATION
+    // =========================================================================
+    function runMonteCarlo(count = 500) {
+      const mode = parseInt(document.getElementById('battle-mode').value);
+      let blueWins = 0;
+      let redWins = 0;
+      let ties = 0;
+      let totalRounds = 0;
+
+      for (let i = 0; i < count; i++) {
+        // Fast init without logs
+        const entities = [
+          createBattleEntity(0, 0, teamConfigs[0][0]),
+          createBattleEntity(0, 1, teamConfigs[0][1]),
+          createBattleEntity(1, 0, teamConfigs[1][0]),
+          createBattleEntity(1, 1, teamConfigs[1][1])
+        ];
+        applyStartOfBattle(entities, mode, false);
+
+        const simState = { round: 1, entities: entities, mode: mode, isFinished: false, winnerTeam: null };
+
+        while (!simState.isFinished && simState.round <= 50) {
+          runBattleTurn(simState, false);
+        }
+
+        totalRounds += simState.round;
+        if (simState.winnerTeam === 0) blueWins++;
+        else if (simState.winnerTeam === 1) redWins++;
+        else ties++;
+      }
+
+      const bluePct = ((blueWins / count) * 100).toFixed(1);
+      const redPct = ((redWins / count) * 100).toFixed(1);
+      const avgRounds = (totalRounds / count).toFixed(1);
+
+      // Display results panel
+      const panel = document.getElementById('monte-carlo-panel');
+      panel.classList.remove('hidden');
+
+      document.getElementById('mc-blue-pct').textContent = `${bluePct}%`;
+      document.getElementById('mc-blue-count').textContent = `${blueWins} / ${count} victorias`;
+      document.getElementById('mc-red-pct').textContent = `${redPct}%`;
+      document.getElementById('mc-red-count').textContent = `${redWins} / ${count} victorias`;
+      document.getElementById('mc-avg-rounds').textContent = avgRounds;
+
+      document.getElementById('mc-bar-blue').style.width = `${bluePct}%`;
+      document.getElementById('mc-bar-red').style.width = `${redPct}%`;
+
+      panel.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // INIT
+    renderConfigCards();
+  </script>
+</body>
+</html>

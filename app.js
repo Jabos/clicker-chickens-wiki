@@ -680,207 +680,28 @@
   }
 
   function getChickenTacticalAnalysis(chicken, lang) {
-    lang = lang || 'es';
-    const isEn = lang === 'en';
-    const s = chicken.stats;
-    const pMax = chicken.power_max || 100;
-    const pAmt = s.power_amount;
-    const turns = pAmt > 0 ? Math.ceil(pMax / pAmt) : 99;
-    const act = chicken.action_type || 0; // 0=melee, 1=heal, 2=projectile
-
-    const l = s.life, d = s.damage, sp = s.speed, a = s.armor, p = s.power_amount;
-
-    let role, roleTitle, duo, allies, items, counter;
-
-    // 1. Soporte Sanador (Healer)
-    if (act === 1) {
-      roleTitle = isEn ? 'Healing Support' : 'Soporte Sanador';
-      role = isEn ? 'Tactical Healing Support' : 'Soporte Sanador Táctico';
-      duo = isEn
-        ? 'Position 2 (Backline). Restores health to keep their partner alive, allowing high-damage allies to outlast the opponent team.'
-        : 'Posición 2 (Retaguardia). Restaura salud al equipo para mantener con vida a su compañero y ganar el combate por desgaste.';
-      allies = isEn
-        ? 'Heavy tanks or bruisers (Pastank, Armor, Boomy, Garry) who become nearly unkillable with sustained healing.'
-        : 'Tanques de absorción o peleadores pesados (Pastank, Armor, Boomy, Garry) que se vuelven casi imposibles de derribar con curación continua.';
-      items = isEn
-        ? 'Ala de Garra (passive team healing every turn), Palo de raíz (starts with full power for an instant Turn 1 heal), Ojos locos (+10% team damage), or Poción mágica (cleanses all status conditions).'
-        : 'Ala de Garra (cura 5% de vida al equipo cada turno), Palo de raíz (empieza con poder lleno para curar en turno 1), Ojos locos (+10% de daño al equipo) o Poción mágica (limpia cualquier estado).';
-      counter = isEn
-        ? 'Apply silence using Pergamino del silencio at the start of battle to shut down their healing powers, or focus them down first.'
-        : 'Aplicar silencio al inicio del combate con Pergamino del silencio para bloquear sus poderes curativos, o atacarlo primero para no dejarlo sanar.';
+    lang = lang || currentLang || 'es';
+    if (chicken.tactical_guide) {
+      const tg = chicken.tactical_guide[lang] || chicken.tactical_guide.es;
+      return {
+        role: tg.role,
+        roleTitle: tg.role_title,
+        turns: chicken.tactical_guide.turns || 1,
+        duo: tg.duo,
+        allies: tg.allies,
+        items: tg.items,
+        counter: tg.counter
+      };
     }
-    // 2. Cañón de Cristal (Glass Cannon)
-    else if (d >= 60 && sp >= 50 && (l <= 30 || a <= 20)) {
-      roleTitle = isEn ? 'Glass Cannon' : 'Cañón de Cristal';
-      role = isEn ? 'Glass Cannon (Fast Striker)' : 'Cañón de Cristal (Asesino Rápido)';
-      duo = isEn
-        ? 'Position 2 (Backline). A high-speed, high-damage sweeper designed to eliminate a key enemy chicken early to force a 2vs1 advantage.'
-        : 'Posición 2 (Retaguardia). Atacante veloz de alto daño diseñado para noquear rápido a un rival y transformar la batalla en un ventajoso 2vs1.';
-      allies = isEn
-        ? 'Frontline tanks holding Picoteador dorado (Pastank, Armor, Porky, Garry) to draw enemy attacks away from them.'
-        : 'Tanques de vanguardia equipados con Picoteador dorado (Pastank, Armor, Porky, Garry) para desviar los ataques rivales y protegerlo.';
-      items = isEn
-        ? 'Páginas del fénix (revives if targeted early), Pico vampiro (heals 15% of damage dealt on hit), Ira (2 extra attacks at combat start), or Cristal de daño (+25% damage at start).'
-        : 'Páginas del fénix (revive si es eliminado por sorpresa), Pico vampiro (recupera vida con el 15% del daño al atacar), Ira (2 ataques extra al inicio) o Cristal de daño (+25% de daño).';
-      counter = isEn
-        ? 'Target them immediately with AI focused on the lowest health chicken, or slow them down with paralysis using Pico Electrostático.'
-        : 'Atacarlo de inmediato con la IA dirigida al pollo con menor vida, o frenarlo con parálisis equipando Pico Electrostático (reduce su velocidad al 50%).';
-    }
-    // 3. Muralla Blindada (Pure Tank)
-    else if (l >= 50 && a >= 45) {
-      roleTitle = isEn ? 'Armored Wall' : 'Muralla Blindada';
-      role = isEn ? 'Armored Wall (Pure Tank)' : 'Muralla Blindada (Tanque Puro)';
-      duo = isEn
-        ? 'Position 1 (Frontline). Absorbs physical punishment and protects their partner while the backline builds power or sweeps.'
-        : 'Posición 1 (Vanguardia). Absorbe los impactos del dúo rival y protege a su compañero mientras la retaguardia carga poder o remata.';
-      allies = isEn
-        ? 'High-damage attackers needing protection (Chica, Mosca, Shiken, Zombie, Cacho) or power casters like Boomy.'
-        : 'Atacantes de alto impacto que necesitan protección (Chica, Mosca, Shiken, Zombie, Cacho) o generadores de poder como Boomy.';
-      items = isEn
-        ? 'Picoteador dorado (forces both enemies to focus on them), Pico helado (20% chance to freeze the attacker on hit), Diente de cuervo (+15% armor), or Circuito Vital (massive 700 HP heal when low).'
-        : 'Picoteador dorado (obtiene el enfoque y obliga a los rivales a atacarlo a él), Pico helado (20% de congelar al atacante cuando recibe un golpe), Diente de cuervo (+15% de armadura) o Circuito Vital (cura 700 de vida en apuros).';
-      counter = isEn
-        ? 'Do not hit them with raw attacks. Use status damage that bypasses armor like poison (Gota peligrosa), infection (Moco problemático), or burn.'
-        : 'No desgastarse con ataques físicos directos. Usar estados alterados que ignoran la armadura como envenenamiento (Gota peligrosa), infección (Moco problemático) o quemadura.';
-    }
-    // 4. Bastión de Armadura (Heavy Armor)
-    else if (a >= 60) {
-      roleTitle = isEn ? 'Iron Bastion' : 'Bastión de Armadura';
-      role = isEn ? 'Iron Bastion (Armor Specialist)' : 'Bastión de Armadura (Especialista Defensivo)';
-      duo = isEn
-        ? 'Position 1 (Frontline). Extremely resistant to standard physical blows, effectively walling opposing physical sweepers.'
-        : 'Posición 1 (Vanguardia). Gran reducción contra ataques directos, desgastando y frenando en seco a los atacantes físicos rivales.';
-      allies = isEn
-        ? 'Ranged projectile shooters or sustaining supports holding Ala de Garra.'
-        : 'Atacantes a distancia con proyectiles o pollos con soporte curativo como Ala de Garra.';
-      items = isEn
-        ? 'Picoteador dorado (draws physical attacks onto their massive armor), Ojos en sincronía (shares inflicted status conditions with attackers), or Pico helado (freezes attackers).'
-        : 'Picoteador dorado (atrae los ataques físicos a su armadura), Ojos en sincronía (comparte los estados negativos con su atacante) o Pico helado (congela al atacante).';
-      counter = isEn
-        ? 'Use indirect damage or afflictions like curse (Ojo maldito), paralysis (Pico Electrostático), or poison (Gota peligrosa) which ignore armor rating.'
-        : 'Usar daño indirecto o estados como maldición (Ojo maldito), parálisis (Pico Electrostático) o envenenamiento (Gota peligrosa) que no se reducen por armadura.';
-    }
-    // 5. Tanque de Salud (HP Sponge)
-    else if (l >= 70) {
-      roleTitle = isEn ? 'Health Tank' : 'Tanque de Salud';
-      role = isEn ? 'Health Tank (HP Sponge)' : 'Tanque de Salud (Esponja de Vida)';
-      duo = isEn
-        ? 'Position 1 (Frontline). Deep health pool that endures opening burst rounds and sustained trades without falling.'
-        : 'Posición 1 (Vanguardia). Enorme reserva de vida que resiste ráfagas iniciales y múltiples turnos de intercambio sin riesgo de caer.';
-      allies = isEn
-        ? 'Consistent damage dealers or allies with Pico vampiro that benefit from the rounds bought by this tank.'
-        : 'Atacantes constantes o compañeros con Pico vampiro que aprovechan todo el tiempo que este tanque resiste en combate.';
-      items = isEn
-        ? 'Picoteador dorado (absorbs enemy hits), Semilla rompepicos (+15% max health), Circuito Vital (heals 700 HP), or Páginas del fénix (revive).'
-        : 'Picoteador dorado (atrae los ataques del enemigo), Semilla rompepicos (+15% de vida máxima), Circuito Vital (cura 700 de salud) o Páginas del fénix (revivir).';
-      counter = isEn
-        ? 'Percentage-based damage melts high HP. Infect them with Moco problemático or poison them with Gota peligrosa to shred their health pool.'
-        : 'El daño porcentual derrite su barra. Infectarlo con Moco problemático o envenenarlo con Gota peligrosa para drenar su salud rápidamente.';
-    }
-    // 6. Coloso Ofensivo (Bruiser)
-    else if (d >= 55 && l >= 45) {
-      roleTitle = isEn ? 'Bruiser Colossus' : 'Coloso Ofensivo';
-      role = isEn ? 'Bruiser Colossus (Heavy Fighter)' : 'Coloso Ofensivo (Peleador Pesado)';
-      duo = isEn
-        ? 'Position 1 or 2. Balances durable defenses with punishing offense, capable of absorbing hits and retaliating with high damage.'
-        : 'Posición 1 o 2. Excelente equilibrio entre resistencia y pegada; aguanta castigo directo y devuelve golpes de gran potencia.';
-      allies = isEn
-        ? 'Speedy controllers (Polliwatt, Rufus) or teammates holding Ojos locos (+10% team damage) to amplify trades.'
-        : 'Compañeros rápidos con control (Polliwatt, Rufus) o aliados con Ojos locos (+10% de daño al equipo) para cerrar intercambios.';
-      items = isEn
-        ? 'Pico vampiro (heals with each heavy strike), Ojo del vacío (+15% to all stats if their partner is defeated), Ira (opening extra attacks), or Triflor (+5% damage, armor, speed).'
-        : 'Pico vampiro (se cura en cada golpe con su alto daño), Ojo del vacío (+15% a todos sus stats si su compañero cae), Ira (ataques extra al inicio) o Triflor (+5% a todo).';
-      counter = isEn
-        ? 'Control their actions with freeze (Pico helado / Ojo helado) or cut their turn frequency in half with paralysis (Pico Electrostático).'
-        : 'Neutralizarlo con congelamiento (Pico helado u Ojo helado) o cortar su velocidad al 50% con parálisis (Pico Electrostático).';
-    }
-    // 7. Velocista / Iniciador (Speedster)
-    else if (sp >= 70) {
-      roleTitle = isEn ? 'Agile Speedster' : 'Velocista Ágil';
-      role = isEn ? 'Agile Speedster (Turn Initiator)' : 'Velocista Ágil (Iniciador de Turno)';
-      duo = isEn
-        ? 'Position 1 or 2. Acts first almost every round, inflicting early status conditions or softening targets before enemy responses.'
-        : 'Posición 1 o 2. Su alta velocidad le garantiza mover primero en casi cada ronda, debilitando o aplicando estados antes del turno rival.';
-      allies = isEn
-        ? 'Finisher sweepers (Zombie, Cacho, Mechalex) that immediately clean up damaged targets.'
-        : 'Atacantes de remate (Zombie, Cacho, Mechalex) que liquidan de inmediato a los rivales debilitados por el velocista.';
-      items = isEn
-        ? 'Pico Electrostático (paralyzes target on battle start), Gota peligrosa (poisons on start), Moco problemático (infects on start), or Zapapollos (evasion chance per turn).'
-        : 'Pico Electrostático (paraliza al objetivo al empezar), Gota peligrosa (envenena de inicio), Moco problemático (infecta de entrada) o Zapapollos (probabilidad de esquivar por turno).';
-      counter = isEn
-        ? 'Bring a tank equipped with Picoteador dorado to redirect their opening hit, or use Descarga Masiva to paralyze and halve their speed.'
-        : 'Llevar un tanque con Picoteador dorado para absorber su golpe inicial, o usar Descarga Masiva para paralizar y recortar su velocidad a la mitad.';
-    }
-    // 8. Artillero de Proyectiles (Ranged Artillery)
-    else if (act === 2) {
-      roleTitle = isEn ? 'Ranged Artillery' : 'Artillero de Proyectiles';
-      role = isEn ? 'Ranged Artillery (Distance Striker)' : 'Artillero de Proyectiles (Ataque a Distancia)';
-      duo = isEn
-        ? 'Position 2 (Backline). Launches ranged projectiles that pressure rivals from a safe distance without exposing itself directly.'
-        : 'Posición 2 (Retaguardia). Lanza proyectiles a distancia que desgastan a los rivales sin exponerse de frente al combate directo.';
-      allies = isEn
-        ? 'Defensive frontline tanks with Picoteador dorado or state inflicters that keep rivals locked down.'
-        : 'Tanques de primera línea con Picoteador dorado o compañeros que apliquen estados para dejar al rival a tiro.';
-      items = isEn
-        ? 'Impulso Balístico (boosts damage when firing missiles), Primer huevo / Primer bomba (early projectile burst), or Mirador dorado (boosts and heals on the first hit).'
-        : 'Impulso Balístico (aumenta el daño al disparar proyectiles), Primer huevo o Primer bomba (proyectil inicial extra) o Mirador dorado (+25% de daño y curación al primer golpe).';
-      counter = isEn
-        ? 'Equip Pico blindado to take 66% less damage from projectiles/bombs, or flank them quickly with a fast speedster.'
-        : 'Equipar Pico blindado (reduce el daño recibido por bombas y proyectiles un 66%) o atacarlo velozmente antes de que dispare.';
-    }
-    // 9. Batería de Habilidades (Power Caster)
-    else if (p >= 50 || turns <= 2) {
-      roleTitle = isEn ? 'Skill Battery' : 'Batería de Habilidades';
-      role = isEn ? 'Skill Battery (Power Caster)' : 'Batería de Habilidades (Caster de Poder)';
-      duo = isEn
-        ? `Position 2 (Backline). Generates power rapidly (every ~${turns} ${turns === 1 ? 'turn' : 'turns'}), triggering special active abilities repeatedly.`
-        : `Posición 2 (Retaguardia). Genera energía a gran velocidad (cada ~${turns} ${turns === 1 ? 'turno' : 'turnos'}), desatando su habilidad especial continuamente.`;
-      allies = isEn
-        ? 'Shielding tanks with Picoteador dorado (Pastank, Boomy, Garry) that buy the few turns needed to charge.'
-        : 'Tanques con Picoteador dorado (Pastank, Boomy, Garry) que le garantizan los turnos necesarios para activar su poder.';
-      items = isEn
-        ? 'Palo de raíz (starts combat with full 100% power and +50 max power for immediate Turn 1 activation), Arena milagrosa (+5 power on hit), or Páginas del fénix.'
-        : 'Palo de raíz (empieza con poder al 100% y +50 de poder máx para usar su habilidad en turno 1), Arena milagrosa (+5 de poder por golpe) o Páginas del fénix.';
-      counter = isEn
-        ? 'Equip Pergamino del silencio to silence them at combat start and lock their power, or eliminate them before their cycle completes.'
-        : 'Equipar Pergamino del silencio para silenciarlo de inicio y bloquear su poder, o noquearlo rápido antes de su primer ciclo de energía.';
-    }
-    // 10. Atacante Pesado (Heavy Hitter)
-    else if (d >= 70) {
-      roleTitle = isEn ? 'Heavy Hitter' : 'Atacante Pesado';
-      role = isEn ? 'Heavy Hitter (Raw Power)' : 'Atacante Pesado (Fuerza Pura)';
-      duo = isEn
-        ? 'Position 2 (Backline). Raw destructive impact that chips down enemy health bars with each physical hit.'
-        : 'Posición 2 (Retaguardia). Pega con fuerza descomunal, quebrando las barras de salud de los rivales con cada impacto directo.';
-      allies = isEn
-        ? 'Paralyzers (Polliwatt, Pico Electrostático) or defensive tanks holding Picoteador dorado.'
-        : 'Compañeros con parálisis (Polliwatt o Pico Electrostático) o protectores con Picoteador dorado que le compren turnos de ataque.';
-      items = isEn
-        ? 'Fragmento prohibido (+35% damage, +10% speed if not relying on power), Pico vampiro (lifesteal), Ira (2 bonus attacks at start), or Mirador dorado.'
-        : 'Fragmento prohibido (+35% de daño y +10% de velocidad si no depende de su poder), Pico vampiro (robo de vida con su gran daño), Ira (2 ataques extra iniciales) o Mirador dorado.';
-      counter = isEn
-        ? 'Neutralize them with freeze (Pico helado / Ojo helado) or paralysis to forfeit their attack turns, or outspeed them with faster strikers.'
-        : 'Neutralizarlo con congelamiento (Pico helado u Ojo helado) o parálisis para que pierda turnos de ataque, o atacarlo antes con pollos veloces.';
-    }
-    // 11. Todoterreno Equilibrado (All-Rounder)
-    else {
-      roleTitle = isEn ? 'All-Rounder' : 'Todoterreno';
-      role = isEn ? 'Balanced All-Rounder' : 'Todoterreno Equilibrado';
-      duo = isEn
-        ? 'Flexible position (1 or 2). Well-rounded baseline stats that allow them to adapt as a secondary anchor, finisher, or utility fighter.'
-        : 'Posición flexible (1 o 2). Distribución equilibrada que le permite adaptarse como apoyo secundario, rematador o receptor de golpes según los ítems que le equipes.';
-      allies = isEn
-        ? 'Pairs well with either fragile specialists (Chica, Mosca) to balance the team, or frontline tanks to provide consistent chip damage.'
-        : 'Combina tanto con atacantes frágiles (Chica, Mosca) para equilibrar la composición como con tanques puros para sumar daño constante.';
-      items = isEn
-        ? 'Triflor (+5% damage, armor, and speed), Roca atómica (+20% damage or armor on combat start), or Circuito Vital (emergency 700 HP heal).'
-        : 'Triflor (+5% a daño, armadura y velocidad), Roca atómica (+20% de daño o armadura al inicio) o Circuito Vital (curación de 700 de vida en apuros).';
-      counter = isEn
-        ? 'Inspect how the rival trained their stats with seeds, and use status ailments or focused targeting to break their balance.'
-        : 'Observar hacia qué estadística lo entrenó el rival con las semillas y castigarlo con estados alterados o juego focalizado con la IA.';
-    }
-
-    return { role, roleTitle, duo, allies, items, counter, turns };
+    return {
+      role: lang === 'en' ? 'Balanced All-Rounder' : 'Todoterreno Equilibrado',
+      roleTitle: lang === 'en' ? 'All-Rounder' : 'Equilibrado',
+      turns: 1,
+      duo: lang === 'en' ? 'Versatile partner for either position in 2vs2.' : 'Compañero versátil para cualquier posición del dúo 2vs2.',
+      allies: lang === 'en' ? 'Pairs well with any archetype.' : 'Combina con cualquier arquetipo.',
+      items: lang === 'en' ? 'Triflor; Circuito Vital; Poción mágica.' : 'Triflor; Circuito Vital; Poción mágica.',
+      counter: lang === 'en' ? 'Identify its role and isolate it.' : 'Observar qué rol cumple y aislarlo.'
+    };
   }
 
   // 2. CHICKEN DETAIL ARTICLE

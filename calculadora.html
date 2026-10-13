@@ -530,32 +530,40 @@
             </svg>
           </div>
 
-          <!-- FICHA TÁCTICA Y ANÁLISIS DEL ROL -->
-          <div class="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2 text-xs">
-            <div class="flex items-center justify-between border-b border-[var(--border)]/60 pb-1.5">
-              <span class="font-bold text-[var(--foreground)] flex items-center gap-1.5">
-                <span>🎯</span> Guía Táctica en Combate
+          <!-- FICHA TÁCTICA Y ANÁLISIS COMPETITIVO 2VS2 -->
+          <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2.5 text-xs">
+            <div class="flex items-center justify-between border-b border-[var(--border)]/60 pb-2">
+              <span class="font-bold text-[var(--foreground)] flex items-center gap-1.5 text-xs">
+                <span>🎯</span> Guía Táctica de Combate 2vs2
               </span>
-              <span id="tactical-role-title" class="text-[11px] font-bold text-amber-400 font-mono">
+              <span id="tactical-role-title" class="text-[11px] font-bold text-amber-400 font-mono px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
                 Equilibrado
               </span>
             </div>
 
-            <div class="space-y-1.5 text-[11px] leading-relaxed">
-              <!-- Fortaleza -->
-              <div class="flex items-start gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">🟢 Fortaleza:</span>
-                <span id="tactical-strength" class="text-[var(--foreground)]">Estadísticas balanceadas sin puntos ciegos. Gran versatilidad táctica.</span>
+            <div class="space-y-2 text-[11px] leading-relaxed">
+              <!-- Función en 2vs2 -->
+              <div>
+                <span class="text-amber-400 font-bold block mb-0.5">⚔️ Función en el Dúo 2vs2:</span>
+                <p id="tactical-duo" class="text-[var(--foreground)]"></p>
               </div>
-              <!-- Vulnerabilidad -->
-              <div class="flex items-start gap-1.5">
-                <span class="text-red-400 font-bold shrink-0">🔴 Vulnerabilidad:</span>
-                <span id="tactical-weakness" class="text-[var(--muted-foreground)]">No sobresale de forma extrema en ningún atributo particular.</span>
+
+              <!-- Aliados recomendados -->
+              <div class="pt-1.5 border-t border-[var(--border)]/40">
+                <span class="text-emerald-400 font-bold block mb-0.5">🤝 Compañeros Recomendados:</span>
+                <p id="tactical-allies" class="text-[var(--muted-foreground)]"></p>
               </div>
-              <!-- Sinergia -->
-              <div class="flex items-start gap-1.5 pt-1 border-t border-[var(--border)]/40">
-                <span class="text-blue-400 font-bold shrink-0">💡 Sinergia Sugerida:</span>
-                <span id="tactical-synergy" class="text-[var(--muted-foreground)]">Combina con cualquier arquetipo y se beneficia de balance general o pociones.</span>
+
+              <!-- Ítems ideales -->
+              <div class="pt-1.5 border-t border-[var(--border)]/40">
+                <span class="text-blue-400 font-bold block mb-0.5">🎒 Ítems Clave en 2vs2:</span>
+                <p id="tactical-items" class="text-[var(--muted-foreground)]"></p>
+              </div>
+
+              <!-- Cómo contrarrestarlo -->
+              <div class="pt-1.5 border-t border-[var(--border)]/40">
+                <span class="text-rose-400 font-bold block mb-0.5">🔴 Cómo Contrarrestarlo (Si es tu Rival):</span>
+                <p id="tactical-counter" class="text-[var(--muted-foreground)]"></p>
               </div>
             </div>
           </div>
@@ -1082,61 +1090,85 @@
 
       let role = 'Todoterreno Equilibrado';
       let roleTitle = 'Equilibrado';
-      let strength = 'Estadísticas balanceadas sin puntos ciegos. Gran versatilidad táctica.';
-      let weakness = 'No sobresale de forma extrema en ningún atributo particular.';
-      let synergy = 'Combina con cualquier arquetipo y se beneficia de balance general o pociones.';
+      let duo = 'Compañero versátil para cualquier posición del dúo 2vs2. Puede funcionar tanto de ancla secundaria como de atacante según la composición que elijas.';
+      let allies = 'Combina con cualquier arquetipo: cubre las espaldas de un especialista frágil (Chica, Mosca) o complementa a un Tanque con daño constante.';
+      let items = 'Tri-Flor (+5% a todo), Roca Atómica (+20% daño/armadura inicial), o Pociones Curativas (Jugo Roca / Jugo Vital).';
+      let counter = 'Observar si el rival lo entrenó hacia daño o defensa y concentrar fuego con IA "Menos Vida" para eliminarlo antes de que equilibre el duelo.';
 
+      // 1. Cañón de Cristal
       if (d >= 70 && sp >= 60 && (l <= 30 || a <= 15)) {
         role = 'Cañón de Cristal (Asesino Rápido)';
         roleTitle = 'Cañón de Cristal';
-        strength = 'Impacto demoledor con alta iniciativa. Puede eliminar enemigos clave antes de que actúen.';
-        weakness = 'Muy frágil. Puede caer derrotado rápidamente si recibe daño directo concentrado.';
-        synergy = 'Obligatorio protegerlo con un compañero Tanque (con Ítem Provocador) o Páginas de Fénix.';
-      } else if (l >= 65 && a >= 50) {
+        duo = 'Atacante de ráfaga para Posición 2 (retaguardia). Su misión en 2vs2 es aniquilar al pollo más peligroso del rival en los primeros compases para inclinar la partida a un 2vs1.';
+        allies = 'Tanques con Golden Peckinator (Pastank, Armor, Porky, Mechalex) para desviar los ataques rivales y darle turnos limpios de daño.';
+        items = 'Páginas de Fénix (revive si cae por sorpresa), Cristal de Daño (+25% ataque), Pico Vampiro (15% robo de vida) o Zapatillas Sigilosas (evasión).';
+        counter = 'Usar pollos con IA "Menos Vida" para noquearlo en el Turno 1 o 2. Los ataques de área y el veneno directo lo destruyen antes de que actúe.';
+      }
+      // 2. Muralla Blindada
+      else if (l >= 65 && a >= 50) {
         role = 'Muralla Blindada (Tanque Puro)';
         roleTitle = 'Muralla Blindada';
-        strength = 'Supervivencia descomunal. Mitiga enormes cantidades de daño y resiste castigo prolongado.';
-        weakness = 'Baja velocidad y daño limitado. Depende de ganar por desgaste o de su compañero.';
-        synergy = 'Equipar Ítem Provocador (Pickinator), Armadura de Espinas o Regeneración.';
-      } else if (d >= 70 && l >= 60) {
+        duo = 'Ancla defensiva en Posición 1 (frente). Absorbe el castigo enemigo y desgasta al dúo rival mientras su compañero de equipo carga habilidad o remata con tranquilidad.';
+        allies = 'Atacantes letales que necesiten cobertura (Chica, Mosca, Shiken, Zombie) o pollos de daño residual como Toxic o Fénix.';
+        items = 'Golden Peckinator (obliga a ambos rivales a atacarlo a él), Pico Congelado (20% de congelar al atacante) o Semilla Rompepicos (+15% vida).';
+        counter = 'NO atacarlo de frente con daño físico. Usar daño porcentual de Veneno (Gota de Peligro / Toxic), Sangrado (Ojo Maldito) o atacantes con Fragmento Prohibido.';
+      }
+      // 3. Coloso / Bruiser Ofensivo
+      else if (d >= 70 && l >= 60) {
         role = 'Coloso (Bruiser Ofensivo)';
         roleTitle = 'Coloso Ofensivo';
-        strength = 'Excelente mezcla de daño muy alto y resistencia física para sostener duelos 1vs1.';
-        weakness = 'Velocidad modesta; suele recibir el primer golpe antes de responder.';
-        synergy = 'Acompañar con aumentos de velocidad o pociones curativas para asegurar que descargue su daño.';
-      } else if (sp >= 80) {
+        duo = 'Peleador pesado de primera o segunda línea. Aguanta impactos directos sin caer y responde con un daño demoledor que desgasta a ambos rivales al unísono.';
+        allies = 'Compañeros veloces con control (Polliwatt, Rufus) o curación de equipo como Ala de Garra para mantenerlo en pie en intercambios largos.';
+        items = 'Pico Vampiro (se cura con su enorme daño en cada golpe), Ojo del Vacío (+15% a todo si su compañero cae) o Fragmento Prohibido (+35% daño, +10% vel).';
+        counter = 'Neutralizarlo con estados de control tempranos (Congelado con Polliwatt / Parálisis con Punta Electrostática) para anular sus turnos de ataque.';
+      }
+      // 4. Velocista / Iniciador
+      else if (sp >= 80) {
         role = 'Velocista Ágil (Iniciador)';
         roleTitle = 'Velocista Ágil';
-        strength = 'Garantiza la iniciativa del turno casi siempre. Golpea primero y aplica efectos antes.';
-        weakness = 'Resistencia o ataque moderados en comparación con especialistas pesados.';
-        synergy = 'Equipar ítems que apliquen veneno, aturdimiento o aumenten la probabilidad crítica.';
-      } else if (p >= 60 || turns <= 2) {
+        duo = 'Iniciador veloz en Posición 1 o 2. Su altísima velocidad le garantiza actuar primero en la ronda para debilitar o aplicar estados antes de que los rivales jueguen.';
+        allies = 'Atacantes con IA "Menos Vida" (Zombie, Cacho, Mechalex) que rematen de inmediato al rival que el velocista deje tocado al inicio del turno.';
+        items = 'Punta Electrostática (paraliza al objetivo al inicio), Gota de Peligro (envenena de entrada), Broma Babosa (infecta) o Zapatillas Sigilosas.';
+        counter = 'Llevar un tanque con Golden Peckinator para absorber su golpe inicial, o equipar Té Caliente / Neural Reboot para limpiar sus efectos alterados.';
+      }
+      // 5. Caster / Especialista de Poder
+      else if (p >= 60 || turns <= 2) {
         role = 'Especialista Místico (Caster)';
         roleTitle = 'Caster Místico';
-        strength = `Carga de habilidad ultra-veloz. Dispara su poder activo cada ~${turns} ${turns === 1 ? 'turno' : 'turnos'}.`;
-        weakness = 'Atributos físicos modestos para compensar su tremenda generación de energía.';
-        synergy = 'Aprovechar al máximo si su poder cura, coloca escudos o causa estragos en área.';
-      } else if (l >= 80) {
+        duo = `Batería de habilidades en Posición 2. Activa su poder en tiempo récord (cada ~${turns} ${turns === 1 ? 'turno' : 'turnos'}), generando ventajas masivas de escudos, daño en hilera o estados.`;
+        allies = 'Protectores con escudos o control (Mechalex, Eggalex, Pastank) que aseguren su supervivencia durante los pocos turnos que tarda en cargar.';
+        items = 'Palo de Gallinero (Roost Stick - inicia con poder al 100%), Impulso Balístico (proyectil adicional con poder) o Arena Milagrosa (+5 poder al golpear).';
+        counter = 'Equipar Pergamino de Silencio (Silence Scroll - silencia al inicio del combate) o noquearlo rápido con un asesino veloz enfocado en su posición.';
+      }
+      // 6. Tanque de Vida Masiva
+      else if (l >= 80) {
         role = 'Tanque de Vida Masiva';
         roleTitle = 'Tanque de Vida';
-        strength = 'Reserva de vida gigantesca. Absorbe ataques demoledores sin inmutarse.';
-        weakness = 'Baja armadura y daño bajo; puede sufrir contra venenos o quemaduras porcentuales.';
-        synergy = 'Acompañar con un atacante de alto daño y pociones que eleven su defensa.';
-      } else if (a >= 70) {
+        duo = 'Esponja de absorción pura en Posición 1. Su gigantesca reserva de vida amortigua cualquier combo o ráfaga enemiga sin peligro de caer en los primeros turnos.';
+        allies = 'Atacantes con alto daño por segundo (Chica, Zombie, Shiken) que resuelvan la partida mientras el tanque aguanta el castigo.';
+        items = 'Pociones de gran curación (Jugo Fétido / Vital), Poción Mágica (limpia efectos negativos) o Páginas de Fénix para obligar al rival a derribarlo dos veces.';
+        counter = 'El veneno y la quemadura drenan porcentaje de vida máxima. Aplicarle Infección (Trouble Slime) o Veneno para derretir su salud sin importar su vida base.';
+      }
+      // 7. Bastión Defensivo
+      else if (a >= 70) {
         role = 'Bastión Defensivo';
         roleTitle = 'Bastión Defensivo';
-        strength = 'Máxima mitigación de daño físico directo mediante porcentaje de armadura.';
-        weakness = 'Vulnerable a efectos de estado que ignoran defensa o ataques mágicos puros.';
-        synergy = 'Equipar ítems de contraataque o vampirismo para castigar a quien lo ataque.';
-      } else if (d >= 80) {
+        duo = 'Especialista en reducción de daño físico en Posición 1. Los ataques directos de los rivales ven reducido su impacto drásticamente ante su alto blindaje.';
+        allies = 'Pollos con poderes de recuperación o atacantes rápidos que aprovechen la distracción para quebrar al equipo rival.';
+        items = 'Pico Congelado (20% de congelar al agresor), Ojos Sincronizados (comparte efectos con su atacante) o Golden Peckinator.';
+        counter = 'Usar ataques de Poder que ignoren armadura, o equipar ítems con estados de daño continuo (Veneno/Sangrado) que no se mitigan por armadura.';
+      }
+      // 8. Atacante Pesado
+      else if (d >= 80) {
         role = 'Atacante Pesado (Heavy Hitter)';
         roleTitle = 'Atacante Pesado';
-        strength = 'Fuerza bruta devastadora capaz de quebrar defensas enemigas.';
-        weakness = 'Velocidad de reacción baja o poca defensa.';
-        synergy = 'Proteger con escudos o pociones de velocidad para permitirle conectar sus golpes.';
+        duo = 'Martillo demoledor de retaguardia (Posición 2). Cada impacto suyo reduce de forma crítica la salud de los rivales, abriendo huecos en la defensa enemiga.';
+        allies = 'Pollos protectores o aceleradores de turno para asegurar que conecte sus ataques antes de que el rival intente neutralizarlo.';
+        items = 'Percha Dorada (primer ataque causa +25% daño extra), Cristal de Daño (+25% daño), Pico Vampiro o Frasco de Infección (revivir).';
+        counter = 'Aprovechar su baja velocidad atacando antes que él con pollos rápidos, o neutralizarlo con Aturdimiento/Congelación para que pierda turnos de daño.';
       }
 
-      return { role, roleTitle, strength, weakness, synergy, turns };
+      return { role, roleTitle, duo, allies, items, counter, turns };
     }
 
     function updateStatsRadar(combatRes) {
@@ -1194,14 +1226,17 @@
       const tacTitle = document.getElementById('tactical-role-title');
       if (tacTitle) tacTitle.textContent = tactical.roleTitle;
 
-      const tacStrength = document.getElementById('tactical-strength');
-      if (tacStrength) tacStrength.textContent = tactical.strength;
+      const tacDuo = document.getElementById('tactical-duo');
+      if (tacDuo) tacDuo.textContent = tactical.duo;
 
-      const tacWeakness = document.getElementById('tactical-weakness');
-      if (tacWeakness) tacWeakness.textContent = tactical.weakness;
+      const tacAllies = document.getElementById('tactical-allies');
+      if (tacAllies) tacAllies.textContent = tactical.allies;
 
-      const tacSynergy = document.getElementById('tactical-synergy');
-      if (tacSynergy) tacSynergy.textContent = tactical.synergy;
+      const tacItems = document.getElementById('tactical-items');
+      if (tacItems) tacItems.textContent = tactical.items;
+
+      const tacCounter = document.getElementById('tactical-counter');
+      if (tacCounter) tacCounter.textContent = tactical.counter;
 
       // Target points for smooth polygon lerp
       radarTargetPoints = statPcts.map(p => Math.max(0.08, Math.min(1.0, p / 100)));

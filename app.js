@@ -519,6 +519,17 @@
     return obj[currentLang] || obj['es'] || obj['en'] || "";
   }
 
+  function norm(str) {
+    if (!str) return "";
+    return String(str).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  }
+
+  function matchLoc(obj, qNorm) {
+    if (!obj || !qNorm) return false;
+    if (typeof obj === 'string' || typeof obj === 'number') return norm(obj).includes(qNorm);
+    return Object.values(obj).some(val => val && norm(val).includes(qNorm));
+  }
+
   // Init App
   function init() {
     if (!WIKI && window.WIKI_DATA) {
@@ -709,8 +720,9 @@
     if (!input || !dropdown) return;
 
     input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
-      if (!q || q.length < 2) {
+      const q = input.value.trim();
+      const qNorm = norm(q);
+      if (!qNorm || qNorm.length < 2) {
         dropdown.classList.remove('open');
         dropdown.innerHTML = '';
         return;
@@ -718,10 +730,19 @@
 
       const results = [];
 
-      // Search Chickens
+      // Search Chickens (name in all languages, id, passive, active power, hidden power)
       WIKI.chickens.forEach(c => {
-        const name = getLocalized(c.name).toLowerCase();
-        if (name.includes(q) || c.id.toString() === q || (c.id + 1).toString() === q || String(c.id + 1).padStart(3, '0') === q) {
+        const pObj = WIKI.passives[c.passive_id];
+        const pwObj = WIKI.powers[c.power_id];
+        const hpObj = (c.hidden_power_id !== null && c.hidden_power_id !== undefined && c.hidden_power_id >= 0 && WIKI.powers[c.hidden_power_id]) ? WIKI.powers[c.hidden_power_id] : null;
+
+        if (matchLoc(c.name, qNorm) ||
+            c.id.toString() === qNorm ||
+            (c.id + 1).toString() === qNorm ||
+            String(c.id + 1).padStart(3, '0') === qNorm ||
+            (pObj && matchLoc(pObj.description, qNorm)) ||
+            (pwObj && matchLoc(pwObj.description, qNorm)) ||
+            (hpObj && matchLoc(hpObj.description, qNorm))) {
           results.push({
             type: 'chicken',
             badge: str('searchBadgeChicken'),
@@ -733,11 +754,9 @@
         }
       });
 
-      // Search Items
+      // Search Items (name in all languages, description in all languages, id)
       WIKI.items.forEach(it => {
-        const name = getLocalized(it.name).toLowerCase();
-        const desc = getLocalized(it.description).toLowerCase();
-        if (name.includes(q) || desc.includes(q) || it.id.toString() === q || (it.id + 1).toString() === q || String(it.id + 1).padStart(2, '0') === q) {
+        if (matchLoc(it.name, qNorm) || matchLoc(it.description, qNorm) || it.id.toString() === qNorm || (it.id + 1).toString() === qNorm || String(it.id + 1).padStart(2, '0') === qNorm) {
           results.push({
             type: 'item',
             badge: str('searchBadgeItem'),
@@ -751,8 +770,7 @@
 
       // Search Passives
       WIKI.passives.forEach(p => {
-        const desc = getLocalized(p.description).toLowerCase();
-        if (desc.includes(q) || p.id.toString() === q || (p.id + 1).toString() === q) {
+        if (matchLoc(p.description, qNorm) || p.id.toString() === qNorm || (p.id + 1).toString() === qNorm) {
           results.push({
             type: 'passive',
             badge: str('searchBadgePassive'),
@@ -766,8 +784,7 @@
 
       // Search Powers
       WIKI.powers.forEach(pw => {
-        const desc = getLocalized(pw.description).toLowerCase();
-        if (desc.includes(q) || pw.id.toString() === q || (pw.id + 1).toString() === q) {
+        if (matchLoc(pw.description, qNorm) || pw.id.toString() === qNorm || (pw.id + 1).toString() === qNorm) {
           results.push({
             type: 'power',
             badge: str('searchBadgePower'),
@@ -781,8 +798,7 @@
 
       // Search Zones
       WIKI.zones.forEach(z => {
-        const name = getLocalized(z.name).toLowerCase();
-        if (name.includes(q)) {
+        if (matchLoc(z.name, qNorm)) {
           results.push({
             type: 'zone',
             badge: str('searchBadgeZone'),
@@ -911,9 +927,16 @@
 
     // Search filter
     if (searchVal) {
+      const qNorm = norm(searchVal);
       list = list.filter(c => {
-        const name = getLocalized(c.name).toLowerCase();
-        return name.includes(searchVal) || c.id.toString() === searchVal || (c.id + 1).toString() === searchVal || String(c.id + 1).padStart(3, '0') === searchVal;
+        const pObj = WIKI.passives[c.passive_id];
+        const pwObj = WIKI.powers[c.power_id];
+        return matchLoc(c.name, qNorm) ||
+               c.id.toString() === qNorm ||
+               (c.id + 1).toString() === qNorm ||
+               String(c.id + 1).padStart(3, '0') === qNorm ||
+               (pObj && matchLoc(pObj.description, qNorm)) ||
+               (pwObj && matchLoc(pwObj.description, qNorm));
       });
     }
 
@@ -1354,10 +1377,12 @@
     }
 
     if (searchVal) {
+      const qNorm = norm(searchVal);
       list = list.filter(i => {
-        const name = getLocalized(i.name).toLowerCase();
-        const desc = getLocalized(i.description).toLowerCase();
-        return name.includes(searchVal) || desc.includes(searchVal) || i.id.toString() === searchVal || (i.id + 1).toString() === searchVal;
+        return matchLoc(i.name, qNorm) ||
+               matchLoc(i.description, qNorm) ||
+               i.id.toString() === qNorm ||
+               (i.id + 1).toString() === qNorm;
       });
     }
 

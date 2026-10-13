@@ -1474,6 +1474,15 @@
     // HEAL HELPER
     function healEntity(entity, amount, log = true) {
       if (!entity.alive) return 0;
+      // Curse block & damage matching scr_battle_heal
+      if (entity.states && entity.states.curse > 0) {
+        const curseDmg = Math.max(1, Math.round(entity.lifeMax * 0.10));
+        entity.life = Math.max(0, entity.life - curseDmg);
+        if (log) {
+          logEvent(`👁️ <b>${entity.name}</b> está <b class="text-gray-400">Maldito</b>: ¡La curación se convierte en <b class="text-red-400">${curseDmg}</b> de daño!`, "text-gray-400 font-bold");
+        }
+        return 0;
+      }
       const prevLife = entity.life;
       entity.life = Math.min(entity.lifeMax, entity.life + amount);
       const actualHealed = entity.life - prevLife;
@@ -2523,11 +2532,11 @@
 
         // A. Start of turn status effects (poison, burn, infect)
         if (ent.states.poison > 0) {
-          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.08));
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.10));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.poison--;
           const trTk = t_sim[currentLang] || t_sim.es;
-            if (log) logEvent(trTk.logPoisonTick(ent.name, dmg), "text-purple-400");
+          if (log) logEvent(trTk.logPoisonTick(ent.name, dmg), "text-purple-400");
           checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
@@ -2547,29 +2556,39 @@
         }
 
         if (ent.states.infect > 0) {
-          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.10));
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.05));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.infect--;
           const trTk3 = t_sim[currentLang] || t_sim.es;
-            if (log) logEvent(trTk3.logInfectTick(ent.name, dmg), "text-green-500");
+          if (log) logEvent(trTk3.logInfectTick(ent.name, dmg) + " (+ cura al equipo rival)", "text-green-500");
+          // Infection heals alive enemies (5% max life) matching scr_event_start_turn
+          state.entities.forEach(other => {
+            if (other.alive && other.team !== ent.team) {
+              healEntity(other, Math.round(ent.lifeMax * 0.05), false);
+            }
+          });
           checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
 
-        // B. Freeze check
+        // B. Freeze check (deals 2.5% max HP and skips action, matching obj_battle/Step_0)
         if (ent.states.freeze > 0) {
           ent.states.freeze--;
+          const fDmg = Math.max(1, Math.round(ent.lifeMax * 0.025));
+          ent.life = Math.max(0, ent.life - fDmg);
           const trSk = t_sim[currentLang] || t_sim.es;
-          if (log) logEvent(trSk.logFreezeSkip(ent.name), "text-cyan-400");
+          if (log) logEvent(`❄️ <b>${ent.name}</b> sufre ${fDmg} daño por Congelamiento y pierde su turno.`, "text-cyan-400");
+          checkDeath(ent, null, state.entities, log);
+          if (!ent.alive) continue;
           continue;
         }
 
-        // C. Paralysis 25% skip turn
+        // C. Paralysis check (reduces offensive stats & recoil on attack, matching scr_data_state)
         if (ent.states.paralysis > 0) {
           ent.states.paralysis--;
           if (Math.random() < 0.25) {
             const trSk2 = t_sim[currentLang] || t_sim.es;
-          if (log) logEvent(trSk2.logParalyzeSkip(ent.name), "text-yellow-400");
+            if (log) logEvent(trSk2.logParalyzeSkip(ent.name), "text-yellow-400");
             continue;
           }
         }

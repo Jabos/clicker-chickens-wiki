@@ -439,16 +439,16 @@
           container.innerHTML = `
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold ${teamColor} uppercase">${slotTitle}</span>
-              <span class="text-xs font-mono text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>
+              <span id="slot-id-badge-${t}-${s}" class="text-xs font-mono text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>
             </div>
 
             <!-- Chicken Info, Sprite & Dropdown -->
             <div class="space-y-2 p-2.5 rounded-lg bg-[var(--card)] border border-[var(--border)]">
               <div class="flex items-center gap-3">
-                <img src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated shrink-0" onerror="this.src=''; this.alt='🐔';" alt="Pollo">
+                <img id="chicken-img-${t}-${s}" src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated shrink-0" onerror="this.src=''; this.alt='🐔';" alt="${chicken.name}">
                 <div class="flex-1 min-w-0">
                   <div class="text-[11px] font-bold text-amber-500 uppercase tracking-wider">Pollo Seleccionado:</div>
-                  <div class="text-sm font-black truncate">${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span></div>
+                  <div id="chicken-name-${t}-${s}" class="text-sm font-black truncate">${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span></div>
                 </div>
               </div>
 
@@ -456,7 +456,8 @@
               <div class="space-y-1">
                 <input type="text" id="chicken-search-${t}-${s}" placeholder="🔍 Filtrar pollo por nombre o #..." value="${cfg.searchQuery || ''}" 
                   class="w-full px-2 py-1 text-xs rounded bg-[var(--input-bg)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-amber-500/50" 
-                  oninput="filterSlotChicken(${t}, ${s}, this.value)">
+                  oninput="filterSlotChicken(${t}, ${s}, this.value)"
+                  onkeydown="if(event.key==='Enter') this.blur();">
                 
                 <select id="chicken-select-${t}-${s}" class="w-full text-xs font-semibold rounded px-2 py-1.5 bg-[var(--input-bg)] text-[var(--foreground)] border border-[var(--border)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-500/50" 
                   onchange="updateChicken(${t}, ${s}, parseInt(this.value))">
@@ -464,7 +465,7 @@
                 </select>
               </div>
 
-              <div class="text-[11px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">Pasiva: ${pasDesc}</div>
+              <div id="chicken-pas-${t}-${s}" class="text-[11px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">Pasiva: ${pasDesc}</div>
             </div>
 
             <!-- Level / Born / Training -->
@@ -510,11 +511,11 @@
                   <span class="text-[11px] text-[var(--muted-foreground)]">Oculto</span>
                 </label>
               </div>
-              <div class="text-[12px] text-[var(--foreground)] leading-tight">${pwrDesc}</div>
+              <div id="chicken-pwr-${t}-${s}" class="text-[12px] text-[var(--foreground)] leading-tight">${pwrDesc}</div>
             </div>
 
             <!-- Stats Preview Chips -->
-            <div class="grid grid-cols-4 gap-1 text-center font-mono text-[11px]">
+            <div id="chicken-stats-${t}-${s}" class="grid grid-cols-4 gap-1 text-center font-mono text-[11px]">
               <span class="text-red-400">HP:${stats.life}</span>
               <span class="text-orange-400">ATK:${stats.damage}</span>
               <span class="text-blue-400">SPD:${stats.speed}</span>
@@ -525,30 +526,96 @@
       }
     }
 
+    // LIVE PREVIEW HELPER WITHOUT RE-RENDERING WHOLE CARD
+    function applyChickenPreview(t, s, cid) {
+      const cfg = teamConfigs[t][s];
+      cfg.chickenId = cid;
+      const chicken = CHICKENS.find(c => c.id === cid) || CHICKENS[0];
+      const stats = calculateStats(chicken, cfg.level, cfg.born, cfg.training);
+      const pwrDesc = (cfg.useHiddenPower && chicken.hidden_power_id >= 0)
+        ? (POWERS.find(p => p.id === chicken.hidden_power_id)?.desc || "Poder Oculto")
+        : (POWERS.find(p => p.id === chicken.power_id)?.desc || "Poder Base");
+      const pasDesc = PASSIVES.find(p => p.id === chicken.passive_id)?.desc || "Sin pasiva";
+
+      const badgeEl = document.getElementById(`slot-id-badge-${t}-${s}`);
+      if (badgeEl) badgeEl.textContent = `#${String(chicken.id).padStart(3, '0')}`;
+
+      const imgEl = document.getElementById(`chicken-img-${t}-${s}`);
+      if (imgEl) {
+        imgEl.src = `images/chickens/${chicken.id}.png`;
+        imgEl.alt = chicken.name;
+      }
+
+      const nameEl = document.getElementById(`chicken-name-${t}-${s}`);
+      if (nameEl) {
+        nameEl.innerHTML = `${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>`;
+      }
+
+      const pasEl = document.getElementById(`chicken-pas-${t}-${s}`);
+      if (pasEl) {
+        pasEl.textContent = `Pasiva: ${pasDesc}`;
+        pasEl.title = pasDesc;
+      }
+
+      const pwrEl = document.getElementById(`chicken-pwr-${t}-${s}`);
+      if (pwrEl) {
+        pwrEl.textContent = pwrDesc;
+      }
+
+      const statsEl = document.getElementById(`chicken-stats-${t}-${s}`);
+      if (statsEl) {
+        statsEl.innerHTML = `
+          <span class="text-red-400">HP:${stats.life}</span>
+          <span class="text-orange-400">ATK:${stats.damage}</span>
+          <span class="text-blue-400">SPD:${stats.speed}</span>
+          <span class="text-emerald-400">DEF:${Math.round(stats.armor * 100)}%</span>
+        `;
+      }
+    }
+
     // UPDATE HANDLERS
     function filterSlotChicken(t, s, query) {
       teamConfigs[t][s].searchQuery = query;
       const select = document.getElementById(`chicken-select-${t}-${s}`);
       if (!select) return;
+
       const q = query.toLowerCase().trim();
       const currentId = teamConfigs[t][s].chickenId;
       const filtered = q ? CHICKENS.filter(c => c.name.toLowerCase().includes(q) || String(c.id).includes(q)) : CHICKENS;
-      select.innerHTML = (filtered.length > 0 ? filtered : CHICKENS).map(c => 
-        `<option value="${c.id}" ${c.id === currentId ? 'selected' : ''}>#${String(c.id).padStart(3, '0')} - ${c.name}</option>`
+
+      if (filtered.length === 0) {
+        select.innerHTML = '<option value="" disabled selected>No se encontraron pollos</option>';
+        return;
+      }
+
+      let targetId = currentId;
+      if (!filtered.some(c => c.id === currentId)) {
+        if (q.length > 0) {
+          targetId = filtered[0].id;
+        }
+      }
+
+      select.innerHTML = filtered.map(c => 
+        `<option value="${c.id}" ${c.id === targetId ? 'selected' : ''}>#${String(c.id).padStart(3, '0')} - ${c.name}</option>`
       ).join('');
+      select.value = targetId;
+
+      if (targetId !== currentId) {
+        applyChickenPreview(t, s, targetId);
+      }
     }
 
     function updateChicken(t, s, cid) {
+      if (isNaN(cid)) return;
       teamConfigs[t][s].chickenId = cid;
-      teamConfigs[t][s].searchQuery = '';
-      renderConfigCards();
+      applyChickenPreview(t, s, cid);
     }
-    function updateLevel(t, s, val) { teamConfigs[t][s].level = clamp(parseInt(val) || 1, 1, 100); renderConfigCards(); }
-    function updateBorn(t, s, val) { teamConfigs[t][s].born = clamp(parseInt(val) || 1, 1, 100); renderConfigCards(); }
-    function updateTraining(t, s, val) { teamConfigs[t][s].training = clamp(parseFloat(val) || 1.0, 1.0, 2.0); renderConfigCards(); }
-    function updateItem(t, s, iid) { teamConfigs[t][s].itemId = iid; renderConfigCards(); }
-    function updateTargetAI(t, s, ai) { teamConfigs[t][s].targetAI = ai; renderConfigCards(); }
-    function toggleHiddenPower(t, s, val) { teamConfigs[t][s].useHiddenPower = val; renderConfigCards(); }
+    function updateLevel(t, s, val) { teamConfigs[t][s].level = clamp(parseInt(val) || 1, 1, 100); applyChickenPreview(t, s, teamConfigs[t][s].chickenId); }
+    function updateBorn(t, s, val) { teamConfigs[t][s].born = clamp(parseInt(val) || 1, 1, 100); applyChickenPreview(t, s, teamConfigs[t][s].chickenId); }
+    function updateTraining(t, s, val) { teamConfigs[t][s].training = clamp(parseFloat(val) || 1.0, 1.0, 2.0); applyChickenPreview(t, s, teamConfigs[t][s].chickenId); }
+    function updateItem(t, s, iid) { teamConfigs[t][s].itemId = iid; }
+    function updateTargetAI(t, s, ai) { teamConfigs[t][s].targetAI = ai; }
+    function toggleHiddenPower(t, s, val) { teamConfigs[t][s].useHiddenPower = val; applyChickenPreview(t, s, teamConfigs[t][s].chickenId); }
 
     function applyTeamPreset(team, type) {
       for (let s = 0; s < 2; s++) {
@@ -728,6 +795,12 @@
             ent.hasFocus = true;
             if (log) logEvent(`🧲 <b>${ent.name}</b> equipa Golden Pickinator y atrae los ataques.`, "text-yellow-400");
             break;
+          case 60: // Fragmento prohibido (+35% dmg, +10% speed, powerValue = 0)
+            ent.damageMulti += 0.35;
+            ent.speedMulti += 0.10;
+            ent.powerValue = 0;
+            if (log) logEvent(`🚫 <b>${ent.name}</b> equipa Fragmento Prohibido (+35% daño, +10% vel, barra de poder bloqueada a 0).`, "text-purple-400 font-semibold");
+            break;
         }
 
         // Passives on-start
@@ -739,6 +812,7 @@
 
     // RESOLVE POWER (All 52 powers + transformations)
     function executePower(attacker, allEntities, log = true) {
+      if (attacker.itemId === 60) return;
       const allies = allEntities.filter(e => e.team === attacker.team && e.alive);
       const enemies = allEntities.filter(e => e.team !== attacker.team && e.alive);
       const target = getTarget(attacker, allEntities);
@@ -827,8 +901,12 @@
           attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
           const ally = allies.find(a => a.id !== attacker.id);
           if (ally) {
-            ally.powerValue = ally.powerMax;
-            if (log) logEvent(`💥 <b>${attacker.name}</b> llena al máximo el poder de <b>${ally.name}</b>!`, "text-blue-400");
+            if (ally.itemId !== 60) {
+              ally.powerValue = ally.powerMax;
+              if (log) logEvent(`💥 <b>${attacker.name}</b> llena al máximo el poder de <b>${ally.name}</b>!`, "text-blue-400");
+            } else {
+              if (log) logEvent(`💥 <b>${attacker.name}</b> intenta llenar el poder de <b>${ally.name}</b>, ¡pero Fragmento Prohibido lo impide!`, "text-purple-400");
+            }
           }
           break;
 
@@ -1007,6 +1085,10 @@
 
     // TRANSFORMATION (matching scr_battle_transform)
     function transformEntity(entity, newId, log = true) {
+      if (entity.itemId === 60) {
+        if (log) logEvent(`🚫 <b>${entity.name}</b> tiene Fragmento Prohibido y NO puede transformarse!`, "text-purple-400 font-bold");
+        return;
+      }
       const newChicken = CHICKENS.find(c => c.id === newId);
       if (!newChicken) return;
 
@@ -1132,8 +1214,13 @@
           }
         }
 
+        // Lock power bar for Forbidden Fragment
+        if (ent.itemId === 60) {
+          ent.powerValue = 0;
+        }
+
         // D. Charge power & Action
-        if (ent.powerValue >= ent.powerMax) {
+        if (ent.powerValue >= ent.powerMax && ent.itemId !== 60) {
           // Cast Power!
           executePower(ent, state.entities, log);
           ent.powerValue = 0;
@@ -1143,7 +1230,11 @@
           if (target) {
             dealDamage(ent, target, ent.damage, log);
             // Power charge
-            ent.powerValue = Math.min(ent.powerMax, ent.powerValue + ent.powerAmount);
+            if (ent.itemId !== 60) {
+              ent.powerValue = Math.min(ent.powerMax, ent.powerValue + ent.powerAmount);
+            } else {
+              ent.powerValue = 0;
+            }
           }
         }
       }
@@ -1195,6 +1286,7 @@
         const isDead = !ent.alive;
 
         let statusBadges = [];
+        if (ent.itemId === 60) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px]" title="Fragmento Prohibido: +35% daño, +10% vel, sin poder ni transformaciones">🚫 Frag. Prohibido</span>`);
         if (ent.states.poison > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 text-[10px]">🧪 ${ent.states.poison}</span>`);
         if (ent.states.burn > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-400 text-[10px]">🔥 ${ent.states.burn}</span>`);
         if (ent.states.paralysis > 0) statusBadges.push(`<span class="px-1.5 py-0.5 rounded bg-yellow-500/20 text-yellow-400 text-[10px]">⚡ ${ent.states.paralysis}</span>`);
@@ -1232,10 +1324,10 @@
           <div class="space-y-1">
             <div class="flex justify-between text-[11px] font-mono">
               <span class="text-purple-400 font-bold">PODER</span>
-              <span>${ent.powerValue} / ${ent.powerMax}</span>
+              <span>${ent.itemId === 60 ? '🚫 BLOQUEADO' : `${ent.powerValue} / ${ent.powerMax}`}</span>
             </div>
             <div class="w-full h-1.5 rounded-full bg-[var(--border)] overflow-hidden">
-              <div class="h-full bg-purple-500 transition-all duration-200" style="width: ${pwrPct}%;"></div>
+              <div class="h-full ${ent.itemId === 60 ? 'bg-red-500/40' : 'bg-purple-500'} transition-all duration-200" style="width: ${ent.itemId === 60 ? 0 : pwrPct}%;"></div>
             </div>
           </div>
 

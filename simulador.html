@@ -654,6 +654,8 @@
     // =========================================================================
     // COMBAT ENGINE IMPLEMENTATION
     // =========================================================================
+    // COMPLETE COMBAT ENGINE IMPLEMENTATION (100% PARITY WITH GAMEMAKER GML)
+    // =========================================================================
     let battleState = null;
     let isSimulationRunning = false;
     let simulationSpeed = 1;
@@ -695,9 +697,13 @@
         // Status & state
         alive: true,
         revive: false,
-        states: { poison: 0, burn: 0, paralysis: 0, freeze: 0, infect: 0, curse: 0 },
+        reviveAsZombie: false,
+        states: { poison: 0, burn: 0, paralysis: 0, freeze: 0, infect: 0, curse: 0, silence: 0 },
         avoid: 0,
         firstAttack: true,
+        attackCount: 0,
+        itemUsed: false,
+        missileMechalex: false,
         lastAttackedMe: null,
         hasFocus: false,
         kills: 0,
@@ -710,29 +716,29 @@
       const enemies = entities.filter(e => e.team !== attacker.team && e.alive);
       if (enemies.length === 0) return null;
 
-      // 1. Force focus (Taunt) - Golden Pickinator (item 40) or Iguanarto passive (id 29)
-      const focusTarget = enemies.find(e => e.hasFocus || e.itemId === 40 || e.passiveId === 29);
-      if (focusTarget && attacker.passiveId !== 61) { // 61 = Shiken (ignora focus)
+      // Focus / Taunt: Item 6 (Picoteador dorado) or Iguanarto passive (id 29) or hasFocus
+      const focusTarget = enemies.find(e => e.hasFocus || e.itemId === 6 || e.passiveId === 29);
+      if (focusTarget && attacker.passiveId !== 61) { // 61 = Shiken ignores focus
         return focusTarget;
       }
 
       switch (attacker.targetAI) {
-        case 1: // Less life
+        case 1: // Menos vida
           return [...enemies].sort((a, b) => a.life - b.life)[0];
-        case 2: // More life
+        case 2: // Más vida
           return [...enemies].sort((a, b) => b.life - a.life)[0];
-        case 6: // More damage
+        case 6: // Más daño
           return [...enemies].sort((a, b) => (b.damage * b.damageMulti) - (a.damage * a.damageMulti))[0];
-        case 8: // More speed
+        case 8: // Más velocidad
           return [...enemies].sort((a, b) => (b.speed * b.speedMulti) - (a.speed * a.speedMulti))[0];
-        case 9: // Less armor
+        case 9: // Menos armadura
           return [...enemies].sort((a, b) => (a.armor * a.armorMulti) - (b.armor * b.armorMulti))[0];
-        case 15: // Revenge
+        case 15: // Venganza
           if (attacker.lastAttackedMe && attacker.lastAttackedMe.alive && attacker.lastAttackedMe.team !== attacker.team) {
             return attacker.lastAttackedMe;
           }
           return enemies[Math.floor(Math.random() * enemies.length)];
-        case 0: // Random
+        case 0: // Aleatorio
         default:
           return enemies[Math.floor(Math.random() * enemies.length)];
       }
@@ -754,333 +760,20 @@
       if (logBox) logBox.innerHTML = '';
     }
 
-    // START OF BATTLE (Items & Passives & Tournament modifiers)
-    function applyStartOfBattle(entities, mode, log = true) {
-      entities.forEach(ent => {
-        // Tournament modifiers
-        if (mode === 3) { // Desierto: Infección para todos
-          ent.states.infect = 3;
-          if (log) logEvent(`🌵 [Torneo Desierto] <b>${ent.name}</b> comienza Infectado.`, "text-green-400");
-        }
-        if (mode === 6) { // Cementerio: Revivir
-          ent.revive = true;
-          if (log) logEvent(`💀 [Torneo Cementerio] <b>${ent.name}</b> obtiene bendición de Revivir.`, "text-purple-400");
-        }
-
-        // Items on-start
-        switch (ent.itemId) {
-          case 1: // Beak breaker seed (+15% max HP)
-            const addHp = Math.round(ent.lifeMax * 0.15);
-            ent.lifeMax += addHp;
-            ent.life += addHp;
-            break;
-          case 2: // Raven's tooth (+15% armor)
-            ent.armorMulti += 0.15;
-            break;
-          case 3: // Crazy eye (+15% damage)
-            ent.damageMulti += 0.15;
-            break;
-          case 4: // Hen's glove (+15% speed)
-            ent.speedMulti += 0.15;
-            break;
-          case 5: // Roost stick (+50 powerMax, starts full)
-            ent.powerMax += 50;
-            ent.powerValue = ent.powerMax;
-            break;
-          case 10: // Phoenix Pages (revive)
-            ent.revive = true;
-            if (log) logEvent(`✨ <b>${ent.name}</b> equipa Phoenix Pages: revivirá al morir.`, "text-amber-400");
-            break;
-          case 40: // Golden Pickinator (Focus)
-            ent.hasFocus = true;
-            if (log) logEvent(`🧲 <b>${ent.name}</b> equipa Golden Pickinator y atrae los ataques.`, "text-yellow-400");
-            break;
-          case 60: // Fragmento prohibido (+35% dmg, +10% speed, powerValue = 0)
-            ent.damageMulti += 0.35;
-            ent.speedMulti += 0.10;
-            ent.powerValue = 0;
-            if (log) logEvent(`🚫 <b>${ent.name}</b> equipa Fragmento Prohibido (+35% daño, +10% vel, barra de poder bloqueada a 0).`, "text-purple-400 font-semibold");
-            break;
-        }
-
-        // Passives on-start
-        if (ent.passiveId === 250) { // Easy East (id_easy_east: revive)
-          ent.revive = true;
-        }
-      });
-    }
-
-    // RESOLVE POWER (All 52 powers + transformations)
-    function executePower(attacker, allEntities, log = true) {
-      if (attacker.itemId === 60) return;
-      const allies = allEntities.filter(e => e.team === attacker.team && e.alive);
-      const enemies = allEntities.filter(e => e.team !== attacker.team && e.alive);
-      const target = getTarget(attacker, allEntities);
-
-      if (log) logEvent(`✨ <b>${attacker.name}</b> activa su PODER ESPECIAL (ID ${attacker.powerId})!`, "text-amber-400 font-bold");
-
-      switch (attacker.powerId) {
-        case 0: // Doble ataque
-          if (target) {
-            dealDamage(attacker, target, attacker.damage, log);
-            if (target.alive) dealDamage(attacker, target, attacker.damage, log);
-          }
-          break;
-
-        case 1: // Autocuración 25% max HP
-          healEntity(attacker, Math.round(attacker.lifeMax * 0.25), log);
-          break;
-
-        case 2: // Lanza un huevo (100% daño)
-          if (target) dealDamage(attacker, target, attacker.damage, log);
-          break;
-
-        case 3: // Shuriken (150% daño)
-          if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.5), log);
-          break;
-
-        case 4: // Zombie: -10% max HP, +25% dmg
-          attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
-          attacker.damageMulti += 0.25;
-          if (log) logEvent(`🧟 <b>${attacker.name}</b> sacrifica vida y gana +25% daño permanente.`, "text-orange-400");
-          break;
-
-        case 6: // Transforma en Pollisaur (ID 10)
-          transformEntity(attacker, 10, log);
-          break;
-
-        case 7: // Transforma en Pollisor (ID 9)
-          transformEntity(attacker, 9, log);
-          break;
-
-        case 8: // Misil (quema)
-          if (target) {
-            dealDamage(attacker, target, attacker.damage, log);
-            target.states.burn = 3;
-            if (log) logEvent(`🔥 <b>${target.name}</b> sufre Quemadura por 3 turnos.`, "text-orange-400");
-          }
-          break;
-
-        case 9: // +10% stat aleatorio
-          const statChoice = Math.floor(Math.random() * 3);
-          if (statChoice === 0) attacker.damageMulti += 0.1;
-          else if (statChoice === 1) attacker.armorMulti += 0.1;
-          else attacker.speedMulti += 0.1;
-          if (log) logEvent(`🎲 <b>${attacker.name}</b> potencia un atributo en +10%.`, "text-purple-400");
-          break;
-
-        case 10: // El equipo gana +10% armadura
-          allies.forEach(a => a.armorMulti += 0.1);
-          if (log) logEvent(`🛡️ El equipo de <b>${attacker.name}</b> gana +10% de armadura.`, "text-emerald-400");
-          break;
-
-        case 11: // Bomba (80% a target, 40% a otros)
-          if (target) {
-            dealDamage(attacker, target, Math.round(attacker.damage * 0.8), log);
-            enemies.filter(e => e.id !== target.id).forEach(other => {
-              dealDamage(attacker, other, Math.round(attacker.damage * 0.4), log);
-            });
-          }
-          break;
-
-        case 12: // Paraliza
-          if (target) {
-            target.states.paralysis = 3;
-            if (log) logEvent(`⚡ <b>${target.name}</b> queda Paralizado.`, "text-yellow-400");
-          }
-          break;
-
-        case 13: // Envenena
-          if (target) {
-            target.states.poison = 3;
-            if (log) logEvent(`🧪 <b>${target.name}</b> queda Envenenado.`, "text-purple-400");
-          }
-          break;
-
-        case 14: // Manic: -10% HP, aliado full power
-          attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
-          const ally = allies.find(a => a.id !== attacker.id);
-          if (ally) {
-            if (ally.itemId !== 60) {
-              ally.powerValue = ally.powerMax;
-              if (log) logEvent(`💥 <b>${attacker.name}</b> llena al máximo el poder de <b>${ally.name}</b>!`, "text-blue-400");
-            } else {
-              if (log) logEvent(`💥 <b>${attacker.name}</b> intenta llenar el poder de <b>${ally.name}</b>, ¡pero Fragmento Prohibido lo impide!`, "text-purple-400");
-            }
-          }
-          break;
-
-        case 18: // Quema
-          if (target) {
-            target.states.burn = 3;
-            if (log) logEvent(`🔥 <b>${target.name}</b> comienza a Quemarse.`, "text-orange-400");
-          }
-          break;
-
-        case 19: // Cura 25% max HP y +15% armadura
-          healEntity(attacker, Math.round(attacker.lifeMax * 0.25), log);
-          attacker.armorMulti += 0.15;
-          break;
-
-        case 20: // Cura aliado
-          const injuredAlly = [...allies].sort((a, b) => (a.life / a.lifeMax) - (b.life / b.lifeMax))[0];
-          if (injuredAlly) {
-            healEntity(injuredAlly, Math.round(injuredAlly.lifeMax * 0.35), log);
-          }
-          break;
-
-        case 21: // Hacha 80% dmg y cura 40% dmg
-          if (target) {
-            const dealt = dealDamage(attacker, target, Math.round(attacker.damage * 0.8), log);
-            healEntity(attacker, Math.round(dealt * 0.4), log);
-          }
-          break;
-
-        case 22: // Transforma en Evil Gatarlos (ID 56)
-          transformEntity(attacker, 56, log);
-          break;
-
-        case 23: // Congela
-          if (target) {
-            target.states.freeze = 2;
-            if (log) logEvent(`❄️ <b>${target.name}</b> queda Congelado (2 turnos).`, "text-cyan-400");
-          }
-          break;
-
-        case 26: // Transforma en Gatarlos (ID 55)
-          transformEntity(attacker, 55, log);
-          break;
-
-        case 30: // Infecta
-          if (target) {
-            target.states.infect = 4;
-            if (log) logEvent(`💀 <b>${target.name}</b> es Infectado.`, "text-green-500");
-          }
-          break;
-
-        case 31: // Obtiene revivir
-          attacker.revive = true;
-          if (log) logEvent(`✨ <b>${attacker.name}</b> obtiene una vida extra (Revivir).`, "text-amber-400");
-          break;
-
-        case 32: // Explota (25% max HP a todos)
-          allEntities.filter(e => e.alive).forEach(e => {
-            e.life = Math.max(0, e.life - Math.round(e.lifeMax * 0.25));
-            checkDeath(e, log);
-          });
-          if (log) logEvent(`💥 ¡EXPLOSIÓN MASIVA! Todos los pollos pierden 25% de vida máxima.`, "text-red-500 font-bold");
-          break;
-
-        case 34: // Transforma en Zombie (ID 6)
-          transformEntity(attacker, 6, log);
-          break;
-
-        case 35: // Transforma en Mali (ID 4)
-          transformEntity(attacker, 4, log);
-          break;
-
-        case 37: // Eggalex -> Mechalex (ID 135)
-          transformEntity(attacker, 135, log);
-          break;
-
-        case 38: // Mechalex -> Eggalex (ID 134)
-          transformEntity(attacker, 134, log);
-          break;
-
-        case 41: // Cura equipo
-          allies.forEach(a => healEntity(a, Math.round(a.lifeMax * 0.2), log));
-          break;
-
-        case 42: // +1 evasión y +13% daño equipo
-          allies.forEach(a => {
-            a.avoid += 1;
-            a.damageMulti += 0.13;
-          });
-          if (log) logEvent(`💨 El equipo gana 1 evasión y +13% de daño.`, "text-blue-400");
-          break;
-
-        case 48: // Roba 15% max HP
-          if (target) {
-            const stolen = Math.round(target.lifeMax * 0.15);
-            target.life = Math.max(0, target.life - stolen);
-            healEntity(attacker, stolen, log);
-            checkDeath(target, log);
-            if (log) logEvent(`🧛 <b>${attacker.name}</b> drena ${stolen} de vida de <b>${target.name}</b>.`, "text-red-400");
-          }
-          break;
-
-        default: // Fallback poder base (120% daño)
-          if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.2), log);
-          break;
-      }
-    }
-
-    // DAMAGE RESOLUTION WITH ARMOR MITIGATION & PASSIVES
-    function dealDamage(attacker, target, rawDmg, log = true) {
-      if (!target.alive) return 0;
-
-      // Evasion check
-      if (target.avoid > 0) {
-        target.avoid--;
-        if (log) logEvent(`💨 ¡<b>${target.name}</b> evadió el ataque!`, "text-cyan-400");
-        return 0;
-      }
-
-      // First attack passive bonus (Pollier: +50% dmg)
-      let dmgMulti = attacker.damageMulti;
-      if (attacker.firstAttack && attacker.passiveId === 0) { // Pollier passive
-        dmgMulti += 0.5;
-        if (log) logEvent(`💥 [Pasiva Pollier] ¡Primer ataque con +50% de daño!`, "text-orange-400");
-      }
-      attacker.firstAttack = false;
-
-      // Paralysis debuff (attacker deals 50% dmg)
-      if (attacker.states.paralysis > 0) {
-        dmgMulti *= 0.5;
-      }
-
-      const totalDmg = rawDmg * dmgMulti;
-
-      // Armor mitigation (clamp 0..0.90)
-      let targetArmor = target.armor * target.armorMulti;
-      if (target.states.paralysis > 0) targetArmor *= 0.5;
-      const armorClamped = clamp(targetArmor, 0, 0.90);
-
-      let realDamage = Math.max(1, Math.round(totalDmg * (1 - armorClamped)));
-
-      // Curse: +25% damage taken
-      if (target.states.curse > 0) {
-        realDamage = Math.round(realDamage * 1.25);
-      }
-
-      target.life = Math.max(0, target.life - realDamage);
-      target.lastAttackedMe = attacker;
-      attacker.damageDealt += realDamage;
-
-      if (log) {
-        const teamColor = (attacker.team === 0) ? "text-blue-400" : "text-red-400";
-        logEvent(`⚔️ <b class="${teamColor}">${attacker.name}</b> golpea a <b>${target.name}</b> por <b class="text-red-400">${realDamage}</b> daño <span class="text-[var(--muted-foreground)]">(${Math.round(armorClamped * 100)}% mitigado)</span>.`);
-      }
-
-      // Vampire beak lifesteal (item 15)
-      if (attacker.itemId === 15 && realDamage > 0) {
-        const healAmt = Math.max(1, Math.round(realDamage * 0.15));
-        healEntity(attacker, healAmt, log);
-      }
-
-      checkDeath(target, log);
-      return realDamage;
+    function cleanStates(entity) {
+      entity.states = { poison: 0, burn: 0, paralysis: 0, freeze: 0, infect: 0, curse: 0, silence: 0 };
     }
 
     // HEAL HELPER
     function healEntity(entity, amount, log = true) {
-      if (!entity.alive) return;
+      if (!entity.alive) return 0;
       const prevLife = entity.life;
       entity.life = Math.min(entity.lifeMax, entity.life + amount);
       const actualHealed = entity.life - prevLife;
       if (actualHealed > 0 && log) {
         logEvent(`💚 <b>${entity.name}</b> se cura <b class="text-emerald-400">+${actualHealed}</b> HP (${entity.life}/${entity.lifeMax}).`, "text-emerald-400");
       }
+      return actualHealed;
     }
 
     // TRANSFORMATION (matching scr_battle_transform)
@@ -1114,17 +807,935 @@
       if (log) logEvent(`✨🌀 ¡<b>${oldName}</b> SE TRANSFORMA en <b class="text-purple-400">${entity.name}</b>! Conserva ${Math.round(hpRatio * 100)}% de vida.`, "text-purple-400 font-bold");
     }
 
-    // DEATH & REVIVE CHECK
-    function checkDeath(entity, log = true) {
+    // POTIONS CHECK (Jugo de pollo, Elixir, Mega jugo, etc.)
+    function checkPotions(entity, log = true) {
+      if (!entity.alive || entity.life <= 0 || entity.itemUsed) return;
+      const hpPct = entity.life / entity.lifeMax;
+
+      const usePotion = (healAmt, buffStat = null, buffAmt = 0) => {
+        entity.itemUsed = true;
+        healEntity(entity, healAmt, log);
+        if (buffStat === 'damage') entity.damageMulti += buffAmt;
+        if (buffStat === 'speed') entity.speedMulti += buffAmt;
+        if (buffStat === 'armor') entity.armorMulti += buffAmt;
+      };
+
+      if (hpPct <= 0.25) {
+        switch (entity.itemId) {
+          case 0: usePotion(100); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Jugo de Pollo (+100 HP).`, "text-emerald-400"); break;
+          case 7: usePotion(125, 'damage', 0.1); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Elixir de Pollo (+125 HP, +10% daño).`, "text-emerald-400"); break;
+          case 8: usePotion(125, 'speed', 0.1); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Disparo Eggspresso (+125 HP, +10% vel).`, "text-emerald-400"); break;
+          case 9: usePotion(125, 'armor', 0.1); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Brebaje de Armadura (+125 HP, +10% armadura).`, "text-emerald-400"); break;
+          case 13: usePotion(200); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Mega Jugo de Pollo (+200 HP).`, "text-emerald-400"); break;
+          case 16: usePotion(275); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Giga Jugo de Pollo (+275 HP).`, "text-emerald-400"); break;
+          case 24: usePotion(350); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Tera Jugo de Pollo (+350 HP).`, "text-emerald-400"); break;
+        }
+      }
+
+      if (hpPct <= 0.35) {
+        switch (entity.itemId) {
+          case 32: usePotion(400); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Roca Jugosa (+400 HP).`, "text-emerald-400"); break;
+          case 39: usePotion(500); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Jugo Congelado (+500 HP).`, "text-emerald-400"); break;
+          case 46: usePotion(600); if (log) logEvent(`🧪 <b>${entity.name}</b> bebe Poción Pútrida (+600 HP).`, "text-emerald-400"); break;
+          case 53: usePotion(700); if (log) logEvent(`🧪 <b>${entity.name}</b> activa Circuito Vital (+700 HP).`, "text-emerald-400"); break;
+        }
+      }
+    }
+
+    // START OF BATTLE (matching scr_event_start for Items & Passives)
+    function applyStartOfBattle(entities, mode, log = true) {
+      // Tournament mode modifiers
+      if (mode === 3) { // Desierto: Infección para todos
+        entities.forEach(ent => {
+          ent.states.infect = 3;
+          if (log) logEvent(`🌵 [Torneo Desierto] <b>${ent.name}</b> comienza Infectado.`, "text-green-400");
+        });
+      }
+      if (mode === 6) { // Cementerio: Revivir
+        entities.forEach(ent => {
+          ent.revive = true;
+          if (log) logEvent(`💀 [Torneo Cementerio] <b>${ent.name}</b> obtiene bendición de Revivir.`, "text-purple-400");
+        });
+      }
+
+      // Passives on-start
+      entities.forEach(ent => {
+        const allies = entities.filter(e => e.team === ent.team);
+        const enemies = entities.filter(e => e.team !== ent.team);
+
+        switch (ent.passiveId) {
+          case 13: // Easy East: revive
+          case 51: // Bjorn: revive
+          case 104: // Friozero: revive
+          case 109: // Max: revive
+            ent.revive = true;
+            if (log) logEvent(`✨ <b>${ent.name}</b> [Pasiva] obtiene bendición de Revivir.`, "text-amber-400");
+            break;
+          case 28: // Alien: +1 avoid
+          case 61: // Shiken: +1 avoid
+            ent.avoid++;
+            if (log) logEvent(`💨 <b>${ent.name}</b> [Pasiva] comienza con 1 Evasión.`, "text-cyan-400");
+            break;
+          case 36: // Valu: full power bar
+            if (ent.itemId !== 60) ent.powerValue = ent.powerMax;
+            if (log) logEvent(`⚡ <b>${ent.name}</b> [Pasiva] comienza con la barra de poder al máximo!`, "text-amber-400");
+            break;
+          case 83: // Corny: cura 35% max HP al equipo
+            allies.forEach(a => healEntity(a, Math.round(ent.lifeMax * 0.35), log));
+            break;
+          case 84: // Policus: aliado recibe full power
+            allies.filter(a => a.id !== ent.id).forEach(a => {
+              if (a.itemId !== 60) a.powerValue = a.powerMax;
+              if (log) logEvent(`⚡ <b>${a.name}</b> recibe poder máximo de ${ent.name}!`, "text-amber-400");
+            });
+            break;
+          case 88: // Trinagle: +33% daño pero silenciado 3 turnos
+            ent.damageMulti += 0.33;
+            ent.states.silence = 3;
+            if (log) logEvent(`🔺 <b>${ent.name}</b> [Pasiva] +33% daño pero Silenciado 3 turnos.`, "text-orange-400");
+            break;
+          case 95: // Rocko: +1% daño por cada 50 HP max
+            const rockoBonus = Math.floor(ent.lifeMax / 50) * 0.01;
+            ent.damageMulti += rockoBonus;
+            if (log) logEvent(`🪨 <b>${ent.name}</b> [Pasiva] +${Math.round(rockoBonus*100)}% daño por su vitalidad.`, "text-orange-400");
+            break;
+          case 103: // Grey: -10% velocidad a todos los enemigos
+            enemies.forEach(e => {
+              e.speedMulti = Math.max(0.2, e.speedMulti - 0.1);
+            });
+            if (log) logEvent(`🌫️ <b>${ent.name}</b> [Pasiva] reduce la velocidad enemiga un 10%.`, "text-blue-300");
+            break;
+          case 107: // Derp: 50% chance full power, 50% chance 50% power
+            if (ent.itemId !== 60) {
+              ent.powerValue = (Math.random() < 0.5) ? ent.powerMax : Math.round(ent.powerMax * 0.5);
+              if (log) logEvent(`🤪 <b>${ent.name}</b> [Pasiva] inicia con ${ent.powerValue} de Poder.`, "text-amber-400");
+            }
+            break;
+          case 115: // Cow: +15% armadura al equipo
+            allies.forEach(a => a.armorMulti += 0.15);
+            if (log) logEvent(`🐮 <b>${ent.name}</b> [Pasiva] +15% armadura a todo el equipo.`, "text-emerald-400");
+            break;
+          case 55: // Gatarlos: +15% daño
+            ent.damageMulti += 0.15;
+            break;
+          case 118: // Nave: +5% velocidad al equipo
+            allies.forEach(a => a.speedMulti += 0.05);
+            break;
+          case 126: // Hueva: cura al aliado con la vida máxima del autor
+            const allyHueva = allies.find(a => a.id !== ent.id);
+            if (allyHueva) healEntity(allyHueva, ent.lifeMax, log);
+            break;
+          case 129: // Cyborg: +10% daño al equipo
+            allies.forEach(a => a.damageMulti += 0.1);
+            break;
+          case 150: // Garra: revive a todo el equipo
+            allies.forEach(a => a.revive = true);
+            if (log) logEvent(`👑 <b>${ent.name}</b> [Pasiva] otorga Revivir a todo el equipo!`, "text-amber-400 font-bold");
+            break;
+          case 56: // Evil Gatarlos: +1 evasión al equipo
+            allies.forEach(a => a.avoid++);
+            break;
+        }
+      });
+
+      // Items on-start
+      entities.forEach(ent => {
+        const allies = entities.filter(e => e.team === ent.team);
+        const enemies = entities.filter(e => e.team !== ent.team);
+        const target = getTarget(ent, entities);
+
+        switch (ent.itemId) {
+          case 1: // Semilla rompepicos (+15% max HP)
+            const addHp = Math.round(ent.lifeMax * 0.15);
+            ent.lifeMax += addHp;
+            ent.life += addHp;
+            break;
+          case 2: // Diente de cuervo (+15% armadura)
+            ent.armorMulti += 0.15;
+            break;
+          case 3: // Ojo loco (+15% daño)
+            ent.damageMulti += 0.15;
+            break;
+          case 4: // Guante de gallina (+15% velocidad)
+            ent.speedMulti += 0.15;
+            break;
+          case 5: // Palo de raíz (+50 powerMax, starts full)
+            if (ent.itemId !== 60) {
+              ent.powerMax += 50;
+              ent.powerValue = ent.powerMax;
+            }
+            break;
+          case 6: // Picoteador dorado (Focus / Taunt)
+            ent.hasFocus = true;
+            if (log) logEvent(`🧲 <b>${ent.name}</b> equipa Picoteador Dorado y atrae todos los ataques.`, "text-yellow-400");
+            break;
+          case 19: // Arreglanube: cura 35% max HP
+            healEntity(ent, Math.round(ent.lifeMax * 0.35), log);
+            break;
+          case 20: // Pergamino del silencio: silencia a 1 enemigo 2 turnos
+            if (target) {
+              target.states.silence = 2;
+              if (log) logEvent(`📜 <b>${target.name}</b> es Silenciado por el Pergamino de ${ent.name}.`, "text-gray-400");
+            }
+            break;
+          case 23: // Páginas del fénix: revivir
+            ent.revive = true;
+            if (log) logEvent(`✨ <b>${ent.name}</b> equipa Páginas del Fénix: revivirá al caer.`, "text-amber-400");
+            break;
+          case 25: // Gota peligrosa: envenena 1 enemigo
+            if (target) {
+              target.states.poison = 3;
+              if (log) logEvent(`🧪 <b>${target.name}</b> es Envenenado por la Gota Peligrosa.`, "text-purple-400");
+            }
+            break;
+          case 31: // Moco problemático: infecta 1 enemigo
+            if (target) {
+              target.states.infect = 4;
+              if (log) logEvent(`💀 <b>${target.name}</b> es Infectado por el Moco Problemático.`, "text-green-500");
+            }
+            break;
+          case 33: // Triflor: +5% daño, +5% armor, +5% vel
+            ent.damageMulti += 0.05;
+            ent.armorMulti += 0.05;
+            ent.speedMulti += 0.05;
+            break;
+          case 35: // Roca atómica: +20% daño o +20% armor
+            if (Math.random() < 0.5) ent.damageMulti += 0.2;
+            else ent.armorMulti += 0.2;
+            break;
+          case 36: // Primer huevo: lanza huevo (100% daño)
+            if (target) dealDamage(ent, target, ent.damage, entities, log);
+            break;
+          case 37: // Primer bomba: lanza bomba (80% daño target, 40% otros)
+            if (target) {
+              dealDamage(ent, target, Math.round(ent.damage * 0.8), entities, log);
+              enemies.filter(e => e.id !== target.id).forEach(other => dealDamage(ent, other, Math.round(ent.damage * 0.4), entities, log));
+            }
+            break;
+          case 38: // Primer shuriken: 150% daño
+            if (target) dealDamage(ent, target, Math.round(ent.damage * 1.5), entities, log);
+            break;
+          case 42: // Ojo helado: huevo helado (100% daño + freeze)
+            if (target) {
+              dealDamage(ent, target, ent.damage, entities, log);
+              target.states.freeze = 2;
+            }
+            break;
+          case 43: // Cristal de daño: +25% daño, -25% vida
+            ent.damageMulti += 0.25;
+            ent.life = Math.max(1, ent.life - Math.round(ent.lifeMax * 0.25));
+            break;
+          case 44: // Cristal de velocidad: +25% vel, -25% vida
+            ent.speedMulti += 0.25;
+            ent.life = Math.max(1, ent.life - Math.round(ent.lifeMax * 0.25));
+            break;
+          case 45: // Cristal de armadura: +25% armadura, -25% vida
+            ent.armorMulti += 0.25;
+            ent.life = Math.max(1, ent.life - Math.round(ent.lifeMax * 0.25));
+            break;
+          case 48: // Pico roto: -5% vida, +20% daño, infecta
+            ent.damageMulti += 0.20;
+            ent.life = Math.max(1, ent.life - Math.round(ent.lifeMax * 0.05));
+            ent.states.infect = 3;
+            break;
+          case 49: // Ojo maldito: maldice a 1 enemigo
+            if (target) {
+              target.states.curse = 3;
+              if (log) logEvent(`👁️ <b>${target.name}</b> queda Maldito (+25% daño recibido).`, "text-purple-400");
+            }
+            break;
+          case 50: // Ojos locos: +10% daño al equipo
+            allies.forEach(a => a.damageMulti += 0.1);
+            break;
+          case 51: // Libro maldito: maldice a todos los enemigos
+            enemies.forEach(e => e.states.curse = 3);
+            if (log) logEvent(`📖 <b>Libro Maldito</b>: Todos los enemigos quedan Malditos!`, "text-purple-400 font-bold");
+            break;
+          case 52: // Infección: revive como Zombie
+            ent.revive = true;
+            ent.reviveAsZombie = true;
+            if (log) logEvent(`🧟 <b>${ent.name}</b> equipa Infección: revivirá como Zombie!`, "text-green-500 font-bold");
+            break;
+          case 55: // Pico electrostático: paraliza 1 enemigo
+            if (target) {
+              target.states.paralysis = 3;
+              if (log) logEvent(`⚡ <b>${target.name}</b> queda Paralizado por el Pico Electrostático.`, "text-yellow-400");
+            }
+            break;
+          case 56: // Descarga masiva: paraliza a todos los enemigos
+            enemies.forEach(e => e.states.paralysis = 2);
+            if (log) logEvent(`⚡⚡ ¡<b>Descarga Masiva</b>! Todos los enemigos quedan Paralizados.`, "text-yellow-400 font-bold");
+            break;
+          case 60: // Fragmento prohibido
+            ent.damageMulti += 0.35;
+            ent.speedMulti += 0.10;
+            ent.powerValue = 0;
+            if (log) logEvent(`🚫 <b>${ent.name}</b> equipa Fragmento Prohibido: +35% daño, +10% vel, sin poder ni transformaciones.`, "text-purple-400 font-bold");
+            break;
+          case 67: // Primer boomerang
+            if (target) dealDamage(ent, target, ent.damage, entities, log);
+            break;
+          case 69: // Primera hacha: 80% daño, cura 40%
+            if (target) {
+              const d = dealDamage(ent, target, Math.round(ent.damage * 0.8), entities, log);
+              healEntity(ent, Math.round(d * 0.4), log);
+            }
+            break;
+          case 74: // Ira: 2 ataques extra al empezar
+            if (target) {
+              dealDamage(ent, target, ent.damage, entities, log);
+              if (target.alive) dealDamage(ent, target, ent.damage, entities, log);
+            }
+            break;
+        }
+      });
+    }
+
+    // RESOLVE ALL 52 POWERS (matching scr_battle_power_type and obj_entity Step_0)
+    function executePower(attacker, allEntities, log = true) {
+      if (attacker.itemId === 60) return;
+      if (attacker.states.silence > 0) {
+        if (log) logEvent(`🤐 <b>${attacker.name}</b> está Silenciado y no puede usar su poder!`, "text-gray-400");
+        return;
+      }
+
+      const allies = allEntities.filter(e => e.team === attacker.team && e.alive);
+      const enemies = allEntities.filter(e => e.team !== attacker.team && e.alive);
+      const target = getTarget(attacker, allEntities);
+
+      // Check item 11 (Pollo limpio): limpia efectos al usar poder
+      if (attacker.itemId === 11) {
+        cleanStates(attacker);
+        if (log) logEvent(`🧼 <b>${attacker.name}</b> usa Pollo Limpio y elimina sus estados alterados.`, "text-blue-300");
+      }
+
+      if (log) logEvent(`✨ <b>${attacker.name}</b> activa su PODER ESPECIAL (ID ${attacker.powerId})!`, "text-amber-400 font-bold");
+
+      allEntities.lastPower = attacker.powerId;
+
+      switch (attacker.powerId) {
+        case 0: // Doble ataque
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            if (target.alive) dealDamage(attacker, target, attacker.damage, allEntities, log);
+          }
+          break;
+        case 1: // Autocuración 25% max HP
+          healEntity(attacker, Math.round(attacker.lifeMax * 0.25), log);
+          break;
+        case 2: // Lanza un huevo (100% daño)
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            if (attacker.passiveId === 32) attacker.damageMulti += 0.1; // Toraishi
+            if (attacker.passiveId === 60) healEntity(attacker, Math.round(attacker.lifeMax * 0.1), log); // Boomy
+          }
+          break;
+        case 3: // Shuriken (150% daño)
+          if (target) {
+            dealDamage(attacker, target, Math.round(attacker.damage * 1.5), allEntities, log);
+            if (attacker.passiveId === 12) attacker.avoid++; // Polliro
+          }
+          break;
+        case 4: // Zombie (-10% HP, +25% daño)
+          attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
+          attacker.damageMulti += 0.25;
+          if (log) logEvent(`🧟 <b>${attacker.name}</b> sacrifica vida y gana +25% de daño.`, "text-orange-400");
+          break;
+        case 5: // Copiar último poder
+          const copyId = (allEntities.lastPower !== undefined && allEntities.lastPower !== 5) ? allEntities.lastPower : 0;
+          attacker.powerId = copyId;
+          executePower(attacker, allEntities, log);
+          attacker.powerId = 5;
+          break;
+        case 6: // Transforma en Pollisaur (ID 10)
+          transformEntity(attacker, 10, log);
+          break;
+        case 7: // Transforma en Pollisor (ID 9)
+          transformEntity(attacker, 9, log);
+          break;
+        case 8: // Misil (quema)
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            target.states.burn = 3;
+            if (attacker.itemId === 58) attacker.damageMulti += 0.04; // Impulso balístico
+            if (log) logEvent(`🔥 <b>${target.name}</b> sufre Quemadura por 3 turnos.`, "text-orange-400");
+          }
+          break;
+        case 9: // +10% stat aleatorio
+          const statChoice = Math.floor(Math.random() * 3);
+          if (statChoice === 0) attacker.damageMulti += 0.1;
+          else if (statChoice === 1) attacker.armorMulti += 0.1;
+          else attacker.speedMulti += 0.1;
+          if (log) logEvent(`🎲 <b>${attacker.name}</b> potencia un atributo en +10%.`, "text-purple-400");
+          break;
+        case 10: // +10% armadura al equipo
+          allies.forEach(a => a.armorMulti += 0.1);
+          if (log) logEvent(`🛡️ El equipo gana +10% de armadura.`, "text-emerald-400");
+          break;
+        case 11: // Bomba (80% target, 40% a otros)
+          if (target) {
+            dealDamage(attacker, target, Math.round(attacker.damage * 0.8), allEntities, log);
+            enemies.filter(e => e.id !== target.id).forEach(other => dealDamage(attacker, other, Math.round(attacker.damage * 0.4), allEntities, log));
+          }
+          break;
+        case 12: // Paraliza
+          if (target) {
+            target.states.paralysis = 3;
+            if (log) logEvent(`⚡ <b>${target.name}</b> queda Paralizado (3 turnos).`, "text-yellow-400");
+          }
+          break;
+        case 13: // Envenena
+          if (target) {
+            target.states.poison = 3;
+            if (log) logEvent(`🧪 <b>${target.name}</b> queda Envenenado (3 turnos).`, "text-purple-400");
+          }
+          break;
+        case 14: // Manic (-10% HP, aliado full power)
+          attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.1));
+          const ally = allies.find(a => a.id !== attacker.id);
+          if (ally) {
+            if (ally.itemId !== 60) {
+              ally.powerValue = ally.powerMax;
+              if (log) logEvent(`💥 <b>${attacker.name}</b> llena el poder de <b>${ally.name}</b>!`, "text-blue-400");
+            } else {
+              if (log) logEvent(`💥 <b>${attacker.name}</b> intenta llenar poder a <b>${ally.name}</b>, ¡pero Fragmento Prohibido lo impide!`, "text-purple-400");
+            }
+          }
+          break;
+        case 15: // Invert: aleatoriza todos los multis entre 0.25 y 1.75
+          attacker.damageMulti = +(0.25 + Math.random() * 1.5).toFixed(2);
+          attacker.armorMulti = +(0.25 + Math.random() * 1.5).toFixed(2);
+          attacker.speedMulti = +(0.25 + Math.random() * 1.5).toFixed(2);
+          if (log) logEvent(`🌀 <b>${attacker.name}</b> aleatoriza sus estadísticas (Daño x${attacker.damageMulti}, Arm x${attacker.armorMulti}, Vel x${attacker.speedMulti}).`, "text-purple-400");
+          break;
+        case 16: // Alien: intercambia multiplicador de daño con el objetivo
+          if (target) {
+            const tempDmg = attacker.damageMulti;
+            attacker.damageMulti = target.damageMulti;
+            target.damageMulti = tempDmg;
+            if (log) logEvent(`👽 <b>${attacker.name}</b> intercambia multiplicador de daño con <b>${target.name}</b>!`, "text-cyan-400 font-bold");
+          }
+          break;
+        case 17: // Maldice
+          if (target) {
+            target.states.curse = 3;
+            if (log) logEvent(`👁️ <b>${target.name}</b> es Maldito (+25% daño recibido).`, "text-purple-400");
+          }
+          break;
+        case 18: // Quema
+          if (target) {
+            target.states.burn = 3;
+            if (log) logEvent(`🔥 <b>${target.name}</b> comienza a Quemarse.`, "text-orange-400");
+          }
+          break;
+        case 19: // Cura 25% max HP y +15% armadura
+          healEntity(attacker, Math.round(attacker.lifeMax * 0.25), log);
+          attacker.armorMulti += 0.15;
+          break;
+        case 20: // Cura al aliado (25% max HP + 50% daño actual)
+          const targetAlly = allies.find(a => a.id !== attacker.id);
+          if (targetAlly) {
+            const healVal = Math.round(attacker.lifeMax * 0.25 + (attacker.damage * attacker.damageMulti) * 0.5);
+            healEntity(targetAlly, healVal, log);
+          }
+          break;
+        case 21: // Hacha 80% daño y cura 40%
+          if (target) {
+            const d = dealDamage(attacker, target, Math.round(attacker.damage * 0.8), allEntities, log);
+            healEntity(attacker, Math.round(d * 0.4), log);
+          }
+          break;
+        case 22: // Transforma en Evil Gatarlos (ID 56) y da +1 avoid al equipo
+          transformEntity(attacker, 56, log);
+          allies.forEach(a => a.avoid++);
+          break;
+        case 23: // Congela
+          if (target) {
+            target.states.freeze = 2;
+            if (log) logEvent(`❄️ <b>${target.name}</b> queda Congelado (2 turnos).`, "text-cyan-400");
+          }
+          break;
+        case 24: // Caca: envenena y -5% velocidad
+          if (target) {
+            target.states.poison = 3;
+            target.speedMulti = Math.max(0.2, target.speedMulti - 0.05);
+            if (log) logEvent(`💩 <b>${target.name}</b> recibe caca: Envenenado y -5% velocidad.`, "text-amber-600");
+          }
+          break;
+        case 25: // Limpia estados del equipo
+          allies.forEach(a => cleanStates(a));
+          if (log) logEvent(`✨ <b>${attacker.name}</b> purifica todos los estados alterados del equipo!`, "text-emerald-400");
+          break;
+        case 26: // Transforma en Gatarlos (ID 55)
+          transformEntity(attacker, 55, log);
+          break;
+        case 27: // Cura 10% max HP, +5% daño, -5% velocidad
+          healEntity(attacker, Math.round(attacker.lifeMax * 0.1), log);
+          attacker.damageMulti += 0.05;
+          attacker.speedMulti = Math.max(0.2, attacker.speedMulti - 0.05);
+          break;
+        case 28: // Obtener poción aleatoria si no tiene item
+          if (attacker.itemId === -1) {
+            const potions = [0, 7, 8, 9, 13, 16, 24];
+            attacker.itemId = potions[Math.floor(Math.random() * potions.length)];
+            attacker.itemUsed = false;
+            if (log) logEvent(`🧪 <b>${attacker.name}</b> obtiene una poción mágica!`, "text-purple-300");
+          }
+          break;
+        case 29: // Silencia al objetivo 2 turnos
+          if (target) {
+            target.states.silence = 2;
+            if (log) logEvent(`🤐 <b>${target.name}</b> queda Silenciado (no puede usar poderes).`, "text-gray-400");
+          }
+          break;
+        case 30: // Infecta
+          if (target) {
+            target.states.infect = 4;
+            if (log) logEvent(`💀 <b>${target.name}</b> es Infectado.`, "text-green-500");
+          }
+          break;
+        case 31: // Revivir
+          attacker.revive = true;
+          if (log) logEvent(`✨ <b>${attacker.name}</b> obtiene una vida extra (Revivir).`, "text-amber-400");
+          break;
+        case 32: // Explota (25% max HP a todos)
+          allEntities.filter(e => e.alive).forEach(e => {
+            e.life = Math.max(0, e.life - Math.round(e.lifeMax * 0.25));
+            checkDeath(e, attacker, allEntities, log);
+          });
+          if (log) logEvent(`💥 ¡EXPLOSIÓN MASIVA! Todos los combatientes pierden 25% de vida máxima.`, "text-red-500 font-bold");
+          break;
+        case 33: // Huevo congelado: 100% daño y congela
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            target.states.freeze = 2;
+          }
+          break;
+        case 34: // Transforma en Zombie (ID 6)
+          transformEntity(attacker, 6, log);
+          break;
+        case 35: // Transforma en Mali (ID 4)
+          transformEntity(attacker, 4, log);
+          break;
+        case 36: // Estrella: 120% daño
+          if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.2), allEntities, log);
+          break;
+        case 37: // Eggalex -> Mechalex (ID 135)
+          transformEntity(attacker, 135, log);
+          break;
+        case 38: // Mechalex -> Eggalex (ID 134)
+          transformEntity(attacker, 134, log);
+          break;
+        case 39: // Boomerang: 100% daño y +2 turnos a los efectos activos del objetivo
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            ['poison', 'burn', 'paralysis', 'freeze', 'infect', 'curse', 'silence'].forEach(st => {
+              if (target.states[st] > 0) target.states[st] += 2;
+            });
+            if (log) logEvent(`🪃 <b>${attacker.name}</b> prolonga 2 turnos los efectos de <b>${target.name}</b>.`, "text-orange-400");
+          }
+          break;
+        case 40: // Helado a todos los enemigos (50% daño y congela)
+          enemies.forEach(e => {
+            dealDamage(attacker, e, Math.round(attacker.damage * 0.5), allEntities, log);
+            e.states.freeze = 2;
+          });
+          if (log) logEvent(`🍦 ¡Helado para todos! Enemigos congelados por 2 turnos.`, "text-cyan-400 font-bold");
+          break;
+        case 41: // Cura equipo (50% poder)
+          const healPower = Math.round(Math.max(attacker.damage * attacker.damageMulti, attacker.powerAmount) * 0.5);
+          allies.forEach(a => healEntity(a, healPower, log));
+          break;
+        case 42: // +1 evasión y +13% daño equipo
+          allies.forEach(a => {
+            a.avoid++;
+            a.damageMulti += 0.13;
+          });
+          if (log) logEvent(`💨 El equipo gana 1 evasión y +13% de daño.`, "text-blue-400 font-bold");
+          break;
+        case 43: // +5% daño a un aliado y limpia sus efectos
+          const ally43 = allies.find(a => a.id !== attacker.id) || attacker;
+          ally43.damageMulti += 0.05;
+          cleanStates(ally43);
+          if (log) logEvent(`🙏 <b>${attacker.name}</b> bendice a <b>${ally43.name}</b> (+5% daño y limpio de efectos).`, "text-emerald-400");
+          break;
+        case 44: // Ataque purificador: 100% daño; si target tiene efectos, los limpia y cura 20% daño
+          if (target) {
+            const hasEffects = Object.values(target.states).some(v => v > 0);
+            const d = dealDamage(attacker, target, attacker.damage, allEntities, log);
+            if (hasEffects) {
+              cleanStates(target);
+              healEntity(attacker, Math.round(d * 0.2), log);
+            }
+          }
+          break;
+        case 45: // Guardia sagrada: focus, +3% armadura, cura 10% max HP
+          attacker.hasFocus = true;
+          attacker.armorMulti += 0.03;
+          healEntity(attacker, Math.round(attacker.lifeMax * 0.1), log);
+          if (log) logEvent(`🛡️ <b>${attacker.name}</b> activa Guardia Sagrada: Focus, +3% armadura y autocuración.`, "text-yellow-400");
+          break;
+        case 46: // Instinto asesino: +7% vel, +7% daño
+          attacker.speedMulti += 0.07;
+          attacker.damageMulti += 0.07;
+          if (log) logEvent(`⚡ <b>${attacker.name}</b> activa Instinto Asesino (+7% daño y velocidad).`, "text-orange-400");
+          break;
+        case 47: // Huevo de fuego: 100% daño, quemadura y -3% armadura
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            target.states.burn = 3;
+            target.armorMulti = Math.max(0, target.armorMulti - 0.03);
+            if (log) logEvent(`🔥 <b>${target.name}</b> se quema y pierde 3% de armadura.`, "text-orange-400");
+          }
+          break;
+        case 48: // Roba 15% vida máxima
+          if (target) {
+            const stolen = Math.round(target.lifeMax * 0.15);
+            target.lifeMax = Math.max(1, target.lifeMax - stolen);
+            target.life = Math.min(target.life, target.lifeMax);
+            attacker.lifeMax += stolen;
+            healEntity(attacker, stolen, log);
+            checkDeath(target, attacker, allEntities, log);
+            if (log) logEvent(`🧛 <b>${attacker.name}</b> drena permanentemente ${stolen} de vida máxima de <b>${target.name}</b>.`, "text-purple-400 font-bold");
+          }
+          break;
+        case 49: // Huevo eléctrico: 100% daño, paraliza, +15 poder a aliados
+          if (target) {
+            dealDamage(attacker, target, attacker.damage, allEntities, log);
+            target.states.paralysis = 3;
+            allies.forEach(a => {
+              if (a.itemId !== 60) a.powerValue = Math.min(a.powerMax, a.powerValue + 15);
+            });
+            if (log) logEvent(`⚡ <b>${target.name}</b> queda Paralizado y los aliados ganan +15 de Poder.`, "text-yellow-400");
+          }
+          break;
+        case 50: // Absorbe efectos del target, los limpia y gana +4% a todas las stats
+          if (target) {
+            const hasEffects = Object.values(target.states).some(v => v > 0);
+            if (hasEffects) {
+              cleanStates(target);
+              attacker.damageMulti += 0.04;
+              attacker.armorMulti += 0.04;
+              attacker.speedMulti += 0.04;
+              if (log) logEvent(`⚡ <b>${attacker.name}</b> absorbe los efectos de <b>${target.name}</b> y gana +4% a todas sus stats!`, "text-cyan-400 font-bold");
+            } else {
+              dealDamage(attacker, target, attacker.damage, allEntities, log);
+            }
+          }
+          break;
+        case 51: // Sincronía energética: reduce en 10 el límite de poder del equipo (min 60)
+          allies.forEach(a => {
+            a.powerMax = Math.max(60, a.powerMax - 10);
+            a.powerValue = Math.min(a.powerValue, a.powerMax);
+          });
+          if (log) logEvent(`🔋 ¡El límite de poder del equipo se reduce en 10 (mínimo 60)!`, "text-blue-400 font-bold");
+          break;
+        default:
+          if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.2), allEntities, log);
+          break;
+      }
+    }
+
+    // DAMAGE RESOLUTION WITH ALL COMBAT PASSIVES & ITEMS
+    function dealDamage(attacker, target, rawDmg, allEntities, log = true) {
+      if (!target.alive) return 0;
+
+      // 1. Evasion check
+      if (target.avoid > 0) {
+        target.avoid--;
+        if (log) logEvent(`💨 ¡<b>${target.name}</b> evadió el ataque!`, "text-cyan-400");
+        return 0;
+      }
+
+      attacker.attackCount++;
+
+      // 2. Attacker on-attack buffs (first attack / passives)
+      let dmgMulti = attacker.damageMulti;
+
+      // First attack passives & items
+      if (attacker.firstAttack) {
+        if (attacker.passiveId === 0) { // Pollier: +50% dmg
+          dmgMulti += 0.5;
+          if (log) logEvent(`💥 [Pasiva Pollier] ¡Primer ataque con +50% de daño!`, "text-orange-400");
+        }
+        if (attacker.passiveId === 73) { // Ventora: +100% speed
+          attacker.speedMulti += 1.0;
+        }
+        if (attacker.passiveId === 21) { // Jhonatan: +50% speed
+          attacker.speedMulti += 0.5;
+        }
+        if (attacker.passiveId === 62) { // Miedo: paraliza primer golpe
+          target.states.paralysis = 3;
+        }
+        if (attacker.passiveId === 68) { // Cocore: quema primer golpe
+          target.states.burn = 3;
+        }
+        if (attacker.itemId === 28) { // Mirador dorado: primer golpe +25% daño y cura 50%
+          rawDmg = Math.round(rawDmg * 1.25);
+        }
+      }
+      attacker.firstAttack = false;
+
+      // Every-N attacks passives
+      if (attacker.passiveId === 7 && attacker.attackCount % 3 === 0) { // Pasti: envenena
+        target.states.poison = 3;
+        if (log) logEvent(`🧪 [Pasiva Pasti] <b>${target.name}</b> queda Envenenado por el 3er ataque.`, "text-purple-400");
+      }
+      if (attacker.passiveId === 40 && attacker.attackCount % 3 === 0) { // Candle: cura 10%
+        healEntity(attacker, Math.round(attacker.lifeMax * 0.1), log);
+      }
+      if (attacker.passiveId === 43 && attacker.attackCount % 3 === 0) { // Ignarto: quema
+        target.states.burn = 3;
+      }
+      if (attacker.passiveId === 49 && attacker.attackCount % 3 === 0) { // Cerol: +1 avoid
+        attacker.avoid++;
+      }
+      if (attacker.passiveId === 50 && attacker.attackCount % 3 === 0) { // Rufus: +15% daño
+        attacker.damageMulti += 0.15;
+      }
+      if (attacker.passiveId === 59 && attacker.attackCount % 5 === 0) { // Siul: full power
+        if (attacker.itemId !== 60) attacker.powerValue = attacker.powerMax;
+      }
+      if (attacker.passiveId === 81 && attacker.attackCount % 2 === 0) { // Egi: +15 power
+        if (attacker.itemId !== 60) attacker.powerValue = Math.min(attacker.powerMax, attacker.powerValue + 15);
+      }
+
+      // Status-conditional attacker passives
+      if (attacker.passiveId === 41 && target.states.burn > 0) dmgMulti += 0.10; // Magni (+10% si quemado)
+      if (attacker.passiveId === 113 && target.states.poison > 0) healEntity(attacker, Math.round(rawDmg * 0.20), log); // Chick (cura 20% si veneno)
+      if (attacker.passiveId === 141 && target.states.poison > 0) healEntity(attacker, Math.round(rawDmg * 0.33), log); // Toxic (cura 33% si veneno)
+      if (attacker.passiveId === 125 && target.states.paralysis > 0) rawDmg = Math.round(rawDmg * 1.30); // Rama (+30% si paralizado)
+      if (attacker.passiveId === 105 && target.states.freeze > 0) attacker.speedMulti += 0.20; // Pengu (+20% vel si congelado)
+      if (attacker.passiveId === 100 && target.states.freeze > 0) rawDmg = Math.round(rawDmg * 1.30); // Cloudy (+30% dmg si congelado)
+      if (attacker.passiveId === 143 && target.states.burn > 0) healEntity(attacker, Math.round(rawDmg * 0.20), log); // Blade (cura 20% si quemado)
+      if (attacker.passiveId === 149 && target.states.freeze > 0) attacker.damageMulti += 0.30; // Chimir (+30% daño si congelado)
+
+      // Attacker items
+      if (attacker.itemId === 27 && attacker.itemId !== 60) { // Arena milagrosa (+5 poder en ataque)
+        attacker.powerValue = Math.min(attacker.powerMax, attacker.powerValue + 5);
+      }
+      if (attacker.itemId === 57 && (target.states.freeze > 0 || target.states.paralysis > 0)) { // Conexión crítica
+        attacker.damageMulti += 0.02;
+      }
+
+      // Paralysis debuff (attacker deals 50% dmg)
+      if (attacker.states.paralysis > 0) {
+        dmgMulti *= 0.5;
+      }
+
+      const totalDmg = rawDmg * dmgMulti;
+
+      // Armor mitigation (clamp 0..0.90)
+      let targetArmor = target.armor * target.armorMulti;
+      if (target.states.paralysis > 0) targetArmor *= 0.5;
+      const armorClamped = clamp(targetArmor, 0, 0.90);
+
+      let realDamage = Math.max(1, Math.round(totalDmg * (1 - armorClamped)));
+
+      // Curse: +25% damage taken
+      if (target.states.curse > 0) {
+        realDamage = Math.round(realDamage * 1.25);
+      }
+
+      target.life = Math.max(0, target.life - realDamage);
+      target.lastAttackedMe = attacker;
+      attacker.damageDealt += realDamage;
+
+      if (log) {
+        const teamColor = (attacker.team === 0) ? "text-blue-400" : "text-red-400";
+        logEvent(`⚔️ <b class="${teamColor}">${attacker.name}</b> golpea a <b>${target.name}</b> por <b class="text-red-400">${realDamage}</b> daño <span class="text-[var(--muted-foreground)]">(${Math.round(armorClamped * 100)}% mitigado)</span>.`);
+      }
+
+      // Vampire beak lifesteal (item 66)
+      if (attacker.itemId === 66 && realDamage > 0) {
+        const healAmt = Math.max(1, Math.round(realDamage * 0.15));
+        healEntity(attacker, healAmt, log);
+      }
+      // Mirador dorado (item 28) first attack heal
+      if (attacker.itemId === 28 && attacker.attackCount === 1) {
+        healEntity(attacker, Math.round(realDamage * 0.5), log);
+      }
+
+      // Target when-hit passives & items
+      if (realDamage > 0 && target.alive) {
+        // Reflect passives: Vidro (passive 85, 20% reflect), Cactus (passive 89, 25% reflect)
+        if (target.passiveId === 85) {
+          const refDmg = Math.max(1, Math.round(realDamage * 0.20));
+          attacker.life = Math.max(0, attacker.life - refDmg);
+          if (log) logEvent(`🪞 [Pasiva Vidro] <b>${target.name}</b> refleja <b class="text-cyan-400">${refDmg}</b> daño a ${attacker.name}!`, "text-cyan-400");
+          checkDeath(attacker, target, allEntities, log);
+        }
+        if (target.passiveId === 89) {
+          const refDmg = Math.max(1, Math.round(realDamage * 0.25));
+          attacker.life = Math.max(0, attacker.life - refDmg);
+          if (log) logEvent(`🌵 [Pasiva Cactus] ¡Espinas reflejan <b class="text-emerald-400">${refDmg}</b> daño a ${attacker.name}!`, "text-emerald-400");
+          checkDeath(attacker, target, allEntities, log);
+        }
+
+        // Mechalex passive (id 134): +20 power when hit
+        if (target.passiveId === 134 && target.itemId !== 60) {
+          target.powerValue = Math.min(target.powerMax, target.powerValue + 20);
+        }
+        // Toka (passive 99): +10 power, -1% arm
+        if (target.passiveId === 99 && target.itemId !== 60) {
+          target.powerValue = Math.min(target.powerMax, target.powerValue + 10);
+          target.armorMulti = Math.max(0, target.armorMulti - 0.01);
+        }
+        // Clusio (passive 47): +3% armor, +5 power
+        if (target.passiveId === 47) {
+          target.armorMulti += 0.03;
+          if (target.itemId !== 60) target.powerValue = Math.min(target.powerMax, target.powerValue + 5);
+        }
+        // Toro (passive 148): +5% dmg, +5% vel
+        if (target.passiveId === 148) {
+          target.damageMulti += 0.05;
+          target.speedMulti += 0.05;
+        }
+        // Skull (passive 140): +3% arm, +3% dmg
+        if (target.passiveId === 140) {
+          target.armorMulti += 0.03;
+          target.damageMulti += 0.03;
+        }
+        // Eustavio (passive 15): +5% vel
+        if (target.passiveId === 15) {
+          target.speedMulti += 0.05;
+        }
+        // Poggie (passive 31): -12% vel atacante, +5% vel propio
+        if (target.passiveId === 31) {
+          attacker.speedMulti = Math.max(0.2, attacker.speedMulti - 0.12);
+          target.speedMulti += 0.05;
+        }
+        // Lava (passive 44): 25% chance to burn attacker
+        if (target.passiveId === 44 && Math.random() < 0.25) {
+          attacker.states.burn = 3;
+          if (log) logEvent(`🔥 [Pasiva Lava] <b>${attacker.name}</b> se quema al golpear a ${target.name}.`, "text-orange-400");
+        }
+
+        // When-hit items
+        if (target.itemId === 41 && Math.random() < 0.20) { // Frozen beak (20% freeze)
+          attacker.states.freeze = 2;
+          if (log) logEvent(`❄️ [Pico Helado] ¡<b>${attacker.name}</b> queda Congelado!`, "text-cyan-400");
+        }
+        if (target.itemId === 59) { // Vital conversion (+1% dmg, -1% vel)
+          target.damageMulti += 0.01;
+          target.speedMulti = Math.max(0.2, target.speedMulti - 0.01);
+        }
+      }
+
+      // Check potions on target if damaged
+      checkPotions(target, log);
+
+      // Check death on target
+      checkDeath(target, attacker, allEntities, log);
+      return realDamage;
+    }
+
+    // DEATH & REVIVE & ON-KILL/ON-DEATH EVENTS
+    function checkDeath(entity, killer, allEntities, log = true) {
       if (entity.life <= 0 && entity.alive) {
+        // Revive check
         if (entity.revive) {
           entity.revive = false;
           entity.life = Math.round(entity.lifeMax * 0.5);
+          if (entity.reviveAsZombie) {
+            transformEntity(entity, 6, log); // Revive as Zombie
+          }
           if (log) logEvent(`✨ ¡<b>${entity.name}</b> ha REVIVIDO con 50% de salud (${entity.life} HP)!`, "text-amber-400 font-bold");
-        } else {
-          entity.alive = false;
-          entity.life = 0;
-          if (log) logEvent(`💀 <b>${entity.name}</b> ha sido derrotado.`, "text-red-500 font-semibold");
+          return;
+        }
+
+        entity.alive = false;
+        entity.life = 0;
+        if (log) logEvent(`💀 <b>${entity.name}</b> ha sido derrotado.`, "text-red-500 font-semibold");
+
+        // On-death passives
+        const allies = allEntities.filter(e => e.team === entity.team && e.alive);
+        const enemies = allEntities.filter(e => e.team !== entity.team && e.alive);
+
+        switch (entity.passiveId) {
+          case 18: // Polliwatt: paraliza a todos los enemigos
+            enemies.forEach(e => e.states.paralysis = 3);
+            if (log) logEvent(`⚡ [Pasiva Polliwatt] ¡Todos los enemigos quedan Paralizados!`, "text-yellow-400 font-bold");
+            break;
+          case 23: // Porkie: envenena a todos los enemigos
+            enemies.forEach(e => e.states.poison = 3);
+            if (log) logEvent(`🧪 [Pasiva Porkie] ¡Todos los enemigos quedan Envenenados!`, "text-purple-400 font-bold");
+            break;
+          case 42: // Tiza: quema a todos los enemigos
+            enemies.forEach(e => e.states.burn = 3);
+            if (log) logEvent(`🔥 [Pasiva Tiza] ¡Todos los enemigos quedan Quemados!`, "text-orange-400 font-bold");
+            break;
+          case 38: // Grassy: cura 50% max HP al aliado
+            allies.forEach(a => healEntity(a, Math.round(a.lifeMax * 0.5), log));
+            break;
+          case 57: // Prisma: aliado recibe full power
+            allies.forEach(a => {
+              if (a.itemId !== 60) a.powerValue = a.powerMax;
+            });
+            break;
+          case 116: // Electron: explota (25% max HP a todos)
+            allEntities.filter(e => e.alive).forEach(e => {
+              e.life = Math.max(0, e.life - Math.round(entity.lifeMax * 0.25));
+            });
+            if (log) logEvent(`💥 [Pasiva Electron] ¡Explosión mortal daña a todos los sobrevivientes!`, "text-red-500 font-bold");
+            break;
+        }
+
+        // Void eye item (item 62): if ally dies, survivor gets +15% to all stats
+        allies.forEach(a => {
+          if (a.itemId === 62) {
+            a.damageMulti += 0.15;
+            a.armorMulti += 0.15;
+            a.speedMulti += 0.15;
+            if (log) logEvent(`👁️ [Ojo del Vacío] <b>${a.name}</b> absorbe el alma caída (+15% a todas sus estadísticas)!`, "text-purple-400 font-bold");
+          }
+        });
+
+        // Killer on-kill events
+        if (killer && killer.alive) {
+          killer.kills++;
+          // Item 30: Rotten wing (heal 100% if killed infected enemy)
+          if (killer.itemId === 30 && entity.states.infect > 0) {
+            healEntity(killer, killer.lifeMax, log);
+            if (log) logEvent(`🍗 [Ala Podrida] ¡<b>${killer.name}</b> devora al infectado y se cura al 100%!`, "text-emerald-400 font-bold");
+          }
+          // Killer passives
+          switch (killer.passiveId) {
+            case 5: // Cay: shuriken extra
+              const nextTarget = getTarget(killer, allEntities);
+              if (nextTarget) dealDamage(killer, nextTarget, Math.round(killer.damage * 1.5), allEntities, log);
+              break;
+            case 8: // Iris: +50 power
+              if (killer.itemId !== 60) killer.powerValue = Math.min(killer.powerMax, killer.powerValue + 50);
+              break;
+            case 9: // Pollisor: full power
+              if (killer.itemId !== 60) killer.powerValue = killer.powerMax;
+              break;
+            case 16: // Gallo: cura 33% max HP
+              healEntity(killer, Math.round(killer.lifeMax * 0.33), log);
+              break;
+            case 35: // Pais: +25% speed
+              killer.speedMulti += 0.25;
+              break;
+            case 52: // Sharky: +33% dmg
+              killer.damageMulti += 0.33;
+              break;
+            case 65: // Vapollo: +2 avoid
+              killer.avoid += 2;
+              break;
+            case 102: // Niwato: +15% dmg & vel
+              killer.damageMulti += 0.15;
+              killer.speedMulti += 0.15;
+              break;
+            case 117: // Monstruollo: full heal, -15% vel
+              healEntity(killer, killer.lifeMax, log);
+              killer.speedMulti = Math.max(0.2, killer.speedMulti - 0.15);
+              break;
+            case 139: // Star: heal 50% dmg, +100 power
+              healEntity(killer, Math.round((killer.damage * killer.damageMulti) * 0.5), log);
+              if (killer.itemId !== 60) killer.powerValue = Math.min(killer.powerMax, killer.powerValue + 100);
+              break;
+          }
         }
       }
     }
@@ -1150,7 +1761,7 @@
       };
     }
 
-    // RUN SINGLE TURN
+    // RUN SINGLE TURN (with turn-start items, passives, potions, status effects, actions)
     function runBattleTurn(state, log = true) {
       if (state.isFinished) return;
 
@@ -1170,23 +1781,56 @@
         const redAlive = state.entities.filter(e => e.team === 1 && e.alive).length;
         if (blueAlive === 0 || redAlive === 0) break;
 
+        // Check potions threshold at start of action
+        checkPotions(ent, log);
+
+        // Turn start items buffs
+        if (ent.itemId === 12) ent.damageMulti += 0.02; // Poder eggs-tra (+2% dmg cada turno)
+        if (ent.itemId === 14 && ent.states.burn > 0) ent.damageMulti += 0.01; // Flama potenciada
+        if (ent.itemId === 18 && ent.avoid === 0 && Math.random() < 0.05) ent.avoid++; // Zapapollos (5% avoid)
+        if (ent.itemId === 29 && ent.states.infect > 0) ent.damageMulti += 0.01; // Pico podrido
+        if (ent.itemId === 63) { // Ala de Garra: cura 5% al equipo
+          state.entities.filter(e => e.team === ent.team && e.alive).forEach(a => healEntity(a, Math.round(a.lifeMax * 0.05), false));
+        }
+
+        // Turn start passives buffs
+        if (ent.passiveId === 69) { ent.damageMulti += 0.03; ent.speedMulti += 0.03; } // Pinzon
+        if (ent.passiveId === 70) ent.armorMulti += 0.04; // Galligno
+        if (ent.passiveId === 72) healEntity(ent, Math.round(ent.lifeMax * 0.06), false); // Gallimbus
+        if (ent.passiveId === 121) { // Javo (+3% daño y vel al aliado)
+          state.entities.filter(e => e.team === ent.team && e.id !== ent.id).forEach(a => { a.damageMulti += 0.03; a.speedMulti += 0.03; });
+        }
+        if (ent.passiveId === 132) { // Pipasol: cura 5% al equipo
+          state.entities.filter(e => e.team === ent.team).forEach(a => healEntity(a, Math.round(ent.lifeMax * 0.05), false));
+        }
+        if (ent.passiveId === 135 && !ent.missileMechalex) { // Mechalex2: primer turno lanza misil y -4% armadura
+          ent.missileMechalex = true;
+          const missileTarget = getTarget(ent, state.entities);
+          if (missileTarget) dealDamage(ent, missileTarget, ent.damage, state.entities, log);
+          ent.armorMulti = Math.max(0, ent.armorMulti - 0.04);
+        }
+
         // A. Start of turn status effects (poison, burn, infect)
         if (ent.states.poison > 0) {
           const dmg = Math.max(1, Math.round(ent.lifeMax * 0.08));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.poison--;
           if (log) logEvent(`🧪 <b>${ent.name}</b> sufre ${dmg} daño por Veneno.`, "text-purple-400");
-          checkDeath(ent, log);
+          checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
 
         if (ent.states.burn > 0) {
-          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.07));
-          ent.life = Math.max(0, ent.life - dmg);
+          if (ent.itemId === 10) { // Sanación ardiente: quemadura cura en vez de dañar
+            healEntity(ent, Math.round(ent.lifeMax * 0.07), log);
+          } else {
+            const dmg = Math.max(1, Math.round(ent.lifeMax * 0.07));
+            ent.life = Math.max(0, ent.life - dmg);
+            if (log) logEvent(`🔥 <b>${ent.name}</b> sufre ${dmg} daño por Quemadura.`, "text-orange-400");
+            checkDeath(ent, null, state.entities, log);
+            if (!ent.alive) continue;
+          }
           ent.states.burn--;
-          if (log) logEvent(`🔥 <b>${ent.name}</b> sufre ${dmg} daño por Quemadura.`, "text-orange-400");
-          checkDeath(ent, log);
-          if (!ent.alive) continue;
         }
 
         if (ent.states.infect > 0) {
@@ -1194,7 +1838,7 @@
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.infect--;
           if (log) logEvent(`💀 <b>${ent.name}</b> sufre ${dmg} daño por Infección.`, "text-green-500");
-          checkDeath(ent, log);
+          checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
 
@@ -1214,21 +1858,24 @@
           }
         }
 
-        // Lock power bar for Forbidden Fragment
+        // D. Silence count down
+        if (ent.states.silence > 0) {
+          ent.states.silence--;
+        }
+
+        // E. Ensure Forbidden Fragment locks power to 0
         if (ent.itemId === 60) {
           ent.powerValue = 0;
         }
 
-        // D. Charge power & Action
-        if (ent.powerValue >= ent.powerMax && ent.itemId !== 60) {
-          // Cast Power!
+        // F. Action: Cast Power or Normal Attack
+        if (ent.powerValue >= ent.powerMax && ent.itemId !== 60 && ent.states.silence === 0) {
           executePower(ent, state.entities, log);
           ent.powerValue = 0;
         } else {
-          // Normal attack
           const target = getTarget(ent, state.entities);
           if (target) {
-            dealDamage(ent, target, ent.damage, log);
+            dealDamage(ent, target, ent.damage, state.entities, log);
             // Power charge
             if (ent.itemId !== 60) {
               ent.powerValue = Math.min(ent.powerMax, ent.powerValue + ent.powerAmount);
@@ -1256,9 +1903,7 @@
         state.winnerTeam = 1;
         if (log) logEvent(`🏆 ¡VICTORIA DEL EQUIPO ROJO en la Ronda ${state.round}!`, "text-red-400 font-black text-sm");
       } else if (state.round >= 50) {
-        // Max rounds cutoff
         state.isFinished = true;
-        // Decision by total remaining HP
         const blueHp = state.entities.filter(e => e.team === 0).reduce((acc, c) => acc + c.life, 0);
         const redHp = state.entities.filter(e => e.team === 1).reduce((acc, c) => acc + c.life, 0);
         state.winnerTeam = (blueHp >= redHp) ? 0 : 1;

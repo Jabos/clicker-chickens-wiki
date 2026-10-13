@@ -5,7 +5,9 @@ window.WIKI_DATA = {
       "id": 0,
       "name": {
         "es": "Pollier",
-        "en": "Pollier"
+        "en": "Pollier",
+        "pt": "Pollier",
+        "ru": "Pollier"
       },
       "sprite": "images/chickens/0.png",
       "default_item_id": 1,
@@ -26,6 +28,10 @@ window.WIKI_DATA = {
         "wild": [],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -46,6 +52,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Primeiro ataque causa 50% de dano extra) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Первая атака наносит на 50% больше урона) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -53,7 +75,9 @@ window.WIKI_DATA = {
       "id": 1,
       "name": {
         "es": "Chica",
-        "en": "Chica"
+        "en": "Chica",
+        "pt": "Chica",
+        "ru": "Chica"
       },
       "sprite": "images/chickens/1.png",
       "default_item_id": 3,
@@ -77,6 +101,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -97,6 +128,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Começa com ataque duplo) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 140 pontos de energia (carrega em cerca de ~14 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Начинает с двойной атаки) задает боевой стиль, а активный навык (Двойная атака) требует 140 энергии (заряжается примерно за ~14 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -104,7 +151,9 @@ window.WIKI_DATA = {
       "id": 2,
       "name": {
         "es": "McDuck",
-        "en": "McDuck"
+        "en": "McDuck",
+        "pt": "McDuck",
+        "ru": "McDuck"
       },
       "sprite": "images/chickens/2.png",
       "default_item_id": 4,
@@ -128,6 +177,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -148,6 +204,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Começa lançando um ovo dourado e ganha dano (+10%) e velocidade (+10%)) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (В начале боя бросает золотое яйцо и получает урон (+10%) и скорость (+10%)) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -155,7 +227,9 @@ window.WIKI_DATA = {
       "id": 3,
       "name": {
         "es": "Ponk",
-        "en": "Ponk"
+        "en": "Ponk",
+        "pt": "Ponk",
+        "ru": "Ponk"
       },
       "sprite": "images/chickens/3.png",
       "default_item_id": 20,
@@ -179,6 +253,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -199,6 +280,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao se curar, cura aliados (50% do dano)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 130 pontos de energia (carrega em cerca de ~7 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При лечении себя лечит союзников (50% от лечения)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 130 энергии (заряжается примерно за ~7 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -206,7 +303,9 @@ window.WIKI_DATA = {
       "id": 4,
       "name": {
         "es": "Mali",
-        "en": "Mali"
+        "en": "Mali",
+        "pt": "Mali",
+        "ru": "Mali"
       },
       "sprite": "images/chickens/4.png",
       "default_item_id": 4,
@@ -230,6 +329,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -250,6 +356,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Ao usar poder, cura a si mesmo (50% do dano)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (При использовании силы лечит себя (50% от урона)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~3 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -257,7 +379,9 @@ window.WIKI_DATA = {
       "id": 5,
       "name": {
         "es": "Cay",
-        "en": "Cay"
+        "en": "Cay",
+        "pt": "Cay",
+        "ru": "Cay"
       },
       "sprite": "images/chickens/5.png",
       "default_item_id": 3,
@@ -281,6 +405,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -301,6 +432,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao derrotar um inimigo, arremessa uma shuriken (150% de dano)) define seu estilo de jogo, complementada por seu poder (Arremessa uma shuriken (150% de dano)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При победе над врагом бросает сюрикен (150% урона)) задает боевой стиль, а активный навык (Бросает сюрикен (150% урона)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -308,7 +455,9 @@ window.WIKI_DATA = {
       "id": 6,
       "name": {
         "es": "Zombie",
-        "en": "Zombie"
+        "en": "Zombie",
+        "pt": "Zombie",
+        "ru": "Zombie"
       },
       "sprite": "images/chickens/6.png",
       "default_item_id": 29,
@@ -332,6 +481,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -352,6 +508,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao atacar, cura a si mesmo (20% da vida perdida)) define seu estilo de jogo, complementada por seu poder (Perde vida, ganha dano (-10% vida máx, +25% dano)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При атаке лечит себя (20% недостающего здоровья)) задает боевой стиль, а активный навык (Теряет здоровье, получает урон (-10% макс. здоровья, +25% урона)) требует 100 энергии (заряжается примерно за ~10 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -359,7 +531,9 @@ window.WIKI_DATA = {
       "id": 7,
       "name": {
         "es": "Pasti",
-        "en": "Pasti"
+        "en": "Pasti",
+        "pt": "Pasti",
+        "ru": "Pasti"
       },
       "sprite": "images/chickens/7.png",
       "default_item_id": 9,
@@ -383,6 +557,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -403,6 +584,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 3 ataques, envenena) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 3 атаки отравляет) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~4 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -410,7 +607,9 @@ window.WIKI_DATA = {
       "id": 8,
       "name": {
         "es": "Iris",
-        "en": "Iris"
+        "en": "Iris",
+        "pt": "Iris",
+        "ru": "Iris"
       },
       "sprite": "images/chickens/8.png",
       "default_item_id": 3,
@@ -434,6 +633,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -454,6 +660,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao derrotar um inimigo, ganha +50 de poder e +25 de carga de poder) define seu estilo de jogo, complementada por seu poder (Copia o último poder) que requer 120 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При победе над врагом получает +50 энергии и +25 к накоплению энергии) задает боевой стиль, а активный навык (Копирует последнюю силу) требует 120 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -461,7 +683,9 @@ window.WIKI_DATA = {
       "id": 9,
       "name": {
         "es": "Pollisor",
-        "en": "Pollisor"
+        "en": "Pollisor",
+        "pt": "Pollisor",
+        "ru": "Pollisor"
       },
       "sprite": "images/chickens/9.png",
       "default_item_id": 5,
@@ -484,14 +708,24 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": {
         "type": "evolves_into",
         "target_id": 10,
         "target_name": "Pollisaur",
-        "desc_es": "Evoluciona a Pollisaur en combate al usar su habilidad especial.",
-        "desc_en": "Evolves into Pollisaur in combat when using its special power."
+        "desc": {
+          "es": "Evoluciona a Pollisaur en combate al usar su habilidad especial.",
+          "en": "Evolves into Pollisaur in combat when using its special power.",
+          "pt": "Evolui para Pollisaur em combate ao usar seu poder especial.",
+          "ru": "Эволюционирует в Pollisaur в бою при использовании особой способности."
+        }
       },
       "tactical_guide": {
         "turns": 3,
@@ -510,6 +744,22 @@ window.WIKI_DATA = {
           "allies": "Heavy finishers (Zombie, Mechalex, Cacho) configured to target opponents with the lowest health.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao derrotar um inimigo, ganha poder total) define seu estilo de jogo, complementada por seu poder (Transforma-se em Pollisaur) que requer 150 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Finalizadores contundentes (Zombie, Mechalex, Cacho) configurados para atacar alvos com menos vida.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При победе над врагом полная сила) задает боевой стиль, а активный навык (Превращается в Pollisaur) требует 150 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные финишеры (Zombie, Mechalex, Cacho), настроенные атаковать цель с наименьшим здоровьем.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -517,7 +767,9 @@ window.WIKI_DATA = {
       "id": 10,
       "name": {
         "es": "Pollisaur",
-        "en": "Pollisaur"
+        "en": "Pollisaur",
+        "pt": "Pollisaur",
+        "ru": "Pollisaur"
       },
       "sprite": "images/chickens/10.png",
       "default_item_id": 5,
@@ -536,15 +788,21 @@ window.WIKI_DATA = {
       "stat_total": 400,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": {
         "type": "evolved_from",
         "source_id": 9,
         "source_name": "Pollisor",
         "evolution_only": true,
-        "desc_es": "Forma evolucionada de Pollisor. No aparece en estado salvaje ni en huevos.",
-        "desc_en": "Evolved form of Pollisor. Does not appear wild or in eggs."
+        "desc": {
+          "es": "Forma evolucionada de Pollisor. No aparece en estado salvaje ni en huevos.",
+          "en": "Evolved form of Pollisor. Does not appear wild or in eggs.",
+          "pt": "Forma evoluída de Pollisor. Não aparece em estado selvagem nem em ovos.",
+          "ru": "Эволюционировавшая форма Pollisor. Не встречается в диком виде и яйцах."
+        }
       },
       "tactical_guide": {
         "turns": 2,
@@ -563,6 +821,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao derrotar um inimigo, reinicia o poder) define seu estilo de jogo, complementada por seu poder (Transforma-se em Pollisor) que requer 90 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При победе над врагом сбрасывает силу) задает боевой стиль, а активный навык (Превращается в Pollisor) требует 90 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -570,7 +844,9 @@ window.WIKI_DATA = {
       "id": 11,
       "name": {
         "es": "Vio",
-        "en": "Vio"
+        "en": "Vio",
+        "pt": "Vio",
+        "ru": "Vio"
       },
       "sprite": "images/chickens/11.png",
       "default_item_id": 9,
@@ -595,6 +871,14 @@ window.WIKI_DATA = {
         "eggs": [
           "La fábrica",
           "Arcana"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7,
+          8
         ]
       },
       "evolution": null,
@@ -615,6 +899,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, 10% de dano extra) define seu estilo de jogo, complementada por seu poder (Lança um míssil, aplica queimadura) que requer 120 pontos de energia (carrega em cerca de ~6 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы +10% урона) задает боевой стиль, а активный навык (Запускает ракету, накладывает ожог) требует 120 энергии (заряжается примерно за ~6 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -622,7 +922,9 @@ window.WIKI_DATA = {
       "id": 12,
       "name": {
         "es": "Polliro",
-        "en": "Polliro"
+        "en": "Polliro",
+        "pt": "Polliro",
+        "ru": "Polliro"
       },
       "sprite": "images/chickens/12.png",
       "default_item_id": 4,
@@ -646,6 +948,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -666,6 +975,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Após arremessar shuriken, desvia do primeiro ataque) define seu estilo de jogo, complementada por seu poder (Arremessa uma shuriken (150% de dano)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (После броска сюрикена уклоняется от первой атаки) задает боевой стиль, а активный навык (Бросает сюрикен (150% урона)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -673,7 +998,9 @@ window.WIKI_DATA = {
       "id": 13,
       "name": {
         "es": "Easy East",
-        "en": "Easy East"
+        "en": "Easy East",
+        "pt": "Easy East",
+        "ru": "Easy East"
       },
       "sprite": "images/chickens/13.png",
       "default_item_id": 27,
@@ -697,6 +1024,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -717,6 +1051,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Phoenix Pages (grants another revival); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao reviver ganha 25% de dano extra) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de reviver obriga a equipe adversária a derrotá-lo duas vezes, absorvendo turnos preciosos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Páginas da Fênix (concede novo renascimento); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При возрождении получает +25% урона) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~5 ходов). Способность возрождаться заставляет противников побеждать его дважды, теряя ценный темп боя.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Страницы феникса (дает повторное возрождение); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -724,7 +1074,9 @@ window.WIKI_DATA = {
       "id": 14,
       "name": {
         "es": "Snow",
-        "en": "Snow"
+        "en": "Snow",
+        "pt": "Snow",
+        "ru": "Snow"
       },
       "sprite": "images/chickens/14.png",
       "default_item_id": 6,
@@ -748,6 +1100,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -768,6 +1127,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar poder, congela o alvo) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 130 pontos de energia (carrega em cerca de ~3 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании силы замораживает цель) задает боевой стиль, а активный навык (Двойная атака) требует 130 энергии (заряжается примерно за ~3 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -775,7 +1150,9 @@ window.WIKI_DATA = {
       "id": 15,
       "name": {
         "es": "Eustavio",
-        "en": "Eustavio"
+        "en": "Eustavio",
+        "pt": "Eustavio",
+        "ru": "Eustavio"
       },
       "sprite": "images/chickens/15.png",
       "default_item_id": 6,
@@ -799,6 +1176,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -819,6 +1203,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (5% de velocidade extra ao acertar) define seu estilo de jogo, complementada por seu poder (Ganha 10% extra em um atributo aleatório) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (+5% скорости при ударе) задает боевой стиль, а активный навык (Получает +10% к случайному стату) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -826,7 +1226,9 @@ window.WIKI_DATA = {
       "id": 16,
       "name": {
         "es": "Gallo",
-        "en": "Gallo"
+        "en": "Gallo",
+        "pt": "Gallo",
+        "ru": "Gallo"
       },
       "sprite": "images/chickens/16.png",
       "default_item_id": 1,
@@ -850,6 +1252,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -870,6 +1279,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao derrotar um inimigo cura a si mesmo (33% vida máx)) define seu estilo de jogo, complementada por seu poder (A equipe ganha armadura (+10% armadura)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При победе над врагом лечит себя (33% макс. здоровья)) задает боевой стиль, а активный навык (Команда получает броню (+10% брони)) требует 100 энергии (заряжается примерно за ~10 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -877,7 +1302,9 @@ window.WIKI_DATA = {
       "id": 17,
       "name": {
         "es": "Raro",
-        "en": "Raro"
+        "en": "Raro",
+        "pt": "Raro",
+        "ru": "Raro"
       },
       "sprite": "images/chickens/17.png",
       "default_item_id": 3,
@@ -901,6 +1328,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -921,6 +1355,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Miracle Sand (+5 power gain per hit).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar poder, aplica um efeito aleatório a todos os inimigos) define seu estilo de jogo, complementada por seu poder (Arremessa uma bomba (80% dano ao alvo, 40% aos outros)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Areia Milagrosa (+5 de poder a cada golpe).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании способности накладывает случайный эффект на всех врагов) задает боевой стиль, а активный навык (Бросает бомбу (80% урона цели, 40% остальным)) требует 100 энергии (заряжается примерно за ~2 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Чудесный песок (+5 к силе за каждый удар).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -928,7 +1378,9 @@ window.WIKI_DATA = {
       "id": 18,
       "name": {
         "es": "Polliwatt",
-        "en": "Polliwatt"
+        "en": "Polliwatt",
+        "pt": "Polliwatt",
+        "ru": "Polliwatt"
       },
       "sprite": "images/chickens/18.png",
       "default_item_id": 18,
@@ -952,6 +1404,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -972,6 +1431,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Quando derrotado, paralisa todos os inimigos) define seu estilo de jogo, complementada por seu poder (Paralisa o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При поражении парализует всех врагов) задает боевой стиль, а активный навык (Парализует цель) требует 100 энергии (заряжается примерно за ~5 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -979,7 +1454,9 @@ window.WIKI_DATA = {
       "id": 19,
       "name": {
         "es": "Armor",
-        "en": "Armor"
+        "en": "Armor",
+        "pt": "Armor",
+        "ru": "Armor"
       },
       "sprite": "images/chickens/19.png",
       "default_item_id": 9,
@@ -1003,6 +1480,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -1023,6 +1507,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Não pode ser envenenado. Se um inimigo envenenado o atacar, ganha armadura (+5%)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Нельзя отравить. При атаке отравленного врага получает броню (+5%)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -1030,7 +1530,9 @@ window.WIKI_DATA = {
       "id": 20,
       "name": {
         "es": "Zeo",
-        "en": "Zeo"
+        "en": "Zeo",
+        "pt": "Zeo",
+        "ru": "Zeo"
       },
       "sprite": "images/chickens/20.png",
       "default_item_id": 3,
@@ -1054,6 +1556,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1074,6 +1583,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Electrostatic Spike (paralyzes target on start, cutting speed by 50%).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (5% de dano extra quando aliado usa poder) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (+5% урона, когда союзник использует силу) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Электрошип (парализует цель на старте, снижая скорость на 50%).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1081,7 +1606,9 @@ window.WIKI_DATA = {
       "id": 21,
       "name": {
         "es": "Jhona",
-        "en": "Jhona"
+        "en": "Jhona",
+        "pt": "Jhona",
+        "ru": "Jhona"
       },
       "sprite": "images/chickens/21.png",
       "default_item_id": 3,
@@ -1105,6 +1632,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1125,6 +1659,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Não pode ser paralisado. Seu primeiro ataque tem velocidade aumentada (+50%)) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Нельзя парализовать. Первая атака имеет повышенную скорость (+50%)) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -1132,7 +1682,9 @@ window.WIKI_DATA = {
       "id": 22,
       "name": {
         "es": "Mega",
-        "en": "Mega"
+        "en": "Mega",
+        "pt": "Mega",
+        "ru": "Mega"
       },
       "sprite": "images/chickens/22.png",
       "default_item_id": 18,
@@ -1156,6 +1708,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -1176,6 +1735,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Miracle Sand (+5 power gain per hit).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Desvia de projéteis) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Areia Milagrosa (+5 de poder a cada golpe).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Уклоняется от снарядов) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~2 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Чудесный песок (+5 к силе за каждый удар).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1183,7 +1758,9 @@ window.WIKI_DATA = {
       "id": 23,
       "name": {
         "es": "Porky",
-        "en": "Porky"
+        "en": "Porky",
+        "pt": "Porky",
+        "ru": "Porky"
       },
       "sprite": "images/chickens/23.png",
       "default_item_id": 25,
@@ -1207,6 +1784,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1227,6 +1811,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Quando derrotado, envenena todos os inimigos) define seu estilo de jogo, complementada por seu poder (Envenena o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При поражении отравляет всех врагов) задает боевой стиль, а активный навык (Отравляет цель) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -1234,7 +1834,9 @@ window.WIKI_DATA = {
       "id": 24,
       "name": {
         "es": "Lapiz",
-        "en": "Lapiz"
+        "en": "Lapiz",
+        "pt": "Lapiz",
+        "ru": "Lapiz"
       },
       "sprite": "images/chickens/24.png",
       "default_item_id": 3,
@@ -1258,6 +1860,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1278,6 +1887,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ser atacado, afia-se: próximo ataque causa dano crítico extra (30%)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При получении удара затачивается: следующая атака наносит крит. урон (+30%)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -1285,7 +1910,9 @@ window.WIKI_DATA = {
       "id": 25,
       "name": {
         "es": "Manic",
-        "en": "Manic"
+        "en": "Manic",
+        "pt": "Manic",
+        "ru": "Manic"
       },
       "sprite": "images/chickens/25.png",
       "default_item_id": 3,
@@ -1309,6 +1936,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -1329,6 +1963,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Começa com uma bomba e lança uma bomba sempre que qualquer frango usar seu poder) define seu estilo de jogo, complementada por seu poder (Perde vida (-10% vida máx.), o aliado ganha poder total e o próximo turno) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Начинает с бомбой и бросает бомбу каждый раз, когда любая курица использует способность) задает боевой стиль, а активный навык (Теряет здоровье (-10% макс. HP), союзник получает полную силу и следующий ход) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1336,7 +1986,9 @@ window.WIKI_DATA = {
       "id": 26,
       "name": {
         "es": "Jeff",
-        "en": "Jeff"
+        "en": "Jeff",
+        "pt": "Jeff",
+        "ru": "Jeff"
       },
       "sprite": "images/chickens/26.png",
       "default_item_id": 3,
@@ -1360,6 +2012,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -1380,6 +2039,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 3 ataques, arremessa um ovo) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 3 атаки бросает яйцо) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~3 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1387,7 +2062,9 @@ window.WIKI_DATA = {
       "id": 27,
       "name": {
         "es": "Invert",
-        "en": "Invert"
+        "en": "Invert",
+        "pt": "Invert",
+        "ru": "Invert"
       },
       "sprite": "images/chickens/27.png",
       "default_item_id": 3,
@@ -1411,6 +2088,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -1431,6 +2115,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Ao usar poder, +5% para um atributo aleatório de aliado) define seu estilo de jogo, complementada por seu poder (Aleatoriza todos os multiplicadores (0.25 a 1.75)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (При использовании силы +5% случайному стату союзника) задает боевой стиль, а активный навык (Рандомизирует все множители (от 0.25 до 1.75)) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -1438,7 +2138,9 @@ window.WIKI_DATA = {
       "id": 28,
       "name": {
         "es": "Alien",
-        "en": "Alien"
+        "en": "Alien",
+        "pt": "Alien",
+        "ru": "Alien"
       },
       "sprite": "images/chickens/28.png",
       "default_item_id": 4,
@@ -1462,6 +2164,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -1482,6 +2191,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Desvia do primeiro ataque) define seu estilo de jogo, complementada por seu poder (Troca multiplicador de dano com o alvo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Избегает первой атаки) задает боевой стиль, а активный навык (Меняется множителем урона с целью) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -1489,7 +2214,9 @@ window.WIKI_DATA = {
       "id": 29,
       "name": {
         "es": "Iguanarto",
-        "en": "Iguanarto"
+        "en": "Iguanarto",
+        "pt": "Iguanarto",
+        "ru": "Iguanarto"
       },
       "sprite": "images/chickens/29.png",
       "default_item_id": 3,
@@ -1513,6 +2240,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -1533,6 +2267,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Ganha foco) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 80 pontos de energia (carrega em cerca de ~4 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (Получает фокус) задает боевой стиль, а активный навык (Двойная атака) требует 80 энергии (заряжается примерно за ~4 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -1540,7 +2290,9 @@ window.WIKI_DATA = {
       "id": 30,
       "name": {
         "es": "Mosca",
-        "en": "Mosca"
+        "en": "Mosca",
+        "pt": "Mosca",
+        "ru": "Mosca"
       },
       "sprite": "images/chickens/30.png",
       "default_item_id": 3,
@@ -1564,6 +2316,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -1584,6 +2343,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar poder, arremessa 2 moscas (50% dano, 50% veneno)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~7 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании силы бросает 2 мух (50% урона, 50% яд)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~7 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1591,7 +2366,9 @@ window.WIKI_DATA = {
       "id": 31,
       "name": {
         "es": "Poggie",
-        "en": "Poggie"
+        "en": "Poggie",
+        "pt": "Poggie",
+        "ru": "Poggie"
       },
       "sprite": "images/chickens/31.png",
       "default_item_id": 3,
@@ -1615,6 +2392,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -1635,6 +2419,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao ser atacado, reduz a velocidade do atacante (12%) e ganha velocidade (+5%)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При атаке на него снижает скорость атакующего на 12% и получает +5% скорости) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~10 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -1642,7 +2442,9 @@ window.WIKI_DATA = {
       "id": 32,
       "name": {
         "es": "Toraishi",
-        "en": "Toraishi"
+        "en": "Toraishi",
+        "pt": "Toraishi",
+        "ru": "Toraishi"
       },
       "sprite": "images/chickens/32.png",
       "default_item_id": 3,
@@ -1666,6 +2468,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -1686,6 +2495,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Após arremessar um ovo, 10% de dano extra) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (После броска яйца +10% урона) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~3 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1693,7 +2518,9 @@ window.WIKI_DATA = {
       "id": 33,
       "name": {
         "es": "Nevermore",
-        "en": "Nevermore"
+        "en": "Nevermore",
+        "pt": "Nevermore",
+        "ru": "Nevermore"
       },
       "sprite": "images/chickens/33.png",
       "default_item_id": 20,
@@ -1717,6 +2544,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -1737,6 +2571,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada ataque, 25% de chance de arremessar uma mosca (50% dano, 50% veneno)) define seu estilo de jogo, complementada por seu poder (Amaldiçoa o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждая атака: 25% шанс бросить муху (50% урона, 50% яд)) задает боевой стиль, а активный навык (Проклинает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -1744,7 +2594,9 @@ window.WIKI_DATA = {
       "id": 34,
       "name": {
         "es": "Phantom",
-        "en": "Phantom"
+        "en": "Phantom",
+        "pt": "Phantom",
+        "ru": "Phantom"
       },
       "sprite": "images/chickens/34.png",
       "default_item_id": 1,
@@ -1768,6 +2620,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -1788,6 +2647,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Copia poder do aliado) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Копирует силу союзника) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~3 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -1795,7 +2670,9 @@ window.WIKI_DATA = {
       "id": 35,
       "name": {
         "es": "Pais",
-        "en": "Pais"
+        "en": "Pais",
+        "pt": "Pais",
+        "ru": "Pais"
       },
       "sprite": "images/chickens/35.png",
       "default_item_id": 1,
@@ -1819,6 +2696,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1839,6 +2723,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Ao derrotar um inimigo, 25% de velocidade extra) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (При победе над врагом +25% скорости) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -1846,7 +2746,9 @@ window.WIKI_DATA = {
       "id": 36,
       "name": {
         "es": "Valu",
-        "en": "Valu"
+        "en": "Valu",
+        "pt": "Valu",
+        "ru": "Valu"
       },
       "sprite": "images/chickens/36.png",
       "default_item_id": 25,
@@ -1870,6 +2772,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1890,6 +2799,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Começa a batalha com poder total) define seu estilo de jogo, complementada por seu poder (Envenena o alvo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Начинает битву с полной силой) задает боевой стиль, а активный навык (Отравляет цель) требует 100 энергии (заряжается примерно за ~10 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -1897,7 +2822,9 @@ window.WIKI_DATA = {
       "id": 37,
       "name": {
         "es": "Pastank",
-        "en": "Pastank"
+        "en": "Pastank",
+        "pt": "Pastank",
+        "ru": "Pastank"
       },
       "sprite": "images/chickens/37.png",
       "default_item_id": 9,
@@ -1921,6 +2848,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1941,6 +2875,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Repete o poder) define seu estilo de jogo, complementada por seu poder (Lança um míssil, aplica queimadura) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Повторяет силу) задает боевой стиль, а активный навык (Запускает ракету, накладывает ожог) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -1948,7 +2898,9 @@ window.WIKI_DATA = {
       "id": 38,
       "name": {
         "es": "Pastinni",
-        "en": "Pastinni"
+        "en": "Pastinni",
+        "pt": "Pastinni",
+        "ru": "Pastinni"
       },
       "sprite": "images/chickens/38.png",
       "default_item_id": 1,
@@ -1972,6 +2924,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -1992,6 +2951,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Miracle Sand (+5 power gain per hit); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando derrotado, cura aliado (50% vida máx)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При поражении лечит союзника (50% макс. здоровья)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -1999,7 +2974,9 @@ window.WIKI_DATA = {
       "id": 39,
       "name": {
         "es": "Cacho",
-        "en": "Cacho"
+        "en": "Cacho",
+        "pt": "Cacho",
+        "ru": "Cacho"
       },
       "sprite": "images/chickens/39.png",
       "default_item_id": 3,
@@ -2023,6 +3000,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -2043,6 +3027,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Pode mirar em aliados) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Может выбирать союзников целью) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2050,7 +3050,9 @@ window.WIKI_DATA = {
       "id": 40,
       "name": {
         "es": "Candle",
-        "en": "Candle"
+        "en": "Candle",
+        "pt": "Candle",
+        "ru": "Candle"
       },
       "sprite": "images/chickens/40.png",
       "default_item_id": 10,
@@ -2074,6 +3076,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2094,6 +3103,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 3 ataques, cura a si mesmo (10% vida máx)) define seu estilo de jogo, complementada por seu poder (Queima o alvo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 3 атаки лечит себя (10% макс. здоровья)) задает боевой стиль, а активный навык (Поджигает цель) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -2101,7 +3126,9 @@ window.WIKI_DATA = {
       "id": 41,
       "name": {
         "es": "Magni",
-        "en": "Magni"
+        "en": "Magni",
+        "pt": "Magni",
+        "ru": "Magni"
       },
       "sprite": "images/chickens/41.png",
       "default_item_id": 1,
@@ -2125,6 +3152,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2145,6 +3179,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Não pode ser queimado. Se tentarem queimá-lo ou atacar um alvo em chamas, ganha dano (+10%)) define seu estilo de jogo, complementada por seu poder (Queima o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Нельзя поджечь. При попытке поджога или атаке горящего врага получает урон (+10%)) задает боевой стиль, а активный навык (Поджигает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -2152,7 +3202,9 @@ window.WIKI_DATA = {
       "id": 42,
       "name": {
         "es": "Tiza",
-        "en": "Tiza"
+        "en": "Tiza",
+        "pt": "Tiza",
+        "ru": "Tiza"
       },
       "sprite": "images/chickens/42.png",
       "default_item_id": 3,
@@ -2176,6 +3228,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2196,6 +3255,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando derrotado, queima todos os inimigos) define seu estilo de jogo, complementada por seu poder (Perde vida, ganha dano (-10% vida máx, +25% dano)) que requer 100 pontos de energia (carrega em cerca de ~7 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При поражении поджигает всех врагов) задает боевой стиль, а активный навык (Теряет здоровье, получает урон (-10% макс. здоровья, +25% урона)) требует 100 энергии (заряжается примерно за ~7 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2203,7 +3278,9 @@ window.WIKI_DATA = {
       "id": 43,
       "name": {
         "es": "Ignarto",
-        "en": "Ignarto"
+        "en": "Ignarto",
+        "pt": "Ignarto",
+        "ru": "Ignarto"
       },
       "sprite": "images/chickens/43.png",
       "default_item_id": 4,
@@ -2227,6 +3304,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2247,6 +3331,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 3 ataques, queima) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 3 атаки поджигает) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~2 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -2254,7 +3354,9 @@ window.WIKI_DATA = {
       "id": 44,
       "name": {
         "es": "Lava",
-        "en": "Lava"
+        "en": "Lava",
+        "pt": "Lava",
+        "ru": "Lava"
       },
       "sprite": "images/chickens/44.png",
       "default_item_id": 3,
@@ -2278,6 +3380,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2298,6 +3407,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (25% de chance de queimar ao ser atacado) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (25% шанс поджечь при получении атаки) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~5 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -2305,7 +3430,9 @@ window.WIKI_DATA = {
       "id": 45,
       "name": {
         "es": "Vulcano",
-        "en": "Vulcano"
+        "en": "Vulcano",
+        "pt": "Vulcano",
+        "ru": "Vulcano"
       },
       "sprite": "images/chickens/45.png",
       "default_item_id": 1,
@@ -2329,6 +3456,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2349,6 +3483,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, 5% de dano extra e cura (10% vida máx)) define seu estilo de jogo, complementada por seu poder (Queima o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы +5% урона и лечит (10% макс. здоровья)) задает боевой стиль, а активный навык (Поджигает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -2356,7 +3506,9 @@ window.WIKI_DATA = {
       "id": 46,
       "name": {
         "es": "Robotop",
-        "en": "Robotop"
+        "en": "Robotop",
+        "pt": "Robotop",
+        "ru": "Robotop"
       },
       "sprite": "images/chickens/46.png",
       "default_item_id": 9,
@@ -2380,6 +3532,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -2400,6 +3559,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Quando usa poder, +15% de armadura e evita o próximo ataque) define seu estilo de jogo, complementada por seu poder (Arremessa uma bomba (80% dano ao alvo, 40% aos outros)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании способности +15% брони и уклоняется от следующей атаки) задает боевой стиль, а активный навык (Бросает бомбу (80% урона цели, 40% остальным)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -2407,7 +3582,9 @@ window.WIKI_DATA = {
       "id": 47,
       "name": {
         "es": "Clusio",
-        "en": "Clusio"
+        "en": "Clusio",
+        "pt": "Clusio",
+        "ru": "Clusio"
       },
       "sprite": "images/chickens/47.png",
       "default_item_id": 3,
@@ -2428,6 +3605,10 @@ window.WIKI_DATA = {
         "wild": [],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -2448,6 +3629,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao ser atacado, ganha armadura (+3%) e poder (+5)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx.) e armadura (+15%)) que requer 100 pontos de energia (carrega em cerca de ~7 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При получении удара получает броню (+3%) и энергию (+5)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья) и получает броню (+15%)) требует 100 энергии (заряжается примерно за ~7 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -2455,7 +3652,9 @@ window.WIKI_DATA = {
       "id": 48,
       "name": {
         "es": "Leci",
-        "en": "Leci"
+        "en": "Leci",
+        "pt": "Leci",
+        "ru": "Leci"
       },
       "sprite": "images/chickens/48.png",
       "default_item_id": 3,
@@ -2476,6 +3675,10 @@ window.WIKI_DATA = {
         "wild": [],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -2496,6 +3699,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando aliado é derrotado, troca porcentagem de vida) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Когда союзник побежден, меняется процентом здоровья) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -2503,7 +3722,9 @@ window.WIKI_DATA = {
       "id": 49,
       "name": {
         "es": "Cerol",
-        "en": "Cerol"
+        "en": "Cerol",
+        "pt": "Cerol",
+        "ru": "Cerol"
       },
       "sprite": "images/chickens/49.png",
       "default_item_id": 20,
@@ -2524,6 +3745,10 @@ window.WIKI_DATA = {
         "wild": [],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -2544,6 +3769,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 3 acertos, desvia) define seu estilo de jogo, complementada por seu poder (Arremessa uma shuriken (150% de dano)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 3 удара уклоняется) задает боевой стиль, а активный навык (Бросает сюрикен (150% урона)) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2551,7 +3792,9 @@ window.WIKI_DATA = {
       "id": 50,
       "name": {
         "es": "Rufus",
-        "en": "Rufus"
+        "en": "Rufus",
+        "pt": "Rufus",
+        "ru": "Rufus"
       },
       "sprite": "images/chickens/50.png",
       "default_item_id": 3,
@@ -2575,6 +3818,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -2595,6 +3845,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada 3 golpes, 15% de dano extra) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждые 3 удара наносит на 15% больше урона) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~4 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2602,7 +3868,9 @@ window.WIKI_DATA = {
       "id": 51,
       "name": {
         "es": "Bjorn",
-        "en": "Bjorn"
+        "en": "Bjorn",
+        "pt": "Bjorn",
+        "ru": "Bjorn"
       },
       "sprite": "images/chickens/51.png",
       "default_item_id": 3,
@@ -2626,6 +3894,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -2646,6 +3921,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Phoenix Pages (grants another revival); Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Miracle Sand (+5 power gain per hit).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao reviver cura a si mesmo (100% vida máx)) define seu estilo de jogo, complementada por seu poder (Arremessa um machado (80% dano) e cura a si mesmo (40% dano)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Páginas da Fênix (concede novo renascimento); Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Areia Milagrosa (+5 de poder a cada golpe).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При возрождении лечит себя (100% макс. здоровья)) задает боевой стиль, а активный навык (Бросает топор (80% урона) и лечит себя (40% урона)) требует 100 энергии (заряжается примерно за ~2 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Страницы феникса (дает повторное возрождение); Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Чудесный песок (+5 к силе за каждый удар).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2653,7 +3944,9 @@ window.WIKI_DATA = {
       "id": 52,
       "name": {
         "es": "Sharky",
-        "en": "Sharky"
+        "en": "Sharky",
+        "pt": "Sharky",
+        "ru": "Sharky"
       },
       "sprite": "images/chickens/52.png",
       "default_item_id": 3,
@@ -2677,6 +3970,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -2697,6 +3997,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao derrotar um inimigo, 33% de dano extra) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При победе над врагом +33% урона) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2704,7 +4020,9 @@ window.WIKI_DATA = {
       "id": 53,
       "name": {
         "es": "Queso",
-        "en": "Queso"
+        "en": "Queso",
+        "pt": "Queso",
+        "ru": "Queso"
       },
       "sprite": "images/chickens/53.png",
       "default_item_id": 25,
@@ -2728,6 +4046,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -2748,6 +4073,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Miracle Sand (+5 power gain per hit); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, envenena todos os inimigos) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Areia Milagrosa (+5 de poder a cada golpe); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы отравляет всех врагов) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Чудесный песок (+5 к силе за каждый удар); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2755,7 +4096,9 @@ window.WIKI_DATA = {
       "id": 54,
       "name": {
         "es": "Monocrom",
-        "en": "Monocrom"
+        "en": "Monocrom",
+        "pt": "Monocrom",
+        "ru": "Monocrom"
       },
       "sprite": "images/chickens/54.png",
       "default_item_id": 3,
@@ -2779,6 +4122,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -2799,6 +4149,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar poder, amaldiçoa todos os inimigos) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании силы проклинает всех врагов) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~4 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -2806,7 +4172,9 @@ window.WIKI_DATA = {
       "id": 55,
       "name": {
         "es": "Gatarlos",
-        "en": "Gatarlos"
+        "en": "Gatarlos",
+        "pt": "Gatarlos",
+        "ru": "Gatarlos"
       },
       "sprite": "images/chickens/55.png",
       "default_item_id": 5,
@@ -2830,14 +4198,25 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": {
         "type": "evolves_into",
         "target_id": 56,
         "target_name": "Evil Gatarlos",
-        "desc_es": "Evoluciona a Evil Gatarlos en combate al usar su habilidad especial.",
-        "desc_en": "Evolves into Evil Gatarlos in combat when using its special power."
+        "desc": {
+          "es": "Evoluciona a Evil Gatarlos en combate al usar su habilidad especial.",
+          "en": "Evolves into Evil Gatarlos in combat when using its special power.",
+          "pt": "Evolui para Evil Gatarlos em combate ao usar seu poder especial.",
+          "ru": "Эволюционирует в Evil Gatarlos в бою при использовании особой способности."
+        }
       },
       "tactical_guide": {
         "turns": 10,
@@ -2856,6 +4235,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Não pode ser amaldiçoado e começa com +15% de dano. Ganha +20 de poder se iniciar o turno com um efeito negativo) define seu estilo de jogo, complementada por seu poder (Transforma-se em Evil Gatarlos) que requer 200 pontos de energia (carrega em cerca de ~10 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Не может быть проклят и начинает бой с +15% к урону. Получает +20 силы, если начинает ход с негативным эффектом) задает боевой стиль, а активный навык (Превращается в Evil Gatarlos) требует 200 энергии (заряжается примерно за ~10 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -2863,7 +4258,9 @@ window.WIKI_DATA = {
       "id": 56,
       "name": {
         "es": "Evil Gatarlos",
-        "en": "Evil Gatarlos"
+        "en": "Evil Gatarlos",
+        "pt": "Evil Gatarlos",
+        "ru": "Evil Gatarlos"
       },
       "sprite": "images/chickens/56.png",
       "default_item_id": 5,
@@ -2882,15 +4279,21 @@ window.WIKI_DATA = {
       "stat_total": 300,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": {
         "type": "evolved_from",
         "source_id": 55,
         "source_name": "Gatarlos",
         "evolution_only": true,
-        "desc_es": "Forma evolucionada de Gatarlos. No aparece en estado salvaje ni en huevos.",
-        "desc_en": "Evolved form of Gatarlos. Does not appear wild or in eggs."
+        "desc": {
+          "es": "Forma evolucionada de Gatarlos. No aparece en estado salvaje ni en huevos.",
+          "en": "Evolved form of Gatarlos. Does not appear wild or in eggs.",
+          "pt": "Forma evoluída de Gatarlos. Não aparece em estado selvagem nem em ovos.",
+          "ru": "Эволюционировавшая форма Gatarlos. Не встречается в диком виде и яйцах."
+        }
       },
       "tactical_guide": {
         "turns": 10,
@@ -2909,6 +4312,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Phoenix Pages (grants another revival); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao se transformar, concede 1 ponto de evasão à equipe. Quando derrotado, revive e se transforma em Gatarlos) define seu estilo de jogo, complementada por seu poder (Concede 1 ponto de evasão à equipe e aumenta o dano da equipe (+13%)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de reviver obriga a equipe adversária a derrotá-lo duas vezes, absorvendo turnos preciosos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Páginas da Fênix (concede novo renascimento); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При превращении дает 1 очко уклонения команде. При поражении возрождается и превращается в Gatarlos) задает боевой стиль, а активный навык (Дает 1 очко уклонения команде и увеличивает урон команды (+13%)) требует 100 энергии (заряжается примерно за ~10 ходов). Способность возрождаться заставляет противников побеждать его дважды, теряя ценный темп боя.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Страницы феникса (дает повторное возрождение); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -2916,7 +4335,9 @@ window.WIKI_DATA = {
       "id": 57,
       "name": {
         "es": "Prisma",
-        "en": "Prisma"
+        "en": "Prisma",
+        "pt": "Prisma",
+        "ru": "Prisma"
       },
       "sprite": "images/chickens/57.png",
       "default_item_id": 1,
@@ -2940,6 +4361,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -2960,6 +4388,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Quando derrotado, dá poder total ao aliado) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При поражении дает союзнику полную силу) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~4 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -2967,7 +4411,9 @@ window.WIKI_DATA = {
       "id": 58,
       "name": {
         "es": "Duncan",
-        "en": "Duncan"
+        "en": "Duncan",
+        "pt": "Duncan",
+        "ru": "Duncan"
       },
       "sprite": "images/chickens/58.png",
       "default_item_id": 5,
@@ -2991,6 +4437,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3011,6 +4464,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (50% de chance de repetição dos projéteis) define seu estilo de jogo, complementada por seu poder (Arremessa um cocô (veneno e -5% velocidade)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (50% вероятность повторного попадания снарядов) задает боевой стиль, а активный навык (Бросает какашку (яд и -5% скорости)) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3018,7 +4487,9 @@ window.WIKI_DATA = {
       "id": 59,
       "name": {
         "es": "Siul",
-        "en": "Siul"
+        "en": "Siul",
+        "pt": "Siul",
+        "ru": "Siul"
       },
       "sprite": "images/chickens/59.png",
       "default_item_id": 5,
@@ -3042,6 +4513,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -3062,6 +4540,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 4 acertos, ganha poder total) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 150 pontos de energia (carrega em cerca de ~3 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 4 удара получает полную силу) задает боевой стиль, а активный навык (Двойная атака) требует 150 энергии (заряжается примерно за ~3 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3069,7 +4563,9 @@ window.WIKI_DATA = {
       "id": 60,
       "name": {
         "es": "Boomy",
-        "en": "Boomy"
+        "en": "Boomy",
+        "pt": "Boomy",
+        "ru": "Boomy"
       },
       "sprite": "images/chickens/60.png",
       "default_item_id": 3,
@@ -3093,6 +4589,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -3113,6 +4616,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao arremessar um ovo, cura a si mesmo (10% vida máx)) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~1 turno). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При броске яйца лечит себя (10% макс. здоровья)) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~1 ход). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -3120,7 +4639,9 @@ window.WIKI_DATA = {
       "id": 61,
       "name": {
         "es": "Shiken",
-        "en": "Shiken"
+        "en": "Shiken",
+        "pt": "Shiken",
+        "ru": "Shiken"
       },
       "sprite": "images/chickens/61.png",
       "default_item_id": 4,
@@ -3144,6 +4665,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -3164,6 +4692,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ignora o foco e começa o combate com 1 ponto de evasão) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Игнорирует фокус и начинает бой с 1 очком уклонения) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3171,7 +4715,9 @@ window.WIKI_DATA = {
       "id": 62,
       "name": {
         "es": "Miedo",
-        "en": "Miedo"
+        "en": "Miedo",
+        "pt": "Miedo",
+        "ru": "Miedo"
       },
       "sprite": "images/chickens/62.png",
       "default_item_id": 3,
@@ -3195,6 +4741,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -3215,6 +4768,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Primeiro ataque paralisa) define seu estilo de jogo, complementada por seu poder (Amaldiçoa o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (Первая атака парализует) задает боевой стиль, а активный навык (Проклинает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -3222,7 +4791,9 @@ window.WIKI_DATA = {
       "id": 63,
       "name": {
         "es": "Volcken",
-        "en": "Volcken"
+        "en": "Volcken",
+        "pt": "Volcken",
+        "ru": "Volcken"
       },
       "sprite": "images/chickens/63.png",
       "default_item_id": 5,
@@ -3246,6 +4817,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3266,6 +4844,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, cura aliados (15% vida máx + 15% dano)) define seu estilo de jogo, complementada por seu poder (Limpa efeitos da equipe) que requer 100 pontos de energia (carrega em cerca de ~7 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы лечит союзников (15% макс. здоровья + 15% урона)) задает боевой стиль, а активный навык (Снимает эффекты с команды) требует 100 энергии (заряжается примерно за ~7 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -3273,7 +4867,9 @@ window.WIKI_DATA = {
       "id": 64,
       "name": {
         "es": "Nama",
-        "en": "Nama"
+        "en": "Nama",
+        "pt": "Nama",
+        "ru": "Nama"
       },
       "sprite": "images/chickens/64.png",
       "default_item_id": 3,
@@ -3297,6 +4893,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -3317,6 +4920,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Cada ataque dá 5% de dano extra e fere a si mesmo (5% vida máx)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждая атака дает +5% урона и наносит себе урон (5% макс. здоровья)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~10 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3324,7 +4943,9 @@ window.WIKI_DATA = {
       "id": 65,
       "name": {
         "es": "Vapollo",
-        "en": "Vapollo"
+        "en": "Vapollo",
+        "pt": "Vapollo",
+        "ru": "Vapollo"
       },
       "sprite": "images/chickens/65.png",
       "default_item_id": 3,
@@ -3348,6 +4969,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3368,6 +4996,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Ao derrotar um inimigo, +2 de esquiva) define seu estilo de jogo, complementada por seu poder (Queima o alvo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (При победе над врагом +2 уклонения) задает боевой стиль, а активный навык (Поджигает цель) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -3375,7 +5019,9 @@ window.WIKI_DATA = {
       "id": 66,
       "name": {
         "es": "Ashy",
-        "en": "Ashy"
+        "en": "Ashy",
+        "pt": "Ashy",
+        "ru": "Ashy"
       },
       "sprite": "images/chickens/66.png",
       "default_item_id": 3,
@@ -3399,6 +5045,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3419,6 +5072,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando usar poder, -15% de velocidade a todos os inimigos e os queima) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании способности -15% скорости всем врагам и поджигает их) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~3 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -3426,7 +5095,9 @@ window.WIKI_DATA = {
       "id": 67,
       "name": {
         "es": "Pollulu",
-        "en": "Pollulu"
+        "en": "Pollulu",
+        "pt": "Pollulu",
+        "ru": "Pollulu"
       },
       "sprite": "images/chickens/67.png",
       "default_item_id": 3,
@@ -3450,6 +5121,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3470,6 +5148,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Ao usar poder, esquiva) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (При использовании силы уклоняется) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~4 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -3477,7 +5171,9 @@ window.WIKI_DATA = {
       "id": 68,
       "name": {
         "es": "Cocore",
-        "en": "Cocore"
+        "en": "Cocore",
+        "pt": "Cocore",
+        "ru": "Cocore"
       },
       "sprite": "images/chickens/68.png",
       "default_item_id": 1,
@@ -3501,6 +5197,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3521,6 +5224,22 @@ window.WIKI_DATA = {
           "allies": "Heavy finishers (Zombie, Mechalex, Cacho) configured to target opponents with the lowest health.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Primeiro ataque queima) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (20% vida máx), mais dano (+5%) e reduz velocidade (-5%)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Finalizadores contundentes (Zombie, Mechalex, Cacho) configurados para atacar alvos com menos vida.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Первая атака поджигает) задает боевой стиль, а активный навык (Лечит себя (20% макс. здоровья), больше урона (+5%) и снижает скорость (-5%)) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные финишеры (Zombie, Mechalex, Cacho), настроенные атаковать цель с наименьшим здоровьем.",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -3528,7 +5247,9 @@ window.WIKI_DATA = {
       "id": 69,
       "name": {
         "es": "Pinzon",
-        "en": "Pinzon"
+        "en": "Pinzon",
+        "pt": "Pinzon",
+        "ru": "Pinzon"
       },
       "sprite": "images/chickens/69.png",
       "default_item_id": 3,
@@ -3552,6 +5273,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3572,6 +5300,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Miracle Sand (+5 power gain per hit); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada turno, +3% de dano e +3% de velocidade) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждый ход +3% к урону и +3% к скорости) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~2 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3579,7 +5323,9 @@ window.WIKI_DATA = {
       "id": 70,
       "name": {
         "es": "Galligno",
-        "en": "Galligno"
+        "en": "Galligno",
+        "pt": "Galligno",
+        "ru": "Galligno"
       },
       "sprite": "images/chickens/70.png",
       "default_item_id": 1,
@@ -3603,6 +5349,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Volcán"
+        ],
+        "wild_ids": [
+          1,
+          8
+        ],
+        "egg_ids": [
+          1
         ]
       },
       "evolution": null,
@@ -3623,6 +5376,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada turno, +4% de armadura) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждый ход +4% к броне) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~3 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -3630,7 +5399,9 @@ window.WIKI_DATA = {
       "id": 71,
       "name": {
         "es": "Nube",
-        "en": "Nube"
+        "en": "Nube",
+        "pt": "Nube",
+        "ru": "Nube"
       },
       "sprite": "images/chickens/71.png",
       "default_item_id": 3,
@@ -3654,6 +5425,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3674,6 +5452,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, silencia todos os inimigos) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы накладывает молчание на всех врагов) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~3 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3681,7 +5475,9 @@ window.WIKI_DATA = {
       "id": 72,
       "name": {
         "es": "Gallimbus",
-        "en": "Gallimbus"
+        "en": "Gallimbus",
+        "pt": "Gallimbus",
+        "ru": "Gallimbus"
       },
       "sprite": "images/chickens/72.png",
       "default_item_id": 1,
@@ -3705,6 +5501,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3725,6 +5528,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada turno se cura (6% de vida máxima)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждый ход лечит себя (6% от макс. здоровья)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -3732,7 +5551,9 @@ window.WIKI_DATA = {
       "id": 73,
       "name": {
         "es": "Ventora",
-        "en": "Ventora"
+        "en": "Ventora",
+        "pt": "Ventora",
+        "ru": "Ventora"
       },
       "sprite": "images/chickens/73.png",
       "default_item_id": 3,
@@ -3756,6 +5577,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3776,6 +5604,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Primeiro ataque com 100% de velocidade extra) define seu estilo de jogo, complementada por seu poder (Obtém uma poção aleatória) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Первая атака со 100% дополнительной скоростью) задает боевой стиль, а активный навык (Получает случайное зелье) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -3783,7 +5627,9 @@ window.WIKI_DATA = {
       "id": 74,
       "name": {
         "es": "Aery",
-        "en": "Aery"
+        "en": "Aery",
+        "pt": "Aery",
+        "ru": "Aery"
       },
       "sprite": "images/chickens/74.png",
       "default_item_id": 4,
@@ -3807,6 +5653,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3827,6 +5680,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Miracle Sand (+5 power gain per hit); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada 3 ataques, cura um aliado) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждые 3 атаки лечит союзника) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~2 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -3834,7 +5703,9 @@ window.WIKI_DATA = {
       "id": 75,
       "name": {
         "es": "Titiro",
-        "en": "Titiro"
+        "en": "Titiro",
+        "pt": "Titiro",
+        "ru": "Titiro"
       },
       "sprite": "images/chickens/75.png",
       "default_item_id": 6,
@@ -3858,6 +5729,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3878,6 +5756,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar um item, poder total) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании предмета полная сила) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~3 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -3885,7 +5779,9 @@ window.WIKI_DATA = {
       "id": 76,
       "name": {
         "es": "Luso",
-        "en": "Luso"
+        "en": "Luso",
+        "pt": "Luso",
+        "ru": "Luso"
       },
       "sprite": "images/chickens/76.png",
       "default_item_id": 3,
@@ -3909,6 +5805,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3929,6 +5832,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (A cada 5 ataques, arremessa 2 ovos) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo (100% de dano)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (Каждые 5 атак бросает 2 яйца) задает боевой стиль, а активный навык (Бросает яйцо (100% урона)) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -3936,7 +5855,9 @@ window.WIKI_DATA = {
       "id": 77,
       "name": {
         "es": "Menta",
-        "en": "Menta"
+        "en": "Menta",
+        "pt": "Menta",
+        "ru": "Menta"
       },
       "sprite": "images/chickens/77.png",
       "default_item_id": 5,
@@ -3960,6 +5881,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -3980,6 +5908,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao atacar um inimigo congelado, cura a si mesmo (5% vida máx)) define seu estilo de jogo, complementada por seu poder (Congela o alvo) que requer 150 pontos de energia (carrega em cerca de ~5 turnos). Oferece controle crucial com congelamento, roubando turnos dos adversários e causando dano indireto.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При атаке замороженного врага лечит себя (5% макс. здоровья)) задает боевой стиль, а активный навык (Замораживает цель) требует 150 энергии (заряжается примерно за ~5 ходов). Обеспечивает ценный контроль заморозкой, лишая противников ходов и нанося косвенный урон.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -3987,7 +5931,9 @@ window.WIKI_DATA = {
       "id": 78,
       "name": {
         "es": "Wicken",
-        "en": "Wicken"
+        "en": "Wicken",
+        "pt": "Wicken",
+        "ru": "Wicken"
       },
       "sprite": "images/chickens/78.png",
       "default_item_id": 5,
@@ -4011,6 +5957,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -4031,6 +5984,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada 2 poderes, esquiva) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 90 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждые 2 силы уклоняется) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 90 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -4038,7 +6007,9 @@ window.WIKI_DATA = {
       "id": 79,
       "name": {
         "es": "Gota",
-        "en": "Gota"
+        "en": "Gota",
+        "pt": "Gota",
+        "ru": "Gota"
       },
       "sprite": "images/chickens/79.png",
       "default_item_id": 21,
@@ -4062,6 +6033,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -4082,6 +6060,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando ataca, se cura (5% de vida máxima) e ganha velocidade (+3%)) define seu estilo de jogo, complementada por seu poder (Limpa efeitos da equipe) que requer 90 pontos de energia (carrega em cerca de ~9 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При атаке лечит себя (5% от макс. здоровья) и получает скорость (+3%)) задает боевой стиль, а активный навык (Снимает эффекты с команды) требует 90 энергии (заряжается примерно за ~9 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -4089,7 +6083,9 @@ window.WIKI_DATA = {
       "id": 80,
       "name": {
         "es": "Mucken",
-        "en": "Mucken"
+        "en": "Mucken",
+        "pt": "Mucken",
+        "ru": "Mucken"
       },
       "sprite": "images/chickens/80.png",
       "default_item_id": 5,
@@ -4113,6 +6109,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4133,6 +6136,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Ao atacar um inimigo envenenado, cura a si mesmo (5% vida máx)) define seu estilo de jogo, complementada por seu poder (Envenena o alvo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (При атаке отравленного врага лечит себя (5% макс. здоровья)) задает боевой стиль, а активный навык (Отравляет цель) требует 100 энергии (заряжается примерно за ~4 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4140,7 +6159,9 @@ window.WIKI_DATA = {
       "id": 81,
       "name": {
         "es": "Egi",
-        "en": "Egi"
+        "en": "Egi",
+        "pt": "Egi",
+        "ru": "Egi"
       },
       "sprite": "images/chickens/81.png",
       "default_item_id": 3,
@@ -4164,6 +6185,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4184,6 +6212,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (A cada 2 ataques, +15 poder) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (Каждые 2 атаки +15 силы) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -4191,7 +6235,9 @@ window.WIKI_DATA = {
       "id": 82,
       "name": {
         "es": "Fingie",
-        "en": "Fingie"
+        "en": "Fingie",
+        "pt": "Fingie",
+        "ru": "Fingie"
       },
       "sprite": "images/chickens/82.png",
       "default_item_id": 3,
@@ -4215,6 +6261,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4235,6 +6288,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Troubleslime (infects an enemy at battle start); Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao atacar um inimigo infectado, espalha a infecção e drena poder (-10)) define seu estilo de jogo, complementada por seu poder (Infecta o alvo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gosma Problemática (infecta um inimigo no início); Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При атаке зараженного врага распространяет инфекцию и крадет энергию (-10)) задает боевой стиль, а активный навык (Заражает цель) требует 100 энергии (заряжается примерно за ~2 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Проблемная слизь (заражает противника в начале боя); Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -4242,7 +6311,9 @@ window.WIKI_DATA = {
       "id": 83,
       "name": {
         "es": "Corny",
-        "en": "Corny"
+        "en": "Corny",
+        "pt": "Corny",
+        "ru": "Corny"
       },
       "sprite": "images/chickens/83.png",
       "default_item_id": 19,
@@ -4266,6 +6337,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4286,6 +6364,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao iniciar, cura equipe (35% vida máx)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (В начале лечит команду (35% макс. здоровья)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~4 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4293,7 +6387,9 @@ window.WIKI_DATA = {
       "id": 84,
       "name": {
         "es": "Policus",
-        "en": "Policus"
+        "en": "Policus",
+        "pt": "Policus",
+        "ru": "Policus"
       },
       "sprite": "images/chickens/84.png",
       "default_item_id": 3,
@@ -4317,6 +6413,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4337,6 +6440,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao iniciar, dá poder total ao aliado) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (В начале дает полную силу союзнику) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -4344,7 +6463,9 @@ window.WIKI_DATA = {
       "id": 85,
       "name": {
         "es": "Vidro",
-        "en": "Vidro"
+        "en": "Vidro",
+        "pt": "Vidro",
+        "ru": "Vidro"
       },
       "sprite": "images/chickens/85.png",
       "default_item_id": 3,
@@ -4368,6 +6489,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4388,6 +6516,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ser atacado, reflete 20% do dano e reduz a armadura do atacante (3%)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При получении удара отражает 20% урона и снижает броню атакующего (3%)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -4395,7 +6539,9 @@ window.WIKI_DATA = {
       "id": 86,
       "name": {
         "es": "Yuntan",
-        "en": "Yuntan"
+        "en": "Yuntan",
+        "pt": "Yuntan",
+        "ru": "Yuntan"
       },
       "sprite": "images/chickens/86.png",
       "default_item_id": 3,
@@ -4419,6 +6565,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4439,6 +6592,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Phoenix Pages (grants another revival); Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada 5 ataques, envenena e cura a si mesmo (33% vida máx)) define seu estilo de jogo, complementada por seu poder (Ganha reviver) que requer 200 pontos de energia (carrega em cerca de ~10 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Páginas da Fênix (concede novo renascimento); Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждые 5 атак отравляет и лечит себя (33% макс. здоровья)) задает боевой стиль, а активный навык (Получает возрождение) требует 200 энергии (заряжается примерно за ~10 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Страницы феникса (дает повторное возрождение); Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4446,7 +6615,9 @@ window.WIKI_DATA = {
       "id": 87,
       "name": {
         "es": "Plass",
-        "en": "Plass"
+        "en": "Plass",
+        "pt": "Plass",
+        "ru": "Plass"
       },
       "sprite": "images/chickens/87.png",
       "default_item_id": 10,
@@ -4470,6 +6641,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4490,6 +6668,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Quando aliado usa poder, ganha poder total) define seu estilo de jogo, complementada por seu poder (Queima o alvo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Когда союзник использует силу, получает полную силу) задает боевой стиль, а активный навык (Поджигает цель) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4497,7 +6691,9 @@ window.WIKI_DATA = {
       "id": 88,
       "name": {
         "es": "Trinagle",
-        "en": "Trinagle"
+        "en": "Trinagle",
+        "pt": "Trinagle",
+        "ru": "Trinagle"
       },
       "sprite": "images/chickens/88.png",
       "default_item_id": 17,
@@ -4521,6 +6717,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4541,6 +6744,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Troubleslime (infects an enemy at battle start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Começa com 33% de dano extra e silenciado) define seu estilo de jogo, complementada por seu poder (Infecta o alvo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gosma Problemática (infecta um inimigo no início); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Начинает с +33% урона и молчанием) задает боевой стиль, а активный навык (Заражает цель) требует 100 энергии (заряжается примерно за ~4 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Проблемная слизь (заражает противника в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4548,7 +6767,9 @@ window.WIKI_DATA = {
       "id": 89,
       "name": {
         "es": "Cactus",
-        "en": "Cactus"
+        "en": "Cactus",
+        "pt": "Cactus",
+        "ru": "Cactus"
       },
       "sprite": "images/chickens/89.png",
       "default_item_id": 9,
@@ -4572,6 +6793,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4592,6 +6820,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ser atingido, fere o inimigo (25% dano)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При ударе ранит врага (25% урона)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~4 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4599,7 +6843,9 @@ window.WIKI_DATA = {
       "id": 90,
       "name": {
         "es": "Ploom",
-        "en": "Ploom"
+        "en": "Ploom",
+        "pt": "Ploom",
+        "ru": "Ploom"
       },
       "sprite": "images/chickens/90.png",
       "default_item_id": 5,
@@ -4623,6 +6869,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4643,6 +6896,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao derrotar um inimigo, cura-se (25% de vida máxima) e concede 1 de esquiva à equipe) define seu estilo de jogo, complementada por seu poder (Explode. Machuca todos os frangos (25% vida máx)) que requer 125 pontos de energia (carrega em cerca de ~13 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При победе над врагом исцеляется (25% макс. здоровья) и дает команде 1 уклонение) задает боевой стиль, а активный навык (Взрывается. Ранит всех куриц (25% макс. здоровья)) требует 125 энергии (заряжается примерно за ~13 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4650,7 +6919,9 @@ window.WIKI_DATA = {
       "id": 91,
       "name": {
         "es": "Darkus",
-        "en": "Darkus"
+        "en": "Darkus",
+        "pt": "Darkus",
+        "ru": "Darkus"
       },
       "sprite": "images/chickens/91.png",
       "default_item_id": 66,
@@ -4674,6 +6945,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4694,6 +6972,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Troubleslime (infects an enemy at battle start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Quando um inimigo usa poder, +5 dano) define seu estilo de jogo, complementada por seu poder (Infecta o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gosma Problemática (infecta um inimigo no início); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Когда враг использует силу, +5 урона) задает боевой стиль, а активный навык (Заражает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Проблемная слизь (заражает противника в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4701,7 +6995,9 @@ window.WIKI_DATA = {
       "id": 92,
       "name": {
         "es": "Galland",
-        "en": "Galland"
+        "en": "Galland",
+        "pt": "Galland",
+        "ru": "Galland"
       },
       "sprite": "images/chickens/92.png",
       "default_item_id": 1,
@@ -4725,6 +7021,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4745,6 +7048,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, cura a si mesmo (10% vida máx) e +5% armadura) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы лечит себя (10% макс.) и +5% брони) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -4752,7 +7071,9 @@ window.WIKI_DATA = {
       "id": 93,
       "name": {
         "es": "Drillen",
-        "en": "Drillen"
+        "en": "Drillen",
+        "pt": "Drillen",
+        "ru": "Drillen"
       },
       "sprite": "images/chickens/93.png",
       "default_item_id": 3,
@@ -4776,6 +7097,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4796,6 +7124,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Troubleslime (infects an enemy at battle start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Cada ataque cura a si mesmo (25% dano)) define seu estilo de jogo, complementada por seu poder (Infecta o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Gosma Problemática (infecta um inimigo no início); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждая атака лечит себя (25% от урона)) задает боевой стиль, а активный навык (Заражает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Проблемная слизь (заражает противника в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -4803,7 +7147,9 @@ window.WIKI_DATA = {
       "id": 94,
       "name": {
         "es": "Estepi",
-        "en": "Estepi"
+        "en": "Estepi",
+        "pt": "Estepi",
+        "ru": "Estepi"
       },
       "sprite": "images/chickens/94.png",
       "default_item_id": 5,
@@ -4827,6 +7173,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -4847,6 +7200,22 @@ window.WIKI_DATA = {
           "allies": "Heavy finishers (Zombie, Mechalex, Cacho) configured to target opponents with the lowest health.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Cada ataque +3% velocidade e +5 valor de poder) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Finalizadores contundentes (Zombie, Mechalex, Cacho) configurados para atacar alvos com menos vida.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждая атака +3% скорости и +5 силы) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Мощные финишеры (Zombie, Mechalex, Cacho), настроенные атаковать цель с наименьшим здоровьем.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4854,7 +7223,9 @@ window.WIKI_DATA = {
       "id": 95,
       "name": {
         "es": "Rocko",
-        "en": "Rocko"
+        "en": "Rocko",
+        "pt": "Rocko",
+        "ru": "Rocko"
       },
       "sprite": "images/chickens/95.png",
       "default_item_id": 9,
@@ -4878,6 +7249,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -4898,6 +7276,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao iniciar, ganha +1% dano para cada 50 de vida máx) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (В начале +1% урона за каждые 50 макс. здоровья) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~4 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -4905,7 +7299,9 @@ window.WIKI_DATA = {
       "id": 96,
       "name": {
         "es": "Garry",
-        "en": "Garry"
+        "en": "Garry",
+        "pt": "Garry",
+        "ru": "Garry"
       },
       "sprite": "images/chickens/96.png",
       "default_item_id": 5,
@@ -4929,6 +7325,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -4949,6 +7352,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Cada ataque reduz poder do alvo (-5)) define seu estilo de jogo, complementada por seu poder (Amaldiçoa o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждая атака снижает силу цели (-5)) задает боевой стиль, а активный навык (Проклинает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -4956,7 +7375,9 @@ window.WIKI_DATA = {
       "id": 97,
       "name": {
         "es": "Terra",
-        "en": "Terra"
+        "en": "Terra",
+        "pt": "Terra",
+        "ru": "Terra"
       },
       "sprite": "images/chickens/97.png",
       "default_item_id": 27,
@@ -4980,6 +7401,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -5000,6 +7428,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar poder, reduz poder inimigo a 0) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании силы сбрасывает силу врага до 0) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -5007,7 +7451,9 @@ window.WIKI_DATA = {
       "id": 98,
       "name": {
         "es": "Crystal",
-        "en": "Crystal"
+        "en": "Crystal",
+        "pt": "Crystal",
+        "ru": "Crystal"
       },
       "sprite": "images/chickens/98.png",
       "default_item_id": 3,
@@ -5031,6 +7477,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -5051,6 +7504,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, arremessa uma bomba) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx.) e armadura (+15%)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы бросает бомбу) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья) и получает броню (+15%)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -5058,7 +7527,9 @@ window.WIKI_DATA = {
       "id": 99,
       "name": {
         "es": "Toka",
-        "en": "Toka"
+        "en": "Toka",
+        "pt": "Toka",
+        "ru": "Toka"
       },
       "sprite": "images/chickens/99.png",
       "default_item_id": 25,
@@ -5082,6 +7553,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -5102,6 +7580,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Troubleslime (infects an enemy at battle start); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Ao ser atingido, +10 poder e -1% armadura) define seu estilo de jogo, complementada por seu poder (Infecta o alvo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gosma Problemática (infecta um inimigo no início); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (При получении удара +10 силы и -1% брони) задает боевой стиль, а активный навык (Заражает цель) требует 100 энергии (заряжается примерно за ~3 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Проблемная слизь (заражает противника в начале боя); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -5109,7 +7603,9 @@ window.WIKI_DATA = {
       "id": 100,
       "name": {
         "es": "Cloudy",
-        "en": "Cloudy"
+        "en": "Cloudy",
+        "pt": "Cloudy",
+        "ru": "Cloudy"
       },
       "sprite": "images/chickens/100.png",
       "default_item_id": 1,
@@ -5133,6 +7629,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5153,6 +7656,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Atacar um inimigo congelado causa dano extra (30%) e reduz sua armadura (5%)) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo congelado (100% dano e congela)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (При атаке замороженного врага наносит доп. урон (30%) и снижает броню (5%)) задает боевой стиль, а активный навык (Бросает ледяное яйцо (100% урона и заморозка)) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -5160,7 +7679,9 @@ window.WIKI_DATA = {
       "id": 101,
       "name": {
         "es": "Drago",
-        "en": "Drago"
+        "en": "Drago",
+        "pt": "Drago",
+        "ru": "Drago"
       },
       "sprite": "images/chickens/101.png",
       "default_item_id": 3,
@@ -5184,6 +7705,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5204,6 +7732,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada 3 ataques, lança um ovo congelado) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo congelado (100% dano e congela)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждые 3 атаки бросает ледяное яйцо) задает боевой стиль, а активный навык (Бросает ледяное яйцо (100% урона и заморозка)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -5211,7 +7755,9 @@ window.WIKI_DATA = {
       "id": 102,
       "name": {
         "es": "Niwato",
-        "en": "Niwato"
+        "en": "Niwato",
+        "pt": "Niwato",
+        "ru": "Niwato"
       },
       "sprite": "images/chickens/102.png",
       "default_item_id": 5,
@@ -5235,6 +7781,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5255,6 +7808,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao derrotar um inimigo, +15% velocidade e +15% dano) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При победе над врагом +15% скорости и +15% урона) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~20 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -5262,7 +7831,9 @@ window.WIKI_DATA = {
       "id": 103,
       "name": {
         "es": "Grey",
-        "en": "Grey"
+        "en": "Grey",
+        "pt": "Grey",
+        "ru": "Grey"
       },
       "sprite": "images/chickens/103.png",
       "default_item_id": 19,
@@ -5286,6 +7857,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5306,6 +7884,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao iniciar, reduz velocidade dos inimigos em 10%) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo congelado (100% dano e congela)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (В начале снижает скорость врагов на 10%) задает боевой стиль, а активный навык (Бросает ледяное яйцо (100% урона и заморозка)) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -5313,7 +7907,9 @@ window.WIKI_DATA = {
       "id": 104,
       "name": {
         "es": "Friozero",
-        "en": "Friozero"
+        "en": "Friozero",
+        "pt": "Friozero",
+        "ru": "Friozero"
       },
       "sprite": "images/chickens/104.png",
       "default_item_id": 9,
@@ -5337,6 +7933,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5357,6 +7960,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Phoenix Pages (grants another revival); Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao reviver, ganha 25% de armadura) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo congelado (100% dano e congela)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Páginas da Fênix (concede novo renascimento); Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При возрождении получает 25% брони) задает боевой стиль, а активный навык (Бросает ледяное яйцо (100% урона и заморозка)) требует 100 энергии (заряжается примерно за ~3 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Страницы феникса (дает повторное возрождение); Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -5364,7 +7983,9 @@ window.WIKI_DATA = {
       "id": 105,
       "name": {
         "es": "Pengui",
-        "en": "Pengui"
+        "en": "Pengui",
+        "pt": "Pengui",
+        "ru": "Pengui"
       },
       "sprite": "images/chickens/105.png",
       "default_item_id": 6,
@@ -5388,6 +8009,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5408,6 +8036,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Não pode ser congelado. Atacar inimigos congelados aumenta velocidade (20%) e dano (10%)) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo congelado (100% dano e congela)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Нельзя заморозить. При атаке замороженных врагов получает скорость (20%) и урон (10%)) задает боевой стиль, а активный навык (Бросает ледяное яйцо (100% урона и заморозка)) требует 100 энергии (заряжается примерно за ~3 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -5415,7 +8059,9 @@ window.WIKI_DATA = {
       "id": 106,
       "name": {
         "es": "Snick",
-        "en": "Snick"
+        "en": "Snick",
+        "pt": "Snick",
+        "ru": "Snick"
       },
       "sprite": "images/chickens/106.png",
       "default_item_id": 34,
@@ -5439,6 +8085,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5459,6 +8112,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao atacar inimigo congelado, +2% armadura e +5 poder) define seu estilo de jogo, complementada por seu poder (Arremessa um ovo congelado (100% dano e congela)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При атаке замороженного врага +2% брони и +5 силы) задает боевой стиль, а активный навык (Бросает ледяное яйцо (100% урона и заморозка)) требует 100 энергии (заряжается примерно за ~2 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -5466,7 +8135,9 @@ window.WIKI_DATA = {
       "id": 107,
       "name": {
         "es": "Derp",
-        "en": "Derp"
+        "en": "Derp",
+        "pt": "Derp",
+        "ru": "Derp"
       },
       "sprite": "images/chickens/107.png",
       "default_item_id": 1,
@@ -5490,6 +8161,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5510,6 +8188,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (50% de chance de começar com poder máximo (caso contrário, 50% de poder)) define seu estilo de jogo, complementada por seu poder (Explode. Machuca todos os frangos (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (50% шанс начать с максимумом энергии (иначе 50% энергии)) задает боевой стиль, а активный навык (Взрывается. Ранит всех куриц (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~20 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -5517,7 +8211,9 @@ window.WIKI_DATA = {
       "id": 108,
       "name": {
         "es": "Plumillas",
-        "en": "Plumillas"
+        "en": "Plumillas",
+        "pt": "Plumillas",
+        "ru": "Plumillas"
       },
       "sprite": "images/chickens/108.png",
       "default_item_id": 5,
@@ -5541,6 +8237,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Nevados"
+        ],
+        "wild_ids": [
+          5,
+          8
+        ],
+        "egg_ids": [
+          5
         ]
       },
       "evolution": null,
@@ -5561,6 +8264,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A cada 3 ataques, lança uma bomba) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждые 3 атаки бросает бомбу) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~4 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -5568,7 +8287,9 @@ window.WIKI_DATA = {
       "id": 109,
       "name": {
         "es": "Max",
-        "en": "Max"
+        "en": "Max",
+        "pt": "Max",
+        "ru": "Max"
       },
       "sprite": "images/chickens/109.png",
       "default_item_id": 43,
@@ -5592,6 +8313,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -5612,6 +8340,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Phoenix Pages (grants another revival); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Revive como Mali) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Páginas da Fênix (concede novo renascimento); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Возрождается как Mali) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~10 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Страницы феникса (дает повторное возрождение); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -5619,7 +8363,9 @@ window.WIKI_DATA = {
       "id": 110,
       "name": {
         "es": "Springy",
-        "en": "Springy"
+        "en": "Springy",
+        "pt": "Springy",
+        "ru": "Springy"
       },
       "sprite": "images/chickens/110.png",
       "default_item_id": 38,
@@ -5643,6 +8389,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -5663,6 +8416,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Phoenix Pages (grants another revival); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar seu poder, ganha ataque duplo) define seu estilo de jogo, complementada por seu poder (Ganha reviver) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Páginas da Fênix (concede novo renascimento); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании силы получает двойную атаку) задает боевой стиль, а активный навык (Получает возрождение) требует 100 энергии (заряжается примерно за ~20 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Страницы феникса (дает повторное возрождение); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -5670,7 +8439,9 @@ window.WIKI_DATA = {
       "id": 111,
       "name": {
         "es": "Lock",
-        "en": "Lock"
+        "en": "Lock",
+        "pt": "Lock",
+        "ru": "Lock"
       },
       "sprite": "images/chickens/111.png",
       "default_item_id": 3,
@@ -5694,6 +8465,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -5714,6 +8492,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Cada ataque aumenta um atributo aleatório (5%)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Каждая атака увеличивает случайную характеристику на 5%) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -5721,7 +8515,9 @@ window.WIKI_DATA = {
       "id": 112,
       "name": {
         "es": "Law",
-        "en": "Law"
+        "en": "Law",
+        "pt": "Law",
+        "ru": "Law"
       },
       "sprite": "images/chickens/112.png",
       "default_item_id": 21,
@@ -5745,6 +8541,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -5765,6 +8568,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando um aliado é derrotado, ganha seus multiplicadores) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Когда союзник побежден, получает его множители) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~5 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -5772,7 +8591,9 @@ window.WIKI_DATA = {
       "id": 113,
       "name": {
         "es": "Chick",
-        "en": "Chick"
+        "en": "Chick",
+        "pt": "Chick",
+        "ru": "Chick"
       },
       "sprite": "images/chickens/113.png",
       "default_item_id": 36,
@@ -5796,6 +8617,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -5816,6 +8644,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Atacar um inimigo envenenado cura a si mesmo (20% do dano)) define seu estilo de jogo, complementada por seu poder (Envenena o alvo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При атаке отравленного врага исцеляется (20% урона)) задает боевой стиль, а активный навык (Отравляет цель) требует 100 энергии (заряжается примерно за ~3 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -5823,7 +8667,9 @@ window.WIKI_DATA = {
       "id": 114,
       "name": {
         "es": "Chird",
-        "en": "Chird"
+        "en": "Chird",
+        "pt": "Chird",
+        "ru": "Chird"
       },
       "sprite": "images/chickens/114.png",
       "default_item_id": 5,
@@ -5847,6 +8693,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -5867,6 +8720,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Garra's Wing (passively heals the team 5% max HP each turn); Crazy Eyes (+10% damage to the entire team).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar seu poder, aumenta um atributo aleatório (5%)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Asa de Garra (cura 5% de vida da equipe a cada turno); Olhos Malucos (+10% de dano para toda a equipe).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании силы увеличивает случайный стат (5%)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход); Безумные глаза (+10% к урону всей команды).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -5874,7 +8743,9 @@ window.WIKI_DATA = {
       "id": 115,
       "name": {
         "es": "Cow",
-        "en": "Cow"
+        "en": "Cow",
+        "pt": "Cow",
+        "ru": "Cow"
       },
       "sprite": "images/chickens/115.png",
       "default_item_id": 1,
@@ -5898,6 +8769,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -5918,6 +8796,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Garra's Wing (passively heals the team 5% max HP each turn).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao começar o combate, concede armadura à equipe (15%)) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx.) e armadura (+15%)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Mantém a dupla estabilizada curando dano recebido, prolongando o combate a favor do companheiro.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido); Asa de Garra (cura 5% de vida da equipe a cada turno).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (В начале боя дает команде броню (15%)) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья) и получает броню (+15%)) требует 100 энергии (заряжается примерно за ~10 ходов). Поддерживает здоровье дуэта исцелением, затягивая бой в вашу пользу.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара); Крыло Гарры (пассивно исцеляет команду на 5% макс. HP каждый ход).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -5925,7 +8819,9 @@ window.WIKI_DATA = {
       "id": 116,
       "name": {
         "es": "Electron",
-        "en": "Electron"
+        "en": "Electron",
+        "pt": "Electron",
+        "ru": "Electron"
       },
       "sprite": "images/chickens/116.png",
       "default_item_id": 35,
@@ -5949,6 +8845,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -5969,6 +8872,22 @@ window.WIKI_DATA = {
           "allies": "Heavy finishers (Zombie, Mechalex, Cacho) configured to target opponents with the lowest health.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Electrostatic Spike (paralyzes target on start, cutting speed by 50%).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao morrer, explode (25% da vida máxima)) define seu estilo de jogo, complementada por seu poder (Paralisa o alvo) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Finalizadores contundentes (Zombie, Mechalex, Cacho) configurados para atacar alvos com menos vida.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При смерти взрывается (25% от макс. здоровья)) задает боевой стиль, а активный навык (Парализует цель) требует 100 энергии (заряжается примерно за ~20 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные финишеры (Zombie, Mechalex, Cacho), настроенные атаковать цель с наименьшим здоровьем.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Электрошип (парализует цель на старте, снижая скорость на 50%).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -5976,7 +8895,9 @@ window.WIKI_DATA = {
       "id": 117,
       "name": {
         "es": "Monstruollo",
-        "en": "Monstruollo"
+        "en": "Monstruollo",
+        "pt": "Monstruollo",
+        "ru": "Monstruollo"
       },
       "sprite": "images/chickens/117.png",
       "default_item_id": 29,
@@ -6000,6 +8921,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -6020,6 +8948,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Ao derrotar um inimigo, ganha vida máxima e perde velocidade (15%)) define seu estilo de jogo, complementada por seu poder (Envenena o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (При победе над врагом получает макс. здоровье и теряет скорость (15%)) задает боевой стиль, а активный навык (Отравляет цель) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -6027,7 +8971,9 @@ window.WIKI_DATA = {
       "id": 118,
       "name": {
         "es": "Nave",
-        "en": "Nave"
+        "en": "Nave",
+        "pt": "Nave",
+        "ru": "Nave"
       },
       "sprite": "images/chickens/118.png",
       "default_item_id": 35,
@@ -6051,6 +8997,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6071,6 +9024,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Electrostatic Spike (paralyzes target on start, cutting speed by 50%).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Canhão de Vidro (Atacante Rápido)",
+          "role_title": "Canhão de Vidro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (No início do combate, aumenta a velocidade da equipe (5%)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Стеклянная пушка (Быстрый ударник)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (В начале боя увеличивает скорость команды (5%)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~20 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Электрошип (парализует цель на старте, снижая скорость на 50%).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6078,7 +9047,9 @@ window.WIKI_DATA = {
       "id": 119,
       "name": {
         "es": "Rhafa",
-        "en": "Rhafa"
+        "en": "Rhafa",
+        "pt": "Rhafa",
+        "ru": "Rhafa"
       },
       "sprite": "images/chickens/119.png",
       "default_item_id": 5,
@@ -6102,6 +9073,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -6122,6 +9100,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Electrostatic Spike (paralyzes target on start, cutting speed by 50%).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando a vida cai abaixo de 35% da vida máxima, cura totalmente (uma vez por combate)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Когда здоровье падает ниже 35%, полностью лечится (один раз за бой)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~5 ходов). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Электрошип (парализует цель на старте, снижая скорость на 50%).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6129,7 +9123,9 @@ window.WIKI_DATA = {
       "id": 120,
       "name": {
         "es": "Rick",
-        "en": "Rick"
+        "en": "Rick",
+        "pt": "Rick",
+        "ru": "Rick"
       },
       "sprite": "images/chickens/120.png",
       "default_item_id": 3,
@@ -6153,6 +9149,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          6
         ]
       },
       "evolution": null,
@@ -6173,6 +9176,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Miracle Sand (+5 power gain per hit); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (No início do combate, lança uma mosca) define seu estilo de jogo, complementada por seu poder (Amaldiçoa o alvo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (В начале боя запускает муху) задает боевой стиль, а активный навык (Проклинает цель) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6180,7 +9199,9 @@ window.WIKI_DATA = {
       "id": 121,
       "name": {
         "es": "Javo",
-        "en": "Javo"
+        "en": "Javo",
+        "pt": "Javo",
+        "ru": "Javo"
       },
       "sprite": "images/chickens/121.png",
       "default_item_id": 6,
@@ -6204,6 +9225,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6224,6 +9252,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Miracle Sand (+5 power gain per hit); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada turno, aumenta o dano (3%) e velocidade (3%) dos aliados) define seu estilo de jogo, complementada por seu poder (Paralisa o alvo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждый ход увеличивает урон (3%) и скорость (3%) союзников) задает боевой стиль, а активный навык (Парализует цель) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -6231,7 +9275,9 @@ window.WIKI_DATA = {
       "id": 122,
       "name": {
         "es": "Meta",
-        "en": "Meta"
+        "en": "Meta",
+        "pt": "Meta",
+        "ru": "Meta"
       },
       "sprite": "images/chickens/122.png",
       "default_item_id": 43,
@@ -6255,6 +9301,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6275,6 +9328,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Phoenix Pages (grants another revival); Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Revive enquanto um aliado estiver vivo (3 vezes por combate)) define seu estilo de jogo, complementada por seu poder (Lança um míssil, aplica queimadura) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Páginas da Fênix (concede novo renascimento); Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Возрождается, пока жив союзник (3 раза за бой)) задает боевой стиль, а активный навык (Запускает ракету, накладывает ожог) требует 100 энергии (заряжается примерно за ~3 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Страницы феникса (дает повторное возрождение); Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -6282,7 +9351,9 @@ window.WIKI_DATA = {
       "id": 123,
       "name": {
         "es": "MetaSoldier",
-        "en": "MetaSoldier"
+        "en": "MetaSoldier",
+        "pt": "MetaSoldier",
+        "ru": "MetaSoldier"
       },
       "sprite": "images/chickens/123.png",
       "default_item_id": 6,
@@ -6306,6 +9377,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6326,6 +9404,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao ser atingido, cura um aliado (5% vida máxima)) define seu estilo de jogo, complementada por seu poder (Lança um míssil, aplica queimadura) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При получении удара лечит союзника (5% макс. здоровья)) задает боевой стиль, а активный навык (Запускает ракету, накладывает ожог) требует 100 энергии (заряжается примерно за ~20 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -6333,7 +9427,9 @@ window.WIKI_DATA = {
       "id": 124,
       "name": {
         "es": "Inger",
-        "en": "Inger"
+        "en": "Inger",
+        "pt": "Inger",
+        "ru": "Inger"
       },
       "sprite": "images/chickens/124.png",
       "default_item_id": 37,
@@ -6357,6 +9453,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6377,6 +9480,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Miracle Sand (+5 power gain per hit); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ficar abaixo de 50% de vida, lança 3 mísseis (uma vez por combate)) define seu estilo de jogo, complementada por seu poder (Lança um míssil, aplica queimadura) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Areia Milagrosa (+5 de poder a cada golpe); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Когда здоровье падает ниже 50%, выпускает 3 ракеты (раз за бой)) задает боевой стиль, а активный навык (Запускает ракету, накладывает ожог) требует 100 энергии (заряжается примерно за ~2 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Чудесный песок (+5 к силе за каждый удар); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6384,7 +9503,9 @@ window.WIKI_DATA = {
       "id": 125,
       "name": {
         "es": "Rama",
-        "en": "Rama"
+        "en": "Rama",
+        "pt": "Rama",
+        "ru": "Rama"
       },
       "sprite": "images/chickens/125.png",
       "default_item_id": 55,
@@ -6408,6 +9529,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [
+          7,
+          8
+        ],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6428,6 +9556,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Miracle Sand (+5 power gain per hit); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Atacar um inimigo paralisado causa dano aos outros inimigos (30% do dano)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 90 pontos de energia (carrega em cerca de ~2 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При атаке парализованного врага наносит урон остальным врагам (30% урона)) задает боевой стиль, а активный навык (Двойная атака) требует 90 энергии (заряжается примерно за ~2 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6435,7 +9579,9 @@ window.WIKI_DATA = {
       "id": 126,
       "name": {
         "es": "Hueva",
-        "en": "Hueva"
+        "en": "Hueva",
+        "pt": "Hueva",
+        "ru": "Hueva"
       },
       "sprite": "images/chickens/126.png",
       "default_item_id": 36,
@@ -6454,7 +9600,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -6474,6 +9622,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (No início do combate, cura um aliado (100% vida máxima)) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 90 pontos de energia (carrega em cerca de ~6 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (В начале боя лечит союзника (100% макс. здоровья)) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 90 энергии (заряжается примерно за ~6 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -6481,7 +9645,9 @@ window.WIKI_DATA = {
       "id": 127,
       "name": {
         "es": "Jamer",
-        "en": "Jamer"
+        "en": "Jamer",
+        "pt": "Jamer",
+        "ru": "Jamer"
       },
       "sprite": "images/chickens/127.png",
       "default_item_id": 3,
@@ -6500,7 +9666,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -6520,6 +9688,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Golden Perch (+25% bonus damage and healing on first attack); Wrath (2 bonus attacks at combat start).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Começa lançando um machado, e cada ataque reduz a armadura inimiga (3%)) define seu estilo de jogo, complementada por seu poder (Arremessa um machado (80% dano) e cura a si mesmo (40% dano)) que requer 100 pontos de energia (carrega em cerca de ~20 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro Dourado (+25% de dano extra e cura no primeiro golpe); Ira (2 ataques adicionais no início da luta).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (В начале боя бросает топор, и каждая атака снижает броню врага (3%)) задает боевой стиль, а активный навык (Бросает топор (80% урона) и лечит себя (40% урона)) требует 100 энергии (заряжается примерно за ~20 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Золотой насест (+25% к урону и исцеление при первой атаке); Гнев (2 дополнительные атаки в начале боя).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -6527,7 +9711,9 @@ window.WIKI_DATA = {
       "id": 128,
       "name": {
         "es": "Jeraz",
-        "en": "Jeraz"
+        "en": "Jeraz",
+        "pt": "Jeraz",
+        "ru": "Jeraz"
       },
       "sprite": "images/chickens/128.png",
       "default_item_id": 5,
@@ -6548,6 +9734,10 @@ window.WIKI_DATA = {
         "wild": [],
         "eggs": [
           "La fábrica"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          7
         ]
       },
       "evolution": null,
@@ -6568,6 +9758,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ser atacado, lança uma bomba) define seu estilo de jogo, complementada por seu poder (Arremessa uma bomba (80% dano ao alvo, 40% aos outros)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При получении удара бросает бомбу) задает боевой стиль, а активный навык (Бросает бомбу (80% урона цели, 40% остальным)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -6575,7 +9781,9 @@ window.WIKI_DATA = {
       "id": 129,
       "name": {
         "es": "Cyborg",
-        "en": "Cyborg"
+        "en": "Cyborg",
+        "pt": "Cyborg",
+        "ru": "Cyborg"
       },
       "sprite": "images/chickens/129.png",
       "default_item_id": 45,
@@ -6597,6 +9805,11 @@ window.WIKI_DATA = {
         "eggs": [
           "Cementerio",
           "La fábrica"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          6,
+          7
         ]
       },
       "evolution": null,
@@ -6617,6 +9830,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (A equipe recebe 10% de dano) define seu estilo de jogo, complementada por seu poder (Lança um míssil, aplica queimadura) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Команда получает 10% урона) задает боевой стиль, а активный навык (Запускает ракету, накладывает ожог) требует 100 энергии (заряжается примерно за ~4 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -6624,7 +9853,9 @@ window.WIKI_DATA = {
       "id": 130,
       "name": {
         "es": "Jacko",
-        "en": "Jacko"
+        "en": "Jacko",
+        "pt": "Jacko",
+        "ru": "Jacko"
       },
       "sprite": "images/chickens/130.png",
       "default_item_id": 48,
@@ -6650,6 +9881,15 @@ window.WIKI_DATA = {
           "Pradera",
           "Rocosos",
           "Cementerio"
+        ],
+        "wild_ids": [
+          6,
+          8
+        ],
+        "egg_ids": [
+          0,
+          4,
+          6
         ]
       },
       "evolution": null,
@@ -6670,6 +9910,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Troubleslime (infects an enemy at battle start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar poder, cada inimigo sofre uma penalidade de -5% em um atributo aleatório.) define seu estilo de jogo, complementada por seu poder (Infecta o alvo) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Gosma Problemática (infecta um inimigo no início); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При использовании силы -5% к случайному параметру каждого врага) задает боевой стиль, а активный навык (Заражает цель) требует 100 энергии (заряжается примерно за ~5 ходов). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Проблемная слизь (заражает противника в начале боя); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -6677,7 +9933,9 @@ window.WIKI_DATA = {
       "id": 131,
       "name": {
         "es": "Cori",
-        "en": "Cori"
+        "en": "Cori",
+        "pt": "Cori",
+        "ru": "Cori"
       },
       "sprite": "images/chickens/131.png",
       "default_item_id": 27,
@@ -6702,6 +9960,14 @@ window.WIKI_DATA = {
         "eggs": [
           "Pradera",
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          0,
+          4
         ]
       },
       "evolution": null,
@@ -6722,6 +9988,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Cada ataque concede poder ao aliado (+10).) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~1 turno). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Каждая атака дает союзнику силу (+10)) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~1 ход). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -6729,7 +10011,9 @@ window.WIKI_DATA = {
       "id": 132,
       "name": {
         "es": "Pipasol",
-        "en": "Pipasol"
+        "en": "Pipasol",
+        "pt": "Pipasol",
+        "ru": "Pipasol"
       },
       "sprite": "images/chickens/132.png",
       "default_item_id": 1,
@@ -6753,6 +10037,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -6773,6 +10064,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
+        },
+        "pt": {
+          "role": "Bastião de Armadura (Muro Físico)",
+          "role_title": "Bastião de Armadura",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada turno, cura a equipe (5% da saúde máxima)) define seu estilo de jogo, complementada por seu poder (Perde vida (-10% vida máx.), o aliado ganha poder total e o próximo turno) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Evite ataques físicos diretos. Use efeitos contínuos que ignoram armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
+        },
+        "ru": {
+          "role": "Бастион брони (Физический щит)",
+          "role_title": "Бастион брони",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждый ход восстанавливает здоровье команды (5% от максимального запаса здоровья)) задает боевой стиль, а активный навык (Теряет здоровье (-10% макс. HP), союзник получает полную силу и следующий ход) требует 100 энергии (заряжается примерно за ~4 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Избегайте прямого физического урона. Используйте эффекты, игнорирующие броню: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -6780,7 +10087,9 @@ window.WIKI_DATA = {
       "id": 133,
       "name": {
         "es": "Astro",
-        "en": "Astro"
+        "en": "Astro",
+        "pt": "Astro",
+        "ru": "Astro"
       },
       "sprite": "images/chickens/133.png",
       "default_item_id": 3,
@@ -6804,6 +10113,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Cielo"
+        ],
+        "wild_ids": [
+          2,
+          8
+        ],
+        "egg_ids": [
+          2
         ]
       },
       "evolution": null,
@@ -6824,6 +10140,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ser curado, o dano aumenta (+3%)) define seu estilo de jogo, complementada por seu poder (Lance uma estrela (100% de dano e redefine o poder do alvo)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При лечении урон увеличивается (+3%)) задает боевой стиль, а активный навык (Бросьте звезду (100% урона и сбросьте силу цели)) требует 100 энергии (заряжается примерно за ~5 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -6831,7 +10163,9 @@ window.WIKI_DATA = {
       "id": 134,
       "name": {
         "es": "Eggalex",
-        "en": "Eggalex"
+        "en": "Eggalex",
+        "pt": "Eggalex",
+        "ru": "Eggalex"
       },
       "sprite": "images/chickens/134.png",
       "default_item_id": 58,
@@ -6850,14 +10184,20 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": {
         "type": "evolves_into",
         "target_id": 135,
         "target_name": "Mechalex 2.0",
-        "desc_es": "Evoluciona a Mechalex 2.0 en combate tras revivir con su pasiva.",
-        "desc_en": "Evolves into Mechalex 2.0 in combat after reviving with its passive."
+        "desc": {
+          "es": "Evoluciona a Mechalex 2.0 en combate tras revivir con su pasiva.",
+          "en": "Evolves into Mechalex 2.0 in combat after reviving with its passive.",
+          "pt": "Evolui para Mechalex 2.0 em combate após reviver com sua passiva.",
+          "ru": "Эволюционирует в Mechalex 2.0 в бою после возрождения пассивкой."
+        }
       },
       "tactical_guide": {
         "turns": 2,
@@ -6876,6 +10216,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Miracle Sand (+5 power gain per hit); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Cada ataque reduz a armadura do alvo (-5%). Ao ser atingido, ganha +20 de poder) define seu estilo de jogo, complementada por seu poder (Transforma-se em Mechalex) que requer 120 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Areia Milagrosa (+5 de poder a cada golpe); Espinho Eletrostático (paralisa o alvo no início, reduzindo velocidade em 50%); Tênis Furtivos (5% de chance de esquiva a cada turno).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ловкий бегун (Инициатор)",
+          "role_title": "Ловкий бегун",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждая атака снижает броню цели (-5%). При получении удара получает +20 силы) задает боевой стиль, а активный навык (Превращается в Mechalex) требует 120 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Чудесный песок (+5 к силе за каждый удар); Электрошип (парализует цель на старте, снижая скорость на 50%); Кроссовки-невидимки (5% шанс уклонения каждый ход).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6883,7 +10239,9 @@ window.WIKI_DATA = {
       "id": 135,
       "name": {
         "es": "Mechalex",
-        "en": "Mechalex"
+        "en": "Mechalex",
+        "pt": "Mechalex",
+        "ru": "Mechalex"
       },
       "sprite": "images/chickens/135.png",
       "default_item_id": 3,
@@ -6902,15 +10260,21 @@ window.WIKI_DATA = {
       "stat_total": 300,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": {
         "type": "evolved_from",
         "source_id": 134,
         "source_name": "Mechalex",
         "evolution_only": true,
-        "desc_es": "Forma evolucionada de Mechalex. No aparece en la tienda diaria, estado salvaje ni huevos.",
-        "desc_en": "Evolved form of Mechalex. Does not appear in daily shop, wild, or eggs."
+        "desc": {
+          "es": "Forma evolucionada de Mechalex. No aparece en la tienda diaria, estado salvaje ni huevos.",
+          "en": "Evolved form of Mechalex. Does not appear in daily shop, wild, or eggs.",
+          "pt": "Forma evoluída de Mechalex. Não aparece na loja diária, estado selvagem nem ovos.",
+          "ru": "Эволюционировавшая форма Mechalex. Не встречается в магазине, диком виде и яйцах."
+        }
       },
       "tactical_guide": {
         "turns": 4,
@@ -6929,6 +10293,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada turno, lance um míssil e perca armadura em (-4%)) define seu estilo de jogo, complementada por seu poder (Transforma-se em Eggalex) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждый ход бросает снаряд и теряет броню (-4%)) задает боевой стиль, а активный навык (Превращается в Eggalex) требует 100 энергии (заряжается примерно за ~4 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -6936,7 +10316,9 @@ window.WIKI_DATA = {
       "id": 136,
       "name": {
         "es": "Mayel",
-        "en": "Mayel"
+        "en": "Mayel",
+        "pt": "Mayel",
+        "ru": "Mayel"
       },
       "sprite": "images/chickens/136.png",
       "default_item_id": 67,
@@ -6960,6 +10342,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [
+          0,
+          8
+        ],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -6980,6 +10369,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Phoenix Pages (grants another revival); Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando um aliado revive, você ganha dano (+15%) e uma esquiva.) define seu estilo de jogo, complementada por seu poder (Lança um bumerangue (100% de dano e adiciona dois turnos de efeitos ao alvo)) que requer 100 pontos de energia (carrega em cerca de ~1 turno). Sua capacidade de reviver obriga a equipe adversária a derrotá-lo duas vezes, absorvendo turnos preciosos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Páginas da Fênix (concede novo renascimento); Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Когда союзник оживляет вас, вы получаете +15% к урону и уклонение.) задает боевой стиль, а активный навык (Бросает бумеранг (100% урона и добавляет два хода эффектов к цели)) требует 100 энергии (заряжается примерно за ~1 ход). Способность возрождаться заставляет противников побеждать его дважды, теряя ценный темп боя.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Страницы феникса (дает повторное возрождение); Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -6987,7 +10392,9 @@ window.WIKI_DATA = {
       "id": 137,
       "name": {
         "es": "Elfen",
-        "en": "Elfen"
+        "en": "Elfen",
+        "pt": "Elfen",
+        "ru": "Elfen"
       },
       "sprite": "images/chickens/137.png",
       "default_item_id": 34,
@@ -7008,6 +10415,10 @@ window.WIKI_DATA = {
         "wild": [],
         "eggs": [
           "Pradera"
+        ],
+        "wild_ids": [],
+        "egg_ids": [
+          0
         ]
       },
       "evolution": null,
@@ -7028,6 +10439,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Atacar inimigos infectados aumenta o poder (+25)) define seu estilo de jogo, complementada por seu poder (Cura um aliado (50% dano + 25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Атака зараженных врагов увеличивает силу (+25)) задает боевой стиль, а активный навык (Лечит союзника (50% урона + 25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~2 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -7035,7 +10462,9 @@ window.WIKI_DATA = {
       "id": 138,
       "name": {
         "es": "Felicie",
-        "en": "Felicie"
+        "en": "Felicie",
+        "pt": "Felicie",
+        "ru": "Felicie"
       },
       "sprite": "images/chickens/138.png",
       "default_item_id": 43,
@@ -7059,6 +10488,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Rocosos"
+        ],
+        "wild_ids": [
+          4,
+          8
+        ],
+        "egg_ids": [
+          4
         ]
       },
       "evolution": null,
@@ -7079,6 +10515,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Usar um item aumenta o dano (+25%) e o poder (+50)) define seu estilo de jogo, complementada por seu poder (Arremessa um machado (80% dano) e cura a si mesmo (40% dano)) que requer 100 pontos de energia (carrega em cerca de ~10 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Артиллерист (Дальний бой)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Использование предмета увеличивает урон (+25%) и силу (+50)) задает боевой стиль, а активный навык (Бросает топор (80% урона) и лечит себя (40% урона)) требует 100 энергии (заряжается примерно за ~10 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -7086,7 +10538,9 @@ window.WIKI_DATA = {
       "id": 139,
       "name": {
         "es": "Star",
-        "en": "Star"
+        "en": "Star",
+        "pt": "Star",
+        "ru": "Star"
       },
       "sprite": "images/chickens/139.png",
       "default_item_id": 35,
@@ -7110,6 +10564,13 @@ window.WIKI_DATA = {
         ],
         "eggs": [
           "Desierto"
+        ],
+        "wild_ids": [
+          3,
+          8
+        ],
+        "egg_ids": [
+          3
         ]
       },
       "evolution": null,
@@ -7130,6 +10591,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Derrotar um inimigo aumenta o poder (+100) e cura (50% do dano)) define seu estilo de jogo, complementada por seu poder (Lance uma estrela (100% de dano e redefine o poder do alvo)) que requer 100 pontos de energia (carrega em cerca de ~7 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Победа над врагом увеличивает силу (+100) и лечит (50% от урона)) задает боевой стиль, а активный навык (Бросьте звезду (100% урона и сбросьте силу цели)) требует 100 энергии (заряжается примерно за ~7 ходов). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -7137,7 +10614,9 @@ window.WIKI_DATA = {
       "id": 140,
       "name": {
         "es": "Skull",
-        "en": "Skull"
+        "en": "Skull",
+        "pt": "Skull",
+        "ru": "Skull"
       },
       "sprite": "images/chickens/140.png",
       "default_item_id": 61,
@@ -7156,7 +10635,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7176,6 +10657,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao receber um ataque, aumenta sua armadura e dano (+3%)) define seu estilo de jogo, complementada por seu poder (Perde vida, ganha dano (-10% vida máx, +25% dano)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa); Bico Congelado (20% de chance de congelar o agressor ao ser atingido).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Бронированная стена (Чистый танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (При получении удара увеличивает броню и урон (+3%)) задает боевой стиль, а активный навык (Теряет здоровье, получает урон (-10% макс. здоровья, +25% урона)) требует 100 энергии (заряжается примерно за ~4 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню); Ледяной клюв (20% шанс заморозить атаковавшего при получении удара).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -7183,7 +10680,9 @@ window.WIKI_DATA = {
       "id": 141,
       "name": {
         "es": "Toxic",
-        "en": "Toxic"
+        "en": "Toxic",
+        "pt": "Toxic",
+        "ru": "Toxic"
       },
       "sprite": "images/chickens/141.png",
       "default_item_id": 25,
@@ -7202,7 +10701,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7222,6 +10723,22 @@ window.WIKI_DATA = {
           "allies": "Consistent damage dealers or speedy finishers who capitalize while poison and infection wear down enemy health.",
           "items": "Danger Drop (poisons an enemy at combat start to trigger passives immediately); Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Equip Silence Scroll to silence it at combat start and seal its special ability before its rapid power cycle kicks in."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Atacar inimigos envenenados o cura (33% do dano)) define seu estilo de jogo, complementada por seu poder (Envenena o alvo) que requer 100 pontos de energia (carrega em cerca de ~2 turnos). Especializado em aplicar dano contínuo que ignora a armadura inimiga e desgasta alvos resistentes.",
+          "allies": "Companheiros com dano constante ou atacantes rápidos que finalizem o rival enquanto o veneno ou infecção consomem sua vida.",
+          "items": "Gota Perigosa (envenena um inimigo no início para ativar passivas de imediato); Areia Milagrosa (+5 de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Equipe Pergaminho do Silêncio para silenciá-lo no início e travar seu poder antes de fechar o ciclo de energia."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Атака отравленных врагов лечит его (33% урона)) задает боевой стиль, а активный навык (Отравляет цель) требует 100 энергии (заряжается примерно за ~2 хода). Специализируется на периодическом уроне, который игнорирует броню и истощает запас здоровья цели.",
+          "allies": "Союзники со стабильным уроном или быстрые бойцы, добивающие врагов, пока яд или инфекция истощают их силы.",
+          "items": "Опасная капля (отравляет врага на старте для активации пассивки); Чудесный песок (+5 к силе за каждый удар); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Используйте Свиток тишины, чтобы наложить безмолвие в начале боя и заблокировать способность до накопления энергии."
         }
       }
     },
@@ -7229,7 +10746,9 @@ window.WIKI_DATA = {
       "id": 142,
       "name": {
         "es": "Hium",
-        "en": "Hium"
+        "en": "Hium",
+        "pt": "Hium",
+        "ru": "Hium"
       },
       "sprite": "images/chickens/142.png",
       "default_item_id": 41,
@@ -7248,7 +10767,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7268,6 +10789,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Atacar inimigos congelados cura ele e seu aliado (20% do dano)) define seu estilo de jogo, complementada por seu poder (Congela o alvo) que requer 150 pontos de energia (carrega em cerca de ~3 turnos). Oferece controle crucial com congelamento, roubando turnos dos adversários e causando dano indireto.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Атака замороженных врагов лечит его и союзника (20% урона)) задает боевой стиль, а активный навык (Замораживает цель) требует 150 энергии (заряжается примерно за ~3 хода). Обеспечивает ценный контроль заморозкой, лишая противников ходов и нанося косвенный урон.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -7275,7 +10812,9 @@ window.WIKI_DATA = {
       "id": 143,
       "name": {
         "es": "Blade",
-        "en": "Blade"
+        "en": "Blade",
+        "pt": "Blade",
+        "ru": "Blade"
       },
       "sprite": "images/chickens/143.png",
       "default_item_id": 68,
@@ -7294,7 +10833,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7314,6 +10855,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Atacante de Força Bruta",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Atacar inimigos queimados te cura (20% do dano) e aumenta o poder (+20)) define seu estilo de jogo, complementada por seu poder (Queima o alvo) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Exerce papel versátil buscando trocas favoráveis para estabelecer vantagem numérica de 2 contra 1.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Ударник грубой силы",
+          "role_title": "Грубая сила",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Атака горящих врагов лечит (20% урона) и увеличивает силу (+20)) задает боевой стиль, а активный навык (Поджигает цель) требует 100 энергии (заряжается примерно за ~3 хода). Выполняет универсальную роль, стремясь создать численное преимущество 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -7321,7 +10878,9 @@ window.WIKI_DATA = {
       "id": 144,
       "name": {
         "es": "Gice",
-        "en": "Gice"
+        "en": "Gice",
+        "pt": "Gice",
+        "ru": "Gice"
       },
       "sprite": "images/chickens/144.png",
       "default_item_id": 34,
@@ -7340,7 +10899,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7360,6 +10921,22 @@ window.WIKI_DATA = {
           "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao usar poder, a equipe obtém uma poção aleatória se não tiver itens) define seu estilo de jogo, complementada por seu poder (Congela o alvo) que requer 150 pontos de energia (carrega em cerca de ~3 turnos). Oferece controle crucial com congelamento, roubando turnos dos adversários e causando dano indireto.",
+          "allies": "Protetores de primeira linha que resistam enquanto ele cicla continuamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (При использовании способности команда получает случайное зелье, если нет предметов) задает боевой стиль, а активный навык (Замораживает цель) требует 150 энергии (заряжается примерно за ~3 хода). Обеспечивает ценный контроль заморозкой, лишая противников ходов и нанося косвенный урон.",
+          "allies": "Стойкие защитники авангарда, выигрывающие время для постоянного применения способности (Pastank, Boomy, Garry).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     },
@@ -7367,7 +10944,9 @@ window.WIKI_DATA = {
       "id": 145,
       "name": {
         "es": "Evelyn",
-        "en": "Evelyn"
+        "en": "Evelyn",
+        "pt": "Evelyn",
+        "ru": "Evelyn"
       },
       "sprite": "images/chickens/145.png",
       "default_item_id": 65,
@@ -7386,7 +10965,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7406,6 +10987,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Cura o aliado quando esse aliado usa seu poder (33% do dano próprio)) define seu estilo de jogo, complementada por seu poder (Lança um sorvete (20% de dano) em todos os inimigos e congela) que requer 150 pontos de energia (carrega em cerca de ~3 turnos). Oferece controle crucial com congelamento, roubando turnos dos adversários e causando dano indireto.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bico Vampírico (cura 15% do dano causado a cada ataque); Páginas da Fênix (seguro de vida contra abates surpresa).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Батарея способностей (Маг)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Лечит союзника, когда тот использует способность (33% собственного урона)) задает боевой стиль, а активный навык (Бросает мороженое (20% урона) во всех врагов и замораживает) требует 150 энергии (заряжается примерно за ~3 хода). Обеспечивает ценный контроль заморозкой, лишая противников ходов и нанося косвенный урон.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Клюв вампира (исцеляет на 15% от нанесенного урона); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -7413,7 +11010,9 @@ window.WIKI_DATA = {
       "id": 146,
       "name": {
         "es": "Sinestrer",
-        "en": "Sinestrer"
+        "en": "Sinestrer",
+        "pt": "Sinestrer",
+        "ru": "Sinestrer"
       },
       "sprite": "images/chickens/146.png",
       "default_item_id": 62,
@@ -7432,7 +11031,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7452,6 +11053,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Suporte Curativo (Utilitário Tático)",
+          "role_title": "Suporte Curativo",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Lança uma bomba sempre que um inimigo usar seu poder) define seu estilo de jogo, complementada por seu poder (Cura a si mesmo (25% vida máx)) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Целитель (Тактическая поддержка)",
+          "role_title": "Целитель",
+          "duo": "Идеально занимает позицию: Тыл (Позиция 2). Его пассивная способность (Бросает бомбу каждый раз, когда враг использует способность) задает боевой стиль, а активный навык (Лечит себя (25% макс. здоровья)) требует 100 энергии (заряжается примерно за ~4 хода). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -7459,7 +11076,9 @@ window.WIKI_DATA = {
       "id": 147,
       "name": {
         "es": "Intiken",
-        "en": "Intiken"
+        "en": "Intiken",
+        "pt": "Intiken",
+        "ru": "Intiken"
       },
       "sprite": "images/chickens/147.png",
       "default_item_id": 69,
@@ -7478,7 +11097,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7498,6 +11119,22 @@ window.WIKI_DATA = {
           "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
           "items": "Ballistic Impulse (boosts damage when firing projectiles); First Egg or First Bomb (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense).",
           "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
+        },
+        "pt": {
+          "role": "Tanque de Vida Massiva (Esponja de Vida)",
+          "role_title": "Tanque de Vida",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (A cada turno perde vida (10% da vida máxima), mas ganha poder (+20)) define seu estilo de jogo, complementada por seu poder (Arremessa um machado (80% dano) e cura a si mesmo (40% dano)) que requer 100 pontos de energia (carrega em cerca de ~5 turnos). Seu foco em projéteis permite punir inimigos à distância sem se expor a contra-ataques físicos diretos.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Impulso Balístico (aumenta o dano ao disparar projéteis); Primeiro Ovo ou Primeira Bomba (projétil inicial gratuito); Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Bicador Dourado (atrai o foco inimigo para sua alta defesa).",
+          "counter": "Equipe Bico Blindado para reduzir o dano de bombas e projéteis em 66%, ou ataque primeiro com um velocista."
+        },
+        "ru": {
+          "role": "Танк с высоким здоровьем",
+          "role_title": "Танк здоровья",
+          "duo": "Идеально занимает позицию: Авангард (Позиция 1). Его пассивная способность (Каждый ход теряет здоровье (10% макс. HP), но увеличивает силу (+20)) задает боевой стиль, а активный навык (Бросает топор (80% урона) и лечит себя (40% урона)) требует 100 энергии (заряжается примерно за ~5 ходов). Дистанционные атаки позволяют безопасно наносить урон врагам без риска прямого контакта.",
+          "allies": "Мощные атакующие цыплята, реализующие урон под прикрытием (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Баллистический импульс (увеличивает урон при стрельбе); Первое яйцо или Первая бомба (бесплатный стартовый выстрел); Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Золотой клеватель (привлекает весь огонь врагов на свою броню).",
+          "counter": "Экипируйте Бронированный клюв, чтобы снизить урон от бомб и снарядов на 66%, или опередите его быстрым бойцом."
         }
       }
     },
@@ -7505,7 +11142,9 @@ window.WIKI_DATA = {
       "id": 148,
       "name": {
         "es": "Toro",
-        "en": "Toro"
+        "en": "Toro",
+        "pt": "Toro",
+        "ru": "Toro"
       },
       "sprite": "images/chickens/148.png",
       "default_item_id": 64,
@@ -7524,7 +11163,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7544,6 +11185,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Ao ser atacado, aumenta seu dano (5%) e velocidade (5%)) define seu estilo de jogo, complementada por seu poder (Ataque duplo) que requer 100 pontos de energia (carrega em cerca de ~4 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla rival ou garantir um abate decisivo.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Freie seu ímpeto ofensivo com controle: congele-o com Bico Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
+        },
+        "ru": {
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Колосс",
+          "duo": "Идеально занимает позицию: Авангард или Тыл. Его пассивная способность (При получении удара получает урон (5%) и скорость (5%)) задает боевой стиль, а активный навык (Двойная атака) требует 100 энергии (заряжается примерно за ~4 хода). Способность наносить серию ударов быстро изматывает дуэт противника или гарантирует добивание.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Остановите его натиск контролем: заморозьте Ледяным клювом или снизьте темп ходов параличом (Электрошип)."
         }
       }
     },
@@ -7551,7 +11208,9 @@ window.WIKI_DATA = {
       "id": 149,
       "name": {
         "es": "Chimir",
-        "en": "Chimir"
+        "en": "Chimir",
+        "pt": "Chimir",
+        "ru": "Chimir"
       },
       "sprite": "images/chickens/149.png",
       "default_item_id": 57,
@@ -7570,7 +11229,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7590,6 +11251,22 @@ window.WIKI_DATA = {
           "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
           "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Atacar um inimigo congelado causa dano extra (+30%)) define seu estilo de jogo, complementada por seu poder (Congela o alvo) que requer 150 pontos de energia (carrega em cerca de ~5 turnos). Oferece controle crucial com congelamento, roubando turnos dos adversários e causando dano indireto.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para forçar os inimigos a atacá-los e garantir turnos livres de ataque.",
+          "items": "Poleiro (começa com 100% de poder e +50 máx para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Aproveite sua fragilidade: foque-o com a tática de menor vida ou aplique paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (Атака замороженного врага наносит дополнительный урон (+30%)) задает боевой стиль, а активный навык (Замораживает цель) требует 150 энергии (заряжается примерно за ~5 ходов). Обеспечивает ценный контроль заморозкой, лишая противников ходов и нанося косвенный урон.",
+          "allies": "Защитные танки с предметом «Золотой клеватель» (Pastank, Armor, Boomy или Garry), отвлекающие огонь врагов на себя.",
+          "items": "Насест (начинает со 100% силы и +50 к макс. силе для хода 1); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Используйте его уязвимость: немедленно фокусируйте атаки на цели с наименьшим здоровьем или замедлите Электрошипом (снижает скорость на 50%)."
         }
       }
     },
@@ -7597,7 +11274,9 @@ window.WIKI_DATA = {
       "id": 150,
       "name": {
         "es": "Garra",
-        "en": "Garra"
+        "en": "Garra",
+        "pt": "Garra",
+        "ru": "Garra"
       },
       "sprite": "images/chickens/150.png",
       "default_item_id": 63,
@@ -7616,7 +11295,9 @@ window.WIKI_DATA = {
       "stat_total": 200,
       "habitats": {
         "wild": [],
-        "eggs": []
+        "eggs": [],
+        "wild_ids": [],
+        "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
@@ -7636,6 +11317,22 @@ window.WIKI_DATA = {
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Phoenix Pages (grants another revival); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
+        },
+        "pt": {
+          "role": "Equilibrado Versátil",
+          "role_title": "Equilibrado",
+          "duo": "Posiciona-se idealmente na flexível (Vanguarda ou Retaguarda). Sua passiva (Ao iniciar o combate, a equipe ganha reviver) define seu estilo de jogo, complementada por seu poder (Cura a equipe (50% do poder)) que requer 100 pontos de energia (carrega em cerca de ~3 turnos). Sua capacidade de reviver obriga a equipe adversária a derrotá-lo duas vezes, absorvendo turnos preciosos.",
+          "allies": "Combina tanto com atacantes velozes (Chica, Mosca) para fechar lutas quanto com tanques defensivos (Pastank, Armor) para controle.",
+          "items": "Páginas da Fênix (concede novo renascimento); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 HP ao cair abaixo de 35% de vida); Poção Mágica (limpa qualquer efeito negativo).",
+          "counter": "Observe o papel dele na dupla e isole-o derrotando o parceiro primeiro para criar vantagem de 2 contra 1."
+        },
+        "ru": {
+          "role": "Сбалансированный боец",
+          "role_title": "Универсал",
+          "duo": "Идеально занимает позицию: любая (Авангард или Тыл). Его пассивная способность (В начале боя команда получает возрождение) задает боевой стиль, а активный навык (Лечит команду (50% силы)) требует 100 энергии (заряжается примерно за ~3 хода). Способность возрождаться заставляет противников побеждать его дважды, теряя ценный темп боя.",
+          "allies": "Отлично сочетается как с быстрыми бойцами (Chica, Mosca), так и с крепкими танками (Pastank, Armor).",
+          "items": "Страницы феникса (дает повторное возрождение); Трицвет (+5% к урону, броне и скорости); Жизненная цепь (исцеляет 700 HP при здоровье ниже 35%); Волшебное зелье (снимает любые негативные эффекты).",
+          "counter": "Определите его роль в паре и изолируйте, сначала победив союзника, чтобы создать перевес 2 против 1."
         }
       }
     }
@@ -7645,11 +11342,15 @@ window.WIKI_DATA = {
       "id": 0,
       "name": {
         "es": "Jugo de pollo",
-        "en": "Cluck juice"
+        "en": "Cluck juice",
+        "pt": "Suco de Frango",
+        "ru": "Куриный сок"
       },
       "description": {
         "es": "Cura 100 puntos de vida, se activa con 25% de vida o menos",
-        "en": "Heal 100 life points, trigger with 25% life or lower"
+        "en": "Heal 100 life points, trigger with 25% life or lower",
+        "pt": "Cura 100 pontos de vida, aciona com 25% de vida ou menos",
+        "ru": "Лечит 100 здоровья, срабатывает при 25% здоровья или ниже"
       },
       "price": 1,
       "shop_price": 5,
@@ -7657,17 +11358,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/0.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 1,
       "name": {
         "es": "Semilla rompepicos",
-        "en": "Beak breaker seed"
+        "en": "Beak breaker seed",
+        "pt": "Semente Quebra-Bico",
+        "ru": "Семя-клюволом"
       },
       "description": {
         "es": "Empieza la batalla con 15% más de vida máxima",
-        "en": "Start the battle with 15% more max life"
+        "en": "Start the battle with 15% more max life",
+        "pt": "Começa a batalha com 15% mais vida máx",
+        "ru": "Начинает бой с +15% макс. здоровья"
       },
       "price": 2,
       "shop_price": 10,
@@ -7675,17 +11384,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/1.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 2,
       "name": {
         "es": "Diente de cuervo",
-        "en": "Raven's tooth"
+        "en": "Raven's tooth",
+        "pt": "Dente de Corvo",
+        "ru": "Зуб ворона"
       },
       "description": {
         "es": "Empieza la batalla con 15% más de armadura",
-        "en": "Start the battle with 15% more armor"
+        "en": "Start the battle with 15% more armor",
+        "pt": "Começa a batalha com 15% mais armadura",
+        "ru": "Начинает бой с +15% брони"
       },
       "price": 2,
       "shop_price": 10,
@@ -7693,17 +11410,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/2.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 3,
       "name": {
         "es": "Ojo loco",
-        "en": "Crazy eye"
+        "en": "Crazy eye",
+        "pt": "Olho Maluco",
+        "ru": "Безумный глаз"
       },
       "description": {
         "es": "Empieza la batalla con 15% más de daño",
-        "en": "Start the battle with 15% more damage"
+        "en": "Start the battle with 15% more damage",
+        "pt": "Começa a batalha com 15% mais dano",
+        "ru": "Начинает бой с +15% урона"
       },
       "price": 2,
       "shop_price": 10,
@@ -7711,17 +11436,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/3.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 4,
       "name": {
         "es": "Guante de gallina",
-        "en": "Hen's glove"
+        "en": "Hen's glove",
+        "pt": "Luva de Galinha",
+        "ru": "Перчатка курицы"
       },
       "description": {
         "es": "Empieza la batalla con 15% más de velocidad",
-        "en": "Start the battle with 15% more speed"
+        "en": "Start the battle with 15% more speed",
+        "pt": "Começa a batalha com 15% mais velocidade",
+        "ru": "Начинает бой с +15% скорости"
       },
       "price": 2,
       "shop_price": 10,
@@ -7729,17 +11462,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/4.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 5,
       "name": {
         "es": "Palo de raíz",
-        "en": "Roost stick"
+        "en": "Roost stick",
+        "pt": "Poleiro",
+        "ru": "Насест"
       },
       "description": {
         "es": "Empieza la batalla con poder lleno. +50 poder máximo",
-        "en": "Start the battle with full power. +50 power max"
+        "en": "Start the battle with full power. +50 power max",
+        "pt": "Começa a batalha com poder cheio. +50 poder máx",
+        "ru": "Начинает бой с полной силой. +50 к макс. силе"
       },
       "price": 4,
       "shop_price": 20,
@@ -7747,17 +11488,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/5.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 6,
       "name": {
         "es": "Picoteador dorado",
-        "en": "Golden peckinator"
+        "en": "Golden peckinator",
+        "pt": "Bicador Dourado",
+        "ru": "Золотой клеватель"
       },
       "description": {
         "es": "Obtiene el enfoque de los enemigos",
-        "en": "Get enemies focus"
+        "en": "Get enemies focus",
+        "pt": "Atrai o foco dos inimigos",
+        "ru": "Привлекает внимание врагов (фокус)"
       },
       "price": 4,
       "shop_price": 20,
@@ -7765,17 +11514,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/6.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 7,
       "name": {
         "es": "Elixir de pollo",
-        "en": "Cluck'n'boom elixir"
+        "en": "Cluck'n'boom elixir",
+        "pt": "Elixir Cocoricó",
+        "ru": "Эликсир взрыва"
       },
       "description": {
         "es": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de daño",
-        "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more damage"
+        "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more damage",
+        "pt": "Cura 125 pontos de vida, aciona com 25% de vida ou menos e ganha 10% mais dano",
+        "ru": "Лечит 125 здоровья, срабатывает при 25% и дает +10% урона"
       },
       "price": 3,
       "shop_price": 15,
@@ -7783,17 +11540,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/7.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 8,
       "name": {
         "es": "Disparo eggspresso",
-        "en": "Eggspresso shot"
+        "en": "Eggspresso shot",
+        "pt": "Dose de Eggspresso",
+        "ru": "Эггспрессо шот"
       },
       "description": {
         "es": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de velocidad",
-        "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more speed"
+        "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more speed",
+        "pt": "Cura 125 pontos de vida, aciona com 25% de vida ou menos e ganha 10% mais velocidade",
+        "ru": "Лечит 125 здоровья, срабатывает при 25% и дает +10% скорости"
       },
       "price": 3,
       "shop_price": 15,
@@ -7801,17 +11566,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/8.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 9,
       "name": {
         "es": "Brebaje armadura de plumas",
-        "en": "Feather armor brew"
+        "en": "Feather armor brew",
+        "pt": "Bebida Armadura de Penas",
+        "ru": "Перьевая броня"
       },
       "description": {
         "es": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de armadura",
-        "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more armor"
+        "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more armor",
+        "pt": "Cura 125 pontos de vida, aciona com 25% de vida ou menos e ganha 10% mais armadura",
+        "ru": "Лечит 125 здоровья, срабатывает при 25% и дает +10% брони"
       },
       "price": 3,
       "shop_price": 15,
@@ -7819,17 +11592,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/9.png",
       "found_in_zones": [
         "Pradera"
-      ]
+      ],
+      "found_in_zone_ids": [
+        0
+      ],
+      "found_in_special": []
     },
     {
       "id": 10,
       "name": {
         "es": "Sanación ardiente",
-        "en": "Sizzle heal"
+        "en": "Sizzle heal",
+        "pt": "Cura Ardente",
+        "ru": "Жгучее лечение"
       },
       "description": {
         "es": "Las quemaduras curan",
-        "en": "Burn heals"
+        "en": "Burn heals",
+        "pt": "Queimadura cura",
+        "ru": "Ожог лечит"
       },
       "price": 5,
       "shop_price": 25,
@@ -7837,17 +11618,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/10.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 11,
       "name": {
         "es": "Pollo limpio",
-        "en": "Clean cluck"
+        "en": "Clean cluck",
+        "pt": "Frango Limpo",
+        "ru": "Чистая курица"
       },
       "description": {
         "es": "Elimina efectos al usar poder",
-        "en": "Cleanses the effect when use power"
+        "en": "Cleanses the effect when use power",
+        "pt": "Limpa efeito ao usar poder",
+        "ru": "Снимает эффекты при использовании силы"
       },
       "price": 5,
       "shop_price": 25,
@@ -7855,17 +11644,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/11.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 12,
       "name": {
         "es": "Poder eggs-tra",
-        "en": "Eggs-tra power"
+        "en": "Eggs-tra power",
+        "pt": "Poder Ovos-tra",
+        "ru": "Яйца-сила"
       },
       "description": {
         "es": "2% más de daño cada turno",
-        "en": "2% more damage each turn"
+        "en": "2% more damage each turn",
+        "pt": "2% mais dano a cada turno",
+        "ru": "+2% урона каждый ход"
       },
       "price": 5,
       "shop_price": 25,
@@ -7873,17 +11670,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/12.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 13,
       "name": {
         "es": "Mega jugo de pollo",
-        "en": "Mega cluck juice"
+        "en": "Mega cluck juice",
+        "pt": "Mega Suco de Frango",
+        "ru": "Мега сок"
       },
       "description": {
         "es": "Cura 200 puntos de vida, se activa con 25% de vida o menos",
-        "en": "Heal 200 life points, trigger with 25% life or lower"
+        "en": "Heal 200 life points, trigger with 25% life or lower",
+        "pt": "Cura 200 pontos de vida, aciona com 25% de vida ou menos",
+        "ru": "Лечит 200 здоровья, срабатывает при 25% здоровья или ниже"
       },
       "price": 2,
       "shop_price": 20,
@@ -7891,17 +11696,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/13.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 14,
       "name": {
         "es": "Flama potenciada",
-        "en": "Flame boost"
+        "en": "Flame boost",
+        "pt": "Impulso de Chama",
+        "ru": "Усиление пламени"
       },
       "description": {
         "es": "Cada turno, 1% extra de daño si está quemado",
-        "en": "Each turn, 1% extra damage if has burn"
+        "en": "Each turn, 1% extra damage if has burn",
+        "pt": "A cada turno, 1% de dano extra se tiver queimadura",
+        "ru": "Каждый ход +1% урона, если горит"
       },
       "price": 4,
       "shop_price": 20,
@@ -7909,17 +11722,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/14.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 15,
       "name": {
         "es": "Flama burbujeante",
-        "en": "Flame fizz"
+        "en": "Flame fizz",
+        "pt": "Chama Efervescente",
+        "ru": "Гаситель пламени"
       },
       "description": {
         "es": "Limpia la quemadura",
-        "en": "Clean burn"
+        "en": "Clean burn",
+        "pt": "Limpa queimadura",
+        "ru": "Снимает ожог"
       },
       "price": 4,
       "shop_price": 20,
@@ -7927,17 +11748,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/15.png",
       "found_in_zones": [
         "Volcán"
-      ]
+      ],
+      "found_in_zone_ids": [
+        1
+      ],
+      "found_in_special": []
     },
     {
       "id": 16,
       "name": {
         "es": "Giga jugo de pollo",
-        "en": "Giga Cluck Juice"
+        "en": "Giga Cluck Juice",
+        "pt": "Giga Suco de Frango",
+        "ru": "Гига сок"
       },
       "description": {
         "es": "Cura 275 puntos de vida, se activa con 25% de vida o menos",
-        "en": "Heal 275 life points, trigger with 25% life or lower"
+        "en": "Heal 275 life points, trigger with 25% life or lower",
+        "pt": "Cura 275 pontos de vida, aciona com 25% de vida ou menos",
+        "ru": "Лечит 275 здоровья, срабатывает при 25% здоровья или ниже"
       },
       "price": 6,
       "shop_price": 30,
@@ -7945,17 +11774,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/16.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 17,
       "name": {
         "es": "Gran pico",
-        "en": "Big Beak"
+        "en": "Big Beak",
+        "pt": "Grande Bico",
+        "ru": "Большой клюв"
       },
       "description": {
         "es": "Limpia el silencio",
-        "en": "Clean silence"
+        "en": "Clean silence",
+        "pt": "Limpa silêncio",
+        "ru": "Снимает молчание"
       },
       "price": 6,
       "shop_price": 30,
@@ -7963,17 +11800,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/17.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 18,
       "name": {
         "es": "Zapapollos",
-        "en": "Sneaky Sneakers"
+        "en": "Sneaky Sneakers",
+        "pt": "Tênis Furtivos",
+        "ru": "Кеды скрытности"
       },
       "description": {
         "es": "5% de poder esquivar en cada turno",
-        "en": "+5% to gain an avoid each turn"
+        "en": "+5% to gain an avoid each turn",
+        "pt": "+5% para ganhar uma esquiva a cada turno",
+        "ru": "+5% шанс уклониться каждый ход"
       },
       "price": 6,
       "shop_price": 30,
@@ -7981,17 +11826,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/18.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 19,
       "name": {
         "es": "Arreglanube",
-        "en": "Fluffy Fix"
+        "en": "Fluffy Fix",
+        "pt": "Conserto Fofo",
+        "ru": "Пушистый ремонт"
       },
       "description": {
         "es": "Al empezar un combate, se cura a sí mismo (35% de vida máxima)",
-        "en": "When start the combat, heal himself (20% max life)"
+        "en": "When start the combat, heal himself (20% max life)",
+        "pt": "Ao iniciar combate, cura a si mesmo (20% vida máx)",
+        "ru": "В начале боя лечит себя (20% макс. здоровья)"
       },
       "price": 6,
       "shop_price": 30,
@@ -7999,17 +11852,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/19.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 20,
       "name": {
         "es": "Pergamino del silencio",
-        "en": "Silence Scroll"
+        "en": "Silence Scroll",
+        "pt": "Pergaminho do Silêncio",
+        "ru": "Свиток тишины"
       },
       "description": {
         "es": "Cuando empieza el combate, silencia a un enemigo",
-        "en": "When start the combat, silence an enemy"
+        "en": "When start the combat, silence an enemy",
+        "pt": "Ao iniciar combate, silencia um inimigo",
+        "ru": "В начале боя накладывает молчание на врага"
       },
       "price": 6,
       "shop_price": 30,
@@ -8017,17 +11878,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/20.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 21,
       "name": {
         "es": "Libro potenciado",
-        "en": "Boosted Book"
+        "en": "Boosted Book",
+        "pt": "Livro Potencializado",
+        "ru": "Усиленная книга"
       },
       "description": {
         "es": "Al ser afectado obtienes 10% de daño extra",
-        "en": "When get a effect gain 10% extra damage"
+        "en": "When get a effect gain 10% extra damage",
+        "pt": "Ao receber um efeito ganha 10% de dano extra",
+        "ru": "При получении эффекта дает +10% урона"
       },
       "price": 6,
       "shop_price": 30,
@@ -8035,17 +11904,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/21.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 22,
       "name": {
         "es": "Manual de curación",
-        "en": "Healing Handbook"
+        "en": "Healing Handbook",
+        "pt": "Manual de Cura",
+        "ru": "Справочник лечения"
       },
       "description": {
         "es": "Al ser afectado se cura a sí mismo (5% de vida máxima)",
-        "en": "When get a effect heal himself (5% max life)"
+        "en": "When get a effect heal himself (5% max life)",
+        "pt": "Ao receber um efeito cura a si mesmo (5% vida máx)",
+        "ru": "При получении эффекта лечит себя (5% макс. здоровья)"
       },
       "price": 6,
       "shop_price": 30,
@@ -8053,17 +11930,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/22.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 23,
       "name": {
         "es": "Páginas del fénix",
-        "en": "Phoenix Pages"
+        "en": "Phoenix Pages",
+        "pt": "Páginas da Fênix",
+        "ru": "Страницы феникса"
       },
       "description": {
         "es": "Puede revivir",
-        "en": "Can revive"
+        "en": "Can revive",
+        "pt": "Pode reviver",
+        "ru": "Может возродиться"
       },
       "price": 6,
       "shop_price": 30,
@@ -8071,17 +11956,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/23.png",
       "found_in_zones": [
         "Cielo"
-      ]
+      ],
+      "found_in_zone_ids": [
+        2
+      ],
+      "found_in_special": []
     },
     {
       "id": 24,
       "name": {
         "es": "Tera jugo de pollo",
-        "en": "Tera Cluck Juice"
+        "en": "Tera Cluck Juice",
+        "pt": "Tera Suco de Frango",
+        "ru": "Тера сок"
       },
       "description": {
         "es": "Cura 350 puntos de vida, se activa con 25% de vida o menos",
-        "en": "Heals 350 HP, activates when at 25% HP or less"
+        "en": "Heals 350 HP, activates when at 25% HP or less",
+        "pt": "Cura 350 PV, ativa com 25% de PV ou menos",
+        "ru": "Лечит 350 ХП, срабатывает при 25% ХП или меньше"
       },
       "price": 7,
       "shop_price": 35,
@@ -8089,17 +11982,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/24.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 25,
       "name": {
         "es": "Gota peligrosa",
-        "en": "Danger Drop"
+        "en": "Danger Drop",
+        "pt": "Gota Perigosa",
+        "ru": "Опасная капля"
       },
       "description": {
         "es": "Cuando empieza el combate, envenena a un enemigo",
-        "en": "At the start of battle, poisons an enemy"
+        "en": "At the start of battle, poisons an enemy",
+        "pt": "No início da batalha, envenena um inimigo",
+        "ru": "В начале боя отравляет врага"
       },
       "price": 7,
       "shop_price": 35,
@@ -8107,17 +12008,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/25.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 26,
       "name": {
         "es": "Medicina",
-        "en": "Cure-All"
+        "en": "Cure-All",
+        "pt": "Cura-Tudo",
+        "ru": "Панацея"
       },
       "description": {
         "es": "Limpia la infección",
-        "en": "Cleanses infection"
+        "en": "Cleanses infection",
+        "pt": "Limpa infecção",
+        "ru": "Снимает инфекцию"
       },
       "price": 7,
       "shop_price": 35,
@@ -8125,17 +12034,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/26.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 27,
       "name": {
         "es": "Arena milagrosa",
-        "en": "Miracle Sand"
+        "en": "Miracle Sand",
+        "pt": "Areia Milagrosa",
+        "ru": "Чудо-песок"
       },
       "description": {
         "es": "Cada ataque otorga +5 poder",
-        "en": "Each attack grants +5 power"
+        "en": "Each attack grants +5 power",
+        "pt": "Cada ataque concede +5 poder",
+        "ru": "Каждая атака дает +5 силы"
       },
       "price": 7,
       "shop_price": 35,
@@ -8143,17 +12060,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/27.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 28,
       "name": {
         "es": "Mirador dorado",
-        "en": "Golden Perch"
+        "en": "Golden Perch",
+        "pt": "Poleiro Dourado",
+        "ru": "Золотой насест"
       },
       "description": {
         "es": "Primer ataque hace 25% de daño extra y cura (50% del ataque)",
-        "en": "First attack deals 25% extra damage and heals (50% of the attack)"
+        "en": "First attack deals 25% extra damage and heals (50% of the attack)",
+        "pt": "Primeiro ataque causa 25% de dano extra e cura (50% do ataque)",
+        "ru": "Первая атака наносит 25% доп. урона и лечит (50% от атаки)"
       },
       "price": 7,
       "shop_price": 35,
@@ -8161,17 +12086,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/28.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 29,
       "name": {
         "es": "Pico podrido",
-        "en": "Rotten Beak"
+        "en": "Rotten Beak",
+        "pt": "Bico Podre",
+        "ru": "Гнилой клюв"
       },
       "description": {
         "es": "Cada turno, +1% extra de daño si está infectado",
-        "en": "Each turn, +1% extra damage if infected"
+        "en": "Each turn, +1% extra damage if infected",
+        "pt": "A cada turno, +1% de dano extra se estiver infectado",
+        "ru": "Каждый ход +1% доп. урона, если заражен"
       },
       "price": 7,
       "shop_price": 35,
@@ -8179,17 +12112,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/29.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 30,
       "name": {
         "es": "Ala podrida",
-        "en": "Rotten Wing"
+        "en": "Rotten Wing",
+        "pt": "Asa Podre",
+        "ru": "Гнилое крыло"
       },
       "description": {
         "es": "Derrotar a un enemigo infectado te cura por completo",
-        "en": "Defeating an infected enemy fully heals you"
+        "en": "Defeating an infected enemy fully heals you",
+        "pt": "Derrotar um inimigo infectado te cura completamente",
+        "ru": "Победа над зараженным врагом полностью лечит"
       },
       "price": 8,
       "shop_price": 40,
@@ -8197,17 +12138,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/30.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 31,
       "name": {
         "es": "Moco problemático",
-        "en": "Troubleslime"
+        "en": "Troubleslime",
+        "pt": "Gosma Problemática",
+        "ru": "Проблемная слизь"
       },
       "description": {
         "es": "Cuando empieza el combate, infecta a un enemigo",
-        "en": "At the start of battle, infects an enemy"
+        "en": "At the start of battle, infects an enemy",
+        "pt": "No início da batalha, infecta um inimigo",
+        "ru": "В начале боя заражает врага"
       },
       "price": 8,
       "shop_price": 40,
@@ -8215,17 +12164,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/31.png",
       "found_in_zones": [
         "Desierto"
-      ]
+      ],
+      "found_in_zone_ids": [
+        3
+      ],
+      "found_in_special": []
     },
     {
       "id": 32,
       "name": {
         "es": "Roca jugosa",
-        "en": "Juicy Rock"
+        "en": "Juicy Rock",
+        "pt": "Rocha Suculenta",
+        "ru": "Сочный камень"
       },
       "description": {
         "es": "Cura 400 puntos de vida, se activa con 35% de vida o menos",
-        "en": "Heals 400 health points, activates when at 35% health or lower"
+        "en": "Heals 400 health points, activates when at 35% health or lower",
+        "pt": "Cura 400 pontos de vida, ativa com 35% de vida ou menos",
+        "ru": "Лечит 400 здоровья, срабатывает при 35% здоровья или меньше"
       },
       "price": 8,
       "shop_price": 40,
@@ -8233,17 +12190,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/32.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 33,
       "name": {
         "es": "triflor",
-        "en": "Triflower"
+        "en": "Triflower",
+        "pt": "Triflor",
+        "ru": "Трицвет"
       },
       "description": {
         "es": "Cuando empieza el combate, obtiene daño (+5%), armadura (+5%) y velocidad (+5%)",
-        "en": "When combat begins, gains damage (+5%), armor (+5%), and speed (+5%)"
+        "en": "When combat begins, gains damage (+5%), armor (+5%), and speed (+5%)",
+        "pt": "Quando o combate começa, ganha dano (+5%), armadura (+5%) e velocidade (+5%)",
+        "ru": "В начале боя получает урон (+5%), броню (+5%) и скорость (+5%)"
       },
       "price": 8,
       "shop_price": 40,
@@ -8251,17 +12216,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/33.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 34,
       "name": {
         "es": "Poción mágica",
-        "en": "Magic Potion"
+        "en": "Magic Potion",
+        "pt": "Poção Mágica",
+        "ru": "Волшебное зелье"
       },
       "description": {
         "es": "Limpia cualquier estado",
-        "en": "Clears any status condition"
+        "en": "Clears any status condition",
+        "pt": "Limpa qualquer condição de status",
+        "ru": "Снимает любой статус"
       },
       "price": 8,
       "shop_price": 40,
@@ -8269,17 +12242,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/34.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 35,
       "name": {
         "es": "Roca atómica",
-        "en": "Atomic Rock"
+        "en": "Atomic Rock",
+        "pt": "Rocha Atômica",
+        "ru": "Атомный камень"
       },
       "description": {
         "es": "Cuando empieza el combate, obtiene daño (+20%) o armadura (+20%)",
-        "en": "When combat begins, gains either damage (+20%) or armor (+20%)"
+        "en": "When combat begins, gains either damage (+20%) or armor (+20%)",
+        "pt": "Quando o combate começa, ganha dano (+20%) ou armadura (+20%)",
+        "ru": "В начале боя получает урон (+20%) или броню (+20%)"
       },
       "price": 8,
       "shop_price": 40,
@@ -8287,17 +12268,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/35.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 36,
       "name": {
         "es": "Primer huevo",
-        "en": "First Egg"
+        "en": "First Egg",
+        "pt": "Primeiro Ovo",
+        "ru": "Первое яйцо"
       },
       "description": {
         "es": "Cuando empieza el combate, lanza un huevo",
-        "en": "When combat begins, throw an egg"
+        "en": "When combat begins, throw an egg",
+        "pt": "Quando o combate começa, lança um ovo",
+        "ru": "В начале боя бросает яйцо"
       },
       "price": 8,
       "shop_price": 40,
@@ -8305,17 +12294,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/36.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 37,
       "name": {
         "es": "Primer bomba",
-        "en": "First Bomb"
+        "en": "First Bomb",
+        "pt": "Primeira Bomba",
+        "ru": "Первая бомба"
       },
       "description": {
         "es": "Cuando empieza el combate, lanza una bomba",
-        "en": "When combat begins, throw a bomb"
+        "en": "When combat begins, throw a bomb",
+        "pt": "Quando o combate começa, lança uma bomba",
+        "ru": "В начале боя бросает бомбу"
       },
       "price": 8,
       "shop_price": 40,
@@ -8323,17 +12320,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/37.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 38,
       "name": {
         "es": "Primer shuriken",
-        "en": "First Shuriken"
+        "en": "First Shuriken",
+        "pt": "Primeira Shuriken",
+        "ru": "Первый сюрикен"
       },
       "description": {
         "es": "Cuando empieza el combate, lanza un shuriken",
-        "en": "When combat begins, throw a shuriken"
+        "en": "When combat begins, throw a shuriken",
+        "pt": "Quando o combate começa, lança uma shuriken",
+        "ru": "В начале боя бросает сюрикен"
       },
       "price": 8,
       "shop_price": 40,
@@ -8341,17 +12346,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/38.png",
       "found_in_zones": [
         "Rocosos"
-      ]
+      ],
+      "found_in_zone_ids": [
+        4
+      ],
+      "found_in_special": []
     },
     {
       "id": 39,
       "name": {
         "es": "Jugo congelado",
-        "en": "Frozen Juice"
+        "en": "Frozen Juice",
+        "pt": "Suco Congelado",
+        "ru": "Замороженный сок"
       },
       "description": {
         "es": "Cura 500 puntos de vida, se activa con 35% de vida o menos",
-        "en": "Heals 500 health points, activates at 35% health or less"
+        "en": "Heals 500 health points, activates at 35% health or less",
+        "pt": "Cura 500 pontos de vida, ativa com 35% de vida ou menos",
+        "ru": "Лечит 500 здоровья, срабатывает при 35% здоровья или меньше"
       },
       "price": 10,
       "shop_price": 50,
@@ -8359,17 +12372,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/39.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 40,
       "name": {
         "es": "Té caliente",
-        "en": "Hot Tea"
+        "en": "Hot Tea",
+        "pt": "Chá Quente",
+        "ru": "Горячий чай"
       },
       "description": {
         "es": "Limpia el congelamiento y cura 100 puntos de vida",
-        "en": "Clears freezing and heals 100 health points"
+        "en": "Clears freezing and heals 100 health points",
+        "pt": "Limpa congelamento e cura 100 pontos de vida",
+        "ru": "Снимает заморозку и лечит 100 здоровья"
       },
       "price": 10,
       "shop_price": 50,
@@ -8377,17 +12398,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/40.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 41,
       "name": {
         "es": "Pico hleado",
-        "en": "Icy Beak"
+        "en": "Icy Beak",
+        "pt": "Bico Gélido",
+        "ru": "Ледяной клюв"
       },
       "description": {
         "es": "20% de congelar al atacante cuando es golpeado",
-        "en": "20% chance to freeze the attacker when hit"
+        "en": "20% chance to freeze the attacker when hit",
+        "pt": "20% de chance de congelar o atacante ao ser atingido",
+        "ru": "20% шанс заморозить атакующего при получении удара"
       },
       "price": 10,
       "shop_price": 50,
@@ -8395,17 +12424,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/41.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 42,
       "name": {
         "es": "Ojo helado",
-        "en": "Frozen Eye"
+        "en": "Frozen Eye",
+        "pt": "Olho Congelado",
+        "ru": "Ледяной глаз"
       },
       "description": {
         "es": "Cuando empieza el combate, lanza un huevo helado",
-        "en": "When the battle begins, throws a frozen egg"
+        "en": "When the battle begins, throws a frozen egg",
+        "pt": "Quando a batalha começa, lança um ovo congelado",
+        "ru": "В начале боя бросает ледяное яйцо"
       },
       "price": 10,
       "shop_price": 50,
@@ -8413,17 +12450,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/42.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 43,
       "name": {
         "es": "Cristal de daño",
-        "en": "Damage Crystal"
+        "en": "Damage Crystal",
+        "pt": "Cristal de Dano",
+        "ru": "Кристалл урона"
       },
       "description": {
         "es": "Cuando empieza el combate, +%25 de daño pero pierde vida (25% de la vida máxima)",
-        "en": "When the battle begins, +25% damage but loses health (25% of maximum health)"
+        "en": "When the battle begins, +25% damage but loses health (25% of maximum health)",
+        "pt": "Quando a batalha começa, +25% de dano mas perde vida (25% da vida máxima)",
+        "ru": "В начале боя +25% урона, но теряет здоровье (25% от макс.)"
       },
       "price": 10,
       "shop_price": 50,
@@ -8431,17 +12476,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/43.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 44,
       "name": {
         "es": "Cristal de velocidad",
-        "en": "Speed Crystal"
+        "en": "Speed Crystal",
+        "pt": "Cristal de Velocidade",
+        "ru": "Кристалл скорости"
       },
       "description": {
         "es": "Cuando empieza el combate, +%25 de velocidad pero pierde vida (25% de la vida máxima)",
-        "en": "When the battle begins, +25% speed but loses health (25% of maximum health)"
+        "en": "When the battle begins, +25% speed but loses health (25% of maximum health)",
+        "pt": "Quando a batalha começa, +25% de velocidade mas perde vida (25% da vida máxima)",
+        "ru": "В начале боя +25% скорости, но теряет здоровье (25% от макс.)"
       },
       "price": 10,
       "shop_price": 50,
@@ -8449,17 +12502,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/44.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 45,
       "name": {
         "es": "Cristal de armadura",
-        "en": "Armor Crystal"
+        "en": "Armor Crystal",
+        "pt": "Cristal de Armadura",
+        "ru": "Кристалл брони"
       },
       "description": {
         "es": "Cuando empieza el combate, +%25 de armadura pero pierde vida (25% de la vida máxima)",
-        "en": "When the battle begins, +25% armor but loses health (25% of maximum health)"
+        "en": "When the battle begins, +25% armor but loses health (25% of maximum health)",
+        "pt": "Quando a batalha começa, +25% de armadura mas perde vida (25% da vida máxima)",
+        "ru": "В начале боя +25% брони, но теряет здоровье (25% от макс.)"
       },
       "price": 10,
       "shop_price": 50,
@@ -8467,17 +12528,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/45.png",
       "found_in_zones": [
         "Nevados"
-      ]
+      ],
+      "found_in_zone_ids": [
+        5
+      ],
+      "found_in_special": []
     },
     {
       "id": 46,
       "name": {
         "es": "Poción pútrida",
-        "en": "Putrid Potion"
+        "en": "Putrid Potion",
+        "pt": "Poção Pútrida",
+        "ru": "Гнилое зелье"
       },
       "description": {
         "es": "Cura 600 puntos de vida, se activa con 35% de vida o menos",
-        "en": "Heals 600 health points, activates when HP is at or below 35%"
+        "en": "Heals 600 health points, activates when HP is at or below 35%",
+        "pt": "Cura 600 pontos de vida, ativa com 35% de vida ou menos",
+        "ru": "Лечит 600 здоровья, срабатывает при 35% здоровья или ниже"
       },
       "price": 12,
       "shop_price": 60,
@@ -8485,17 +12554,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/46.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 47,
       "name": {
         "es": "Gota milagro",
-        "en": "Miracle Drop"
+        "en": "Miracle Drop",
+        "pt": "Gota Milagrosa",
+        "ru": "Чудо-капля"
       },
       "description": {
         "es": "Limpia el envenenamiento",
-        "en": "Cleanses poison"
+        "en": "Cleanses poison",
+        "pt": "Limpa veneno",
+        "ru": "Снимает отравление"
       },
       "price": 12,
       "shop_price": 60,
@@ -8503,17 +12580,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/47.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 48,
       "name": {
         "es": "Pico roto",
-        "en": "Broken Beak"
+        "en": "Broken Beak",
+        "pt": "Bico Quebrado",
+        "ru": "Сломанный клюв"
       },
       "description": {
         "es": "Cuando empieza el combate, pierde vida (5% de la vida máxima) infecta y otorga daño (20%)",
-        "en": "At the start of combat, loses 5% of maximum health, inflicts infection, and grants 20% damage"
+        "en": "At the start of combat, loses 5% of maximum health, inflicts infection, and grants 20% damage",
+        "pt": "No início do combate, perde 5% de vida máxima, causa infecção e ganha 20% de dano",
+        "ru": "В начале боя теряет 5% макс. здоровья, заражает и дает +20% урона"
       },
       "price": 12,
       "shop_price": 60,
@@ -8521,17 +12606,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/48.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 49,
       "name": {
         "es": "Ojo maldito",
-        "en": "Cursed Eye"
+        "en": "Cursed Eye",
+        "pt": "Olho Amaldiçoado",
+        "ru": "Проклятый глаз"
       },
       "description": {
         "es": "Cuando empieza el combate, maldice",
-        "en": "At the start of combat, casts a curse"
+        "en": "At the start of combat, casts a curse",
+        "pt": "No início do combate, lança uma maldição",
+        "ru": "В начале боя накладывает проклятие"
       },
       "price": 12,
       "shop_price": 60,
@@ -8539,17 +12632,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/49.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 50,
       "name": {
         "es": "Ojos locos",
-        "en": "Crazy Eyes"
+        "en": "Crazy Eyes",
+        "pt": "Olhos Loucos",
+        "ru": "Безумные глаза"
       },
       "description": {
         "es": "El equipo obtiene daño (10%)",
-        "en": "The team takes 10% damage"
+        "en": "The team takes 10% damage",
+        "pt": "A equipe recebe 10% de dano",
+        "ru": "Команда получает 10% урона"
       },
       "price": 12,
       "shop_price": 60,
@@ -8557,17 +12658,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/50.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 51,
       "name": {
         "es": "Libro maldito",
-        "en": "Cursed Book"
+        "en": "Cursed Book",
+        "pt": "Livro Amaldiçoado",
+        "ru": "Проклятая книга"
       },
       "description": {
         "es": "Al empezar el combate, maldice a todos",
-        "en": "At the start of combat, curses everyone"
+        "en": "At the start of combat, curses everyone",
+        "pt": "No início do combate, amaldiçoa a todos",
+        "ru": "В начале боя проклинает всех"
       },
       "price": 12,
       "shop_price": 60,
@@ -8575,17 +12684,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/51.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 52,
       "name": {
         "es": "Infección",
-        "en": "Infection"
+        "en": "Infection",
+        "pt": "Infecção",
+        "ru": "Инфекция"
       },
       "description": {
         "es": "Revive como Zombie",
-        "en": "Revives as a Zombie"
+        "en": "Revives as a Zombie",
+        "pt": "Revive como um Zumbi",
+        "ru": "Возрождается как Зомби"
       },
       "price": 12,
       "shop_price": 60,
@@ -8593,17 +12710,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/52.png",
       "found_in_zones": [
         "Cementerio"
-      ]
+      ],
+      "found_in_zone_ids": [
+        6
+      ],
+      "found_in_special": []
     },
     {
       "id": 53,
       "name": {
         "es": "Circuito Vital",
-        "en": "Vital Circuit"
+        "en": "Vital Circuit",
+        "pt": "Circuito Vital",
+        "ru": "Витальная цепь"
       },
       "description": {
         "es": "Cura 700 puntos de vida, se activa con 35% de vida o menos",
-        "en": "Heals 700 health points, activates when HP is at or below 35%"
+        "en": "Heals 700 health points, activates when HP is at or below 35%",
+        "pt": "Cura 700 pontos de vida, ativa com 35% de vida ou menos",
+        "ru": "Лечит 700 здоровья, срабатывает при 35% здоровья или ниже"
       },
       "price": 14,
       "shop_price": 70,
@@ -8612,17 +12737,26 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "La fábrica",
         "Arcana"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7,
+        8
+      ],
+      "found_in_special": []
     },
     {
       "id": 54,
       "name": {
         "es": "Reinicio Neural",
-        "en": "Neural Reset"
+        "en": "Neural Reset",
+        "pt": "Reinício Neural",
+        "ru": "Нейроперезагрузка"
       },
       "description": {
         "es": "Limpia la paralización",
-        "en": "Cures paralysis"
+        "en": "Cures paralysis",
+        "pt": "Cura paralisia",
+        "ru": "Лечит паралич"
       },
       "price": 14,
       "shop_price": 70,
@@ -8630,17 +12764,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/54.png",
       "found_in_zones": [
         "La fábrica"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7
+      ],
+      "found_in_special": []
     },
     {
       "id": 55,
       "name": {
         "es": "Pico Electrostático",
-        "en": "Electrostatic Spike"
+        "en": "Electrostatic Spike",
+        "pt": "Espinho Eletrostático",
+        "ru": "Электрошип"
       },
       "description": {
         "es": "Cuando empieza el combate, paraliza",
-        "en": "At the start of combat, paralyzes"
+        "en": "At the start of combat, paralyzes",
+        "pt": "No início do combate, paralisa",
+        "ru": "В начале боя парализует"
       },
       "price": 14,
       "shop_price": 70,
@@ -8648,17 +12790,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/55.png",
       "found_in_zones": [
         "La fábrica"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7
+      ],
+      "found_in_special": []
     },
     {
       "id": 56,
       "name": {
         "es": "Descarga Masiva",
-        "en": "Mass Discharge"
+        "en": "Mass Discharge",
+        "pt": "Descarga em Massa",
+        "ru": "Массовый разряд"
       },
       "description": {
         "es": "Al empezar el combate, paraliza a todos",
-        "en": "At the start of combat, paralyzes everyone"
+        "en": "At the start of combat, paralyzes everyone",
+        "pt": "No início do combate, paralisa a todos",
+        "ru": "В начале боя парализует всех"
       },
       "price": 14,
       "shop_price": 70,
@@ -8666,17 +12816,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/56.png",
       "found_in_zones": [
         "La fábrica"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7
+      ],
+      "found_in_special": []
     },
     {
       "id": 57,
       "name": {
         "es": "Conexión Crítica",
-        "en": "Critical Connection"
+        "en": "Critical Connection",
+        "pt": "Conexão Crítica",
+        "ru": "Крит. соединение"
       },
       "description": {
         "es": "Atacar a enemigos paralizados aumenta daño (2%)",
-        "en": "Attacking paralyzed enemies increases damage by 2%"
+        "en": "Attacking paralyzed enemies increases damage by 2%",
+        "pt": "Atacar inimigos paralisados aumenta o dano em 2%",
+        "ru": "Атаки по парализованным врагам наносят на 2% больше урона"
       },
       "price": 14,
       "shop_price": 70,
@@ -8684,17 +12842,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/57.png",
       "found_in_zones": [
         "La fábrica"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7
+      ],
+      "found_in_special": []
     },
     {
       "id": 58,
       "name": {
         "es": "Impulso Balístico",
-        "en": "Ballistic Impulse"
+        "en": "Ballistic Impulse",
+        "pt": "Impulso Balístico",
+        "ru": "Баллистический импульс"
       },
       "description": {
         "es": "Lanzar misiles aumenta el daño (4%)",
-        "en": "Launching missiles increases damage by 4%"
+        "en": "Launching missiles increases damage by 4%",
+        "pt": "Lançar mísseis aumenta o dano em 4%",
+        "ru": "Запуск ракет увеличивает урон на 4%"
       },
       "price": 14,
       "shop_price": 70,
@@ -8702,17 +12868,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/58.png",
       "found_in_zones": [
         "La fábrica"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7
+      ],
+      "found_in_special": []
     },
     {
       "id": 59,
       "name": {
         "es": "Conversión Vital",
-        "en": "Vital Conversion"
+        "en": "Vital Conversion",
+        "pt": "Conversão Vital",
+        "ru": "Витальная конверсия"
       },
       "description": {
         "es": "Siempre que pierda vida, aumenta su daño (1%), pero baja su velocidad (1%)",
-        "en": "Whenever it loses health, its damage increases by 1%, but its speed decreases by 1%"
+        "en": "Whenever it loses health, its damage increases by 1%, but its speed decreases by 1%",
+        "pt": "Sempre que perde vida, seu dano aumenta em 1%, mas sua velocidade diminui em 1%",
+        "ru": "При потере здоровья урон растет на 1%, но скорость падает на 1%"
       },
       "price": 14,
       "shop_price": 70,
@@ -8720,17 +12894,25 @@ window.WIKI_DATA = {
       "sprite": "images/items/59.png",
       "found_in_zones": [
         "La fábrica"
-      ]
+      ],
+      "found_in_zone_ids": [
+        7
+      ],
+      "found_in_special": []
     },
     {
       "id": 60,
       "name": {
         "es": "Fragmento prohibido",
-        "en": "Forbidden Fragment"
+        "en": "Forbidden Fragment",
+        "pt": "Fragmento Proibido",
+        "ru": "Запретный осколок"
       },
       "description": {
         "es": "Aumenta el daño (+35%) y velocidad (+10%), pero nunca carga ni podés usar poder",
-        "en": "Increases damage (+35%) and speed (+10%), but power never charges and cannot be used"
+        "en": "Increases damage (+35%) and speed (+10%), but power never charges and cannot be used",
+        "pt": "Aumenta o dano (+35%) e velocidade (+10%), mas nunca carrega nem pode usar poder",
+        "ru": "Увеличивает урон (+35%) и скорость (+10%), но суперспособность не заряжается и её нельзя использовать"
       },
       "price": 15,
       "shop_price": 75,
@@ -8739,81 +12921,124 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     },
     {
       "id": 61,
       "name": {
         "es": "Pico blindado",
-        "en": "Armored Beak"
+        "en": "Armored Beak",
+        "pt": "Bico Blindado",
+        "ru": "Бронированный клюв"
       },
       "description": {
         "es": "Misiles y bombas le hacen 66% menos daño",
-        "en": "Missiles and bombs deal 66% less damage"
+        "en": "Missiles and bombs deal 66% less damage",
+        "pt": "Mísseis e bombas causam 66% a menos de dano",
+        "ru": "Ракеты и бомбы наносят на 66% меньше урона"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/61.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 62,
       "name": {
         "es": "Ojo del vacío",
-        "en": "Eye of the Void"
+        "en": "Eye of the Void",
+        "pt": "Olho do Vazio",
+        "ru": "Око Бездны"
       },
       "description": {
         "es": "Si un aliado cae derrotado, aumenta todos tus stats un 15%",
-        "en": "If an ally is defeated, increases all your stats by 15%"
+        "en": "If an ally is defeated, increases all your stats by 15%",
+        "pt": "Se um aliado for derrotado, aumenta todos os seus atributos em 15%",
+        "ru": "Если союзник побеждён, увеличивает все характеристики на 15%"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/62.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 63,
       "name": {
         "es": "Ala de Garra",
-        "en": "Garra's Wing"
+        "en": "Garra's Wing",
+        "pt": "Asa de Garra",
+        "ru": "Крыло Гарры"
       },
       "description": {
         "es": "Cada turno cura al equipo (5% vida máxima)",
-        "en": "Each turn heals the team (5% max life)"
+        "en": "Each turn heals the team (5% max life)",
+        "pt": "A cada turno cura a equipe (5% de vida máxima)",
+        "ru": "Каждый ход исцеляет команду (5% макс. здоровья)"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/63.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 64,
       "name": {
         "es": "Guantes de pelea",
-        "en": "Fighting Gloves"
+        "en": "Fighting Gloves",
+        "pt": "Luvas de Luta",
+        "ru": "Бойцовские перчатки"
       },
       "description": {
         "es": "Obtienes 2 puntos de entrenamiento extra al ganar combates",
-        "en": "Gain 2 extra training points when winning battles"
+        "en": "Gain 2 extra training points when winning battles",
+        "pt": "Ganha 2 pontos extras de treinamento ao vencer combates",
+        "ru": "Получайте 2 дополнительных очка тренировки за победу в бою"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/64.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 65,
       "name": {
         "es": "Deseo",
-        "en": "Wish"
+        "en": "Wish",
+        "pt": "Desejo",
+        "ru": "Желание"
       },
       "description": {
         "es": "Al tenerlo equipado, aumenta las estadísticas de los huevos que ponga este pollo",
-        "en": "When equipped, increases the stats of eggs laid by this chicken"
+        "en": "When equipped, increases the stats of eggs laid by this chicken",
+        "pt": "Quando equipado, aumenta os atributos dos ovos colocados por esta galinha",
+        "ru": "Увеличивает характеристики яиц, снесённых этой курицей"
       },
       "price": 15,
       "shop_price": 75,
@@ -8821,81 +13046,118 @@ window.WIKI_DATA = {
       "sprite": "images/items/65.png",
       "found_in_zones": [
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     },
     {
       "id": 66,
       "name": {
         "es": "Pico vampiro",
-        "en": "Vampire Beak"
+        "en": "Vampire Beak",
+        "pt": "Bico Vampírico",
+        "ru": "Клюв вампира"
       },
       "description": {
         "es": "Cura al atacar (15% del daño)",
-        "en": "Heals when attacking (15% of damage dealt)"
+        "en": "Heals when attacking (15% of damage dealt)",
+        "pt": "Cura ao atacar (15% do dano causado)",
+        "ru": "Исцеляет при атаке (15% от нанесённого урона)"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/66.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 67,
       "name": {
         "es": "Primer boomerang",
-        "en": "First Boomerang"
+        "en": "First Boomerang",
+        "pt": "Primeiro Bumerangue",
+        "ru": "Первый бумеранг"
       },
       "description": {
         "es": "Al empezar el combate lanza un boomerang",
-        "en": "When start the combat, throw a boomerang"
+        "en": "When start the combat, throw a boomerang",
+        "pt": "No início do combate, lança um bumerangue",
+        "ru": "В начале боя бросает бумеранг"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/67.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 68,
       "name": {
         "es": "Ojos en sincronía",
-        "en": "Synchronized Eyes"
+        "en": "Synchronized Eyes",
+        "pt": "Olhos Sincronizados",
+        "ru": "Синхронные глаза"
       },
       "description": {
         "es": "Comparte efecto con su atacante",
-        "en": "Shares negative effects with its attacker"
+        "en": "Shares negative effects with its attacker",
+        "pt": "Compartilha efeito com seu atacante",
+        "ru": "Передаёт негативные эффекты атаковавшему"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/68.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 69,
       "name": {
         "es": "Primera hacha",
-        "en": "First Axe"
+        "en": "First Axe",
+        "pt": "Primeiro Machado",
+        "ru": "Первый топор"
       },
       "description": {
         "es": "Al empezar el combate lanza un hacha",
-        "en": "When start the combat, throw an axe"
+        "en": "When start the combat, throw an axe",
+        "pt": "No início do combate, lança um machado",
+        "ru": "В начале боя бросает топор"
       },
       "price": 15,
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/69.png",
-      "found_in_zones": []
+      "found_in_zones": [],
+      "found_in_zone_ids": [],
+      "found_in_special": []
     },
     {
       "id": 70,
       "name": {
         "es": "Pluma dorada",
-        "en": "Golden Feather"
+        "en": "Golden Feather",
+        "pt": "Pena Dourada",
+        "ru": "Золотое перо"
       },
       "description": {
         "es": "Acorta los turnos que tardan sus huevos en eclosionar (40%)",
-        "en": "Shortens egg hatch turns by 40%"
+        "en": "Shortens egg hatch turns by 40%",
+        "pt": "Encurta os turnos de eclosão dos ovos em 40%",
+        "ru": "Сокращает время вылупления яиц на 40%"
       },
       "price": 15,
       "shop_price": 80,
@@ -8904,17 +13166,36 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     },
     {
       "id": 71,
       "name": {
         "es": "Pluma de Brama",
-        "en": "Brahma Feather"
+        "en": "Brahma Feather",
+        "pt": "Pena de Brahma",
+        "ru": "Перо Брамы"
       },
       "description": {
         "es": "Aumenta la probabilidad de que aparezcan pollos variocolor en combates (10%)",
-        "en": "Increases shiny chicken encounter rate in battles (+10%)"
+        "en": "Increases shiny chicken encounter rate in battles (+10%)",
+        "pt": "Aumenta a chance de encontrar galinhas brilhantes em batalhas (+10%)",
+        "ru": "Увеличивает шанс встретить сияющих кур в бою (+10%)"
       },
       "price": 15,
       "shop_price": 80,
@@ -8923,17 +13204,36 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     },
     {
       "id": 72,
       "name": {
         "es": "Garra derrochadora",
-        "en": "Wasteful Claw"
+        "en": "Wasteful Claw",
+        "pt": "Garra Esbanjadora",
+        "ru": "Расточительный коготь"
       },
       "description": {
         "es": "Aumenta la cantidad de semillas ganadas en combate (20%)",
-        "en": "Increases seeds won from battles by 20%"
+        "en": "Increases seeds won from battles by 20%",
+        "pt": "Aumenta as sementes ganhas em combate em 20%",
+        "ru": "Увеличивает количество семян за победу в бою на 20%"
       },
       "price": 15,
       "shop_price": 80,
@@ -8942,17 +13242,36 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     },
     {
       "id": 73,
       "name": {
         "es": "Nido especial",
-        "en": "Special Nest"
+        "en": "Special Nest",
+        "pt": "Ninho Especial",
+        "ru": "Особое гнездо"
       },
       "description": {
         "es": "Aumenta la probabilidad de que los pollos pongan huevos variocolor (10%)",
-        "en": "Increases shiny egg hatch chance from breeding (+10%)"
+        "en": "Increases shiny egg hatch chance from breeding (+10%)",
+        "pt": "Aumenta a chance de chocar ovos brilhantes na reprodução (+10%)",
+        "ru": "Увеличивает шанс вылупления сияющих яиц при разведении (+10%)"
       },
       "price": 15,
       "shop_price": 80,
@@ -8961,17 +13280,36 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     },
     {
       "id": 74,
       "name": {
         "es": "Ira",
-        "en": "Wrath"
+        "en": "Wrath",
+        "pt": "Ira",
+        "ru": "Гнев"
       },
       "description": {
         "es": "Obtiene 2 ataques extra al inicio del combate",
-        "en": "Gains 2 extra attacks at the start of battle"
+        "en": "Gains 2 extra attacks at the start of battle",
+        "pt": "Ganha 2 ataques extras no início do combate",
+        "ru": "Совершает 2 дополнительные атаки в начале боя"
       },
       "price": 15,
       "shop_price": 80,
@@ -8980,6 +13318,21 @@ window.WIKI_DATA = {
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Trade Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
       ]
     }
   ],
@@ -8988,14 +13341,18 @@ window.WIKI_DATA = {
       "id": 0,
       "description": {
         "es": "El primer ataque hace 50% más de daño",
-        "en": "First attack deal 50% extra damage"
+        "en": "First attack deal 50% extra damage",
+        "pt": "Primeiro ataque causa 50% de dano extra",
+        "ru": "Первая атака наносит на 50% больше урона"
       },
       "chickens": [
         {
           "id": 0,
           "name": {
             "es": "Pollier",
-            "en": "Pollier"
+            "en": "Pollier",
+            "pt": "Pollier",
+            "ru": "Pollier"
           },
           "sprite": "images/chickens/0.png"
         }
@@ -9005,14 +13362,18 @@ window.WIKI_DATA = {
       "id": 1,
       "description": {
         "es": "Empieza con un ataque doble",
-        "en": "Start with a double attack"
+        "en": "Start with a double attack",
+        "pt": "Começa com ataque duplo",
+        "ru": "Начинает с двойной атаки"
       },
       "chickens": [
         {
           "id": 1,
           "name": {
             "es": "Chica",
-            "en": "Chica"
+            "en": "Chica",
+            "pt": "Chica",
+            "ru": "Chica"
           },
           "sprite": "images/chickens/1.png"
         }
@@ -9022,14 +13383,18 @@ window.WIKI_DATA = {
       "id": 2,
       "description": {
         "es": "Comienza lanzando un huevo dorado y gana daño (+10%) y velocidad (+10%)",
-        "en": "Starts by throwing a golden egg and gains damage (+10%) and speed (+10%)"
+        "en": "Starts by throwing a golden egg and gains damage (+10%) and speed (+10%)",
+        "pt": "Começa lançando um ovo dourado e ganha dano (+10%) e velocidade (+10%)",
+        "ru": "В начале боя бросает золотое яйцо и получает урон (+10%) и скорость (+10%)"
       },
       "chickens": [
         {
           "id": 2,
           "name": {
             "es": "McDuck",
-            "en": "McDuck"
+            "en": "McDuck",
+            "pt": "McDuck",
+            "ru": "McDuck"
           },
           "sprite": "images/chickens/2.png"
         }
@@ -9039,14 +13404,18 @@ window.WIKI_DATA = {
       "id": 3,
       "description": {
         "es": "Cuando se cura, cura a los aliados (50% del daño)",
-        "en": "When heal himself, heal allies (50% damage)"
+        "en": "When heal himself, heal allies (50% damage)",
+        "pt": "Ao se curar, cura aliados (50% do dano)",
+        "ru": "При лечении себя лечит союзников (50% от лечения)"
       },
       "chickens": [
         {
           "id": 3,
           "name": {
             "es": "Ponk",
-            "en": "Ponk"
+            "en": "Ponk",
+            "pt": "Ponk",
+            "ru": "Ponk"
           },
           "sprite": "images/chickens/3.png"
         }
@@ -9056,14 +13425,18 @@ window.WIKI_DATA = {
       "id": 4,
       "description": {
         "es": "Cuando usa poder, se cura (50% del daño)",
-        "en": "When use power, heal himself (50% damage)"
+        "en": "When use power, heal himself (50% damage)",
+        "pt": "Ao usar poder, cura a si mesmo (50% do dano)",
+        "ru": "При использовании силы лечит себя (50% от урона)"
       },
       "chickens": [
         {
           "id": 4,
           "name": {
             "es": "Mali",
-            "en": "Mali"
+            "en": "Mali",
+            "pt": "Mali",
+            "ru": "Mali"
           },
           "sprite": "images/chickens/4.png"
         }
@@ -9073,14 +13446,18 @@ window.WIKI_DATA = {
       "id": 5,
       "description": {
         "es": "Al derrotar a un enemigo, lanza un shuriken (150% de daño)",
-        "en": "When defeat an enemy, throw a shuriken (150% damage)"
+        "en": "When defeat an enemy, throw a shuriken (150% damage)",
+        "pt": "Ao derrotar um inimigo, arremessa uma shuriken (150% de dano)",
+        "ru": "При победе над врагом бросает сюрикен (150% урона)"
       },
       "chickens": [
         {
           "id": 5,
           "name": {
             "es": "Cay",
-            "en": "Cay"
+            "en": "Cay",
+            "pt": "Cay",
+            "ru": "Cay"
           },
           "sprite": "images/chickens/5.png"
         }
@@ -9090,14 +13467,18 @@ window.WIKI_DATA = {
       "id": 6,
       "description": {
         "es": "Al atacar, se cura (20% de la vida faltante)",
-        "en": "When attack, heal himself (20% missing life)"
+        "en": "When attack, heal himself (20% missing life)",
+        "pt": "Ao atacar, cura a si mesmo (20% da vida perdida)",
+        "ru": "При атаке лечит себя (20% недостающего здоровья)"
       },
       "chickens": [
         {
           "id": 6,
           "name": {
             "es": "Zombie",
-            "en": "Zombie"
+            "en": "Zombie",
+            "pt": "Zombie",
+            "ru": "Zombie"
           },
           "sprite": "images/chickens/6.png"
         }
@@ -9107,14 +13488,18 @@ window.WIKI_DATA = {
       "id": 7,
       "description": {
         "es": "Cada 3 ataques, envenena",
-        "en": "Each 3 attacks, poison"
+        "en": "Each 3 attacks, poison",
+        "pt": "A cada 3 ataques, envenena",
+        "ru": "Каждые 3 атаки отравляет"
       },
       "chickens": [
         {
           "id": 7,
           "name": {
             "es": "Pasti",
-            "en": "Pasti"
+            "en": "Pasti",
+            "pt": "Pasti",
+            "ru": "Pasti"
           },
           "sprite": "images/chickens/7.png"
         }
@@ -9124,14 +13509,18 @@ window.WIKI_DATA = {
       "id": 8,
       "description": {
         "es": "Al derrotar a un enemigo, gana +50 de poder y +25 de carga de poder",
-        "en": "When defeating an enemy, gain +50 power and +25 power amount"
+        "en": "When defeating an enemy, gain +50 power and +25 power amount",
+        "pt": "Ao derrotar um inimigo, ganha +50 de poder e +25 de carga de poder",
+        "ru": "При победе над врагом получает +50 энергии и +25 к накоплению энергии"
       },
       "chickens": [
         {
           "id": 8,
           "name": {
             "es": "Iris",
-            "en": "Iris"
+            "en": "Iris",
+            "pt": "Iris",
+            "ru": "Iris"
           },
           "sprite": "images/chickens/8.png"
         }
@@ -9141,14 +13530,18 @@ window.WIKI_DATA = {
       "id": 9,
       "description": {
         "es": "Al derrotar a un enemigo, gana poder máximo",
-        "en": "When defeat an enemy, gain full power"
+        "en": "When defeat an enemy, gain full power",
+        "pt": "Ao derrotar um inimigo, ganha poder total",
+        "ru": "При победе над врагом полная сила"
       },
       "chickens": [
         {
           "id": 9,
           "name": {
             "es": "Pollisor",
-            "en": "Pollisor"
+            "en": "Pollisor",
+            "pt": "Pollisor",
+            "ru": "Pollisor"
           },
           "sprite": "images/chickens/9.png"
         }
@@ -9158,14 +13551,18 @@ window.WIKI_DATA = {
       "id": 10,
       "description": {
         "es": "Al derrotar a un enemigo, reinicia el poder",
-        "en": "When defeat an enemy, reset power"
+        "en": "When defeat an enemy, reset power",
+        "pt": "Ao derrotar um inimigo, reinicia o poder",
+        "ru": "При победе над врагом сбрасывает силу"
       },
       "chickens": [
         {
           "id": 10,
           "name": {
             "es": "Pollisaur",
-            "en": "Pollisaur"
+            "en": "Pollisaur",
+            "pt": "Pollisaur",
+            "ru": "Pollisaur"
           },
           "sprite": "images/chickens/10.png"
         }
@@ -9175,14 +13572,18 @@ window.WIKI_DATA = {
       "id": 11,
       "description": {
         "es": "Cuando usa poder, hace 10% más de daño",
-        "en": "When use power, 10% extra damage"
+        "en": "When use power, 10% extra damage",
+        "pt": "Ao usar poder, 10% de dano extra",
+        "ru": "При использовании силы +10% урона"
       },
       "chickens": [
         {
           "id": 11,
           "name": {
             "es": "Vio",
-            "en": "Vio"
+            "en": "Vio",
+            "pt": "Vio",
+            "ru": "Vio"
           },
           "sprite": "images/chickens/11.png"
         }
@@ -9192,14 +13593,18 @@ window.WIKI_DATA = {
       "id": 12,
       "description": {
         "es": "Después de lanzar un shuriken, evita el próximo ataque",
-        "en": "After throw a shuriken, avoid the first attack"
+        "en": "After throw a shuriken, avoid the first attack",
+        "pt": "Após arremessar shuriken, desvia do primeiro ataque",
+        "ru": "После броска сюрикена уклоняется от первой атаки"
       },
       "chickens": [
         {
           "id": 12,
           "name": {
             "es": "Polliro",
-            "en": "Polliro"
+            "en": "Polliro",
+            "pt": "Polliro",
+            "ru": "Polliro"
           },
           "sprite": "images/chickens/12.png"
         }
@@ -9209,14 +13614,18 @@ window.WIKI_DATA = {
       "id": 13,
       "description": {
         "es": "Al revivir gana 25% más de daño",
-        "en": "when revive gain 25% extra damage"
+        "en": "when revive gain 25% extra damage",
+        "pt": "Ao reviver ganha 25% de dano extra",
+        "ru": "При возрождении получает +25% урона"
       },
       "chickens": [
         {
           "id": 13,
           "name": {
             "es": "Easy East",
-            "en": "Easy East"
+            "en": "Easy East",
+            "pt": "Easy East",
+            "ru": "Easy East"
           },
           "sprite": "images/chickens/13.png"
         }
@@ -9226,14 +13635,18 @@ window.WIKI_DATA = {
       "id": 14,
       "description": {
         "es": "Cuando usa poder, congela al objetivo",
-        "en": "When use power, freeze the target"
+        "en": "When use power, freeze the target",
+        "pt": "Ao usar poder, congela o alvo",
+        "ru": "При использовании силы замораживает цель"
       },
       "chickens": [
         {
           "id": 14,
           "name": {
             "es": "Snow",
-            "en": "Snow"
+            "en": "Snow",
+            "pt": "Snow",
+            "ru": "Snow"
           },
           "sprite": "images/chickens/14.png"
         }
@@ -9243,14 +13656,18 @@ window.WIKI_DATA = {
       "id": 15,
       "description": {
         "es": "5% más de velocidad al golpear",
-        "en": "5% extra speed when hit"
+        "en": "5% extra speed when hit",
+        "pt": "5% de velocidade extra ao acertar",
+        "ru": "+5% скорости при ударе"
       },
       "chickens": [
         {
           "id": 15,
           "name": {
             "es": "Eustavio",
-            "en": "Eustavio"
+            "en": "Eustavio",
+            "pt": "Eustavio",
+            "ru": "Eustavio"
           },
           "sprite": "images/chickens/15.png"
         }
@@ -9260,14 +13677,18 @@ window.WIKI_DATA = {
       "id": 16,
       "description": {
         "es": "Al derrotar a un enemigo, se cura (33% de su vida máxima)",
-        "en": "When defeat an enemy heal himself (33% max life)"
+        "en": "When defeat an enemy heal himself (33% max life)",
+        "pt": "Ao derrotar um inimigo cura a si mesmo (33% vida máx)",
+        "ru": "При победе над врагом лечит себя (33% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 16,
           "name": {
             "es": "Gallo",
-            "en": "Gallo"
+            "en": "Gallo",
+            "pt": "Gallo",
+            "ru": "Gallo"
           },
           "sprite": "images/chickens/16.png"
         }
@@ -9277,14 +13698,18 @@ window.WIKI_DATA = {
       "id": 17,
       "description": {
         "es": "Al usar poder, aplica un estado aleatorio a todos los enemigos",
-        "en": "When using power, applies a random status to all enemies"
+        "en": "When using power, applies a random status to all enemies",
+        "pt": "Ao usar poder, aplica um efeito aleatório a todos os inimigos",
+        "ru": "При использовании способности накладывает случайный эффект на всех врагов"
       },
       "chickens": [
         {
           "id": 17,
           "name": {
             "es": "Raro",
-            "en": "Raro"
+            "en": "Raro",
+            "pt": "Raro",
+            "ru": "Raro"
           },
           "sprite": "images/chickens/17.png"
         }
@@ -9294,14 +13719,18 @@ window.WIKI_DATA = {
       "id": 18,
       "description": {
         "es": "Al ser derrotado, paraliza a todos los enemigos",
-        "en": "When is defeated, paralize all enemies"
+        "en": "When is defeated, paralize all enemies",
+        "pt": "Quando derrotado, paralisa todos os inimigos",
+        "ru": "При поражении парализует всех врагов"
       },
       "chickens": [
         {
           "id": 18,
           "name": {
             "es": "Polliwatt",
-            "en": "Polliwatt"
+            "en": "Polliwatt",
+            "pt": "Polliwatt",
+            "ru": "Polliwatt"
           },
           "sprite": "images/chickens/18.png"
         }
@@ -9311,14 +13740,18 @@ window.WIKI_DATA = {
       "id": 19,
       "description": {
         "es": "No puede ser envenenado. Si un enemigo envenenado lo ataca, gana armadura (+5%)",
-        "en": "Cannot be poisoned. If attacked by a poisoned enemy, gains armor (+5%)"
+        "en": "Cannot be poisoned. If attacked by a poisoned enemy, gains armor (+5%)",
+        "pt": "Não pode ser envenenado. Se um inimigo envenenado o atacar, ganha armadura (+5%)",
+        "ru": "Нельзя отравить. При атаке отравленного врага получает броню (+5%)"
       },
       "chickens": [
         {
           "id": 19,
           "name": {
             "es": "Armor",
-            "en": "Armor"
+            "en": "Armor",
+            "pt": "Armor",
+            "ru": "Armor"
           },
           "sprite": "images/chickens/19.png"
         }
@@ -9328,14 +13761,18 @@ window.WIKI_DATA = {
       "id": 20,
       "description": {
         "es": "5% más de daño cuando un aliado usa poder",
-        "en": "5% extra damage when ally use power"
+        "en": "5% extra damage when ally use power",
+        "pt": "5% de dano extra quando aliado usa poder",
+        "ru": "+5% урона, когда союзник использует силу"
       },
       "chickens": [
         {
           "id": 20,
           "name": {
             "es": "Zeo",
-            "en": "Zeo"
+            "en": "Zeo",
+            "pt": "Zeo",
+            "ru": "Zeo"
           },
           "sprite": "images/chickens/20.png"
         }
@@ -9345,14 +13782,18 @@ window.WIKI_DATA = {
       "id": 21,
       "description": {
         "es": "No puede ser paralizado. Su primer ataque tiene velocidad aumentada (+50%)",
-        "en": "Cannot be paralyzed. First attack has increased speed (+50%)"
+        "en": "Cannot be paralyzed. First attack has increased speed (+50%)",
+        "pt": "Não pode ser paralisado. Seu primeiro ataque tem velocidade aumentada (+50%)",
+        "ru": "Нельзя парализовать. Первая атака имеет повышенную скорость (+50%)"
       },
       "chickens": [
         {
           "id": 21,
           "name": {
             "es": "Jhona",
-            "en": "Jhona"
+            "en": "Jhona",
+            "pt": "Jhona",
+            "ru": "Jhona"
           },
           "sprite": "images/chickens/21.png"
         }
@@ -9362,14 +13803,18 @@ window.WIKI_DATA = {
       "id": 22,
       "description": {
         "es": "Evita proyectiles",
-        "en": "Avoid projectiles"
+        "en": "Avoid projectiles",
+        "pt": "Desvia de projéteis",
+        "ru": "Уклоняется от снарядов"
       },
       "chickens": [
         {
           "id": 22,
           "name": {
             "es": "Mega",
-            "en": "Mega"
+            "en": "Mega",
+            "pt": "Mega",
+            "ru": "Mega"
           },
           "sprite": "images/chickens/22.png"
         }
@@ -9379,14 +13824,18 @@ window.WIKI_DATA = {
       "id": 23,
       "description": {
         "es": "Al ser derrotado, envenena a todos los enemigos",
-        "en": "When is defeated, poison all enemies"
+        "en": "When is defeated, poison all enemies",
+        "pt": "Quando derrotado, envenena todos os inimigos",
+        "ru": "При поражении отравляет всех врагов"
       },
       "chickens": [
         {
           "id": 23,
           "name": {
             "es": "Porky",
-            "en": "Porky"
+            "en": "Porky",
+            "pt": "Porky",
+            "ru": "Porky"
           },
           "sprite": "images/chickens/23.png"
         }
@@ -9396,14 +13845,18 @@ window.WIKI_DATA = {
       "id": 24,
       "description": {
         "es": "Al ser atacado se afila: su próximo ataque inflige daño crítico extra (30%)",
-        "en": "When attacked, sharpens: next attack deals extra critical damage (30%)"
+        "en": "When attacked, sharpens: next attack deals extra critical damage (30%)",
+        "pt": "Ao ser atacado, afia-se: próximo ataque causa dano crítico extra (30%)",
+        "ru": "При получении удара затачивается: следующая атака наносит крит. урон (+30%)"
       },
       "chickens": [
         {
           "id": 24,
           "name": {
             "es": "Lapiz",
-            "en": "Lapiz"
+            "en": "Lapiz",
+            "pt": "Lapiz",
+            "ru": "Lapiz"
           },
           "sprite": "images/chickens/24.png"
         }
@@ -9413,14 +13866,18 @@ window.WIKI_DATA = {
       "id": 25,
       "description": {
         "es": "Empieza con una bomba, y lanza una bomba cuando cualquier pollo usa su poder",
-        "en": "Starts with a bomb, and throws a bomb whenever any chicken uses power"
+        "en": "Starts with a bomb, and throws a bomb whenever any chicken uses power",
+        "pt": "Começa com uma bomba e lança uma bomba sempre que qualquer frango usar seu poder",
+        "ru": "Начинает с бомбой и бросает бомбу каждый раз, когда любая курица использует способность"
       },
       "chickens": [
         {
           "id": 25,
           "name": {
             "es": "Manic",
-            "en": "Manic"
+            "en": "Manic",
+            "pt": "Manic",
+            "ru": "Manic"
           },
           "sprite": "images/chickens/25.png"
         }
@@ -9430,14 +13887,18 @@ window.WIKI_DATA = {
       "id": 26,
       "description": {
         "es": "Cada 3 ataques, lanza un huevo",
-        "en": "Each 3 attacks, throw a egg"
+        "en": "Each 3 attacks, throw a egg",
+        "pt": "A cada 3 ataques, arremessa um ovo",
+        "ru": "Каждые 3 атаки бросает яйцо"
       },
       "chickens": [
         {
           "id": 26,
           "name": {
             "es": "Jeff",
-            "en": "Jeff"
+            "en": "Jeff",
+            "pt": "Jeff",
+            "ru": "Jeff"
           },
           "sprite": "images/chickens/26.png"
         }
@@ -9447,14 +13908,18 @@ window.WIKI_DATA = {
       "id": 27,
       "description": {
         "es": "Cuando usa poder, +5% en una estadística aleatoria de un aliado",
-        "en": "When use power, +5% to a random ally stat"
+        "en": "When use power, +5% to a random ally stat",
+        "pt": "Ao usar poder, +5% para um atributo aleatório de aliado",
+        "ru": "При использовании силы +5% случайному стату союзника"
       },
       "chickens": [
         {
           "id": 27,
           "name": {
             "es": "Invert",
-            "en": "Invert"
+            "en": "Invert",
+            "pt": "Invert",
+            "ru": "Invert"
           },
           "sprite": "images/chickens/27.png"
         }
@@ -9464,14 +13929,18 @@ window.WIKI_DATA = {
       "id": 28,
       "description": {
         "es": "Evita el primer ataque",
-        "en": "Avoid first attack"
+        "en": "Avoid first attack",
+        "pt": "Desvia do primeiro ataque",
+        "ru": "Избегает первой атаки"
       },
       "chickens": [
         {
           "id": 28,
           "name": {
             "es": "Alien",
-            "en": "Alien"
+            "en": "Alien",
+            "pt": "Alien",
+            "ru": "Alien"
           },
           "sprite": "images/chickens/28.png"
         }
@@ -9481,14 +13950,18 @@ window.WIKI_DATA = {
       "id": 29,
       "description": {
         "es": "Obtiene enfoque",
-        "en": "Get focus"
+        "en": "Get focus",
+        "pt": "Ganha foco",
+        "ru": "Получает фокус"
       },
       "chickens": [
         {
           "id": 29,
           "name": {
             "es": "Iguanarto",
-            "en": "Iguanarto"
+            "en": "Iguanarto",
+            "pt": "Iguanarto",
+            "ru": "Iguanarto"
           },
           "sprite": "images/chickens/29.png"
         }
@@ -9498,14 +13971,18 @@ window.WIKI_DATA = {
       "id": 30,
       "description": {
         "es": "Cuando usa poder, lanza 2 moscas (50% de daño, 50% de envenenar)",
-        "en": "When use power, throw 2 flies (50% damage, 50% poison)"
+        "en": "When use power, throw 2 flies (50% damage, 50% poison)",
+        "pt": "Ao usar poder, arremessa 2 moscas (50% dano, 50% veneno)",
+        "ru": "При использовании силы бросает 2 мух (50% урона, 50% яд)"
       },
       "chickens": [
         {
           "id": 30,
           "name": {
             "es": "Mosca",
-            "en": "Mosca"
+            "en": "Mosca",
+            "pt": "Mosca",
+            "ru": "Mosca"
           },
           "sprite": "images/chickens/30.png"
         }
@@ -9515,14 +13992,18 @@ window.WIKI_DATA = {
       "id": 31,
       "description": {
         "es": "Al ser atacado, reduce la velocidad del atacante (12%) y gana velocidad (+5%)",
-        "en": "When attacked, reduces attacker's speed (12%) and gains speed (+5%)"
+        "en": "When attacked, reduces attacker's speed (12%) and gains speed (+5%)",
+        "pt": "Ao ser atacado, reduz a velocidade do atacante (12%) e ganha velocidade (+5%)",
+        "ru": "При атаке на него снижает скорость атакующего на 12% и получает +5% скорости"
       },
       "chickens": [
         {
           "id": 31,
           "name": {
             "es": "Poggie",
-            "en": "Poggie"
+            "en": "Poggie",
+            "pt": "Poggie",
+            "ru": "Poggie"
           },
           "sprite": "images/chickens/31.png"
         }
@@ -9532,14 +14013,18 @@ window.WIKI_DATA = {
       "id": 32,
       "description": {
         "es": "Después de lanzar un huevo, hace 10% más de daño",
-        "en": "After throw a egg, 10% extra damage"
+        "en": "After throw a egg, 10% extra damage",
+        "pt": "Após arremessar um ovo, 10% de dano extra",
+        "ru": "После броска яйца +10% урона"
       },
       "chickens": [
         {
           "id": 32,
           "name": {
             "es": "Toraishi",
-            "en": "Toraishi"
+            "en": "Toraishi",
+            "pt": "Toraishi",
+            "ru": "Toraishi"
           },
           "sprite": "images/chickens/32.png"
         }
@@ -9549,14 +14034,18 @@ window.WIKI_DATA = {
       "id": 33,
       "description": {
         "es": "Cada ataque tiene 25% de probabilidad de lanzar una mosca (50% de daño, 50% de envenenar)",
-        "en": "Each attack, 25% to throw a fly (50% damage, 50% poison)"
+        "en": "Each attack, 25% to throw a fly (50% damage, 50% poison)",
+        "pt": "A cada ataque, 25% de chance de arremessar uma mosca (50% dano, 50% veneno)",
+        "ru": "Каждая атака: 25% шанс бросить муху (50% урона, 50% яд)"
       },
       "chickens": [
         {
           "id": 33,
           "name": {
             "es": "Nevermore",
-            "en": "Nevermore"
+            "en": "Nevermore",
+            "pt": "Nevermore",
+            "ru": "Nevermore"
           },
           "sprite": "images/chickens/33.png"
         }
@@ -9566,14 +14055,18 @@ window.WIKI_DATA = {
       "id": 34,
       "description": {
         "es": "Copia el poder de un aliado",
-        "en": "Copy ally power"
+        "en": "Copy ally power",
+        "pt": "Copia poder do aliado",
+        "ru": "Копирует силу союзника"
       },
       "chickens": [
         {
           "id": 34,
           "name": {
             "es": "Phantom",
-            "en": "Phantom"
+            "en": "Phantom",
+            "pt": "Phantom",
+            "ru": "Phantom"
           },
           "sprite": "images/chickens/34.png"
         }
@@ -9583,14 +14076,18 @@ window.WIKI_DATA = {
       "id": 35,
       "description": {
         "es": "Al derrotar a un enemigo, gana 25% más de velocidad",
-        "en": "When defeat an enemy, 25% extra speed"
+        "en": "When defeat an enemy, 25% extra speed",
+        "pt": "Ao derrotar um inimigo, 25% de velocidade extra",
+        "ru": "При победе над врагом +25% скорости"
       },
       "chickens": [
         {
           "id": 35,
           "name": {
             "es": "Pais",
-            "en": "Pais"
+            "en": "Pais",
+            "pt": "Pais",
+            "ru": "Pais"
           },
           "sprite": "images/chickens/35.png"
         }
@@ -9600,14 +14097,18 @@ window.WIKI_DATA = {
       "id": 36,
       "description": {
         "es": "Empieza la batalla con poder máximo",
-        "en": "Start the battle with full power"
+        "en": "Start the battle with full power",
+        "pt": "Começa a batalha com poder total",
+        "ru": "Начинает битву с полной силой"
       },
       "chickens": [
         {
           "id": 36,
           "name": {
             "es": "Valu",
-            "en": "Valu"
+            "en": "Valu",
+            "pt": "Valu",
+            "ru": "Valu"
           },
           "sprite": "images/chickens/36.png"
         }
@@ -9617,14 +14118,18 @@ window.WIKI_DATA = {
       "id": 37,
       "description": {
         "es": "Repite el poder",
-        "en": "Repeat the power"
+        "en": "Repeat the power",
+        "pt": "Repete o poder",
+        "ru": "Повторяет силу"
       },
       "chickens": [
         {
           "id": 37,
           "name": {
             "es": "Pastank",
-            "en": "Pastank"
+            "en": "Pastank",
+            "pt": "Pastank",
+            "ru": "Pastank"
           },
           "sprite": "images/chickens/37.png"
         }
@@ -9634,14 +14139,18 @@ window.WIKI_DATA = {
       "id": 38,
       "description": {
         "es": "Al ser derrotado, cura a un aliado (50% de su vida máxima)",
-        "en": "When is defeated, heal ally (50% max life)"
+        "en": "When is defeated, heal ally (50% max life)",
+        "pt": "Quando derrotado, cura aliado (50% vida máx)",
+        "ru": "При поражении лечит союзника (50% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 38,
           "name": {
             "es": "Pastinni",
-            "en": "Pastinni"
+            "en": "Pastinni",
+            "pt": "Pastinni",
+            "ru": "Pastinni"
           },
           "sprite": "images/chickens/38.png"
         }
@@ -9651,14 +14160,18 @@ window.WIKI_DATA = {
       "id": 39,
       "description": {
         "es": "Puede apuntar a aliados",
-        "en": "Can target allies"
+        "en": "Can target allies",
+        "pt": "Pode mirar em aliados",
+        "ru": "Может выбирать союзников целью"
       },
       "chickens": [
         {
           "id": 39,
           "name": {
             "es": "Cacho",
-            "en": "Cacho"
+            "en": "Cacho",
+            "pt": "Cacho",
+            "ru": "Cacho"
           },
           "sprite": "images/chickens/39.png"
         }
@@ -9668,14 +14181,18 @@ window.WIKI_DATA = {
       "id": 40,
       "description": {
         "es": "Cada 3 ataques, se cura (10% de su vida máxima)",
-        "en": "Each 3 attacks, heal himself (10% max life)"
+        "en": "Each 3 attacks, heal himself (10% max life)",
+        "pt": "A cada 3 ataques, cura a si mesmo (10% vida máx)",
+        "ru": "Каждые 3 атаки лечит себя (10% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 40,
           "name": {
             "es": "Candle",
-            "en": "Candle"
+            "en": "Candle",
+            "pt": "Candle",
+            "ru": "Candle"
           },
           "sprite": "images/chickens/40.png"
         }
@@ -9685,14 +14202,18 @@ window.WIKI_DATA = {
       "id": 41,
       "description": {
         "es": "No puede ser quemado. Si intentan quemarlo o ataca a un objetivo en llamas, gana daño (+10%)",
-        "en": "Cannot be burned. If burned or attacking a burning enemy, gains damage (+10%)"
+        "en": "Cannot be burned. If burned or attacking a burning enemy, gains damage (+10%)",
+        "pt": "Não pode ser queimado. Se tentarem queimá-lo ou atacar um alvo em chamas, ganha dano (+10%)",
+        "ru": "Нельзя поджечь. При попытке поджога или атаке горящего врага получает урон (+10%)"
       },
       "chickens": [
         {
           "id": 41,
           "name": {
             "es": "Magni",
-            "en": "Magni"
+            "en": "Magni",
+            "pt": "Magni",
+            "ru": "Magni"
           },
           "sprite": "images/chickens/41.png"
         }
@@ -9702,14 +14223,18 @@ window.WIKI_DATA = {
       "id": 42,
       "description": {
         "es": "Al ser derrotado, quema a todos los enemigos",
-        "en": "When is defeated, burn all enemies"
+        "en": "When is defeated, burn all enemies",
+        "pt": "Quando derrotado, queima todos os inimigos",
+        "ru": "При поражении поджигает всех врагов"
       },
       "chickens": [
         {
           "id": 42,
           "name": {
             "es": "Tiza",
-            "en": "Tiza"
+            "en": "Tiza",
+            "pt": "Tiza",
+            "ru": "Tiza"
           },
           "sprite": "images/chickens/42.png"
         }
@@ -9719,14 +14244,18 @@ window.WIKI_DATA = {
       "id": 43,
       "description": {
         "es": "Cada 3 ataques, quema al enemigo",
-        "en": "Each 3 attacks, burn"
+        "en": "Each 3 attacks, burn",
+        "pt": "A cada 3 ataques, queima",
+        "ru": "Каждые 3 атаки поджигает"
       },
       "chickens": [
         {
           "id": 43,
           "name": {
             "es": "Ignarto",
-            "en": "Ignarto"
+            "en": "Ignarto",
+            "pt": "Ignarto",
+            "ru": "Ignarto"
           },
           "sprite": "images/chickens/43.png"
         }
@@ -9736,14 +14265,18 @@ window.WIKI_DATA = {
       "id": 44,
       "description": {
         "es": "25% de probabilidad de quemar al ser atacado",
-        "en": "25% to burn when is attacked"
+        "en": "25% to burn when is attacked",
+        "pt": "25% de chance de queimar ao ser atacado",
+        "ru": "25% шанс поджечь при получении атаки"
       },
       "chickens": [
         {
           "id": 44,
           "name": {
             "es": "Lava",
-            "en": "Lava"
+            "en": "Lava",
+            "pt": "Lava",
+            "ru": "Lava"
           },
           "sprite": "images/chickens/44.png"
         }
@@ -9753,14 +14286,18 @@ window.WIKI_DATA = {
       "id": 45,
       "description": {
         "es": "Cuando usa poder, 5% más de daño y se cura (10% de su vida máxima)",
-        "en": "When use power, 5% extra damage and heal (10% max life)"
+        "en": "When use power, 5% extra damage and heal (10% max life)",
+        "pt": "Ao usar poder, 5% de dano extra e cura (10% vida máx)",
+        "ru": "При использовании силы +5% урона и лечит (10% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 45,
           "name": {
             "es": "Vulcano",
-            "en": "Vulcano"
+            "en": "Vulcano",
+            "pt": "Vulcano",
+            "ru": "Vulcano"
           },
           "sprite": "images/chickens/45.png"
         }
@@ -9770,14 +14307,18 @@ window.WIKI_DATA = {
       "id": 46,
       "description": {
         "es": "Cuando usa poder, +15% de armadura y evita el próximo ataque",
-        "en": "When using power, +15% armor and avoids next attack"
+        "en": "When using power, +15% armor and avoids next attack",
+        "pt": "Quando usa poder, +15% de armadura e evita o próximo ataque",
+        "ru": "При использовании способности +15% брони и уклоняется от следующей атаки"
       },
       "chickens": [
         {
           "id": 46,
           "name": {
             "es": "Robotop",
-            "en": "Robotop"
+            "en": "Robotop",
+            "pt": "Robotop",
+            "ru": "Robotop"
           },
           "sprite": "images/chickens/46.png"
         }
@@ -9787,14 +14328,18 @@ window.WIKI_DATA = {
       "id": 47,
       "description": {
         "es": "Al ser atacado, gana armadura (+3%) y poder (+5)",
-        "en": "When attacked, gains armor (+3%) and power (+5)"
+        "en": "When attacked, gains armor (+3%) and power (+5)",
+        "pt": "Ao ser atacado, ganha armadura (+3%) e poder (+5)",
+        "ru": "При получении удара получает броню (+3%) и энергию (+5)"
       },
       "chickens": [
         {
           "id": 47,
           "name": {
             "es": "Clusio",
-            "en": "Clusio"
+            "en": "Clusio",
+            "pt": "Clusio",
+            "ru": "Clusio"
           },
           "sprite": "images/chickens/47.png"
         }
@@ -9804,14 +14349,18 @@ window.WIKI_DATA = {
       "id": 48,
       "description": {
         "es": "Cuando un aliado es derrotado, intercambia sus porcentajes de vida",
-        "en": "When ally is defeated, swap life porcentage"
+        "en": "When ally is defeated, swap life porcentage",
+        "pt": "Quando aliado é derrotado, troca porcentagem de vida",
+        "ru": "Когда союзник побежден, меняется процентом здоровья"
       },
       "chickens": [
         {
           "id": 48,
           "name": {
             "es": "Leci",
-            "en": "Leci"
+            "en": "Leci",
+            "pt": "Leci",
+            "ru": "Leci"
           },
           "sprite": "images/chickens/48.png"
         }
@@ -9821,14 +14370,18 @@ window.WIKI_DATA = {
       "id": 49,
       "description": {
         "es": "Al atacar 3 veces, evita el próximo ataque",
-        "en": "Each 3 hits, avoid"
+        "en": "Each 3 hits, avoid",
+        "pt": "A cada 3 acertos, desvia",
+        "ru": "Каждые 3 удара уклоняется"
       },
       "chickens": [
         {
           "id": 49,
           "name": {
             "es": "Cerol",
-            "en": "Cerol"
+            "en": "Cerol",
+            "pt": "Cerol",
+            "ru": "Cerol"
           },
           "sprite": "images/chickens/49.png"
         }
@@ -9838,14 +14391,18 @@ window.WIKI_DATA = {
       "id": 50,
       "description": {
         "es": "Cada 3 golpes, 15% de daño extra",
-        "en": "Every 3 hits, 15% extra damage"
+        "en": "Every 3 hits, 15% extra damage",
+        "pt": "A cada 3 golpes, 15% de dano extra",
+        "ru": "Каждые 3 удара наносит на 15% больше урона"
       },
       "chickens": [
         {
           "id": 50,
           "name": {
             "es": "Rufus",
-            "en": "Rufus"
+            "en": "Rufus",
+            "pt": "Rufus",
+            "ru": "Rufus"
           },
           "sprite": "images/chickens/50.png"
         }
@@ -9855,14 +14412,18 @@ window.WIKI_DATA = {
       "id": 51,
       "description": {
         "es": "Al revivir se cura (100% de vida máxima)",
-        "en": "When revive heal himself (100% max life)"
+        "en": "When revive heal himself (100% max life)",
+        "pt": "Ao reviver cura a si mesmo (100% vida máx)",
+        "ru": "При возрождении лечит себя (100% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 51,
           "name": {
             "es": "Bjorn",
-            "en": "Bjorn"
+            "en": "Bjorn",
+            "pt": "Bjorn",
+            "ru": "Bjorn"
           },
           "sprite": "images/chickens/51.png"
         }
@@ -9872,14 +14433,18 @@ window.WIKI_DATA = {
       "id": 52,
       "description": {
         "es": "Cuando derrote a un enemigo, 33% de daño extra",
-        "en": "When defeat an enemy, 33% extra damage"
+        "en": "When defeat an enemy, 33% extra damage",
+        "pt": "Ao derrotar um inimigo, 33% de dano extra",
+        "ru": "При победе над врагом +33% урона"
       },
       "chickens": [
         {
           "id": 52,
           "name": {
             "es": "Sharky",
-            "en": "Sharky"
+            "en": "Sharky",
+            "pt": "Sharky",
+            "ru": "Sharky"
           },
           "sprite": "images/chickens/52.png"
         }
@@ -9889,14 +14454,18 @@ window.WIKI_DATA = {
       "id": 53,
       "description": {
         "es": "Cuando use poder, envenena a todos los enemigos",
-        "en": "When use power, poison all enemies"
+        "en": "When use power, poison all enemies",
+        "pt": "Ao usar poder, envenena todos os inimigos",
+        "ru": "При использовании силы отравляет всех врагов"
       },
       "chickens": [
         {
           "id": 53,
           "name": {
             "es": "Queso",
-            "en": "Queso"
+            "en": "Queso",
+            "pt": "Queso",
+            "ru": "Queso"
           },
           "sprite": "images/chickens/53.png"
         }
@@ -9906,14 +14475,18 @@ window.WIKI_DATA = {
       "id": 54,
       "description": {
         "es": "Cuando use poder, maldice a todos los enemigos",
-        "en": "When use power, curse all enemies"
+        "en": "When use power, curse all enemies",
+        "pt": "Ao usar poder, amaldiçoa todos os inimigos",
+        "ru": "При использовании силы проклинает всех врагов"
       },
       "chickens": [
         {
           "id": 54,
           "name": {
             "es": "Monocrom",
-            "en": "Monocrom"
+            "en": "Monocrom",
+            "pt": "Monocrom",
+            "ru": "Monocrom"
           },
           "sprite": "images/chickens/54.png"
         }
@@ -9923,14 +14496,18 @@ window.WIKI_DATA = {
       "id": 55,
       "description": {
         "es": "No puede ser maldecido y comienza con +15% de daño. Si empieza el turno con un efecto negativo, gana +20 de poder",
-        "en": "Cannot be cursed and starts combat with +15% extra damage. Gains +20 power if starting turn with a negative effect"
+        "en": "Cannot be cursed and starts combat with +15% extra damage. Gains +20 power if starting turn with a negative effect",
+        "pt": "Não pode ser amaldiçoado e começa com +15% de dano. Ganha +20 de poder se iniciar o turno com um efeito negativo",
+        "ru": "Не может быть проклят и начинает бой с +15% к урону. Получает +20 силы, если начинает ход с негативным эффектом"
       },
       "chickens": [
         {
           "id": 55,
           "name": {
             "es": "Gatarlos",
-            "en": "Gatarlos"
+            "en": "Gatarlos",
+            "pt": "Gatarlos",
+            "ru": "Gatarlos"
           },
           "sprite": "images/chickens/55.png"
         }
@@ -9940,14 +14517,18 @@ window.WIKI_DATA = {
       "id": 56,
       "description": {
         "es": "Al transformarse, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos",
-        "en": "Upon transforming, grants 1 evasion to the team. When defeated, revives and transforms into Gatarlos"
+        "en": "Upon transforming, grants 1 evasion to the team. When defeated, revives and transforms into Gatarlos",
+        "pt": "Ao se transformar, concede 1 ponto de evasão à equipe. Quando derrotado, revive e se transforma em Gatarlos",
+        "ru": "При превращении дает 1 очко уклонения команде. При поражении возрождается и превращается в Gatarlos"
       },
       "chickens": [
         {
           "id": 56,
           "name": {
             "es": "Evil Gatarlos",
-            "en": "Evil Gatarlos"
+            "en": "Evil Gatarlos",
+            "pt": "Evil Gatarlos",
+            "ru": "Evil Gatarlos"
           },
           "sprite": "images/chickens/56.png"
         }
@@ -9957,14 +14538,18 @@ window.WIKI_DATA = {
       "id": 57,
       "description": {
         "es": "Cuando sea derrotado, da poder total a un aliado",
-        "en": "When is defeated, give ally full power"
+        "en": "When is defeated, give ally full power",
+        "pt": "Quando derrotado, dá poder total ao aliado",
+        "ru": "При поражении дает союзнику полную силу"
       },
       "chickens": [
         {
           "id": 57,
           "name": {
             "es": "Prisma",
-            "en": "Prisma"
+            "en": "Prisma",
+            "pt": "Prisma",
+            "ru": "Prisma"
           },
           "sprite": "images/chickens/57.png"
         }
@@ -9974,14 +14559,18 @@ window.WIKI_DATA = {
       "id": 58,
       "description": {
         "es": "50% de probabilidad de repetir projectiles",
-        "en": "50% chance to repeat projectiles"
+        "en": "50% chance to repeat projectiles",
+        "pt": "50% de chance de repetição dos projéteis",
+        "ru": "50% вероятность повторного попадания снарядов"
       },
       "chickens": [
         {
           "id": 58,
           "name": {
             "es": "Duncan",
-            "en": "Duncan"
+            "en": "Duncan",
+            "pt": "Duncan",
+            "ru": "Duncan"
           },
           "sprite": "images/chickens/58.png"
         }
@@ -9991,14 +14580,18 @@ window.WIKI_DATA = {
       "id": 59,
       "description": {
         "es": "Cada 4 golpes, obtiene poder total",
-        "en": "Each 4 hits, get full power"
+        "en": "Each 4 hits, get full power",
+        "pt": "A cada 4 acertos, ganha poder total",
+        "ru": "Каждые 4 удара получает полную силу"
       },
       "chickens": [
         {
           "id": 59,
           "name": {
             "es": "Siul",
-            "en": "Siul"
+            "en": "Siul",
+            "pt": "Siul",
+            "ru": "Siul"
           },
           "sprite": "images/chickens/59.png"
         }
@@ -10008,14 +14601,18 @@ window.WIKI_DATA = {
       "id": 60,
       "description": {
         "es": "Cuando lance un huevo, se cura a sí mismo (10% de vida máxima)",
-        "en": "When throw a egg, heal himself (10% max life)"
+        "en": "When throw a egg, heal himself (10% max life)",
+        "pt": "Ao arremessar um ovo, cura a si mesmo (10% vida máx)",
+        "ru": "При броске яйца лечит себя (10% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 60,
           "name": {
             "es": "Boomy",
-            "en": "Boomy"
+            "en": "Boomy",
+            "pt": "Boomy",
+            "ru": "Boomy"
           },
           "sprite": "images/chickens/60.png"
         }
@@ -10025,14 +14622,18 @@ window.WIKI_DATA = {
       "id": 61,
       "description": {
         "es": "Ignora el enfoque y comienza el combate con 1 punto de evasión",
-        "en": "Ignores focus and starts combat with 1 point of evasion"
+        "en": "Ignores focus and starts combat with 1 point of evasion",
+        "pt": "Ignora o foco e começa o combate com 1 ponto de evasão",
+        "ru": "Игнорирует фокус и начинает бой с 1 очком уклонения"
       },
       "chickens": [
         {
           "id": 61,
           "name": {
             "es": "Shiken",
-            "en": "Shiken"
+            "en": "Shiken",
+            "pt": "Shiken",
+            "ru": "Shiken"
           },
           "sprite": "images/chickens/61.png"
         }
@@ -10042,14 +14643,18 @@ window.WIKI_DATA = {
       "id": 62,
       "description": {
         "es": "Primer ataque paraliza",
-        "en": "First attack paralize"
+        "en": "First attack paralize",
+        "pt": "Primeiro ataque paralisa",
+        "ru": "Первая атака парализует"
       },
       "chickens": [
         {
           "id": 62,
           "name": {
             "es": "Miedo",
-            "en": "Miedo"
+            "en": "Miedo",
+            "pt": "Miedo",
+            "ru": "Miedo"
           },
           "sprite": "images/chickens/62.png"
         }
@@ -10059,14 +14664,18 @@ window.WIKI_DATA = {
       "id": 63,
       "description": {
         "es": "Cuando use poder, cura a los aliados (15% de vida máxima + 15% de daño)",
-        "en": "When use power, heal allies (15% max life + 15% damage)"
+        "en": "When use power, heal allies (15% max life + 15% damage)",
+        "pt": "Ao usar poder, cura aliados (15% vida máx + 15% dano)",
+        "ru": "При использовании силы лечит союзников (15% макс. здоровья + 15% урона)"
       },
       "chickens": [
         {
           "id": 63,
           "name": {
             "es": "Volcken",
-            "en": "Volcken"
+            "en": "Volcken",
+            "pt": "Volcken",
+            "ru": "Volcken"
           },
           "sprite": "images/chickens/63.png"
         }
@@ -10076,14 +14685,18 @@ window.WIKI_DATA = {
       "id": 64,
       "description": {
         "es": "Cada ataque da 5% de daño extra y se hace daño a sí mismo (5% de vida máxima)",
-        "en": "Each attack give 5% extra damage and hurt himself (5% max life)"
+        "en": "Each attack give 5% extra damage and hurt himself (5% max life)",
+        "pt": "Cada ataque dá 5% de dano extra e fere a si mesmo (5% vida máx)",
+        "ru": "Каждая атака дает +5% урона и наносит себе урон (5% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 64,
           "name": {
             "es": "Nama",
-            "en": "Nama"
+            "en": "Nama",
+            "pt": "Nama",
+            "ru": "Nama"
           },
           "sprite": "images/chickens/64.png"
         }
@@ -10093,14 +14706,18 @@ window.WIKI_DATA = {
       "id": 65,
       "description": {
         "es": "Cuando derrote a un enemigo, +2 de evitar",
-        "en": "When defeat a enemy, +2 avoid"
+        "en": "When defeat a enemy, +2 avoid",
+        "pt": "Ao derrotar um inimigo, +2 de esquiva",
+        "ru": "При победе над врагом +2 уклонения"
       },
       "chickens": [
         {
           "id": 65,
           "name": {
             "es": "Vapollo",
-            "en": "Vapollo"
+            "en": "Vapollo",
+            "pt": "Vapollo",
+            "ru": "Vapollo"
           },
           "sprite": "images/chickens/65.png"
         }
@@ -10110,14 +14727,18 @@ window.WIKI_DATA = {
       "id": 66,
       "description": {
         "es": "Cuando use poder, -15% de velocidad a todos los enemigos y los quema",
-        "en": "When using power, -15% speed to all enemies and burns them"
+        "en": "When using power, -15% speed to all enemies and burns them",
+        "pt": "Quando usar poder, -15% de velocidade a todos os inimigos e os queima",
+        "ru": "При использовании способности -15% скорости всем врагам и поджигает их"
       },
       "chickens": [
         {
           "id": 66,
           "name": {
             "es": "Ashy",
-            "en": "Ashy"
+            "en": "Ashy",
+            "pt": "Ashy",
+            "ru": "Ashy"
           },
           "sprite": "images/chickens/66.png"
         }
@@ -10127,14 +14748,18 @@ window.WIKI_DATA = {
       "id": 67,
       "description": {
         "es": "Cuando use poder, evita",
-        "en": "When use power, avoid"
+        "en": "When use power, avoid",
+        "pt": "Ao usar poder, esquiva",
+        "ru": "При использовании силы уклоняется"
       },
       "chickens": [
         {
           "id": 67,
           "name": {
             "es": "Pollulu",
-            "en": "Pollulu"
+            "en": "Pollulu",
+            "pt": "Pollulu",
+            "ru": "Pollulu"
           },
           "sprite": "images/chickens/67.png"
         }
@@ -10144,14 +14769,18 @@ window.WIKI_DATA = {
       "id": 68,
       "description": {
         "es": "Primer ataque quema",
-        "en": "First attack burn"
+        "en": "First attack burn",
+        "pt": "Primeiro ataque queima",
+        "ru": "Первая атака поджигает"
       },
       "chickens": [
         {
           "id": 68,
           "name": {
             "es": "Cocore",
-            "en": "Cocore"
+            "en": "Cocore",
+            "pt": "Cocore",
+            "ru": "Cocore"
           },
           "sprite": "images/chickens/68.png"
         }
@@ -10161,14 +14790,18 @@ window.WIKI_DATA = {
       "id": 69,
       "description": {
         "es": "Cada turno, +3% de daño y +3% de velocidad",
-        "en": "Each turn, +3% damage and +3% speed"
+        "en": "Each turn, +3% damage and +3% speed",
+        "pt": "A cada turno, +3% de dano e +3% de velocidade",
+        "ru": "Каждый ход +3% к урону и +3% к скорости"
       },
       "chickens": [
         {
           "id": 69,
           "name": {
             "es": "Pinzon",
-            "en": "Pinzon"
+            "en": "Pinzon",
+            "pt": "Pinzon",
+            "ru": "Pinzon"
           },
           "sprite": "images/chickens/69.png"
         }
@@ -10178,14 +14811,18 @@ window.WIKI_DATA = {
       "id": 70,
       "description": {
         "es": "Cada turno, +4% de armadura",
-        "en": "Each turn, +4% armor"
+        "en": "Each turn, +4% armor",
+        "pt": "A cada turno, +4% de armadura",
+        "ru": "Каждый ход +4% к броне"
       },
       "chickens": [
         {
           "id": 70,
           "name": {
             "es": "Galligno",
-            "en": "Galligno"
+            "en": "Galligno",
+            "pt": "Galligno",
+            "ru": "Galligno"
           },
           "sprite": "images/chickens/70.png"
         }
@@ -10195,14 +14832,18 @@ window.WIKI_DATA = {
       "id": 71,
       "description": {
         "es": "Cuando use poder, silencia a todos los enemigos",
-        "en": "When use power, silence all enemies"
+        "en": "When use power, silence all enemies",
+        "pt": "Ao usar poder, silencia todos os inimigos",
+        "ru": "При использовании силы накладывает молчание на всех врагов"
       },
       "chickens": [
         {
           "id": 71,
           "name": {
             "es": "Nube",
-            "en": "Nube"
+            "en": "Nube",
+            "pt": "Nube",
+            "ru": "Nube"
           },
           "sprite": "images/chickens/71.png"
         }
@@ -10212,14 +14853,18 @@ window.WIKI_DATA = {
       "id": 72,
       "description": {
         "es": "Cada turno se cura a sí mismo (6% de vida máxima)",
-        "en": "Each turn heals himself (6% max life)"
+        "en": "Each turn heals himself (6% max life)",
+        "pt": "A cada turno se cura (6% de vida máxima)",
+        "ru": "Каждый ход лечит себя (6% от макс. здоровья)"
       },
       "chickens": [
         {
           "id": 72,
           "name": {
             "es": "Gallimbus",
-            "en": "Gallimbus"
+            "en": "Gallimbus",
+            "pt": "Gallimbus",
+            "ru": "Gallimbus"
           },
           "sprite": "images/chickens/72.png"
         }
@@ -10229,14 +14874,18 @@ window.WIKI_DATA = {
       "id": 73,
       "description": {
         "es": "El primer ataque tiene 100% de velocidad",
-        "en": "First attack with 100% extra speed"
+        "en": "First attack with 100% extra speed",
+        "pt": "Primeiro ataque com 100% de velocidade extra",
+        "ru": "Первая атака со 100% дополнительной скоростью"
       },
       "chickens": [
         {
           "id": 73,
           "name": {
             "es": "Ventora",
-            "en": "Ventora"
+            "en": "Ventora",
+            "pt": "Ventora",
+            "ru": "Ventora"
           },
           "sprite": "images/chickens/73.png"
         }
@@ -10246,14 +14895,18 @@ window.WIKI_DATA = {
       "id": 74,
       "description": {
         "es": "Cada 3 ataques, cura a un aliado",
-        "en": "Each 3 attacks, heal an ally"
+        "en": "Each 3 attacks, heal an ally",
+        "pt": "A cada 3 ataques, cura um aliado",
+        "ru": "Каждые 3 атаки лечит союзника"
       },
       "chickens": [
         {
           "id": 74,
           "name": {
             "es": "Aery",
-            "en": "Aery"
+            "en": "Aery",
+            "pt": "Aery",
+            "ru": "Aery"
           },
           "sprite": "images/chickens/74.png"
         }
@@ -10263,14 +14916,18 @@ window.WIKI_DATA = {
       "id": 75,
       "description": {
         "es": "Cuando una un ítem, gana poder máximo",
-        "en": "When use a item, full power"
+        "en": "When use a item, full power",
+        "pt": "Ao usar um item, poder total",
+        "ru": "При использовании предмета полная сила"
       },
       "chickens": [
         {
           "id": 75,
           "name": {
             "es": "Titiro",
-            "en": "Titiro"
+            "en": "Titiro",
+            "pt": "Titiro",
+            "ru": "Titiro"
           },
           "sprite": "images/chickens/75.png"
         }
@@ -10280,14 +14937,18 @@ window.WIKI_DATA = {
       "id": 76,
       "description": {
         "es": "Cada 5 ataques, lanza 2 huevos",
-        "en": "Each 5 attacks, throw 2 eggs"
+        "en": "Each 5 attacks, throw 2 eggs",
+        "pt": "A cada 5 ataques, arremessa 2 ovos",
+        "ru": "Каждые 5 атак бросает 2 яйца"
       },
       "chickens": [
         {
           "id": 76,
           "name": {
             "es": "Luso",
-            "en": "Luso"
+            "en": "Luso",
+            "pt": "Luso",
+            "ru": "Luso"
           },
           "sprite": "images/chickens/76.png"
         }
@@ -10297,14 +14958,18 @@ window.WIKI_DATA = {
       "id": 77,
       "description": {
         "es": "Cuando ataca a un enemigo congelado, se cura (5% de vida máxima)",
-        "en": "When attack a frozen enemy, heal himself (5% max life)"
+        "en": "When attack a frozen enemy, heal himself (5% max life)",
+        "pt": "Ao atacar um inimigo congelado, cura a si mesmo (5% vida máx)",
+        "ru": "При атаке замороженного врага лечит себя (5% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 77,
           "name": {
             "es": "Menta",
-            "en": "Menta"
+            "en": "Menta",
+            "pt": "Menta",
+            "ru": "Menta"
           },
           "sprite": "images/chickens/77.png"
         }
@@ -10314,14 +14979,18 @@ window.WIKI_DATA = {
       "id": 78,
       "description": {
         "es": "Cada 2 poderes, esquiva",
-        "en": "Each 2 powers, avoid"
+        "en": "Each 2 powers, avoid",
+        "pt": "A cada 2 poderes, esquiva",
+        "ru": "Каждые 2 силы уклоняется"
       },
       "chickens": [
         {
           "id": 78,
           "name": {
             "es": "Wicken",
-            "en": "Wicken"
+            "en": "Wicken",
+            "pt": "Wicken",
+            "ru": "Wicken"
           },
           "sprite": "images/chickens/78.png"
         }
@@ -10331,14 +15000,18 @@ window.WIKI_DATA = {
       "id": 79,
       "description": {
         "es": "Cuando ataca, se cura a sí mismo (5% de vida máxima) y gana velocidad (+3%)",
-        "en": "When attacking, heals himself (5% max life) and gains speed (+3%)"
+        "en": "When attacking, heals himself (5% max life) and gains speed (+3%)",
+        "pt": "Quando ataca, se cura (5% de vida máxima) e ganha velocidade (+3%)",
+        "ru": "При атаке лечит себя (5% от макс. здоровья) и получает скорость (+3%)"
       },
       "chickens": [
         {
           "id": 79,
           "name": {
             "es": "Gota",
-            "en": "Gota"
+            "en": "Gota",
+            "pt": "Gota",
+            "ru": "Gota"
           },
           "sprite": "images/chickens/79.png"
         }
@@ -10348,14 +15021,18 @@ window.WIKI_DATA = {
       "id": 80,
       "description": {
         "es": "Cuando ataca a un enemigo envenenado, se cura (5% de vida máxima)",
-        "en": "When attack a poisoned enemy, heal himself (5% max life)"
+        "en": "When attack a poisoned enemy, heal himself (5% max life)",
+        "pt": "Ao atacar um inimigo envenenado, cura a si mesmo (5% vida máx)",
+        "ru": "При атаке отравленного врага лечит себя (5% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 80,
           "name": {
             "es": "Mucken",
-            "en": "Mucken"
+            "en": "Mucken",
+            "pt": "Mucken",
+            "ru": "Mucken"
           },
           "sprite": "images/chickens/80.png"
         }
@@ -10365,14 +15042,18 @@ window.WIKI_DATA = {
       "id": 81,
       "description": {
         "es": "Cada 2 ataques, +15 poder",
-        "en": "Each 2 attacks, +15 power"
+        "en": "Each 2 attacks, +15 power",
+        "pt": "A cada 2 ataques, +15 poder",
+        "ru": "Каждые 2 атаки +15 силы"
       },
       "chickens": [
         {
           "id": 81,
           "name": {
             "es": "Egi",
-            "en": "Egi"
+            "en": "Egi",
+            "pt": "Egi",
+            "ru": "Egi"
           },
           "sprite": "images/chickens/81.png"
         }
@@ -10382,14 +15063,18 @@ window.WIKI_DATA = {
       "id": 82,
       "description": {
         "es": "Al atacar a un enemigo infectado, propaga la infección y drena poder (-10)",
-        "en": "Attacking an infected enemy spreads infection and drains power (-10)"
+        "en": "Attacking an infected enemy spreads infection and drains power (-10)",
+        "pt": "Ao atacar um inimigo infectado, espalha a infecção e drena poder (-10)",
+        "ru": "При атаке зараженного врага распространяет инфекцию и крадет энергию (-10)"
       },
       "chickens": [
         {
           "id": 82,
           "name": {
             "es": "Fingie",
-            "en": "Fingie"
+            "en": "Fingie",
+            "pt": "Fingie",
+            "ru": "Fingie"
           },
           "sprite": "images/chickens/82.png"
         }
@@ -10399,14 +15084,18 @@ window.WIKI_DATA = {
       "id": 83,
       "description": {
         "es": "Al comenzar, cura al equipo (35% de la vida máxima)",
-        "en": "When start, heal team (35% max life)"
+        "en": "When start, heal team (35% max life)",
+        "pt": "Ao iniciar, cura equipe (35% vida máx)",
+        "ru": "В начале лечит команду (35% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 83,
           "name": {
             "es": "Corny",
-            "en": "Corny"
+            "en": "Corny",
+            "pt": "Corny",
+            "ru": "Corny"
           },
           "sprite": "images/chickens/83.png"
         }
@@ -10416,14 +15105,18 @@ window.WIKI_DATA = {
       "id": 84,
       "description": {
         "es": "Al comenzar, otorga poder completo a un aliado",
-        "en": "When start, give full power to ally"
+        "en": "When start, give full power to ally",
+        "pt": "Ao iniciar, dá poder total ao aliado",
+        "ru": "В начале дает полную силу союзнику"
       },
       "chickens": [
         {
           "id": 84,
           "name": {
             "es": "Policus",
-            "en": "Policus"
+            "en": "Policus",
+            "pt": "Policus",
+            "ru": "Policus"
           },
           "sprite": "images/chickens/84.png"
         }
@@ -10433,14 +15126,18 @@ window.WIKI_DATA = {
       "id": 85,
       "description": {
         "es": "Al ser atacado, refleja 20% del daño y reduce la armadura del atacante (3%)",
-        "en": "When attacked, reflects 20% damage and reduces attacker's armor (3%)"
+        "en": "When attacked, reflects 20% damage and reduces attacker's armor (3%)",
+        "pt": "Ao ser atacado, reflete 20% do dano e reduz a armadura do atacante (3%)",
+        "ru": "При получении удара отражает 20% урона и снижает броню атакующего (3%)"
       },
       "chickens": [
         {
           "id": 85,
           "name": {
             "es": "Vidro",
-            "en": "Vidro"
+            "en": "Vidro",
+            "pt": "Vidro",
+            "ru": "Vidro"
           },
           "sprite": "images/chickens/85.png"
         }
@@ -10450,14 +15147,18 @@ window.WIKI_DATA = {
       "id": 86,
       "description": {
         "es": "Cada 5 ataques, envenena y se cura a sí mismo (33% de la vida máxima)",
-        "en": "Each 5 attacks, poison and heal himself (33% max life)"
+        "en": "Each 5 attacks, poison and heal himself (33% max life)",
+        "pt": "A cada 5 ataques, envenena e cura a si mesmo (33% vida máx)",
+        "ru": "Каждые 5 атак отравляет и лечит себя (33% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 86,
           "name": {
             "es": "Yuntan",
-            "en": "Yuntan"
+            "en": "Yuntan",
+            "pt": "Yuntan",
+            "ru": "Yuntan"
           },
           "sprite": "images/chickens/86.png"
         }
@@ -10467,14 +15168,18 @@ window.WIKI_DATA = {
       "id": 87,
       "description": {
         "es": "Cuando un aliado usa su poder, obtiene poder completo",
-        "en": "When ally use power, get full power"
+        "en": "When ally use power, get full power",
+        "pt": "Quando aliado usa poder, ganha poder total",
+        "ru": "Когда союзник использует силу, получает полную силу"
       },
       "chickens": [
         {
           "id": 87,
           "name": {
             "es": "Plass",
-            "en": "Plass"
+            "en": "Plass",
+            "pt": "Plass",
+            "ru": "Plass"
           },
           "sprite": "images/chickens/87.png"
         }
@@ -10484,14 +15189,18 @@ window.WIKI_DATA = {
       "id": 88,
       "description": {
         "es": "Comienza con un 33% de daño extra y silenciado",
-        "en": "Start with 33% extra damage and silenced"
+        "en": "Start with 33% extra damage and silenced",
+        "pt": "Começa com 33% de dano extra e silenciado",
+        "ru": "Начинает с +33% урона и молчанием"
       },
       "chickens": [
         {
           "id": 88,
           "name": {
             "es": "Trinagle",
-            "en": "Trinagle"
+            "en": "Trinagle",
+            "pt": "Trinagle",
+            "ru": "Trinagle"
           },
           "sprite": "images/chickens/88.png"
         }
@@ -10501,14 +15210,18 @@ window.WIKI_DATA = {
       "id": 89,
       "description": {
         "es": "Cuando es golpeado, hiere al enemigo (25% del daño recibido)",
-        "en": "When hit, hurt enemy (25% damage)"
+        "en": "When hit, hurt enemy (25% damage)",
+        "pt": "Ao ser atingido, fere o inimigo (25% dano)",
+        "ru": "При ударе ранит врага (25% урона)"
       },
       "chickens": [
         {
           "id": 89,
           "name": {
             "es": "Cactus",
-            "en": "Cactus"
+            "en": "Cactus",
+            "pt": "Cactus",
+            "ru": "Cactus"
           },
           "sprite": "images/chickens/89.png"
         }
@@ -10518,14 +15231,18 @@ window.WIKI_DATA = {
       "id": 90,
       "description": {
         "es": "Al derrotar un enemigo, se cura (25% de vida máxima) y otorga 1 de evasión al equipo",
-        "en": "When defeating an enemy, heals (25% max life) and grants 1 evasion to the team"
+        "en": "When defeating an enemy, heals (25% max life) and grants 1 evasion to the team",
+        "pt": "Ao derrotar um inimigo, cura-se (25% de vida máxima) e concede 1 de esquiva à equipe",
+        "ru": "При победе над врагом исцеляется (25% макс. здоровья) и дает команде 1 уклонение"
       },
       "chickens": [
         {
           "id": 90,
           "name": {
             "es": "Ploom",
-            "en": "Ploom"
+            "en": "Ploom",
+            "pt": "Ploom",
+            "ru": "Ploom"
           },
           "sprite": "images/chickens/90.png"
         }
@@ -10535,14 +15252,18 @@ window.WIKI_DATA = {
       "id": 91,
       "description": {
         "es": "Cuando un enemigo usa su poder, gana +5 de daño",
-        "en": "When an enemy use power, +5 damage"
+        "en": "When an enemy use power, +5 damage",
+        "pt": "Quando um inimigo usa poder, +5 dano",
+        "ru": "Когда враг использует силу, +5 урона"
       },
       "chickens": [
         {
           "id": 91,
           "name": {
             "es": "Darkus",
-            "en": "Darkus"
+            "en": "Darkus",
+            "pt": "Darkus",
+            "ru": "Darkus"
           },
           "sprite": "images/chickens/91.png"
         }
@@ -10552,14 +15273,18 @@ window.WIKI_DATA = {
       "id": 92,
       "description": {
         "es": "Cuando usa su poder, se cura a sí mismo (10% de la vida máxima) y gana +5 de armadura",
-        "en": "When use power, heal himself (10% max life) and +5% armor"
+        "en": "When use power, heal himself (10% max life) and +5% armor",
+        "pt": "Ao usar poder, cura a si mesmo (10% vida máx) e +5% armadura",
+        "ru": "При использовании силы лечит себя (10% макс.) и +5% брони"
       },
       "chickens": [
         {
           "id": 92,
           "name": {
             "es": "Galland",
-            "en": "Galland"
+            "en": "Galland",
+            "pt": "Galland",
+            "ru": "Galland"
           },
           "sprite": "images/chickens/92.png"
         }
@@ -10569,14 +15294,18 @@ window.WIKI_DATA = {
       "id": 93,
       "description": {
         "es": "Cada ataque lo cura a sí mismo (25% del daño infligido)",
-        "en": "Each attack heal himself (25% damage)"
+        "en": "Each attack heal himself (25% damage)",
+        "pt": "Cada ataque cura a si mesmo (25% dano)",
+        "ru": "Каждая атака лечит себя (25% от урона)"
       },
       "chickens": [
         {
           "id": 93,
           "name": {
             "es": "Drillen",
-            "en": "Drillen"
+            "en": "Drillen",
+            "pt": "Drillen",
+            "ru": "Drillen"
           },
           "sprite": "images/chickens/93.png"
         }
@@ -10586,14 +15315,18 @@ window.WIKI_DATA = {
       "id": 94,
       "description": {
         "es": "Cada ataque aumenta +3% la velocidad y +5 el valor de poder",
-        "en": "Each attack +3% speed and +5 power value"
+        "en": "Each attack +3% speed and +5 power value",
+        "pt": "Cada ataque +3% velocidade e +5 valor de poder",
+        "ru": "Каждая атака +3% скорости и +5 силы"
       },
       "chickens": [
         {
           "id": 94,
           "name": {
             "es": "Estepi",
-            "en": "Estepi"
+            "en": "Estepi",
+            "pt": "Estepi",
+            "ru": "Estepi"
           },
           "sprite": "images/chickens/94.png"
         }
@@ -10603,14 +15336,18 @@ window.WIKI_DATA = {
       "id": 95,
       "description": {
         "es": "Al comenzar, +1% de daño por cada 50 puntos de vida máxima",
-        "en": "When start, gain +1% damage for every 50 max hp"
+        "en": "When start, gain +1% damage for every 50 max hp",
+        "pt": "Ao iniciar, ganha +1% dano para cada 50 de vida máx",
+        "ru": "В начале +1% урона за каждые 50 макс. здоровья"
       },
       "chickens": [
         {
           "id": 95,
           "name": {
             "es": "Rocko",
-            "en": "Rocko"
+            "en": "Rocko",
+            "pt": "Rocko",
+            "ru": "Rocko"
           },
           "sprite": "images/chickens/95.png"
         }
@@ -10620,14 +15357,18 @@ window.WIKI_DATA = {
       "id": 96,
       "description": {
         "es": "Cada ataque reduce el poder del objetivo (-5)",
-        "en": "Each attack reduce target power (-5)"
+        "en": "Each attack reduce target power (-5)",
+        "pt": "Cada ataque reduz poder do alvo (-5)",
+        "ru": "Каждая атака снижает силу цели (-5)"
       },
       "chickens": [
         {
           "id": 96,
           "name": {
             "es": "Garry",
-            "en": "Garry"
+            "en": "Garry",
+            "pt": "Garry",
+            "ru": "Garry"
           },
           "sprite": "images/chickens/96.png"
         }
@@ -10637,14 +15378,18 @@ window.WIKI_DATA = {
       "id": 97,
       "description": {
         "es": "Cuando usa su poder, baja el poder de los enemigos a 0",
-        "en": "When use power, drop enemy power to 0"
+        "en": "When use power, drop enemy power to 0",
+        "pt": "Ao usar poder, reduz poder inimigo a 0",
+        "ru": "При использовании силы сбрасывает силу врага до 0"
       },
       "chickens": [
         {
           "id": 97,
           "name": {
             "es": "Terra",
-            "en": "Terra"
+            "en": "Terra",
+            "pt": "Terra",
+            "ru": "Terra"
           },
           "sprite": "images/chickens/97.png"
         }
@@ -10654,14 +15399,18 @@ window.WIKI_DATA = {
       "id": 98,
       "description": {
         "es": "Cuando usa su poder, lanza una bomba",
-        "en": "When use power, throw a bomb"
+        "en": "When use power, throw a bomb",
+        "pt": "Ao usar poder, arremessa uma bomba",
+        "ru": "При использовании силы бросает бомбу"
       },
       "chickens": [
         {
           "id": 98,
           "name": {
             "es": "Crystal",
-            "en": "Crystal"
+            "en": "Crystal",
+            "pt": "Crystal",
+            "ru": "Crystal"
           },
           "sprite": "images/chickens/98.png"
         }
@@ -10671,14 +15420,18 @@ window.WIKI_DATA = {
       "id": 99,
       "description": {
         "es": "Cuando es golpeado, +10 de poder y -1% de armadura",
-        "en": "When hit, +10 power and -1% armor"
+        "en": "When hit, +10 power and -1% armor",
+        "pt": "Ao ser atingido, +10 poder e -1% armadura",
+        "ru": "При получении удара +10 силы и -1% брони"
       },
       "chickens": [
         {
           "id": 99,
           "name": {
             "es": "Toka",
-            "en": "Toka"
+            "en": "Toka",
+            "pt": "Toka",
+            "ru": "Toka"
           },
           "sprite": "images/chickens/99.png"
         }
@@ -10688,14 +15441,18 @@ window.WIKI_DATA = {
       "id": 100,
       "description": {
         "es": "Atacar a un enemigo congelado inflige daño extra (30%) y reduce su armadura (5%)",
-        "en": "Attacking a frozen enemy deals extra damage (30%) and reduces armor (5%)"
+        "en": "Attacking a frozen enemy deals extra damage (30%) and reduces armor (5%)",
+        "pt": "Atacar um inimigo congelado causa dano extra (30%) e reduz sua armadura (5%)",
+        "ru": "При атаке замороженного врага наносит доп. урон (30%) и снижает броню (5%)"
       },
       "chickens": [
         {
           "id": 100,
           "name": {
             "es": "Cloudy",
-            "en": "Cloudy"
+            "en": "Cloudy",
+            "pt": "Cloudy",
+            "ru": "Cloudy"
           },
           "sprite": "images/chickens/100.png"
         }
@@ -10705,14 +15462,18 @@ window.WIKI_DATA = {
       "id": 101,
       "description": {
         "es": "Cada 3 ataques, lanza un huevo helado",
-        "en": "Every 3 attacks, throws a frozen egg"
+        "en": "Every 3 attacks, throws a frozen egg",
+        "pt": "A cada 3 ataques, lança um ovo congelado",
+        "ru": "Каждые 3 атаки бросает ледяное яйцо"
       },
       "chickens": [
         {
           "id": 101,
           "name": {
             "es": "Drago",
-            "en": "Drago"
+            "en": "Drago",
+            "pt": "Drago",
+            "ru": "Drago"
           },
           "sprite": "images/chickens/101.png"
         }
@@ -10722,14 +15483,18 @@ window.WIKI_DATA = {
       "id": 102,
       "description": {
         "es": "Cuando derrota a un enemigo, +15% de velocidad y +15% de daño",
-        "en": "When defeating an enemy, +15% speed and +15% damage"
+        "en": "When defeating an enemy, +15% speed and +15% damage",
+        "pt": "Ao derrotar um inimigo, +15% velocidade e +15% dano",
+        "ru": "При победе над врагом +15% скорости и +15% урона"
       },
       "chickens": [
         {
           "id": 102,
           "name": {
             "es": "Niwato",
-            "en": "Niwato"
+            "en": "Niwato",
+            "pt": "Niwato",
+            "ru": "Niwato"
           },
           "sprite": "images/chickens/102.png"
         }
@@ -10739,14 +15504,18 @@ window.WIKI_DATA = {
       "id": 103,
       "description": {
         "es": "Al comenzar, -10% de velocidad a los enemigos",
-        "en": "When start, reduces enemies' speed by 10%"
+        "en": "When start, reduces enemies' speed by 10%",
+        "pt": "Ao iniciar, reduz velocidade dos inimigos em 10%",
+        "ru": "В начале снижает скорость врагов на 10%"
       },
       "chickens": [
         {
           "id": 103,
           "name": {
             "es": "Grey",
-            "en": "Grey"
+            "en": "Grey",
+            "pt": "Grey",
+            "ru": "Grey"
           },
           "sprite": "images/chickens/103.png"
         }
@@ -10756,14 +15525,18 @@ window.WIKI_DATA = {
       "id": 104,
       "description": {
         "es": "Al revivir obtiene 25% de armadura",
-        "en": "When revive, gains 25% armor"
+        "en": "When revive, gains 25% armor",
+        "pt": "Ao reviver, ganha 25% de armadura",
+        "ru": "При возрождении получает 25% брони"
       },
       "chickens": [
         {
           "id": 104,
           "name": {
             "es": "Friozero",
-            "en": "Friozero"
+            "en": "Friozero",
+            "pt": "Friozero",
+            "ru": "Friozero"
           },
           "sprite": "images/chickens/104.png"
         }
@@ -10773,14 +15546,18 @@ window.WIKI_DATA = {
       "id": 105,
       "description": {
         "es": "No puede congelarse. Atacar a enemigos congelados aumenta su velocidad (20%) y daño (10%)",
-        "en": "Cannot be frozen. Attacking frozen enemies increases speed (20%) and damage (10%)"
+        "en": "Cannot be frozen. Attacking frozen enemies increases speed (20%) and damage (10%)",
+        "pt": "Não pode ser congelado. Atacar inimigos congelados aumenta velocidade (20%) e dano (10%)",
+        "ru": "Нельзя заморозить. При атаке замороженных врагов получает скорость (20%) и урон (10%)"
       },
       "chickens": [
         {
           "id": 105,
           "name": {
             "es": "Pengui",
-            "en": "Pengui"
+            "en": "Pengui",
+            "pt": "Pengui",
+            "ru": "Pengui"
           },
           "sprite": "images/chickens/105.png"
         }
@@ -10790,14 +15567,18 @@ window.WIKI_DATA = {
       "id": 106,
       "description": {
         "es": "Cuando ataca a un enemigo congelado, +2% de armadura y +5 de poder",
-        "en": "When attacking a frozen enemy, +2% armor and +5 power"
+        "en": "When attacking a frozen enemy, +2% armor and +5 power",
+        "pt": "Ao atacar inimigo congelado, +2% armadura e +5 poder",
+        "ru": "При атаке замороженного врага +2% брони и +5 силы"
       },
       "chickens": [
         {
           "id": 106,
           "name": {
             "es": "Snick",
-            "en": "Snick"
+            "en": "Snick",
+            "pt": "Snick",
+            "ru": "Snick"
           },
           "sprite": "images/chickens/106.png"
         }
@@ -10807,14 +15588,18 @@ window.WIKI_DATA = {
       "id": 107,
       "description": {
         "es": "50% de probabilidad de empezar con poder al máximo (en caso contrario, 50% de poder)",
-        "en": "50% chance to start with full power (otherwise, 50% power)"
+        "en": "50% chance to start with full power (otherwise, 50% power)",
+        "pt": "50% de chance de começar com poder máximo (caso contrário, 50% de poder)",
+        "ru": "50% шанс начать с максимумом энергии (иначе 50% энергии)"
       },
       "chickens": [
         {
           "id": 107,
           "name": {
             "es": "Derp",
-            "en": "Derp"
+            "en": "Derp",
+            "pt": "Derp",
+            "ru": "Derp"
           },
           "sprite": "images/chickens/107.png"
         }
@@ -10824,14 +15609,18 @@ window.WIKI_DATA = {
       "id": 108,
       "description": {
         "es": "Cada 3 ataques, lanza una bomba",
-        "en": "Every 3 attacks, throw a bomb"
+        "en": "Every 3 attacks, throw a bomb",
+        "pt": "A cada 3 ataques, lança uma bomba",
+        "ru": "Каждые 3 атаки бросает бомбу"
       },
       "chickens": [
         {
           "id": 108,
           "name": {
             "es": "Plumillas",
-            "en": "Plumillas"
+            "en": "Plumillas",
+            "pt": "Plumillas",
+            "ru": "Plumillas"
           },
           "sprite": "images/chickens/108.png"
         }
@@ -10841,14 +15630,18 @@ window.WIKI_DATA = {
       "id": 109,
       "description": {
         "es": "Revive como Mali",
-        "en": "Revives as Mali"
+        "en": "Revives as Mali",
+        "pt": "Revive como Mali",
+        "ru": "Возрождается как Mali"
       },
       "chickens": [
         {
           "id": 109,
           "name": {
             "es": "Max",
-            "en": "Max"
+            "en": "Max",
+            "pt": "Max",
+            "ru": "Max"
           },
           "sprite": "images/chickens/109.png"
         }
@@ -10858,14 +15651,18 @@ window.WIKI_DATA = {
       "id": 110,
       "description": {
         "es": "Al usar su poder, obtiene ataque doble",
-        "en": "When using their power, gains double attack"
+        "en": "When using their power, gains double attack",
+        "pt": "Ao usar seu poder, ganha ataque duplo",
+        "ru": "При использовании силы получает двойную атаку"
       },
       "chickens": [
         {
           "id": 110,
           "name": {
             "es": "Springy",
-            "en": "Springy"
+            "en": "Springy",
+            "pt": "Springy",
+            "ru": "Springy"
           },
           "sprite": "images/chickens/110.png"
         }
@@ -10875,14 +15672,18 @@ window.WIKI_DATA = {
       "id": 111,
       "description": {
         "es": "Cada ataque aumenta una estadística aleatoria (5%)",
-        "en": "Each attack increases a random stat (5%)"
+        "en": "Each attack increases a random stat (5%)",
+        "pt": "Cada ataque aumenta um atributo aleatório (5%)",
+        "ru": "Каждая атака увеличивает случайную характеристику на 5%"
       },
       "chickens": [
         {
           "id": 111,
           "name": {
             "es": "Lock",
-            "en": "Lock"
+            "en": "Lock",
+            "pt": "Lock",
+            "ru": "Lock"
           },
           "sprite": "images/chickens/111.png"
         }
@@ -10892,14 +15693,18 @@ window.WIKI_DATA = {
       "id": 112,
       "description": {
         "es": "Cuando un aliado es derrotado, obtiene sus multis",
-        "en": "When an ally is defeated, gains their multis"
+        "en": "When an ally is defeated, gains their multis",
+        "pt": "Quando um aliado é derrotado, ganha seus multiplicadores",
+        "ru": "Когда союзник побежден, получает его множители"
       },
       "chickens": [
         {
           "id": 112,
           "name": {
             "es": "Law",
-            "en": "Law"
+            "en": "Law",
+            "pt": "Law",
+            "ru": "Law"
           },
           "sprite": "images/chickens/112.png"
         }
@@ -10909,14 +15714,18 @@ window.WIKI_DATA = {
       "id": 113,
       "description": {
         "es": "Atacar a un enemigo envenenado lo cura (20% del daño)",
-        "en": "Attacking a poisoned enemy heals self (20% damage)"
+        "en": "Attacking a poisoned enemy heals self (20% damage)",
+        "pt": "Atacar um inimigo envenenado cura a si mesmo (20% do dano)",
+        "ru": "При атаке отравленного врага исцеляется (20% урона)"
       },
       "chickens": [
         {
           "id": 113,
           "name": {
             "es": "Chick",
-            "en": "Chick"
+            "en": "Chick",
+            "pt": "Chick",
+            "ru": "Chick"
           },
           "sprite": "images/chickens/113.png"
         }
@@ -10926,14 +15735,18 @@ window.WIKI_DATA = {
       "id": 114,
       "description": {
         "es": "Al usar su poder, aumenta una estadística aleatoria (5%)",
-        "en": "When using their power, increases a random stat (5%)"
+        "en": "When using their power, increases a random stat (5%)",
+        "pt": "Ao usar seu poder, aumenta um atributo aleatório (5%)",
+        "ru": "При использовании силы увеличивает случайный стат (5%)"
       },
       "chickens": [
         {
           "id": 114,
           "name": {
             "es": "Chird",
-            "en": "Chird"
+            "en": "Chird",
+            "pt": "Chird",
+            "ru": "Chird"
           },
           "sprite": "images/chickens/114.png"
         }
@@ -10943,14 +15756,18 @@ window.WIKI_DATA = {
       "id": 115,
       "description": {
         "es": "Al empezar el combate, otorga armadura al equipo (15%)",
-        "en": "At the start of combat, grants armor to the team (15%)"
+        "en": "At the start of combat, grants armor to the team (15%)",
+        "pt": "Ao começar o combate, concede armadura à equipe (15%)",
+        "ru": "В начале боя дает команде броню (15%)"
       },
       "chickens": [
         {
           "id": 115,
           "name": {
             "es": "Cow",
-            "en": "Cow"
+            "en": "Cow",
+            "pt": "Cow",
+            "ru": "Cow"
           },
           "sprite": "images/chickens/115.png"
         }
@@ -10960,14 +15777,18 @@ window.WIKI_DATA = {
       "id": 116,
       "description": {
         "es": "Al morir, explota (25% de la vida máxima)",
-        "en": "Upon death, explodes (25% of maximum health)"
+        "en": "Upon death, explodes (25% of maximum health)",
+        "pt": "Ao morrer, explode (25% da vida máxima)",
+        "ru": "При смерти взрывается (25% от макс. здоровья)"
       },
       "chickens": [
         {
           "id": 116,
           "name": {
             "es": "Electron",
-            "en": "Electron"
+            "en": "Electron",
+            "pt": "Electron",
+            "ru": "Electron"
           },
           "sprite": "images/chickens/116.png"
         }
@@ -10977,14 +15798,18 @@ window.WIKI_DATA = {
       "id": 117,
       "description": {
         "es": "Al derrotar un enemigo, obtiene vida máxima y pierde velocidad (15%)",
-        "en": "Upon defeating an enemy, gains max health and loses speed (15%)"
+        "en": "Upon defeating an enemy, gains max health and loses speed (15%)",
+        "pt": "Ao derrotar um inimigo, ganha vida máxima e perde velocidade (15%)",
+        "ru": "При победе над врагом получает макс. здоровье и теряет скорость (15%)"
       },
       "chickens": [
         {
           "id": 117,
           "name": {
             "es": "Monstruollo",
-            "en": "Monstruollo"
+            "en": "Monstruollo",
+            "pt": "Monstruollo",
+            "ru": "Monstruollo"
           },
           "sprite": "images/chickens/117.png"
         }
@@ -10994,14 +15819,18 @@ window.WIKI_DATA = {
       "id": 118,
       "description": {
         "es": "Al empezar el combate, aumenta la velocidad del equipo (5%)",
-        "en": "At the start of combat, increases the team's speed (5%)"
+        "en": "At the start of combat, increases the team's speed (5%)",
+        "pt": "No início do combate, aumenta a velocidade da equipe (5%)",
+        "ru": "В начале боя увеличивает скорость команды (5%)"
       },
       "chickens": [
         {
           "id": 118,
           "name": {
             "es": "Nave",
-            "en": "Nave"
+            "en": "Nave",
+            "pt": "Nave",
+            "ru": "Nave"
           },
           "sprite": "images/chickens/118.png"
         }
@@ -11011,14 +15840,18 @@ window.WIKI_DATA = {
       "id": 119,
       "description": {
         "es": "Cuando la vida baje del 35% de la vida máxima, se cura por completo la vida (Una vez por combate)",
-        "en": "When health falls below 35% of max health, fully heals (once per combat)"
+        "en": "When health falls below 35% of max health, fully heals (once per combat)",
+        "pt": "Quando a vida cai abaixo de 35% da vida máxima, cura totalmente (uma vez por combate)",
+        "ru": "Когда здоровье падает ниже 35%, полностью лечится (один раз за бой)"
       },
       "chickens": [
         {
           "id": 119,
           "name": {
             "es": "Rhafa",
-            "en": "Rhafa"
+            "en": "Rhafa",
+            "pt": "Rhafa",
+            "ru": "Rhafa"
           },
           "sprite": "images/chickens/119.png"
         }
@@ -11028,14 +15861,18 @@ window.WIKI_DATA = {
       "id": 120,
       "description": {
         "es": "Al empezar el combate, lanza una mosca",
-        "en": "At the start of combat, launches a fly"
+        "en": "At the start of combat, launches a fly",
+        "pt": "No início do combate, lança uma mosca",
+        "ru": "В начале боя запускает муху"
       },
       "chickens": [
         {
           "id": 120,
           "name": {
             "es": "Rick",
-            "en": "Rick"
+            "en": "Rick",
+            "pt": "Rick",
+            "ru": "Rick"
           },
           "sprite": "images/chickens/120.png"
         }
@@ -11045,14 +15882,18 @@ window.WIKI_DATA = {
       "id": 121,
       "description": {
         "es": "Cada turno, aumenta el daño (3%) y velocidad (3%) de los aliados",
-        "en": "Each turn, increases damage (3%) and speed (3%) of allies"
+        "en": "Each turn, increases damage (3%) and speed (3%) of allies",
+        "pt": "A cada turno, aumenta o dano (3%) e velocidade (3%) dos aliados",
+        "ru": "Каждый ход увеличивает урон (3%) и скорость (3%) союзников"
       },
       "chickens": [
         {
           "id": 121,
           "name": {
             "es": "Javo",
-            "en": "Javo"
+            "en": "Javo",
+            "pt": "Javo",
+            "ru": "Javo"
           },
           "sprite": "images/chickens/121.png"
         }
@@ -11062,14 +15903,18 @@ window.WIKI_DATA = {
       "id": 122,
       "description": {
         "es": "Revive siempre que haya un aliado vivo (3 veces por combate)",
-        "en": "Revives as long as an ally is alive (3 per combat)"
+        "en": "Revives as long as an ally is alive (3 per combat)",
+        "pt": "Revive enquanto um aliado estiver vivo (3 vezes por combate)",
+        "ru": "Возрождается, пока жив союзник (3 раза за бой)"
       },
       "chickens": [
         {
           "id": 122,
           "name": {
             "es": "Meta",
-            "en": "Meta"
+            "en": "Meta",
+            "pt": "Meta",
+            "ru": "Meta"
           },
           "sprite": "images/chickens/122.png"
         }
@@ -11079,14 +15924,18 @@ window.WIKI_DATA = {
       "id": 123,
       "description": {
         "es": "Al ser golpeado, cura a un aliado (5% vida máxima)",
-        "en": "When hit, heals an ally (5% of max health)"
+        "en": "When hit, heals an ally (5% of max health)",
+        "pt": "Ao ser atingido, cura um aliado (5% vida máxima)",
+        "ru": "При получении удара лечит союзника (5% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 123,
           "name": {
             "es": "MetaSoldier",
-            "en": "MetaSoldier"
+            "en": "MetaSoldier",
+            "pt": "MetaSoldier",
+            "ru": "MetaSoldier"
           },
           "sprite": "images/chickens/123.png"
         }
@@ -11096,14 +15945,18 @@ window.WIKI_DATA = {
       "id": 124,
       "description": {
         "es": "Al tener menos del 50% de vida, lanza 3 misiles (una vez por combate)",
-        "en": "When below 50% health, launches 3 missiles (once per combat)"
+        "en": "When below 50% health, launches 3 missiles (once per combat)",
+        "pt": "Ao ficar abaixo de 50% de vida, lança 3 mísseis (uma vez por combate)",
+        "ru": "Когда здоровье падает ниже 50%, выпускает 3 ракеты (раз за бой)"
       },
       "chickens": [
         {
           "id": 124,
           "name": {
             "es": "Inger",
-            "en": "Inger"
+            "en": "Inger",
+            "pt": "Inger",
+            "ru": "Inger"
           },
           "sprite": "images/chickens/124.png"
         }
@@ -11113,14 +15966,18 @@ window.WIKI_DATA = {
       "id": 125,
       "description": {
         "es": "Atacar a un enemigo paralizado daña al resto de enemigos (30% del daño)",
-        "en": "Attacking a paralyzed enemy damages other enemies (30% damage)"
+        "en": "Attacking a paralyzed enemy damages other enemies (30% damage)",
+        "pt": "Atacar um inimigo paralisado causa dano aos outros inimigos (30% do dano)",
+        "ru": "При атаке парализованного врага наносит урон остальным врагам (30% урона)"
       },
       "chickens": [
         {
           "id": 125,
           "name": {
             "es": "Rama",
-            "en": "Rama"
+            "en": "Rama",
+            "pt": "Rama",
+            "ru": "Rama"
           },
           "sprite": "images/chickens/125.png"
         }
@@ -11130,14 +15987,18 @@ window.WIKI_DATA = {
       "id": 126,
       "description": {
         "es": "Al empezar el combate, cura a un aliado (100% vida máxima)",
-        "en": "At the start of combat, heal an ally (100% of max health)"
+        "en": "At the start of combat, heal an ally (100% of max health)",
+        "pt": "No início do combate, cura um aliado (100% vida máxima)",
+        "ru": "В начале боя лечит союзника (100% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 126,
           "name": {
             "es": "Hueva",
-            "en": "Hueva"
+            "en": "Hueva",
+            "pt": "Hueva",
+            "ru": "Hueva"
           },
           "sprite": "images/chickens/126.png"
         }
@@ -11147,14 +16008,18 @@ window.WIKI_DATA = {
       "id": 127,
       "description": {
         "es": "Empieza lanzando un hacha, y cada ataque reduce la armadura enemiga (3%)",
-        "en": "Starts throwing an axe, and each attack reduces enemy armor (3%)"
+        "en": "Starts throwing an axe, and each attack reduces enemy armor (3%)",
+        "pt": "Começa lançando um machado, e cada ataque reduz a armadura inimiga (3%)",
+        "ru": "В начале боя бросает топор, и каждая атака снижает броню врага (3%)"
       },
       "chickens": [
         {
           "id": 127,
           "name": {
             "es": "Jamer",
-            "en": "Jamer"
+            "en": "Jamer",
+            "pt": "Jamer",
+            "ru": "Jamer"
           },
           "sprite": "images/chickens/127.png"
         }
@@ -11164,14 +16029,18 @@ window.WIKI_DATA = {
       "id": 128,
       "description": {
         "es": "Al ser atacado, lanza una bomba",
-        "en": "When attacked, launches a bomb"
+        "en": "When attacked, launches a bomb",
+        "pt": "Ao ser atacado, lança uma bomba",
+        "ru": "При получении удара бросает бомбу"
       },
       "chickens": [
         {
           "id": 128,
           "name": {
             "es": "Jeraz",
-            "en": "Jeraz"
+            "en": "Jeraz",
+            "pt": "Jeraz",
+            "ru": "Jeraz"
           },
           "sprite": "images/chickens/128.png"
         }
@@ -11181,14 +16050,18 @@ window.WIKI_DATA = {
       "id": 129,
       "description": {
         "es": "El equipo obtiene daño (10%)",
-        "en": "The team takes 10% damage"
+        "en": "The team takes 10% damage",
+        "pt": "A equipe recebe 10% de dano",
+        "ru": "Команда получает 10% урона"
       },
       "chickens": [
         {
           "id": 129,
           "name": {
             "es": "Cyborg",
-            "en": "Cyborg"
+            "en": "Cyborg",
+            "pt": "Cyborg",
+            "ru": "Cyborg"
           },
           "sprite": "images/chickens/129.png"
         }
@@ -11198,14 +16071,18 @@ window.WIKI_DATA = {
       "id": 130,
       "description": {
         "es": "Cuando usa poder, -5% en una estadística aleatoria cada enemigo",
-        "en": "When using power, each enemy suffers a -5% penalty to a random stat."
+        "en": "When using power, each enemy suffers a -5% penalty to a random stat.",
+        "pt": "Ao usar poder, cada inimigo sofre uma penalidade de -5% em um atributo aleatório.",
+        "ru": "При использовании силы -5% к случайному параметру каждого врага"
       },
       "chickens": [
         {
           "id": 130,
           "name": {
             "es": "Jacko",
-            "en": "Jacko"
+            "en": "Jacko",
+            "pt": "Jacko",
+            "ru": "Jacko"
           },
           "sprite": "images/chickens/130.png"
         }
@@ -11215,14 +16092,18 @@ window.WIKI_DATA = {
       "id": 131,
       "description": {
         "es": "Cada ataque otorga poder al aliado (+10)",
-        "en": "Each attack grants power to the ally (+10)"
+        "en": "Each attack grants power to the ally (+10)",
+        "pt": "Cada ataque concede poder ao aliado (+10).",
+        "ru": "Каждая атака дает союзнику силу (+10)"
       },
       "chickens": [
         {
           "id": 131,
           "name": {
             "es": "Cori",
-            "en": "Cori"
+            "en": "Cori",
+            "pt": "Cori",
+            "ru": "Cori"
           },
           "sprite": "images/chickens/131.png"
         }
@@ -11232,14 +16113,18 @@ window.WIKI_DATA = {
       "id": 132,
       "description": {
         "es": "Cada turno, cura al equipo (5% vida máxima)",
-        "en": "Each turn, heals the team (5% of maximum health)"
+        "en": "Each turn, heals the team (5% of maximum health)",
+        "pt": "A cada turno, cura a equipe (5% da saúde máxima)",
+        "ru": "Каждый ход восстанавливает здоровье команды (5% от максимального запаса здоровья)"
       },
       "chickens": [
         {
           "id": 132,
           "name": {
             "es": "Pipasol",
-            "en": "Pipasol"
+            "en": "Pipasol",
+            "pt": "Pipasol",
+            "ru": "Pipasol"
           },
           "sprite": "images/chickens/132.png"
         }
@@ -11249,14 +16134,18 @@ window.WIKI_DATA = {
       "id": 133,
       "description": {
         "es": "Cuando se cura, aumenta el daño (+3%)",
-        "en": "When healed, damage increases (+3%)"
+        "en": "When healed, damage increases (+3%)",
+        "pt": "Ao ser curado, o dano aumenta (+3%)",
+        "ru": "При лечении урон увеличивается (+3%)"
       },
       "chickens": [
         {
           "id": 133,
           "name": {
             "es": "Astro",
-            "en": "Astro"
+            "en": "Astro",
+            "pt": "Astro",
+            "ru": "Astro"
           },
           "sprite": "images/chickens/133.png"
         }
@@ -11266,14 +16155,18 @@ window.WIKI_DATA = {
       "id": 134,
       "description": {
         "es": "Cada ataque reduce la armadura del objetivo (-5%). Al ser golpeado, gana +20 de poder",
-        "en": "Each attack reduces target's armor (-5%). When hit, gains +20 power"
+        "en": "Each attack reduces target's armor (-5%). When hit, gains +20 power",
+        "pt": "Cada ataque reduz a armadura do alvo (-5%). Ao ser atingido, ganha +20 de poder",
+        "ru": "Каждая атака снижает броню цели (-5%). При получении удара получает +20 силы"
       },
       "chickens": [
         {
           "id": 134,
           "name": {
             "es": "Eggalex",
-            "en": "Eggalex"
+            "en": "Eggalex",
+            "pt": "Eggalex",
+            "ru": "Eggalex"
           },
           "sprite": "images/chickens/134.png"
         }
@@ -11283,14 +16176,18 @@ window.WIKI_DATA = {
       "id": 135,
       "description": {
         "es": "Cada turno lanza un misil y pierde armadura (-4%)",
-        "en": "Each turn throw a missile and lose armor (-4%)"
+        "en": "Each turn throw a missile and lose armor (-4%)",
+        "pt": "A cada turno, lance um míssil e perca armadura em (-4%)",
+        "ru": "Каждый ход бросает снаряд и теряет броню (-4%)"
       },
       "chickens": [
         {
           "id": 135,
           "name": {
             "es": "Mechalex",
-            "en": "Mechalex"
+            "en": "Mechalex",
+            "pt": "Mechalex",
+            "ru": "Mechalex"
           },
           "sprite": "images/chickens/135.png"
         }
@@ -11300,14 +16197,18 @@ window.WIKI_DATA = {
       "id": 136,
       "description": {
         "es": "Cuando un aliado revive obtienes daño (+15%) y un esquive.",
-        "en": "When an ally revives you gain damage (+15%) and a dodge."
+        "en": "When an ally revives you gain damage (+15%) and a dodge.",
+        "pt": "Quando um aliado revive, você ganha dano (+15%) e uma esquiva.",
+        "ru": "Когда союзник оживляет вас, вы получаете +15% к урону и уклонение."
       },
       "chickens": [
         {
           "id": 136,
           "name": {
             "es": "Mayel",
-            "en": "Mayel"
+            "en": "Mayel",
+            "pt": "Mayel",
+            "ru": "Mayel"
           },
           "sprite": "images/chickens/136.png"
         }
@@ -11317,14 +16218,18 @@ window.WIKI_DATA = {
       "id": 137,
       "description": {
         "es": "Atacar enemigos con infección aumenta el poder (+25)",
-        "en": "Attacking infected enemies increases power (+25)"
+        "en": "Attacking infected enemies increases power (+25)",
+        "pt": "Atacar inimigos infectados aumenta o poder (+25)",
+        "ru": "Атака зараженных врагов увеличивает силу (+25)"
       },
       "chickens": [
         {
           "id": 137,
           "name": {
             "es": "Elfen",
-            "en": "Elfen"
+            "en": "Elfen",
+            "pt": "Elfen",
+            "ru": "Elfen"
           },
           "sprite": "images/chickens/137.png"
         }
@@ -11334,14 +16239,18 @@ window.WIKI_DATA = {
       "id": 138,
       "description": {
         "es": "Al usar un item, aumenta el daño (+25%) y poder (+50)",
-        "en": "Using an item increases damage (+25%) and power (+50)"
+        "en": "Using an item increases damage (+25%) and power (+50)",
+        "pt": "Usar um item aumenta o dano (+25%) e o poder (+50)",
+        "ru": "Использование предмета увеличивает урон (+25%) и силу (+50)"
       },
       "chickens": [
         {
           "id": 138,
           "name": {
             "es": "Felicie",
-            "en": "Felicie"
+            "en": "Felicie",
+            "pt": "Felicie",
+            "ru": "Felicie"
           },
           "sprite": "images/chickens/138.png"
         }
@@ -11351,14 +16260,18 @@ window.WIKI_DATA = {
       "id": 139,
       "description": {
         "es": "Si derrota a un enemigo, aumenta el poder (+100) y se cura (50% del daño)",
-        "en": "Defeating an enemy increases power (+100) and heals (50% of damage)"
+        "en": "Defeating an enemy increases power (+100) and heals (50% of damage)",
+        "pt": "Derrotar um inimigo aumenta o poder (+100) e cura (50% do dano)",
+        "ru": "Победа над врагом увеличивает силу (+100) и лечит (50% от урона)"
       },
       "chickens": [
         {
           "id": 139,
           "name": {
             "es": "Star",
-            "en": "Star"
+            "en": "Star",
+            "pt": "Star",
+            "ru": "Star"
           },
           "sprite": "images/chickens/139.png"
         }
@@ -11368,14 +16281,18 @@ window.WIKI_DATA = {
       "id": 140,
       "description": {
         "es": "Al recibir un ataque aumenta su armadura y daño (+3%)",
-        "en": "When hit, gain armor and damage (+3%)"
+        "en": "When hit, gain armor and damage (+3%)",
+        "pt": "Ao receber um ataque, aumenta sua armadura e dano (+3%)",
+        "ru": "При получении удара увеличивает броню и урон (+3%)"
       },
       "chickens": [
         {
           "id": 140,
           "name": {
             "es": "Skull",
-            "en": "Skull"
+            "en": "Skull",
+            "pt": "Skull",
+            "ru": "Skull"
           },
           "sprite": "images/chickens/140.png"
         }
@@ -11385,14 +16302,18 @@ window.WIKI_DATA = {
       "id": 141,
       "description": {
         "es": "Atacar enemigos con envenenamiento lo cura (33% del daño)",
-        "en": "Attacking poisoned enemies heals self (33% damage)"
+        "en": "Attacking poisoned enemies heals self (33% damage)",
+        "pt": "Atacar inimigos envenenados o cura (33% do dano)",
+        "ru": "Атака отравленных врагов лечит его (33% урона)"
       },
       "chickens": [
         {
           "id": 141,
           "name": {
             "es": "Toxic",
-            "en": "Toxic"
+            "en": "Toxic",
+            "pt": "Toxic",
+            "ru": "Toxic"
           },
           "sprite": "images/chickens/141.png"
         }
@@ -11402,14 +16323,18 @@ window.WIKI_DATA = {
       "id": 142,
       "description": {
         "es": "Atacar enemigos congelados lo cura a el y a su aliado (20% del daño)",
-        "en": "Attacking frozen enemies heals self and ally (20% damage)"
+        "en": "Attacking frozen enemies heals self and ally (20% damage)",
+        "pt": "Atacar inimigos congelados cura ele e seu aliado (20% do dano)",
+        "ru": "Атака замороженных врагов лечит его и союзника (20% урона)"
       },
       "chickens": [
         {
           "id": 142,
           "name": {
             "es": "Hium",
-            "en": "Hium"
+            "en": "Hium",
+            "pt": "Hium",
+            "ru": "Hium"
           },
           "sprite": "images/chickens/142.png"
         }
@@ -11419,14 +16344,18 @@ window.WIKI_DATA = {
       "id": 143,
       "description": {
         "es": "Atacar enemigos con quemadura te cura (20% del daño) y aumenta el poder (+20)",
-        "en": "Attacking burned enemies heals self (20% damage) and gains power (+20)"
+        "en": "Attacking burned enemies heals self (20% damage) and gains power (+20)",
+        "pt": "Atacar inimigos queimados te cura (20% do dano) e aumenta o poder (+20)",
+        "ru": "Атака горящих врагов лечит (20% урона) и увеличивает силу (+20)"
       },
       "chickens": [
         {
           "id": 143,
           "name": {
             "es": "Blade",
-            "en": "Blade"
+            "en": "Blade",
+            "pt": "Blade",
+            "ru": "Blade"
           },
           "sprite": "images/chickens/143.png"
         }
@@ -11436,14 +16365,18 @@ window.WIKI_DATA = {
       "id": 144,
       "description": {
         "es": "Al usar su poder, el equipo obtiene una poción aleatoria si no tienen objetos",
-        "en": "When using power, the team obtains a random potion if they have no items"
+        "en": "When using power, the team obtains a random potion if they have no items",
+        "pt": "Ao usar poder, a equipe obtém uma poção aleatória se não tiver itens",
+        "ru": "При использовании способности команда получает случайное зелье, если нет предметов"
       },
       "chickens": [
         {
           "id": 144,
           "name": {
             "es": "Gice",
-            "en": "Gice"
+            "en": "Gice",
+            "pt": "Gice",
+            "ru": "Gice"
           },
           "sprite": "images/chickens/144.png"
         }
@@ -11453,14 +16386,18 @@ window.WIKI_DATA = {
       "id": 145,
       "description": {
         "es": "Cura a su aliado si este aliado usa su poder (33% del daño propio)",
-        "en": "Heals ally when that ally uses their power (33% own damage)"
+        "en": "Heals ally when that ally uses their power (33% own damage)",
+        "pt": "Cura o aliado quando esse aliado usa seu poder (33% do dano próprio)",
+        "ru": "Лечит союзника, когда тот использует способность (33% собственного урона)"
       },
       "chickens": [
         {
           "id": 145,
           "name": {
             "es": "Evelyn",
-            "en": "Evelyn"
+            "en": "Evelyn",
+            "pt": "Evelyn",
+            "ru": "Evelyn"
           },
           "sprite": "images/chickens/145.png"
         }
@@ -11470,14 +16407,18 @@ window.WIKI_DATA = {
       "id": 146,
       "description": {
         "es": "Lanza una bomba siempre que un enemigo use su poder",
-        "en": "Throws a bomb whenever an enemy uses their power"
+        "en": "Throws a bomb whenever an enemy uses their power",
+        "pt": "Lança uma bomba sempre que um inimigo usar seu poder",
+        "ru": "Бросает бомбу каждый раз, когда враг использует способность"
       },
       "chickens": [
         {
           "id": 146,
           "name": {
             "es": "Sinestrer",
-            "en": "Sinestrer"
+            "en": "Sinestrer",
+            "pt": "Sinestrer",
+            "ru": "Sinestrer"
           },
           "sprite": "images/chickens/146.png"
         }
@@ -11487,14 +16428,18 @@ window.WIKI_DATA = {
       "id": 147,
       "description": {
         "es": "Cada turno pierde vida (10% de vida máxima) pero aumenta su poder (+20)",
-        "en": "Each turn, loses life (10% max life) but gains power (+20)"
+        "en": "Each turn, loses life (10% max life) but gains power (+20)",
+        "pt": "A cada turno perde vida (10% da vida máxima), mas ganha poder (+20)",
+        "ru": "Каждый ход теряет здоровье (10% макс. HP), но увеличивает силу (+20)"
       },
       "chickens": [
         {
           "id": 147,
           "name": {
             "es": "Intiken",
-            "en": "Intiken"
+            "en": "Intiken",
+            "pt": "Intiken",
+            "ru": "Intiken"
           },
           "sprite": "images/chickens/147.png"
         }
@@ -11504,14 +16449,18 @@ window.WIKI_DATA = {
       "id": 148,
       "description": {
         "es": "Al ser atacado, aumenta su daño (5%) y velocidad (5%)",
-        "en": "When attacked, gains damage (5%) and speed (5%)"
+        "en": "When attacked, gains damage (5%) and speed (5%)",
+        "pt": "Ao ser atacado, aumenta seu dano (5%) e velocidade (5%)",
+        "ru": "При получении удара получает урон (5%) и скорость (5%)"
       },
       "chickens": [
         {
           "id": 148,
           "name": {
             "es": "Toro",
-            "en": "Toro"
+            "en": "Toro",
+            "pt": "Toro",
+            "ru": "Toro"
           },
           "sprite": "images/chickens/148.png"
         }
@@ -11521,14 +16470,18 @@ window.WIKI_DATA = {
       "id": 149,
       "description": {
         "es": "Atacar a un enemigo congelado inflige daño extra (+30%)",
-        "en": "Attacking a frozen enemy deals extra damage (+30%)"
+        "en": "Attacking a frozen enemy deals extra damage (+30%)",
+        "pt": "Atacar um inimigo congelado causa dano extra (+30%)",
+        "ru": "Атака замороженного врага наносит дополнительный урон (+30%)"
       },
       "chickens": [
         {
           "id": 149,
           "name": {
             "es": "Chimir",
-            "en": "Chimir"
+            "en": "Chimir",
+            "pt": "Chimir",
+            "ru": "Chimir"
           },
           "sprite": "images/chickens/149.png"
         }
@@ -11538,14 +16491,18 @@ window.WIKI_DATA = {
       "id": 150,
       "description": {
         "es": "Al empezar el combate, el equipo obtiene revivir",
-        "en": "At the start of combat, the team gains revive"
+        "en": "At the start of combat, the team gains revive",
+        "pt": "Ao iniciar o combate, a equipe ganha reviver",
+        "ru": "В начале боя команда получает возрождение"
       },
       "chickens": [
         {
           "id": 150,
           "name": {
             "es": "Garra",
-            "en": "Garra"
+            "en": "Garra",
+            "pt": "Garra",
+            "ru": "Garra"
           },
           "sprite": "images/chickens/150.png"
         }
@@ -11558,14 +16515,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Ataque doble",
-        "en": "Double attack"
+        "en": "Double attack",
+        "pt": "Ataque duplo",
+        "ru": "Двойная атака"
       },
       "chickens": [
         {
           "id": 0,
           "name": {
             "es": "Pollier",
-            "en": "Pollier"
+            "en": "Pollier",
+            "pt": "Pollier",
+            "ru": "Pollier"
           },
           "sprite": "images/chickens/0.png"
         },
@@ -11573,7 +16534,9 @@ window.WIKI_DATA = {
           "id": 1,
           "name": {
             "es": "Chica",
-            "en": "Chica"
+            "en": "Chica",
+            "pt": "Chica",
+            "ru": "Chica"
           },
           "sprite": "images/chickens/1.png"
         },
@@ -11581,7 +16544,9 @@ window.WIKI_DATA = {
           "id": 4,
           "name": {
             "es": "Mali",
-            "en": "Mali"
+            "en": "Mali",
+            "pt": "Mali",
+            "ru": "Mali"
           },
           "sprite": "images/chickens/4.png"
         },
@@ -11589,7 +16554,9 @@ window.WIKI_DATA = {
           "id": 14,
           "name": {
             "es": "Snow",
-            "en": "Snow"
+            "en": "Snow",
+            "pt": "Snow",
+            "ru": "Snow"
           },
           "sprite": "images/chickens/14.png"
         },
@@ -11597,7 +16564,9 @@ window.WIKI_DATA = {
           "id": 19,
           "name": {
             "es": "Armor",
-            "en": "Armor"
+            "en": "Armor",
+            "pt": "Armor",
+            "ru": "Armor"
           },
           "sprite": "images/chickens/19.png"
         },
@@ -11605,7 +16574,9 @@ window.WIKI_DATA = {
           "id": 20,
           "name": {
             "es": "Zeo",
-            "en": "Zeo"
+            "en": "Zeo",
+            "pt": "Zeo",
+            "ru": "Zeo"
           },
           "sprite": "images/chickens/20.png"
         },
@@ -11613,7 +16584,9 @@ window.WIKI_DATA = {
           "id": 24,
           "name": {
             "es": "Lapiz",
-            "en": "Lapiz"
+            "en": "Lapiz",
+            "pt": "Lapiz",
+            "ru": "Lapiz"
           },
           "sprite": "images/chickens/24.png"
         },
@@ -11621,7 +16594,9 @@ window.WIKI_DATA = {
           "id": 26,
           "name": {
             "es": "Jeff",
-            "en": "Jeff"
+            "en": "Jeff",
+            "pt": "Jeff",
+            "ru": "Jeff"
           },
           "sprite": "images/chickens/26.png"
         },
@@ -11629,7 +16604,9 @@ window.WIKI_DATA = {
           "id": 29,
           "name": {
             "es": "Iguanarto",
-            "en": "Iguanarto"
+            "en": "Iguanarto",
+            "pt": "Iguanarto",
+            "ru": "Iguanarto"
           },
           "sprite": "images/chickens/29.png"
         },
@@ -11637,7 +16614,9 @@ window.WIKI_DATA = {
           "id": 30,
           "name": {
             "es": "Mosca",
-            "en": "Mosca"
+            "en": "Mosca",
+            "pt": "Mosca",
+            "ru": "Mosca"
           },
           "sprite": "images/chickens/30.png"
         },
@@ -11645,7 +16624,9 @@ window.WIKI_DATA = {
           "id": 34,
           "name": {
             "es": "Phantom",
-            "en": "Phantom"
+            "en": "Phantom",
+            "pt": "Phantom",
+            "ru": "Phantom"
           },
           "sprite": "images/chickens/34.png"
         },
@@ -11653,7 +16634,9 @@ window.WIKI_DATA = {
           "id": 39,
           "name": {
             "es": "Cacho",
-            "en": "Cacho"
+            "en": "Cacho",
+            "pt": "Cacho",
+            "ru": "Cacho"
           },
           "sprite": "images/chickens/39.png"
         },
@@ -11661,7 +16644,9 @@ window.WIKI_DATA = {
           "id": 43,
           "name": {
             "es": "Ignarto",
-            "en": "Ignarto"
+            "en": "Ignarto",
+            "pt": "Ignarto",
+            "ru": "Ignarto"
           },
           "sprite": "images/chickens/43.png"
         },
@@ -11669,7 +16654,9 @@ window.WIKI_DATA = {
           "id": 50,
           "name": {
             "es": "Rufus",
-            "en": "Rufus"
+            "en": "Rufus",
+            "pt": "Rufus",
+            "ru": "Rufus"
           },
           "sprite": "images/chickens/50.png"
         },
@@ -11677,7 +16664,9 @@ window.WIKI_DATA = {
           "id": 52,
           "name": {
             "es": "Sharky",
-            "en": "Sharky"
+            "en": "Sharky",
+            "pt": "Sharky",
+            "ru": "Sharky"
           },
           "sprite": "images/chickens/52.png"
         },
@@ -11685,7 +16674,9 @@ window.WIKI_DATA = {
           "id": 59,
           "name": {
             "es": "Siul",
-            "en": "Siul"
+            "en": "Siul",
+            "pt": "Siul",
+            "ru": "Siul"
           },
           "sprite": "images/chickens/59.png"
         },
@@ -11693,7 +16684,9 @@ window.WIKI_DATA = {
           "id": 61,
           "name": {
             "es": "Shiken",
-            "en": "Shiken"
+            "en": "Shiken",
+            "pt": "Shiken",
+            "ru": "Shiken"
           },
           "sprite": "images/chickens/61.png"
         },
@@ -11701,7 +16694,9 @@ window.WIKI_DATA = {
           "id": 67,
           "name": {
             "es": "Pollulu",
-            "en": "Pollulu"
+            "en": "Pollulu",
+            "pt": "Pollulu",
+            "ru": "Pollulu"
           },
           "sprite": "images/chickens/67.png"
         },
@@ -11709,7 +16704,9 @@ window.WIKI_DATA = {
           "id": 69,
           "name": {
             "es": "Pinzon",
-            "en": "Pinzon"
+            "en": "Pinzon",
+            "pt": "Pinzon",
+            "ru": "Pinzon"
           },
           "sprite": "images/chickens/69.png"
         },
@@ -11717,7 +16714,9 @@ window.WIKI_DATA = {
           "id": 72,
           "name": {
             "es": "Gallimbus",
-            "en": "Gallimbus"
+            "en": "Gallimbus",
+            "pt": "Gallimbus",
+            "ru": "Gallimbus"
           },
           "sprite": "images/chickens/72.png"
         },
@@ -11725,7 +16724,9 @@ window.WIKI_DATA = {
           "id": 74,
           "name": {
             "es": "Aery",
-            "en": "Aery"
+            "en": "Aery",
+            "pt": "Aery",
+            "ru": "Aery"
           },
           "sprite": "images/chickens/74.png"
         },
@@ -11733,7 +16734,9 @@ window.WIKI_DATA = {
           "id": 81,
           "name": {
             "es": "Egi",
-            "en": "Egi"
+            "en": "Egi",
+            "pt": "Egi",
+            "ru": "Egi"
           },
           "sprite": "images/chickens/81.png"
         },
@@ -11741,7 +16744,9 @@ window.WIKI_DATA = {
           "id": 85,
           "name": {
             "es": "Vidro",
-            "en": "Vidro"
+            "en": "Vidro",
+            "pt": "Vidro",
+            "ru": "Vidro"
           },
           "sprite": "images/chickens/85.png"
         },
@@ -11749,7 +16754,9 @@ window.WIKI_DATA = {
           "id": 92,
           "name": {
             "es": "Galland",
-            "en": "Galland"
+            "en": "Galland",
+            "pt": "Galland",
+            "ru": "Galland"
           },
           "sprite": "images/chickens/92.png"
         },
@@ -11757,7 +16764,9 @@ window.WIKI_DATA = {
           "id": 94,
           "name": {
             "es": "Estepi",
-            "en": "Estepi"
+            "en": "Estepi",
+            "pt": "Estepi",
+            "ru": "Estepi"
           },
           "sprite": "images/chickens/94.png"
         },
@@ -11765,7 +16774,9 @@ window.WIKI_DATA = {
           "id": 95,
           "name": {
             "es": "Rocko",
-            "en": "Rocko"
+            "en": "Rocko",
+            "pt": "Rocko",
+            "ru": "Rocko"
           },
           "sprite": "images/chickens/95.png"
         },
@@ -11773,7 +16784,9 @@ window.WIKI_DATA = {
           "id": 102,
           "name": {
             "es": "Niwato",
-            "en": "Niwato"
+            "en": "Niwato",
+            "pt": "Niwato",
+            "ru": "Niwato"
           },
           "sprite": "images/chickens/102.png"
         },
@@ -11781,7 +16794,9 @@ window.WIKI_DATA = {
           "id": 108,
           "name": {
             "es": "Plumillas",
-            "en": "Plumillas"
+            "en": "Plumillas",
+            "pt": "Plumillas",
+            "ru": "Plumillas"
           },
           "sprite": "images/chickens/108.png"
         },
@@ -11789,7 +16804,9 @@ window.WIKI_DATA = {
           "id": 109,
           "name": {
             "es": "Max",
-            "en": "Max"
+            "en": "Max",
+            "pt": "Max",
+            "ru": "Max"
           },
           "sprite": "images/chickens/109.png"
         },
@@ -11797,7 +16814,9 @@ window.WIKI_DATA = {
           "id": 111,
           "name": {
             "es": "Lock",
-            "en": "Lock"
+            "en": "Lock",
+            "pt": "Lock",
+            "ru": "Lock"
           },
           "sprite": "images/chickens/111.png"
         },
@@ -11805,7 +16824,9 @@ window.WIKI_DATA = {
           "id": 118,
           "name": {
             "es": "Nave",
-            "en": "Nave"
+            "en": "Nave",
+            "pt": "Nave",
+            "ru": "Nave"
           },
           "sprite": "images/chickens/118.png"
         },
@@ -11813,7 +16834,9 @@ window.WIKI_DATA = {
           "id": 119,
           "name": {
             "es": "Rhafa",
-            "en": "Rhafa"
+            "en": "Rhafa",
+            "pt": "Rhafa",
+            "ru": "Rhafa"
           },
           "sprite": "images/chickens/119.png"
         },
@@ -11821,7 +16844,9 @@ window.WIKI_DATA = {
           "id": 125,
           "name": {
             "es": "Rama",
-            "en": "Rama"
+            "en": "Rama",
+            "pt": "Rama",
+            "ru": "Rama"
           },
           "sprite": "images/chickens/125.png"
         },
@@ -11829,7 +16854,9 @@ window.WIKI_DATA = {
           "id": 148,
           "name": {
             "es": "Toro",
-            "en": "Toro"
+            "en": "Toro",
+            "pt": "Toro",
+            "ru": "Toro"
           },
           "sprite": "images/chickens/148.png"
         }
@@ -11839,7 +16866,9 @@ window.WIKI_DATA = {
           "id": 93,
           "name": {
             "es": "Drillen",
-            "en": "Drillen"
+            "en": "Drillen",
+            "pt": "Drillen",
+            "ru": "Drillen"
           },
           "sprite": "images/chickens/93.png"
         },
@@ -11847,7 +16876,9 @@ window.WIKI_DATA = {
           "id": 107,
           "name": {
             "es": "Derp",
-            "en": "Derp"
+            "en": "Derp",
+            "pt": "Derp",
+            "ru": "Derp"
           },
           "sprite": "images/chickens/107.png"
         },
@@ -11855,7 +16886,9 @@ window.WIKI_DATA = {
           "id": 136,
           "name": {
             "es": "Mayel",
-            "en": "Mayel"
+            "en": "Mayel",
+            "pt": "Mayel",
+            "ru": "Mayel"
           },
           "sprite": "images/chickens/136.png"
         }
@@ -11866,14 +16899,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Autocuración (25% de su vida máxima)",
-        "en": "Heal himself (25% max life)"
+        "en": "Heal himself (25% max life)",
+        "pt": "Cura a si mesmo (25% vida máx)",
+        "ru": "Лечит себя (25% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 3,
           "name": {
             "es": "Ponk",
-            "en": "Ponk"
+            "en": "Ponk",
+            "pt": "Ponk",
+            "ru": "Ponk"
           },
           "sprite": "images/chickens/3.png"
         },
@@ -11881,7 +16918,9 @@ window.WIKI_DATA = {
           "id": 7,
           "name": {
             "es": "Pasti",
-            "en": "Pasti"
+            "en": "Pasti",
+            "pt": "Pasti",
+            "ru": "Pasti"
           },
           "sprite": "images/chickens/7.png"
         },
@@ -11889,7 +16928,9 @@ window.WIKI_DATA = {
           "id": 13,
           "name": {
             "es": "Easy East",
-            "en": "Easy East"
+            "en": "Easy East",
+            "pt": "Easy East",
+            "ru": "Easy East"
           },
           "sprite": "images/chickens/13.png"
         },
@@ -11897,7 +16938,9 @@ window.WIKI_DATA = {
           "id": 31,
           "name": {
             "es": "Poggie",
-            "en": "Poggie"
+            "en": "Poggie",
+            "pt": "Poggie",
+            "ru": "Poggie"
           },
           "sprite": "images/chickens/31.png"
         },
@@ -11905,7 +16948,9 @@ window.WIKI_DATA = {
           "id": 38,
           "name": {
             "es": "Pastinni",
-            "en": "Pastinni"
+            "en": "Pastinni",
+            "pt": "Pastinni",
+            "ru": "Pastinni"
           },
           "sprite": "images/chickens/38.png"
         },
@@ -11913,7 +16958,9 @@ window.WIKI_DATA = {
           "id": 44,
           "name": {
             "es": "Lava",
-            "en": "Lava"
+            "en": "Lava",
+            "pt": "Lava",
+            "ru": "Lava"
           },
           "sprite": "images/chickens/44.png"
         },
@@ -11921,7 +16968,9 @@ window.WIKI_DATA = {
           "id": 53,
           "name": {
             "es": "Queso",
-            "en": "Queso"
+            "en": "Queso",
+            "pt": "Queso",
+            "ru": "Queso"
           },
           "sprite": "images/chickens/53.png"
         },
@@ -11929,7 +16978,9 @@ window.WIKI_DATA = {
           "id": 54,
           "name": {
             "es": "Monocrom",
-            "en": "Monocrom"
+            "en": "Monocrom",
+            "pt": "Monocrom",
+            "ru": "Monocrom"
           },
           "sprite": "images/chickens/54.png"
         },
@@ -11937,7 +16988,9 @@ window.WIKI_DATA = {
           "id": 64,
           "name": {
             "es": "Nama",
-            "en": "Nama"
+            "en": "Nama",
+            "pt": "Nama",
+            "ru": "Nama"
           },
           "sprite": "images/chickens/64.png"
         },
@@ -11945,7 +16998,9 @@ window.WIKI_DATA = {
           "id": 66,
           "name": {
             "es": "Ashy",
-            "en": "Ashy"
+            "en": "Ashy",
+            "pt": "Ashy",
+            "ru": "Ashy"
           },
           "sprite": "images/chickens/66.png"
         },
@@ -11953,7 +17008,9 @@ window.WIKI_DATA = {
           "id": 70,
           "name": {
             "es": "Galligno",
-            "en": "Galligno"
+            "en": "Galligno",
+            "pt": "Galligno",
+            "ru": "Galligno"
           },
           "sprite": "images/chickens/70.png"
         },
@@ -11961,7 +17018,9 @@ window.WIKI_DATA = {
           "id": 71,
           "name": {
             "es": "Nube",
-            "en": "Nube"
+            "en": "Nube",
+            "pt": "Nube",
+            "ru": "Nube"
           },
           "sprite": "images/chickens/71.png"
         },
@@ -11969,7 +17028,9 @@ window.WIKI_DATA = {
           "id": 83,
           "name": {
             "es": "Corny",
-            "en": "Corny"
+            "en": "Corny",
+            "pt": "Corny",
+            "ru": "Corny"
           },
           "sprite": "images/chickens/83.png"
         },
@@ -11977,7 +17038,9 @@ window.WIKI_DATA = {
           "id": 89,
           "name": {
             "es": "Cactus",
-            "en": "Cactus"
+            "en": "Cactus",
+            "pt": "Cactus",
+            "ru": "Cactus"
           },
           "sprite": "images/chickens/89.png"
         },
@@ -11985,7 +17048,9 @@ window.WIKI_DATA = {
           "id": 97,
           "name": {
             "es": "Terra",
-            "en": "Terra"
+            "en": "Terra",
+            "pt": "Terra",
+            "ru": "Terra"
           },
           "sprite": "images/chickens/97.png"
         },
@@ -11993,7 +17058,9 @@ window.WIKI_DATA = {
           "id": 112,
           "name": {
             "es": "Law",
-            "en": "Law"
+            "en": "Law",
+            "pt": "Law",
+            "ru": "Law"
           },
           "sprite": "images/chickens/112.png"
         },
@@ -12001,7 +17068,9 @@ window.WIKI_DATA = {
           "id": 114,
           "name": {
             "es": "Chird",
-            "en": "Chird"
+            "en": "Chird",
+            "pt": "Chird",
+            "ru": "Chird"
           },
           "sprite": "images/chickens/114.png"
         },
@@ -12009,7 +17078,9 @@ window.WIKI_DATA = {
           "id": 146,
           "name": {
             "es": "Sinestrer",
-            "en": "Sinestrer"
+            "en": "Sinestrer",
+            "pt": "Sinestrer",
+            "ru": "Sinestrer"
           },
           "sprite": "images/chickens/146.png"
         }
@@ -12019,7 +17090,9 @@ window.WIKI_DATA = {
           "id": 40,
           "name": {
             "es": "Candle",
-            "en": "Candle"
+            "en": "Candle",
+            "pt": "Candle",
+            "ru": "Candle"
           },
           "sprite": "images/chickens/40.png"
         },
@@ -12027,7 +17100,9 @@ window.WIKI_DATA = {
           "id": 92,
           "name": {
             "es": "Galland",
-            "en": "Galland"
+            "en": "Galland",
+            "pt": "Galland",
+            "ru": "Galland"
           },
           "sprite": "images/chickens/92.png"
         }
@@ -12038,14 +17113,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un huevo (100% del daño)",
-        "en": "Throw a egg (100% damage)"
+        "en": "Throw a egg (100% damage)",
+        "pt": "Arremessa um ovo (100% de dano)",
+        "ru": "Бросает яйцо (100% урона)"
       },
       "chickens": [
         {
           "id": 2,
           "name": {
             "es": "McDuck",
-            "en": "McDuck"
+            "en": "McDuck",
+            "pt": "McDuck",
+            "ru": "McDuck"
           },
           "sprite": "images/chickens/2.png"
         },
@@ -12053,7 +17132,9 @@ window.WIKI_DATA = {
           "id": 21,
           "name": {
             "es": "Jhona",
-            "en": "Jhona"
+            "en": "Jhona",
+            "pt": "Jhona",
+            "ru": "Jhona"
           },
           "sprite": "images/chickens/21.png"
         },
@@ -12061,7 +17142,9 @@ window.WIKI_DATA = {
           "id": 22,
           "name": {
             "es": "Mega",
-            "en": "Mega"
+            "en": "Mega",
+            "pt": "Mega",
+            "ru": "Mega"
           },
           "sprite": "images/chickens/22.png"
         },
@@ -12069,7 +17152,9 @@ window.WIKI_DATA = {
           "id": 32,
           "name": {
             "es": "Toraishi",
-            "en": "Toraishi"
+            "en": "Toraishi",
+            "pt": "Toraishi",
+            "ru": "Toraishi"
           },
           "sprite": "images/chickens/32.png"
         },
@@ -12077,7 +17162,9 @@ window.WIKI_DATA = {
           "id": 35,
           "name": {
             "es": "Pais",
-            "en": "Pais"
+            "en": "Pais",
+            "pt": "Pais",
+            "ru": "Pais"
           },
           "sprite": "images/chickens/35.png"
         },
@@ -12085,7 +17172,9 @@ window.WIKI_DATA = {
           "id": 60,
           "name": {
             "es": "Boomy",
-            "en": "Boomy"
+            "en": "Boomy",
+            "pt": "Boomy",
+            "ru": "Boomy"
           },
           "sprite": "images/chickens/60.png"
         },
@@ -12093,7 +17182,9 @@ window.WIKI_DATA = {
           "id": 75,
           "name": {
             "es": "Titiro",
-            "en": "Titiro"
+            "en": "Titiro",
+            "pt": "Titiro",
+            "ru": "Titiro"
           },
           "sprite": "images/chickens/75.png"
         },
@@ -12101,7 +17192,9 @@ window.WIKI_DATA = {
           "id": 76,
           "name": {
             "es": "Luso",
-            "en": "Luso"
+            "en": "Luso",
+            "pt": "Luso",
+            "ru": "Luso"
           },
           "sprite": "images/chickens/76.png"
         }
@@ -12113,14 +17206,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un shuriken (150% del daño)",
-        "en": "Throw a shuriken (150% damage)"
+        "en": "Throw a shuriken (150% damage)",
+        "pt": "Arremessa uma shuriken (150% de dano)",
+        "ru": "Бросает сюрикен (150% урона)"
       },
       "chickens": [
         {
           "id": 5,
           "name": {
             "es": "Cay",
-            "en": "Cay"
+            "en": "Cay",
+            "pt": "Cay",
+            "ru": "Cay"
           },
           "sprite": "images/chickens/5.png"
         },
@@ -12128,7 +17225,9 @@ window.WIKI_DATA = {
           "id": 12,
           "name": {
             "es": "Polliro",
-            "en": "Polliro"
+            "en": "Polliro",
+            "pt": "Polliro",
+            "ru": "Polliro"
           },
           "sprite": "images/chickens/12.png"
         },
@@ -12136,7 +17235,9 @@ window.WIKI_DATA = {
           "id": 49,
           "name": {
             "es": "Cerol",
-            "en": "Cerol"
+            "en": "Cerol",
+            "pt": "Cerol",
+            "ru": "Cerol"
           },
           "sprite": "images/chickens/49.png"
         }
@@ -12146,7 +17247,9 @@ window.WIKI_DATA = {
           "id": 61,
           "name": {
             "es": "Shiken",
-            "en": "Shiken"
+            "en": "Shiken",
+            "pt": "Shiken",
+            "ru": "Shiken"
           },
           "sprite": "images/chickens/61.png"
         }
@@ -12157,14 +17260,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Pierde vida (-10% de su vida máxima), gana daño (+25%)",
-        "en": "Lose life, gain damage (-10% max life, +25% damage)"
+        "en": "Lose life, gain damage (-10% max life, +25% damage)",
+        "pt": "Perde vida, ganha dano (-10% vida máx, +25% dano)",
+        "ru": "Теряет здоровье, получает урон (-10% макс. здоровья, +25% урона)"
       },
       "chickens": [
         {
           "id": 6,
           "name": {
             "es": "Zombie",
-            "en": "Zombie"
+            "en": "Zombie",
+            "pt": "Zombie",
+            "ru": "Zombie"
           },
           "sprite": "images/chickens/6.png"
         },
@@ -12172,7 +17279,9 @@ window.WIKI_DATA = {
           "id": 42,
           "name": {
             "es": "Tiza",
-            "en": "Tiza"
+            "en": "Tiza",
+            "pt": "Tiza",
+            "ru": "Tiza"
           },
           "sprite": "images/chickens/42.png"
         },
@@ -12180,7 +17289,9 @@ window.WIKI_DATA = {
           "id": 140,
           "name": {
             "es": "Skull",
-            "en": "Skull"
+            "en": "Skull",
+            "pt": "Skull",
+            "ru": "Skull"
           },
           "sprite": "images/chickens/140.png"
         }
@@ -12190,7 +17301,9 @@ window.WIKI_DATA = {
           "id": 0,
           "name": {
             "es": "Pollier",
-            "en": "Pollier"
+            "en": "Pollier",
+            "pt": "Pollier",
+            "ru": "Pollier"
           },
           "sprite": "images/chickens/0.png"
         },
@@ -12198,7 +17311,9 @@ window.WIKI_DATA = {
           "id": 1,
           "name": {
             "es": "Chica",
-            "en": "Chica"
+            "en": "Chica",
+            "pt": "Chica",
+            "ru": "Chica"
           },
           "sprite": "images/chickens/1.png"
         },
@@ -12206,7 +17321,9 @@ window.WIKI_DATA = {
           "id": 13,
           "name": {
             "es": "Easy East",
-            "en": "Easy East"
+            "en": "Easy East",
+            "pt": "Easy East",
+            "ru": "Easy East"
           },
           "sprite": "images/chickens/13.png"
         },
@@ -12214,7 +17331,9 @@ window.WIKI_DATA = {
           "id": 22,
           "name": {
             "es": "Mega",
-            "en": "Mega"
+            "en": "Mega",
+            "pt": "Mega",
+            "ru": "Mega"
           },
           "sprite": "images/chickens/22.png"
         },
@@ -12222,7 +17341,9 @@ window.WIKI_DATA = {
           "id": 52,
           "name": {
             "es": "Sharky",
-            "en": "Sharky"
+            "en": "Sharky",
+            "pt": "Sharky",
+            "ru": "Sharky"
           },
           "sprite": "images/chickens/52.png"
         },
@@ -12230,7 +17351,9 @@ window.WIKI_DATA = {
           "id": 76,
           "name": {
             "es": "Luso",
-            "en": "Luso"
+            "en": "Luso",
+            "pt": "Luso",
+            "ru": "Luso"
           },
           "sprite": "images/chickens/76.png"
         },
@@ -12238,7 +17361,9 @@ window.WIKI_DATA = {
           "id": 81,
           "name": {
             "es": "Egi",
-            "en": "Egi"
+            "en": "Egi",
+            "pt": "Egi",
+            "ru": "Egi"
           },
           "sprite": "images/chickens/81.png"
         },
@@ -12246,7 +17371,9 @@ window.WIKI_DATA = {
           "id": 85,
           "name": {
             "es": "Vidro",
-            "en": "Vidro"
+            "en": "Vidro",
+            "pt": "Vidro",
+            "ru": "Vidro"
           },
           "sprite": "images/chickens/85.png"
         },
@@ -12254,7 +17381,9 @@ window.WIKI_DATA = {
           "id": 91,
           "name": {
             "es": "Darkus",
-            "en": "Darkus"
+            "en": "Darkus",
+            "pt": "Darkus",
+            "ru": "Darkus"
           },
           "sprite": "images/chickens/91.png"
         },
@@ -12262,7 +17391,9 @@ window.WIKI_DATA = {
           "id": 96,
           "name": {
             "es": "Garry",
-            "en": "Garry"
+            "en": "Garry",
+            "pt": "Garry",
+            "ru": "Garry"
           },
           "sprite": "images/chickens/96.png"
         },
@@ -12270,7 +17401,9 @@ window.WIKI_DATA = {
           "id": 102,
           "name": {
             "es": "Niwato",
-            "en": "Niwato"
+            "en": "Niwato",
+            "pt": "Niwato",
+            "ru": "Niwato"
           },
           "sprite": "images/chickens/102.png"
         },
@@ -12278,7 +17411,9 @@ window.WIKI_DATA = {
           "id": 103,
           "name": {
             "es": "Grey",
-            "en": "Grey"
+            "en": "Grey",
+            "pt": "Grey",
+            "ru": "Grey"
           },
           "sprite": "images/chickens/103.png"
         },
@@ -12286,7 +17421,9 @@ window.WIKI_DATA = {
           "id": 110,
           "name": {
             "es": "Springy",
-            "en": "Springy"
+            "en": "Springy",
+            "pt": "Springy",
+            "ru": "Springy"
           },
           "sprite": "images/chickens/110.png"
         },
@@ -12294,7 +17431,9 @@ window.WIKI_DATA = {
           "id": 125,
           "name": {
             "es": "Rama",
-            "en": "Rama"
+            "en": "Rama",
+            "pt": "Rama",
+            "ru": "Rama"
           },
           "sprite": "images/chickens/125.png"
         },
@@ -12302,7 +17441,9 @@ window.WIKI_DATA = {
           "id": 148,
           "name": {
             "es": "Toro",
-            "en": "Toro"
+            "en": "Toro",
+            "pt": "Toro",
+            "ru": "Toro"
           },
           "sprite": "images/chickens/148.png"
         }
@@ -12313,14 +17454,18 @@ window.WIKI_DATA = {
       "cost": 120,
       "description": {
         "es": "Copia el último poder visto",
-        "en": "Copy last power"
+        "en": "Copy last power",
+        "pt": "Copia o último poder",
+        "ru": "Копирует последнюю силу"
       },
       "chickens": [
         {
           "id": 8,
           "name": {
             "es": "Iris",
-            "en": "Iris"
+            "en": "Iris",
+            "pt": "Iris",
+            "ru": "Iris"
           },
           "sprite": "images/chickens/8.png"
         }
@@ -12332,14 +17477,18 @@ window.WIKI_DATA = {
       "cost": 150,
       "description": {
         "es": "Transforma en Pollisaur",
-        "en": "Transform into Pollisaur"
+        "en": "Transform into Pollisaur",
+        "pt": "Transforma-se em Pollisaur",
+        "ru": "Превращается в Pollisaur"
       },
       "chickens": [
         {
           "id": 9,
           "name": {
             "es": "Pollisor",
-            "en": "Pollisor"
+            "en": "Pollisor",
+            "pt": "Pollisor",
+            "ru": "Pollisor"
           },
           "sprite": "images/chickens/9.png"
         }
@@ -12351,14 +17500,18 @@ window.WIKI_DATA = {
       "cost": 90,
       "description": {
         "es": "Transforma en Pollisor",
-        "en": "Transform into Pollisor"
+        "en": "Transform into Pollisor",
+        "pt": "Transforma-se em Pollisor",
+        "ru": "Превращается в Pollisor"
       },
       "chickens": [
         {
           "id": 10,
           "name": {
             "es": "Pollisaur",
-            "en": "Pollisaur"
+            "en": "Pollisaur",
+            "pt": "Pollisaur",
+            "ru": "Pollisaur"
           },
           "sprite": "images/chickens/10.png"
         }
@@ -12370,14 +17523,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un misíl (Quema)",
-        "en": "Launch a missile, apply burn"
+        "en": "Launch a missile, apply burn",
+        "pt": "Lança um míssil, aplica queimadura",
+        "ru": "Запускает ракету, накладывает ожог"
       },
       "chickens": [
         {
           "id": 11,
           "name": {
             "es": "Vio",
-            "en": "Vio"
+            "en": "Vio",
+            "pt": "Vio",
+            "ru": "Vio"
           },
           "sprite": "images/chickens/11.png"
         },
@@ -12385,7 +17542,9 @@ window.WIKI_DATA = {
           "id": 37,
           "name": {
             "es": "Pastank",
-            "en": "Pastank"
+            "en": "Pastank",
+            "pt": "Pastank",
+            "ru": "Pastank"
           },
           "sprite": "images/chickens/37.png"
         },
@@ -12393,7 +17552,9 @@ window.WIKI_DATA = {
           "id": 122,
           "name": {
             "es": "Meta",
-            "en": "Meta"
+            "en": "Meta",
+            "pt": "Meta",
+            "ru": "Meta"
           },
           "sprite": "images/chickens/122.png"
         },
@@ -12401,7 +17562,9 @@ window.WIKI_DATA = {
           "id": 123,
           "name": {
             "es": "MetaSoldier",
-            "en": "MetaSoldier"
+            "en": "MetaSoldier",
+            "pt": "MetaSoldier",
+            "ru": "MetaSoldier"
           },
           "sprite": "images/chickens/123.png"
         },
@@ -12409,7 +17572,9 @@ window.WIKI_DATA = {
           "id": 124,
           "name": {
             "es": "Inger",
-            "en": "Inger"
+            "en": "Inger",
+            "pt": "Inger",
+            "ru": "Inger"
           },
           "sprite": "images/chickens/124.png"
         },
@@ -12417,7 +17582,9 @@ window.WIKI_DATA = {
           "id": 129,
           "name": {
             "es": "Cyborg",
-            "en": "Cyborg"
+            "en": "Cyborg",
+            "pt": "Cyborg",
+            "ru": "Cyborg"
           },
           "sprite": "images/chickens/129.png"
         }
@@ -12427,7 +17594,9 @@ window.WIKI_DATA = {
           "id": 43,
           "name": {
             "es": "Ignarto",
-            "en": "Ignarto"
+            "en": "Ignarto",
+            "pt": "Ignarto",
+            "ru": "Ignarto"
           },
           "sprite": "images/chickens/43.png"
         },
@@ -12435,7 +17604,9 @@ window.WIKI_DATA = {
           "id": 46,
           "name": {
             "es": "Robotop",
-            "en": "Robotop"
+            "en": "Robotop",
+            "pt": "Robotop",
+            "ru": "Robotop"
           },
           "sprite": "images/chickens/46.png"
         }
@@ -12446,14 +17617,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "+10% en un valor aleatorio",
-        "en": "Gain 10% extra in a random stat"
+        "en": "Gain 10% extra in a random stat",
+        "pt": "Ganha 10% extra em um atributo aleatório",
+        "ru": "Получает +10% к случайному стату"
       },
       "chickens": [
         {
           "id": 15,
           "name": {
             "es": "Eustavio",
-            "en": "Eustavio"
+            "en": "Eustavio",
+            "pt": "Eustavio",
+            "ru": "Eustavio"
           },
           "sprite": "images/chickens/15.png"
         }
@@ -12465,14 +17640,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "El equipo gana armadura (+10%)",
-        "en": "The team gain armor (+10% armor)"
+        "en": "The team gain armor (+10% armor)",
+        "pt": "A equipe ganha armadura (+10% armadura)",
+        "ru": "Команда получает броню (+10% брони)"
       },
       "chickens": [
         {
           "id": 16,
           "name": {
             "es": "Gallo",
-            "en": "Gallo"
+            "en": "Gallo",
+            "pt": "Gallo",
+            "ru": "Gallo"
           },
           "sprite": "images/chickens/16.png"
         }
@@ -12482,7 +17661,9 @@ window.WIKI_DATA = {
           "id": 3,
           "name": {
             "es": "Ponk",
-            "en": "Ponk"
+            "en": "Ponk",
+            "pt": "Ponk",
+            "ru": "Ponk"
           },
           "sprite": "images/chickens/3.png"
         },
@@ -12490,7 +17671,9 @@ window.WIKI_DATA = {
           "id": 19,
           "name": {
             "es": "Armor",
-            "en": "Armor"
+            "en": "Armor",
+            "pt": "Armor",
+            "ru": "Armor"
           },
           "sprite": "images/chickens/19.png"
         },
@@ -12498,7 +17681,9 @@ window.WIKI_DATA = {
           "id": 37,
           "name": {
             "es": "Pastank",
-            "en": "Pastank"
+            "en": "Pastank",
+            "pt": "Pastank",
+            "ru": "Pastank"
           },
           "sprite": "images/chickens/37.png"
         },
@@ -12506,7 +17691,9 @@ window.WIKI_DATA = {
           "id": 47,
           "name": {
             "es": "Clusio",
-            "en": "Clusio"
+            "en": "Clusio",
+            "pt": "Clusio",
+            "ru": "Clusio"
           },
           "sprite": "images/chickens/47.png"
         },
@@ -12514,7 +17701,9 @@ window.WIKI_DATA = {
           "id": 66,
           "name": {
             "es": "Ashy",
-            "en": "Ashy"
+            "en": "Ashy",
+            "pt": "Ashy",
+            "ru": "Ashy"
           },
           "sprite": "images/chickens/66.png"
         },
@@ -12522,7 +17711,9 @@ window.WIKI_DATA = {
           "id": 114,
           "name": {
             "es": "Chird",
-            "en": "Chird"
+            "en": "Chird",
+            "pt": "Chird",
+            "ru": "Chird"
           },
           "sprite": "images/chickens/114.png"
         },
@@ -12530,7 +17721,9 @@ window.WIKI_DATA = {
           "id": 150,
           "name": {
             "es": "Garra",
-            "en": "Garra"
+            "en": "Garra",
+            "pt": "Garra",
+            "ru": "Garra"
           },
           "sprite": "images/chickens/150.png"
         }
@@ -12541,14 +17734,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza una bomba (80% del daño, 40% a otros objetivos)",
-        "en": "Throw a bomb (80% damage to target, 40% to others)"
+        "en": "Throw a bomb (80% damage to target, 40% to others)",
+        "pt": "Arremessa uma bomba (80% dano ao alvo, 40% aos outros)",
+        "ru": "Бросает бомбу (80% урона цели, 40% остальным)"
       },
       "chickens": [
         {
           "id": 17,
           "name": {
             "es": "Raro",
-            "en": "Raro"
+            "en": "Raro",
+            "pt": "Raro",
+            "ru": "Raro"
           },
           "sprite": "images/chickens/17.png"
         },
@@ -12556,7 +17753,9 @@ window.WIKI_DATA = {
           "id": 46,
           "name": {
             "es": "Robotop",
-            "en": "Robotop"
+            "en": "Robotop",
+            "pt": "Robotop",
+            "ru": "Robotop"
           },
           "sprite": "images/chickens/46.png"
         },
@@ -12564,7 +17763,9 @@ window.WIKI_DATA = {
           "id": 128,
           "name": {
             "es": "Jeraz",
-            "en": "Jeraz"
+            "en": "Jeraz",
+            "pt": "Jeraz",
+            "ru": "Jeraz"
           },
           "sprite": "images/chickens/128.png"
         }
@@ -12574,7 +17775,9 @@ window.WIKI_DATA = {
           "id": 2,
           "name": {
             "es": "McDuck",
-            "en": "McDuck"
+            "en": "McDuck",
+            "pt": "McDuck",
+            "ru": "McDuck"
           },
           "sprite": "images/chickens/2.png"
         },
@@ -12582,7 +17785,9 @@ window.WIKI_DATA = {
           "id": 11,
           "name": {
             "es": "Vio",
-            "en": "Vio"
+            "en": "Vio",
+            "pt": "Vio",
+            "ru": "Vio"
           },
           "sprite": "images/chickens/11.png"
         },
@@ -12590,7 +17795,9 @@ window.WIKI_DATA = {
           "id": 25,
           "name": {
             "es": "Manic",
-            "en": "Manic"
+            "en": "Manic",
+            "pt": "Manic",
+            "ru": "Manic"
           },
           "sprite": "images/chickens/25.png"
         },
@@ -12598,7 +17805,9 @@ window.WIKI_DATA = {
           "id": 122,
           "name": {
             "es": "Meta",
-            "en": "Meta"
+            "en": "Meta",
+            "pt": "Meta",
+            "ru": "Meta"
           },
           "sprite": "images/chickens/122.png"
         },
@@ -12606,7 +17815,9 @@ window.WIKI_DATA = {
           "id": 123,
           "name": {
             "es": "MetaSoldier",
-            "en": "MetaSoldier"
+            "en": "MetaSoldier",
+            "pt": "MetaSoldier",
+            "ru": "MetaSoldier"
           },
           "sprite": "images/chickens/123.png"
         },
@@ -12614,7 +17825,9 @@ window.WIKI_DATA = {
           "id": 124,
           "name": {
             "es": "Inger",
-            "en": "Inger"
+            "en": "Inger",
+            "pt": "Inger",
+            "ru": "Inger"
           },
           "sprite": "images/chickens/124.png"
         }
@@ -12625,14 +17838,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Paraliza al objetivo",
-        "en": "Paralyze the target"
+        "en": "Paralyze the target",
+        "pt": "Paralisa o alvo",
+        "ru": "Парализует цель"
       },
       "chickens": [
         {
           "id": 18,
           "name": {
             "es": "Polliwatt",
-            "en": "Polliwatt"
+            "en": "Polliwatt",
+            "pt": "Polliwatt",
+            "ru": "Polliwatt"
           },
           "sprite": "images/chickens/18.png"
         },
@@ -12640,7 +17857,9 @@ window.WIKI_DATA = {
           "id": 116,
           "name": {
             "es": "Electron",
-            "en": "Electron"
+            "en": "Electron",
+            "pt": "Electron",
+            "ru": "Electron"
           },
           "sprite": "images/chickens/116.png"
         },
@@ -12648,7 +17867,9 @@ window.WIKI_DATA = {
           "id": 121,
           "name": {
             "es": "Javo",
-            "en": "Javo"
+            "en": "Javo",
+            "pt": "Javo",
+            "ru": "Javo"
           },
           "sprite": "images/chickens/121.png"
         }
@@ -12658,7 +17879,9 @@ window.WIKI_DATA = {
           "id": 111,
           "name": {
             "es": "Lock",
-            "en": "Lock"
+            "en": "Lock",
+            "pt": "Lock",
+            "ru": "Lock"
           },
           "sprite": "images/chickens/111.png"
         }
@@ -12669,14 +17892,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Envenena al objetivo",
-        "en": "Poison the target"
+        "en": "Poison the target",
+        "pt": "Envenena o alvo",
+        "ru": "Отравляет цель"
       },
       "chickens": [
         {
           "id": 23,
           "name": {
             "es": "Porky",
-            "en": "Porky"
+            "en": "Porky",
+            "pt": "Porky",
+            "ru": "Porky"
           },
           "sprite": "images/chickens/23.png"
         },
@@ -12684,7 +17911,9 @@ window.WIKI_DATA = {
           "id": 36,
           "name": {
             "es": "Valu",
-            "en": "Valu"
+            "en": "Valu",
+            "pt": "Valu",
+            "ru": "Valu"
           },
           "sprite": "images/chickens/36.png"
         },
@@ -12692,7 +17921,9 @@ window.WIKI_DATA = {
           "id": 80,
           "name": {
             "es": "Mucken",
-            "en": "Mucken"
+            "en": "Mucken",
+            "pt": "Mucken",
+            "ru": "Mucken"
           },
           "sprite": "images/chickens/80.png"
         },
@@ -12700,7 +17931,9 @@ window.WIKI_DATA = {
           "id": 113,
           "name": {
             "es": "Chick",
-            "en": "Chick"
+            "en": "Chick",
+            "pt": "Chick",
+            "ru": "Chick"
           },
           "sprite": "images/chickens/113.png"
         },
@@ -12708,7 +17941,9 @@ window.WIKI_DATA = {
           "id": 117,
           "name": {
             "es": "Monstruollo",
-            "en": "Monstruollo"
+            "en": "Monstruollo",
+            "pt": "Monstruollo",
+            "ru": "Monstruollo"
           },
           "sprite": "images/chickens/117.png"
         },
@@ -12716,7 +17951,9 @@ window.WIKI_DATA = {
           "id": 141,
           "name": {
             "es": "Toxic",
-            "en": "Toxic"
+            "en": "Toxic",
+            "pt": "Toxic",
+            "ru": "Toxic"
           },
           "sprite": "images/chickens/141.png"
         }
@@ -12726,7 +17963,9 @@ window.WIKI_DATA = {
           "id": 30,
           "name": {
             "es": "Mosca",
-            "en": "Mosca"
+            "en": "Mosca",
+            "pt": "Mosca",
+            "ru": "Mosca"
           },
           "sprite": "images/chickens/30.png"
         },
@@ -12734,7 +17973,9 @@ window.WIKI_DATA = {
           "id": 53,
           "name": {
             "es": "Queso",
-            "en": "Queso"
+            "en": "Queso",
+            "pt": "Queso",
+            "ru": "Queso"
           },
           "sprite": "images/chickens/53.png"
         },
@@ -12742,7 +17983,9 @@ window.WIKI_DATA = {
           "id": 120,
           "name": {
             "es": "Rick",
-            "en": "Rick"
+            "en": "Rick",
+            "pt": "Rick",
+            "ru": "Rick"
           },
           "sprite": "images/chickens/120.png"
         },
@@ -12750,7 +17993,9 @@ window.WIKI_DATA = {
           "id": 130,
           "name": {
             "es": "Jacko",
-            "en": "Jacko"
+            "en": "Jacko",
+            "pt": "Jacko",
+            "ru": "Jacko"
           },
           "sprite": "images/chickens/130.png"
         }
@@ -12761,14 +18006,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Pierde vida (-10% de su vida máxima), el aliado obtiene poder al máximo y el próximo turno",
-        "en": "Lose life (-10% max life), ally gets full power and takes the next turn"
+        "en": "Lose life (-10% max life), ally gets full power and takes the next turn",
+        "pt": "Perde vida (-10% vida máx.), o aliado ganha poder total e o próximo turno",
+        "ru": "Теряет здоровье (-10% макс. HP), союзник получает полную силу и следующий ход"
       },
       "chickens": [
         {
           "id": 25,
           "name": {
             "es": "Manic",
-            "en": "Manic"
+            "en": "Manic",
+            "pt": "Manic",
+            "ru": "Manic"
           },
           "sprite": "images/chickens/25.png"
         },
@@ -12776,7 +18025,9 @@ window.WIKI_DATA = {
           "id": 132,
           "name": {
             "es": "Pipasol",
-            "en": "Pipasol"
+            "en": "Pipasol",
+            "pt": "Pipasol",
+            "ru": "Pipasol"
           },
           "sprite": "images/chickens/132.png"
         }
@@ -12788,14 +18039,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Todos los multiplicadores obtienen valores al azar (25% a 175%)",
-        "en": "Randomize all multis (0.25 to 1.75)"
+        "en": "Randomize all multis (0.25 to 1.75)",
+        "pt": "Aleatoriza todos os multiplicadores (0.25 a 1.75)",
+        "ru": "Рандомизирует все множители (от 0.25 до 1.75)"
       },
       "chickens": [
         {
           "id": 27,
           "name": {
             "es": "Invert",
-            "en": "Invert"
+            "en": "Invert",
+            "pt": "Invert",
+            "ru": "Invert"
           },
           "sprite": "images/chickens/27.png"
         }
@@ -12805,7 +18060,9 @@ window.WIKI_DATA = {
           "id": 8,
           "name": {
             "es": "Iris",
-            "en": "Iris"
+            "en": "Iris",
+            "pt": "Iris",
+            "ru": "Iris"
           },
           "sprite": "images/chickens/8.png"
         },
@@ -12813,7 +18070,9 @@ window.WIKI_DATA = {
           "id": 57,
           "name": {
             "es": "Prisma",
-            "en": "Prisma"
+            "en": "Prisma",
+            "pt": "Prisma",
+            "ru": "Prisma"
           },
           "sprite": "images/chickens/57.png"
         },
@@ -12821,7 +18080,9 @@ window.WIKI_DATA = {
           "id": 60,
           "name": {
             "es": "Boomy",
-            "en": "Boomy"
+            "en": "Boomy",
+            "pt": "Boomy",
+            "ru": "Boomy"
           },
           "sprite": "images/chickens/60.png"
         }
@@ -12832,14 +18093,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Intercambia multiplicador de daño con el objetivo",
-        "en": "Swap damage multi with target"
+        "en": "Swap damage multi with target",
+        "pt": "Troca multiplicador de dano com o alvo",
+        "ru": "Меняется множителем урона с целью"
       },
       "chickens": [
         {
           "id": 28,
           "name": {
             "es": "Alien",
-            "en": "Alien"
+            "en": "Alien",
+            "pt": "Alien",
+            "ru": "Alien"
           },
           "sprite": "images/chickens/28.png"
         }
@@ -12849,7 +18114,9 @@ window.WIKI_DATA = {
           "id": 27,
           "name": {
             "es": "Invert",
-            "en": "Invert"
+            "en": "Invert",
+            "pt": "Invert",
+            "ru": "Invert"
           },
           "sprite": "images/chickens/27.png"
         }
@@ -12860,14 +18127,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Maldice al objetivo",
-        "en": "Curse the target"
+        "en": "Curse the target",
+        "pt": "Amaldiçoa o alvo",
+        "ru": "Проклинает цель"
       },
       "chickens": [
         {
           "id": 33,
           "name": {
             "es": "Nevermore",
-            "en": "Nevermore"
+            "en": "Nevermore",
+            "pt": "Nevermore",
+            "ru": "Nevermore"
           },
           "sprite": "images/chickens/33.png"
         },
@@ -12875,7 +18146,9 @@ window.WIKI_DATA = {
           "id": 62,
           "name": {
             "es": "Miedo",
-            "en": "Miedo"
+            "en": "Miedo",
+            "pt": "Miedo",
+            "ru": "Miedo"
           },
           "sprite": "images/chickens/62.png"
         },
@@ -12883,7 +18156,9 @@ window.WIKI_DATA = {
           "id": 96,
           "name": {
             "es": "Garry",
-            "en": "Garry"
+            "en": "Garry",
+            "pt": "Garry",
+            "ru": "Garry"
           },
           "sprite": "images/chickens/96.png"
         },
@@ -12891,7 +18166,9 @@ window.WIKI_DATA = {
           "id": 120,
           "name": {
             "es": "Rick",
-            "en": "Rick"
+            "en": "Rick",
+            "pt": "Rick",
+            "ru": "Rick"
           },
           "sprite": "images/chickens/120.png"
         }
@@ -12901,7 +18178,9 @@ window.WIKI_DATA = {
           "id": 54,
           "name": {
             "es": "Monocrom",
-            "en": "Monocrom"
+            "en": "Monocrom",
+            "pt": "Monocrom",
+            "ru": "Monocrom"
           },
           "sprite": "images/chickens/54.png"
         },
@@ -12909,7 +18188,9 @@ window.WIKI_DATA = {
           "id": 113,
           "name": {
             "es": "Chick",
-            "en": "Chick"
+            "en": "Chick",
+            "pt": "Chick",
+            "ru": "Chick"
           },
           "sprite": "images/chickens/113.png"
         }
@@ -12920,14 +18201,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Quema al objetivo",
-        "en": "Burn the target"
+        "en": "Burn the target",
+        "pt": "Queima o alvo",
+        "ru": "Поджигает цель"
       },
       "chickens": [
         {
           "id": 40,
           "name": {
             "es": "Candle",
-            "en": "Candle"
+            "en": "Candle",
+            "pt": "Candle",
+            "ru": "Candle"
           },
           "sprite": "images/chickens/40.png"
         },
@@ -12935,7 +18220,9 @@ window.WIKI_DATA = {
           "id": 41,
           "name": {
             "es": "Magni",
-            "en": "Magni"
+            "en": "Magni",
+            "pt": "Magni",
+            "ru": "Magni"
           },
           "sprite": "images/chickens/41.png"
         },
@@ -12943,7 +18230,9 @@ window.WIKI_DATA = {
           "id": 45,
           "name": {
             "es": "Vulcano",
-            "en": "Vulcano"
+            "en": "Vulcano",
+            "pt": "Vulcano",
+            "ru": "Vulcano"
           },
           "sprite": "images/chickens/45.png"
         },
@@ -12951,7 +18240,9 @@ window.WIKI_DATA = {
           "id": 65,
           "name": {
             "es": "Vapollo",
-            "en": "Vapollo"
+            "en": "Vapollo",
+            "pt": "Vapollo",
+            "ru": "Vapollo"
           },
           "sprite": "images/chickens/65.png"
         },
@@ -12959,7 +18250,9 @@ window.WIKI_DATA = {
           "id": 87,
           "name": {
             "es": "Plass",
-            "en": "Plass"
+            "en": "Plass",
+            "pt": "Plass",
+            "ru": "Plass"
           },
           "sprite": "images/chickens/87.png"
         },
@@ -12967,7 +18260,9 @@ window.WIKI_DATA = {
           "id": 143,
           "name": {
             "es": "Blade",
-            "en": "Blade"
+            "en": "Blade",
+            "pt": "Blade",
+            "ru": "Blade"
           },
           "sprite": "images/chickens/143.png"
         }
@@ -12977,7 +18272,9 @@ window.WIKI_DATA = {
           "id": 42,
           "name": {
             "es": "Tiza",
-            "en": "Tiza"
+            "en": "Tiza",
+            "pt": "Tiza",
+            "ru": "Tiza"
           },
           "sprite": "images/chickens/42.png"
         },
@@ -12985,7 +18282,9 @@ window.WIKI_DATA = {
           "id": 44,
           "name": {
             "es": "Lava",
-            "en": "Lava"
+            "en": "Lava",
+            "pt": "Lava",
+            "ru": "Lava"
           },
           "sprite": "images/chickens/44.png"
         }
@@ -12996,14 +18295,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Autocuración (25% de su vida máxima) y gana armadura (+15%)",
-        "en": "Heal himself (25% max life) and gain armor (+15%)"
+        "en": "Heal himself (25% max life) and gain armor (+15%)",
+        "pt": "Cura a si mesmo (25% vida máx.) e armadura (+15%)",
+        "ru": "Лечит себя (25% макс. здоровья) и получает броню (+15%)"
       },
       "chickens": [
         {
           "id": 47,
           "name": {
             "es": "Clusio",
-            "en": "Clusio"
+            "en": "Clusio",
+            "pt": "Clusio",
+            "ru": "Clusio"
           },
           "sprite": "images/chickens/47.png"
         },
@@ -13011,7 +18314,9 @@ window.WIKI_DATA = {
           "id": 98,
           "name": {
             "es": "Crystal",
-            "en": "Crystal"
+            "en": "Crystal",
+            "pt": "Crystal",
+            "ru": "Crystal"
           },
           "sprite": "images/chickens/98.png"
         },
@@ -13019,7 +18324,9 @@ window.WIKI_DATA = {
           "id": 115,
           "name": {
             "es": "Cow",
-            "en": "Cow"
+            "en": "Cow",
+            "pt": "Cow",
+            "ru": "Cow"
           },
           "sprite": "images/chickens/115.png"
         }
@@ -13029,7 +18336,9 @@ window.WIKI_DATA = {
           "id": 7,
           "name": {
             "es": "Pasti",
-            "en": "Pasti"
+            "en": "Pasti",
+            "pt": "Pasti",
+            "ru": "Pasti"
           },
           "sprite": "images/chickens/7.png"
         },
@@ -13037,7 +18346,9 @@ window.WIKI_DATA = {
           "id": 38,
           "name": {
             "es": "Pastinni",
-            "en": "Pastinni"
+            "en": "Pastinni",
+            "pt": "Pastinni",
+            "ru": "Pastinni"
           },
           "sprite": "images/chickens/38.png"
         },
@@ -13045,7 +18356,9 @@ window.WIKI_DATA = {
           "id": 89,
           "name": {
             "es": "Cactus",
-            "en": "Cactus"
+            "en": "Cactus",
+            "pt": "Cactus",
+            "ru": "Cactus"
           },
           "sprite": "images/chickens/89.png"
         },
@@ -13053,7 +18366,9 @@ window.WIKI_DATA = {
           "id": 95,
           "name": {
             "es": "Rocko",
-            "en": "Rocko"
+            "en": "Rocko",
+            "pt": "Rocko",
+            "ru": "Rocko"
           },
           "sprite": "images/chickens/95.png"
         },
@@ -13061,7 +18376,9 @@ window.WIKI_DATA = {
           "id": 97,
           "name": {
             "es": "Terra",
-            "en": "Terra"
+            "en": "Terra",
+            "pt": "Terra",
+            "ru": "Terra"
           },
           "sprite": "images/chickens/97.png"
         },
@@ -13069,7 +18386,9 @@ window.WIKI_DATA = {
           "id": 121,
           "name": {
             "es": "Javo",
-            "en": "Javo"
+            "en": "Javo",
+            "pt": "Javo",
+            "ru": "Javo"
           },
           "sprite": "images/chickens/121.png"
         }
@@ -13080,14 +18399,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Cura un aliado (50% de su poder + 25% de su vida máxima)",
-        "en": "Heal an ally (50% damage + 25% max life)"
+        "en": "Heal an ally (50% damage + 25% max life)",
+        "pt": "Cura um aliado (50% dano + 25% vida máx)",
+        "ru": "Лечит союзника (50% урона + 25% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 48,
           "name": {
             "es": "Leci",
-            "en": "Leci"
+            "en": "Leci",
+            "pt": "Leci",
+            "ru": "Leci"
           },
           "sprite": "images/chickens/48.png"
         },
@@ -13095,7 +18418,9 @@ window.WIKI_DATA = {
           "id": 57,
           "name": {
             "es": "Prisma",
-            "en": "Prisma"
+            "en": "Prisma",
+            "pt": "Prisma",
+            "ru": "Prisma"
           },
           "sprite": "images/chickens/57.png"
         },
@@ -13103,7 +18428,9 @@ window.WIKI_DATA = {
           "id": 78,
           "name": {
             "es": "Wicken",
-            "en": "Wicken"
+            "en": "Wicken",
+            "pt": "Wicken",
+            "ru": "Wicken"
           },
           "sprite": "images/chickens/78.png"
         },
@@ -13111,7 +18438,9 @@ window.WIKI_DATA = {
           "id": 84,
           "name": {
             "es": "Policus",
-            "en": "Policus"
+            "en": "Policus",
+            "pt": "Policus",
+            "ru": "Policus"
           },
           "sprite": "images/chickens/84.png"
         },
@@ -13119,7 +18448,9 @@ window.WIKI_DATA = {
           "id": 126,
           "name": {
             "es": "Hueva",
-            "en": "Hueva"
+            "en": "Hueva",
+            "pt": "Hueva",
+            "ru": "Hueva"
           },
           "sprite": "images/chickens/126.png"
         },
@@ -13127,7 +18458,9 @@ window.WIKI_DATA = {
           "id": 131,
           "name": {
             "es": "Cori",
-            "en": "Cori"
+            "en": "Cori",
+            "pt": "Cori",
+            "ru": "Cori"
           },
           "sprite": "images/chickens/131.png"
         },
@@ -13135,7 +18468,9 @@ window.WIKI_DATA = {
           "id": 137,
           "name": {
             "es": "Elfen",
-            "en": "Elfen"
+            "en": "Elfen",
+            "pt": "Elfen",
+            "ru": "Elfen"
           },
           "sprite": "images/chickens/137.png"
         }
@@ -13145,7 +18480,9 @@ window.WIKI_DATA = {
           "id": 35,
           "name": {
             "es": "Pais",
-            "en": "Pais"
+            "en": "Pais",
+            "pt": "Pais",
+            "ru": "Pais"
           },
           "sprite": "images/chickens/35.png"
         }
@@ -13156,14 +18493,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un hacha (80% de daño) y se cura a sí mismo (40% de daño)",
-        "en": "Throw an axe (80% damage) and heal himself (40% damage)"
+        "en": "Throw an axe (80% damage) and heal himself (40% damage)",
+        "pt": "Arremessa um machado (80% dano) e cura a si mesmo (40% dano)",
+        "ru": "Бросает топор (80% урона) и лечит себя (40% урона)"
       },
       "chickens": [
         {
           "id": 51,
           "name": {
             "es": "Bjorn",
-            "en": "Bjorn"
+            "en": "Bjorn",
+            "pt": "Bjorn",
+            "ru": "Bjorn"
           },
           "sprite": "images/chickens/51.png"
         },
@@ -13171,7 +18512,9 @@ window.WIKI_DATA = {
           "id": 127,
           "name": {
             "es": "Jamer",
-            "en": "Jamer"
+            "en": "Jamer",
+            "pt": "Jamer",
+            "ru": "Jamer"
           },
           "sprite": "images/chickens/127.png"
         },
@@ -13179,7 +18522,9 @@ window.WIKI_DATA = {
           "id": 138,
           "name": {
             "es": "Felicie",
-            "en": "Felicie"
+            "en": "Felicie",
+            "pt": "Felicie",
+            "ru": "Felicie"
           },
           "sprite": "images/chickens/138.png"
         },
@@ -13187,7 +18532,9 @@ window.WIKI_DATA = {
           "id": 147,
           "name": {
             "es": "Intiken",
-            "en": "Intiken"
+            "en": "Intiken",
+            "pt": "Intiken",
+            "ru": "Intiken"
           },
           "sprite": "images/chickens/147.png"
         }
@@ -13197,7 +18544,9 @@ window.WIKI_DATA = {
           "id": 4,
           "name": {
             "es": "Mali",
-            "en": "Mali"
+            "en": "Mali",
+            "pt": "Mali",
+            "ru": "Mali"
           },
           "sprite": "images/chickens/4.png"
         },
@@ -13205,7 +18554,9 @@ window.WIKI_DATA = {
           "id": 39,
           "name": {
             "es": "Cacho",
-            "en": "Cacho"
+            "en": "Cacho",
+            "pt": "Cacho",
+            "ru": "Cacho"
           },
           "sprite": "images/chickens/39.png"
         },
@@ -13213,7 +18564,9 @@ window.WIKI_DATA = {
           "id": 50,
           "name": {
             "es": "Rufus",
-            "en": "Rufus"
+            "en": "Rufus",
+            "pt": "Rufus",
+            "ru": "Rufus"
           },
           "sprite": "images/chickens/50.png"
         },
@@ -13221,7 +18574,9 @@ window.WIKI_DATA = {
           "id": 108,
           "name": {
             "es": "Plumillas",
-            "en": "Plumillas"
+            "en": "Plumillas",
+            "pt": "Plumillas",
+            "ru": "Plumillas"
           },
           "sprite": "images/chickens/108.png"
         }
@@ -13232,14 +18587,18 @@ window.WIKI_DATA = {
       "cost": 200,
       "description": {
         "es": "Se transforma en Evil Gatarlos",
-        "en": "Transform into Evil Gatarlos"
+        "en": "Transform into Evil Gatarlos",
+        "pt": "Transforma-se em Evil Gatarlos",
+        "ru": "Превращается в Evil Gatarlos"
       },
       "chickens": [
         {
           "id": 55,
           "name": {
             "es": "Gatarlos",
-            "en": "Gatarlos"
+            "en": "Gatarlos",
+            "pt": "Gatarlos",
+            "ru": "Gatarlos"
           },
           "sprite": "images/chickens/55.png"
         }
@@ -13251,14 +18610,18 @@ window.WIKI_DATA = {
       "cost": 150,
       "description": {
         "es": "Congela al objetivo",
-        "en": "Freeze the target"
+        "en": "Freeze the target",
+        "pt": "Congela o alvo",
+        "ru": "Замораживает цель"
       },
       "chickens": [
         {
           "id": 77,
           "name": {
             "es": "Menta",
-            "en": "Menta"
+            "en": "Menta",
+            "pt": "Menta",
+            "ru": "Menta"
           },
           "sprite": "images/chickens/77.png"
         },
@@ -13266,7 +18629,9 @@ window.WIKI_DATA = {
           "id": 142,
           "name": {
             "es": "Hium",
-            "en": "Hium"
+            "en": "Hium",
+            "pt": "Hium",
+            "ru": "Hium"
           },
           "sprite": "images/chickens/142.png"
         },
@@ -13274,7 +18639,9 @@ window.WIKI_DATA = {
           "id": 144,
           "name": {
             "es": "Gice",
-            "en": "Gice"
+            "en": "Gice",
+            "pt": "Gice",
+            "ru": "Gice"
           },
           "sprite": "images/chickens/144.png"
         },
@@ -13282,7 +18649,9 @@ window.WIKI_DATA = {
           "id": 149,
           "name": {
             "es": "Chimir",
-            "en": "Chimir"
+            "en": "Chimir",
+            "pt": "Chimir",
+            "ru": "Chimir"
           },
           "sprite": "images/chickens/149.png"
         }
@@ -13292,7 +18661,9 @@ window.WIKI_DATA = {
           "id": 14,
           "name": {
             "es": "Snow",
-            "en": "Snow"
+            "en": "Snow",
+            "pt": "Snow",
+            "ru": "Snow"
           },
           "sprite": "images/chickens/14.png"
         },
@@ -13300,7 +18671,9 @@ window.WIKI_DATA = {
           "id": 100,
           "name": {
             "es": "Cloudy",
-            "en": "Cloudy"
+            "en": "Cloudy",
+            "pt": "Cloudy",
+            "ru": "Cloudy"
           },
           "sprite": "images/chickens/100.png"
         },
@@ -13308,7 +18681,9 @@ window.WIKI_DATA = {
           "id": 104,
           "name": {
             "es": "Friozero",
-            "en": "Friozero"
+            "en": "Friozero",
+            "pt": "Friozero",
+            "ru": "Friozero"
           },
           "sprite": "images/chickens/104.png"
         },
@@ -13316,7 +18691,9 @@ window.WIKI_DATA = {
           "id": 105,
           "name": {
             "es": "Pengui",
-            "en": "Pengui"
+            "en": "Pengui",
+            "pt": "Pengui",
+            "ru": "Pengui"
           },
           "sprite": "images/chickens/105.png"
         },
@@ -13324,7 +18701,9 @@ window.WIKI_DATA = {
           "id": 145,
           "name": {
             "es": "Evelyn",
-            "en": "Evelyn"
+            "en": "Evelyn",
+            "pt": "Evelyn",
+            "ru": "Evelyn"
           },
           "sprite": "images/chickens/145.png"
         }
@@ -13335,14 +18714,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza una caca (envenena y -5% de velocidad)",
-        "en": "Throw a poop (poison and -5% speed)"
+        "en": "Throw a poop (poison and -5% speed)",
+        "pt": "Arremessa um cocô (veneno e -5% velocidade)",
+        "ru": "Бросает какашку (яд и -5% скорости)"
       },
       "chickens": [
         {
           "id": 58,
           "name": {
             "es": "Duncan",
-            "en": "Duncan"
+            "en": "Duncan",
+            "pt": "Duncan",
+            "ru": "Duncan"
           },
           "sprite": "images/chickens/58.png"
         }
@@ -13354,14 +18737,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Elimina los efectos del equipo",
-        "en": "Cleanup team effects"
+        "en": "Cleanup team effects",
+        "pt": "Limpa efeitos da equipe",
+        "ru": "Снимает эффекты с команды"
       },
       "chickens": [
         {
           "id": 63,
           "name": {
             "es": "Volcken",
-            "en": "Volcken"
+            "en": "Volcken",
+            "pt": "Volcken",
+            "ru": "Volcken"
           },
           "sprite": "images/chickens/63.png"
         },
@@ -13369,7 +18756,9 @@ window.WIKI_DATA = {
           "id": 79,
           "name": {
             "es": "Gota",
-            "en": "Gota"
+            "en": "Gota",
+            "pt": "Gota",
+            "ru": "Gota"
           },
           "sprite": "images/chickens/79.png"
         }
@@ -13379,7 +18768,9 @@ window.WIKI_DATA = {
           "id": 32,
           "name": {
             "es": "Toraishi",
-            "en": "Toraishi"
+            "en": "Toraishi",
+            "pt": "Toraishi",
+            "ru": "Toraishi"
           },
           "sprite": "images/chickens/32.png"
         },
@@ -13387,7 +18778,9 @@ window.WIKI_DATA = {
           "id": 78,
           "name": {
             "es": "Wicken",
-            "en": "Wicken"
+            "en": "Wicken",
+            "pt": "Wicken",
+            "ru": "Wicken"
           },
           "sprite": "images/chickens/78.png"
         },
@@ -13395,7 +18788,9 @@ window.WIKI_DATA = {
           "id": 84,
           "name": {
             "es": "Policus",
-            "en": "Policus"
+            "en": "Policus",
+            "pt": "Policus",
+            "ru": "Policus"
           },
           "sprite": "images/chickens/84.png"
         },
@@ -13403,7 +18798,9 @@ window.WIKI_DATA = {
           "id": 99,
           "name": {
             "es": "Toka",
-            "en": "Toka"
+            "en": "Toka",
+            "pt": "Toka",
+            "ru": "Toka"
           },
           "sprite": "images/chickens/99.png"
         },
@@ -13411,7 +18808,9 @@ window.WIKI_DATA = {
           "id": 126,
           "name": {
             "es": "Hueva",
-            "en": "Hueva"
+            "en": "Hueva",
+            "pt": "Hueva",
+            "ru": "Hueva"
           },
           "sprite": "images/chickens/126.png"
         },
@@ -13419,7 +18818,9 @@ window.WIKI_DATA = {
           "id": 131,
           "name": {
             "es": "Cori",
-            "en": "Cori"
+            "en": "Cori",
+            "pt": "Cori",
+            "ru": "Cori"
           },
           "sprite": "images/chickens/131.png"
         },
@@ -13427,7 +18828,9 @@ window.WIKI_DATA = {
           "id": 137,
           "name": {
             "es": "Elfen",
-            "en": "Elfen"
+            "en": "Elfen",
+            "pt": "Elfen",
+            "ru": "Elfen"
           },
           "sprite": "images/chickens/137.png"
         }
@@ -13438,7 +18841,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Se transforma en Gatarlos",
-        "en": "Transform into Gatarlos"
+        "en": "Transform into Gatarlos",
+        "pt": "Transforma-se em Gatarlos",
+        "ru": "Превращается в Gatarlos"
       },
       "chickens": [],
       "chickens_hidden": []
@@ -13448,14 +18853,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Se cura a sí mismo (20% de vida máxima), más daño (+5%) y reduce la velocidad (-5%)",
-        "en": "Heal himself (20% max life), more damage (+5%) and reduce speed (-5%)"
+        "en": "Heal himself (20% max life), more damage (+5%) and reduce speed (-5%)",
+        "pt": "Cura a si mesmo (20% vida máx), mais dano (+5%) e reduz velocidade (-5%)",
+        "ru": "Лечит себя (20% макс. здоровья), больше урона (+5%) и снижает скорость (-5%)"
       },
       "chickens": [
         {
           "id": 68,
           "name": {
             "es": "Cocore",
-            "en": "Cocore"
+            "en": "Cocore",
+            "pt": "Cocore",
+            "ru": "Cocore"
           },
           "sprite": "images/chickens/68.png"
         }
@@ -13465,7 +18874,9 @@ window.WIKI_DATA = {
           "id": 21,
           "name": {
             "es": "Jhona",
-            "en": "Jhona"
+            "en": "Jhona",
+            "pt": "Jhona",
+            "ru": "Jhona"
           },
           "sprite": "images/chickens/21.png"
         },
@@ -13473,7 +18884,9 @@ window.WIKI_DATA = {
           "id": 29,
           "name": {
             "es": "Iguanarto",
-            "en": "Iguanarto"
+            "en": "Iguanarto",
+            "pt": "Iguanarto",
+            "ru": "Iguanarto"
           },
           "sprite": "images/chickens/29.png"
         }
@@ -13484,14 +18897,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Obtiene una poción aleatoria",
-        "en": "Obtain a random potion"
+        "en": "Obtain a random potion",
+        "pt": "Obtém uma poção aleatória",
+        "ru": "Получает случайное зелье"
       },
       "chickens": [
         {
           "id": 73,
           "name": {
             "es": "Ventora",
-            "en": "Ventora"
+            "en": "Ventora",
+            "pt": "Ventora",
+            "ru": "Ventora"
           },
           "sprite": "images/chickens/73.png"
         }
@@ -13501,7 +18918,9 @@ window.WIKI_DATA = {
           "id": 75,
           "name": {
             "es": "Titiro",
-            "en": "Titiro"
+            "en": "Titiro",
+            "pt": "Titiro",
+            "ru": "Titiro"
           },
           "sprite": "images/chickens/75.png"
         },
@@ -13509,7 +18928,9 @@ window.WIKI_DATA = {
           "id": 119,
           "name": {
             "es": "Rhafa",
-            "en": "Rhafa"
+            "en": "Rhafa",
+            "pt": "Rhafa",
+            "ru": "Rhafa"
           },
           "sprite": "images/chickens/119.png"
         }
@@ -13520,7 +18941,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Silencia al objetivo",
-        "en": "Silence the target"
+        "en": "Silence the target",
+        "pt": "Silencia o alvo",
+        "ru": "Накладывает молчание на цель"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -13528,7 +18951,9 @@ window.WIKI_DATA = {
           "id": 82,
           "name": {
             "es": "Fingie",
-            "en": "Fingie"
+            "en": "Fingie",
+            "pt": "Fingie",
+            "ru": "Fingie"
           },
           "sprite": "images/chickens/82.png"
         }
@@ -13539,14 +18964,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Infecta al objetivo",
-        "en": "Infect the target"
+        "en": "Infect the target",
+        "pt": "Infecta o alvo",
+        "ru": "Заражает цель"
       },
       "chickens": [
         {
           "id": 82,
           "name": {
             "es": "Fingie",
-            "en": "Fingie"
+            "en": "Fingie",
+            "pt": "Fingie",
+            "ru": "Fingie"
           },
           "sprite": "images/chickens/82.png"
         },
@@ -13554,7 +18983,9 @@ window.WIKI_DATA = {
           "id": 88,
           "name": {
             "es": "Trinagle",
-            "en": "Trinagle"
+            "en": "Trinagle",
+            "pt": "Trinagle",
+            "ru": "Trinagle"
           },
           "sprite": "images/chickens/88.png"
         },
@@ -13562,7 +18993,9 @@ window.WIKI_DATA = {
           "id": 91,
           "name": {
             "es": "Darkus",
-            "en": "Darkus"
+            "en": "Darkus",
+            "pt": "Darkus",
+            "ru": "Darkus"
           },
           "sprite": "images/chickens/91.png"
         },
@@ -13570,7 +19003,9 @@ window.WIKI_DATA = {
           "id": 93,
           "name": {
             "es": "Drillen",
-            "en": "Drillen"
+            "en": "Drillen",
+            "pt": "Drillen",
+            "ru": "Drillen"
           },
           "sprite": "images/chickens/93.png"
         },
@@ -13578,7 +19013,9 @@ window.WIKI_DATA = {
           "id": 99,
           "name": {
             "es": "Toka",
-            "en": "Toka"
+            "en": "Toka",
+            "pt": "Toka",
+            "ru": "Toka"
           },
           "sprite": "images/chickens/99.png"
         },
@@ -13586,7 +19023,9 @@ window.WIKI_DATA = {
           "id": 130,
           "name": {
             "es": "Jacko",
-            "en": "Jacko"
+            "en": "Jacko",
+            "pt": "Jacko",
+            "ru": "Jacko"
           },
           "sprite": "images/chickens/130.png"
         }
@@ -13596,7 +19035,9 @@ window.WIKI_DATA = {
           "id": 6,
           "name": {
             "es": "Zombie",
-            "en": "Zombie"
+            "en": "Zombie",
+            "pt": "Zombie",
+            "ru": "Zombie"
           },
           "sprite": "images/chickens/6.png"
         },
@@ -13604,7 +19045,9 @@ window.WIKI_DATA = {
           "id": 62,
           "name": {
             "es": "Miedo",
-            "en": "Miedo"
+            "en": "Miedo",
+            "pt": "Miedo",
+            "ru": "Miedo"
           },
           "sprite": "images/chickens/62.png"
         },
@@ -13612,7 +19055,9 @@ window.WIKI_DATA = {
           "id": 80,
           "name": {
             "es": "Mucken",
-            "en": "Mucken"
+            "en": "Mucken",
+            "pt": "Mucken",
+            "ru": "Mucken"
           },
           "sprite": "images/chickens/80.png"
         },
@@ -13620,7 +19065,9 @@ window.WIKI_DATA = {
           "id": 141,
           "name": {
             "es": "Toxic",
-            "en": "Toxic"
+            "en": "Toxic",
+            "pt": "Toxic",
+            "ru": "Toxic"
           },
           "sprite": "images/chickens/141.png"
         }
@@ -13631,14 +19078,18 @@ window.WIKI_DATA = {
       "cost": 200,
       "description": {
         "es": "Obtiene revivir",
-        "en": "Get revive"
+        "en": "Get revive",
+        "pt": "Ganha reviver",
+        "ru": "Получает возрождение"
       },
       "chickens": [
         {
           "id": 86,
           "name": {
             "es": "Yuntan",
-            "en": "Yuntan"
+            "en": "Yuntan",
+            "pt": "Yuntan",
+            "ru": "Yuntan"
           },
           "sprite": "images/chickens/86.png"
         },
@@ -13646,7 +19097,9 @@ window.WIKI_DATA = {
           "id": 110,
           "name": {
             "es": "Springy",
-            "en": "Springy"
+            "en": "Springy",
+            "pt": "Springy",
+            "ru": "Springy"
           },
           "sprite": "images/chickens/110.png"
         }
@@ -13656,7 +19109,9 @@ window.WIKI_DATA = {
           "id": 34,
           "name": {
             "es": "Phantom",
-            "en": "Phantom"
+            "en": "Phantom",
+            "pt": "Phantom",
+            "ru": "Phantom"
           },
           "sprite": "images/chickens/34.png"
         },
@@ -13664,7 +19119,9 @@ window.WIKI_DATA = {
           "id": 48,
           "name": {
             "es": "Leci",
-            "en": "Leci"
+            "en": "Leci",
+            "pt": "Leci",
+            "ru": "Leci"
           },
           "sprite": "images/chickens/48.png"
         },
@@ -13672,7 +19129,9 @@ window.WIKI_DATA = {
           "id": 51,
           "name": {
             "es": "Bjorn",
-            "en": "Bjorn"
+            "en": "Bjorn",
+            "pt": "Bjorn",
+            "ru": "Bjorn"
           },
           "sprite": "images/chickens/51.png"
         },
@@ -13680,7 +19139,9 @@ window.WIKI_DATA = {
           "id": 64,
           "name": {
             "es": "Nama",
-            "en": "Nama"
+            "en": "Nama",
+            "pt": "Nama",
+            "ru": "Nama"
           },
           "sprite": "images/chickens/64.png"
         },
@@ -13688,7 +19149,9 @@ window.WIKI_DATA = {
           "id": 101,
           "name": {
             "es": "Drago",
-            "en": "Drago"
+            "en": "Drago",
+            "pt": "Drago",
+            "ru": "Drago"
           },
           "sprite": "images/chickens/101.png"
         },
@@ -13696,7 +19159,9 @@ window.WIKI_DATA = {
           "id": 112,
           "name": {
             "es": "Law",
-            "en": "Law"
+            "en": "Law",
+            "pt": "Law",
+            "ru": "Law"
           },
           "sprite": "images/chickens/112.png"
         },
@@ -13704,7 +19169,9 @@ window.WIKI_DATA = {
           "id": 117,
           "name": {
             "es": "Monstruollo",
-            "en": "Monstruollo"
+            "en": "Monstruollo",
+            "pt": "Monstruollo",
+            "ru": "Monstruollo"
           },
           "sprite": "images/chickens/117.png"
         },
@@ -13712,7 +19179,9 @@ window.WIKI_DATA = {
           "id": 140,
           "name": {
             "es": "Skull",
-            "en": "Skull"
+            "en": "Skull",
+            "pt": "Skull",
+            "ru": "Skull"
           },
           "sprite": "images/chickens/140.png"
         }
@@ -13723,14 +19192,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Explota. Todos los pollos reciben daño (25% de su vida máxima)",
-        "en": "Explodes. Hurt all chickens (25% max life)"
+        "en": "Explodes. Hurt all chickens (25% max life)",
+        "pt": "Explode. Machuca todos os frangos (25% vida máx)",
+        "ru": "Взрывается. Ранит всех куриц (25% макс. здоровья)"
       },
       "chickens": [
         {
           "id": 90,
           "name": {
             "es": "Ploom",
-            "en": "Ploom"
+            "en": "Ploom",
+            "pt": "Ploom",
+            "ru": "Ploom"
           },
           "sprite": "images/chickens/90.png"
         },
@@ -13738,7 +19211,9 @@ window.WIKI_DATA = {
           "id": 107,
           "name": {
             "es": "Derp",
-            "en": "Derp"
+            "en": "Derp",
+            "pt": "Derp",
+            "ru": "Derp"
           },
           "sprite": "images/chickens/107.png"
         }
@@ -13748,7 +19223,9 @@ window.WIKI_DATA = {
           "id": 17,
           "name": {
             "es": "Raro",
-            "en": "Raro"
+            "en": "Raro",
+            "pt": "Raro",
+            "ru": "Raro"
           },
           "sprite": "images/chickens/17.png"
         },
@@ -13756,7 +19233,9 @@ window.WIKI_DATA = {
           "id": 45,
           "name": {
             "es": "Vulcano",
-            "en": "Vulcano"
+            "en": "Vulcano",
+            "pt": "Vulcano",
+            "ru": "Vulcano"
           },
           "sprite": "images/chickens/45.png"
         },
@@ -13764,7 +19243,9 @@ window.WIKI_DATA = {
           "id": 65,
           "name": {
             "es": "Vapollo",
-            "en": "Vapollo"
+            "en": "Vapollo",
+            "pt": "Vapollo",
+            "ru": "Vapollo"
           },
           "sprite": "images/chickens/65.png"
         },
@@ -13772,7 +19253,9 @@ window.WIKI_DATA = {
           "id": 87,
           "name": {
             "es": "Plass",
-            "en": "Plass"
+            "en": "Plass",
+            "pt": "Plass",
+            "ru": "Plass"
           },
           "sprite": "images/chickens/87.png"
         }
@@ -13783,14 +19266,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un huevo helado (100% de daño y congela)",
-        "en": "Throw a frozen egg (100% damage and freeze)"
+        "en": "Throw a frozen egg (100% damage and freeze)",
+        "pt": "Arremessa um ovo congelado (100% dano e congela)",
+        "ru": "Бросает ледяное яйцо (100% урона и заморозка)"
       },
       "chickens": [
         {
           "id": 100,
           "name": {
             "es": "Cloudy",
-            "en": "Cloudy"
+            "en": "Cloudy",
+            "pt": "Cloudy",
+            "ru": "Cloudy"
           },
           "sprite": "images/chickens/100.png"
         },
@@ -13798,7 +19285,9 @@ window.WIKI_DATA = {
           "id": 101,
           "name": {
             "es": "Drago",
-            "en": "Drago"
+            "en": "Drago",
+            "pt": "Drago",
+            "ru": "Drago"
           },
           "sprite": "images/chickens/101.png"
         },
@@ -13806,7 +19295,9 @@ window.WIKI_DATA = {
           "id": 103,
           "name": {
             "es": "Grey",
-            "en": "Grey"
+            "en": "Grey",
+            "pt": "Grey",
+            "ru": "Grey"
           },
           "sprite": "images/chickens/103.png"
         },
@@ -13814,7 +19305,9 @@ window.WIKI_DATA = {
           "id": 104,
           "name": {
             "es": "Friozero",
-            "en": "Friozero"
+            "en": "Friozero",
+            "pt": "Friozero",
+            "ru": "Friozero"
           },
           "sprite": "images/chickens/104.png"
         },
@@ -13822,7 +19315,9 @@ window.WIKI_DATA = {
           "id": 105,
           "name": {
             "es": "Pengui",
-            "en": "Pengui"
+            "en": "Pengui",
+            "pt": "Pengui",
+            "ru": "Pengui"
           },
           "sprite": "images/chickens/105.png"
         },
@@ -13830,7 +19325,9 @@ window.WIKI_DATA = {
           "id": 106,
           "name": {
             "es": "Snick",
-            "en": "Snick"
+            "en": "Snick",
+            "pt": "Snick",
+            "ru": "Snick"
           },
           "sprite": "images/chickens/106.png"
         }
@@ -13842,7 +19339,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Revive como Zombie",
-        "en": "Revive as Zombie"
+        "en": "Revive as Zombie",
+        "pt": "Revive como Zumbi",
+        "ru": "Возрождается как Зомби"
       },
       "chickens": [],
       "chickens_hidden": []
@@ -13852,7 +19351,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Revive como Mali",
-        "en": "Revive as Mali"
+        "en": "Revive as Mali",
+        "pt": "Revive como Mali",
+        "ru": "Возрождается как Mali"
       },
       "chickens": [],
       "chickens_hidden": []
@@ -13862,14 +19363,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza una estrella (100% de daño y restablece el poder del objetivo)",
-        "en": "Throw a star (100% damage and reset target power)"
+        "en": "Throw a star (100% damage and reset target power)",
+        "pt": "Lance uma estrela (100% de dano e redefine o poder do alvo)",
+        "ru": "Бросьте звезду (100% урона и сбросьте силу цели)"
       },
       "chickens": [
         {
           "id": 133,
           "name": {
             "es": "Astro",
-            "en": "Astro"
+            "en": "Astro",
+            "pt": "Astro",
+            "ru": "Astro"
           },
           "sprite": "images/chickens/133.png"
         },
@@ -13877,7 +19382,9 @@ window.WIKI_DATA = {
           "id": 139,
           "name": {
             "es": "Star",
-            "en": "Star"
+            "en": "Star",
+            "pt": "Star",
+            "ru": "Star"
           },
           "sprite": "images/chickens/139.png"
         }
@@ -13887,7 +19394,9 @@ window.WIKI_DATA = {
           "id": 28,
           "name": {
             "es": "Alien",
-            "en": "Alien"
+            "en": "Alien",
+            "pt": "Alien",
+            "ru": "Alien"
           },
           "sprite": "images/chickens/28.png"
         }
@@ -13898,14 +19407,18 @@ window.WIKI_DATA = {
       "cost": 120,
       "description": {
         "es": "Transforma en Mechalex",
-        "en": "Transform into Mechalex"
+        "en": "Transform into Mechalex",
+        "pt": "Transforma-se em Mechalex",
+        "ru": "Превращается в Mechalex"
       },
       "chickens": [
         {
           "id": 134,
           "name": {
             "es": "Eggalex",
-            "en": "Eggalex"
+            "en": "Eggalex",
+            "pt": "Eggalex",
+            "ru": "Eggalex"
           },
           "sprite": "images/chickens/134.png"
         }
@@ -13917,14 +19430,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Transforma en Eggalex",
-        "en": "Transform into Eggalex"
+        "en": "Transform into Eggalex",
+        "pt": "Transforma-se em Eggalex",
+        "ru": "Превращается в Eggalex"
       },
       "chickens": [
         {
           "id": 135,
           "name": {
             "es": "Mechalex",
-            "en": "Mechalex"
+            "en": "Mechalex",
+            "pt": "Mechalex",
+            "ru": "Mechalex"
           },
           "sprite": "images/chickens/135.png"
         }
@@ -13936,14 +19453,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un búmeran (100% daño y agrega dos turnos de efectos al objetivo)",
-        "en": "Throws a boomerang (100% damage and adds two turns of effects to the target)"
+        "en": "Throws a boomerang (100% damage and adds two turns of effects to the target)",
+        "pt": "Lança um bumerangue (100% de dano e adiciona dois turnos de efeitos ao alvo)",
+        "ru": "Бросает бумеранг (100% урона и добавляет два хода эффектов к цели)"
       },
       "chickens": [
         {
           "id": 136,
           "name": {
             "es": "Mayel",
-            "en": "Mayel"
+            "en": "Mayel",
+            "pt": "Mayel",
+            "ru": "Mayel"
           },
           "sprite": "images/chickens/136.png"
         }
@@ -13953,7 +19474,9 @@ window.WIKI_DATA = {
           "id": 90,
           "name": {
             "es": "Ploom",
-            "en": "Ploom"
+            "en": "Ploom",
+            "pt": "Ploom",
+            "ru": "Ploom"
           },
           "sprite": "images/chickens/90.png"
         }
@@ -13964,14 +19487,18 @@ window.WIKI_DATA = {
       "cost": 150,
       "description": {
         "es": "Lanza un helado (20% de daño) a cada enemigo y congela",
-        "en": "Throws ice cream (20% damage) at all enemies and freezes"
+        "en": "Throws ice cream (20% damage) at all enemies and freezes",
+        "pt": "Lança um sorvete (20% de dano) em todos os inimigos e congela",
+        "ru": "Бросает мороженое (20% урона) во всех врагов и замораживает"
       },
       "chickens": [
         {
           "id": 145,
           "name": {
             "es": "Evelyn",
-            "en": "Evelyn"
+            "en": "Evelyn",
+            "pt": "Evelyn",
+            "ru": "Evelyn"
           },
           "sprite": "images/chickens/145.png"
         }
@@ -13981,7 +19508,9 @@ window.WIKI_DATA = {
           "id": 77,
           "name": {
             "es": "Menta",
-            "en": "Menta"
+            "en": "Menta",
+            "pt": "Menta",
+            "ru": "Menta"
           },
           "sprite": "images/chickens/77.png"
         },
@@ -13989,7 +19518,9 @@ window.WIKI_DATA = {
           "id": 106,
           "name": {
             "es": "Snick",
-            "en": "Snick"
+            "en": "Snick",
+            "pt": "Snick",
+            "ru": "Snick"
           },
           "sprite": "images/chickens/106.png"
         },
@@ -13997,7 +19528,9 @@ window.WIKI_DATA = {
           "id": 142,
           "name": {
             "es": "Hium",
-            "en": "Hium"
+            "en": "Hium",
+            "pt": "Hium",
+            "ru": "Hium"
           },
           "sprite": "images/chickens/142.png"
         },
@@ -14005,7 +19538,9 @@ window.WIKI_DATA = {
           "id": 144,
           "name": {
             "es": "Gice",
-            "en": "Gice"
+            "en": "Gice",
+            "pt": "Gice",
+            "ru": "Gice"
           },
           "sprite": "images/chickens/144.png"
         },
@@ -14013,7 +19548,9 @@ window.WIKI_DATA = {
           "id": 149,
           "name": {
             "es": "Chimir",
-            "en": "Chimir"
+            "en": "Chimir",
+            "pt": "Chimir",
+            "ru": "Chimir"
           },
           "sprite": "images/chickens/149.png"
         }
@@ -14024,14 +19561,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Cura al equipo (50% del poder)",
-        "en": "Heals the team (50% of power)"
+        "en": "Heals the team (50% of power)",
+        "pt": "Cura a equipe (50% do poder)",
+        "ru": "Лечит команду (50% силы)"
       },
       "chickens": [
         {
           "id": 150,
           "name": {
             "es": "Garra",
-            "en": "Garra"
+            "en": "Garra",
+            "pt": "Garra",
+            "ru": "Garra"
           },
           "sprite": "images/chickens/150.png"
         }
@@ -14041,7 +19582,9 @@ window.WIKI_DATA = {
           "id": 16,
           "name": {
             "es": "Gallo",
-            "en": "Gallo"
+            "en": "Gallo",
+            "pt": "Gallo",
+            "ru": "Gallo"
           },
           "sprite": "images/chickens/16.png"
         },
@@ -14049,7 +19592,9 @@ window.WIKI_DATA = {
           "id": 71,
           "name": {
             "es": "Nube",
-            "en": "Nube"
+            "en": "Nube",
+            "pt": "Nube",
+            "ru": "Nube"
           },
           "sprite": "images/chickens/71.png"
         },
@@ -14057,7 +19602,9 @@ window.WIKI_DATA = {
           "id": 74,
           "name": {
             "es": "Aery",
-            "en": "Aery"
+            "en": "Aery",
+            "pt": "Aery",
+            "ru": "Aery"
           },
           "sprite": "images/chickens/74.png"
         }
@@ -14068,14 +19615,18 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+13%)",
-        "en": "Grants 1 evasion to the team and increases team damage (+13%)"
+        "en": "Grants 1 evasion to the team and increases team damage (+13%)",
+        "pt": "Concede 1 ponto de evasão à equipe e aumenta o dano da equipe (+13%)",
+        "ru": "Дает 1 очко уклонения команде и увеличивает урон команды (+13%)"
       },
       "chickens": [
         {
           "id": 56,
           "name": {
             "es": "Evil Gatarlos",
-            "en": "Evil Gatarlos"
+            "en": "Evil Gatarlos",
+            "pt": "Evil Gatarlos",
+            "ru": "Evil Gatarlos"
           },
           "sprite": "images/chickens/56.png"
         }
@@ -14085,7 +19636,9 @@ window.WIKI_DATA = {
           "id": 12,
           "name": {
             "es": "Polliro",
-            "en": "Polliro"
+            "en": "Polliro",
+            "pt": "Polliro",
+            "ru": "Polliro"
           },
           "sprite": "images/chickens/12.png"
         },
@@ -14093,7 +19646,9 @@ window.WIKI_DATA = {
           "id": 31,
           "name": {
             "es": "Poggie",
-            "en": "Poggie"
+            "en": "Poggie",
+            "pt": "Poggie",
+            "ru": "Poggie"
           },
           "sprite": "images/chickens/31.png"
         },
@@ -14101,7 +19656,9 @@ window.WIKI_DATA = {
           "id": 58,
           "name": {
             "es": "Duncan",
-            "en": "Duncan"
+            "en": "Duncan",
+            "pt": "Duncan",
+            "ru": "Duncan"
           },
           "sprite": "images/chickens/58.png"
         },
@@ -14109,7 +19666,9 @@ window.WIKI_DATA = {
           "id": 72,
           "name": {
             "es": "Gallimbus",
-            "en": "Gallimbus"
+            "en": "Gallimbus",
+            "pt": "Gallimbus",
+            "ru": "Gallimbus"
           },
           "sprite": "images/chickens/72.png"
         }
@@ -14120,7 +19679,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Otorga +5% daño a un aliado y limpia sus efectos",
-        "en": "Grant 5% damage to an ally and clean their effects"
+        "en": "Grant 5% damage to an ally and clean their effects",
+        "pt": "Concede +5% dano a um aliado e limpa seus efeitos",
+        "ru": "Дает +5% урона союзнику и снимает его эффекты"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14128,7 +19689,9 @@ window.WIKI_DATA = {
           "id": 67,
           "name": {
             "es": "Pollulu",
-            "en": "Pollulu"
+            "en": "Pollulu",
+            "pt": "Pollulu",
+            "ru": "Pollulu"
           },
           "sprite": "images/chickens/67.png"
         },
@@ -14136,7 +19699,9 @@ window.WIKI_DATA = {
           "id": 83,
           "name": {
             "es": "Corny",
-            "en": "Corny"
+            "en": "Corny",
+            "pt": "Corny",
+            "ru": "Corny"
           },
           "sprite": "images/chickens/83.png"
         }
@@ -14147,7 +19712,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Ataque con 100% de daño; si el objetivo tiene efectos, los limpia y se cura (20% daño)",
-        "en": "Attack for 100% damage; if target has effects, cleans them and heals (20% damage)"
+        "en": "Attack for 100% damage; if target has effects, cleans them and heals (20% damage)",
+        "pt": "Ataque com 100% de dano; se o alvo tiver efeitos, limpa-os e cura (20% dano)",
+        "ru": "Атака на 100% урона; если у цели есть эффекты, снимает их и лечится (20% урона)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14155,7 +19722,9 @@ window.WIKI_DATA = {
           "id": 36,
           "name": {
             "es": "Valu",
-            "en": "Valu"
+            "en": "Valu",
+            "pt": "Valu",
+            "ru": "Valu"
           },
           "sprite": "images/chickens/36.png"
         },
@@ -14163,7 +19732,9 @@ window.WIKI_DATA = {
           "id": 79,
           "name": {
             "es": "Gota",
-            "en": "Gota"
+            "en": "Gota",
+            "pt": "Gota",
+            "ru": "Gota"
           },
           "sprite": "images/chickens/79.png"
         }
@@ -14174,7 +19745,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Obtiene focus, +3% armadura y se cura (10% vida máxima)",
-        "en": "Gain focus, +3% armor, and heal himself (10% max life)"
+        "en": "Gain focus, +3% armor, and heal himself (10% max life)",
+        "pt": "Ganha foco, +3% armadura e cura a si mesmo (10% vida máx)",
+        "ru": "Получает фокус, +3% брони и лечит себя (10% макс. жизни)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14182,7 +19755,9 @@ window.WIKI_DATA = {
           "id": 68,
           "name": {
             "es": "Cocore",
-            "en": "Cocore"
+            "en": "Cocore",
+            "pt": "Cocore",
+            "ru": "Cocore"
           },
           "sprite": "images/chickens/68.png"
         },
@@ -14190,7 +19765,9 @@ window.WIKI_DATA = {
           "id": 98,
           "name": {
             "es": "Crystal",
-            "en": "Crystal"
+            "en": "Crystal",
+            "pt": "Crystal",
+            "ru": "Crystal"
           },
           "sprite": "images/chickens/98.png"
         },
@@ -14198,7 +19775,9 @@ window.WIKI_DATA = {
           "id": 115,
           "name": {
             "es": "Cow",
-            "en": "Cow"
+            "en": "Cow",
+            "pt": "Cow",
+            "ru": "Cow"
           },
           "sprite": "images/chickens/115.png"
         }
@@ -14209,7 +19788,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Aumenta la velocidad (+7%) y el daño (+7%)",
-        "en": "Increase speed (+7%) and damage (+7%)"
+        "en": "Increase speed (+7%) and damage (+7%)",
+        "pt": "Aumenta a velocidade (+7%) e o dano (+7%)",
+        "ru": "Увеличивает скорость (+7%) и урон (+7%)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14217,7 +19798,9 @@ window.WIKI_DATA = {
           "id": 5,
           "name": {
             "es": "Cay",
-            "en": "Cay"
+            "en": "Cay",
+            "pt": "Cay",
+            "ru": "Cay"
           },
           "sprite": "images/chickens/5.png"
         },
@@ -14225,7 +19808,9 @@ window.WIKI_DATA = {
           "id": 20,
           "name": {
             "es": "Zeo",
-            "en": "Zeo"
+            "en": "Zeo",
+            "pt": "Zeo",
+            "ru": "Zeo"
           },
           "sprite": "images/chickens/20.png"
         },
@@ -14233,7 +19818,9 @@ window.WIKI_DATA = {
           "id": 24,
           "name": {
             "es": "Lapiz",
-            "en": "Lapiz"
+            "en": "Lapiz",
+            "pt": "Lapiz",
+            "ru": "Lapiz"
           },
           "sprite": "images/chickens/24.png"
         },
@@ -14241,7 +19828,9 @@ window.WIKI_DATA = {
           "id": 26,
           "name": {
             "es": "Jeff",
-            "en": "Jeff"
+            "en": "Jeff",
+            "pt": "Jeff",
+            "ru": "Jeff"
           },
           "sprite": "images/chickens/26.png"
         },
@@ -14249,7 +19838,9 @@ window.WIKI_DATA = {
           "id": 49,
           "name": {
             "es": "Cerol",
-            "en": "Cerol"
+            "en": "Cerol",
+            "pt": "Cerol",
+            "ru": "Cerol"
           },
           "sprite": "images/chickens/49.png"
         },
@@ -14257,7 +19848,9 @@ window.WIKI_DATA = {
           "id": 118,
           "name": {
             "es": "Nave",
-            "en": "Nave"
+            "en": "Nave",
+            "pt": "Nave",
+            "ru": "Nave"
           },
           "sprite": "images/chickens/118.png"
         },
@@ -14265,7 +19858,9 @@ window.WIKI_DATA = {
           "id": 127,
           "name": {
             "es": "Jamer",
-            "en": "Jamer"
+            "en": "Jamer",
+            "pt": "Jamer",
+            "ru": "Jamer"
           },
           "sprite": "images/chickens/127.png"
         }
@@ -14276,7 +19871,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Lanza un huevo ígneo (100% daño, quemadura y -3% armadura)",
-        "en": "Throw a fire egg (100% damage, burn, -3% armor)"
+        "en": "Throw a fire egg (100% damage, burn, -3% armor)",
+        "pt": "Lança um ovo ígneo (100% dano, queimadura e -3% armadura)",
+        "ru": "Бросает огненное яйцо (100% урона, ожог и -3% брони)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14284,7 +19881,9 @@ window.WIKI_DATA = {
           "id": 41,
           "name": {
             "es": "Magni",
-            "en": "Magni"
+            "en": "Magni",
+            "pt": "Magni",
+            "ru": "Magni"
           },
           "sprite": "images/chickens/41.png"
         },
@@ -14292,7 +19891,9 @@ window.WIKI_DATA = {
           "id": 63,
           "name": {
             "es": "Volcken",
-            "en": "Volcken"
+            "en": "Volcken",
+            "pt": "Volcken",
+            "ru": "Volcken"
           },
           "sprite": "images/chickens/63.png"
         },
@@ -14300,7 +19901,9 @@ window.WIKI_DATA = {
           "id": 69,
           "name": {
             "es": "Pinzon",
-            "en": "Pinzon"
+            "en": "Pinzon",
+            "pt": "Pinzon",
+            "ru": "Pinzon"
           },
           "sprite": "images/chickens/69.png"
         },
@@ -14308,7 +19911,9 @@ window.WIKI_DATA = {
           "id": 70,
           "name": {
             "es": "Galligno",
-            "en": "Galligno"
+            "en": "Galligno",
+            "pt": "Galligno",
+            "ru": "Galligno"
           },
           "sprite": "images/chickens/70.png"
         },
@@ -14316,7 +19921,9 @@ window.WIKI_DATA = {
           "id": 143,
           "name": {
             "es": "Blade",
-            "en": "Blade"
+            "en": "Blade",
+            "pt": "Blade",
+            "ru": "Blade"
           },
           "sprite": "images/chickens/143.png"
         },
@@ -14324,7 +19931,9 @@ window.WIKI_DATA = {
           "id": 147,
           "name": {
             "es": "Intiken",
-            "en": "Intiken"
+            "en": "Intiken",
+            "pt": "Intiken",
+            "ru": "Intiken"
           },
           "sprite": "images/chickens/147.png"
         }
@@ -14335,7 +19944,9 @@ window.WIKI_DATA = {
       "cost": 120,
       "description": {
         "es": "Roba 15% de vida máxima del objetivo",
-        "en": "Steal 15% max life from target"
+        "en": "Steal 15% max life from target",
+        "pt": "Rouba 15% de vida máxima do alvo",
+        "ru": "Крадет 15% макс. жизни у цели"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14343,7 +19954,9 @@ window.WIKI_DATA = {
           "id": 23,
           "name": {
             "es": "Porky",
-            "en": "Porky"
+            "en": "Porky",
+            "pt": "Porky",
+            "ru": "Porky"
           },
           "sprite": "images/chickens/23.png"
         },
@@ -14351,7 +19964,9 @@ window.WIKI_DATA = {
           "id": 33,
           "name": {
             "es": "Nevermore",
-            "en": "Nevermore"
+            "en": "Nevermore",
+            "pt": "Nevermore",
+            "ru": "Nevermore"
           },
           "sprite": "images/chickens/33.png"
         },
@@ -14359,7 +19974,9 @@ window.WIKI_DATA = {
           "id": 86,
           "name": {
             "es": "Yuntan",
-            "en": "Yuntan"
+            "en": "Yuntan",
+            "pt": "Yuntan",
+            "ru": "Yuntan"
           },
           "sprite": "images/chickens/86.png"
         },
@@ -14367,7 +19984,9 @@ window.WIKI_DATA = {
           "id": 109,
           "name": {
             "es": "Max",
-            "en": "Max"
+            "en": "Max",
+            "pt": "Max",
+            "ru": "Max"
           },
           "sprite": "images/chickens/109.png"
         },
@@ -14375,7 +19994,9 @@ window.WIKI_DATA = {
           "id": 138,
           "name": {
             "es": "Felicie",
-            "en": "Felicie"
+            "en": "Felicie",
+            "pt": "Felicie",
+            "ru": "Felicie"
           },
           "sprite": "images/chickens/138.png"
         },
@@ -14383,7 +20004,9 @@ window.WIKI_DATA = {
           "id": 146,
           "name": {
             "es": "Sinestrer",
-            "en": "Sinestrer"
+            "en": "Sinestrer",
+            "pt": "Sinestrer",
+            "ru": "Sinestrer"
           },
           "sprite": "images/chickens/146.png"
         }
@@ -14394,7 +20017,9 @@ window.WIKI_DATA = {
       "cost": 110,
       "description": {
         "es": "Lanza un huevo eléctrico (100% daño, paraliza y +15 poder a aliados)",
-        "en": "Throw an electric egg (100% damage, paralyze, +15 power to allies)"
+        "en": "Throw an electric egg (100% damage, paralyze, +15 power to allies)",
+        "pt": "Lança um ovo elétrico (100% dano, paralisa e +15 poder a aliados)",
+        "ru": "Бросает электрическое яйцо (100% урона, паралич и +15 силы союзникам)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14402,7 +20027,9 @@ window.WIKI_DATA = {
           "id": 18,
           "name": {
             "es": "Polliwatt",
-            "en": "Polliwatt"
+            "en": "Polliwatt",
+            "pt": "Polliwatt",
+            "ru": "Polliwatt"
           },
           "sprite": "images/chickens/18.png"
         },
@@ -14410,7 +20037,9 @@ window.WIKI_DATA = {
           "id": 59,
           "name": {
             "es": "Siul",
-            "en": "Siul"
+            "en": "Siul",
+            "pt": "Siul",
+            "ru": "Siul"
           },
           "sprite": "images/chickens/59.png"
         },
@@ -14418,7 +20047,9 @@ window.WIKI_DATA = {
           "id": 116,
           "name": {
             "es": "Electron",
-            "en": "Electron"
+            "en": "Electron",
+            "pt": "Electron",
+            "ru": "Electron"
           },
           "sprite": "images/chickens/116.png"
         },
@@ -14426,7 +20057,9 @@ window.WIKI_DATA = {
           "id": 128,
           "name": {
             "es": "Jeraz",
-            "en": "Jeraz"
+            "en": "Jeraz",
+            "pt": "Jeraz",
+            "ru": "Jeraz"
           },
           "sprite": "images/chickens/128.png"
         },
@@ -14434,7 +20067,9 @@ window.WIKI_DATA = {
           "id": 129,
           "name": {
             "es": "Cyborg",
-            "en": "Cyborg"
+            "en": "Cyborg",
+            "pt": "Cyborg",
+            "ru": "Cyborg"
           },
           "sprite": "images/chickens/129.png"
         }
@@ -14445,7 +20080,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Absorbe los efectos del objetivo, limpiándolo y ganando +4% en cada stat",
-        "en": "Absorb target effects to clean them and gain +4% to all stats"
+        "en": "Absorb target effects to clean them and gain +4% to all stats",
+        "pt": "Absorve os efeitos do alvo, limpando-o e ganhando +4% em cada atributo",
+        "ru": "Поглощает эффекты цели, очищая ее и получая +4% ко всем статам"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14453,7 +20090,9 @@ window.WIKI_DATA = {
           "id": 73,
           "name": {
             "es": "Ventora",
-            "en": "Ventora"
+            "en": "Ventora",
+            "pt": "Ventora",
+            "ru": "Ventora"
           },
           "sprite": "images/chickens/73.png"
         },
@@ -14461,7 +20100,9 @@ window.WIKI_DATA = {
           "id": 88,
           "name": {
             "es": "Trinagle",
-            "en": "Trinagle"
+            "en": "Trinagle",
+            "pt": "Trinagle",
+            "ru": "Trinagle"
           },
           "sprite": "images/chickens/88.png"
         },
@@ -14469,7 +20110,9 @@ window.WIKI_DATA = {
           "id": 94,
           "name": {
             "es": "Estepi",
-            "en": "Estepi"
+            "en": "Estepi",
+            "pt": "Estepi",
+            "ru": "Estepi"
           },
           "sprite": "images/chickens/94.png"
         }
@@ -14480,7 +20123,9 @@ window.WIKI_DATA = {
       "cost": 100,
       "description": {
         "es": "Reduce el límite de poder máximo del equipo en 10 (mínimo 60)",
-        "en": "Reduce team power limit by 10 (min 60)"
+        "en": "Reduce team power limit by 10 (min 60)",
+        "pt": "Reduz o limite de poder máximo da equipe em 10 (mínimo 60)",
+        "ru": "Снижает макс. лимит энергии команды на 10 (минимум 60)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -14488,7 +20133,9 @@ window.WIKI_DATA = {
           "id": 15,
           "name": {
             "es": "Eustavio",
-            "en": "Eustavio"
+            "en": "Eustavio",
+            "pt": "Eustavio",
+            "ru": "Eustavio"
           },
           "sprite": "images/chickens/15.png"
         },
@@ -14496,7 +20143,9 @@ window.WIKI_DATA = {
           "id": 132,
           "name": {
             "es": "Pipasol",
-            "en": "Pipasol"
+            "en": "Pipasol",
+            "pt": "Pipasol",
+            "ru": "Pipasol"
           },
           "sprite": "images/chickens/132.png"
         },
@@ -14504,7 +20153,9 @@ window.WIKI_DATA = {
           "id": 133,
           "name": {
             "es": "Astro",
-            "en": "Astro"
+            "en": "Astro",
+            "pt": "Astro",
+            "ru": "Astro"
           },
           "sprite": "images/chickens/133.png"
         },
@@ -14512,7 +20163,9 @@ window.WIKI_DATA = {
           "id": 139,
           "name": {
             "es": "Star",
-            "en": "Star"
+            "en": "Star",
+            "pt": "Star",
+            "ru": "Star"
           },
           "sprite": "images/chickens/139.png"
         }
@@ -14523,58 +20176,114 @@ window.WIKI_DATA = {
     {
       "id": 0,
       "color": "#a855f7",
-      "name_es": "Veneno",
-      "name_en": "Poison",
-      "desc_es": "Pierde vida (10% vida máxima) al empezar una acción",
-      "desc_en": "Lose life (10% max life) when start a action"
+      "name": {
+        "es": "Veneno",
+        "en": "Poison",
+        "pt": "Veneno",
+        "ru": "Яд"
+      },
+      "description": {
+        "es": "Pierde vida (10% vida máxima) al empezar una acción",
+        "en": "Lose life (10% max life) when start a action",
+        "pt": "Perde vida (10% vida máx) ao iniciar uma ação",
+        "ru": "Теряет здоровье (10% макс.) при начале действия"
+      }
     },
     {
       "id": 1,
       "color": "#ef4444",
-      "name_es": "Quemadura",
-      "name_en": "Burn",
-      "desc_es": "Pierde vida (5% del daño) al atacar o ser atacado",
-      "desc_en": "Lose life (5% damage) when attacking or being attacked"
+      "name": {
+        "es": "Quemadura",
+        "en": "Burn",
+        "pt": "Queimadura",
+        "ru": "Ожог"
+      },
+      "description": {
+        "es": "Pierde vida (5% del daño) al atacar o ser atacado",
+        "en": "Lose life (5% damage) when attacking or being attacked",
+        "pt": "Perde vida (5% do dano) ao atacar ou ser atacado",
+        "ru": "Теряет здоровье (5% от урона) при атаке или получении урона"
+      }
     },
     {
       "id": 2,
       "color": "#38bdf8",
-      "name_es": "Congelamiento",
-      "name_en": "Frozen",
-      "desc_es": "Pierde vida (2.5% vida máxima) y no puede accionar",
-      "desc_en": "Lose life (2.5% max life) and can't start a action"
+      "name": {
+        "es": "Congelamiento",
+        "en": "Frozen",
+        "pt": "Congelado",
+        "ru": "Заморозка"
+      },
+      "description": {
+        "es": "Pierde vida (2.5% vida máxima) y no puede accionar",
+        "en": "Lose life (2.5% max life) and can't start a action",
+        "pt": "Perde vida (2.5% vida máx) e não pode agir",
+        "ru": "Теряет здоровье (2.5% макс.) и не может действовать"
+      }
     },
     {
       "id": 3,
       "color": "#eab308",
-      "name_es": "Parálisis",
-      "name_en": "Paralize",
-      "desc_es": "Dano y velocidad reducidos un 50%, armadura reducida un 50%",
-      "desc_en": "Damage and speed multi reduce 50%, armor reduce 50%"
+      "name": {
+        "es": "Parálisis",
+        "en": "Paralize",
+        "pt": "Paralisia",
+        "ru": "Паралич"
+      },
+      "description": {
+        "es": "Dano y velocidad reducidos un 50%, armadura reducida un 50%",
+        "en": "Damage and speed multi reduce 50%, armor reduce 50%",
+        "pt": "Dano e velocidade reduzidos em 50%, armadura reduzida em 50%",
+        "ru": "Урон и скорость снижены на 50%, броня снижена на 50%"
+      }
     },
     {
       "id": 4,
       "color": "#64748b",
-      "name_es": "Maldición",
-      "name_en": "Curse",
-      "desc_es": "No puede curarse, recibe dano (10% vida max.) al ser curado",
-      "desc_en": "Can't heal, takes damage (10% max life) when healed"
+      "name": {
+        "es": "Maldición",
+        "en": "Curse",
+        "pt": "Maldição",
+        "ru": "Проклятие"
+      },
+      "description": {
+        "es": "No puede curarse, recibe dano (10% vida max.) al ser curado",
+        "en": "Can't heal, takes damage (10% max life) when healed",
+        "pt": "Nao pode se curar, recebe dano (10% vida max.) ao ser curado",
+        "ru": "Не может лечиться, получает урон (10% макс. ОЗ) при исцелении"
+      }
     },
     {
       "id": 5,
       "color": "#14b8a6",
-      "name_es": "Silenciado",
-      "name_en": "Silenced",
-      "desc_es": "No puede ganar poder",
-      "desc_en": "Can't gain power"
+      "name": {
+        "es": "Silenciado",
+        "en": "Silenced",
+        "pt": "Silenciado",
+        "ru": "Молчание"
+      },
+      "description": {
+        "es": "No puede ganar poder",
+        "en": "Can't gain power",
+        "pt": "Não pode ganhar poder",
+        "ru": "Не может накапливать силу"
+      }
     },
     {
       "id": 6,
       "color": "#22c55e",
-      "name_es": "Infectado",
-      "name_en": "Infected",
-      "desc_es": "Pierde vida (5% vida máxima) y cura a los enemigos (5% vida máxima) al empezar una acción",
-      "desc_en": "Lose life (5% max life) and heal enemies (5% max life) when start a action"
+      "name": {
+        "es": "Infectado",
+        "en": "Infected",
+        "pt": "Infectado",
+        "ru": "Инфекция"
+      },
+      "description": {
+        "es": "Pierde vida (5% vida máxima) y cura a los enemigos (5% vida máxima) al empezar una acción",
+        "en": "Lose life (5% max life) and heal enemies (5% max life) when start a action",
+        "pt": "Perde vida (5% vida máx) e cura inimigos (5% vida máx) ao iniciar uma ação",
+        "ru": "Теряет здоровье (5% макс.) и лечит врагов (5% макс.) при начале действия"
+      }
     }
   ],
   "zones": [
@@ -14582,7 +20291,9 @@ window.WIKI_DATA = {
       "id": 0,
       "name": {
         "es": "Pradera",
-        "en": "Meadow"
+        "en": "Meadow",
+        "pt": "Pradaria",
+        "ru": "Луга"
       },
       "travel_price": 0,
       "level_range": [
@@ -14644,36 +20355,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Pradera",
-          "en": "Meadow Cup"
+          "en": "Meadow Cup",
+          "pt": "Copa Pradaria",
+          "ru": "Кубок Лугов"
         },
         "entry_fee": 100,
         "prize": 200,
         "rounds_count": 7,
         "rule": {
           "es": "Vida completa al derrotar enemigos",
-          "en": "Full health at defeat enemies"
+          "en": "Full health at defeat enemies",
+          "pt": "Vida cheia ao derrotar inimigos",
+          "ru": "Полное здоровье при победе над врагами"
         },
         "reward_item_ids": [
           7,
           8,
           9
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 1,
       "name": {
         "es": "Volcán",
-        "en": "Vulcan"
+        "en": "Vulcan",
+        "pt": "Vulcão",
+        "ru": "Вулкан"
       },
       "travel_price": 50,
       "level_range": [
@@ -14728,36 +20437,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Volcán",
-          "en": "Vulcan Cup"
+          "en": "Vulcan Cup",
+          "pt": "Copa Vulcão",
+          "ru": "Кубок Вулкана"
         },
         "entry_fee": 200,
         "prize": 400,
         "rounds_count": 7,
         "rule": {
           "es": "Al ser derrotado un pollo, quema a todos los demás",
-          "en": "When a chicken is defeated, burn all chickens"
+          "en": "When a chicken is defeated, burn all chickens",
+          "pt": "Quando um frango é derrotado, queima todos os outros",
+          "ru": "Когда курица побеждена, сжигает всех остальных"
         },
         "reward_item_ids": [
           10,
           11,
           12
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 2,
       "name": {
         "es": "Cielo",
-        "en": "Sky"
+        "en": "Sky",
+        "pt": "Céu",
+        "ru": "Небо"
       },
       "travel_price": 100,
       "level_range": [
@@ -14815,36 +20522,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Cielo",
-          "en": "Sky Cup"
+          "en": "Sky Cup",
+          "pt": "Copa Céu",
+          "ru": "Кубок Небес"
         },
         "entry_fee": 300,
         "prize": 600,
         "rounds_count": 7,
         "rule": {
           "es": "Ataques aliados aumentan poder (25%)",
-          "en": "Ally attacks give power (50%)"
+          "en": "Ally attacks give power (50%)",
+          "pt": "Ataques aliados aumentam o poder (50%)",
+          "ru": "Атаки союзников дают силу (50%)"
         },
         "reward_item_ids": [
           21,
           22,
           23
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 3,
       "name": {
         "es": "Desierto",
-        "en": "Desert"
+        "en": "Desert",
+        "pt": "Deserto",
+        "ru": "Пустыня"
       },
       "travel_price": 150,
       "level_range": [
@@ -14902,36 +20607,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Desierto",
-          "en": "Desert Cup"
+          "en": "Desert Cup",
+          "pt": "Copa Deserto",
+          "ru": "Кубок Пустыни"
         },
         "entry_fee": 400,
         "prize": 800,
         "rounds_count": 7,
         "rule": {
           "es": "Todos los pollos se infectan al comienzo",
-          "en": "All chickens are infected at the beginning"
+          "en": "All chickens are infected at the beginning",
+          "pt": "Todos os frangos começam infectados",
+          "ru": "Все курицы заражены в начале"
         },
         "reward_item_ids": [
           29,
           30,
           31
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 4,
       "name": {
         "es": "Rocosos",
-        "en": "Rocky Lands"
+        "en": "Rocky Lands",
+        "pt": "Terras Rochosas",
+        "ru": "Скалы"
       },
       "travel_price": 200,
       "level_range": [
@@ -14991,36 +20694,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Rocosa",
-          "en": "Mountain Cup"
+          "en": "Mountain Cup",
+          "pt": "Copa Rochosa",
+          "ru": "Кубок Скал"
         },
         "entry_fee": 500,
         "prize": 1000,
         "rounds_count": 7,
         "rule": {
           "es": "Cuando un pollo es derrotado, explota",
-          "en": "When a chicken is defeated, explodes"
+          "en": "When a chicken is defeated, explodes",
+          "pt": "Quando um frango é derrotado, ele explode",
+          "ru": "Когда курица побеждена, она взрывается"
         },
         "reward_item_ids": [
           36,
           37,
           38
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 5,
       "name": {
         "es": "Nevados",
-        "en": "Snowy Peaks"
+        "en": "Snowy Peaks",
+        "pt": "Picos Nevados",
+        "ru": "Снега"
       },
       "travel_price": 250,
       "level_range": [
@@ -15074,36 +20775,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Nevada",
-          "en": "Frozen Cup"
+          "en": "Frozen Cup",
+          "pt": "Copa Nevada",
+          "ru": "Ледяной Кубок"
         },
         "entry_fee": 600,
         "prize": 1200,
         "rounds_count": 7,
         "rule": {
           "es": "+15 de poder cuando ataca pollos congelados",
-          "en": "+15 power when attacking frozen chickens"
+          "en": "+15 power when attacking frozen chickens",
+          "pt": "+15 de poder ao atacar frangos congelados",
+          "ru": "+15 силы при атаке замороженных куриц"
         },
         "reward_item_ids": [
           43,
           44,
           45
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 6,
       "name": {
         "es": "Cementerio",
-        "en": "Graveyard"
+        "en": "Graveyard",
+        "pt": "Cemitério",
+        "ru": "Кладбище"
       },
       "travel_price": 300,
       "level_range": [
@@ -15161,36 +20860,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Hueso",
-          "en": "Bone Cup"
+          "en": "Bone Cup",
+          "pt": "Copa Osso",
+          "ru": "Костяной Кубок"
         },
         "entry_fee": 700,
         "prize": 1400,
         "rounds_count": 7,
         "rule": {
           "es": "Todos los pollos reviven como Zombie",
-          "en": "All chickens revive as Zombie"
+          "en": "All chickens revive as Zombie",
+          "pt": "Todos os frangos revivem como Zombi",
+          "ru": "Все курицы возрождаются как Зомби"
         },
         "reward_item_ids": [
           50,
           51,
           52
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 7,
       "name": {
         "es": "La fábrica",
-        "en": "The Factory"
+        "en": "The Factory",
+        "pt": "A Fábrica",
+        "ru": "Фабрика"
       },
       "travel_price": 350,
       "level_range": [
@@ -15246,36 +20943,34 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Fábrica",
-          "en": "Factory Cup"
+          "en": "Factory Cup",
+          "pt": "Copa Fábrica",
+          "ru": "Кубок Фабрики"
         },
         "entry_fee": 800,
         "prize": 1600,
         "rounds_count": 7,
         "rule": {
           "es": "Enemigos paralizados pierden vida al atacar (10% del daño)",
-          "en": "Paralyzed enemies lose health when attacking (10% of the damage)"
+          "en": "Paralyzed enemies lose health when attacking (10% of the damage)",
+          "pt": "Inimigos paralisados perdem vida ao atacar (10% do dano)",
+          "ru": "Парализованные враги теряют здоровье при атаке (10% от урона)"
         },
         "reward_item_ids": [
           57,
           58,
           59
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     },
     {
       "id": 8,
       "name": {
         "es": "Arcana",
-        "en": "Arcana"
+        "en": "Arcana",
+        "pt": "Arcana",
+        "ru": "Arcana"
       },
       "travel_price": 350,
       "level_range": [
@@ -15420,27 +21115,25 @@ window.WIKI_DATA = {
       "tournament": {
         "cup_name": {
           "es": "Copa Campeón",
-          "en": "Champions Cup"
+          "en": "Champions Cup",
+          "pt": "Copa Campeão",
+          "ru": "Кубок Чемпионов"
         },
         "entry_fee": 1000,
         "prize": 2500,
         "rounds_count": 5,
         "rule": {
           "es": "No se puede curar entre combates ni usar objetos de curación",
-          "en": "No healing allowed between fights and healing items cannot be used"
+          "en": "No healing allowed between fights and healing items cannot be used",
+          "pt": "Não é permitido curar entre lutas nem usar itens de cura",
+          "ru": "Лечение между боями и лечебные предметы запрещены"
         },
         "reward_item_ids": [
           63,
           59,
           23
         ],
-        "rounds": [
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "rounds": []
       }
     }
   ],
@@ -15449,11 +21142,15 @@ window.WIKI_DATA = {
       "id": 0,
       "name": {
         "es": "Centurión del Combate",
-        "en": "Victory Centurion"
+        "en": "Victory Centurion",
+        "pt": "Centurião da Vitória",
+        "ru": "Центурион Победы"
       },
       "description": {
         "es": "100 victorias",
-        "en": "100 wins"
+        "en": "100 wins",
+        "pt": "100 vitórias",
+        "ru": "100 побед"
       },
       "sprite": "images/achievements/0.png"
     },
@@ -15461,11 +21158,15 @@ window.WIKI_DATA = {
       "id": 1,
       "name": {
         "es": "Atrapapollos",
-        "en": "Chicken Wrangler"
+        "en": "Chicken Wrangler",
+        "pt": "Domador de Frangos",
+        "ru": "Ловец Куриц"
       },
       "description": {
         "es": "50 capturas de pollos",
-        "en": "50 chicken captures"
+        "en": "50 chicken captures",
+        "pt": "50 capturas de frangos",
+        "ru": "Поймать 50 куриц"
       },
       "sprite": "images/achievements/1.png"
     },
@@ -15473,11 +21174,15 @@ window.WIKI_DATA = {
       "id": 2,
       "name": {
         "es": "Derrochador de Semillas",
-        "en": "Seed Splurger"
+        "en": "Seed Splurger",
+        "pt": "Gastador de Sementes",
+        "ru": "Транжира Семян"
       },
       "description": {
         "es": "gastar 1000 semillas",
-        "en": "Spend 1000 seeds"
+        "en": "Spend 1000 seeds",
+        "pt": "Gastar 1000 sementes",
+        "ru": "Потратить 1000 семян"
       },
       "sprite": "images/achievements/2.png"
     },
@@ -15485,11 +21190,15 @@ window.WIKI_DATA = {
       "id": 3,
       "name": {
         "es": "Contraataque Aleteado",
-        "en": "Feathered Counterstrike"
+        "en": "Feathered Counterstrike",
+        "pt": "Contra-ataque Emplumado",
+        "ru": "Пернатый Контрудар"
       },
       "description": {
         "es": "un pollo es derrotado al atacarte",
-        "en": "A chicken is defeated while attacking you"
+        "en": "A chicken is defeated while attacking you",
+        "pt": "Um frango é derrotado enquanto te ataca",
+        "ru": "Курица побеждена во время своей атаки"
       },
       "sprite": "images/achievements/3.png"
     },
@@ -15497,11 +21206,15 @@ window.WIKI_DATA = {
       "id": 4,
       "name": {
         "es": "Puro Talento",
-        "en": "Pure Talent"
+        "en": "Pure Talent",
+        "pt": "Talento Puro",
+        "ru": "Чистый Талант"
       },
       "description": {
         "es": "ganar un torneo sin usar items",
-        "en": "Win a tournament without using items"
+        "en": "Win a tournament without using items",
+        "pt": "Vencer um torneio sem usar itens",
+        "ru": "Выиграть турнир без предметов"
       },
       "sprite": "images/achievements/4.png"
     },
@@ -15509,11 +21222,15 @@ window.WIKI_DATA = {
       "id": 5,
       "name": {
         "es": "A la Primera",
-        "en": "One-Shot Wonder"
+        "en": "One-Shot Wonder",
+        "pt": "Maravilha de Um Golpe",
+        "ru": "Ваншот"
       },
       "description": {
         "es": "derrotar a un enemigo de un golpe",
-        "en": "Defeat an enemy in a single blow"
+        "en": "Defeat an enemy in a single blow",
+        "pt": "Derrotar um inimigo com um único golpe",
+        "ru": "Победить врага одним ударом"
       },
       "sprite": "images/achievements/5.png"
     },
@@ -15521,11 +21238,15 @@ window.WIKI_DATA = {
       "id": 6,
       "name": {
         "es": "Cacho Campeón",
-        "en": "Cacho Champion"
+        "en": "Cacho Champion",
+        "pt": "Campeão Cacho",
+        "ru": "Чемпион Cacho"
       },
       "description": {
         "es": "ganar un torneo con Cacho",
-        "en": "Win a tournament with Cacho"
+        "en": "Win a tournament with Cacho",
+        "pt": "Vencer um torneio com Cacho",
+        "ru": "Выиграть турнир с Cacho"
       },
       "sprite": "images/achievements/6.png"
     },
@@ -15533,11 +21254,15 @@ window.WIKI_DATA = {
       "id": 7,
       "name": {
         "es": "Dúo Improbable",
-        "en": "Unlikely Duo"
+        "en": "Unlikely Duo",
+        "pt": "Dupla Improvável",
+        "ru": "Невероятный Дуэт"
       },
       "description": {
         "es": "Ganar un torneo con Pollier e Invert",
-        "en": "Win a tournament with Pollier & Invert"
+        "en": "Win a tournament with Pollier & Invert",
+        "pt": "Vencer um torneio com Pollier & Invert",
+        "ru": "Выиграть турнир с Pollier & Invert"
       },
       "sprite": "images/achievements/7.png"
     },
@@ -15545,11 +21270,15 @@ window.WIKI_DATA = {
       "id": 8,
       "name": {
         "es": "Triple Campeón",
-        "en": "Triple Champion"
+        "en": "Triple Champion",
+        "pt": "Triplo Campeão",
+        "ru": "Тройной Чемпион"
       },
       "description": {
         "es": "Ganar un torneo 3 veces",
-        "en": "Win a tournament 3 times"
+        "en": "Win a tournament 3 times",
+        "pt": "Vencer um torneio 3 vezes",
+        "ru": "Выиграть турнир 3 раза"
       },
       "sprite": "images/achievements/8.png"
     },
@@ -15557,11 +21286,15 @@ window.WIKI_DATA = {
       "id": 9,
       "name": {
         "es": "Pollo Perfecto",
-        "en": "Perfect Fowl"
+        "en": "Perfect Fowl",
+        "pt": "Ave Perfeita",
+        "ru": "Идеальная Птица"
       },
       "description": {
         "es": "Reclutar un pollo con un stat perfecto",
-        "en": "Recruit a chicken with perfect stats"
+        "en": "Recruit a chicken with perfect stats",
+        "pt": "Recrutar um frango com atributos perfeitos",
+        "ru": "Нанять курицу с идеальным статом"
       },
       "sprite": "images/achievements/9.png"
     },
@@ -15569,11 +21302,15 @@ window.WIKI_DATA = {
       "id": 10,
       "name": {
         "es": "Caca en el Clímax",
-        "en": "Final Turd Toss"
+        "en": "Final Turd Toss",
+        "pt": "Arremesso Final de Cocô",
+        "ru": "Финальный Бросок"
       },
       "description": {
         "es": "lanzar una caca en una final de torneo",
-        "en": "Throw poop in a tournament final"
+        "en": "Throw poop in a tournament final",
+        "pt": "Jogar um cocô na final de um torneio",
+        "ru": "Бросить какашку в финале турнира"
       },
       "sprite": "images/achievements/10.png"
     },
@@ -15581,11 +21318,15 @@ window.WIKI_DATA = {
       "id": 11,
       "name": {
         "es": "Vivito y Coleando",
-        "en": "Alive and Kicking"
+        "en": "Alive and Kicking",
+        "pt": "Vivo e Chutando",
+        "ru": "Живее Всех Живых"
       },
       "description": {
         "es": "ganar un torneo sin morir",
-        "en": "Win a tournament without dying"
+        "en": "Win a tournament without dying",
+        "pt": "Vencer um torneio sem morrer",
+        "ru": "Выиграть турнир не умерев"
       },
       "sprite": "images/achievements/11.png"
     },
@@ -15593,11 +21334,15 @@ window.WIKI_DATA = {
       "id": 12,
       "name": {
         "es": "Perfección Genética",
-        "en": "Genetic Perfection"
+        "en": "Genetic Perfection",
+        "pt": "Perfeição Genética",
+        "ru": "Генетическое совершенство"
       },
       "description": {
         "es": "Conseguir un pollo con todas sus estadísticas base en 100",
-        "en": "Get a chicken with all base stats at 100"
+        "en": "Get a chicken with all base stats at 100",
+        "pt": "Conseguir um frango com todos os atributos base em 100",
+        "ru": "Получить цыпленка со всеми базовыми параметрами на 100"
       },
       "sprite": "images/achievements/12.png"
     },
@@ -15605,11 +21350,15 @@ window.WIKI_DATA = {
       "id": 13,
       "name": {
         "es": "Sinergia Creadora",
-        "en": "Creative Synergy"
+        "en": "Creative Synergy",
+        "pt": "Sinergia Criadora",
+        "ru": "Творческая синергия"
       },
       "description": {
         "es": "Ganar un torneo con Javo y Rama en el equipo",
-        "en": "Win a tournament with Javo and Rama in your team"
+        "en": "Win a tournament with Javo and Rama in your team",
+        "pt": "Vencer um torneio com Javo e Rama na equipe",
+        "ru": "Выиграть турнир с Джаво и Рамой в команде"
       },
       "sprite": "images/achievements/13.png"
     },
@@ -15617,11 +21366,15 @@ window.WIKI_DATA = {
       "id": 14,
       "name": {
         "es": "Cacho Infinito",
-        "en": "Infinite Cacho"
+        "en": "Infinite Cacho",
+        "pt": "Cacho Infinito",
+        "ru": "Бесконечный Качо"
       },
       "description": {
         "es": "Alcanzar el piso 100 del Modo Infinito con Cacho en el equipo",
-        "en": "Reach floor 100 in Infinite Mode with Cacho in your team"
+        "en": "Reach floor 100 in Infinite Mode with Cacho in your team",
+        "pt": "Alcançar o andar 100 do Modo Infinito com Cacho na equipe",
+        "ru": "Достичь 100 этажа Бесконечного режима с Качо в команде"
       },
       "sprite": "images/achievements/14.png"
     },
@@ -15629,11 +21382,15 @@ window.WIKI_DATA = {
       "id": 15,
       "name": {
         "es": "Garra Infinita",
-        "en": "Infinite Garra"
+        "en": "Infinite Garra",
+        "pt": "Garra Infinita",
+        "ru": "Бесконечный Гарра"
       },
       "description": {
         "es": "Alcanzar el piso 100 del Modo Infinito con Garra en el equipo",
-        "en": "Reach floor 100 in Infinite Mode with Garra in your team"
+        "en": "Reach floor 100 in Infinite Mode with Garra in your team",
+        "pt": "Alcançar o andar 100 do Modo Infinito com Garra na equipe",
+        "ru": "Достичь 100 этажа Бесконечного режима с Гаррой в команде"
       },
       "sprite": "images/achievements/15.png"
     },
@@ -15641,11 +21398,15 @@ window.WIKI_DATA = {
       "id": 16,
       "name": {
         "es": "Campeón Arcano",
-        "en": "Arcane Champion"
+        "en": "Arcane Champion",
+        "pt": "Campeão Arcano",
+        "ru": "Чемпион арканы"
       },
       "description": {
         "es": "Ganar el torneo final de la Zona Arcana",
-        "en": "Win the final tournament of the Arcane Zone"
+        "en": "Win the final tournament of the Arcane Zone",
+        "pt": "Vencer o torneio final da Zona Arcana",
+        "ru": "Выиграть финальный турнир тайной зоны"
       },
       "sprite": "images/achievements/16.png"
     },
@@ -15653,11 +21414,15 @@ window.WIKI_DATA = {
       "id": 17,
       "name": {
         "es": "Destello Dorado",
-        "en": "Golden Spark"
+        "en": "Golden Spark",
+        "pt": "Brilho Dourado",
+        "ru": "Золотая искра"
       },
       "description": {
         "es": "Obtener tu primer pollo Shiny",
-        "en": "Obtain your first Shiny chicken"
+        "en": "Obtain your first Shiny chicken",
+        "pt": "Obter seu primeiro frango Shiny",
+        "ru": "Получить первого шайни цыпленка"
       },
       "sprite": "images/achievements/17.png"
     },
@@ -15665,11 +21430,15 @@ window.WIKI_DATA = {
       "id": 18,
       "name": {
         "es": "Alquimia Pura",
-        "en": "Pure Alchemy"
+        "en": "Pure Alchemy",
+        "pt": "Alquimia Pura",
+        "ru": "Чистая алхимия"
       },
       "description": {
         "es": "Realizar tu primera fusión genética en el laboratorio",
-        "en": "Perform your first genetic fusion in the lab"
+        "en": "Perform your first genetic fusion in the lab",
+        "pt": "Realizar sua primeira fusão genética no laboratório",
+        "ru": "Совершить первое генетическое слияние в лаборатории"
       },
       "sprite": "images/achievements/18.png"
     },
@@ -15677,11 +21446,15 @@ window.WIKI_DATA = {
       "id": 19,
       "name": {
         "es": "Poder Desatado",
-        "en": "Unleashed Power"
+        "en": "Unleashed Power",
+        "pt": "Poder Desencadeado",
+        "ru": "Неудержимая мощь"
       },
       "description": {
         "es": "Alcanzar el nivel 50 con cualquier pollo",
-        "en": "Reach level 50 with any chicken"
+        "en": "Reach level 50 with any chicken",
+        "pt": "Alcançar o nível 50 com qualquer frango",
+        "ru": "Достичь 50 уровня любым цыпленком"
       },
       "sprite": "images/achievements/19.png"
     },
@@ -15689,11 +21462,15 @@ window.WIKI_DATA = {
       "id": 20,
       "name": {
         "es": "Conquistador del Abismo",
-        "en": "Abyss Conqueror"
+        "en": "Abyss Conqueror",
+        "pt": "Conquistador do Abismo",
+        "ru": "Покоритель бездны"
       },
       "description": {
         "es": "Alcanzar el piso 50 en el Modo Infinito",
-        "en": "Reach floor 50 in Infinite Mode"
+        "en": "Reach floor 50 in Infinite Mode",
+        "pt": "Alcançar o andar 50 no Modo Infinito",
+        "ru": "Достичь 50 этажа в Бесконечном режиме"
       },
       "sprite": "images/achievements/20.png"
     },
@@ -15701,11 +21478,15 @@ window.WIKI_DATA = {
       "id": 21,
       "name": {
         "es": "Enciclopedia Viviente",
-        "en": "Living Encyclopedia"
+        "en": "Living Encyclopedia",
+        "pt": "Enciclopédia Viva",
+        "ru": "Живая энциклопедия"
       },
       "description": {
         "es": "Completar el 100% de la Pollopedia",
-        "en": "Complete 100% of the Chickopedia"
+        "en": "Complete 100% of the Chickopedia",
+        "pt": "Completar 100% da Frangopédia",
+        "ru": "Заполнить Куропедию на 100%"
       },
       "sprite": "images/achievements/21.png"
     }
@@ -15714,47 +21495,51 @@ window.WIKI_DATA = {
     "breeding": {
       "title": {
         "es": "Crianza y Huevos",
-        "en": "Breeding & Eggs"
+        "en": "Breeding & Eggs",
+        "pt": "Reprodução e Ovos",
+        "ru": "Разведение и яйца"
       },
       "sections": [
         {
           "title": {
             "es": "¿Cómo alimentar y obtener huevos?",
-            "en": "How to feed and lay eggs?"
+            "en": "How to feed and lay eggs?",
+            "pt": "Como alimentar e obter ovos?",
+            "ru": "Как кормить и получать яйца?"
           },
           "content": {
-            "es": "En la caja principal puedes alimentar a tus pollos con Semillas (Seeds). Tras alimentarlo, el pollo comenzará a gestar un huevo durante 5 combates. Al ganar o completar combates, el huevo será puesto en el corral (con capacidad máxima de 30 huevos en reserva y 3 en el nido de incubación).",
-            "en": "In the main box you can feed your chickens using Seeds. Once fed, the chicken will gestate an egg over 5 combats. Upon winning or completing battles, an egg is laid in the coop (max capacity of 30 stored eggs and 3 in the active nest)."
+            "es": "En la caja principal puedes alimentar a tus pollos con Semillas. Tras alimentarlo, el pollo comenzará a gestar un huevo durante 5 combates. Al ganar o completar combates, el huevo será puesto en el corral (con capacidad máxima de 30 huevos en reserva y 3 en el nido de incubación).",
+            "en": "In the main box you can feed your chickens with Seeds. Once fed, the chicken gestates an egg over 5 combats. Upon completing battles, an egg is laid in the coop (max 30 stored eggs and 3 in the nest).",
+            "pt": "Na caixa principal você pode alimentar seus frangos com Sementes. Após alimentado, ele gestará um ovo por 5 combates, botando-o no galinheiro ao vencer ou completar lutas.",
+            "ru": "В главном окне вы можете кормить цыплят семенами. Накормленный цыпленок вынашивает яйцо в течение 5 боев, откладывая его в курятник после побед."
           }
         },
         {
           "title": {
             "es": "Herencia Genética de Estadísticas",
-            "en": "Genetic Stat Inheritance"
+            "en": "Genetic Stat Inheritance",
+            "pt": "Herança Genética de Atributos",
+            "ru": "Генетическое наследование характеристик"
           },
           "content": {
-            "es": "Los pollitos que nacen de un huevo heredan los genes base (Born Stats) de su progenitor. Cada estadística (Vida, Daño, Armadura, Velocidad, Cantidad de Poder) fluctúa ligeramente entre -3 y +4 puntos respecto al padre. Si el progenitor tiene equipado el objeto Deseo (Wish / item_wish), las estadísticas heredadas aumentan entre +4 y +10 puntos, permitiendo alcanzar pollos genéticamente perfectos (100 en todas las estadísticas).",
-            "en": "Chicks hatched from eggs inherit their parent's base Born Stats. Each stat (Life, Damage, Armor, Speed, Power Amount) randomly fluctuates between -3 and +4 points relative to the parent. If the parent holds the Wish (item_wish) item, inherited stats increase by +4 to +10 points, making it possible to breed genetically perfect chickens (100 in all stats)."
+            "es": "Los pollitos que nacen de un huevo heredan los genes base de su progenitor. Cada estadística fluctúa ligeramente entre -3 y +4 puntos respecto al padre. Si el progenitor tiene equipado el objeto Deseo, las estadísticas heredadas aumentan entre +4 y +10 puntos, permitiendo alcanzar pollos genéticamente perfectos (100 en todas las estadísticas).",
+            "en": "Chicks hatched inherit base genes from their parent. Each stat fluctuates between -3 and +4 points. If the parent holds Wish, inherited stats gain +4 to +10 points, enabling perfect 100-stat chickens.",
+            "pt": "Os pintinhos herdam os genes base do progenitor. Cada atributo varia entre -3 e +4 pontos. Se o progenitor equipar Desejo, os atributos aumentam entre +4 e +10 pontos, permitindo criar frangos perfeitos (100 em tudo).",
+            "ru": "Птенцы наследуют гены родителя с колебанием от -3 до +4 очков к характеристикам. Предмет «Желание» у родителя дает бонус от +4 до +10, позволяя вывести цыпленка с максимальными 100 очками во всем."
           }
         },
         {
           "title": {
             "es": "Probabilidad de Pollos Variocolor (Shiny)",
-            "en": "Shiny Chicken Chances"
+            "en": "Shiny Chicken Chances",
+            "pt": "Chances de Frangos Brilhantes (Shiny)",
+            "ru": "Шансы блестящих цыплят (Shiny)"
           },
           "content": {
             "es": "La probabilidad base de conseguir un pollo Shiny al abrir cualquier huevo es de 0.5% (1 en 200). Sin embargo, si el huevo proviene de un progenitor Shiny mediante crianza, ¡la probabilidad de heredar la variante Shiny aumenta drásticamente al 8% (1 en 12.5)!",
-            "en": "The base chance to obtain a Shiny chicken from any egg is 0.5% (1 in 200). However, if an egg is bred from an already Shiny parent, the chance of inheriting the Shiny variant increases drastically to 8% (1 in 12.5)!"
-          }
-        },
-        {
-          "title": {
-            "es": "Ítems Especiales de Crianza",
-            "en": "Special Breeding Items"
-          },
-          "content": {
-            "es": "Existen dos ítems raros exclusivos que potencian la crianza al tenerlos equipados en el progenitor: la Pluma dorada (Golden Feather) reduce en un 40% los turnos de combate necesarios para que eclosionen sus huevos, y el Nido especial (Special Nest) aumenta en un +10% la probabilidad de que sus huevos pongan una cría Variocolor (Shiny).",
-            "en": "There are two exclusive rare items that empower breeding when equipped on the parent: the Golden Feather reduces the battle turns required to hatch eggs by 40%, and the Special Nest increases the chance of laying a Shiny egg by +10%."
+            "en": "The base chance to hatch a Shiny chicken from any egg is 0.5% (1 in 200). If bred from an already Shiny parent, the shiny inheritance chance surges to 8% (1 in 12.5)!",
+            "pt": "A chance base de chocar um frango Shiny de qualquer ovo é de 0,5% (1 em 200). Caso venha de um progenitor Shiny, a chance sobe para impressionantes 8% (1 em 12,5)!",
+            "ru": "Базовый шанс вылупления блестящего (Shiny) цыпленка равен 0.5% (1 из 200). Если родитель уже является Shiny, шанс возрастает до 8% (1 из 12.5)!"
           }
         }
       ]
@@ -15762,17 +21547,23 @@ window.WIKI_DATA = {
     "fusion": {
       "title": {
         "es": "Laboratorio y Fusión Genética",
-        "en": "Laboratory & Genetic Fusion"
+        "en": "Laboratory & Genetic Fusion",
+        "pt": "Laboratório e Fusão Genética",
+        "ru": "Лаборатория и генетическое слияние"
       },
       "sections": [
         {
           "title": {
             "es": "Reglas de Fusión",
-            "en": "Fusion Rules"
+            "en": "Fusion Rules",
+            "pt": "Regras de Fusão",
+            "ru": "Правила слияния"
           },
           "content": {
-            "es": "En el Laboratorio puedes fusionar un Pollo Base con un Pollo Donante sacrificando maíz (Maize). Si las estadísticas genéticas del donante son superiores a las del pollo base en alguna característica, el pollo base absorberá parte de esa ventaja genética. Además, fusionar un donante Shiny con una base normal tiene una probabilidad de transmitir el gen Shiny a la base.",
-            "en": "In the Laboratory you can fuse a Base Chicken with a Donor Chicken by consuming corn (Maize). If any born stats of the donor are higher than the base, the base chicken will absorb a portion of that genetic advantage. Furthermore, fusing a Shiny donor into a normal base has a chance to pass the Shiny trait to the base."
+            "es": "En el Laboratorio puedes fusionar dos pollos. El pollo base conserva su especie y apariencia, pero puede absorber el poder oculto o potenciar los atributos del pollo donante sacrificado.",
+            "en": "In the Laboratory you can fuse two chickens. The base chicken retains its species while absorbing hidden powers or stat improvements from the sacrificed donor chicken.",
+            "pt": "No Laboratório você pode fundir dois frangos. O frango base mantém sua espécie e visual, podendo absorver o poder oculto ou melhorar atributos do frango doador sacrificado.",
+            "ru": "В Лаборатории можно слить двух цыплят. Основной цыпленок сохраняет вид, получая скрытую способность или улучшенные параметры от пожертвованного донора."
           }
         }
       ]
@@ -15780,111 +21571,23 @@ window.WIKI_DATA = {
     "squad": {
       "title": {
         "es": "Escuadra y Suplentes",
-        "en": "Squad & Substitutes"
+        "en": "Squad & Substitutes",
+        "pt": "Esquadrão e Reservas",
+        "ru": "Отряд и запасные"
       },
       "sections": [
         {
           "title": {
-            "es": "Escuadra de 4 Pollos",
-            "en": "4-Chicken Squad"
+            "es": "Formato de Batalla 2vs2",
+            "en": "2vs2 Battle Format",
+            "pt": "Formato de Batalha 2vs2",
+            "ru": "Формат битвы 2на2"
           },
           "content": {
-            "es": "Ahora puedes formar una escuadra completa con 2 pollos titulares y hasta 2 suplentes elegidos desde tu granja. Los titulares inician la batalla en primera línea, mientras que los suplentes esperan en reserva listos para entrar.",
-            "en": "You can now assemble a full squad with 2 starter chickens and up to 2 substitutes chosen from your farm. Starters begin the battle in front, while substitutes wait in reserve ready to jump in."
-          }
-        },
-        {
-          "title": {
-            "es": "Relevos en Combate",
-            "en": "Battle Swaps"
-          },
-          "content": {
-            "es": "Durante el combate, puedes tocar el indicador de un pollo para sustituirlo por uno de tus refuerzos. El relevo permite adaptar tu estrategia contra las fortalezas y debilidades elementales del rival.",
-            "en": "During combat, tap a chicken's indicator to swap it with one of your substitutes. Swapping allows you to adapt your strategy against the rival's elemental strengths and weaknesses."
-          }
-        }
-      ]
-    },
-    "exchange": {
-      "title": {
-        "es": "Tablón de Intercambio (Contratos)",
-        "en": "Exchange Board (Contracts)"
-      },
-      "sections": [
-        {
-          "title": {
-            "es": "Contratos cada 12 Horas",
-            "en": "Contracts every 12 Hours"
-          },
-          "content": {
-            "es": "En la tienda encontrarás un tablón que ofrece 6 contratos de intercambio que se renuevan cada 12 horas. Los contratos solicitan pollos que cumplan condiciones específicas (Tier 2+, Tier 3+, zona de procedencia, un ítem equipado o una especie determinada).",
-            "en": "The shop features an exchange board offering 6 trade contracts that reset every 12 hours. Contracts request chickens meeting specific criteria (Tier 2+, Tier 3+, origin zone, an equipped item, or a specific species)."
-          }
-        },
-        {
-          "title": {
-            "es": "Recompensas de Intercambio",
-            "en": "Exchange Rewards"
-          },
-          "content": {
-            "es": "Al cumplir un contrato y entregar el pollo solicitado, abres una caja de recompensa con animación especial que puede contener: grandes cantidades de semillas (5,000-10,000), ítems de zona, huevos de crianza especiales o pollos de nivel 10 con genética mejorada. En el Contrato 5, puedes obtener ítems míticos y raros exclusivos como Deseo, Fragmento Prohibido, Pluma dorada, Pluma de Brama, Garra derrochadora, Nido especial e Ira.",
-            "en": "Fulfilling a contract and handing over the requested chicken opens a special reward box that can contain: abundant seeds (5,000-10,000), zone items, special breeding eggs, or level 10 chickens with enhanced genetics. In Contract 5, you can obtain exclusive mythic and rare items like Wish, Forbidden Fragment, Golden Feather, Brahma Feather, Wasteful Claw, Special Nest, and Wrath."
-          }
-        }
-      ]
-    },
-    "infinite": {
-      "title": {
-        "es": "Modo Infinito",
-        "en": "Infinite Mode"
-      },
-      "sections": [
-        {
-          "title": {
-            "es": "Desafío y Escalado de Pisos",
-            "en": "Floor Scaling & Challenge"
-          },
-          "content": {
-            "es": "Un modo de juego sin fin donde la dificultad escala continuamente. El piso 1 comienza con rivales de nivel 5, aumentando 1 nivel por cada piso superado hasta alcanzar el nivel 100.",
-            "en": "An endless battle mode where difficulty increases continuously. Floor 1 starts with level 5 rivals, increasing by 1 level per cleared floor up to level 100."
-          }
-        },
-        {
-          "title": {
-            "es": "Ítems en Rivales y Recompensas",
-            "en": "Rival Items & Rewards"
-          },
-          "content": {
-            "es": "A partir del piso 3, los rivales pueden aparecer equipados con ítems (escalando desde 35% hasta 80% de probabilidad en pisos altos). Hay un 5% de probabilidad de que lleven el Fragmento Prohibido (+35% daño, +10% velocidad) y un 10% de probabilidad de que lleven uno de los 5 ítems raros exclusivos: Pluma dorada, Pluma de Brama (+10% shinies en batalla), Garra derrochadora (+20% semillas), Nido especial o Ira (+2 ataques iniciales). Al derrotar y reclutar a un rival que los porte, ¡te quedarás con su ítem! Cada piso otorga semillas escaladas, y cada 10 pisos recibes un huevo especial con pollos exclusivos o shinies.",
-            "en": "From floor 3 onward, rivals can spawn equipped with items (scaling from 35% up to 80% chance at higher floors). There is a 5% chance they carry the Forbidden Fragment (+35% damage, +10% speed) and a 10% chance of carrying one of the 5 rare exclusive items: Golden Feather, Brahma Feather (+10% battle shinies), Wasteful Claw (+20% seeds), Special Nest, or Wrath (+2 initial attacks). By defeating and recruiting a rival who carries them, you keep their item! Each cleared floor grants scaled seeds, and every 10 floors awards a special egg with exclusive chickens or shinies."
-          }
-        }
-      ]
-    },
-    "formulas": {
-      "title": {
-        "es": "Fórmulas y Mecánicas de Combate",
-        "en": "Formulas & Battle Mechanics"
-      },
-      "sections": [
-        {
-          "title": {
-            "es": "Escalado de Experiencia (XP)",
-            "en": "Experience Scaling (XP)"
-          },
-          "content": {
-            "es": "La experiencia máxima requerida para subir de nivel se calcula según la fórmula oficial del juego: XP Máx = redondear(100 × (Nivel)^1.25). Por ejemplo, nivel 1 requiere 100 XP, nivel 10 requiere ~1,778 XP, y nivel 50 requiere ~13,335 XP.",
-            "en": "The maximum experience required to level up follows the official formula: Max XP = round(100 × (Level)^1.25). For example, level 1 requires 100 XP, level 10 requires ~1,778 XP, and level 50 requires ~13,335 XP."
-          }
-        },
-        {
-          "title": {
-            "es": "Barra de Acción y Turnos",
-            "en": "Action Gauge & Turns"
-          },
-          "content": {
-            "es": "En combate, la barra de acción se llena a un ritmo determinado por la Velocidad del pollo. Cuando la barra llega al 100%, el pollo ejecuta una acción (ataque básico o uso de poder si la energía está completa). El daño infligido se mitiga porcentualmente según la Armadura del objetivo.",
-            "en": "During combat, each chicken's action gauge fills at a rate determined by its Speed stat. Upon reaching 100%, the chicken acts (performing a basic attack or triggering its Power if full energy). Outgoing damage is mitigated proportionally by the target's Armor."
+            "es": "Tu equipo se compone de 2 combatientes activos (Vanguardia y Retaguardia) y hasta 2 suplentes. Coordinar sinergias entre un protector y un atacante es la clave para ganar.",
+            "en": "Your squad consists of 2 active fighters (Frontline and Backline) and up to 2 substitutes. Coordinating synergies between a protector and a sweeper is key to victory.",
+            "pt": "Sua equipe é formada por 2 combatentes ativos (Vanguarda e Retaguarda) e até 2 reservas. Coordenar a sinergia entre protetor e atacante é essencial para a vitória.",
+            "ru": "Ваш отряд состоит из 2 активных бойцов (Авангард и Тыл) и до 2 запасных. Взаимодействие танка и атакующего цыпленка — ключ к победе."
           }
         }
       ]

@@ -222,6 +222,17 @@ img.pixelated {
   border-color: var(--wiki-accent);
 }
 
+select.btn-control {
+  appearance: auto;
+  -webkit-appearance: auto;
+  font-family: inherit;
+  outline: none;
+}
+select.btn-control option {
+  background: var(--wiki-surface);
+  color: var(--wiki-text);
+}
+
 .mobile-menu-btn {
   display: none;
   background: none;

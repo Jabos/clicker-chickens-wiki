@@ -15,9 +15,9 @@
       siteTitle: "Wiki Clicker Chickens",
       siteSubtitle: "Enciclopedia Oficial",
       searchPlaceholder: "Buscar pollos, objetos, poderes, pasivas...",
-      langBtn: "English",
       themeDark: "Modo Oscuro",
       themeLight: "Modo Claro",
+      navSecEncyclopedia: "Enciclopedia",
       navChickens: "Pollopedia",
       navItems: "Objetos",
       navPowers: "Poderes",
@@ -26,6 +26,8 @@
       navZones: "Zonas y Torneos",
       navAchievements: "Logros",
       navMechanics: "Guías y Mecánicas",
+      calcStatsNav: "Calculadora de Stats",
+      sim2vs2Nav: "Simulador 2vs2",
       secChickensDesc: "Lista completa de los 151 pollos, estadísticas base, habilidades y hábitats.",
       secItemsDesc: "Catálogo completo de los 75 objetos consumibles y equipables con sus efectos.",
       secPowersDesc: "52 poderes especiales activables en combate y los pollos que los poseen.",
@@ -65,6 +67,9 @@
       thEffect: "Efecto",
       thChickens: "Pollos con esta habilidad",
       thChickensHidden: "Pollos con este Poder Oculto",
+      thIcon: "Icono",
+      thTitle: "Título",
+      thUnlockReq: "Requisito de Desbloqueo",
       consumable: "Consumible",
       equipable: "Equipable",
       allTypes: "Todos los tipos",
@@ -75,22 +80,42 @@
       statSpeed: "Velocidad (SPD)",
       statPowerAmount: "Poder (PWR)",
       statTotal: "Total de Stats",
+      combatSkillsTitle: "⚡ Habilidades de Combate",
       passiveSkill: "Habilidad Pasiva",
       activePower: "Poder Activo",
       hiddenPower: "Poder Oculto",
       noHiddenPower: "No puede poseer poder oculto (Transformación en combate)",
       powerCost: "Coste de Carga de Poder",
+      energyPoints: "puntos de energía.",
+      viewAllWithPassive: "→ Ver todos los pollos con esta pasiva",
+      viewAllWithPower: "→ Ver todos los pollos con este poder",
+      viewCombatPowers: "→ Ver poderes de combate",
+      tacticalGuideTitle: "Guía Táctica de Combate 2vs2",
+      tacticalArchetype: "Arquetipo Táctico",
+      powerCycle: "Ciclo de Poder",
+      turn: "turno",
+      turns: "turnos",
+      tacticalDuoRole: "Función en el Dúo 2vs2:",
+      recommendedPartners: "Compañeros Recomendados:",
+      key2vs2Items: "Ítems Clave en 2vs2:",
+      howToCounter: "Cómo Contrarrestarlo (Si es tu Rival):",
       defaultItem: "Objeto Inicial",
       evolutionHeader: "Línea de Evolución",
       evolutionOnlyWarn: "Pollo de Evolución: No puede aparecer en combates salvajes, tienda diaria ni huevos.",
       habitatsHeader: "Hábitats y Obtención",
       wildCombats: "Combates Salvajes",
       eggPools: "Eclosión de Huevos",
+      wildHabitats: "Hábitat Salvaje",
       noWild: "No aparece en estado salvaje",
       noEgg: "No disponible en huevos de tienda",
+      zoneShopTitle: "🛒 Tienda de la Zona",
+      recommendedLevel: "Nivel recomendado:",
+      travelCost: "Costo de viaje:",
+      speciesCount: "especies",
       tournamentCup: "Copa del Torneo",
       entryFee: "Inscripción",
       prizeMoney: "Premio",
+      roundsCount: "Rondas:",
       tournamentRule: "Regla Especial",
       tournamentRewards: "Recompensas por Victoria",
       tournamentRoster: "Equipos Rivales por Ronda",
@@ -105,15 +130,18 @@
       searchBadgePassive: "Pasiva",
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
-      searchBadgeAchievement: "Logro"
+      searchBadgeAchievement: "Logro",
+      footerGen: "Generada directamente de los datos del juego v0.117",
+      footerHosting: "Diseñada para alojarse gratis en",
+      footerStyle: "Estilo clásico, rápido y ligero"
     },
     en: {
       siteTitle: "Clicker Chickens Wiki",
       siteSubtitle: "Official Encyclopedia",
       searchPlaceholder: "Search chickens, items, powers, passives...",
-      langBtn: "Español",
       themeDark: "Dark Mode",
       themeLight: "Light Mode",
+      navSecEncyclopedia: "Encyclopedia",
       navChickens: "Chickens",
       navItems: "Items",
       navPowers: "Powers",
@@ -122,6 +150,8 @@
       navZones: "Zones & Tournaments",
       navAchievements: "Achievements",
       navMechanics: "Guides & Mechanics",
+      calcStatsNav: "Stats Calculator",
+      sim2vs2Nav: "2vs2 Simulator",
       secChickensDesc: "Complete encyclopedia of all 151 chickens, base stats, skills and habitats.",
       secItemsDesc: "Complete catalog of all 75 consumable and equipable items and effects.",
       secPowersDesc: "52 active powers usable during combat and which chickens possess them.",
@@ -161,6 +191,9 @@
       thEffect: "Effect",
       thChickens: "Chickens with this skill",
       thChickensHidden: "Chickens with this Hidden Power",
+      thIcon: "Icon",
+      thTitle: "Title",
+      thUnlockReq: "Unlock Requirement",
       consumable: "Consumable",
       equipable: "Equipable",
       allTypes: "All Types",
@@ -171,22 +204,42 @@
       statSpeed: "Speed (SPD)",
       statPowerAmount: "Power (PWR)",
       statTotal: "Total Stats",
+      combatSkillsTitle: "⚡ Combat Skills",
       passiveSkill: "Passive Skill",
       activePower: "Active Power",
       hiddenPower: "Hidden Power",
       noHiddenPower: "Cannot possess hidden power (Combat transformation)",
       powerCost: "Power Energy Required",
+      energyPoints: "energy points.",
+      viewAllWithPassive: "→ View all chickens with this passive",
+      viewAllWithPower: "→ View all chickens with this power",
+      viewCombatPowers: "→ View combat powers",
+      tacticalGuideTitle: "2vs2 Combat Tactical Guide",
+      tacticalArchetype: "Tactical Archetype",
+      powerCycle: "Power Cycle",
+      turn: "turn",
+      turns: "turns",
+      tacticalDuoRole: "2vs2 Duo Role:",
+      recommendedPartners: "Recommended Partners:",
+      key2vs2Items: "Key 2vs2 Items:",
+      howToCounter: "How to Counter (If Enemy):",
       defaultItem: "Held Item",
       evolutionHeader: "Evolution Line",
       evolutionOnlyWarn: "Evolution Chicken: Cannot appear in wild combats, daily shop, or eggs.",
       habitatsHeader: "Habitats & Locations",
       wildCombats: "Wild Combats",
       eggPools: "Egg Pools",
+      wildHabitats: "Wild Habitat",
       noWild: "Does not appear wild",
       noEgg: "Not available in shop eggs",
+      zoneShopTitle: "🛒 Zone Shop",
+      recommendedLevel: "Recommended Level:",
+      travelCost: "Travel cost:",
+      speciesCount: "species",
       tournamentCup: "Tournament Cup",
       entryFee: "Entry Fee",
       prizeMoney: "Prize",
+      roundsCount: "Rounds:",
       tournamentRule: "Special Rule",
       tournamentRewards: "Victory Rewards",
       tournamentRoster: "Opponent Teams by Round",
@@ -201,12 +254,263 @@
       searchBadgePassive: "Passive",
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
-      searchBadgeAchievement: "Achievement"
+      searchBadgeAchievement: "Achievement",
+      footerGen: "Generated directly from game data v0.117",
+      footerHosting: "Designed for free hosting on",
+      footerStyle: "Classic, lightweight and fast style"
+    },
+    pt: {
+      siteTitle: "Wiki Clicker Chickens",
+      siteSubtitle: "Enciclopédia Oficial",
+      searchPlaceholder: "Pesquisar frangos, itens, poderes, passivas...",
+      themeDark: "Modo Escuro",
+      themeLight: "Modo Claro",
+      navSecEncyclopedia: "Enciclopédia",
+      navChickens: "Frangopédia",
+      navItems: "Itens",
+      navPowers: "Poderes",
+      navPassives: "Passivas",
+      navStates: "Efeitos de Estado",
+      navZones: "Zonas e Torneios",
+      navAchievements: "Conquistas",
+      navMechanics: "Guias e Mecânicas",
+      calcStatsNav: "Calculadora de Atributos",
+      sim2vs2Nav: "Simulador 2vs2",
+      secChickensDesc: "Lista completa dos 151 frangos, atributos base, habilidades e habitats.",
+      secItemsDesc: "Catálogo completo dos 75 itens consumíveis e equipáveis com seus efeitos.",
+      secPowersDesc: "52 poderes especiais ativáveis em combate e os frangos que os possuem.",
+      secPassivesDesc: "151 habilidades passivas de combate e quais frangos as possuem.",
+      secStatesDesc: "Os 7 efeitos de estado, funcionamento por turno e como neutralizá-los.",
+      secZonesDesc: "As 9 zonas do jogo, custos de viagem, encontros selvagens, lojas e torneios.",
+      secAchievementsDesc: "Todas as 22 conquistas do jogo e requisitos de desbloqueio.",
+      secMechanicsDesc: "Fórmulas de experiência, criação de ovos, chances de shiny e laboratório de fusão.",
+      filterAllZones: "Todas as zonas",
+      filterEvolutions: "Evoluções",
+      sortIdAsc: "Número (#1-#151)",
+      sortNameAsc: "Nome (A-Z)",
+      sortLifeDesc: "Maior Vida",
+      sortDmgDesc: "Maior Dano",
+      sortArmDesc: "Maior Armadura",
+      sortSpdDesc: "Maior Velocidade",
+      sortPwrDesc: "Maior Poder",
+      sortTotalDesc: "Maior Total de Atributos",
+      viewGrid: "Grade",
+      viewTable: "Tabela",
+      thId: "#",
+      thSprite: "Sprite",
+      thName: "Nome",
+      thHp: "Vida",
+      thAtk: "Dano",
+      thDef: "Armadura",
+      thSpd: "Velocidade",
+      thPwr: "Poder",
+      thTotal: "Total",
+      thPassive: "Passiva",
+      thPower: "Poder",
+      thItem: "Item",
+      thType: "Tipo",
+      thPrice: "Venda",
+      thShopPrice: "Loja",
+      thWhere: "Zonas",
+      thEffect: "Efeito",
+      thChickens: "Frangos com esta habilidade",
+      thChickensHidden: "Frangos com este Poder Oculto",
+      thIcon: "Ícone",
+      thTitle: "Título",
+      thUnlockReq: "Requisito de Desbloqueio",
+      consumable: "Consumível",
+      equipable: "Equipável",
+      allTypes: "Todos os tipos",
+      statBaseTitle: "Atributos Base",
+      statLife: "Vida (HP)",
+      statDamage: "Dano (ATK)",
+      statArmor: "Armadura (DEF)",
+      statSpeed: "Velocidade (SPD)",
+      statPowerAmount: "Poder (PWR)",
+      statTotal: "Total de Atributos",
+      combatSkillsTitle: "⚡ Habilidades de Combate",
+      passiveSkill: "Habilidade Passiva",
+      activePower: "Poder Ativo",
+      hiddenPower: "Poder Oculto",
+      noHiddenPower: "Não pode ter poder oculto (Transformação em combate)",
+      powerCost: "Custo de Carga de Poder",
+      energyPoints: "pontos de energia.",
+      viewAllWithPassive: "→ Ver todas as galinhas com esta passiva",
+      viewAllWithPower: "→ Ver todas as galinhas com este poder",
+      viewCombatPowers: "→ Ver poderes de combate",
+      tacticalGuideTitle: "Guia Tático de Combate 2vs2",
+      tacticalArchetype: "Arquétipo Tático",
+      powerCycle: "Ciclo de Poder",
+      turn: "turno",
+      turns: "turnos",
+      tacticalDuoRole: "Função na Dupla 2vs2:",
+      recommendedPartners: "Parceiros Recomendados:",
+      key2vs2Items: "Itens Chave no 2vs2:",
+      howToCounter: "Como Neutralizar (Se for Inimigo):",
+      defaultItem: "Item Inicial",
+      evolutionHeader: "Linha de Evolução",
+      evolutionOnlyWarn: "Frango de Evolução: Não aparece em combates selvagens, loja diária ou ovos.",
+      habitatsHeader: "Habitats e Obtenção",
+      wildCombats: "Combates Selvagens",
+      eggPools: "Eclosão de Ovos",
+      wildHabitats: "Habitat Selvagem",
+      noWild: "Não aparece no estado selvagem",
+      noEgg: "Não disponível em ovos da loja",
+      zoneShopTitle: "🛒 Loja da Zona",
+      recommendedLevel: "Nível recomendado:",
+      travelCost: "Custo de viagem:",
+      speciesCount: "espécies",
+      tournamentCup: "Copa do Torneio",
+      entryFee: "Inscrição",
+      prizeMoney: "Prêmio",
+      roundsCount: "Rodadas:",
+      tournamentRule: "Regra Especial",
+      tournamentRewards: "Recompensas por Vitória",
+      tournamentRoster: "Equipes Adversárias por Rodada",
+      round: "Rodada",
+      lvl: "Nível",
+      prevBtn: "« Anterior",
+      nextBtn: "Próximo »",
+      backToList: "← Voltar à lista",
+      notFound: "Nenhum resultado encontrado.",
+      searchBadgeChicken: "Frango",
+      searchBadgeItem: "Item",
+      searchBadgePassive: "Passiva",
+      searchBadgePower: "Poder",
+      searchBadgeZone: "Zona",
+      searchBadgeAchievement: "Conquista",
+      footerGen: "Gerada diretamente dos dados do jogo v0.117",
+      footerHosting: "Criada para hospedagem gratuita no",
+      footerStyle: "Estilo clássico, rápido e leve"
+    },
+    ru: {
+      siteTitle: "Clicker Chickens Вики",
+      siteSubtitle: "Официальная Энциклопедия",
+      searchPlaceholder: "Поиск цыплят, предметов, сил, пассивок...",
+      themeDark: "Темная тема",
+      themeLight: "Светлая тема",
+      navSecEncyclopedia: "Энциклопедия",
+      navChickens: "Куропедия",
+      navItems: "Предметы",
+      navPowers: "Способности",
+      navPassives: "Пассивки",
+      navStates: "Эффекты состояния",
+      navZones: "Зоны и Турниры",
+      navAchievements: "Достижения",
+      navMechanics: "Гайды и Механики",
+      calcStatsNav: "Калькулятор характеристик",
+      sim2vs2Nav: "Симулятор 2на2",
+      secChickensDesc: "Полный список 151 цыпленка, базовые параметры, способности и ареалы обитания.",
+      secItemsDesc: "Полный каталог 75 расходуемых и экипируемых предметов с их эффектами.",
+      secPowersDesc: "52 боевые активные способности и цыплята, обладающие ими.",
+      secPassivesDesc: "151 пассивная способность, влияющая на ход битвы, и их носители.",
+      secStatesDesc: "7 эффектов состояния, механика срабатывания по ходам и контрмеры.",
+      secZonesDesc: "9 игровых зон, стоимость путешествий, дикие цыплята, магазины и турниры.",
+      secAchievementsDesc: "Все 22 достижения игры и условия их разблокировки.",
+      secMechanicsDesc: "Формулы опыта, разведение яиц, шансы Shiny и лаборатория слияния.",
+      filterAllZones: "Все зоны",
+      filterEvolutions: "Эволюции",
+      sortIdAsc: "Номер (#1-#151)",
+      sortNameAsc: "Имя (А-Я)",
+      sortLifeDesc: "Максимум Здоровья",
+      sortDmgDesc: "Максимум Урона",
+      sortArmDesc: "Максимум Брони",
+      sortSpdDesc: "Максимум Скорости",
+      sortPwrDesc: "Максимум Силы",
+      sortTotalDesc: "Максимум Суммы параметров",
+      viewGrid: "Сетка",
+      viewTable: "Таблица",
+      thId: "#",
+      thSprite: "Спрайт",
+      thName: "Имя",
+      thHp: "Здоровье",
+      thAtk: "Урон",
+      thDef: "Броня",
+      thSpd: "Скорость",
+      thPwr: "Сила",
+      thTotal: "Сумма",
+      thPassive: "Пассивка",
+      thPower: "Способность",
+      thItem: "Предмет",
+      thType: "Тип",
+      thPrice: "Продажа",
+      thShopPrice: "Магазин",
+      thWhere: "Зоны",
+      thEffect: "Эффект",
+      thChickens: "Цыплята с этой способностью",
+      thChickensHidden: "Цыплята со скрытой силой",
+      thIcon: "Значок",
+      thTitle: "Название",
+      thUnlockReq: "Условие открытия",
+      consumable: "Расходник",
+      equipable: "Экипируемый",
+      allTypes: "Все типы",
+      statBaseTitle: "Базовые параметры",
+      statLife: "Здоровье (HP)",
+      statDamage: "Урон (ATK)",
+      statArmor: "Броня (DEF)",
+      statSpeed: "Скорость (SPD)",
+      statPowerAmount: "Сила (PWR)",
+      statTotal: "Сумма параметров",
+      combatSkillsTitle: "⚡ Боевые навыки",
+      passiveSkill: "Пассивная способность",
+      activePower: "Активная способность",
+      hiddenPower: "Скрытая способность",
+      noHiddenPower: "Не может иметь скрытой силы (Боевая трансформация)",
+      powerCost: "Требуемая энергия способности",
+      energyPoints: "очков энергии.",
+      viewAllWithPassive: "→ Все цыплята с этой пассивкой",
+      viewAllWithPower: "→ Все цыплята с этой способностью",
+      viewCombatPowers: "→ Посмотреть боевые способности",
+      tacticalGuideTitle: "Тактический гайд для боя 2на2",
+      tacticalArchetype: "Тактический архетип",
+      powerCycle: "Цикл способности",
+      turn: "ход",
+      turns: "ходов",
+      tacticalDuoRole: "Роль в дуэте 2на2:",
+      recommendedPartners: "Рекомендуемые союзники:",
+      key2vs2Items: "Ключевые предметы в 2на2:",
+      howToCounter: "Как контрить (если враг):",
+      defaultItem: "Стартовый предмет",
+      evolutionHeader: "Линия эволюции",
+      evolutionOnlyWarn: "Эволюционный цыпленок: не встречается в дикой природе, магазине или яйцах.",
+      habitatsHeader: "Среда обитания и получение",
+      wildCombats: "Дикие битвы",
+      eggPools: "Вылупление из яиц",
+      wildHabitats: "Дикая среда",
+      noWild: "Не встречается в дикой природе",
+      noEgg: "Недоступен в яйцах из магазина",
+      zoneShopTitle: "🛒 Магазин зоны",
+      recommendedLevel: "Рекомендуемый уровень:",
+      travelCost: "Стоимость поездки:",
+      speciesCount: "видов",
+      tournamentCup: "Кубок турнира",
+      entryFee: "Взнос",
+      prizeMoney: "Приз",
+      roundsCount: "Раунды:",
+      tournamentRule: "Особое правило",
+      tournamentRewards: "Награды за победу",
+      tournamentRoster: "Команды соперников по раундам",
+      round: "Раунд",
+      lvl: "Уровень",
+      prevBtn: "« Пред.",
+      nextBtn: "След. »",
+      backToList: "← Назад к списку",
+      notFound: "Ничего не найдено.",
+      searchBadgeChicken: "Цыпленок",
+      searchBadgeItem: "Предмет",
+      searchBadgePassive: "Пассивка",
+      searchBadgePower: "Способность",
+      searchBadgeZone: "Зона",
+      searchBadgeAchievement: "Достижение",
+      footerGen: "Сгенерировано напрямую из данных игры v0.117",
+      footerHosting: "Разработано для бесплатного хостинга на",
+      footerStyle: "Классический, быстрый и легкий стиль"
     }
   };
 
   function str(key) {
-    return (t[currentLang] && t[currentLang][key]) || key;
+    return (t[currentLang] && t[currentLang][key]) || (t['es'] && t['es'][key]) || key;
   }
 
   function getLocalized(obj) {
@@ -238,6 +542,12 @@
 
   function finishInit() {
     applyTheme(currentTheme);
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+      langSelect.value = currentLang;
+    }
+    document.documentElement.setAttribute('lang', currentLang);
+    updateNavLabels();
     setupEventListeners();
     handleRoute();
   }
@@ -253,12 +563,18 @@
   }
 
   function applyLang(lang) {
+    if (!t[lang]) lang = 'es';
     currentLang = lang;
     localStorage.setItem('cc_wiki_lang', lang);
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+      langSelect.value = lang;
+    }
     const langBtn = document.getElementById('langBtn');
     if (langBtn) {
-      langBtn.textContent = str('langBtn');
+      langBtn.textContent = lang.toUpperCase();
     }
+    document.documentElement.setAttribute('lang', lang);
     updateNavLabels();
     handleRoute();
   }
@@ -342,10 +658,20 @@
       });
     }
 
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+      langSelect.value = currentLang;
+      langSelect.addEventListener('change', (e) => {
+        applyLang(e.target.value);
+      });
+    }
+
     const langBtn = document.getElementById('langBtn');
     if (langBtn) {
       langBtn.addEventListener('click', () => {
-        applyLang(currentLang === 'es' ? 'en' : 'es');
+        const langs = ['es', 'en', 'pt', 'ru'];
+        const nextIdx = (langs.indexOf(currentLang) + 1) % langs.length;
+        applyLang(langs[nextIdx]);
       });
     }
 
@@ -430,7 +756,7 @@
           results.push({
             type: 'passive',
             badge: str('searchBadgePassive'),
-            title: `Pasiva #${p.id + 1}`,
+            title: `${str('navPassives')} #${p.id + 1}`,
             subtitle: getLocalized(p.description).substring(0, 60) + '...',
             image: 'images/items/21.png',
             hash: 'passives'
@@ -445,7 +771,7 @@
           results.push({
             type: 'power',
             badge: str('searchBadgePower'),
-            title: `Poder #${pw.id + 1}`,
+            title: `${str('navPowers')} #${pw.id + 1}`,
             subtitle: getLocalized(pw.description).substring(0, 60) + '...',
             image: 'images/items/12.png',
             hash: 'powers'
@@ -461,7 +787,7 @@
             type: 'zone',
             badge: str('searchBadgeZone'),
             title: getLocalized(z.name),
-            subtitle: `Nivel ${z.level_range[0]}-${z.level_range[1]} | Viaje: ${z.travel_price}`,
+            subtitle: `${str('lvl')} ${z.level_range[0]}-${z.level_range[1]} | ${str('travelCost')} ${z.travel_price} 💰`,
             image: z.banner,
             hash: 'zones'
           });
@@ -507,7 +833,7 @@
         <div class="filter-group">
           <select id="chickenZoneFilter" class="filter-select">
             <option value="all">${str('filterAllZones')}</option>
-            ${WIKI.zones.map(z => `<option value="${z.id}" ${currentChickenFilterZone == z.id ? 'selected' : ''}>Zona ${z.id + 1}: ${getLocalized(z.name)}</option>`).join('')}
+            ${WIKI.zones.map(z => `<option value="${z.id}" ${currentChickenFilterZone == z.id ? 'selected' : ''}>${str('searchBadgeZone')} ${z.id + 1}: ${getLocalized(z.name)}</option>`).join('')}
             <option value="evolutions" ${currentChickenFilterZone === 'evolutions' ? 'selected' : ''}>⭐ ${str('filterEvolutions')}</option>
           </select>
 
@@ -746,7 +1072,7 @@
           ${c.evolution && c.evolution.evolution_only ? `
             <div class="article-box" style="background:#fff3bf;border-color:#ffe066;color:#d9480f;">
               <strong>⚠️ ${str('evolutionOnlyWarn')}</strong>
-              <div style="font-size:12px;margin-top:4px;">${getLocalized(c.evolution.desc_es)}</div>
+              <div style="font-size:12px;margin-top:4px;">${getLocalized(c.evolution.desc)}</div>
             </div>
           ` : ''}
 
@@ -784,12 +1110,12 @@
           </div>
 
           <!-- Combat Skills -->
-          <h2 class="article-h2">⚡ Habilidades de Combate</h2>
+          <h2 class="article-h2">${str('combatSkillsTitle')}</h2>
           <div class="article-box">
             <h4>${str('passiveSkill')} (#${c.passive_id + 1})</h4>
             <p style="font-size:13px;line-height:1.5;">${passiveObj ? getLocalized(passiveObj.description) : '-'}</p>
             <div style="margin-top:8px;">
-              <a href="#passives" style="font-size:12px;">→ Ver todos los pollos con esta pasiva</a>
+              <a href="#passives" style="font-size:12px;">${str('viewAllWithPassive')}</a>
             </div>
           </div>
 
@@ -797,10 +1123,10 @@
             <h4>✨ ${str('activePower')} (#${c.power_id + 1})</h4>
             <p style="font-size:13px;line-height:1.5;">${powerObj ? getLocalized(powerObj.description) : '-'}</p>
             <div style="font-size:12px;color:var(--wiki-text-muted);margin-top:6px;">
-              <strong>${str('powerCost')}:</strong> ${c.power_max} puntos de energía.
+              <strong>${str('powerCost')}:</strong> ${c.power_max} ${str('energyPoints')}
             </div>
             <div style="margin-top:8px;">
-              <a href="#powers" style="font-size:12px;">→ Ver todos los pollos con este poder</a>
+              <a href="#powers" style="font-size:12px;">${str('viewAllWithPower')}</a>
             </div>
           </div>
 
@@ -809,10 +1135,10 @@
             ${hiddenPowerObj ? `
               <p style="font-size:13px;line-height:1.5;">${getLocalized(hiddenPowerObj.description)}</p>
               <div style="font-size:12px;color:var(--wiki-text-muted);margin-top:6px;">
-                <strong>${str('powerCost')}:</strong> ${hiddenPowerObj.cost} puntos de energía.
+                <strong>${str('powerCost')}:</strong> ${hiddenPowerObj.cost} ${str('energyPoints')}
               </div>
               <div style="margin-top:8px;">
-                <a href="#powers" style="font-size:12px;">→ Ver poderes de combate</a>
+                <a href="#powers" style="font-size:12px;">${str('viewCombatPowers')}</a>
               </div>
             ` : `
               <p style="font-size:13px;line-height:1.5;color:var(--wiki-text-muted);">${str('noHiddenPower')}</p>
@@ -823,22 +1149,23 @@
           <!-- Guía Táctica 2vs2 -->
           ${(() => {
             const tactical = getChickenTacticalAnalysis(c, currentLang);
+            const turnsWord = tactical.turns === 1 ? str('turn') : str('turns');
             return `
-              <h2 class="article-h2">🎯 ${currentLang === 'es' ? 'Guía Táctica de Combate 2vs2' : '2vs2 Combat Tactical Guide'}</h2>
+              <h2 class="article-h2">🎯 ${str('tacticalGuideTitle')}</h2>
               <div class="article-box" style="border-left: 4px solid #f59e0b; background: var(--wiki-bg-card, var(--wiki-bg));">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
                   <div>
                     <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--wiki-text-muted);display:block;">
-                      ${currentLang === 'es' ? 'Arquetipo Táctico' : 'Tactical Archetype'}
+                      ${str('tacticalArchetype')}
                     </span>
                     <span style="font-size:15px;font-weight:700;color:#f59e0b;">${tactical.role}</span>
                   </div>
                   <div style="text-align:right;">
                     <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--wiki-text-muted);display:block;">
-                      ${currentLang === 'es' ? 'Ciclo de Poder' : 'Power Cycle'}
+                      ${str('powerCycle')}
                     </span>
                     <span style="font-size:13px;font-weight:600;font-family:monospace;color:var(--wiki-accent);">
-                      ~${tactical.turns} ${tactical.turns === 1 ? (currentLang === 'es' ? 'turno' : 'turn') : (currentLang === 'es' ? 'turnos' : 'turns')}
+                      ~${tactical.turns} ${turnsWord}
                     </span>
                   </div>
                 </div>
@@ -846,28 +1173,28 @@
                 <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.5;">
                   <div>
                     <strong style="color:#d97706;display:block;margin-bottom:2px;">
-                      ⚔️ ${currentLang === 'es' ? 'Función en el Dúo 2vs2:' : '2vs2 Duo Role:'}
+                      ⚔️ ${str('tacticalDuoRole')}
                     </strong>
                     <p style="margin:0;">${tactical.duo}</p>
                   </div>
 
                   <div style="border-top:1px solid var(--wiki-border-light);padding-top:8px;">
                     <strong style="color:#059669;display:block;margin-bottom:2px;">
-                      🤝 ${currentLang === 'es' ? 'Compañeros Recomendados:' : 'Recommended Partners:'}
+                      🤝 ${str('recommendedPartners')}
                     </strong>
                     <p style="margin:0;color:var(--wiki-text-muted);">${tactical.allies}</p>
                   </div>
 
                   <div style="border-top:1px solid var(--wiki-border-light);padding-top:8px;">
                     <strong style="color:#2563eb;display:block;margin-bottom:2px;">
-                      🎒 ${currentLang === 'es' ? 'Ítems Clave en 2vs2:' : 'Key 2vs2 Items:'}
+                      🎒 ${str('key2vs2Items')}
                     </strong>
                     <p style="margin:0;color:var(--wiki-text-muted);">${tactical.items}</p>
                   </div>
 
                   <div style="border-top:1px solid var(--wiki-border-light);padding-top:8px;">
                     <strong style="color:#e11d48;display:block;margin-bottom:2px;">
-                      🔴 ${currentLang === 'es' ? 'Cómo Contrarrestarlo (Si es tu Rival):' : 'How to Counter (If Enemy):'}
+                      🔴 ${str('howToCounter')}
                     </strong>
                     <p style="margin:0;color:var(--wiki-text-muted);">${tactical.counter}</p>
                   </div>
@@ -889,12 +1216,12 @@
                   <span style="font-size:18px;">➔</span>
                   <div style="display:flex;align-items:center;gap:8px;cursor:pointer;" onclick="location.hash='chicken-${c.evolution.target_id}'">
                     <img class="pixelated" src="images/chickens/${c.evolution.target_id}.png" width="40" height="40" alt="">
-                    <a href="#chicken-${c.evolution.target_id}"><strong>${c.evolution.target_name} (#${String(c.evolution.target_id + 1).padStart(3, '0')})</strong></a>
+                    <a href="#chicken-${c.evolution.target_id}"><strong>${WIKI.chickens[c.evolution.target_id] ? getLocalized(WIKI.chickens[c.evolution.target_id].name) : c.evolution.target_name} (#${String(c.evolution.target_id + 1).padStart(3, '0')})</strong></a>
                   </div>
                 ` : `
                   <div style="display:flex;align-items:center;gap:8px;cursor:pointer;" onclick="location.hash='chicken-${c.evolution.source_id}'">
                     <img class="pixelated" src="images/chickens/${c.evolution.source_id}.png" width="40" height="40" alt="">
-                    <a href="#chicken-${c.evolution.source_id}"><strong>${c.evolution.source_name} (#${String(c.evolution.source_id + 1).padStart(3, '0')})</strong></a>
+                    <a href="#chicken-${c.evolution.source_id}"><strong>${WIKI.chickens[c.evolution.source_id] ? getLocalized(WIKI.chickens[c.evolution.source_id].name) : c.evolution.source_name} (#${String(c.evolution.source_id + 1).padStart(3, '0')})</strong></a>
                   </div>
                   <span style="font-size:18px;">➔</span>
                   <div style="display:flex;align-items:center;gap:8px;">
@@ -903,22 +1230,28 @@
                   </div>
                 `}
               </div>
-              <p style="font-size:12px;margin-top:8px;color:var(--wiki-text-muted);">${currentLang === 'es' ? c.evolution.desc_es : c.evolution.desc_en}</p>
+              <p style="font-size:12px;margin-top:8px;color:var(--wiki-text-muted);">${getLocalized(c.evolution.desc)}</p>
             </div>
           ` : ''}
 
           <!-- Habitats -->
-          <h2 class="article-h2">🗺️ ${str('habitatsHeader')}</h2>
-          <div class="article-box">
-            <div style="margin-bottom:12px;">
-              <strong>${str('wildCombats')}:</strong>
-              ${c.habitats.wild.length > 0 ? c.habitats.wild.map(z => `<span class="badge badge-zone" style="margin-left:6px;">${z}</span>`).join('') : `<span style="color:var(--wiki-text-muted);margin-left:6px;">${str('noWild')}</span>`}
-            </div>
-            <div>
-              <strong>${str('eggPools')}:</strong>
-              ${c.habitats.eggs.length > 0 ? c.habitats.eggs.map(z => `<span class="badge badge-zone" style="margin-left:6px;">${z}</span>`).join('') : `<span style="color:var(--wiki-text-muted);margin-left:6px;">${str('noEgg')}</span>`}
-            </div>
-          </div>
+          ${(() => {
+            const wildNames = (c.habitats.wild_ids || []).map(zid => WIKI.zones[zid] ? getLocalized(WIKI.zones[zid].name) : '');
+            const eggNames = (c.habitats.egg_ids || []).map(zid => WIKI.zones[zid] ? getLocalized(WIKI.zones[zid].name) : '');
+            return `
+              <h2 class="article-h2">🗺️ ${str('habitatsHeader')}</h2>
+              <div class="article-box">
+                <div style="margin-bottom:12px;">
+                  <strong>${str('wildCombats')}:</strong>
+                  ${wildNames.length > 0 ? wildNames.map(z => `<span class="badge badge-zone" style="margin-left:6px;">${z}</span>`).join('') : `<span style="color:var(--wiki-text-muted);margin-left:6px;">${str('noWild')}</span>`}
+                </div>
+                <div>
+                  <strong>${str('eggPools')}:</strong>
+                  ${eggNames.length > 0 ? eggNames.map(z => `<span class="badge badge-zone" style="margin-left:6px;">${z}</span>`).join('') : `<span style="color:var(--wiki-text-muted);margin-left:6px;">${str('noEgg')}</span>`}
+                </div>
+              </div>
+            `;
+          })()}
         </div>
 
         <!-- Classic MediaWiki Infobox -->
@@ -959,9 +1292,12 @@
             </div>
           </div>
           <div class="infobox-row">
-            <div class="infobox-label">Hábitat Salvaje</div>
+            <div class="infobox-label">${str('wildHabitats')}</div>
             <div class="infobox-value" style="font-size:11px;">
-              ${c.habitats.wild.length > 0 ? c.habitats.wild.join(', ') : str('noWild')}
+              ${(() => {
+                const wildNames = (c.habitats.wild_ids || []).map(zid => WIKI.zones[zid] ? getLocalized(WIKI.zones[zid].name) : '');
+                return wildNames.length > 0 ? wildNames.join(', ') : str('noWild');
+              })()}
             </div>
           </div>
         </div>
@@ -1041,18 +1377,35 @@
             </tr>
           </thead>
           <tbody>
-            ${list.map(it => `
-              <tr>
-                <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(it.id + 1).padStart(2, '0')}</td>
-                <td><img class="pixelated" src="${it.sprite}" width="32" height="32" alt=""></td>
-                <td style="font-weight:700;white-space:nowrap;">${getLocalized(it.name)}</td>
-                <td><span class="badge ${it.consumable ? 'badge-evo' : 'badge-zone'}">${it.consumable ? str('consumable') : str('equipable')}</span></td>
-                <td style="font-weight:600;color:var(--wiki-gold);">${it.shop_price} 💰</td>
-                <td style="color:var(--wiki-text-muted);">${it.price} 💰</td>
-                <td style="font-size:11px;">${it.found_in_zones.length > 0 ? it.found_in_zones.join(', ') : '-'}</td>
-                <td style="font-size:12px;line-height:1.4;">${getLocalized(it.description)}</td>
-              </tr>
-            `).join('')}
+            ${list.map(it => {
+              const zoneNames = [];
+              if (it.found_in_zone_ids) {
+                it.found_in_zone_ids.forEach(zid => {
+                  if (WIKI.zones[zid]) zoneNames.push(getLocalized(WIKI.zones[zid].name));
+                });
+              }
+              if (it.found_in_special) {
+                it.found_in_special.forEach(sp => {
+                  zoneNames.push(getLocalized(sp));
+                });
+              }
+              if (zoneNames.length === 0 && it.found_in_zones && it.found_in_zones.length > 0) {
+                zoneNames.push(...it.found_in_zones);
+              }
+              const whereStr = zoneNames.length > 0 ? zoneNames.join(', ') : '-';
+              return `
+                <tr>
+                  <td style="font-weight:700;color:var(--wiki-text-muted);">#${String(it.id + 1).padStart(2, '0')}</td>
+                  <td><img class="pixelated" src="${it.sprite}" width="32" height="32" alt=""></td>
+                  <td style="font-weight:700;white-space:nowrap;">${getLocalized(it.name)}</td>
+                  <td><span class="badge ${it.consumable ? 'badge-evo' : 'badge-zone'}">${it.consumable ? str('consumable') : str('equipable')}</span></td>
+                  <td style="font-weight:600;color:var(--wiki-gold);">${it.shop_price} 💰</td>
+                  <td style="color:var(--wiki-text-muted);">${it.price} 💰</td>
+                  <td style="font-size:11px;">${whereStr}</td>
+                  <td style="font-size:12px;line-height:1.4;">${getLocalized(it.description)}</td>
+                </tr>
+              `;
+            }).join('')}
           </tbody>
         </table>
       </div>
@@ -1169,8 +1522,8 @@
 
       <div style="display:flex;flex-direction:column;gap:16px;">
         ${WIKI.states.map(s => {
-          const sName = currentLang === 'es' ? s.name_es : s.name_en;
-          const sDesc = currentLang === 'es' ? s.desc_es : s.desc_en;
+          const sName = getLocalized(s.name);
+          const sDesc = getLocalized(s.description);
           return `
             <div class="article-box" style="border-left: 6px solid ${s.color};">
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
@@ -1189,37 +1542,53 @@
   }
 
   function getStatusTips(stateId, lang) {
+    lang = lang || currentLang || 'es';
     const tips = {
       0: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Miracle Drop (#48)</em> o <em>Magic Potion (#35)</em>. Pollier y armaduras altas sufren menos por turno. La pasiva de Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
-        en: "💡 <strong>Counters & Synergies:</strong> Cleansed by <em>Miracle Drop (#48)</em> or <em>Magic Potion (#35)</em>. High defense and regen help sustain through it. Several chickens heal when attacking poisoned foes."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Gota milagrosa (#48)</em> o <em>Poción mágica (#35)</em>. Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
+        en: "💡 <strong>Counters & Synergies:</strong> Cleansed by <em>Miracle Drop (#48)</em> or <em>Magic Potion (#35)</em>. Rufux and other chickens heal when attacking poisoned foes.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Curado por <em>Gota Milagrosa (#48)</em> ou <em>Poção Mágica (#35)</em>. Rufux e outros frangos recuperam vida ao atingir inimigos envenenados.",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Снимается предметами <em>Чудодейственная капля (#48)</em> или <em>Волшебное зелье (#35)</em>. Rufux и другие восстанавливают здоровье при атаке отравленных врагов."
       },
       1: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Flame Fizz (#16)</em>. El objeto <em>Sizzle Heal (#11)</em> convierte el daño de quemadura en curación!",
-        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame Fizz (#16)</em>. Equipping <em>Sizzle Heal (#11)</em> reverses burn damage into healing!"
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Bebida burbujeante (#16)</em>. El objeto <em>Curación abrasadora (#11)</em> convierte el daño de quemadura en curación!",
+        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame Fizz (#16)</em>. Equipping <em>Sizzle Heal (#11)</em> reverses burn damage into healing!",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Ativa ao atacar e ao receber dano. Curado por <em>Refrigerante Flamejante (#16)</em>. O item <em>Cura Crepitante (#11)</em> converte o dano de queimadura em cura!",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Срабатывает при атаке и получении урона. Снимается <em>Огненная шипучка (#16)</em>. Предмет <em>Шкворчащее исцеление (#11)</em> превращает ожог в исцеление!"
       },
       2: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide que el pollo actúe mientras está congelado. Curado por <em>Hot Tea (#41)</em>. Ciertos pollos helados causan daño extra a objetivos congelados (Critical Link #58).",
-        en: "💡 <strong>Counters & Synergies:</strong> Prevents the frozen chicken from taking actions. Cleansed by <em>Hot Tea (#41)</em>. Attacking frozen targets can trigger critical bonus damage."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide que el pollo actúe mientras está congelado. Curado por <em>Té caliente (#41)</em>. Ciertos pollos helados causan daño extra a objetivos congelados.",
+        en: "💡 <strong>Counters & Synergies:</strong> Prevents the frozen chicken from taking actions. Cleansed by <em>Hot Tea (#41)</em>. Attacking frozen targets can trigger critical bonus damage.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Impede ações enquanto congelado. Curado por <em>Chá Quente (#41)</em>. Ataques contra alvos congelados causam dano bônus.",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Полностью блокирует действия цели. Снимается <em>Горячий чай (#41)</em>. Атаки по замороженным врагам могут наносить повышенный урон."
       },
       3: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Neural Reboot (#55)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
-        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reboot (#55)</em>. Excellent for crippling high-speed or heavily armored foes."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Reinicio neural (#55)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
+        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reboot (#55)</em>. Excellent for crippling high-speed or heavily armored foes.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Reduz dano, velocidade e armadura pela metade (50%). Curado por <em>Reinício Neural (#55)</em>. Excelente para neutralizar alvos velozes.",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Снижает урон, скорость и броню вдвое (50%). Снимается <em>Нейроперезагрузка (#55)</em>. Идеально против быстрых и бронированных врагов."
       },
       4: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Bloquea cualquier curación y causa 10% de daño si la criatura intenta curarse. Curado por <em>Magic Potion (#35)</em>. Letal contra equipos basados en pociones y regeneración.",
-        en: "💡 <strong>Counters & Synergies:</strong> Blocks all healing and inflicts 10% damage if the afflicted unit attempts to heal. Cleansed by <em>Magic Potion (#35)</em>."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Bloquea cualquier curación y causa 10% de daño si la criatura intenta curarse. Curado por <em>Poción mágica (#35)</em>. Letal contra equipos basados en pociones y regeneración.",
+        en: "💡 <strong>Counters & Synergies:</strong> Blocks all healing and inflicts 10% damage if the afflicted unit attempts to heal. Cleansed by <em>Magic Potion (#35)</em>.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Bloqueia qualquer cura e causa 10% de dano se a unidade tentar se curar. Curado por <em>Poção Mágica (#35)</em>.",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Блокирует любое лечение и наносит 10% урона при попытке исцелиться. Снимается <em>Волшебное зелье (#35)</em>."
       },
       5: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Big Beak (#18)</em>. Muy eficaz contra jefes con poderes devastadores.",
-        en: "💡 <strong>Counters & Synergies:</strong> Blocks charging power energy. Cleansed by <em>Big Beak (#18)</em>. Strong against boss encounters with devastating powers."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Pico grande (#18)</em>. Muy eficaz contra jefes con poderes devastadores.",
+        en: "💡 <strong>Counters & Synergies:</strong> Blocks charging power energy. Cleansed by <em>Big Beak (#18)</em>. Strong against boss encounters with devastating powers.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Impede o carregamento de energia para usar poderes especiais. Curado por <em>Bico Grande (#18)</em>.",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Не дает накапливать энергию для применения способностей. Снимается <em>Большой клюв (#18)</em>."
       },
       6: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Cure All (#27)</em>.",
-        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure All (#27)</em>."
+        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Cura todo (#27)</em>.",
+        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure All (#27)</em>.",
+        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Drena a vida da vítima e cura a equipe adversária em 5% da vida máxima a cada ação. Curado por <em>Cura Tudo (#27)</em>.",
+        ru: "💡 <strong>Противодействие и синергия:</strong> Истощает здоровье жертвы и лечит команду врага на 5% от макс. здоровья за каждое действие. Снимается <em>Панацея (#27)</em>."
       }
     };
-    return tips[stateId] ? tips[stateId][lang] : "";
+    const tEntry = tips[stateId];
+    return tEntry ? (tEntry[lang] || tEntry['es']) : "";
   }
 
   // 7. ZONES VIEW
@@ -1238,16 +1607,16 @@
           return `
             <div class="zone-card">
               <div class="zone-header-banner" style="background-image: url('${z.banner}');">
-                <div class="zone-banner-title">Zona ${z.id + 1}: ${zName}</div>
+                <div class="zone-banner-title">${str('searchBadgeZone')} ${z.id + 1}: ${zName}</div>
               </div>
               <div class="zone-body">
                 <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13px;margin-bottom:16px;color:var(--wiki-text-muted);">
-                  <div><strong>Nivel recomendado:</strong> ${z.level_range[0]} - ${z.level_range[1]}</div>
-                  <div><strong>Costo de viaje:</strong> ${z.travel_price} 💰</div>
+                  <div><strong>${str('recommendedLevel')}</strong> ${z.level_range[0]} - ${z.level_range[1]}</div>
+                  <div><strong>${str('travelCost')}</strong> ${z.travel_price} 💰</div>
                 </div>
 
                 <!-- Wild Combats -->
-                <h4 style="font-size:13px;margin-bottom:6px;">⚔️ ${str('wildCombats')} (${z.combat_pool.length} especies)</h4>
+                <h4 style="font-size:13px;margin-bottom:6px;">⚔️ ${str('wildCombats')} (${z.combat_pool.length} ${str('speciesCount')})</h4>
                 <div class="mini-chicken-list" style="margin-bottom:16px;">
                   ${z.combat_pool.map(cid => {
                     const ch = WIKI.chickens[cid];
@@ -1262,7 +1631,7 @@
                 </div>
 
                 <!-- Eggs in Zone -->
-                <h4 style="font-size:13px;margin-bottom:6px;">🥚 ${str('eggPools')} (${z.egg_pool.length} especies)</h4>
+                <h4 style="font-size:13px;margin-bottom:6px;">🥚 ${str('eggPools')} (${z.egg_pool.length} ${str('speciesCount')})</h4>
                 <div class="mini-chicken-list" style="margin-bottom:16px;">
                   ${z.egg_pool.map(cid => {
                     const ch = WIKI.chickens[cid];
@@ -1277,7 +1646,7 @@
                 </div>
 
                 <!-- Shop Items -->
-                <h4 style="font-size:13px;margin-bottom:6px;">🛒 Tienda de la Zona</h4>
+                <h4 style="font-size:13px;margin-bottom:6px;">${str('zoneShopTitle')}</h4>
                 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
                   ${z.shop_item_ids.map(iid => {
                     const it = WIKI.items[iid];
@@ -1298,7 +1667,7 @@
                     <div style="font-size:12px;display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px;">
                       <div><strong>${str('entryFee')}:</strong> ${t.entry_fee} 💰</div>
                       <div><strong>${str('prizeMoney')}:</strong> ${t.prize} 💰</div>
-                      <div><strong>Rondas:</strong> ${t.rounds_count}</div>
+                      <div><strong>${str('roundsCount')}</strong> ${t.rounds_count}</div>
                     </div>
                     <div style="font-size:13px;margin-bottom:8px;">
                       <strong>${str('tournamentRule')}:</strong> <em>${getLocalized(t.rule)}</em>
@@ -1344,9 +1713,9 @@
           <thead>
             <tr>
               <th style="width:50px;">${str('thId')}</th>
-              <th style="width:60px;">Icono</th>
-              <th>Título</th>
-              <th>Requisito de Desbloqueo</th>
+              <th style="width:60px;">${str('thIcon')}</th>
+              <th>${str('thTitle')}</th>
+              <th>${str('thUnlockReq')}</th>
             </tr>
           </thead>
           <tbody>

@@ -34,6 +34,25 @@
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: rgba(150, 150, 150, 0.3); border-radius: 3px; }
     input[type=range] { accent-color: #f59e0b; }
+
+    select {
+      background-color: var(--input-bg, #12161d) !important;
+      color: var(--foreground, #e6edf3) !important;
+      border: 1px solid var(--border) !important;
+    }
+    select option {
+      background-color: #181d24 !important;
+      color: #e6edf3 !important;
+    }
+    [data-theme="light"] select {
+      background-color: #ffffff !important;
+      color: #202122 !important;
+      border: 1px solid var(--border) !important;
+    }
+    [data-theme="light"] select option {
+      background-color: #ffffff !important;
+      color: #202122 !important;
+    }
     
     .pixelated {
       image-rendering: pixelated;
@@ -423,15 +442,29 @@
               <span class="text-xs font-mono text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>
             </div>
 
-            <!-- Chicken Info & Sprite -->
-            <div class="flex items-center gap-3 p-2 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-              <img src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated" onerror="this.src=''; this.alt='🐔';" alt="Pollo">
-              <div class="flex-1 min-w-0">
-                <select class="w-full text-xs font-bold rounded bg-transparent text-[var(--foreground)] border-none focus:outline-none cursor-pointer" onchange="updateChicken(${t}, ${s}, parseInt(this.value))">
-                  ${CHICKENS.map(c => `<option value="${c.id}" ${c.id === chicken.id ? 'selected' : ''}>${c.name}</option>`).join('')}
-                </select>
-                <div class="text-[12px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">Pasiva: ${pasDesc}</div>
+            <!-- Chicken Info, Sprite & Dropdown -->
+            <div class="space-y-2 p-2.5 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+              <div class="flex items-center gap-3">
+                <img src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated shrink-0" onerror="this.src=''; this.alt='🐔';" alt="Pollo">
+                <div class="flex-1 min-w-0">
+                  <div class="text-[11px] font-bold text-amber-500 uppercase tracking-wider">Pollo Seleccionado:</div>
+                  <div class="text-sm font-black truncate">${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span></div>
+                </div>
               </div>
+
+              <!-- Search and Select Dropdown -->
+              <div class="space-y-1">
+                <input type="text" id="chicken-search-${t}-${s}" placeholder="🔍 Filtrar pollo por nombre o #..." value="${cfg.searchQuery || ''}" 
+                  class="w-full px-2 py-1 text-xs rounded bg-[var(--input-bg)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-amber-500/50" 
+                  oninput="filterSlotChicken(${t}, ${s}, this.value)">
+                
+                <select id="chicken-select-${t}-${s}" class="w-full text-xs font-semibold rounded px-2 py-1.5 bg-[var(--input-bg)] text-[var(--foreground)] border border-[var(--border)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-500/50" 
+                  onchange="updateChicken(${t}, ${s}, parseInt(this.value))">
+                  ${(cfg.searchQuery ? CHICKENS.filter(c => c.name.toLowerCase().includes(cfg.searchQuery.toLowerCase().trim()) || String(c.id).includes(cfg.searchQuery.trim())) : CHICKENS).map(c => `<option value="${c.id}" ${c.id === chicken.id ? 'selected' : ''}>#${String(c.id).padStart(3, '0')} - ${c.name}</option>`).join('')}
+                </select>
+              </div>
+
+              <div class="text-[11px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">Pasiva: ${pasDesc}</div>
             </div>
 
             <!-- Level / Born / Training -->
@@ -493,7 +526,23 @@
     }
 
     // UPDATE HANDLERS
-    function updateChicken(t, s, cid) { teamConfigs[t][s].chickenId = cid; renderConfigCards(); }
+    function filterSlotChicken(t, s, query) {
+      teamConfigs[t][s].searchQuery = query;
+      const select = document.getElementById(`chicken-select-${t}-${s}`);
+      if (!select) return;
+      const q = query.toLowerCase().trim();
+      const currentId = teamConfigs[t][s].chickenId;
+      const filtered = q ? CHICKENS.filter(c => c.name.toLowerCase().includes(q) || String(c.id).includes(q)) : CHICKENS;
+      select.innerHTML = (filtered.length > 0 ? filtered : CHICKENS).map(c => 
+        `<option value="${c.id}" ${c.id === currentId ? 'selected' : ''}>#${String(c.id).padStart(3, '0')} - ${c.name}</option>`
+      ).join('');
+    }
+
+    function updateChicken(t, s, cid) {
+      teamConfigs[t][s].chickenId = cid;
+      teamConfigs[t][s].searchQuery = '';
+      renderConfigCards();
+    }
     function updateLevel(t, s, val) { teamConfigs[t][s].level = clamp(parseInt(val) || 1, 1, 100); renderConfigCards(); }
     function updateBorn(t, s, val) { teamConfigs[t][s].born = clamp(parseInt(val) || 1, 1, 100); renderConfigCards(); }
     function updateTraining(t, s, val) { teamConfigs[t][s].training = clamp(parseFloat(val) || 1.0, 1.0, 2.0); renderConfigCards(); }
@@ -844,12 +893,20 @@
           if (log) logEvent(`💥 ¡EXPLOSIÓN MASIVA! Todos los pollos pierden 25% de vida máxima.`, "text-red-500 font-bold");
           break;
 
-        case 37: // Transforma en Mechalex (ID 80)
-          transformEntity(attacker, 80, log);
+        case 34: // Transforma en Zombie (ID 6)
+          transformEntity(attacker, 6, log);
           break;
 
-        case 38: // Transforma en Eggalex (ID 79)
-          transformEntity(attacker, 79, log);
+        case 35: // Transforma en Mali (ID 4)
+          transformEntity(attacker, 4, log);
+          break;
+
+        case 37: // Eggalex -> Mechalex (ID 135)
+          transformEntity(attacker, 135, log);
+          break;
+
+        case 38: // Mechalex -> Eggalex (ID 134)
+          transformEntity(attacker, 134, log);
           break;
 
         case 41: // Cura equipo

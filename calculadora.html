@@ -402,14 +402,25 @@
             </div>
           </div>
 
-          <!-- Distribución de Atributos (Total Base: 200 pts) -->
-          <div class="flex items-center justify-between text-xs py-1.5 border-b border-[var(--border)]">
-            <div class="flex items-center gap-1.5 min-w-0">
-              <span class="text-amber-500 font-bold shrink-0">Perfil de Atributos:</span>
-              <span id="radar-archetype-desc" class="text-amber-400 font-semibold text-xs truncate">Equilibrado (Estadísticas Balanceadas)</span>
+          <!-- Perfil Táctico y Presupuesto Base (EN DOS LÍNEAS SEPARADAS) -->
+          <div class="space-y-2 py-2 border-b border-[var(--border)] text-xs">
+            <!-- Línea 1: Rol / Perfil Táctico -->
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[var(--muted-foreground)] font-medium">Perfil Táctico:</span>
+              <span id="radar-archetype-badge" class="px-2.5 py-0.5 rounded-md font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 text-xs">
+                Todoterreno Equilibrado
+              </span>
             </div>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono shrink-0">
-              Total Base: <span id="radar-base-total-pts" class="text-amber-400 font-bold">200 pts</span>
+            <!-- Línea 2: Presupuesto Base y Ciclo de Poder -->
+            <div class="flex items-center justify-between gap-2 text-[11px] text-[var(--muted-foreground)]">
+              <div>
+                <span>Presupuesto Base:</span>
+                <span id="radar-base-total-pts" class="font-bold text-amber-400 font-mono ml-1">200 pts</span>
+              </div>
+              <div>
+                <span>Carga de Poder:</span>
+                <span id="radar-power-cycle" class="font-bold text-purple-400 font-mono ml-1">~5 turnos</span>
+              </div>
             </div>
           </div>
 
@@ -519,21 +530,51 @@
             </svg>
           </div>
 
+          <!-- FICHA TÁCTICA Y ANÁLISIS DEL ROL -->
+          <div class="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2 text-xs">
+            <div class="flex items-center justify-between border-b border-[var(--border)]/60 pb-1.5">
+              <span class="font-bold text-[var(--foreground)] flex items-center gap-1.5">
+                <span>🎯</span> Guía Táctica en Combate
+              </span>
+              <span id="tactical-role-title" class="text-[11px] font-bold text-amber-400 font-mono">
+                Equilibrado
+              </span>
+            </div>
+
+            <div class="space-y-1.5 text-[11px] leading-relaxed">
+              <!-- Fortaleza -->
+              <div class="flex items-start gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">🟢 Fortaleza:</span>
+                <span id="tactical-strength" class="text-[var(--foreground)]">Estadísticas balanceadas sin puntos ciegos. Gran versatilidad táctica.</span>
+              </div>
+              <!-- Vulnerabilidad -->
+              <div class="flex items-start gap-1.5">
+                <span class="text-red-400 font-bold shrink-0">🔴 Vulnerabilidad:</span>
+                <span id="tactical-weakness" class="text-[var(--muted-foreground)]">No sobresale de forma extrema en ningún atributo particular.</span>
+              </div>
+              <!-- Sinergia -->
+              <div class="flex items-start gap-1.5 pt-1 border-t border-[var(--border)]/40">
+                <span class="text-blue-400 font-bold shrink-0">💡 Sinergia Sugerida:</span>
+                <span id="tactical-synergy" class="text-[var(--muted-foreground)]">Combina con cualquier arquetipo y se beneficia de balance general o pociones.</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Footer Legend: Game Ranks -->
-          <div class="pt-2 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-1 text-[11px] text-[var(--muted-foreground)]">
-            <span class="font-medium">Escala de Rangos Oficial del Juego:</span>
+          <div class="pt-1 flex flex-wrap items-center justify-between gap-1 text-[11px] text-[var(--muted-foreground)]">
+            <span class="font-medium">Rangos por Estadística:</span>
             <div class="flex items-center gap-1.5 font-mono font-bold">
-              <span class="text-[#a08c78]">D (&lt;35%)</span>
+              <span class="text-[#a08c78]">D (&lt;35)</span>
               <span>·</span>
-              <span class="text-[#b4b9c8]">C (35%)</span>
+              <span class="text-[#b4b9c8]">C (35)</span>
               <span>·</span>
-              <span class="text-[#5ab4ff]">B (55%)</span>
+              <span class="text-[#5ab4ff]">B (55)</span>
               <span>·</span>
-              <span class="text-[#64f078]">A (75%)</span>
+              <span class="text-[#64f078]">A (75)</span>
               <span>·</span>
-              <span class="text-[#ff8cdc]">S (90%)</span>
+              <span class="text-[#ff8cdc]">S (90)</span>
               <span>·</span>
-              <span class="text-[#ffd700]">P (100% Máx)</span>
+              <span class="text-[#ffd700]">P (100+)</span>
             </div>
           </div>
         </section>
@@ -1031,32 +1072,71 @@
       return { letter: 'D', color: '#a08c78', bg: 'rgba(160, 140, 120, 0.22)', cls: 'rank-D' };
     }
 
-    function getChickenArchetype(statsArr) {
-      const names = ['Vida', 'Daño', 'Velocidad', 'Armadura', 'Poder'];
-      const descriptions = {
-        'Vida': 'Tanque Colosal (Alta Vida y Supervivencia)',
-        'Daño': 'Asaltante Ofensivo (Poder Destructivo)',
-        'Velocidad': 'Velocista Ágil (Iniciativa Rápida)',
-        'Armadura': 'Fortaleza Blindada (Alta Mitigación)',
-        'Poder': 'Especialista Místico (Carga Rápida de Habilidad)'
-      };
-      const entries = statsArr.map((pct, idx) => ({ name: names[idx], pct }));
-      entries.sort((a, b) => b.pct - a.pct);
+    function getChickenTacticalAnalysis(chicken) {
+      const s = chicken.stats;
+      const pMax = chicken.power_max || 100;
+      const pAmt = s.power_amount;
+      const turns = pAmt > 0 ? Math.ceil(pMax / pAmt) : 99;
 
-      if (Math.abs(entries[0].pct - entries[1].pct) < 12 && entries[0].pct > 40) {
-        if ((entries[0].name === 'Daño' && entries[1].name === 'Velocidad') || (entries[0].name === 'Velocidad' && entries[1].name === 'Daño')) {
-          return 'Duelista Rápido (Alto Daño y Velocidad)';
-        }
-        if ((entries[0].name === 'Vida' && entries[1].name === 'Armadura') || (entries[0].name === 'Armadura' && entries[1].name === 'Vida')) {
-          return 'Muralla Indestructible (Alta Vida y Armadura)';
-        }
+      const l = s.life, d = s.damage, sp = s.speed, a = s.armor, p = s.power_amount;
+
+      let role = 'Todoterreno Equilibrado';
+      let roleTitle = 'Equilibrado';
+      let strength = 'Estadísticas balanceadas sin puntos ciegos. Gran versatilidad táctica.';
+      let weakness = 'No sobresale de forma extrema en ningún atributo particular.';
+      let synergy = 'Combina con cualquier arquetipo y se beneficia de balance general o pociones.';
+
+      if (d >= 70 && sp >= 60 && (l <= 30 || a <= 15)) {
+        role = 'Cañón de Cristal (Asesino Rápido)';
+        roleTitle = 'Cañón de Cristal';
+        strength = 'Impacto demoledor con alta iniciativa. Puede eliminar enemigos clave antes de que actúen.';
+        weakness = 'Muy frágil. Puede caer derrotado rápidamente si recibe daño directo concentrado.';
+        synergy = 'Obligatorio protegerlo con un compañero Tanque (con Ítem Provocador) o Páginas de Fénix.';
+      } else if (l >= 65 && a >= 50) {
+        role = 'Muralla Blindada (Tanque Puro)';
+        roleTitle = 'Muralla Blindada';
+        strength = 'Supervivencia descomunal. Mitiga enormes cantidades de daño y resiste castigo prolongado.';
+        weakness = 'Baja velocidad y daño limitado. Depende de ganar por desgaste o de su compañero.';
+        synergy = 'Equipar Ítem Provocador (Pickinator), Armadura de Espinas o Regeneración.';
+      } else if (d >= 70 && l >= 60) {
+        role = 'Coloso (Bruiser Ofensivo)';
+        roleTitle = 'Coloso Ofensivo';
+        strength = 'Excelente mezcla de daño muy alto y resistencia física para sostener duelos 1vs1.';
+        weakness = 'Velocidad modesta; suele recibir el primer golpe antes de responder.';
+        synergy = 'Acompañar con aumentos de velocidad o pociones curativas para asegurar que descargue su daño.';
+      } else if (sp >= 80) {
+        role = 'Velocista Ágil (Iniciador)';
+        roleTitle = 'Velocista Ágil';
+        strength = 'Garantiza la iniciativa del turno casi siempre. Golpea primero y aplica efectos antes.';
+        weakness = 'Resistencia o ataque moderados en comparación con especialistas pesados.';
+        synergy = 'Equipar ítems que apliquen veneno, aturdimiento o aumenten la probabilidad crítica.';
+      } else if (p >= 60 || turns <= 2) {
+        role = 'Especialista Místico (Caster)';
+        roleTitle = 'Caster Místico';
+        strength = `Carga de habilidad ultra-veloz. Dispara su poder activo cada ~${turns} ${turns === 1 ? 'turno' : 'turnos'}.`;
+        weakness = 'Atributos físicos modestos para compensar su tremenda generación de energía.';
+        synergy = 'Aprovechar al máximo si su poder cura, coloca escudos o causa estragos en área.';
+      } else if (l >= 80) {
+        role = 'Tanque de Vida Masiva';
+        roleTitle = 'Tanque de Vida';
+        strength = 'Reserva de vida gigantesca. Absorbe ataques demoledores sin inmutarse.';
+        weakness = 'Baja armadura y daño bajo; puede sufrir contra venenos o quemaduras porcentuales.';
+        synergy = 'Acompañar con un atacante de alto daño y pociones que eleven su defensa.';
+      } else if (a >= 70) {
+        role = 'Bastión Defensivo';
+        roleTitle = 'Bastión Defensivo';
+        strength = 'Máxima mitigación de daño físico directo mediante porcentaje de armadura.';
+        weakness = 'Vulnerable a efectos de estado que ignoran defensa o ataques mágicos puros.';
+        synergy = 'Equipar ítems de contraataque o vampirismo para castigar a quien lo ataque.';
+      } else if (d >= 80) {
+        role = 'Atacante Pesado (Heavy Hitter)';
+        roleTitle = 'Atacante Pesado';
+        strength = 'Fuerza bruta devastadora capaz de quebrar defensas enemigas.';
+        weakness = 'Velocidad de reacción baja o poca defensa.';
+        synergy = 'Proteger con escudos o pociones de velocidad para permitirle conectar sus golpes.';
       }
 
-      if (entries[0].pct - entries[entries.length - 1].pct < 22) {
-        return 'Todoterreno Equilibrado (Estadísticas Balanceadas)';
-      }
-
-      return descriptions[entries[0].name] || 'Luchador Equilibrado';
+      return { role, roleTitle, strength, weakness, synergy, turns };
     }
 
     function updateStatsRadar(combatRes) {
@@ -1103,9 +1183,25 @@
         subElem.textContent = `#${String(currentChicken.id).padStart(3, '0')} ${currentChicken.name} (${radarMode === 'combat' ? 'Nivel ' + currentLevel : 'Base Especie'})`;
       }
 
-      // Archetype Description
-      const descElem = document.getElementById('radar-archetype-desc');
-      if (descElem) descElem.textContent = getChickenArchetype(statPcts);
+      // Tactical Analysis & Role
+      const tactical = getChickenTacticalAnalysis(currentChicken);
+      const roleBadge = document.getElementById('radar-archetype-badge');
+      if (roleBadge) roleBadge.textContent = tactical.role;
+
+      const powerCycle = document.getElementById('radar-power-cycle');
+      if (powerCycle) powerCycle.textContent = `~${tactical.turns} ${tactical.turns === 1 ? 'turno' : 'turnos'}`;
+
+      const tacTitle = document.getElementById('tactical-role-title');
+      if (tacTitle) tacTitle.textContent = tactical.roleTitle;
+
+      const tacStrength = document.getElementById('tactical-strength');
+      if (tacStrength) tacStrength.textContent = tactical.strength;
+
+      const tacWeakness = document.getElementById('tactical-weakness');
+      if (tacWeakness) tacWeakness.textContent = tactical.weakness;
+
+      const tacSynergy = document.getElementById('tactical-synergy');
+      if (tacSynergy) tacSynergy.textContent = tactical.synergy;
 
       // Target points for smooth polygon lerp
       radarTargetPoints = statPcts.map(p => Math.max(0.08, Math.min(1.0, p / 100)));

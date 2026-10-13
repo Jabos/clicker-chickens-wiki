@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Estadísticas - Clicker Chickens</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
+    :root, [data-theme="dark"] {
+      --background: #10141a;
+      --card: #181d24;
+      --border: #262e38;
+      --border-light: #38434f;
+      --foreground: #e6edf3;
+      --muted-foreground: #8b949e;
+      --input-bg: #12161d;
+      color-scheme: dark;
+    }
+    [data-theme="light"] {
+      --background: #f8f9fa;
+      --card: #ffffff;
+      --border: #eaecf0;
+      --border-light: #a2a9b1;
+      --foreground: #202122;
+      --muted-foreground: #54595d;
+      --input-bg: #f0f2f5;
+      color-scheme: light;
+    }
     /* Custom subtle scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
@@ -23,7 +43,7 @@
     }
   </style>
 </head>
-<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 md:p-6 min-h-screen">
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 md:p-6 min-h-screen transition-colors duration-200">
   <div class="max-w-6xl mx-auto space-y-6">
 
     <!-- HEADER / BANNER -->
@@ -47,6 +67,9 @@
         <a href="index.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)] mr-1">
           <span>←</span> Volver a la Wiki
         </a>
+        <button id="theme-btn" onclick="toggleTheme()" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--foreground)] mr-1">
+          🌙 Modo Oscuro
+        </button>
         <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mr-1">Presets:</span>
         <button onclick="applyPreset('base')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
           🐣 Base (Nv.1)
@@ -730,6 +753,22 @@
         progBody.appendChild(tr);
       });
     }
+
+    // THEME HANDLING
+    let currentTheme = localStorage.getItem('cc_wiki_theme') || 'dark';
+    function applyTheme(t) {
+      currentTheme = t;
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('cc_wiki_theme', t);
+      const btn = document.getElementById('theme-btn');
+      if (btn) {
+        btn.innerHTML = (t === 'dark') ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
+      }
+    }
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+    applyTheme(currentTheme);
 
     // INIT
     populateDropdown(CHICKENS);

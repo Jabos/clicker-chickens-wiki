@@ -1,5 +1,5 @@
 window.WIKI_DATA = {
-  "version": "0.111",
+  "version": "0.117",
   "chickens": [
     {
       "id": 0,
@@ -3163,8 +3163,13 @@ window.WIKI_DATA = {
       },
       "stat_total": 200,
       "habitats": {
-        "wild": [],
-        "eggs": []
+        "wild": [
+          "Rocosos",
+          "Arcana"
+        ],
+        "eggs": [
+          "Rocosos"
+        ]
       },
       "evolution": null
     },
@@ -12081,7 +12086,8 @@ window.WIKI_DATA = {
         97,
         99,
         131,
-        138
+        138,
+        98
       ],
       "egg_pool": [
         5,
@@ -12101,7 +12107,8 @@ window.WIKI_DATA = {
         47,
         130,
         131,
-        138
+        138,
+        98
       ],
       "shop_item_ids": [
         32,
@@ -12487,6 +12494,7 @@ window.WIKI_DATA = {
         99,
         131,
         138,
+        98,
         14,
         50,
         51,

@@ -82,32 +82,38 @@
       <div class="flex items-center gap-3">
         <span class="text-3xl">⚔️</span>
         <div>
-          <h1 class="text-xl md:text-2xl font-bold tracking-tight text-[var(--foreground)]">
+          <h1 id="sim-title" class="text-xl md:text-2xl font-bold tracking-tight text-[var(--foreground)]">
             Simulador de Combate 2vs2
           </h1>
-          <p class="text-xs md:text-sm text-[var(--muted-foreground)]">
+          <p id="sim-subtitle" class="text-xs md:text-sm text-[var(--muted-foreground)]">
             Arena táctica oficial de Clicker Chickens: Poderes, Pasivas, Transformaciones y Targeting
           </p>
         </div>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
-        <a href="index.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
-          <span>←</span> Volver a la Wiki
+        <a id="back-to-wiki-link" href="index.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          <span>←</span> <span id="back-to-wiki-text">Volver a la Wiki</span>
         </a>
-        <a href="calculadora.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
-          <span>🧮</span> Calculadora Stats
+        <a id="calc-link" href="calculadora.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          <span>🧮</span> <span id="calc-link-text">Calculadora Stats</span>
         </a>
         <button id="theme-btn" onclick="toggleTheme()" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--foreground)]">
           🌙 Modo Oscuro
         </button>
+        <select id="sim-lang-select" onchange="setLanguage(this.value)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] text-[var(--foreground)] transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-500/40">
+          <option value="es">🇪🇸 Español</option>
+          <option value="en">🇺🇸 English</option>
+          <option value="pt">🇧🇷 Português</option>
+          <option value="ru">🇷🇺 Русский</option>
+        </select>
       </div>
     </header>
 
     <!-- CONFIGURACIÓN GLOBAL DE COMBATE -->
     <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
       <div class="flex flex-wrap items-center gap-3">
-        <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Modo de Combate:</span>
+        <span id="lbl-battle-mode" class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Modo de Combate:</span>
         <select id="battle-mode" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-amber-500/40 cursor-pointer" onchange="onBattleModeChange()">
           <option value="-1">⚔️ Combate Estándar (PvP / Wild)</option>
           <option value="0">🏆 Torneo 0: Pradera (Curación total al matar)</option>
@@ -125,14 +131,14 @@
 
       <!-- BOTONES DE ACCIÓN PRINCIPALES -->
       <div class="flex flex-wrap items-center gap-2">
-        <button onclick="startVisualBattle()" class="px-4 py-2 text-xs font-bold rounded-xl bg-amber-500 hover:bg-amber-600 text-black shadow transition flex items-center gap-1.5">
-          <span>⚔️</span> Simular Combate
+        <button id="btn-start-battle" onclick="startVisualBattle()" class="px-4 py-2 text-xs font-bold rounded-xl bg-amber-500 hover:bg-amber-600 text-black shadow transition flex items-center gap-1.5">
+          <span>⚔️</span> <span id="lbl-btn-start">Simular Combate</span>
         </button>
-        <button onclick="runMonteCarlo(500)" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 transition flex items-center gap-1.5">
-          <span>⚡</span> Simular 500 Partidas
+        <button id="btn-monte-carlo" onclick="runMonteCarlo(500)" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 transition flex items-center gap-1.5">
+          <span>⚡</span> <span id="lbl-btn-mc">Simular 500 Partidas</span>
         </button>
-        <button onclick="randomizeAllTeams()" class="px-3 py-2 text-xs font-medium rounded-xl bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
-          🎲 Todo Aleatorio
+        <button id="btn-random-all" onclick="randomizeAllTeams()" class="px-3 py-2 text-xs font-medium rounded-xl bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
+          🎲 <span id="lbl-btn-rand-all">Todo Aleatorio</span>
         </button>
       </div>
     </section>
@@ -142,19 +148,19 @@
       <div class="flex items-center gap-2.5">
         <span class="text-lg">💾</span>
         <div>
-          <div class="font-bold text-amber-500">Gestor de Equipos y Códigos Compartibles</div>
-          <div class="text-[var(--muted-foreground)] text-[11px] hidden sm:block">Guarda tus combinaciones favoritas o compártelas fácilmente mediante códigos de texto.</div>
+          <div id="lbl-team-manager-title" class="font-bold text-amber-500">Gestor de Equipos y Códigos Compartibles</div>
+          <div id="lbl-team-manager-sub" class="text-[var(--muted-foreground)] text-[11px] hidden sm:block">Guarda tus combinaciones favoritas o compártelas fácilmente mediante códigos de texto.</div>
         </div>
       </div>
       <div class="flex flex-wrap items-center gap-2">
         <button onclick="copyFullMatchCode()" class="px-3 py-1.5 rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] font-medium transition flex items-center gap-1.5 text-blue-400" title="Copia el enfrentamiento 2vs2 completo (4 pollos)">
-          <span>📋</span> Copiar Combate Completo
+          <span>📋</span> <span id="lbl-btn-copy-full">Copiar Combate Completo</span>
         </button>
         <button onclick="importCodePrompt(-1)" class="px-3 py-1.5 rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] font-medium transition flex items-center gap-1.5" title="Pega un código de equipo o combate">
-          <span>📥</span> Importar Código
+          <span>📥</span> <span id="lbl-btn-import-code">Importar Código</span>
         </button>
         <button onclick="openManageSavedModal()" class="px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/30 font-semibold transition flex items-center gap-1.5" title="Ver y gestionar todos tus equipos guardados">
-          <span>⭐</span> Mis Equipos (<span id="saved-teams-count">0</span>)
+          <span>⭐</span> <span id="lbl-btn-my-teams">Mis Equipos</span> (<span id="saved-teams-count">0</span>)
         </button>
       </div>
     </div>
@@ -167,7 +173,7 @@
         <div class="flex flex-wrap items-center justify-between border-b border-[var(--border)] pb-3 gap-2">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span>
-            <h2 class="text-base font-bold text-blue-400 uppercase tracking-wide">
+            <h2 id="lbl-team-blue-title" class="text-base font-bold text-blue-400 uppercase tracking-wide">
               Equipo Azul (Tu Bando)
             </h2>
           </div>
@@ -175,14 +181,14 @@
             <select id="load-team-select-0" onchange="onSelectTeamPreset(0, this.value); this.value='';" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500">
               <!-- populated dynamically -->
             </select>
-            <button onclick="saveTeamPrompt(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Guardar este equipo localmente">
-              💾 Guardar
+            <button id="btn-save-team-0" onclick="saveTeamPrompt(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Guardar este equipo localmente">
+              💾 <span id="lbl-save-0">Guardar</span>
             </button>
-            <button onclick="copyTeamCode(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código de este equipo">
-              📋 Código
+            <button id="btn-copy-code-0" onclick="copyTeamCode(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código de este equipo">
+              📋 <span id="lbl-code-0">Código</span>
             </button>
-            <button onclick="importCodePrompt(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pegar código en este equipo">
-              📥 Pegar
+            <button id="btn-paste-code-0" onclick="importCodePrompt(0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pegar código en este equipo">
+              📥 <span id="lbl-paste-0">Pegar</span>
             </button>
             <button onclick="applyTeamPreset(0, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Nivel 100 y Genética 100">
               👑 Max
@@ -205,7 +211,7 @@
         <div class="flex flex-wrap items-center justify-between border-b border-[var(--border)] pb-3 gap-2">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-            <h2 class="text-base font-bold text-red-400 uppercase tracking-wide">
+            <h2 id="lbl-team-red-title" class="text-base font-bold text-red-400 uppercase tracking-wide">
               Equipo Rojo (Rival)
             </h2>
           </div>
@@ -213,14 +219,14 @@
             <select id="load-team-select-1" onchange="onSelectTeamPreset(1, this.value); this.value='';" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-red-500">
               <!-- populated dynamically -->
             </select>
-            <button onclick="saveTeamPrompt(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Guardar este equipo localmente">
-              💾 Guardar
+            <button id="btn-save-team-1" onclick="saveTeamPrompt(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Guardar este equipo localmente">
+              💾 <span id="lbl-save-1">Guardar</span>
             </button>
-            <button onclick="copyTeamCode(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código de este equipo">
-              📋 Código
+            <button id="btn-copy-code-1" onclick="copyTeamCode(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código de este equipo">
+              📋 <span id="lbl-code-1">Código</span>
             </button>
-            <button onclick="importCodePrompt(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pegar código en este equipo">
-              📥 Pegar
+            <button id="btn-paste-code-1" onclick="importCodePrompt(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Pegar código en este equipo">
+              📥 <span id="lbl-paste-1">Pegar</span>
             </button>
             <button onclick="applyTeamPreset(1, 'max')" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)]" title="Nivel 100 y Genética 100">
               👑 Max
@@ -245,7 +251,7 @@
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] pb-3">
         <div class="flex items-center gap-2">
           <span class="text-xl">🏟️</span>
-          <h2 class="text-base font-bold">Arena de Batalla</h2>
+          <h2 id="lbl-arena-title" class="text-base font-bold">Arena de Batalla</h2>
           <span id="arena-round-badge" class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-500 font-mono font-semibold">
             Ronda 0
           </span>
@@ -282,8 +288,8 @@
       <!-- COMBAT LOG CONSOLE -->
       <div class="space-y-2">
         <div class="flex items-center justify-between text-xs text-[var(--muted-foreground)]">
-          <span class="font-semibold uppercase tracking-wider">Registro de Combate (Battle Log):</span>
-          <button onclick="clearLog()" class="hover:text-[var(--foreground)]">Limpiar Log</button>
+          <span id="lbl-log-title" class="font-semibold uppercase tracking-wider">Registro de Combate (Battle Log):</span>
+          <button id="btn-clear-log" onclick="clearLog()" class="hover:text-[var(--foreground)]">Limpiar Log</button>
         </div>
         <div id="combat-log" class="h-48 overflow-y-auto rounded-xl bg-[var(--input-bg)] border border-[var(--border)] p-3 text-xs font-mono space-y-1">
           <div class="text-[var(--muted-foreground)] italic">Configura los equipos y presiona "Simular Combate" para comenzar...</div>
@@ -295,7 +301,7 @@
     <section id="monte-carlo-panel" class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4 hidden">
       <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
         <h3 class="text-base font-bold flex items-center gap-2">
-          <span>📊</span> Resultados de Simulación Masiva (500 Partidas)
+          <span>📊</span> <span id="lbl-mc-title">Resultados de Simulación Masiva (500 Partidas)</span>
         </h3>
         <button onclick="document.getElementById('monte-carlo-panel').classList.add('hidden')" class="text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
           ✕ Cerrar
@@ -304,29 +310,29 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
         <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2">
-          <div class="text-xs text-blue-400 font-semibold uppercase">Victorias Equipo Azul</div>
+          <div id="lbl-mc-blue-title" class="text-xs text-blue-400 font-semibold uppercase">Victorias Equipo Azul</div>
           <div id="mc-blue-pct" class="text-3xl font-black text-blue-400">0%</div>
           <div id="mc-blue-count" class="text-xs text-[var(--muted-foreground)] font-mono">0 / 500</div>
         </div>
 
         <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2">
-          <div class="text-xs text-red-400 font-semibold uppercase">Victorias Equipo Rojo</div>
+          <div id="lbl-mc-red-title" class="text-xs text-red-400 font-semibold uppercase">Victorias Equipo Rojo</div>
           <div id="mc-red-pct" class="text-3xl font-black text-red-400">0%</div>
           <div id="mc-red-count" class="text-xs text-[var(--muted-foreground)] font-mono">0 / 500</div>
         </div>
 
         <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2">
-          <div class="text-xs text-amber-400 font-semibold uppercase">Estadísticas Promedio</div>
+          <div id="lbl-mc-avg-title" class="text-xs text-amber-400 font-semibold uppercase">Estadísticas Promedio</div>
           <div id="mc-avg-rounds" class="text-3xl font-black text-amber-400">0</div>
-          <div class="text-xs text-[var(--muted-foreground)]">Rondas promedio por combate</div>
+          <div id="lbl-mc-avg-desc" class="text-xs text-[var(--muted-foreground)]">Rondas promedio por combate</div>
         </div>
       </div>
 
       <!-- WINRATE BAR -->
       <div class="space-y-1">
         <div class="flex justify-between text-xs font-semibold">
-          <span class="text-blue-400">Equipo Azul</span>
-          <span class="text-red-400">Equipo Rojo</span>
+          <span id="lbl-mc-bar-blue" class="text-blue-400">Equipo Azul</span>
+          <span id="lbl-mc-bar-red" class="text-red-400">Equipo Rojo</span>
         </div>
         <div class="w-full h-3 rounded-full bg-[var(--border)] overflow-hidden flex">
           <div id="mc-bar-blue" class="h-full bg-blue-500 transition-all duration-300" style="width: 50%;"></div>
@@ -341,33 +347,687 @@
   <script>
     // DATA INJECTED
     const CHICKENS = [{"id": 0, "name": "Pollier", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 0, "stats": {"life": 60, "damage": 40, "armor": 40, "speed": 40, "power_amount": 20}}, {"id": 1, "name": "Chica", "power_max": 140, "power_id": 0, "hidden_power_id": 4, "passive_id": 1, "stats": {"life": 25, "damage": 80, "armor": 5, "speed": 80, "power_amount": 10}}, {"id": 2, "name": "McDuck", "power_max": 100, "power_id": 2, "hidden_power_id": 11, "passive_id": 2, "stats": {"life": 50, "damage": 50, "armor": 20, "speed": 60, "power_amount": 20}}, {"id": 3, "name": "Ponk", "power_max": 130, "power_id": 1, "hidden_power_id": 10, "passive_id": 3, "stats": {"life": 90, "damage": 20, "armor": 40, "speed": 30, "power_amount": 20}}, {"id": 4, "name": "Mali", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 4, "stats": {"life": 45, "damage": 45, "armor": 35, "speed": 35, "power_amount": 40}}, {"id": 5, "name": "Cay", "power_max": 100, "power_id": 3, "hidden_power_id": 46, "passive_id": 5, "stats": {"life": 20, "damage": 70, "armor": 10, "speed": 90, "power_amount": 10}}, {"id": 6, "name": "Zombie", "power_max": 100, "power_id": 4, "hidden_power_id": 30, "passive_id": 6, "stats": {"life": 30, "damage": 100, "armor": 30, "speed": 30, "power_amount": 10}}, {"id": 7, "name": "Pasti", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 7, "stats": {"life": 60, "damage": 30, "armor": 30, "speed": 50, "power_amount": 30}}, {"id": 8, "name": "Iris", "power_max": 120, "power_id": 5, "hidden_power_id": 15, "passive_id": 8, "stats": {"life": 10, "damage": 50, "armor": 10, "speed": 80, "power_amount": 50}}, {"id": 9, "name": "Pollisor", "power_max": 150, "power_id": 6, "hidden_power_id": -1, "passive_id": 9, "stats": {"life": 10, "damage": 20, "armor": 30, "speed": 90, "power_amount": 50}}, {"id": 10, "name": "Pollisaur", "power_max": 90, "power_id": 7, "hidden_power_id": -1, "passive_id": 10, "stats": {"life": 100, "damage": 100, "armor": 100, "speed": 20, "power_amount": 80}}, {"id": 11, "name": "Vio", "power_max": 120, "power_id": 8, "hidden_power_id": 11, "passive_id": 11, "stats": {"life": 60, "damage": 40, "armor": 60, "speed": 20, "power_amount": 20}}, {"id": 12, "name": "Polliro", "power_max": 100, "power_id": 3, "hidden_power_id": 42, "passive_id": 12, "stats": {"life": 15, "damage": 65, "armor": 10, "speed": 100, "power_amount": 10}}, {"id": 13, "name": "Easy East", "power_max": 100, "power_id": 1, "hidden_power_id": 4, "passive_id": 13, "stats": {"life": 60, "damage": 50, "armor": 50, "speed": 20, "power_amount": 20}}, {"id": 14, "name": "Snow", "power_max": 130, "power_id": 0, "hidden_power_id": 23, "passive_id": 14, "stats": {"life": 50, "damage": 50, "armor": 40, "speed": 10, "power_amount": 50}}, {"id": 15, "name": "Eustavio", "power_max": 100, "power_id": 9, "hidden_power_id": 51, "passive_id": 15, "stats": {"life": 80, "damage": 20, "armor": 10, "speed": 10, "power_amount": 80}}, {"id": 16, "name": "Gallo", "power_max": 100, "power_id": 10, "hidden_power_id": 41, "passive_id": 16, "stats": {"life": 80, "damage": 90, "armor": 10, "speed": 10, "power_amount": 10}}, {"id": 17, "name": "Raro", "power_max": 100, "power_id": 11, "hidden_power_id": 32, "passive_id": 17, "stats": {"life": 40, "damage": 60, "armor": 10, "speed": 30, "power_amount": 60}}, {"id": 18, "name": "Polliwatt", "power_max": 100, "power_id": 12, "hidden_power_id": 49, "passive_id": 18, "stats": {"life": 20, "damage": 40, "armor": 20, "speed": 100, "power_amount": 20}}, {"id": 19, "name": "Armor", "power_max": 100, "power_id": 0, "hidden_power_id": 10, "passive_id": 19, "stats": {"life": 65, "damage": 20, "armor": 100, "speed": 5, "power_amount": 10}}, {"id": 20, "name": "Zeo", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 20, "stats": {"life": 10, "damage": 80, "armor": 10, "speed": 80, "power_amount": 20}}, {"id": 21, "name": "Jhona", "power_max": 100, "power_id": 2, "hidden_power_id": 27, "passive_id": 21, "stats": {"life": 75, "damage": 25, "armor": 85, "speed": 5, "power_amount": 10}}, {"id": 22, "name": "Mega", "power_max": 100, "power_id": 2, "hidden_power_id": 4, "passive_id": 22, "stats": {"life": 20, "damage": 60, "armor": 20, "speed": 20, "power_amount": 80}}, {"id": 23, "name": "Porky", "power_max": 100, "power_id": 13, "hidden_power_id": 48, "passive_id": 23, "stats": {"life": 100, "damage": 50, "armor": 20, "speed": 10, "power_amount": 20}}, {"id": 24, "name": "Lapiz", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 24, "stats": {"life": 20, "damage": 80, "armor": 30, "speed": 50, "power_amount": 20}}, {"id": 25, "name": "Manic", "power_max": 100, "power_id": 14, "hidden_power_id": 11, "passive_id": 25, "stats": {"life": 30, "damage": 60, "armor": 20, "speed": 70, "power_amount": 20}}, {"id": 26, "name": "Jeff", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 26, "stats": {"life": 25, "damage": 55, "armor": 15, "speed": 60, "power_amount": 45}}, {"id": 27, "name": "Invert", "power_max": 100, "power_id": 15, "hidden_power_id": 16, "passive_id": 27, "stats": {"life": 40, "damage": 30, "armor": 45, "speed": 45, "power_amount": 40}}, {"id": 28, "name": "Alien", "power_max": 100, "power_id": 16, "hidden_power_id": 36, "passive_id": 28, "stats": {"life": 40, "damage": 70, "armor": 10, "speed": 40, "power_amount": 40}}, {"id": 29, "name": "Iguanarto", "power_max": 80, "power_id": 0, "hidden_power_id": 27, "passive_id": 29, "stats": {"life": 60, "damage": 80, "armor": 20, "speed": 20, "power_amount": 20}}, {"id": 30, "name": "Mosca", "power_max": 100, "power_id": 0, "hidden_power_id": 13, "passive_id": 30, "stats": {"life": 15, "damage": 75, "armor": 5, "speed": 90, "power_amount": 15}}, {"id": 31, "name": "Poggie", "power_max": 100, "power_id": 1, "hidden_power_id": 42, "passive_id": 31, "stats": {"life": 100, "damage": 10, "armor": 70, "speed": 10, "power_amount": 10}}, {"id": 32, "name": "Toraishi", "power_max": 100, "power_id": 2, "hidden_power_id": 25, "passive_id": 32, "stats": {"life": 20, "damage": 80, "armor": 20, "speed": 40, "power_amount": 40}}, {"id": 33, "name": "Nevermore", "power_max": 100, "power_id": 17, "hidden_power_id": 48, "passive_id": 33, "stats": {"life": 10, "damage": 100, "armor": 40, "speed": 30, "power_amount": 20}}, {"id": 34, "name": "Phantom", "power_max": 100, "power_id": 0, "hidden_power_id": 31, "passive_id": 34, "stats": {"life": 50, "damage": 30, "armor": 40, "speed": 40, "power_amount": 40}}, {"id": 35, "name": "Pais", "power_max": 100, "power_id": 2, "hidden_power_id": 20, "passive_id": 35, "stats": {"life": 50, "damage": 70, "armor": 20, "speed": 50, "power_amount": 10}}, {"id": 36, "name": "Valu", "power_max": 100, "power_id": 13, "hidden_power_id": 44, "passive_id": 36, "stats": {"life": 130, "damage": 10, "armor": 45, "speed": 5, "power_amount": 10}}, {"id": 37, "name": "Pastank", "power_max": 100, "power_id": 8, "hidden_power_id": 10, "passive_id": 37, "stats": {"life": 50, "damage": 20, "armor": 100, "speed": 10, "power_amount": 20}}, {"id": 38, "name": "Pastinni", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 38, "stats": {"life": 30, "damage": 20, "armor": 10, "speed": 70, "power_amount": 70}}, {"id": 39, "name": "Cacho", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 39, "stats": {"life": 20, "damage": 130, "armor": 20, "speed": 20, "power_amount": 10}}, {"id": 40, "name": "Candle", "power_max": 100, "power_id": 18, "hidden_power_id": 1, "passive_id": 40, "stats": {"life": 40, "damage": 50, "armor": 30, "speed": 10, "power_amount": 70}}, {"id": 41, "name": "Magni", "power_max": 100, "power_id": 18, "hidden_power_id": 47, "passive_id": 41, "stats": {"life": 50, "damage": 40, "armor": 60, "speed": 30, "power_amount": 20}}, {"id": 42, "name": "Tiza", "power_max": 100, "power_id": 4, "hidden_power_id": 18, "passive_id": 42, "stats": {"life": 15, "damage": 110, "armor": 10, "speed": 50, "power_amount": 15}}, {"id": 43, "name": "Ignarto", "power_max": 100, "power_id": 0, "hidden_power_id": 8, "passive_id": 43, "stats": {"life": 60, "damage": 20, "armor": 10, "speed": 60, "power_amount": 50}}, {"id": 44, "name": "Lava", "power_max": 100, "power_id": 1, "hidden_power_id": 18, "passive_id": 44, "stats": {"life": 60, "damage": 40, "armor": 50, "speed": 30, "power_amount": 20}}, {"id": 45, "name": "Vulcano", "power_max": 100, "power_id": 18, "hidden_power_id": 32, "passive_id": 45, "stats": {"life": 100, "damage": 20, "armor": 50, "speed": 10, "power_amount": 20}}, {"id": 46, "name": "Robotop", "power_max": 100, "power_id": 11, "hidden_power_id": 8, "passive_id": 46, "stats": {"life": 30, "damage": 50, "armor": 100, "speed": 10, "power_amount": 10}}, {"id": 47, "name": "Clusio", "power_max": 100, "power_id": 19, "hidden_power_id": 10, "passive_id": 47, "stats": {"life": 70, "damage": 30, "armor": 70, "speed": 15, "power_amount": 15}}, {"id": 48, "name": "Leci", "power_max": 100, "power_id": 20, "hidden_power_id": 31, "passive_id": 48, "stats": {"life": 30, "damage": 30, "armor": 30, "speed": 30, "power_amount": 80}}, {"id": 49, "name": "Cerol", "power_max": 100, "power_id": 3, "hidden_power_id": 46, "passive_id": 49, "stats": {"life": 15, "damage": 85, "armor": 15, "speed": 65, "power_amount": 20}}, {"id": 50, "name": "Rufus", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 50, "stats": {"life": 20, "damage": 45, "armor": 15, "speed": 90, "power_amount": 30}}, {"id": 51, "name": "Bjorn", "power_max": 100, "power_id": 21, "hidden_power_id": 31, "passive_id": 51, "stats": {"life": 20, "damage": 80, "armor": 20, "speed": 20, "power_amount": 60}}, {"id": 52, "name": "Sharky", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 52, "stats": {"life": 10, "damage": 100, "armor": 10, "speed": 60, "power_amount": 20}}, {"id": 53, "name": "Queso", "power_max": 100, "power_id": 1, "hidden_power_id": 13, "passive_id": 53, "stats": {"life": 10, "damage": 20, "armor": 10, "speed": 100, "power_amount": 60}}, {"id": 54, "name": "Monocrom", "power_max": 100, "power_id": 1, "hidden_power_id": 17, "passive_id": 54, "stats": {"life": 40, "damage": 60, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 55, "name": "Gatarlos", "power_max": 200, "power_id": 22, "hidden_power_id": -1, "passive_id": 55, "stats": {"life": 10, "damage": 60, "armor": 20, "speed": 90, "power_amount": 20}}, {"id": 56, "name": "Evil Gatarlos", "power_max": 100, "power_id": 42, "hidden_power_id": -1, "passive_id": 56, "stats": {"life": 100, "damage": 105, "armor": 10, "speed": 75, "power_amount": 10}}, {"id": 57, "name": "Prisma", "power_max": 100, "power_id": 20, "hidden_power_id": 15, "passive_id": 57, "stats": {"life": 80, "damage": 20, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 58, "name": "Duncan", "power_max": 100, "power_id": 24, "hidden_power_id": 42, "passive_id": 58, "stats": {"life": 10, "damage": 40, "armor": 10, "speed": 120, "power_amount": 20}}, {"id": 59, "name": "Siul", "power_max": 150, "power_id": 0, "hidden_power_id": 49, "passive_id": 59, "stats": {"life": 30, "damage": 80, "armor": 10, "speed": 20, "power_amount": 60}}, {"id": 60, "name": "Boomy", "power_max": 100, "power_id": 2, "hidden_power_id": 15, "passive_id": 60, "stats": {"life": 20, "damage": 10, "armor": 50, "speed": 20, "power_amount": 100}}, {"id": 61, "name": "Shiken", "power_max": 100, "power_id": 0, "hidden_power_id": 3, "passive_id": 61, "stats": {"life": 10, "damage": 120, "armor": 10, "speed": 50, "power_amount": 10}}, {"id": 62, "name": "Miedo", "power_max": 100, "power_id": 17, "hidden_power_id": 30, "passive_id": 62, "stats": {"life": 60, "damage": 100, "armor": 10, "speed": 10, "power_amount": 20}}, {"id": 63, "name": "Volcken", "power_max": 100, "power_id": 25, "hidden_power_id": 47, "passive_id": 63, "stats": {"life": 80, "damage": 15, "armor": 70, "speed": 20, "power_amount": 15}}, {"id": 64, "name": "Nama", "power_max": 100, "power_id": 1, "hidden_power_id": 31, "passive_id": 64, "stats": {"life": 25, "damage": 85, "armor": 15, "speed": 65, "power_amount": 10}}, {"id": 65, "name": "Vapollo", "power_max": 100, "power_id": 18, "hidden_power_id": 32, "passive_id": 65, "stats": {"life": 10, "damage": 50, "armor": 30, "speed": 65, "power_amount": 45}}, {"id": 66, "name": "Ashy", "power_max": 100, "power_id": 1, "hidden_power_id": 10, "passive_id": 66, "stats": {"life": 50, "damage": 30, "armor": 50, "speed": 30, "power_amount": 40}}, {"id": 67, "name": "Pollulu", "power_max": 100, "power_id": 0, "hidden_power_id": 43, "passive_id": 67, "stats": {"life": 50, "damage": 70, "armor": 20, "speed": 30, "power_amount": 30}}, {"id": 68, "name": "Cocore", "power_max": 100, "power_id": 27, "hidden_power_id": 45, "passive_id": 68, "stats": {"life": 50, "damage": 20, "armor": 20, "speed": 70, "power_amount": 40}}, {"id": 69, "name": "Pinzon", "power_max": 100, "power_id": 0, "hidden_power_id": 47, "passive_id": 69, "stats": {"life": 20, "damage": 80, "armor": 10, "speed": 40, "power_amount": 50}}, {"id": 70, "name": "Galligno", "power_max": 100, "power_id": 1, "hidden_power_id": 47, "passive_id": 70, "stats": {"life": 60, "damage": 30, "armor": 60, "speed": 10, "power_amount": 40}}, {"id": 71, "name": "Nube", "power_max": 100, "power_id": 1, "hidden_power_id": 41, "passive_id": 71, "stats": {"life": 30, "damage": 30, "armor": 10, "speed": 90, "power_amount": 40}}, {"id": 72, "name": "Gallimbus", "power_max": 100, "power_id": 0, "hidden_power_id": 42, "passive_id": 72, "stats": {"life": 80, "damage": 25, "armor": 80, "speed": 5, "power_amount": 10}}, {"id": 73, "name": "Ventora", "power_max": 100, "power_id": 28, "hidden_power_id": 50, "passive_id": 73, "stats": {"life": 45, "damage": 55, "armor": 15, "speed": 50, "power_amount": 35}}, {"id": 74, "name": "Aery", "power_max": 100, "power_id": 0, "hidden_power_id": 41, "passive_id": 74, "stats": {"life": 10, "damage": 30, "armor": 20, "speed": 80, "power_amount": 60}}, {"id": 75, "name": "Titiro", "power_max": 100, "power_id": 2, "hidden_power_id": 28, "passive_id": 75, "stats": {"life": 40, "damage": 40, "armor": 30, "speed": 50, "power_amount": 40}}, {"id": 76, "name": "Luso", "power_max": 100, "power_id": 2, "hidden_power_id": 4, "passive_id": 76, "stats": {"life": 60, "damage": 90, "armor": 20, "speed": 10, "power_amount": 20}}, {"id": 77, "name": "Menta", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 77, "stats": {"life": 50, "damage": 20, "armor": 80, "speed": 20, "power_amount": 30}}, {"id": 78, "name": "Wicken", "power_max": 90, "power_id": 20, "hidden_power_id": 25, "passive_id": 78, "stats": {"life": 80, "damage": 10, "armor": 10, "speed": 20, "power_amount": 80}}, {"id": 79, "name": "Gota", "power_max": 90, "power_id": 25, "hidden_power_id": 44, "passive_id": 79, "stats": {"life": 30, "damage": 90, "armor": 25, "speed": 45, "power_amount": 10}}, {"id": 80, "name": "Mucken", "power_max": 100, "power_id": 13, "hidden_power_id": 30, "passive_id": 80, "stats": {"life": 50, "damage": 50, "armor": 15, "speed": 55, "power_amount": 30}}, {"id": 81, "name": "Egi", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 81, "stats": {"life": 50, "damage": 100, "armor": 10, "speed": 30, "power_amount": 10}}, {"id": 82, "name": "Fingie", "power_max": 100, "power_id": 30, "hidden_power_id": 29, "passive_id": 82, "stats": {"life": 50, "damage": 50, "armor": 20, "speed": 30, "power_amount": 50}}, {"id": 83, "name": "Corny", "power_max": 100, "power_id": 1, "hidden_power_id": 43, "passive_id": 83, "stats": {"life": 30, "damage": 65, "armor": 30, "speed": 50, "power_amount": 25}}, {"id": 84, "name": "Policus", "power_max": 100, "power_id": 20, "hidden_power_id": 25, "passive_id": 84, "stats": {"life": 40, "damage": 30, "armor": 20, "speed": 30, "power_amount": 80}}, {"id": 85, "name": "Vidro", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 85, "stats": {"life": 20, "damage": 80, "armor": 20, "speed": 60, "power_amount": 20}}, {"id": 86, "name": "Yuntan", "power_max": 200, "power_id": 31, "hidden_power_id": 48, "passive_id": 86, "stats": {"life": 80, "damage": 40, "armor": 20, "speed": 40, "power_amount": 20}}, {"id": 87, "name": "Plass", "power_max": 100, "power_id": 18, "hidden_power_id": 32, "passive_id": 87, "stats": {"life": 35, "damage": 60, "armor": 25, "speed": 40, "power_amount": 40}}, {"id": 88, "name": "Trinagle", "power_max": 100, "power_id": 30, "hidden_power_id": 50, "passive_id": 88, "stats": {"life": 30, "damage": 30, "armor": 30, "speed": 80, "power_amount": 30}}, {"id": 89, "name": "Cactus", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 89, "stats": {"life": 60, "damage": 40, "armor": 30, "speed": 40, "power_amount": 30}}, {"id": 90, "name": "Ploom", "power_max": 125, "power_id": 32, "hidden_power_id": 39, "passive_id": 90, "stats": {"life": 100, "damage": 40, "armor": 10, "speed": 40, "power_amount": 10}}, {"id": 91, "name": "Darkus", "power_max": 100, "power_id": 30, "hidden_power_id": 4, "passive_id": 91, "stats": {"life": 20, "damage": 50, "armor": 50, "speed": 60, "power_amount": 20}}, {"id": 92, "name": "Galland", "power_max": 100, "power_id": 0, "hidden_power_id": 1, "passive_id": 92, "stats": {"life": 50, "damage": 60, "armor": 70, "speed": 10, "power_amount": 10}}, {"id": 93, "name": "Drillen", "power_max": 100, "power_id": 30, "hidden_power_id": 0, "passive_id": 93, "stats": {"life": 30, "damage": 90, "armor": 20, "speed": 40, "power_amount": 20}}, {"id": 94, "name": "Estepi", "power_max": 100, "power_id": 0, "hidden_power_id": 50, "passive_id": 94, "stats": {"life": 60, "damage": 40, "armor": 10, "speed": 80, "power_amount": 10}}, {"id": 95, "name": "Rocko", "power_max": 100, "power_id": 0, "hidden_power_id": 19, "passive_id": 95, "stats": {"life": 70, "damage": 30, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 96, "name": "Garry", "power_max": 100, "power_id": 17, "hidden_power_id": 4, "passive_id": 96, "stats": {"life": 30, "damage": 80, "armor": 40, "speed": 30, "power_amount": 20}}, {"id": 97, "name": "Terra", "power_max": 100, "power_id": 1, "hidden_power_id": 19, "passive_id": 97, "stats": {"life": 35, "damage": 40, "armor": 60, "speed": 5, "power_amount": 60}}, {"id": 98, "name": "Crystal", "power_max": 100, "power_id": 19, "hidden_power_id": 45, "passive_id": 98, "stats": {"life": 30, "damage": 50, "armor": 80, "speed": 30, "power_amount": 10}}, {"id": 99, "name": "Toka", "power_max": 100, "power_id": 30, "hidden_power_id": 25, "passive_id": 99, "stats": {"life": 30, "damage": 35, "armor": 30, "speed": 65, "power_amount": 40}}, {"id": 100, "name": "Cloudy", "power_max": 100, "power_id": 33, "hidden_power_id": 23, "passive_id": 100, "stats": {"life": 50, "damage": 70, "armor": 30, "speed": 30, "power_amount": 20}}, {"id": 101, "name": "Drago", "power_max": 100, "power_id": 33, "hidden_power_id": 31, "passive_id": 101, "stats": {"life": 75, "damage": 85, "armor": 5, "speed": 25, "power_amount": 10}}, {"id": 102, "name": "Niwato", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 102, "stats": {"life": 40, "damage": 100, "armor": 5, "speed": 50, "power_amount": 5}}, {"id": 103, "name": "Grey", "power_max": 100, "power_id": 33, "hidden_power_id": 4, "passive_id": 103, "stats": {"life": 40, "damage": 40, "armor": 80, "speed": 20, "power_amount": 20}}, {"id": 104, "name": "Friozero", "power_max": 100, "power_id": 33, "hidden_power_id": 23, "passive_id": 104, "stats": {"life": 20, "damage": 60, "armor": 40, "speed": 40, "power_amount": 40}}, {"id": 105, "name": "Pengui", "power_max": 100, "power_id": 33, "hidden_power_id": 23, "passive_id": 105, "stats": {"life": 60, "damage": 20, "armor": 60, "speed": 20, "power_amount": 40}}, {"id": 106, "name": "Snick", "power_max": 100, "power_id": 33, "hidden_power_id": 40, "passive_id": 106, "stats": {"life": 80, "damage": 30, "armor": 5, "speed": 5, "power_amount": 80}}, {"id": 107, "name": "Derp", "power_max": 100, "power_id": 32, "hidden_power_id": 0, "passive_id": 107, "stats": {"life": 70, "damage": 60, "armor": 60, "speed": 5, "power_amount": 5}}, {"id": 108, "name": "Plumillas", "power_max": 100, "power_id": 0, "hidden_power_id": 21, "passive_id": 108, "stats": {"life": 30, "damage": 60, "armor": 20, "speed": 60, "power_amount": 30}}, {"id": 109, "name": "Max", "power_max": 100, "power_id": 0, "hidden_power_id": 48, "passive_id": 109, "stats": {"life": 90, "damage": 80, "armor": 10, "speed": 10, "power_amount": 10}}, {"id": 110, "name": "Springy", "power_max": 100, "power_id": 31, "hidden_power_id": 4, "passive_id": 110, "stats": {"life": 20, "damage": 120, "armor": 5, "speed": 50, "power_amount": 5}}, {"id": 111, "name": "Lock", "power_max": 100, "power_id": 0, "hidden_power_id": 12, "passive_id": 111, "stats": {"life": 50, "damage": 55, "armor": 35, "speed": 40, "power_amount": 20}}, {"id": 112, "name": "Law", "power_max": 100, "power_id": 1, "hidden_power_id": 31, "passive_id": 112, "stats": {"life": 60, "damage": 55, "armor": 45, "speed": 20, "power_amount": 20}}, {"id": 113, "name": "Chick", "power_max": 100, "power_id": 13, "hidden_power_id": 17, "passive_id": 113, "stats": {"life": 20, "damage": 70, "armor": 10, "speed": 60, "power_amount": 40}}, {"id": 114, "name": "Chird", "power_max": 100, "power_id": 1, "hidden_power_id": 10, "passive_id": 114, "stats": {"life": 40, "damage": 50, "armor": 10, "speed": 30, "power_amount": 70}}, {"id": 115, "name": "Cow", "power_max": 100, "power_id": 19, "hidden_power_id": 45, "passive_id": 115, "stats": {"life": 90, "damage": 15, "armor": 75, "speed": 10, "power_amount": 10}}, {"id": 116, "name": "Electron", "power_max": 100, "power_id": 12, "hidden_power_id": 49, "passive_id": 116, "stats": {"life": 40, "damage": 65, "armor": 10, "speed": 80, "power_amount": 5}}, {"id": 117, "name": "Monstruollo", "power_max": 100, "power_id": 13, "hidden_power_id": 31, "passive_id": 117, "stats": {"life": 70, "damage": 80, "armor": 10, "speed": 20, "power_amount": 20}}, {"id": 118, "name": "Nave", "power_max": 100, "power_id": 0, "hidden_power_id": 46, "passive_id": 118, "stats": {"life": 20, "damage": 80, "armor": 15, "speed": 80, "power_amount": 5}}, {"id": 119, "name": "Rhafa", "power_max": 100, "power_id": 0, "hidden_power_id": 28, "passive_id": 119, "stats": {"life": 20, "damage": 70, "armor": 20, "speed": 70, "power_amount": 20}}, {"id": 120, "name": "Rick", "power_max": 100, "power_id": 17, "hidden_power_id": 13, "passive_id": 120, "stats": {"life": 30, "damage": 75, "armor": 10, "speed": 5, "power_amount": 80}}, {"id": 121, "name": "Javo", "power_max": 100, "power_id": 12, "hidden_power_id": 19, "passive_id": 121, "stats": {"life": 70, "damage": 5, "armor": 70, "speed": 5, "power_amount": 50}}, {"id": 122, "name": "Meta", "power_max": 100, "power_id": 8, "hidden_power_id": 11, "passive_id": 122, "stats": {"life": 20, "damage": 40, "armor": 100, "speed": 5, "power_amount": 35}}, {"id": 123, "name": "MetaSoldier", "power_max": 100, "power_id": 8, "hidden_power_id": 11, "passive_id": 123, "stats": {"life": 70, "damage": 30, "armor": 90, "speed": 5, "power_amount": 5}}, {"id": 124, "name": "Inger", "power_max": 100, "power_id": 8, "hidden_power_id": 11, "passive_id": 124, "stats": {"life": 25, "damage": 70, "armor": 5, "speed": 30, "power_amount": 70}}, {"id": 125, "name": "Rama", "power_max": 90, "power_id": 0, "hidden_power_id": 4, "passive_id": 125, "stats": {"life": 30, "damage": 65, "armor": 10, "speed": 30, "power_amount": 65}}, {"id": 126, "name": "Hueva", "power_max": 90, "power_id": 20, "hidden_power_id": 25, "passive_id": 126, "stats": {"life": 80, "damage": 20, "armor": 80, "speed": 5, "power_amount": 15}}, {"id": 127, "name": "Jamer", "power_max": 100, "power_id": 21, "hidden_power_id": 46, "passive_id": 127, "stats": {"life": 85, "damage": 75, "armor": 10, "speed": 25, "power_amount": 5}}, {"id": 128, "name": "Jeraz", "power_max": 100, "power_id": 11, "hidden_power_id": 49, "passive_id": 128, "stats": {"life": 60, "damage": 60, "armor": 40, "speed": 30, "power_amount": 10}}, {"id": 129, "name": "Cyborg", "power_max": 100, "power_id": 8, "hidden_power_id": 49, "passive_id": 129, "stats": {"life": 40, "damage": 70, "armor": 10, "speed": 50, "power_amount": 30}}, {"id": 130, "name": "Jacko", "power_max": 100, "power_id": 30, "hidden_power_id": 13, "passive_id": 130, "stats": {"life": 100, "damage": 40, "armor": 30, "speed": 10, "power_amount": 20}}, {"id": 131, "name": "Cori", "power_max": 100, "power_id": 20, "hidden_power_id": 25, "passive_id": 131, "stats": {"life": 40, "damage": 10, "armor": 40, "speed": 10, "power_amount": 100}}, {"id": 132, "name": "Pipasol", "power_max": 100, "power_id": 14, "hidden_power_id": 51, "passive_id": 132, "stats": {"life": 40, "damage": 40, "armor": 70, "speed": 20, "power_amount": 30}}, {"id": 133, "name": "Astro", "power_max": 100, "power_id": 36, "hidden_power_id": 51, "passive_id": 133, "stats": {"life": 40, "damage": 100, "armor": 30, "speed": 10, "power_amount": 20}}, {"id": 134, "name": "Eggalex", "power_max": 120, "power_id": 37, "hidden_power_id": -1, "passive_id": 134, "stats": {"life": 10, "damage": 20, "armor": 10, "speed": 100, "power_amount": 60}}, {"id": 135, "name": "Mechalex", "power_max": 100, "power_id": 38, "hidden_power_id": -1, "passive_id": 135, "stats": {"life": 100, "damage": 100, "armor": 50, "speed": 20, "power_amount": 30}}, {"id": 136, "name": "Mayel", "power_max": 100, "power_id": 39, "hidden_power_id": 0, "passive_id": 136, "stats": {"life": 25, "damage": 40, "armor": 25, "speed": 10, "power_amount": 100}}, {"id": 137, "name": "Elfen", "power_max": 100, "power_id": 20, "hidden_power_id": 25, "passive_id": 137, "stats": {"life": 50, "damage": 25, "armor": 25, "speed": 50, "power_amount": 50}}, {"id": 138, "name": "Felicie", "power_max": 100, "power_id": 21, "hidden_power_id": 48, "passive_id": 138, "stats": {"life": 30, "damage": 90, "armor": 20, "speed": 50, "power_amount": 10}}, {"id": 139, "name": "Star", "power_max": 100, "power_id": 36, "hidden_power_id": 51, "passive_id": 139, "stats": {"life": 20, "damage": 100, "armor": 15, "speed": 50, "power_amount": 15}}, {"id": 140, "name": "Skull", "power_max": 100, "power_id": 4, "hidden_power_id": 31, "passive_id": 140, "stats": {"life": 60, "damage": 45, "armor": 50, "speed": 20, "power_amount": 25}}, {"id": 141, "name": "Toxic", "power_max": 100, "power_id": 13, "hidden_power_id": 30, "passive_id": 141, "stats": {"life": 40, "damage": 35, "armor": 25, "speed": 45, "power_amount": 55}}, {"id": 142, "name": "Hium", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 142, "stats": {"life": 55, "damage": 30, "armor": 30, "speed": 35, "power_amount": 50}}, {"id": 143, "name": "Blade", "power_max": 100, "power_id": 18, "hidden_power_id": 47, "passive_id": 143, "stats": {"life": 35, "damage": 70, "armor": 20, "speed": 40, "power_amount": 35}}, {"id": 144, "name": "Gice", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 144, "stats": {"life": 45, "damage": 25, "armor": 35, "speed": 30, "power_amount": 65}}, {"id": 145, "name": "Evelyn", "power_max": 150, "power_id": 40, "hidden_power_id": 23, "passive_id": 145, "stats": {"life": 30, "damage": 65, "armor": 15, "speed": 30, "power_amount": 60}}, {"id": 146, "name": "Sinestrer", "power_max": 100, "power_id": 1, "hidden_power_id": 48, "passive_id": 146, "stats": {"life": 65, "damage": 40, "armor": 40, "speed": 30, "power_amount": 25}}, {"id": 147, "name": "Intiken", "power_max": 100, "power_id": 21, "hidden_power_id": 47, "passive_id": 147, "stats": {"life": 75, "damage": 60, "armor": 15, "speed": 30, "power_amount": 20}}, {"id": 148, "name": "Toro", "power_max": 100, "power_id": 0, "hidden_power_id": 4, "passive_id": 148, "stats": {"life": 50, "damage": 80, "armor": 20, "speed": 20, "power_amount": 30}}, {"id": 149, "name": "Chimir", "power_max": 150, "power_id": 23, "hidden_power_id": 40, "passive_id": 149, "stats": {"life": 30, "damage": 55, "armor": 25, "speed": 55, "power_amount": 35}}, {"id": 150, "name": "Garra", "power_max": 100, "power_id": 41, "hidden_power_id": 10, "passive_id": 150, "stats": {"life": 50, "damage": 45, "armor": 35, "speed": 25, "power_amount": 45}}];
-    const POWERS = [{"id": 0, "cost": 100, "desc": "Ataque doble"}, {"id": 1, "cost": 100, "desc": "Autocuración (25% de su vida máxima)"}, {"id": 2, "cost": 100, "desc": "Lanza un huevo (100% del daño)"}, {"id": 3, "cost": 100, "desc": "Lanza un shuriken (150% del daño)"}, {"id": 4, "cost": 100, "desc": "Pierde vida (-10% de su vida máxima), gana daño (+25%)"}, {"id": 5, "cost": 120, "desc": "Copia el último poder visto"}, {"id": 6, "cost": 150, "desc": "Transforma en Pollisaur"}, {"id": 7, "cost": 90, "desc": "Transforma en Pollisor"}, {"id": 8, "cost": 100, "desc": "Lanza un misíl (Quema)"}, {"id": 9, "cost": 100, "desc": "+10% en un valor aleatorio"}, {"id": 10, "cost": 100, "desc": "El equipo gana armadura (+10%)"}, {"id": 11, "cost": 100, "desc": "Lanza una bomba (80% del daño, 40% a otros objetivos)"}, {"id": 12, "cost": 100, "desc": "Paraliza al objetivo"}, {"id": 13, "cost": 100, "desc": "Envenena al objetivo"}, {"id": 14, "cost": 100, "desc": "Pierde vida (-10% de su vida máxima), el aliado obtiene poder al máximo y el próximo turno"}, {"id": 15, "cost": 100, "desc": "Todos los multiplicadores obtienen valores al azar (25% a 175%)"}, {"id": 16, "cost": 100, "desc": "Intercambia multiplicador de daño con el objetivo"}, {"id": 17, "cost": 100, "desc": "Maldice al objetivo"}, {"id": 18, "cost": 100, "desc": "Quema al objetivo"}, {"id": 19, "cost": 100, "desc": "Autocuración (25% de su vida máxima) y gana armadura (+15%)"}, {"id": 20, "cost": 100, "desc": "Cura un aliado (50% de su poder + 25% de su vida máxima)"}, {"id": 21, "cost": 100, "desc": "Lanza un hacha (80% de daño) y se cura a sí mismo (40% de daño)"}, {"id": 22, "cost": 200, "desc": "Se transforma en Evil Gatarlos"}, {"id": 23, "cost": 150, "desc": "Congela al objetivo"}, {"id": 24, "cost": 100, "desc": "Lanza una caca (envenena y -5% de velocidad)"}, {"id": 25, "cost": 100, "desc": "Elimina los efectos del equipo"}, {"id": 26, "cost": 100, "desc": "Se transforma en Gatarlos"}, {"id": 27, "cost": 100, "desc": "Se cura a sí mismo (20% de vida máxima), más daño (+5%) y reduce la velocidad (-5%)"}, {"id": 28, "cost": 100, "desc": "Obtiene una poción aleatoria"}, {"id": 29, "cost": 100, "desc": "Silencia al objetivo"}, {"id": 30, "cost": 100, "desc": "Infecta al objetivo"}, {"id": 31, "cost": 200, "desc": "Obtiene revivir"}, {"id": 32, "cost": 100, "desc": "Explota. Todos los pollos reciben daño (25% de su vida máxima)"}, {"id": 33, "cost": 100, "desc": "Lanza un huevo helado (100% de daño y congela)"}, {"id": 34, "cost": 100, "desc": "Revive como Zombie"}, {"id": 35, "cost": 100, "desc": "Revive como Mali"}, {"id": 36, "cost": 100, "desc": "Lanza una estrella (100% de daño y restablece el poder del objetivo)"}, {"id": 37, "cost": 120, "desc": "Transforma en Mechalex"}, {"id": 38, "cost": 100, "desc": "Transforma en Eggalex"}, {"id": 39, "cost": 100, "desc": "Lanza un búmeran (100% daño y agrega dos turnos de efectos al objetivo)"}, {"id": 40, "cost": 150, "desc": "Lanza un helado (20% de daño) a cada enemigo y congela"}, {"id": 41, "cost": 100, "desc": "Cura al equipo (50% del poder)"}, {"id": 42, "cost": 100, "desc": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+13%)"}, {"id": 43, "cost": 100, "desc": "Otorga +5% daño a un aliado y limpia sus efectos"}, {"id": 44, "cost": 100, "desc": "Ataque con 100% de daño; si el objetivo tiene efectos, los limpia y se cura (20% daño)"}, {"id": 45, "cost": 100, "desc": "Obtiene focus, +3% armadura y se cura (10% vida máxima)"}, {"id": 46, "cost": 100, "desc": "Aumenta la velocidad (+7%) y el daño (+7%)"}, {"id": 47, "cost": 100, "desc": "Lanza un huevo ígneo (100% daño, quemadura y -3% armadura)"}, {"id": 48, "cost": 120, "desc": "Roba 15% de vida máxima del objetivo"}, {"id": 49, "cost": 110, "desc": "Lanza un huevo eléctrico (100% daño, paraliza y +15 poder a aliados)"}, {"id": 50, "cost": 100, "desc": "Absorbe los efectos del objetivo, limpiándolo y ganando +4% en cada stat"}, {"id": 51, "cost": 100, "desc": "Reduce el límite de poder máximo del equipo en 10 (mínimo 60)"}];
-    const ITEMS = [{"id": 0, "name": "Jugo de pollo", "desc": "Cura 100 puntos de vida, se activa con 25% de vida o menos"}, {"id": 1, "name": "Semilla rompepicos", "desc": "Empieza la batalla con 15% más de vida máxima"}, {"id": 2, "name": "Diente de cuervo", "desc": "Empieza la batalla con 15% más de armadura"}, {"id": 3, "name": "Ojo loco", "desc": "Empieza la batalla con 15% más de daño"}, {"id": 4, "name": "Guante de gallina", "desc": "Empieza la batalla con 15% más de velocidad"}, {"id": 5, "name": "Palo de raíz", "desc": "Empieza la batalla con poder lleno. +50 poder máximo"}, {"id": 6, "name": "Picoteador dorado", "desc": "Obtiene el enfoque de los enemigos"}, {"id": 7, "name": "Elixir de pollo", "desc": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de daño"}, {"id": 8, "name": "Disparo eggspresso", "desc": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de velocidad"}, {"id": 9, "name": "Brebaje armadura de plumas", "desc": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de armadura"}, {"id": 10, "name": "Sanación ardiente", "desc": "Las quemaduras curan"}, {"id": 11, "name": "Pollo limpio", "desc": "Elimina efectos al usar poder"}, {"id": 12, "name": "Poder eggs-tra", "desc": "2% más de daño cada turno"}, {"id": 13, "name": "Mega jugo de pollo", "desc": "Cura 200 puntos de vida, se activa con 25% de vida o menos"}, {"id": 14, "name": "Flama potenciada", "desc": "Cada turno, 1% extra de daño si está quemado"}, {"id": 15, "name": "Flama burbujeante", "desc": "Limpia la quemadura"}, {"id": 16, "name": "Giga jugo de pollo", "desc": "Cura 275 puntos de vida, se activa con 25% de vida o menos"}, {"id": 17, "name": "Gran pico", "desc": "Limpia el silencio"}, {"id": 18, "name": "Zapapollos", "desc": "5% de poder esquivar en cada turno"}, {"id": 19, "name": "Arreglanube", "desc": "Al empezar un combate, se cura a sí mismo (35% de vida máxima)"}, {"id": 20, "name": "Pergamino del silencio", "desc": "Cuando empieza el combate, silencia a un enemigo"}, {"id": 21, "name": "Libro potenciado", "desc": "Al ser afectado obtienes 10% de daño extra"}, {"id": 22, "name": "Manual de curación", "desc": "Al ser afectado se cura a sí mismo (5% de vida máxima)"}, {"id": 23, "name": "Páginas del fénix", "desc": "Puede revivir"}, {"id": 24, "name": "Tera jugo de pollo", "desc": "Cura 350 puntos de vida, se activa con 25% de vida o menos"}, {"id": 25, "name": "Gota peligrosa", "desc": "Cuando empieza el combate, envenena a un enemigo"}, {"id": 26, "name": "Medicina", "desc": "Limpia la infección"}, {"id": 27, "name": "Arena milagrosa", "desc": "Cada ataque otorga +5 poder"}, {"id": 28, "name": "Mirador dorado", "desc": "Primer ataque hace 25% de daño extra y cura (50% del ataque)"}, {"id": 29, "name": "Pico podrido", "desc": "Cada turno, +1% extra de daño si está infectado"}, {"id": 30, "name": "Ala podrida", "desc": "Derrotar a un enemigo infectado te cura por completo"}, {"id": 31, "name": "Moco problemático", "desc": "Cuando empieza el combate, infecta a un enemigo"}, {"id": 32, "name": "Roca jugosa", "desc": "Cura 400 puntos de vida, se activa con 35% de vida o menos"}, {"id": 33, "name": "triflor", "desc": "Cuando empieza el combate, obtiene daño (+5%), armadura (+5%) y velocidad (+5%)"}, {"id": 34, "name": "Poción mágica", "desc": "Limpia cualquier estado"}, {"id": 35, "name": "Roca atómica", "desc": "Cuando empieza el combate, obtiene daño (+20%) o armadura (+20%)"}, {"id": 36, "name": "Primer huevo", "desc": "Cuando empieza el combate, lanza un huevo"}, {"id": 37, "name": "Primer bomba", "desc": "Cuando empieza el combate, lanza una bomba"}, {"id": 38, "name": "Primer shuriken", "desc": "Cuando empieza el combate, lanza un shuriken"}, {"id": 39, "name": "Jugo congelado", "desc": "Cura 500 puntos de vida, se activa con 35% de vida o menos"}, {"id": 40, "name": "Té caliente", "desc": "Limpia el congelamiento y cura 100 puntos de vida"}, {"id": 41, "name": "Pico hleado", "desc": "20% de congelar al atacante cuando es golpeado"}, {"id": 42, "name": "Ojo helado", "desc": "Cuando empieza el combate, lanza un huevo helado"}, {"id": 43, "name": "Cristal de daño", "desc": "Cuando empieza el combate, +%25 de daño pero pierde vida (25% de la vida máxima)"}, {"id": 44, "name": "Cristal de velocidad", "desc": "Cuando empieza el combate, +%25 de velocidad pero pierde vida (25% de la vida máxima)"}, {"id": 45, "name": "Cristal de armadura", "desc": "Cuando empieza el combate, +%25 de armadura pero pierde vida (25% de la vida máxima)"}, {"id": 46, "name": "Poción pútrida", "desc": "Cura 600 puntos de vida, se activa con 35% de vida o menos"}, {"id": 47, "name": "Gota milagro", "desc": "Limpia el envenenamiento"}, {"id": 48, "name": "Pico roto", "desc": "Cuando empieza el combate, pierde vida (5% de la vida máxima) infecta y otorga daño (20%)"}, {"id": 49, "name": "Ojo maldito", "desc": "Cuando empieza el combate, maldice"}, {"id": 50, "name": "Ojos locos", "desc": "El equipo obtiene daño (10%)"}, {"id": 51, "name": "Libro maldito", "desc": "Al empezar el combate, maldice a todos"}, {"id": 52, "name": "Infección", "desc": "Revive como Zombie"}, {"id": 53, "name": "Circuito Vital", "desc": "Cura 700 puntos de vida, se activa con 35% de vida o menos"}, {"id": 54, "name": "Reinicio Neural", "desc": "Limpia la paralización"}, {"id": 55, "name": "Pico Electrostático", "desc": "Cuando empieza el combate, paraliza"}, {"id": 56, "name": "Descarga Masiva", "desc": "Al empezar el combate, paraliza a todos"}, {"id": 57, "name": "Conexión Crítica", "desc": "Atacar a enemigos paralizados aumenta daño (2%)"}, {"id": 58, "name": "Impulso Balístico", "desc": "Lanzar misiles aumenta el daño (4%)"}, {"id": 59, "name": "Conversión Vital", "desc": "Siempre que pierda vida, aumenta su daño (1%), pero baja su velocidad (1%)"}, {"id": 60, "name": "Fragmento prohibido", "desc": "Aumenta el daño (+35%) y velocidad (+10%), pero nunca carga ni podés usar poder"}, {"id": 61, "name": "Pico blindado", "desc": "Misiles y bombas le hacen 66% menos daño"}, {"id": 62, "name": "Ojo del vacío", "desc": "Si un aliado cae derrotado, aumenta todos tus stats un 15%"}, {"id": 63, "name": "Ala de Garra", "desc": "Cada turno cura al equipo (5% vida máxima)"}, {"id": 64, "name": "Guantes de pelea", "desc": "Obtienes 2 puntos de entrenamiento extra al ganar combates"}, {"id": 65, "name": "Deseo", "desc": "Al tenerlo equipado, aumenta las estadísticas de los huevos que ponga este pollo"}, {"id": 66, "name": "Pico vampiro", "desc": "Cura al atacar (15% del daño)"}, {"id": 67, "name": "Primer boomerang", "desc": "Al empezar el combate lanza un boomerang"}, {"id": 68, "name": "Ojos en sincronía", "desc": "Comparte efecto con su atacante"}, {"id": 69, "name": "Primera hacha", "desc": "Al empezar el combate lanza un hacha"}, {"id": 70, "name": "Pluma dorada", "desc": "Acorta los turnos que tardan sus huevos en eclosionar (40%)"}, {"id": 71, "name": "Pluma de Brama", "desc": "Aumenta la probabilidad de que aparezcan pollos variocolor en combates (10%)"}, {"id": 72, "name": "Garra derrochadora", "desc": "Aumenta la cantidad de semillas ganadas en combate (20%)"}, {"id": 73, "name": "Nido especial", "desc": "Aumenta la probabilidad de que los pollos pongan huevos variocolor (10%)"}, {"id": 74, "name": "Ira", "desc": "Obtiene 2 ataques extra al inicio del combate"}];
-    const PASSIVES = [{"id": 0, "desc": "El primer ataque hace 50% más de daño"}, {"id": 1, "desc": "Empieza con un ataque doble"}, {"id": 2, "desc": "Comienza lanzando un huevo dorado y gana daño (+10%) y velocidad (+10%)"}, {"id": 3, "desc": "Cuando se cura, cura a los aliados (50% del daño)"}, {"id": 4, "desc": "Cuando usa poder, se cura (50% del daño)"}, {"id": 5, "desc": "Al derrotar a un enemigo, lanza un shuriken (150% de daño)"}, {"id": 6, "desc": "Al atacar, se cura (20% de la vida faltante)"}, {"id": 7, "desc": "Cada 3 ataques, envenena"}, {"id": 8, "desc": "Al derrotar a un enemigo, gana +50 de poder y +25 de carga de poder"}, {"id": 9, "desc": "Al derrotar a un enemigo, gana poder máximo"}, {"id": 10, "desc": "Al derrotar a un enemigo, reinicia el poder"}, {"id": 11, "desc": "Cuando usa poder, hace 10% más de daño"}, {"id": 12, "desc": "Después de lanzar un shuriken, evita el próximo ataque"}, {"id": 13, "desc": "Al revivir gana 25% más de daño"}, {"id": 14, "desc": "Cuando usa poder, congela al objetivo"}, {"id": 15, "desc": "5% más de velocidad al golpear"}, {"id": 16, "desc": "Al derrotar a un enemigo, se cura (33% de su vida máxima)"}, {"id": 17, "desc": "Al usar poder, aplica un estado aleatorio a todos los enemigos"}, {"id": 18, "desc": "Al ser derrotado, paraliza a todos los enemigos"}, {"id": 19, "desc": "No puede ser envenenado. Si un enemigo envenenado lo ataca, gana armadura (+5%)"}, {"id": 20, "desc": "5% más de daño cuando un aliado usa poder"}, {"id": 21, "desc": "No puede ser paralizado. Su primer ataque tiene velocidad aumentada (+50%)"}, {"id": 22, "desc": "Evita proyectiles"}, {"id": 23, "desc": "Al ser derrotado, envenena a todos los enemigos"}, {"id": 24, "desc": "Al ser atacado se afila: su próximo ataque inflige daño crítico extra (30%)"}, {"id": 25, "desc": "Empieza con una bomba, y lanza una bomba cuando cualquier pollo usa su poder"}, {"id": 26, "desc": "Cada 3 ataques, lanza un huevo"}, {"id": 27, "desc": "Cuando usa poder, +5% en una estadística aleatoria de un aliado"}, {"id": 28, "desc": "Evita el primer ataque"}, {"id": 29, "desc": "Obtiene enfoque"}, {"id": 30, "desc": "Cuando usa poder, lanza 2 moscas (50% de daño, 50% de envenenar)"}, {"id": 31, "desc": "Al ser atacado, reduce la velocidad del atacante (12%) y gana velocidad (+5%)"}, {"id": 32, "desc": "Después de lanzar un huevo, hace 10% más de daño"}, {"id": 33, "desc": "Cada ataque tiene 25% de probabilidad de lanzar una mosca (50% de daño, 50% de envenenar)"}, {"id": 34, "desc": "Copia el poder de un aliado"}, {"id": 35, "desc": "Al derrotar a un enemigo, gana 25% más de velocidad"}, {"id": 36, "desc": "Empieza la batalla con poder máximo"}, {"id": 37, "desc": "Repite el poder"}, {"id": 38, "desc": "Al ser derrotado, cura a un aliado (50% de su vida máxima)"}, {"id": 39, "desc": "Puede apuntar a aliados"}, {"id": 40, "desc": "Cada 3 ataques, se cura (10% de su vida máxima)"}, {"id": 41, "desc": "No puede ser quemado. Si intentan quemarlo o ataca a un objetivo en llamas, gana daño (+10%)"}, {"id": 42, "desc": "Al ser derrotado, quema a todos los enemigos"}, {"id": 43, "desc": "Cada 3 ataques, quema al enemigo"}, {"id": 44, "desc": "25% de probabilidad de quemar al ser atacado"}, {"id": 45, "desc": "Cuando usa poder, 5% más de daño y se cura (10% de su vida máxima)"}, {"id": 46, "desc": "Cuando usa poder, +15% de armadura y evita el próximo ataque"}, {"id": 47, "desc": "Al ser atacado, gana armadura (+3%) y poder (+5)"}, {"id": 48, "desc": "Cuando un aliado es derrotado, intercambia sus porcentajes de vida"}, {"id": 49, "desc": "Al atacar 3 veces, evita el próximo ataque"}, {"id": 50, "desc": "Cada 3 golpes, 15% de daño extra"}, {"id": 51, "desc": "Al revivir se cura (100% de vida máxima)"}, {"id": 52, "desc": "Cuando derrote a un enemigo, 33% de daño extra"}, {"id": 53, "desc": "Cuando use poder, envenena a todos los enemigos"}, {"id": 54, "desc": "Cuando use poder, maldice a todos los enemigos"}, {"id": 55, "desc": "No puede ser maldecido y comienza con +15% de daño. Si empieza el turno con un efecto negativo, gana +20 de poder"}, {"id": 56, "desc": "Al transformarse, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos"}, {"id": 57, "desc": "Cuando sea derrotado, da poder total a un aliado"}, {"id": 58, "desc": "50% de probabilidad de repetir projectiles"}, {"id": 59, "desc": "Cada 4 golpes, obtiene poder total"}, {"id": 60, "desc": "Cuando lance un huevo, se cura a sí mismo (10% de vida máxima)"}, {"id": 61, "desc": "Ignora el enfoque y comienza el combate con 1 punto de evasión"}, {"id": 62, "desc": "Primer ataque paraliza"}, {"id": 63, "desc": "Cuando use poder, cura a los aliados (15% de vida máxima + 15% de daño)"}, {"id": 64, "desc": "Cada ataque da 5% de daño extra y se hace daño a sí mismo (5% de vida máxima)"}, {"id": 65, "desc": "Cuando derrote a un enemigo, +2 de evitar"}, {"id": 66, "desc": "Cuando use poder, -15% de velocidad a todos los enemigos y los quema"}, {"id": 67, "desc": "Cuando use poder, evita"}, {"id": 68, "desc": "Primer ataque quema"}, {"id": 69, "desc": "Cada turno, +3% de daño y +3% de velocidad"}, {"id": 70, "desc": "Cada turno, +4% de armadura"}, {"id": 71, "desc": "Cuando use poder, silencia a todos los enemigos"}, {"id": 72, "desc": "Cada turno se cura a sí mismo (6% de vida máxima)"}, {"id": 73, "desc": "El primer ataque tiene 100% de velocidad"}, {"id": 74, "desc": "Cada 3 ataques, cura a un aliado"}, {"id": 75, "desc": "Cuando una un ítem, gana poder máximo"}, {"id": 76, "desc": "Cada 5 ataques, lanza 2 huevos"}, {"id": 77, "desc": "Cuando ataca a un enemigo congelado, se cura (5% de vida máxima)"}, {"id": 78, "desc": "Cada 2 poderes, esquiva"}, {"id": 79, "desc": "Cuando ataca, se cura a sí mismo (5% de vida máxima) y gana velocidad (+3%)"}, {"id": 80, "desc": "Cuando ataca a un enemigo envenenado, se cura (5% de vida máxima)"}, {"id": 81, "desc": "Cada 2 ataques, +15 poder"}, {"id": 82, "desc": "Al atacar a un enemigo infectado, propaga la infección y drena poder (-10)"}, {"id": 83, "desc": "Al comenzar, cura al equipo (35% de la vida máxima)"}, {"id": 84, "desc": "Al comenzar, otorga poder completo a un aliado"}, {"id": 85, "desc": "Al ser atacado, refleja 20% del daño y reduce la armadura del atacante (3%)"}, {"id": 86, "desc": "Cada 5 ataques, envenena y se cura a sí mismo (33% de la vida máxima)"}, {"id": 87, "desc": "Cuando un aliado usa su poder, obtiene poder completo"}, {"id": 88, "desc": "Comienza con un 33% de daño extra y silenciado"}, {"id": 89, "desc": "Cuando es golpeado, hiere al enemigo (25% del daño recibido)"}, {"id": 90, "desc": "Al derrotar un enemigo, se cura (25% de vida máxima) y otorga 1 de evasión al equipo"}, {"id": 91, "desc": "Cuando un enemigo usa su poder, gana +5 de daño"}, {"id": 92, "desc": "Cuando usa su poder, se cura a sí mismo (10% de la vida máxima) y gana +5 de armadura"}, {"id": 93, "desc": "Cada ataque lo cura a sí mismo (25% del daño infligido)"}, {"id": 94, "desc": "Cada ataque aumenta +3% la velocidad y +5 el valor de poder"}, {"id": 95, "desc": "Al comenzar, +1% de daño por cada 50 puntos de vida máxima"}, {"id": 96, "desc": "Cada ataque reduce el poder del objetivo (-5)"}, {"id": 97, "desc": "Cuando usa su poder, baja el poder de los enemigos a 0"}, {"id": 98, "desc": "Cuando usa su poder, lanza una bomba"}, {"id": 99, "desc": "Cuando es golpeado, +10 de poder y -1% de armadura"}, {"id": 100, "desc": "Atacar a un enemigo congelado inflige daño extra (30%) y reduce su armadura (5%)"}, {"id": 101, "desc": "Cada 3 ataques, lanza un huevo helado"}, {"id": 102, "desc": "Cuando derrota a un enemigo, +15% de velocidad y +15% de daño"}, {"id": 103, "desc": "Al comenzar, -10% de velocidad a los enemigos"}, {"id": 104, "desc": "Al revivir obtiene 25% de armadura"}, {"id": 105, "desc": "No puede congelarse. Atacar a enemigos congelados aumenta su velocidad (20%) y daño (10%)"}, {"id": 106, "desc": "Cuando ataca a un enemigo congelado, +2% de armadura y +5 de poder"}, {"id": 107, "desc": "50% de probabilidad de empezar con poder al máximo (en caso contrario, 50% de poder)"}, {"id": 108, "desc": "Cada 3 ataques, lanza una bomba"}, {"id": 109, "desc": "Revive como Mali"}, {"id": 110, "desc": "Al usar su poder, obtiene ataque doble"}, {"id": 111, "desc": "Cada ataque aumenta una estadística aleatoria (5%)"}, {"id": 112, "desc": "Cuando un aliado es derrotado, obtiene sus multis"}, {"id": 113, "desc": "Atacar a un enemigo envenenado lo cura (20% del daño)"}, {"id": 114, "desc": "Al usar su poder, aumenta una estadística aleatoria (5%)"}, {"id": 115, "desc": "Al empezar el combate, otorga armadura al equipo (15%)"}, {"id": 116, "desc": "Al morir, explota (25% de la vida máxima)"}, {"id": 117, "desc": "Al derrotar un enemigo, obtiene vida máxima y pierde velocidad (15%)"}, {"id": 118, "desc": "Al empezar el combate, aumenta la velocidad del equipo (5%)"}, {"id": 119, "desc": "Cuando la vida baje del 35% de la vida máxima, se cura por completo la vida (Una vez por combate)"}, {"id": 120, "desc": "Al empezar el combate, lanza una mosca"}, {"id": 121, "desc": "Cada turno, aumenta el daño (3%) y velocidad (3%) de los aliados"}, {"id": 122, "desc": "Revive siempre que haya un aliado vivo (3 veces por combate)"}, {"id": 123, "desc": "Al ser golpeado, cura a un aliado (5% vida máxima)"}, {"id": 124, "desc": "Al tener menos del 50% de vida, lanza 3 misiles (una vez por combate)"}, {"id": 125, "desc": "Atacar a un enemigo paralizado daña al resto de enemigos (30% del daño)"}, {"id": 126, "desc": "Al empezar el combate, cura a un aliado (100% vida máxima)"}, {"id": 127, "desc": "Empieza lanzando un hacha, y cada ataque reduce la armadura enemiga (3%)"}, {"id": 128, "desc": "Al ser atacado, lanza una bomba"}, {"id": 129, "desc": "El equipo obtiene daño (10%)"}, {"id": 130, "desc": "Cuando usa poder, -5% en una estadística aleatoria cada enemigo"}, {"id": 131, "desc": "Cada ataque otorga poder al aliado (+10)"}, {"id": 132, "desc": "Cada turno, cura al equipo (5% vida máxima)"}, {"id": 133, "desc": "Cuando se cura, aumenta el daño (+3%)"}, {"id": 134, "desc": "Cada ataque reduce la armadura del objetivo (-5%). Al ser golpeado, gana +20 de poder"}, {"id": 135, "desc": "Cada turno lanza un misil y pierde armadura (-4%)"}, {"id": 136, "desc": "Cuando un aliado revive obtienes daño (+15%) y un esquive."}, {"id": 137, "desc": "Atacar enemigos con infección aumenta el poder (+25)"}, {"id": 138, "desc": "Al usar un item, aumenta el daño (+25%) y poder (+50)"}, {"id": 139, "desc": "Si derrota a un enemigo, aumenta el poder (+100) y se cura (50% del daño)"}, {"id": 140, "desc": "Al recibir un ataque aumenta su armadura y daño (+3%)"}, {"id": 141, "desc": "Atacar enemigos con envenenamiento lo cura (33% del daño)"}, {"id": 142, "desc": "Atacar enemigos congelados lo cura a el y a su aliado (20% del daño)"}, {"id": 143, "desc": "Atacar enemigos con quemadura te cura (20% del daño) y aumenta el poder (+20)"}, {"id": 144, "desc": "Al usar su poder, el equipo obtiene una poción aleatoria si no tienen objetos"}, {"id": 145, "desc": "Cura a su aliado si este aliado usa su poder (33% del daño propio)"}, {"id": 146, "desc": "Lanza una bomba siempre que un enemigo use su poder"}, {"id": 147, "desc": "Cada turno pierde vida (10% de vida máxima) pero aumenta su poder (+20)"}, {"id": 148, "desc": "Al ser atacado, aumenta su daño (5%) y velocidad (5%)"}, {"id": 149, "desc": "Atacar a un enemigo congelado inflige daño extra (+30%)"}, {"id": 150, "desc": "Al empezar el combate, el equipo obtiene revivir"}];
+    const POWERS = [{"id": 0, "cost": 100, "desc": {"es": "Ataque doble", "en": "Double attack", "pt": "Ataque duplo", "ru": "Двойная атака"}}, {"id": 1, "cost": 100, "desc": {"es": "Autocuración (25% de su vida máxima)", "en": "Heal himself (25% max life)", "pt": "Cura a si mesmo (25% vida máx)", "ru": "Лечит себя (25% макс. здоровья)"}}, {"id": 2, "cost": 100, "desc": {"es": "Lanza un huevo (100% del daño)", "en": "Throw a egg (100% damage)", "pt": "Arremessa um ovo (100% de dano)", "ru": "Бросает яйцо (100% урона)"}}, {"id": 3, "cost": 100, "desc": {"es": "Lanza un shuriken (150% del daño)", "en": "Throw a shuriken (150% damage)", "pt": "Arremessa uma shuriken (150% de dano)", "ru": "Бросает сюрикен (150% урона)"}}, {"id": 4, "cost": 100, "desc": {"es": "Pierde vida (-10% de su vida máxima), gana daño (+25%)", "en": "Lose life, gain damage (-10% max life, +25% damage)", "pt": "Perde vida, ganha dano (-10% vida máx, +25% dano)", "ru": "Теряет здоровье, получает урон (-10% макс. здоровья, +25% урона)"}}, {"id": 5, "cost": 120, "desc": {"es": "Copia el último poder visto", "en": "Copy last power", "pt": "Copia o último poder", "ru": "Копирует последнюю силу"}}, {"id": 6, "cost": 150, "desc": {"es": "Transforma en Pollisaur", "en": "Transform into Pollisaur", "pt": "Transforma-se em Pollisaur", "ru": "Превращается в Pollisaur"}}, {"id": 7, "cost": 90, "desc": {"es": "Transforma en Pollisor", "en": "Transform into Pollisor", "pt": "Transforma-se em Pollisor", "ru": "Превращается в Pollisor"}}, {"id": 8, "cost": 100, "desc": {"es": "Lanza un misíl (Quema)", "en": "Launch a missile, apply burn", "pt": "Lança um míssil, aplica queimadura", "ru": "Запускает ракету, накладывает ожог"}}, {"id": 9, "cost": 100, "desc": {"es": "+10% en un valor aleatorio", "en": "Gain 10% extra in a random stat", "pt": "Ganha 10% extra em um atributo aleatório", "ru": "Получает +10% к случайному стату"}}, {"id": 10, "cost": 100, "desc": {"es": "El equipo gana armadura (+10%)", "en": "The team gain armor (+10% armor)", "pt": "A equipe ganha armadura (+10% armadura)", "ru": "Команда получает броню (+10% брони)"}}, {"id": 11, "cost": 100, "desc": {"es": "Lanza una bomba (80% del daño, 40% a otros objetivos)", "en": "Throw a bomb (80% damage to target, 40% to others)", "pt": "Arremessa uma bomba (80% dano ao alvo, 40% aos outros)", "ru": "Бросает бомбу (80% урона цели, 40% остальным)"}}, {"id": 12, "cost": 100, "desc": {"es": "Paraliza al objetivo", "en": "Paralyze the target", "pt": "Paralisa o alvo", "ru": "Парализует цель"}}, {"id": 13, "cost": 100, "desc": {"es": "Envenena al objetivo", "en": "Poison the target", "pt": "Envenena o alvo", "ru": "Отравляет цель"}}, {"id": 14, "cost": 100, "desc": {"es": "Pierde vida (-10% de su vida máxima), el aliado obtiene poder al máximo y el próximo turno", "en": "Lose life (-10% max life), ally gets full power and takes the next turn", "pt": "Perde vida (-10% vida máx.), o aliado ganha poder total e o próximo turno", "ru": "Теряет здоровье (-10% макс. HP), союзник получает полную силу и следующий ход"}}, {"id": 15, "cost": 100, "desc": {"es": "Todos los multiplicadores obtienen valores al azar (25% a 175%)", "en": "Randomize all multis (0.25 to 1.75)", "pt": "Aleatoriza todos os multiplicadores (0.25 a 1.75)", "ru": "Рандомизирует все множители (от 0.25 до 1.75)"}}, {"id": 16, "cost": 100, "desc": {"es": "Intercambia multiplicador de daño con el objetivo", "en": "Swap damage multi with target", "pt": "Troca multiplicador de dano com o alvo", "ru": "Меняется множителем урона с целью"}}, {"id": 17, "cost": 100, "desc": {"es": "Maldice al objetivo", "en": "Curse the target", "pt": "Amaldiçoa o alvo", "ru": "Проклинает цель"}}, {"id": 18, "cost": 100, "desc": {"es": "Quema al objetivo", "en": "Burn the target", "pt": "Queima o alvo", "ru": "Поджигает цель"}}, {"id": 19, "cost": 100, "desc": {"es": "Autocuración (25% de su vida máxima) y gana armadura (+15%)", "en": "Heal himself (25% max life) and gain armor (+15%)", "pt": "Cura a si mesmo (25% vida máx.) e armadura (+15%)", "ru": "Лечит себя (25% макс. здоровья) и получает броню (+15%)"}}, {"id": 20, "cost": 100, "desc": {"es": "Cura un aliado (50% de su poder + 25% de su vida máxima)", "en": "Heal an ally (50% damage + 25% max life)", "pt": "Cura um aliado (50% dano + 25% vida máx)", "ru": "Лечит союзника (50% урона + 25% макс. здоровья)"}}, {"id": 21, "cost": 100, "desc": {"es": "Lanza un hacha (80% de daño) y se cura a sí mismo (40% de daño)", "en": "Throw an axe (80% damage) and heal himself (40% damage)", "pt": "Arremessa um machado (80% dano) e cura a si mesmo (40% dano)", "ru": "Бросает топор (80% урона) и лечит себя (40% урона)"}}, {"id": 22, "cost": 200, "desc": {"es": "Se transforma en Evil Gatarlos", "en": "Transform into Evil Gatarlos", "pt": "Transforma-se em Evil Gatarlos", "ru": "Превращается в Evil Gatarlos"}}, {"id": 23, "cost": 150, "desc": {"es": "Congela al objetivo", "en": "Freeze the target", "pt": "Congela o alvo", "ru": "Замораживает цель"}}, {"id": 24, "cost": 100, "desc": {"es": "Lanza una caca (envenena y -5% de velocidad)", "en": "Throw a poop (poison and -5% speed)", "pt": "Arremessa um cocô (veneno e -5% velocidade)", "ru": "Бросает какашку (яд и -5% скорости)"}}, {"id": 25, "cost": 100, "desc": {"es": "Elimina los efectos del equipo", "en": "Cleanup team effects", "pt": "Limpa efeitos da equipe", "ru": "Снимает эффекты с команды"}}, {"id": 26, "cost": 100, "desc": {"es": "Se transforma en Gatarlos", "en": "Transform into Gatarlos", "pt": "Transforma-se em Gatarlos", "ru": "Превращается в Gatarlos"}}, {"id": 27, "cost": 100, "desc": {"es": "Se cura a sí mismo (20% de vida máxima), más daño (+5%) y reduce la velocidad (-5%)", "en": "Heal himself (20% max life), more damage (+5%) and reduce speed (-5%)", "pt": "Cura a si mesmo (20% vida máx), mais dano (+5%) e reduz velocidade (-5%)", "ru": "Лечит себя (20% макс. здоровья), больше урона (+5%) и снижает скорость (-5%)"}}, {"id": 28, "cost": 100, "desc": {"es": "Obtiene una poción aleatoria", "en": "Obtain a random potion", "pt": "Obtém uma poção aleatória", "ru": "Получает случайное зелье"}}, {"id": 29, "cost": 100, "desc": {"es": "Silencia al objetivo", "en": "Silence the target", "pt": "Silencia o alvo", "ru": "Накладывает молчание на цель"}}, {"id": 30, "cost": 100, "desc": {"es": "Infecta al objetivo", "en": "Infect the target", "pt": "Infecta o alvo", "ru": "Заражает цель"}}, {"id": 31, "cost": 200, "desc": {"es": "Obtiene revivir", "en": "Get revive", "pt": "Ganha reviver", "ru": "Получает возрождение"}}, {"id": 32, "cost": 100, "desc": {"es": "Explota. Todos los pollos reciben daño (25% de su vida máxima)", "en": "Explodes. Hurt all chickens (25% max life)", "pt": "Explode. Machuca todos os frangos (25% vida máx)", "ru": "Взрывается. Ранит всех куриц (25% макс. здоровья)"}}, {"id": 33, "cost": 100, "desc": {"es": "Lanza un huevo helado (100% de daño y congela)", "en": "Throw a frozen egg (100% damage and freeze)", "pt": "Arremessa um ovo congelado (100% dano e congela)", "ru": "Бросает ледяное яйцо (100% урона и заморозка)"}}, {"id": 34, "cost": 100, "desc": {"es": "Revive como Zombie", "en": "Revive as Zombie", "pt": "Revive como Zumbi", "ru": "Возрождается как Зомби"}}, {"id": 35, "cost": 100, "desc": {"es": "Revive como Mali", "en": "Revive as Mali", "pt": "Revive como Mali", "ru": "Возрождается как Mali"}}, {"id": 36, "cost": 100, "desc": {"es": "Lanza una estrella (100% de daño y restablece el poder del objetivo)", "en": "Throw a star (100% damage and reset target power)", "pt": "Lance uma estrela (100% de dano e redefine o poder do alvo)", "ru": "Бросьте звезду (100% урона и сбросьте силу цели)"}}, {"id": 37, "cost": 120, "desc": {"es": "Transforma en Mechalex", "en": "Transform into Mechalex", "pt": "Transforma-se em Mechalex", "ru": "Превращается в Mechalex"}}, {"id": 38, "cost": 100, "desc": {"es": "Transforma en Eggalex", "en": "Transform into Eggalex", "pt": "Transforma-se em Eggalex", "ru": "Превращается в Eggalex"}}, {"id": 39, "cost": 100, "desc": {"es": "Lanza un búmeran (100% daño y agrega dos turnos de efectos al objetivo)", "en": "Throws a boomerang (100% damage and adds two turns of effects to the target)", "pt": "Lança um bumerangue (100% de dano e adiciona dois turnos de efeitos ao alvo)", "ru": "Бросает бумеранг (100% урона и добавляет два хода эффектов к цели)"}}, {"id": 40, "cost": 150, "desc": {"es": "Lanza un helado (20% de daño) a cada enemigo y congela", "en": "Throws ice cream (20% damage) at all enemies and freezes", "pt": "Lança um sorvete (20% de dano) em todos os inimigos e congela", "ru": "Бросает мороженое (20% урона) во всех врагов и замораживает"}}, {"id": 41, "cost": 100, "desc": {"es": "Cura al equipo (50% del poder)", "en": "Heals the team (50% of power)", "pt": "Cura a equipe (50% do poder)", "ru": "Лечит команду (50% силы)"}}, {"id": 42, "cost": 100, "desc": {"es": "Otorga 1 punto de evasión al equipo y aumenta el daño del equipo (+13%)", "en": "Grants 1 evasion to the team and increases team damage (+13%)", "pt": "Concede 1 ponto de evasão à equipe e aumenta o dano da equipe (+13%)", "ru": "Дает 1 очко уклонения команде и увеличивает урон команды (+13%)"}}, {"id": 43, "cost": 100, "desc": {"es": "Otorga +5% daño a un aliado y limpia sus efectos", "en": "Grant 5% damage to an ally and clean their effects", "pt": "Concede +5% dano a um aliado e limpa seus efeitos", "ru": "Дает +5% урона союзнику и снимает его эффекты"}}, {"id": 44, "cost": 100, "desc": {"es": "Ataque con 100% de daño; si el objetivo tiene efectos, los limpia y se cura (20% daño)", "en": "Attack for 100% damage; if target has effects, cleans them and heals (20% damage)", "pt": "Ataque com 100% de dano; se o alvo tiver efeitos, limpa-os e cura (20% dano)", "ru": "Атака на 100% урона; если у цели есть эффекты, снимает их и лечится (20% урона)"}}, {"id": 45, "cost": 100, "desc": {"es": "Obtiene focus, +3% armadura y se cura (10% vida máxima)", "en": "Gain focus, +3% armor, and heal himself (10% max life)", "pt": "Ganha foco, +3% armadura e cura a si mesmo (10% vida máx)", "ru": "Получает фокус, +3% брони и лечит себя (10% макс. жизни)"}}, {"id": 46, "cost": 100, "desc": {"es": "Aumenta la velocidad (+7%) y el daño (+7%)", "en": "Increase speed (+7%) and damage (+7%)", "pt": "Aumenta a velocidade (+7%) e o dano (+7%)", "ru": "Увеличивает скорость (+7%) и урон (+7%)"}}, {"id": 47, "cost": 100, "desc": {"es": "Lanza un huevo ígneo (100% daño, quemadura y -3% armadura)", "en": "Throw a fire egg (100% damage, burn, -3% armor)", "pt": "Lança um ovo ígneo (100% dano, queimadura e -3% armadura)", "ru": "Бросает огненное яйцо (100% урона, ожог и -3% брони)"}}, {"id": 48, "cost": 120, "desc": {"es": "Roba 15% de vida máxima del objetivo", "en": "Steal 15% max life from target", "pt": "Rouba 15% de vida máxima do alvo", "ru": "Крадет 15% макс. жизни у цели"}}, {"id": 49, "cost": 110, "desc": {"es": "Lanza un huevo eléctrico (100% daño, paraliza y +15 poder a aliados)", "en": "Throw an electric egg (100% damage, paralyze, +15 power to allies)", "pt": "Lança um ovo elétrico (100% dano, paralisa e +15 poder a aliados)", "ru": "Бросает электрическое яйцо (100% урона, паралич и +15 силы союзникам)"}}, {"id": 50, "cost": 100, "desc": {"es": "Absorbe los efectos del objetivo, limpiándolo y ganando +4% en cada stat", "en": "Absorb target effects to clean them and gain +4% to all stats", "pt": "Absorve os efeitos do alvo, limpando-o e ganhando +4% em cada atributo", "ru": "Поглощает эффекты цели, очищая ее и получая +4% ко всем статам"}}, {"id": 51, "cost": 100, "desc": {"es": "Reduce el límite de poder máximo del equipo en 10 (mínimo 60)", "en": "Reduce team power limit by 10 (min 60)", "pt": "Reduz o limite de poder máximo da equipe em 10 (mínimo 60)", "ru": "Снижает макс. лимит энергии команды на 10 (минимум 60)"}}];
+    const ITEMS = [{"id": 0, "name": {"es": "Jugo de pollo", "en": "Cluck juice", "pt": "Suco de Frango", "ru": "Куриный сок"}, "desc": {"es": "Cura 100 puntos de vida, se activa con 25% de vida o menos", "en": "Heal 100 life points, trigger with 25% life or lower", "pt": "Cura 100 pontos de vida, aciona com 25% de vida ou menos", "ru": "Лечит 100 здоровья, срабатывает при 25% здоровья или ниже"}}, {"id": 1, "name": {"es": "Semilla rompepicos", "en": "Beak breaker seed", "pt": "Semente Quebra-Bico", "ru": "Семя-клюволом"}, "desc": {"es": "Empieza la batalla con 15% más de vida máxima", "en": "Start the battle with 15% more max life", "pt": "Começa a batalha com 15% mais vida máx", "ru": "Начинает бой с +15% макс. здоровья"}}, {"id": 2, "name": {"es": "Diente de cuervo", "en": "Raven's tooth", "pt": "Dente de Corvo", "ru": "Зуб ворона"}, "desc": {"es": "Empieza la batalla con 15% más de armadura", "en": "Start the battle with 15% more armor", "pt": "Começa a batalha com 15% mais armadura", "ru": "Начинает бой с +15% брони"}}, {"id": 3, "name": {"es": "Ojo loco", "en": "Crazy eye", "pt": "Olho Maluco", "ru": "Безумный глаз"}, "desc": {"es": "Empieza la batalla con 15% más de daño", "en": "Start the battle with 15% more damage", "pt": "Começa a batalha com 15% mais dano", "ru": "Начинает бой с +15% урона"}}, {"id": 4, "name": {"es": "Guante de gallina", "en": "Hen's glove", "pt": "Luva de Galinha", "ru": "Перчатка курицы"}, "desc": {"es": "Empieza la batalla con 15% más de velocidad", "en": "Start the battle with 15% more speed", "pt": "Começa a batalha com 15% mais velocidade", "ru": "Начинает бой с +15% скорости"}}, {"id": 5, "name": {"es": "Palo de raíz", "en": "Roost stick", "pt": "Poleiro", "ru": "Насест"}, "desc": {"es": "Empieza la batalla con poder lleno. +50 poder máximo", "en": "Start the battle with full power. +50 power max", "pt": "Começa a batalha com poder cheio. +50 poder máx", "ru": "Начинает бой с полной силой. +50 к макс. силе"}}, {"id": 6, "name": {"es": "Picoteador dorado", "en": "Golden peckinator", "pt": "Bicador Dourado", "ru": "Золотой клеватель"}, "desc": {"es": "Obtiene el enfoque de los enemigos", "en": "Get enemies focus", "pt": "Atrai o foco dos inimigos", "ru": "Привлекает внимание врагов (фокус)"}}, {"id": 7, "name": {"es": "Elixir de pollo", "en": "Cluck'n'boom elixir", "pt": "Elixir Cocoricó", "ru": "Эликсир взрыва"}, "desc": {"es": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de daño", "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more damage", "pt": "Cura 125 pontos de vida, aciona com 25% de vida ou menos e ganha 10% mais dano", "ru": "Лечит 125 здоровья, срабатывает при 25% и дает +10% урона"}}, {"id": 8, "name": {"es": "Disparo eggspresso", "en": "Eggspresso shot", "pt": "Dose de Eggspresso", "ru": "Эггспрессо шот"}, "desc": {"es": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de velocidad", "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more speed", "pt": "Cura 125 pontos de vida, aciona com 25% de vida ou menos e ganha 10% mais velocidade", "ru": "Лечит 125 здоровья, срабатывает при 25% и дает +10% скорости"}}, {"id": 9, "name": {"es": "Brebaje armadura de plumas", "en": "Feather armor brew", "pt": "Bebida Armadura de Penas", "ru": "Перьевая броня"}, "desc": {"es": "Cura 125 puntos de vida, se activa con 25% de vida o menos y otorga 10% más de armadura", "en": "Heal 125 life points, trigger with 25% life or lower and gain 10% more armor", "pt": "Cura 125 pontos de vida, aciona com 25% de vida ou menos e ganha 10% mais armadura", "ru": "Лечит 125 здоровья, срабатывает при 25% и дает +10% брони"}}, {"id": 10, "name": {"es": "Sanación ardiente", "en": "Sizzle heal", "pt": "Cura Ardente", "ru": "Жгучее лечение"}, "desc": {"es": "Las quemaduras curan", "en": "Burn heals", "pt": "Queimadura cura", "ru": "Ожог лечит"}}, {"id": 11, "name": {"es": "Pollo limpio", "en": "Clean cluck", "pt": "Frango Limpo", "ru": "Чистая курица"}, "desc": {"es": "Elimina efectos al usar poder", "en": "Cleanses the effect when use power", "pt": "Limpa efeito ao usar poder", "ru": "Снимает эффекты при использовании силы"}}, {"id": 12, "name": {"es": "Poder eggs-tra", "en": "Eggs-tra power", "pt": "Poder Ovos-tra", "ru": "Яйца-сила"}, "desc": {"es": "2% más de daño cada turno", "en": "2% more damage each turn", "pt": "2% mais dano a cada turno", "ru": "+2% урона каждый ход"}}, {"id": 13, "name": {"es": "Mega jugo de pollo", "en": "Mega cluck juice", "pt": "Mega Suco de Frango", "ru": "Мега сок"}, "desc": {"es": "Cura 200 puntos de vida, se activa con 25% de vida o menos", "en": "Heal 200 life points, trigger with 25% life or lower", "pt": "Cura 200 pontos de vida, aciona com 25% de vida ou menos", "ru": "Лечит 200 здоровья, срабатывает при 25% здоровья или ниже"}}, {"id": 14, "name": {"es": "Flama potenciada", "en": "Flame boost", "pt": "Impulso de Chama", "ru": "Усиление пламени"}, "desc": {"es": "Cada turno, 1% extra de daño si está quemado", "en": "Each turn, 1% extra damage if has burn", "pt": "A cada turno, 1% de dano extra se tiver queimadura", "ru": "Каждый ход +1% урона, если горит"}}, {"id": 15, "name": {"es": "Flama burbujeante", "en": "Flame fizz", "pt": "Chama Efervescente", "ru": "Гаситель пламени"}, "desc": {"es": "Limpia la quemadura", "en": "Clean burn", "pt": "Limpa queimadura", "ru": "Снимает ожог"}}, {"id": 16, "name": {"es": "Giga jugo de pollo", "en": "Giga Cluck Juice", "pt": "Giga Suco de Frango", "ru": "Гига сок"}, "desc": {"es": "Cura 275 puntos de vida, se activa con 25% de vida o menos", "en": "Heal 275 life points, trigger with 25% life or lower", "pt": "Cura 275 pontos de vida, aciona com 25% de vida ou menos", "ru": "Лечит 275 здоровья, срабатывает при 25% здоровья или ниже"}}, {"id": 17, "name": {"es": "Gran pico", "en": "Big Beak", "pt": "Grande Bico", "ru": "Большой клюв"}, "desc": {"es": "Limpia el silencio", "en": "Clean silence", "pt": "Limpa silêncio", "ru": "Снимает молчание"}}, {"id": 18, "name": {"es": "Zapapollos", "en": "Sneaky Sneakers", "pt": "Tênis Furtivos", "ru": "Кеды скрытности"}, "desc": {"es": "5% de poder esquivar en cada turno", "en": "+5% to gain an avoid each turn", "pt": "+5% para ganhar uma esquiva a cada turno", "ru": "+5% шанс уклониться каждый ход"}}, {"id": 19, "name": {"es": "Arreglanube", "en": "Fluffy Fix", "pt": "Conserto Fofo", "ru": "Пушистый ремонт"}, "desc": {"es": "Al empezar un combate, se cura a sí mismo (35% de vida máxima)", "en": "When start the combat, heal himself (20% max life)", "pt": "Ao iniciar combate, cura a si mesmo (20% vida máx)", "ru": "В начале боя лечит себя (20% макс. здоровья)"}}, {"id": 20, "name": {"es": "Pergamino del silencio", "en": "Silence Scroll", "pt": "Pergaminho do Silêncio", "ru": "Свиток тишины"}, "desc": {"es": "Cuando empieza el combate, silencia a un enemigo", "en": "When start the combat, silence an enemy", "pt": "Ao iniciar combate, silencia um inimigo", "ru": "В начале боя накладывает молчание на врага"}}, {"id": 21, "name": {"es": "Libro potenciado", "en": "Boosted Book", "pt": "Livro Potencializado", "ru": "Усиленная книга"}, "desc": {"es": "Al ser afectado obtienes 10% de daño extra", "en": "When get a effect gain 10% extra damage", "pt": "Ao receber um efeito ganha 10% de dano extra", "ru": "При получении эффекта дает +10% урона"}}, {"id": 22, "name": {"es": "Manual de curación", "en": "Healing Handbook", "pt": "Manual de Cura", "ru": "Справочник лечения"}, "desc": {"es": "Al ser afectado se cura a sí mismo (5% de vida máxima)", "en": "When get a effect heal himself (5% max life)", "pt": "Ao receber um efeito cura a si mesmo (5% vida máx)", "ru": "При получении эффекта лечит себя (5% макс. здоровья)"}}, {"id": 23, "name": {"es": "Páginas del fénix", "en": "Phoenix Pages", "pt": "Páginas da Fênix", "ru": "Страницы феникса"}, "desc": {"es": "Puede revivir", "en": "Can revive", "pt": "Pode reviver", "ru": "Может возродиться"}}, {"id": 24, "name": {"es": "Tera jugo de pollo", "en": "Tera Cluck Juice", "pt": "Tera Suco de Frango", "ru": "Тера сок"}, "desc": {"es": "Cura 350 puntos de vida, se activa con 25% de vida o menos", "en": "Heals 350 HP, activates when at 25% HP or less", "pt": "Cura 350 PV, ativa com 25% de PV ou menos", "ru": "Лечит 350 ХП, срабатывает при 25% ХП или меньше"}}, {"id": 25, "name": {"es": "Gota peligrosa", "en": "Danger Drop", "pt": "Gota Perigosa", "ru": "Опасная капля"}, "desc": {"es": "Cuando empieza el combate, envenena a un enemigo", "en": "At the start of battle, poisons an enemy", "pt": "No início da batalha, envenena um inimigo", "ru": "В начале боя отравляет врага"}}, {"id": 26, "name": {"es": "Medicina", "en": "Cure-All", "pt": "Cura-Tudo", "ru": "Панацея"}, "desc": {"es": "Limpia la infección", "en": "Cleanses infection", "pt": "Limpa infecção", "ru": "Снимает инфекцию"}}, {"id": 27, "name": {"es": "Arena milagrosa", "en": "Miracle Sand", "pt": "Areia Milagrosa", "ru": "Чудо-песок"}, "desc": {"es": "Cada ataque otorga +5 poder", "en": "Each attack grants +5 power", "pt": "Cada ataque concede +5 poder", "ru": "Каждая атака дает +5 силы"}}, {"id": 28, "name": {"es": "Mirador dorado", "en": "Golden Perch", "pt": "Poleiro Dourado", "ru": "Золотой насест"}, "desc": {"es": "Primer ataque hace 25% de daño extra y cura (50% del ataque)", "en": "First attack deals 25% extra damage and heals (50% of the attack)", "pt": "Primeiro ataque causa 25% de dano extra e cura (50% do ataque)", "ru": "Первая атака наносит 25% доп. урона и лечит (50% от атаки)"}}, {"id": 29, "name": {"es": "Pico podrido", "en": "Rotten Beak", "pt": "Bico Podre", "ru": "Гнилой клюв"}, "desc": {"es": "Cada turno, +1% extra de daño si está infectado", "en": "Each turn, +1% extra damage if infected", "pt": "A cada turno, +1% de dano extra se estiver infectado", "ru": "Каждый ход +1% доп. урона, если заражен"}}, {"id": 30, "name": {"es": "Ala podrida", "en": "Rotten Wing", "pt": "Asa Podre", "ru": "Гнилое крыло"}, "desc": {"es": "Derrotar a un enemigo infectado te cura por completo", "en": "Defeating an infected enemy fully heals you", "pt": "Derrotar um inimigo infectado te cura completamente", "ru": "Победа над зараженным врагом полностью лечит"}}, {"id": 31, "name": {"es": "Moco problemático", "en": "Troubleslime", "pt": "Gosma Problemática", "ru": "Проблемная слизь"}, "desc": {"es": "Cuando empieza el combate, infecta a un enemigo", "en": "At the start of battle, infects an enemy", "pt": "No início da batalha, infecta um inimigo", "ru": "В начале боя заражает врага"}}, {"id": 32, "name": {"es": "Roca jugosa", "en": "Juicy Rock", "pt": "Rocha Suculenta", "ru": "Сочный камень"}, "desc": {"es": "Cura 400 puntos de vida, se activa con 35% de vida o menos", "en": "Heals 400 health points, activates when at 35% health or lower", "pt": "Cura 400 pontos de vida, ativa com 35% de vida ou menos", "ru": "Лечит 400 здоровья, срабатывает при 35% здоровья или меньше"}}, {"id": 33, "name": {"es": "triflor", "en": "Triflower", "pt": "Triflor", "ru": "Трицвет"}, "desc": {"es": "Cuando empieza el combate, obtiene daño (+5%), armadura (+5%) y velocidad (+5%)", "en": "When combat begins, gains damage (+5%), armor (+5%), and speed (+5%)", "pt": "Quando o combate começa, ganha dano (+5%), armadura (+5%) e velocidade (+5%)", "ru": "В начале боя получает урон (+5%), броню (+5%) и скорость (+5%)"}}, {"id": 34, "name": {"es": "Poción mágica", "en": "Magic Potion", "pt": "Poção Mágica", "ru": "Волшебное зелье"}, "desc": {"es": "Limpia cualquier estado", "en": "Clears any status condition", "pt": "Limpa qualquer condição de status", "ru": "Снимает любой статус"}}, {"id": 35, "name": {"es": "Roca atómica", "en": "Atomic Rock", "pt": "Rocha Atômica", "ru": "Атомный камень"}, "desc": {"es": "Cuando empieza el combate, obtiene daño (+20%) o armadura (+20%)", "en": "When combat begins, gains either damage (+20%) or armor (+20%)", "pt": "Quando o combate começa, ganha dano (+20%) ou armadura (+20%)", "ru": "В начале боя получает урон (+20%) или броню (+20%)"}}, {"id": 36, "name": {"es": "Primer huevo", "en": "First Egg", "pt": "Primeiro Ovo", "ru": "Первое яйцо"}, "desc": {"es": "Cuando empieza el combate, lanza un huevo", "en": "When combat begins, throw an egg", "pt": "Quando o combate começa, lança um ovo", "ru": "В начале боя бросает яйцо"}}, {"id": 37, "name": {"es": "Primer bomba", "en": "First Bomb", "pt": "Primeira Bomba", "ru": "Первая бомба"}, "desc": {"es": "Cuando empieza el combate, lanza una bomba", "en": "When combat begins, throw a bomb", "pt": "Quando o combate começa, lança uma bomba", "ru": "В начале боя бросает бомбу"}}, {"id": 38, "name": {"es": "Primer shuriken", "en": "First Shuriken", "pt": "Primeira Shuriken", "ru": "Первый сюрикен"}, "desc": {"es": "Cuando empieza el combate, lanza un shuriken", "en": "When combat begins, throw a shuriken", "pt": "Quando o combate começa, lança uma shuriken", "ru": "В начале боя бросает сюрикен"}}, {"id": 39, "name": {"es": "Jugo congelado", "en": "Frozen Juice", "pt": "Suco Congelado", "ru": "Замороженный сок"}, "desc": {"es": "Cura 500 puntos de vida, se activa con 35% de vida o menos", "en": "Heals 500 health points, activates at 35% health or less", "pt": "Cura 500 pontos de vida, ativa com 35% de vida ou menos", "ru": "Лечит 500 здоровья, срабатывает при 35% здоровья или меньше"}}, {"id": 40, "name": {"es": "Té caliente", "en": "Hot Tea", "pt": "Chá Quente", "ru": "Горячий чай"}, "desc": {"es": "Limpia el congelamiento y cura 100 puntos de vida", "en": "Clears freezing and heals 100 health points", "pt": "Limpa congelamento e cura 100 pontos de vida", "ru": "Снимает заморозку и лечит 100 здоровья"}}, {"id": 41, "name": {"es": "Pico hleado", "en": "Icy Beak", "pt": "Bico Gélido", "ru": "Ледяной клюв"}, "desc": {"es": "20% de congelar al atacante cuando es golpeado", "en": "20% chance to freeze the attacker when hit", "pt": "20% de chance de congelar o atacante ao ser atingido", "ru": "20% шанс заморозить атакующего при получении удара"}}, {"id": 42, "name": {"es": "Ojo helado", "en": "Frozen Eye", "pt": "Olho Congelado", "ru": "Ледяной глаз"}, "desc": {"es": "Cuando empieza el combate, lanza un huevo helado", "en": "When the battle begins, throws a frozen egg", "pt": "Quando a batalha começa, lança um ovo congelado", "ru": "В начале боя бросает ледяное яйцо"}}, {"id": 43, "name": {"es": "Cristal de daño", "en": "Damage Crystal", "pt": "Cristal de Dano", "ru": "Кристалл урона"}, "desc": {"es": "Cuando empieza el combate, +%25 de daño pero pierde vida (25% de la vida máxima)", "en": "When the battle begins, +25% damage but loses health (25% of maximum health)", "pt": "Quando a batalha começa, +25% de dano mas perde vida (25% da vida máxima)", "ru": "В начале боя +25% урона, но теряет здоровье (25% от макс.)"}}, {"id": 44, "name": {"es": "Cristal de velocidad", "en": "Speed Crystal", "pt": "Cristal de Velocidade", "ru": "Кристалл скорости"}, "desc": {"es": "Cuando empieza el combate, +%25 de velocidad pero pierde vida (25% de la vida máxima)", "en": "When the battle begins, +25% speed but loses health (25% of maximum health)", "pt": "Quando a batalha começa, +25% de velocidade mas perde vida (25% da vida máxima)", "ru": "В начале боя +25% скорости, но теряет здоровье (25% от макс.)"}}, {"id": 45, "name": {"es": "Cristal de armadura", "en": "Armor Crystal", "pt": "Cristal de Armadura", "ru": "Кристалл брони"}, "desc": {"es": "Cuando empieza el combate, +%25 de armadura pero pierde vida (25% de la vida máxima)", "en": "When the battle begins, +25% armor but loses health (25% of maximum health)", "pt": "Quando a batalha começa, +25% de armadura mas perde vida (25% da vida máxima)", "ru": "В начале боя +25% брони, но теряет здоровье (25% от макс.)"}}, {"id": 46, "name": {"es": "Poción pútrida", "en": "Putrid Potion", "pt": "Poção Pútrida", "ru": "Гнилое зелье"}, "desc": {"es": "Cura 600 puntos de vida, se activa con 35% de vida o menos", "en": "Heals 600 health points, activates when HP is at or below 35%", "pt": "Cura 600 pontos de vida, ativa com 35% de vida ou menos", "ru": "Лечит 600 здоровья, срабатывает при 35% здоровья или ниже"}}, {"id": 47, "name": {"es": "Gota milagro", "en": "Miracle Drop", "pt": "Gota Milagrosa", "ru": "Чудо-капля"}, "desc": {"es": "Limpia el envenenamiento", "en": "Cleanses poison", "pt": "Limpa veneno", "ru": "Снимает отравление"}}, {"id": 48, "name": {"es": "Pico roto", "en": "Broken Beak", "pt": "Bico Quebrado", "ru": "Сломанный клюв"}, "desc": {"es": "Cuando empieza el combate, pierde vida (5% de la vida máxima) infecta y otorga daño (20%)", "en": "At the start of combat, loses 5% of maximum health, inflicts infection, and grants 20% damage", "pt": "No início do combate, perde 5% de vida máxima, causa infecção e ganha 20% de dano", "ru": "В начале боя теряет 5% макс. здоровья, заражает и дает +20% урона"}}, {"id": 49, "name": {"es": "Ojo maldito", "en": "Cursed Eye", "pt": "Olho Amaldiçoado", "ru": "Проклятый глаз"}, "desc": {"es": "Cuando empieza el combate, maldice", "en": "At the start of combat, casts a curse", "pt": "No início do combate, lança uma maldição", "ru": "В начале боя накладывает проклятие"}}, {"id": 50, "name": {"es": "Ojos locos", "en": "Crazy Eyes", "pt": "Olhos Loucos", "ru": "Безумные глаза"}, "desc": {"es": "El equipo obtiene daño (10%)", "en": "The team takes 10% damage", "pt": "A equipe recebe 10% de dano", "ru": "Команда получает 10% урона"}}, {"id": 51, "name": {"es": "Libro maldito", "en": "Cursed Book", "pt": "Livro Amaldiçoado", "ru": "Проклятая книга"}, "desc": {"es": "Al empezar el combate, maldice a todos", "en": "At the start of combat, curses everyone", "pt": "No início do combate, amaldiçoa a todos", "ru": "В начале боя проклинает всех"}}, {"id": 52, "name": {"es": "Infección", "en": "Infection", "pt": "Infecção", "ru": "Инфекция"}, "desc": {"es": "Revive como Zombie", "en": "Revives as a Zombie", "pt": "Revive como um Zumbi", "ru": "Возрождается как Зомби"}}, {"id": 53, "name": {"es": "Circuito Vital", "en": "Vital Circuit", "pt": "Circuito Vital", "ru": "Витальная цепь"}, "desc": {"es": "Cura 700 puntos de vida, se activa con 35% de vida o menos", "en": "Heals 700 health points, activates when HP is at or below 35%", "pt": "Cura 700 pontos de vida, ativa com 35% de vida ou menos", "ru": "Лечит 700 здоровья, срабатывает при 35% здоровья или ниже"}}, {"id": 54, "name": {"es": "Reinicio Neural", "en": "Neural Reset", "pt": "Reinício Neural", "ru": "Нейроперезагрузка"}, "desc": {"es": "Limpia la paralización", "en": "Cures paralysis", "pt": "Cura paralisia", "ru": "Лечит паралич"}}, {"id": 55, "name": {"es": "Pico Electrostático", "en": "Electrostatic Spike", "pt": "Espinho Eletrostático", "ru": "Электрошип"}, "desc": {"es": "Cuando empieza el combate, paraliza", "en": "At the start of combat, paralyzes", "pt": "No início do combate, paralisa", "ru": "В начале боя парализует"}}, {"id": 56, "name": {"es": "Descarga Masiva", "en": "Mass Discharge", "pt": "Descarga em Massa", "ru": "Массовый разряд"}, "desc": {"es": "Al empezar el combate, paraliza a todos", "en": "At the start of combat, paralyzes everyone", "pt": "No início do combate, paralisa a todos", "ru": "В начале боя парализует всех"}}, {"id": 57, "name": {"es": "Conexión Crítica", "en": "Critical Connection", "pt": "Conexão Crítica", "ru": "Крит. соединение"}, "desc": {"es": "Atacar a enemigos paralizados aumenta daño (2%)", "en": "Attacking paralyzed enemies increases damage by 2%", "pt": "Atacar inimigos paralisados aumenta o dano em 2%", "ru": "Атаки по парализованным врагам наносят на 2% больше урона"}}, {"id": 58, "name": {"es": "Impulso Balístico", "en": "Ballistic Impulse", "pt": "Impulso Balístico", "ru": "Баллистический импульс"}, "desc": {"es": "Lanzar misiles aumenta el daño (4%)", "en": "Launching missiles increases damage by 4%", "pt": "Lançar mísseis aumenta o dano em 4%", "ru": "Запуск ракет увеличивает урон на 4%"}}, {"id": 59, "name": {"es": "Conversión Vital", "en": "Vital Conversion", "pt": "Conversão Vital", "ru": "Витальная конверсия"}, "desc": {"es": "Siempre que pierda vida, aumenta su daño (1%), pero baja su velocidad (1%)", "en": "Whenever it loses health, its damage increases by 1%, but its speed decreases by 1%", "pt": "Sempre que perde vida, seu dano aumenta em 1%, mas sua velocidade diminui em 1%", "ru": "При потере здоровья урон растет на 1%, но скорость падает на 1%"}}, {"id": 60, "name": {"es": "Fragmento prohibido", "en": "Forbidden Fragment", "pt": "Fragmento Proibido", "ru": "Запретный осколок"}, "desc": {"es": "Aumenta el daño (+35%) y velocidad (+10%), pero nunca carga ni podés usar poder", "en": "Increases damage (+35%) and speed (+10%), but power never charges and cannot be used", "pt": "Aumenta o dano (+35%) e velocidade (+10%), mas nunca carrega nem pode usar poder", "ru": "Увеличивает урон (+35%) и скорость (+10%), но суперспособность не заряжается и её нельзя использовать"}}, {"id": 61, "name": {"es": "Pico blindado", "en": "Armored Beak", "pt": "Bico Blindado", "ru": "Бронированный клюв"}, "desc": {"es": "Misiles y bombas le hacen 66% menos daño", "en": "Missiles and bombs deal 66% less damage", "pt": "Mísseis e bombas causam 66% a menos de dano", "ru": "Ракеты и бомбы наносят на 66% меньше урона"}}, {"id": 62, "name": {"es": "Ojo del vacío", "en": "Eye of the Void", "pt": "Olho do Vazio", "ru": "Око Бездны"}, "desc": {"es": "Si un aliado cae derrotado, aumenta todos tus stats un 15%", "en": "If an ally is defeated, increases all your stats by 15%", "pt": "Se um aliado for derrotado, aumenta todos os seus atributos em 15%", "ru": "Если союзник побеждён, увеличивает все характеристики на 15%"}}, {"id": 63, "name": {"es": "Ala de Garra", "en": "Garra's Wing", "pt": "Asa de Garra", "ru": "Крыло Гарры"}, "desc": {"es": "Cada turno cura al equipo (5% vida máxima)", "en": "Each turn heals the team (5% max life)", "pt": "A cada turno cura a equipe (5% de vida máxima)", "ru": "Каждый ход исцеляет команду (5% макс. здоровья)"}}, {"id": 64, "name": {"es": "Guantes de pelea", "en": "Fighting Gloves", "pt": "Luvas de Luta", "ru": "Бойцовские перчатки"}, "desc": {"es": "Obtienes 2 puntos de entrenamiento extra al ganar combates", "en": "Gain 2 extra training points when winning battles", "pt": "Ganha 2 pontos extras de treinamento ao vencer combates", "ru": "Получайте 2 дополнительных очка тренировки за победу в бою"}}, {"id": 65, "name": {"es": "Deseo", "en": "Wish", "pt": "Desejo", "ru": "Желание"}, "desc": {"es": "Al tenerlo equipado, aumenta las estadísticas de los huevos que ponga este pollo", "en": "When equipped, increases the stats of eggs laid by this chicken", "pt": "Quando equipado, aumenta os atributos dos ovos colocados por esta galinha", "ru": "Увеличивает характеристики яиц, снесённых этой курицей"}}, {"id": 66, "name": {"es": "Pico vampiro", "en": "Vampire Beak", "pt": "Bico Vampírico", "ru": "Клюв вампира"}, "desc": {"es": "Cura al atacar (15% del daño)", "en": "Heals when attacking (15% of damage dealt)", "pt": "Cura ao atacar (15% do dano causado)", "ru": "Исцеляет при атаке (15% от нанесённого урона)"}}, {"id": 67, "name": {"es": "Primer boomerang", "en": "First Boomerang", "pt": "Primeiro Bumerangue", "ru": "Первый бумеранг"}, "desc": {"es": "Al empezar el combate lanza un boomerang", "en": "When start the combat, throw a boomerang", "pt": "No início do combate, lança um bumerangue", "ru": "В начале боя бросает бумеранг"}}, {"id": 68, "name": {"es": "Ojos en sincronía", "en": "Synchronized Eyes", "pt": "Olhos Sincronizados", "ru": "Синхронные глаза"}, "desc": {"es": "Comparte efecto con su atacante", "en": "Shares negative effects with its attacker", "pt": "Compartilha efeito com seu atacante", "ru": "Передаёт негативные эффекты атаковавшему"}}, {"id": 69, "name": {"es": "Primera hacha", "en": "First Axe", "pt": "Primeiro Machado", "ru": "Первый топор"}, "desc": {"es": "Al empezar el combate lanza un hacha", "en": "When start the combat, throw an axe", "pt": "No início do combate, lança um machado", "ru": "В начале боя бросает топор"}}, {"id": 70, "name": {"es": "Pluma dorada", "en": "Golden Feather", "pt": "Pena Dourada", "ru": "Золотое перо"}, "desc": {"es": "Acorta los turnos que tardan sus huevos en eclosionar (40%)", "en": "Shortens egg hatch turns by 40%", "pt": "Encurta os turnos de eclosão dos ovos em 40%", "ru": "Сокращает время вылупления яиц на 40%"}}, {"id": 71, "name": {"es": "Pluma de Brama", "en": "Brahma Feather", "pt": "Pena de Brahma", "ru": "Перо Брамы"}, "desc": {"es": "Aumenta la probabilidad de que aparezcan pollos variocolor en combates (10%)", "en": "Increases shiny chicken encounter rate in battles (+10%)", "pt": "Aumenta a chance de encontrar galinhas brilhantes em batalhas (+10%)", "ru": "Увеличивает шанс встретить сияющих кур в бою (+10%)"}}, {"id": 72, "name": {"es": "Garra derrochadora", "en": "Wasteful Claw", "pt": "Garra Esbanjadora", "ru": "Расточительный коготь"}, "desc": {"es": "Aumenta la cantidad de semillas ganadas en combate (20%)", "en": "Increases seeds won from battles by 20%", "pt": "Aumenta as sementes ganhas em combate em 20%", "ru": "Увеличивает количество семян за победу в бою на 20%"}}, {"id": 73, "name": {"es": "Nido especial", "en": "Special Nest", "pt": "Ninho Especial", "ru": "Особое гнездо"}, "desc": {"es": "Aumenta la probabilidad de que los pollos pongan huevos variocolor (10%)", "en": "Increases shiny egg hatch chance from breeding (+10%)", "pt": "Aumenta a chance de chocar ovos brilhantes na reprodução (+10%)", "ru": "Увеличивает шанс вылупления сияющих яиц при разведении (+10%)"}}, {"id": 74, "name": {"es": "Ira", "en": "Wrath", "pt": "Ira", "ru": "Гнев"}, "desc": {"es": "Obtiene 2 ataques extra al inicio del combate", "en": "Gains 2 extra attacks at the start of battle", "pt": "Ganha 2 ataques extras no início do combate", "ru": "Совершает 2 дополнительные атаки в начале боя"}}];
+    const PASSIVES = [{"id": 0, "desc": {"es": "El primer ataque hace 50% más de daño", "en": "First attack deal 50% extra damage", "pt": "Primeiro ataque causa 50% de dano extra", "ru": "Первая атака наносит на 50% больше урона"}}, {"id": 1, "desc": {"es": "Empieza con un ataque doble", "en": "Start with a double attack", "pt": "Começa com ataque duplo", "ru": "Начинает с двойной атаки"}}, {"id": 2, "desc": {"es": "Comienza lanzando un huevo dorado y gana daño (+10%) y velocidad (+10%)", "en": "Starts by throwing a golden egg and gains damage (+10%) and speed (+10%)", "pt": "Começa lançando um ovo dourado e ganha dano (+10%) e velocidade (+10%)", "ru": "В начале боя бросает золотое яйцо и получает урон (+10%) и скорость (+10%)"}}, {"id": 3, "desc": {"es": "Cuando se cura, cura a los aliados (50% del daño)", "en": "When heal himself, heal allies (50% damage)", "pt": "Ao se curar, cura aliados (50% do dano)", "ru": "При лечении себя лечит союзников (50% от лечения)"}}, {"id": 4, "desc": {"es": "Cuando usa poder, se cura (50% del daño)", "en": "When use power, heal himself (50% damage)", "pt": "Ao usar poder, cura a si mesmo (50% do dano)", "ru": "При использовании силы лечит себя (50% от урона)"}}, {"id": 5, "desc": {"es": "Al derrotar a un enemigo, lanza un shuriken (150% de daño)", "en": "When defeat an enemy, throw a shuriken (150% damage)", "pt": "Ao derrotar um inimigo, arremessa uma shuriken (150% de dano)", "ru": "При победе над врагом бросает сюрикен (150% урона)"}}, {"id": 6, "desc": {"es": "Al atacar, se cura (20% de la vida faltante)", "en": "When attack, heal himself (20% missing life)", "pt": "Ao atacar, cura a si mesmo (20% da vida perdida)", "ru": "При атаке лечит себя (20% недостающего здоровья)"}}, {"id": 7, "desc": {"es": "Cada 3 ataques, envenena", "en": "Each 3 attacks, poison", "pt": "A cada 3 ataques, envenena", "ru": "Каждые 3 атаки отравляет"}}, {"id": 8, "desc": {"es": "Al derrotar a un enemigo, gana +50 de poder y +25 de carga de poder", "en": "When defeating an enemy, gain +50 power and +25 power amount", "pt": "Ao derrotar um inimigo, ganha +50 de poder e +25 de carga de poder", "ru": "При победе над врагом получает +50 энергии и +25 к накоплению энергии"}}, {"id": 9, "desc": {"es": "Al derrotar a un enemigo, gana poder máximo", "en": "When defeat an enemy, gain full power", "pt": "Ao derrotar um inimigo, ganha poder total", "ru": "При победе над врагом полная сила"}}, {"id": 10, "desc": {"es": "Al derrotar a un enemigo, reinicia el poder", "en": "When defeat an enemy, reset power", "pt": "Ao derrotar um inimigo, reinicia o poder", "ru": "При победе над врагом сбрасывает силу"}}, {"id": 11, "desc": {"es": "Cuando usa poder, hace 10% más de daño", "en": "When use power, 10% extra damage", "pt": "Ao usar poder, 10% de dano extra", "ru": "При использовании силы +10% урона"}}, {"id": 12, "desc": {"es": "Después de lanzar un shuriken, evita el próximo ataque", "en": "After throw a shuriken, avoid the first attack", "pt": "Após arremessar shuriken, desvia do primeiro ataque", "ru": "После броска сюрикена уклоняется от первой атаки"}}, {"id": 13, "desc": {"es": "Al revivir gana 25% más de daño", "en": "when revive gain 25% extra damage", "pt": "Ao reviver ganha 25% de dano extra", "ru": "При возрождении получает +25% урона"}}, {"id": 14, "desc": {"es": "Cuando usa poder, congela al objetivo", "en": "When use power, freeze the target", "pt": "Ao usar poder, congela o alvo", "ru": "При использовании силы замораживает цель"}}, {"id": 15, "desc": {"es": "5% más de velocidad al golpear", "en": "5% extra speed when hit", "pt": "5% de velocidade extra ao acertar", "ru": "+5% скорости при ударе"}}, {"id": 16, "desc": {"es": "Al derrotar a un enemigo, se cura (33% de su vida máxima)", "en": "When defeat an enemy heal himself (33% max life)", "pt": "Ao derrotar um inimigo cura a si mesmo (33% vida máx)", "ru": "При победе над врагом лечит себя (33% макс. здоровья)"}}, {"id": 17, "desc": {"es": "Al usar poder, aplica un estado aleatorio a todos los enemigos", "en": "When using power, applies a random status to all enemies", "pt": "Ao usar poder, aplica um efeito aleatório a todos os inimigos", "ru": "При использовании способности накладывает случайный эффект на всех врагов"}}, {"id": 18, "desc": {"es": "Al ser derrotado, paraliza a todos los enemigos", "en": "When is defeated, paralize all enemies", "pt": "Quando derrotado, paralisa todos os inimigos", "ru": "При поражении парализует всех врагов"}}, {"id": 19, "desc": {"es": "No puede ser envenenado. Si un enemigo envenenado lo ataca, gana armadura (+5%)", "en": "Cannot be poisoned. If attacked by a poisoned enemy, gains armor (+5%)", "pt": "Não pode ser envenenado. Se um inimigo envenenado o atacar, ganha armadura (+5%)", "ru": "Нельзя отравить. При атаке отравленного врага получает броню (+5%)"}}, {"id": 20, "desc": {"es": "5% más de daño cuando un aliado usa poder", "en": "5% extra damage when ally use power", "pt": "5% de dano extra quando aliado usa poder", "ru": "+5% урона, когда союзник использует силу"}}, {"id": 21, "desc": {"es": "No puede ser paralizado. Su primer ataque tiene velocidad aumentada (+50%)", "en": "Cannot be paralyzed. First attack has increased speed (+50%)", "pt": "Não pode ser paralisado. Seu primeiro ataque tem velocidade aumentada (+50%)", "ru": "Нельзя парализовать. Первая атака имеет повышенную скорость (+50%)"}}, {"id": 22, "desc": {"es": "Evita proyectiles", "en": "Avoid projectiles", "pt": "Desvia de projéteis", "ru": "Уклоняется от снарядов"}}, {"id": 23, "desc": {"es": "Al ser derrotado, envenena a todos los enemigos", "en": "When is defeated, poison all enemies", "pt": "Quando derrotado, envenena todos os inimigos", "ru": "При поражении отравляет всех врагов"}}, {"id": 24, "desc": {"es": "Al ser atacado se afila: su próximo ataque inflige daño crítico extra (30%)", "en": "When attacked, sharpens: next attack deals extra critical damage (30%)", "pt": "Ao ser atacado, afia-se: próximo ataque causa dano crítico extra (30%)", "ru": "При получении удара затачивается: следующая атака наносит крит. урон (+30%)"}}, {"id": 25, "desc": {"es": "Empieza con una bomba, y lanza una bomba cuando cualquier pollo usa su poder", "en": "Starts with a bomb, and throws a bomb whenever any chicken uses power", "pt": "Começa com uma bomba e lança uma bomba sempre que qualquer frango usar seu poder", "ru": "Начинает с бомбой и бросает бомбу каждый раз, когда любая курица использует способность"}}, {"id": 26, "desc": {"es": "Cada 3 ataques, lanza un huevo", "en": "Each 3 attacks, throw a egg", "pt": "A cada 3 ataques, arremessa um ovo", "ru": "Каждые 3 атаки бросает яйцо"}}, {"id": 27, "desc": {"es": "Cuando usa poder, +5% en una estadística aleatoria de un aliado", "en": "When use power, +5% to a random ally stat", "pt": "Ao usar poder, +5% para um atributo aleatório de aliado", "ru": "При использовании силы +5% случайному стату союзника"}}, {"id": 28, "desc": {"es": "Evita el primer ataque", "en": "Avoid first attack", "pt": "Desvia do primeiro ataque", "ru": "Избегает первой атаки"}}, {"id": 29, "desc": {"es": "Obtiene enfoque", "en": "Get focus", "pt": "Ganha foco", "ru": "Получает фокус"}}, {"id": 30, "desc": {"es": "Cuando usa poder, lanza 2 moscas (50% de daño, 50% de envenenar)", "en": "When use power, throw 2 flies (50% damage, 50% poison)", "pt": "Ao usar poder, arremessa 2 moscas (50% dano, 50% veneno)", "ru": "При использовании силы бросает 2 мух (50% урона, 50% яд)"}}, {"id": 31, "desc": {"es": "Al ser atacado, reduce la velocidad del atacante (12%) y gana velocidad (+5%)", "en": "When attacked, reduces attacker's speed (12%) and gains speed (+5%)", "pt": "Ao ser atacado, reduz a velocidade do atacante (12%) e ganha velocidade (+5%)", "ru": "При атаке на него снижает скорость атакующего на 12% и получает +5% скорости"}}, {"id": 32, "desc": {"es": "Después de lanzar un huevo, hace 10% más de daño", "en": "After throw a egg, 10% extra damage", "pt": "Após arremessar um ovo, 10% de dano extra", "ru": "После броска яйца +10% урона"}}, {"id": 33, "desc": {"es": "Cada ataque tiene 25% de probabilidad de lanzar una mosca (50% de daño, 50% de envenenar)", "en": "Each attack, 25% to throw a fly (50% damage, 50% poison)", "pt": "A cada ataque, 25% de chance de arremessar uma mosca (50% dano, 50% veneno)", "ru": "Каждая атака: 25% шанс бросить муху (50% урона, 50% яд)"}}, {"id": 34, "desc": {"es": "Copia el poder de un aliado", "en": "Copy ally power", "pt": "Copia poder do aliado", "ru": "Копирует силу союзника"}}, {"id": 35, "desc": {"es": "Al derrotar a un enemigo, gana 25% más de velocidad", "en": "When defeat an enemy, 25% extra speed", "pt": "Ao derrotar um inimigo, 25% de velocidade extra", "ru": "При победе над врагом +25% скорости"}}, {"id": 36, "desc": {"es": "Empieza la batalla con poder máximo", "en": "Start the battle with full power", "pt": "Começa a batalha com poder total", "ru": "Начинает битву с полной силой"}}, {"id": 37, "desc": {"es": "Repite el poder", "en": "Repeat the power", "pt": "Repete o poder", "ru": "Повторяет силу"}}, {"id": 38, "desc": {"es": "Al ser derrotado, cura a un aliado (50% de su vida máxima)", "en": "When is defeated, heal ally (50% max life)", "pt": "Quando derrotado, cura aliado (50% vida máx)", "ru": "При поражении лечит союзника (50% макс. здоровья)"}}, {"id": 39, "desc": {"es": "Puede apuntar a aliados", "en": "Can target allies", "pt": "Pode mirar em aliados", "ru": "Может выбирать союзников целью"}}, {"id": 40, "desc": {"es": "Cada 3 ataques, se cura (10% de su vida máxima)", "en": "Each 3 attacks, heal himself (10% max life)", "pt": "A cada 3 ataques, cura a si mesmo (10% vida máx)", "ru": "Каждые 3 атаки лечит себя (10% макс. здоровья)"}}, {"id": 41, "desc": {"es": "No puede ser quemado. Si intentan quemarlo o ataca a un objetivo en llamas, gana daño (+10%)", "en": "Cannot be burned. If burned or attacking a burning enemy, gains damage (+10%)", "pt": "Não pode ser queimado. Se tentarem queimá-lo ou atacar um alvo em chamas, ganha dano (+10%)", "ru": "Нельзя поджечь. При попытке поджога или атаке горящего врага получает урон (+10%)"}}, {"id": 42, "desc": {"es": "Al ser derrotado, quema a todos los enemigos", "en": "When is defeated, burn all enemies", "pt": "Quando derrotado, queima todos os inimigos", "ru": "При поражении поджигает всех врагов"}}, {"id": 43, "desc": {"es": "Cada 3 ataques, quema al enemigo", "en": "Each 3 attacks, burn", "pt": "A cada 3 ataques, queima", "ru": "Каждые 3 атаки поджигает"}}, {"id": 44, "desc": {"es": "25% de probabilidad de quemar al ser atacado", "en": "25% to burn when is attacked", "pt": "25% de chance de queimar ao ser atacado", "ru": "25% шанс поджечь при получении атаки"}}, {"id": 45, "desc": {"es": "Cuando usa poder, 5% más de daño y se cura (10% de su vida máxima)", "en": "When use power, 5% extra damage and heal (10% max life)", "pt": "Ao usar poder, 5% de dano extra e cura (10% vida máx)", "ru": "При использовании силы +5% урона и лечит (10% макс. здоровья)"}}, {"id": 46, "desc": {"es": "Cuando usa poder, +15% de armadura y evita el próximo ataque", "en": "When using power, +15% armor and avoids next attack", "pt": "Quando usa poder, +15% de armadura e evita o próximo ataque", "ru": "При использовании способности +15% брони и уклоняется от следующей атаки"}}, {"id": 47, "desc": {"es": "Al ser atacado, gana armadura (+3%) y poder (+5)", "en": "When attacked, gains armor (+3%) and power (+5)", "pt": "Ao ser atacado, ganha armadura (+3%) e poder (+5)", "ru": "При получении удара получает броню (+3%) и энергию (+5)"}}, {"id": 48, "desc": {"es": "Cuando un aliado es derrotado, intercambia sus porcentajes de vida", "en": "When ally is defeated, swap life porcentage", "pt": "Quando aliado é derrotado, troca porcentagem de vida", "ru": "Когда союзник побежден, меняется процентом здоровья"}}, {"id": 49, "desc": {"es": "Al atacar 3 veces, evita el próximo ataque", "en": "Each 3 hits, avoid", "pt": "A cada 3 acertos, desvia", "ru": "Каждые 3 удара уклоняется"}}, {"id": 50, "desc": {"es": "Cada 3 golpes, 15% de daño extra", "en": "Every 3 hits, 15% extra damage", "pt": "A cada 3 golpes, 15% de dano extra", "ru": "Каждые 3 удара наносит на 15% больше урона"}}, {"id": 51, "desc": {"es": "Al revivir se cura (100% de vida máxima)", "en": "When revive heal himself (100% max life)", "pt": "Ao reviver cura a si mesmo (100% vida máx)", "ru": "При возрождении лечит себя (100% макс. здоровья)"}}, {"id": 52, "desc": {"es": "Cuando derrote a un enemigo, 33% de daño extra", "en": "When defeat an enemy, 33% extra damage", "pt": "Ao derrotar um inimigo, 33% de dano extra", "ru": "При победе над врагом +33% урона"}}, {"id": 53, "desc": {"es": "Cuando use poder, envenena a todos los enemigos", "en": "When use power, poison all enemies", "pt": "Ao usar poder, envenena todos os inimigos", "ru": "При использовании силы отравляет всех врагов"}}, {"id": 54, "desc": {"es": "Cuando use poder, maldice a todos los enemigos", "en": "When use power, curse all enemies", "pt": "Ao usar poder, amaldiçoa todos os inimigos", "ru": "При использовании силы проклинает всех врагов"}}, {"id": 55, "desc": {"es": "No puede ser maldecido y comienza con +15% de daño. Si empieza el turno con un efecto negativo, gana +20 de poder", "en": "Cannot be cursed and starts combat with +15% extra damage. Gains +20 power if starting turn with a negative effect", "pt": "Não pode ser amaldiçoado e começa com +15% de dano. Ganha +20 de poder se iniciar o turno com um efeito negativo", "ru": "Не может быть проклят и начинает бой с +15% к урону. Получает +20 силы, если начинает ход с негативным эффектом"}}, {"id": 56, "desc": {"es": "Al transformarse, otorga 1 punto de evasión al equipo. Al morir, revive y se transforma en Gatarlos", "en": "Upon transforming, grants 1 evasion to the team. When defeated, revives and transforms into Gatarlos", "pt": "Ao se transformar, concede 1 ponto de evasão à equipe. Quando derrotado, revive e se transforma em Gatarlos", "ru": "При превращении дает 1 очко уклонения команде. При поражении возрождается и превращается в Gatarlos"}}, {"id": 57, "desc": {"es": "Cuando sea derrotado, da poder total a un aliado", "en": "When is defeated, give ally full power", "pt": "Quando derrotado, dá poder total ao aliado", "ru": "При поражении дает союзнику полную силу"}}, {"id": 58, "desc": {"es": "50% de probabilidad de repetir projectiles", "en": "50% chance to repeat projectiles", "pt": "50% de chance de repetição dos projéteis", "ru": "50% вероятность повторного попадания снарядов"}}, {"id": 59, "desc": {"es": "Cada 4 golpes, obtiene poder total", "en": "Each 4 hits, get full power", "pt": "A cada 4 acertos, ganha poder total", "ru": "Каждые 4 удара получает полную силу"}}, {"id": 60, "desc": {"es": "Cuando lance un huevo, se cura a sí mismo (10% de vida máxima)", "en": "When throw a egg, heal himself (10% max life)", "pt": "Ao arremessar um ovo, cura a si mesmo (10% vida máx)", "ru": "При броске яйца лечит себя (10% макс. здоровья)"}}, {"id": 61, "desc": {"es": "Ignora el enfoque y comienza el combate con 1 punto de evasión", "en": "Ignores focus and starts combat with 1 point of evasion", "pt": "Ignora o foco e começa o combate com 1 ponto de evasão", "ru": "Игнорирует фокус и начинает бой с 1 очком уклонения"}}, {"id": 62, "desc": {"es": "Primer ataque paraliza", "en": "First attack paralize", "pt": "Primeiro ataque paralisa", "ru": "Первая атака парализует"}}, {"id": 63, "desc": {"es": "Cuando use poder, cura a los aliados (15% de vida máxima + 15% de daño)", "en": "When use power, heal allies (15% max life + 15% damage)", "pt": "Ao usar poder, cura aliados (15% vida máx + 15% dano)", "ru": "При использовании силы лечит союзников (15% макс. здоровья + 15% урона)"}}, {"id": 64, "desc": {"es": "Cada ataque da 5% de daño extra y se hace daño a sí mismo (5% de vida máxima)", "en": "Each attack give 5% extra damage and hurt himself (5% max life)", "pt": "Cada ataque dá 5% de dano extra e fere a si mesmo (5% vida máx)", "ru": "Каждая атака дает +5% урона и наносит себе урон (5% макс. здоровья)"}}, {"id": 65, "desc": {"es": "Cuando derrote a un enemigo, +2 de evitar", "en": "When defeat a enemy, +2 avoid", "pt": "Ao derrotar um inimigo, +2 de esquiva", "ru": "При победе над врагом +2 уклонения"}}, {"id": 66, "desc": {"es": "Cuando use poder, -15% de velocidad a todos los enemigos y los quema", "en": "When using power, -15% speed to all enemies and burns them", "pt": "Quando usar poder, -15% de velocidade a todos os inimigos e os queima", "ru": "При использовании способности -15% скорости всем врагам и поджигает их"}}, {"id": 67, "desc": {"es": "Cuando use poder, evita", "en": "When use power, avoid", "pt": "Ao usar poder, esquiva", "ru": "При использовании силы уклоняется"}}, {"id": 68, "desc": {"es": "Primer ataque quema", "en": "First attack burn", "pt": "Primeiro ataque queima", "ru": "Первая атака поджигает"}}, {"id": 69, "desc": {"es": "Cada turno, +3% de daño y +3% de velocidad", "en": "Each turn, +3% damage and +3% speed", "pt": "A cada turno, +3% de dano e +3% de velocidade", "ru": "Каждый ход +3% к урону и +3% к скорости"}}, {"id": 70, "desc": {"es": "Cada turno, +4% de armadura", "en": "Each turn, +4% armor", "pt": "A cada turno, +4% de armadura", "ru": "Каждый ход +4% к броне"}}, {"id": 71, "desc": {"es": "Cuando use poder, silencia a todos los enemigos", "en": "When use power, silence all enemies", "pt": "Ao usar poder, silencia todos os inimigos", "ru": "При использовании силы накладывает молчание на всех врагов"}}, {"id": 72, "desc": {"es": "Cada turno se cura a sí mismo (6% de vida máxima)", "en": "Each turn heals himself (6% max life)", "pt": "A cada turno se cura (6% de vida máxima)", "ru": "Каждый ход лечит себя (6% от макс. здоровья)"}}, {"id": 73, "desc": {"es": "El primer ataque tiene 100% de velocidad", "en": "First attack with 100% extra speed", "pt": "Primeiro ataque com 100% de velocidade extra", "ru": "Первая атака со 100% дополнительной скоростью"}}, {"id": 74, "desc": {"es": "Cada 3 ataques, cura a un aliado", "en": "Each 3 attacks, heal an ally", "pt": "A cada 3 ataques, cura um aliado", "ru": "Каждые 3 атаки лечит союзника"}}, {"id": 75, "desc": {"es": "Cuando una un ítem, gana poder máximo", "en": "When use a item, full power", "pt": "Ao usar um item, poder total", "ru": "При использовании предмета полная сила"}}, {"id": 76, "desc": {"es": "Cada 5 ataques, lanza 2 huevos", "en": "Each 5 attacks, throw 2 eggs", "pt": "A cada 5 ataques, arremessa 2 ovos", "ru": "Каждые 5 атак бросает 2 яйца"}}, {"id": 77, "desc": {"es": "Cuando ataca a un enemigo congelado, se cura (5% de vida máxima)", "en": "When attack a frozen enemy, heal himself (5% max life)", "pt": "Ao atacar um inimigo congelado, cura a si mesmo (5% vida máx)", "ru": "При атаке замороженного врага лечит себя (5% макс. здоровья)"}}, {"id": 78, "desc": {"es": "Cada 2 poderes, esquiva", "en": "Each 2 powers, avoid", "pt": "A cada 2 poderes, esquiva", "ru": "Каждые 2 силы уклоняется"}}, {"id": 79, "desc": {"es": "Cuando ataca, se cura a sí mismo (5% de vida máxima) y gana velocidad (+3%)", "en": "When attacking, heals himself (5% max life) and gains speed (+3%)", "pt": "Quando ataca, se cura (5% de vida máxima) e ganha velocidade (+3%)", "ru": "При атаке лечит себя (5% от макс. здоровья) и получает скорость (+3%)"}}, {"id": 80, "desc": {"es": "Cuando ataca a un enemigo envenenado, se cura (5% de vida máxima)", "en": "When attack a poisoned enemy, heal himself (5% max life)", "pt": "Ao atacar um inimigo envenenado, cura a si mesmo (5% vida máx)", "ru": "При атаке отравленного врага лечит себя (5% макс. здоровья)"}}, {"id": 81, "desc": {"es": "Cada 2 ataques, +15 poder", "en": "Each 2 attacks, +15 power", "pt": "A cada 2 ataques, +15 poder", "ru": "Каждые 2 атаки +15 силы"}}, {"id": 82, "desc": {"es": "Al atacar a un enemigo infectado, propaga la infección y drena poder (-10)", "en": "Attacking an infected enemy spreads infection and drains power (-10)", "pt": "Ao atacar um inimigo infectado, espalha a infecção e drena poder (-10)", "ru": "При атаке зараженного врага распространяет инфекцию и крадет энергию (-10)"}}, {"id": 83, "desc": {"es": "Al comenzar, cura al equipo (35% de la vida máxima)", "en": "When start, heal team (35% max life)", "pt": "Ao iniciar, cura equipe (35% vida máx)", "ru": "В начале лечит команду (35% макс. здоровья)"}}, {"id": 84, "desc": {"es": "Al comenzar, otorga poder completo a un aliado", "en": "When start, give full power to ally", "pt": "Ao iniciar, dá poder total ao aliado", "ru": "В начале дает полную силу союзнику"}}, {"id": 85, "desc": {"es": "Al ser atacado, refleja 20% del daño y reduce la armadura del atacante (3%)", "en": "When attacked, reflects 20% damage and reduces attacker's armor (3%)", "pt": "Ao ser atacado, reflete 20% do dano e reduz a armadura do atacante (3%)", "ru": "При получении удара отражает 20% урона и снижает броню атакующего (3%)"}}, {"id": 86, "desc": {"es": "Cada 5 ataques, envenena y se cura a sí mismo (33% de la vida máxima)", "en": "Each 5 attacks, poison and heal himself (33% max life)", "pt": "A cada 5 ataques, envenena e cura a si mesmo (33% vida máx)", "ru": "Каждые 5 атак отравляет и лечит себя (33% макс. здоровья)"}}, {"id": 87, "desc": {"es": "Cuando un aliado usa su poder, obtiene poder completo", "en": "When ally use power, get full power", "pt": "Quando aliado usa poder, ganha poder total", "ru": "Когда союзник использует силу, получает полную силу"}}, {"id": 88, "desc": {"es": "Comienza con un 33% de daño extra y silenciado", "en": "Start with 33% extra damage and silenced", "pt": "Começa com 33% de dano extra e silenciado", "ru": "Начинает с +33% урона и молчанием"}}, {"id": 89, "desc": {"es": "Cuando es golpeado, hiere al enemigo (25% del daño recibido)", "en": "When hit, hurt enemy (25% damage)", "pt": "Ao ser atingido, fere o inimigo (25% dano)", "ru": "При ударе ранит врага (25% урона)"}}, {"id": 90, "desc": {"es": "Al derrotar un enemigo, se cura (25% de vida máxima) y otorga 1 de evasión al equipo", "en": "When defeating an enemy, heals (25% max life) and grants 1 evasion to the team", "pt": "Ao derrotar um inimigo, cura-se (25% de vida máxima) e concede 1 de esquiva à equipe", "ru": "При победе над врагом исцеляется (25% макс. здоровья) и дает команде 1 уклонение"}}, {"id": 91, "desc": {"es": "Cuando un enemigo usa su poder, gana +5 de daño", "en": "When an enemy use power, +5 damage", "pt": "Quando um inimigo usa poder, +5 dano", "ru": "Когда враг использует силу, +5 урона"}}, {"id": 92, "desc": {"es": "Cuando usa su poder, se cura a sí mismo (10% de la vida máxima) y gana +5 de armadura", "en": "When use power, heal himself (10% max life) and +5% armor", "pt": "Ao usar poder, cura a si mesmo (10% vida máx) e +5% armadura", "ru": "При использовании силы лечит себя (10% макс.) и +5% брони"}}, {"id": 93, "desc": {"es": "Cada ataque lo cura a sí mismo (25% del daño infligido)", "en": "Each attack heal himself (25% damage)", "pt": "Cada ataque cura a si mesmo (25% dano)", "ru": "Каждая атака лечит себя (25% от урона)"}}, {"id": 94, "desc": {"es": "Cada ataque aumenta +3% la velocidad y +5 el valor de poder", "en": "Each attack +3% speed and +5 power value", "pt": "Cada ataque +3% velocidade e +5 valor de poder", "ru": "Каждая атака +3% скорости и +5 силы"}}, {"id": 95, "desc": {"es": "Al comenzar, +1% de daño por cada 50 puntos de vida máxima", "en": "When start, gain +1% damage for every 50 max hp", "pt": "Ao iniciar, ganha +1% dano para cada 50 de vida máx", "ru": "В начале +1% урона за каждые 50 макс. здоровья"}}, {"id": 96, "desc": {"es": "Cada ataque reduce el poder del objetivo (-5)", "en": "Each attack reduce target power (-5)", "pt": "Cada ataque reduz poder do alvo (-5)", "ru": "Каждая атака снижает силу цели (-5)"}}, {"id": 97, "desc": {"es": "Cuando usa su poder, baja el poder de los enemigos a 0", "en": "When use power, drop enemy power to 0", "pt": "Ao usar poder, reduz poder inimigo a 0", "ru": "При использовании силы сбрасывает силу врага до 0"}}, {"id": 98, "desc": {"es": "Cuando usa su poder, lanza una bomba", "en": "When use power, throw a bomb", "pt": "Ao usar poder, arremessa uma bomba", "ru": "При использовании силы бросает бомбу"}}, {"id": 99, "desc": {"es": "Cuando es golpeado, +10 de poder y -1% de armadura", "en": "When hit, +10 power and -1% armor", "pt": "Ao ser atingido, +10 poder e -1% armadura", "ru": "При получении удара +10 силы и -1% брони"}}, {"id": 100, "desc": {"es": "Atacar a un enemigo congelado inflige daño extra (30%) y reduce su armadura (5%)", "en": "Attacking a frozen enemy deals extra damage (30%) and reduces armor (5%)", "pt": "Atacar um inimigo congelado causa dano extra (30%) e reduz sua armadura (5%)", "ru": "При атаке замороженного врага наносит доп. урон (30%) и снижает броню (5%)"}}, {"id": 101, "desc": {"es": "Cada 3 ataques, lanza un huevo helado", "en": "Every 3 attacks, throws a frozen egg", "pt": "A cada 3 ataques, lança um ovo congelado", "ru": "Каждые 3 атаки бросает ледяное яйцо"}}, {"id": 102, "desc": {"es": "Cuando derrota a un enemigo, +15% de velocidad y +15% de daño", "en": "When defeating an enemy, +15% speed and +15% damage", "pt": "Ao derrotar um inimigo, +15% velocidade e +15% dano", "ru": "При победе над врагом +15% скорости и +15% урона"}}, {"id": 103, "desc": {"es": "Al comenzar, -10% de velocidad a los enemigos", "en": "When start, reduces enemies' speed by 10%", "pt": "Ao iniciar, reduz velocidade dos inimigos em 10%", "ru": "В начале снижает скорость врагов на 10%"}}, {"id": 104, "desc": {"es": "Al revivir obtiene 25% de armadura", "en": "When revive, gains 25% armor", "pt": "Ao reviver, ganha 25% de armadura", "ru": "При возрождении получает 25% брони"}}, {"id": 105, "desc": {"es": "No puede congelarse. Atacar a enemigos congelados aumenta su velocidad (20%) y daño (10%)", "en": "Cannot be frozen. Attacking frozen enemies increases speed (20%) and damage (10%)", "pt": "Não pode ser congelado. Atacar inimigos congelados aumenta velocidade (20%) e dano (10%)", "ru": "Нельзя заморозить. При атаке замороженных врагов получает скорость (20%) и урон (10%)"}}, {"id": 106, "desc": {"es": "Cuando ataca a un enemigo congelado, +2% de armadura y +5 de poder", "en": "When attacking a frozen enemy, +2% armor and +5 power", "pt": "Ao atacar inimigo congelado, +2% armadura e +5 poder", "ru": "При атаке замороженного врага +2% брони и +5 силы"}}, {"id": 107, "desc": {"es": "50% de probabilidad de empezar con poder al máximo (en caso contrario, 50% de poder)", "en": "50% chance to start with full power (otherwise, 50% power)", "pt": "50% de chance de começar com poder máximo (caso contrário, 50% de poder)", "ru": "50% шанс начать с максимумом энергии (иначе 50% энергии)"}}, {"id": 108, "desc": {"es": "Cada 3 ataques, lanza una bomba", "en": "Every 3 attacks, throw a bomb", "pt": "A cada 3 ataques, lança uma bomba", "ru": "Каждые 3 атаки бросает бомбу"}}, {"id": 109, "desc": {"es": "Revive como Mali", "en": "Revives as Mali", "pt": "Revive como Mali", "ru": "Возрождается как Mali"}}, {"id": 110, "desc": {"es": "Al usar su poder, obtiene ataque doble", "en": "When using their power, gains double attack", "pt": "Ao usar seu poder, ganha ataque duplo", "ru": "При использовании силы получает двойную атаку"}}, {"id": 111, "desc": {"es": "Cada ataque aumenta una estadística aleatoria (5%)", "en": "Each attack increases a random stat (5%)", "pt": "Cada ataque aumenta um atributo aleatório (5%)", "ru": "Каждая атака увеличивает случайную характеристику на 5%"}}, {"id": 112, "desc": {"es": "Cuando un aliado es derrotado, obtiene sus multis", "en": "When an ally is defeated, gains their multis", "pt": "Quando um aliado é derrotado, ganha seus multiplicadores", "ru": "Когда союзник побежден, получает его множители"}}, {"id": 113, "desc": {"es": "Atacar a un enemigo envenenado lo cura (20% del daño)", "en": "Attacking a poisoned enemy heals self (20% damage)", "pt": "Atacar um inimigo envenenado cura a si mesmo (20% do dano)", "ru": "При атаке отравленного врага исцеляется (20% урона)"}}, {"id": 114, "desc": {"es": "Al usar su poder, aumenta una estadística aleatoria (5%)", "en": "When using their power, increases a random stat (5%)", "pt": "Ao usar seu poder, aumenta um atributo aleatório (5%)", "ru": "При использовании силы увеличивает случайный стат (5%)"}}, {"id": 115, "desc": {"es": "Al empezar el combate, otorga armadura al equipo (15%)", "en": "At the start of combat, grants armor to the team (15%)", "pt": "Ao começar o combate, concede armadura à equipe (15%)", "ru": "В начале боя дает команде броню (15%)"}}, {"id": 116, "desc": {"es": "Al morir, explota (25% de la vida máxima)", "en": "Upon death, explodes (25% of maximum health)", "pt": "Ao morrer, explode (25% da vida máxima)", "ru": "При смерти взрывается (25% от макс. здоровья)"}}, {"id": 117, "desc": {"es": "Al derrotar un enemigo, obtiene vida máxima y pierde velocidad (15%)", "en": "Upon defeating an enemy, gains max health and loses speed (15%)", "pt": "Ao derrotar um inimigo, ganha vida máxima e perde velocidade (15%)", "ru": "При победе над врагом получает макс. здоровье и теряет скорость (15%)"}}, {"id": 118, "desc": {"es": "Al empezar el combate, aumenta la velocidad del equipo (5%)", "en": "At the start of combat, increases the team's speed (5%)", "pt": "No início do combate, aumenta a velocidade da equipe (5%)", "ru": "В начале боя увеличивает скорость команды (5%)"}}, {"id": 119, "desc": {"es": "Cuando la vida baje del 35% de la vida máxima, se cura por completo la vida (Una vez por combate)", "en": "When health falls below 35% of max health, fully heals (once per combat)", "pt": "Quando a vida cai abaixo de 35% da vida máxima, cura totalmente (uma vez por combate)", "ru": "Когда здоровье падает ниже 35%, полностью лечится (один раз за бой)"}}, {"id": 120, "desc": {"es": "Al empezar el combate, lanza una mosca", "en": "At the start of combat, launches a fly", "pt": "No início do combate, lança uma mosca", "ru": "В начале боя запускает муху"}}, {"id": 121, "desc": {"es": "Cada turno, aumenta el daño (3%) y velocidad (3%) de los aliados", "en": "Each turn, increases damage (3%) and speed (3%) of allies", "pt": "A cada turno, aumenta o dano (3%) e velocidade (3%) dos aliados", "ru": "Каждый ход увеличивает урон (3%) и скорость (3%) союзников"}}, {"id": 122, "desc": {"es": "Revive siempre que haya un aliado vivo (3 veces por combate)", "en": "Revives as long as an ally is alive (3 per combat)", "pt": "Revive enquanto um aliado estiver vivo (3 vezes por combate)", "ru": "Возрождается, пока жив союзник (3 раза за бой)"}}, {"id": 123, "desc": {"es": "Al ser golpeado, cura a un aliado (5% vida máxima)", "en": "When hit, heals an ally (5% of max health)", "pt": "Ao ser atingido, cura um aliado (5% vida máxima)", "ru": "При получении удара лечит союзника (5% макс. здоровья)"}}, {"id": 124, "desc": {"es": "Al tener menos del 50% de vida, lanza 3 misiles (una vez por combate)", "en": "When below 50% health, launches 3 missiles (once per combat)", "pt": "Ao ficar abaixo de 50% de vida, lança 3 mísseis (uma vez por combate)", "ru": "Когда здоровье падает ниже 50%, выпускает 3 ракеты (раз за бой)"}}, {"id": 125, "desc": {"es": "Atacar a un enemigo paralizado daña al resto de enemigos (30% del daño)", "en": "Attacking a paralyzed enemy damages other enemies (30% damage)", "pt": "Atacar um inimigo paralisado causa dano aos outros inimigos (30% do dano)", "ru": "При атаке парализованного врага наносит урон остальным врагам (30% урона)"}}, {"id": 126, "desc": {"es": "Al empezar el combate, cura a un aliado (100% vida máxima)", "en": "At the start of combat, heal an ally (100% of max health)", "pt": "No início do combate, cura um aliado (100% vida máxima)", "ru": "В начале боя лечит союзника (100% макс. здоровья)"}}, {"id": 127, "desc": {"es": "Empieza lanzando un hacha, y cada ataque reduce la armadura enemiga (3%)", "en": "Starts throwing an axe, and each attack reduces enemy armor (3%)", "pt": "Começa lançando um machado, e cada ataque reduz a armadura inimiga (3%)", "ru": "В начале боя бросает топор, и каждая атака снижает броню врага (3%)"}}, {"id": 128, "desc": {"es": "Al ser atacado, lanza una bomba", "en": "When attacked, launches a bomb", "pt": "Ao ser atacado, lança uma bomba", "ru": "При получении удара бросает бомбу"}}, {"id": 129, "desc": {"es": "El equipo obtiene daño (10%)", "en": "The team takes 10% damage", "pt": "A equipe recebe 10% de dano", "ru": "Команда получает 10% урона"}}, {"id": 130, "desc": {"es": "Cuando usa poder, -5% en una estadística aleatoria cada enemigo", "en": "When using power, each enemy suffers a -5% penalty to a random stat.", "pt": "Ao usar poder, cada inimigo sofre uma penalidade de -5% em um atributo aleatório.", "ru": "При использовании силы -5% к случайному параметру каждого врага"}}, {"id": 131, "desc": {"es": "Cada ataque otorga poder al aliado (+10)", "en": "Each attack grants power to the ally (+10)", "pt": "Cada ataque concede poder ao aliado (+10).", "ru": "Каждая атака дает союзнику силу (+10)"}}, {"id": 132, "desc": {"es": "Cada turno, cura al equipo (5% vida máxima)", "en": "Each turn, heals the team (5% of maximum health)", "pt": "A cada turno, cura a equipe (5% da saúde máxima)", "ru": "Каждый ход восстанавливает здоровье команды (5% от максимального запаса здоровья)"}}, {"id": 133, "desc": {"es": "Cuando se cura, aumenta el daño (+3%)", "en": "When healed, damage increases (+3%)", "pt": "Ao ser curado, o dano aumenta (+3%)", "ru": "При лечении урон увеличивается (+3%)"}}, {"id": 134, "desc": {"es": "Cada ataque reduce la armadura del objetivo (-5%). Al ser golpeado, gana +20 de poder", "en": "Each attack reduces target's armor (-5%). When hit, gains +20 power", "pt": "Cada ataque reduz a armadura do alvo (-5%). Ao ser atingido, ganha +20 de poder", "ru": "Каждая атака снижает броню цели (-5%). При получении удара получает +20 силы"}}, {"id": 135, "desc": {"es": "Cada turno lanza un misil y pierde armadura (-4%)", "en": "Each turn throw a missile and lose armor (-4%)", "pt": "A cada turno, lance um míssil e perca armadura em (-4%)", "ru": "Каждый ход бросает снаряд и теряет броню (-4%)"}}, {"id": 136, "desc": {"es": "Cuando un aliado revive obtienes daño (+15%) y un esquive.", "en": "When an ally revives you gain damage (+15%) and a dodge.", "pt": "Quando um aliado revive, você ganha dano (+15%) e uma esquiva.", "ru": "Когда союзник оживляет вас, вы получаете +15% к урону и уклонение."}}, {"id": 137, "desc": {"es": "Atacar enemigos con infección aumenta el poder (+25)", "en": "Attacking infected enemies increases power (+25)", "pt": "Atacar inimigos infectados aumenta o poder (+25)", "ru": "Атака зараженных врагов увеличивает силу (+25)"}}, {"id": 138, "desc": {"es": "Al usar un item, aumenta el daño (+25%) y poder (+50)", "en": "Using an item increases damage (+25%) and power (+50)", "pt": "Usar um item aumenta o dano (+25%) e o poder (+50)", "ru": "Использование предмета увеличивает урон (+25%) и силу (+50)"}}, {"id": 139, "desc": {"es": "Si derrota a un enemigo, aumenta el poder (+100) y se cura (50% del daño)", "en": "Defeating an enemy increases power (+100) and heals (50% of damage)", "pt": "Derrotar um inimigo aumenta o poder (+100) e cura (50% do dano)", "ru": "Победа над врагом увеличивает силу (+100) и лечит (50% от урона)"}}, {"id": 140, "desc": {"es": "Al recibir un ataque aumenta su armadura y daño (+3%)", "en": "When hit, gain armor and damage (+3%)", "pt": "Ao receber um ataque, aumenta sua armadura e dano (+3%)", "ru": "При получении удара увеличивает броню и урон (+3%)"}}, {"id": 141, "desc": {"es": "Atacar enemigos con envenenamiento lo cura (33% del daño)", "en": "Attacking poisoned enemies heals self (33% damage)", "pt": "Atacar inimigos envenenados o cura (33% do dano)", "ru": "Атака отравленных врагов лечит его (33% урона)"}}, {"id": 142, "desc": {"es": "Atacar enemigos congelados lo cura a el y a su aliado (20% del daño)", "en": "Attacking frozen enemies heals self and ally (20% damage)", "pt": "Atacar inimigos congelados cura ele e seu aliado (20% do dano)", "ru": "Атака замороженных врагов лечит его и союзника (20% урона)"}}, {"id": 143, "desc": {"es": "Atacar enemigos con quemadura te cura (20% del daño) y aumenta el poder (+20)", "en": "Attacking burned enemies heals self (20% damage) and gains power (+20)", "pt": "Atacar inimigos queimados te cura (20% do dano) e aumenta o poder (+20)", "ru": "Атака горящих врагов лечит (20% урона) и увеличивает силу (+20)"}}, {"id": 144, "desc": {"es": "Al usar su poder, el equipo obtiene una poción aleatoria si no tienen objetos", "en": "When using power, the team obtains a random potion if they have no items", "pt": "Ao usar poder, a equipe obtém uma poção aleatória se não tiver itens", "ru": "При использовании способности команда получает случайное зелье, если нет предметов"}}, {"id": 145, "desc": {"es": "Cura a su aliado si este aliado usa su poder (33% del daño propio)", "en": "Heals ally when that ally uses their power (33% own damage)", "pt": "Cura o aliado quando esse aliado usa seu poder (33% do dano próprio)", "ru": "Лечит союзника, когда тот использует способность (33% собственного урона)"}}, {"id": 146, "desc": {"es": "Lanza una bomba siempre que un enemigo use su poder", "en": "Throws a bomb whenever an enemy uses their power", "pt": "Lança uma bomba sempre que um inimigo usar seu poder", "ru": "Бросает бомбу каждый раз, когда враг использует способность"}}, {"id": 147, "desc": {"es": "Cada turno pierde vida (10% de vida máxima) pero aumenta su poder (+20)", "en": "Each turn, loses life (10% max life) but gains power (+20)", "pt": "A cada turno perde vida (10% da vida máxima), mas ganha poder (+20)", "ru": "Каждый ход теряет здоровье (10% макс. HP), но увеличивает силу (+20)"}}, {"id": 148, "desc": {"es": "Al ser atacado, aumenta su daño (5%) y velocidad (5%)", "en": "When attacked, gains damage (5%) and speed (5%)", "pt": "Ao ser atacado, aumenta seu dano (5%) e velocidade (5%)", "ru": "При получении удара получает урон (5%) и скорость (5%)"}}, {"id": 149, "desc": {"es": "Atacar a un enemigo congelado inflige daño extra (+30%)", "en": "Attacking a frozen enemy deals extra damage (+30%)", "pt": "Atacar um inimigo congelado causa dano extra (+30%)", "ru": "Атака замороженного врага наносит дополнительный урон (+30%)"}}, {"id": 150, "desc": {"es": "Al empezar el combate, el equipo obtiene revivir", "en": "At the start of combat, the team gains revive", "pt": "Ao iniciar o combate, a equipe ganha reviver", "ru": "В начале боя команда получает возрождение"}}];
 
-    // TARGET TYPES (matching scr_battle_get_target)
-    const TARGET_OPTIONS = [
-      { id: 1, name: "🎯 Menos Vida (Rematar)" },
-      { id: 2, name: "🎯 Más Vida (Desgastar)" },
-      { id: 6, name: "🎯 Más Daño" },
-      { id: 8, name: "🎯 Más Velocidad" },
-      { id: 9, name: "🎯 Menos Armadura" },
-      { id: 15, name: "🎯 Venganza (Al que me atacó)" },
-      { id: 0, name: "🎲 Aleatorio" }
+
+    // LOCALIZATION SYSTEM
+    let currentLang = localStorage.getItem('cc_wiki_lang') || 'es';
+    if (!['es', 'en', 'pt', 'ru'].includes(currentLang)) currentLang = 'es';
+
+    const TOURNAMENT_RULES = {
+      "0": {
+            "es": "Vida completa al derrotar enemigos",
+            "en": "Full health at defeat enemies",
+            "pt": "Vida cheia ao derrotar inimigos",
+            "ru": "Полное здоровье при победе над врагами"
+      },
+      "1": {
+            "es": "Al ser derrotado un pollo, quema a todos los demás",
+            "en": "When a chicken is defeated, burn all chickens",
+            "pt": "Quando um frango é derrotado, queima todos os outros",
+            "ru": "Когда курица побеждена, сжигает всех остальных"
+      },
+      "2": {
+            "es": "Ataques aliados aumentan poder (25%)",
+            "en": "Ally attacks give power (50%)",
+            "pt": "Ataques aliados aumentam o poder (50%)",
+            "ru": "Атаки союзников дают силу (50%)"
+      },
+      "3": {
+            "es": "Todos los pollos se infectan al comienzo",
+            "en": "All chickens are infected at the beginning",
+            "pt": "Todos os frangos começam infectados",
+            "ru": "Все курицы заражены в начале"
+      },
+      "4": {
+            "es": "Cuando un pollo es derrotado, explota",
+            "en": "When a chicken is defeated, explodes",
+            "pt": "Quando um frango é derrotado, ele explode",
+            "ru": "Когда курица побеждена, она взрывается"
+      },
+      "5": {
+            "es": "+15 de poder cuando ataca pollos congelados",
+            "en": "+15 power when attacking frozen chickens",
+            "pt": "+15 de poder ao atacar frangos congelados",
+            "ru": "+15 силы при атаке замороженных куриц"
+      },
+      "6": {
+            "es": "Todos los pollos reviven como Zombie",
+            "en": "All chickens revive as Zombie",
+            "pt": "Todos os frangos revivem como Zombi",
+            "ru": "Все курицы возрождаются как Зомби"
+      },
+      "7": {
+            "es": "Enemigos paralizados pierden vida al atacar (10% del daño)",
+            "en": "Paralyzed enemies lose health when attacking (10% of the damage)",
+            "pt": "Inimigos paralisados perdem vida ao atacar (10% do dano)",
+            "ru": "Парализованные враги теряют здоровье при атаке (10% от урона)"
+      },
+      "8": {
+            "es": "No se puede curar entre combates ni usar objetos de curación",
+            "en": "No healing allowed between fights and healing items cannot be used",
+            "pt": "Não é permitido curar entre lutas nem usar itens de cura",
+            "ru": "Лечение между боями и лечебные предметы запрещены"
+      }
+};
+
+    const TARGET_OPTIONS_DATA = [
+      { id: 1, text: { es: "🎯 Menos Vida (Rematar)", en: "🎯 Lowest HP (Finisher)", pt: "🎯 Menor Vida (Finalizar)", ru: "🎯 Меньше HP (Добивание)" } },
+      { id: 2, text: { es: "🎯 Más Vida (Desgastar)", en: "🎯 Highest HP (Attrition)", pt: "🎯 Maior Vida (Desgaste)", ru: "🎯 Больше HP (Истощение)" } },
+      { id: 6, text: { es: "🎯 Más Daño", en: "🎯 Highest Damage", pt: "🎯 Maior Dano", ru: "🎯 Больше урона" } },
+      { id: 8, text: { es: "🎯 Más Velocidad", en: "🎯 Highest Speed", pt: "🎯 Maior Velocidade", ru: "🎯 Больше скорости" } },
+      { id: 9, text: { es: "🎯 Menos Armadura", en: "🎯 Lowest Armor", pt: "🎯 Menor Armadura", ru: "🎯 Меньше брони" } },
+      { id: 15, text: { es: "🎯 Venganza (Al que me atacó)", en: "🎯 Revenge (Last Attacker)", pt: "🎯 Vingança (Quem atacou)", ru: "🎯 Возмездие (Обидчик)" } },
+      { id: 0, text: { es: "🎲 Aleatorio", en: "🎲 Random", pt: "🎲 Aleatório", ru: "🎲 Случайный" } }
     ];
 
-    // TOURNAMENT RULES
-    const TOURNAMENT_RULES = {
-      0: "Cura toda la salud al derrotar un enemigo.",
-      1: "La quemadura aplica el doble de efecto.",
-      2: "Los ataques de aliados otorgan +25% de poder.",
-      3: "Todos los pollos inician con el estado Infección.",
-      4: "Defensa pesada: Armadura multiplicada.",
-      5: "Clima helado: Probabilidad aumentada de congelar.",
-      6: "Todos los pollos obtienen 1 auto-revivir al 50% HP.",
-      7: "Sobrecarga de poder: Carga aumentada.",
-      8: "Arcana: Bonificaciones mágicas aleatorias."
+    const META_PRESETS_DATA = [
+      {
+        id: "meta_mechalex",
+        title: {
+          es: "🤖 Dúo Mecánico (Mechalex & Eggalex)",
+          en: "🤖 Mechanical Duo (Mechalex & Eggalex)",
+          pt: "🤖 Dupla Mecânica (Mechalex & Eggalex)",
+          ru: "🤖 Механический дуэт (Mechalex & Eggalex)"
+        },
+        team: [
+          { chickenId: 135, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false },
+          { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_toxic",
+        title: {
+          es: "🧪 Dúo Veneno & Parálisis (Pasti & Polliwatt)",
+          en: "🧪 Poison & Paralysis Duo (Pasti & Polliwatt)",
+          pt: "🧪 Dupla Veneno & Paralisia (Pasti & Polliwatt)",
+          ru: "🧪 Дуэт яда и паралича (Pasti & Polliwatt)"
+        },
+        team: [
+          { chickenId: 44, level: 100, born: 100, training: 2.0, itemId: 3, targetAI: 1, useHiddenPower: false },
+          { chickenId: 35, level: 100, born: 100, training: 2.0, itemId: 26, targetAI: 2, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_immortal",
+        title: {
+          es: "🛡️ Dúo Tanque & Inmortal (Iguanarto & Easy East)",
+          en: "🛡️ Tank & Immortal Duo (Iguanarto & Easy East)",
+          pt: "🛡️ Dupla Tanque & Imortal (Iguanarto & Easy East)",
+          ru: "🛡️ Танк и бессмертный (Iguanarto & Easy East)"
+        },
+        team: [
+          { chickenId: 29, level: 100, born: 100, training: 2.0, itemId: 6, targetAI: 9, useHiddenPower: false },
+          { chickenId: 147, level: 100, born: 100, training: 2.0, itemId: 2, targetAI: 1, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_zombie",
+        title: {
+          es: "🧟 Dúo Infección Zombie (Mali & Zombie)",
+          en: "🧟 Zombie Infection Duo (Mali & Zombie)",
+          pt: "🧟 Dupla Infecção Zumbi (Mali & Zombie)",
+          ru: "🧟 Дуэт зомби-инфекции (Mali & Zombie)"
+        },
+        team: [
+          { chickenId: 81, level: 100, born: 100, training: 2.0, itemId: 35, targetAI: 2, useHiddenPower: false },
+          { chickenId: 23, level: 100, born: 100, training: 2.0, itemId: 27, targetAI: 1, useHiddenPower: false }
+        ]
+      },
+      {
+        id: "meta_evasion",
+        title: {
+          es: "💨 Dúo Evasión & Velocidad (Evil Gatarlos & Shiken)",
+          en: "💨 Evasion & Speed Duo (Evil Gatarlos & Shiken)",
+          pt: "💨 Dupla Evasão & Velocidade (Evil Gatarlos & Shiken)",
+          ru: "💨 Дуэт уклонения и скорости (Evil Gatarlos & Shiken)"
+        },
+        team: [
+          { chickenId: 140, level: 100, born: 100, training: 2.0, itemId: 22, targetAI: 8, useHiddenPower: false },
+          { chickenId: 61, level: 100, born: 100, training: 2.0, itemId: 16, targetAI: 1, useHiddenPower: false }
+        ]
+      }
+    ];
+
+    const t_sim = {
+      es: {
+        pageTitle: "Simulador de Combate 2vs2 - Clicker Chickens",
+        simTitle: "Simulador de Combate 2vs2",
+        simSubtitle: "Arena táctica oficial de Clicker Chickens: Poderes, Pasivas, Transformaciones y Targeting",
+        backToWiki: "Volver a la Wiki",
+        calcLink: "Calculadora Stats",
+        darkTheme: "🌙 Modo Oscuro",
+        lightTheme: "☀️ Modo Claro",
+        lblBattleMode: "Modo de Combate:",
+        modeStandard: "⚔️ Combate Estándar (PvP / Wild)",
+        tournamentPrefix: "🏆 Torneo",
+        zones: ["Pradera", "Volcán", "Cielo", "Desierto", "Rocosos", "Nevados", "Cementerio", "La Fábrica", "Arcana"],
+        ruleBadge: (r) => `Regla: ${r}`,
+        ruleSpecial: "Especial",
+        btnStartBattle: "Simular Combate",
+        btnMonteCarlo: "Simular 500 Partidas",
+        btnRandomAll: "Todo Aleatorio",
+        teamManagerTitle: "Gestor de Equipos y Códigos Compartibles",
+        teamManagerSub: "Guarda tus combinaciones favoritas o compártelas fácilmente mediante códigos de texto.",
+        btnCopyFull: "Copiar Combate Completo",
+        btnImportCode: "Importar Código",
+        btnMyTeams: "Mis Equipos",
+        teamBlueTitle: "Equipo Azul (Tu Bando)",
+        teamRedTitle: "Equipo Rojo (Rival)",
+        saveBtn: "Guardar",
+        codeBtn: "Código",
+        pasteBtn: "Pegar",
+        maxBtn: "Max",
+        presetQuick: "Preset Rápido...",
+        presetLvl100: "👑 Nivel 100 (Max)",
+        presetLvl50: "⚔️ Nivel 50 (Competitivo)",
+        presetRandom: "🎲 Aleatorizar Equipo",
+        groupSavedTeams: "⭐ Mis Equipos Guardados",
+        groupMetaPresets: "🔥 Presets Meta Competitivo",
+        slotLeader: "Líder (Pos 0)",
+        slotCompanion: "Acompañante (Pos 1)",
+        selectedChicken: "Pollo Seleccionado:",
+        searchPlaceholder: "🔍 Filtrar pollo por nombre o #...",
+        noChickensFound: "No se encontraron pollos",
+        passivePrefix: "Pasiva:",
+        noPassive: "Sin pasiva",
+        colLevel: "Nivel",
+        colGenetics: "Genética",
+        colTraining: "Entren.",
+        equippedItem: "Objeto Equipado:",
+        noItem: "Sin objeto",
+        targetAI: "Estrategia Objetivo (Target AI):",
+        powerLabel: "Poder:",
+        powerHidden: "Oculto",
+        noPower: "Poder Base",
+        arenaTitle: "Arena de Batalla",
+        roundBadge: (r) => `Ronda ${r}`,
+        pauseBtn: "⏸ Pausar",
+        resumeBtn: "▶️ Reanudar",
+        stepBtn: "⏭ Paso",
+        logTitle: "Registro de Combate (Battle Log):",
+        clearLogBtn: "Limpiar Log",
+        logInitial: "Configura los equipos y presiona 'Simular Combate' para comenzar...",
+        mcTitle: "Resultados de Simulación Masiva (500 Partidas)",
+        mcClose: "✕ Cerrar",
+        mcBlueTitle: "Victorias Equipo Azul",
+        mcRedTitle: "Victorias Equipo Rojo",
+        mcAvgTitle: "Estadísticas Promedio",
+        mcAvgDesc: "Rondas promedio por combate",
+        mcBarBlue: "Equipo Azul",
+        mcBarRed: "Equipo Rojo",
+        modalSavedTitle: "Mis Equipos Guardados",
+        modalSavedDesc: "Equipos almacenados en tu navegador listos para cargar en batalla",
+        modalEmptyTitle: "No tienes ningún equipo guardado todavía.",
+        modalEmptyDesc: "Configura un bando y presiona '💾 Guardar Azul' o '💾 Guardar Rojo' para guardarlo aquí.",
+        modalLoadBlue: "Azul",
+        modalLoadRed: "Rojo",
+        modalClose: "Cerrar",
+        modalSaveBlue: "Guardar Azul",
+        modalSaveRed: "Guardar Rojo",
+        promptTeamName: (t) => `Ingresa un nombre para este equipo ${t}:`,
+        defaultTeamName: (t) => `Equipo ${t}`,
+        promptImportCode: "Pega aquí el código de equipo o combate:",
+        toastTeamCopied: "¡Código del equipo copiado al portapapeles!",
+        toastMatchCopied: "¡Código del combate copiado al portapapeles!",
+        toastTeamSaved: (n) => `¡Equipo "${n}" guardado con éxito!`,
+        toastCodeLoaded: "¡Código cargado con éxito!",
+        toastCodeInvalid: "Código no reconocido o inválido.",
+        confirmDeleteTeam: (n) => `¿Eliminar el equipo guardado "${n}"?`,
+        // Combat log phrases
+        logHit: (atk, tgt, dmg, cur, max) => `golpea a <b>${tgt}</b> por <b class="text-red-400 font-bold">${dmg}</b> de daño (${cur}/${max} HP).`,
+        logEvade: (tgt) => `💨 ¡<b>${tgt}</b> evadió el ataque!`,
+        logHeal: (name, amt, cur, max) => `💚 <b>${name}</b> se cura <b class="text-emerald-400">+${amt}</b> HP (${cur}/${max}).`,
+        logRevive: (name, hp) => `✨ ¡<b>${name}</b> ha REVIVIDO con 50% de salud (${hp} HP)!`,
+        logDefeat: (name) => `💀 <b>${name}</b> ha sido derrotado.`,
+        logDraw: "⚖️ ¡COMBATE EMPATADO! Ambos equipos cayeron a la vez.",
+        logVictoryBlue: (rnd) => `🏆 ¡VICTORIA DEL EQUIPO AZUL en la Ronda ${rnd}!`,
+        logVictoryRed: (rnd) => `🏆 ¡VICTORIA DEL EQUIPO ROJO en la Ronda ${rnd}!`,
+        logPoisonTick: (name, dmg) => `🧪 <b>${name}</b> sufre ${dmg} daño por Veneno.`,
+        logBurnTick: (name, dmg) => `🔥 <b>${name}</b> sufre ${dmg} daño por Quemadura.`,
+        logInfectTick: (name, dmg) => `💀 <b>${name}</b> sufre ${dmg} daño por Infección.`,
+        logFreezeSkip: (name) => `❄️ <b>${name}</b> está Congelado y pierde su turno.`,
+        logParalyzeSkip: (name) => `⚡ <b>${name}</b> está totalmente paralizado y no puede moverse!`,
+        logRoundHeader: (rnd) => `Ronda ${rnd}`
+      },
+      en: {
+        pageTitle: "2vs2 Combat Simulator - Clicker Chickens",
+        simTitle: "2vs2 Combat Simulator",
+        simSubtitle: "Official tactical arena for Clicker Chickens: Powers, Passives, Transformations & Targeting",
+        backToWiki: "Back to Wiki",
+        calcLink: "Stat Calculator",
+        darkTheme: "🌙 Dark Mode",
+        lightTheme: "☀️ Light Mode",
+        lblBattleMode: "Combat Mode:",
+        modeStandard: "⚔️ Standard Combat (PvP / Wild)",
+        tournamentPrefix: "🏆 Tournament",
+        zones: ["Meadow", "Vulcan", "Sky", "Desert", "Rocky Lands", "Snowy Peaks", "Graveyard", "The Factory", "Arcana"],
+        ruleBadge: (r) => `Rule: ${r}`,
+        ruleSpecial: "Special",
+        btnStartBattle: "Simulate Battle",
+        btnMonteCarlo: "Simulate 500 Matches",
+        btnRandomAll: "Randomize All",
+        teamManagerTitle: "Team Manager & Shareable Codes",
+        teamManagerSub: "Save your favorite team combinations or easily share them with text codes.",
+        btnCopyFull: "Copy Full Match",
+        btnImportCode: "Import Code",
+        btnMyTeams: "My Teams",
+        teamBlueTitle: "Blue Team (Your Side)",
+        teamRedTitle: "Red Team (Opponent)",
+        saveBtn: "Save",
+        codeBtn: "Code",
+        pasteBtn: "Paste",
+        maxBtn: "Max",
+        presetQuick: "Quick Preset...",
+        presetLvl100: "👑 Level 100 (Max)",
+        presetLvl50: "⚔️ Level 50 (Competitive)",
+        presetRandom: "🎲 Randomize Team",
+        groupSavedTeams: "⭐ My Saved Teams",
+        groupMetaPresets: "🔥 Meta Competitive Presets",
+        slotLeader: "Leader (Pos 0)",
+        slotCompanion: "Companion (Pos 1)",
+        selectedChicken: "Selected Chicken:",
+        searchPlaceholder: "🔍 Filter chicken by name or #...",
+        noChickensFound: "No chickens found",
+        passivePrefix: "Passive:",
+        noPassive: "No passive",
+        colLevel: "Level",
+        colGenetics: "Genetics",
+        colTraining: "Train.",
+        equippedItem: "Equipped Item:",
+        noItem: "No item",
+        targetAI: "Target AI Strategy:",
+        powerLabel: "Power:",
+        powerHidden: "Hidden",
+        noPower: "Base Power",
+        arenaTitle: "Battle Arena",
+        roundBadge: (r) => `Round ${r}`,
+        pauseBtn: "⏸ Pause",
+        resumeBtn: "▶️ Resume",
+        stepBtn: "⏭ Step",
+        logTitle: "Combat Log:",
+        clearLogBtn: "Clear Log",
+        logInitial: "Configure teams and click 'Simulate Battle' to begin...",
+        mcTitle: "Massive Simulation Results (500 Matches)",
+        mcClose: "✕ Close",
+        mcBlueTitle: "Blue Team Wins",
+        mcRedTitle: "Red Team Wins",
+        mcAvgTitle: "Average Statistics",
+        mcAvgDesc: "Average rounds per battle",
+        mcBarBlue: "Blue Team",
+        mcBarRed: "Red Team",
+        modalSavedTitle: "My Saved Teams",
+        modalSavedDesc: "Teams stored in your browser ready to deploy into battle",
+        modalEmptyTitle: "You have no saved teams yet.",
+        modalEmptyDesc: "Configure a side and click '💾 Save Blue' or '💾 Save Red' to store it here.",
+        modalLoadBlue: "Blue",
+        modalLoadRed: "Red",
+        modalClose: "Close",
+        modalSaveBlue: "Save Blue",
+        modalSaveRed: "Save Red",
+        promptTeamName: (t) => `Enter a name for this ${t} team:`,
+        defaultTeamName: (t) => `${t} Team`,
+        promptImportCode: "Paste team or match code here:",
+        toastTeamCopied: "Team code copied to clipboard!",
+        toastMatchCopied: "Full match code copied to clipboard!",
+        toastTeamSaved: (n) => `Team "${n}" saved successfully!`,
+        toastCodeLoaded: "Code loaded successfully!",
+        toastCodeInvalid: "Unrecognized or invalid code format.",
+        confirmDeleteTeam: (n) => `Delete saved team "${n}"?`,
+        // Combat log phrases
+        logHit: (atk, tgt, dmg, cur, max) => `hits <b>${tgt}</b> for <b class="text-red-400 font-bold">${dmg}</b> damage (${cur}/${max} HP).`,
+        logEvade: (tgt) => `💨 <b>${tgt}</b> dodged the attack!`,
+        logHeal: (name, amt, cur, max) => `💚 <b>${name}</b> heals <b class="text-emerald-400">+${amt}</b> HP (${cur}/${max}).`,
+        logRevive: (name, hp) => `✨ <b>${name}</b> has REVIVED with 50% HP (${hp} HP)!`,
+        logDefeat: (name) => `💀 <b>${name}</b> has been defeated.`,
+        logDraw: "⚖️ MATCH DRAW! Both teams were knocked out simultaneously.",
+        logVictoryBlue: (rnd) => `🏆 BLUE TEAM VICTORY in Round ${rnd}!`,
+        logVictoryRed: (rnd) => `🏆 RED TEAM VICTORY in Round ${rnd}!`,
+        logPoisonTick: (name, dmg) => `🧪 <b>${name}</b> takes ${dmg} Poison damage.`,
+        logBurnTick: (name, dmg) => `🔥 <b>${name}</b> takes ${dmg} Burn damage.`,
+        logInfectTick: (name, dmg) => `💀 <b>${name}</b> takes ${dmg} Infection damage.`,
+        logFreezeSkip: (name) => `❄️ <b>${name}</b> is Frozen and skips their turn.`,
+        logParalyzeSkip: (name) => `⚡ <b>${name}</b> is fully paralyzed and cannot move!`,
+        logRoundHeader: (rnd) => `Round ${rnd}`
+      },
+      pt: {
+        pageTitle: "Simulador de Combate 2vs2 - Clicker Chickens",
+        simTitle: "Simulador de Combate 2vs2",
+        simSubtitle: "Arena tática oficial de Clicker Chickens: Poderes, Passivas, Transformações e Alvos",
+        backToWiki: "Voltar à Wiki",
+        calcLink: "Calculadora de Stats",
+        darkTheme: "🌙 Modo Escuro",
+        lightTheme: "☀️ Modo Claro",
+        lblBattleMode: "Modo de Combate:",
+        modeStandard: "⚔️ Combate Padrão (PvP / Wild)",
+        tournamentPrefix: "🏆 Torneio",
+        zones: ["Pradaria", "Vulcão", "Céu", "Deserto", "Terras Rochosas", "Picos Nevados", "Cemitério", "A Fábrica", "Arcana"],
+        ruleBadge: (r) => `Regra: ${r}`,
+        ruleSpecial: "Especial",
+        btnStartBattle: "Simular Combate",
+        btnMonteCarlo: "Simular 500 Partidas",
+        btnRandomAll: "Tudo Aleatório",
+        teamManagerTitle: "Gerenciador de Equipes e Códigos",
+        teamManagerSub: "Salve suas combinações favoritas ou compartilhe-as facilmente através de códigos de texto.",
+        btnCopyFull: "Copiar Combate Completo",
+        btnImportCode: "Importar Código",
+        btnMyTeams: "Minhas Equipes",
+        teamBlueTitle: "Equipe Azul (Seu Lado)",
+        teamRedTitle: "Equipe Vermelha (Rival)",
+        saveBtn: "Salvar",
+        codeBtn: "Código",
+        pasteBtn: "Colar",
+        maxBtn: "Max",
+        presetQuick: "Predefinição Rápida...",
+        presetLvl100: "👑 Nível 100 (Max)",
+        presetLvl50: "⚔️ Nível 50 (Competitivo)",
+        presetRandom: "🎲 Aleatorizar Equipe",
+        groupSavedTeams: "⭐ Minhas Equipes Salvas",
+        groupMetaPresets: "🔥 Presets Meta Competitivo",
+        slotLeader: "Líder (Pos 0)",
+        slotCompanion: "Companheiro (Pos 1)",
+        selectedChicken: "Frango Selecionado:",
+        searchPlaceholder: "🔍 Filtrar frango por nome ou #...",
+        noChickensFound: "Nenhum frango encontrado",
+        passivePrefix: "Passiva:",
+        noPassive: "Sem passiva",
+        colLevel: "Nível",
+        colGenetics: "Genética",
+        colTraining: "Treino",
+        equippedItem: "Item Equipado:",
+        noItem: "Sem item",
+        targetAI: "Estratégia de Alvo (Target AI):",
+        powerLabel: "Poder:",
+        powerHidden: "Oculto",
+        noPower: "Poder Base",
+        arenaTitle: "Arena de Batalha",
+        roundBadge: (r) => `Rodada ${r}`,
+        pauseBtn: "⏸ Pausar",
+        resumeBtn: "▶️ Retomar",
+        stepBtn: "⏭ Passo",
+        logTitle: "Registro de Combate (Log):",
+        clearLogBtn: "Limpar Log",
+        logInitial: "Configure as equipes e clique em 'Simular Combate' para começar...",
+        mcTitle: "Resultados de Simulação Massiva (500 Partidas)",
+        mcClose: "✕ Fechar",
+        mcBlueTitle: "Vitórias Equipe Azul",
+        mcRedTitle: "Vitórias Equipe Vermelha",
+        mcAvgTitle: "Estatísticas Médias",
+        mcAvgDesc: "Rodadas médias por combate",
+        mcBarBlue: "Equipe Azul",
+        mcBarRed: "Equipe Vermelha",
+        modalSavedTitle: "Minhas Equipes Salvas",
+        modalSavedDesc: "Equipes armazenadas no navegador prontas para carregar em combate",
+        modalEmptyTitle: "Você ainda não tem nenhuma equipe salva.",
+        modalEmptyDesc: "Configure um lado e clique em '💾 Salvar Azul' ou '💾 Salvar Vermelho' para salvar aqui.",
+        modalLoadBlue: "Azul",
+        modalLoadRed: "Vermelho",
+        modalClose: "Fechar",
+        modalSaveBlue: "Salvar Azul",
+        modalSaveRed: "Salvar Vermelho",
+        promptTeamName: (t) => `Digite um nome para a equipe ${t}:`,
+        defaultTeamName: (t) => `Equipe ${t}`,
+        promptImportCode: "Cole o código de equipe ou combate aqui:",
+        toastTeamCopied: "Código da equipe copiado para a área de transferência!",
+        toastMatchCopied: "Código do combate completo copiado para a área de transferência!",
+        toastTeamSaved: (n) => `Equipe "${n}" salva com sucesso!`,
+        toastCodeLoaded: "Código carregado com sucesso!",
+        toastCodeInvalid: "Formato de código inválido ou não reconhecido.",
+        confirmDeleteTeam: (n) => `Excluir a equipe salva "${n}"?`,
+        // Combat log phrases
+        logHit: (atk, tgt, dmg, cur, max) => `ataca <b>${tgt}</b> causando <b class="text-red-400 font-bold">${dmg}</b> de dano (${cur}/${max} HP).`,
+        logEvade: (tgt) => `💨 <b>${tgt}</b> esquivou do ataque!`,
+        logHeal: (name, amt, cur, max) => `💚 <b>${name}</b> cura <b class="text-emerald-400">+${amt}</b> HP (${cur}/${max}).`,
+        logRevive: (name, hp) => `✨ <b>${name}</b> REVIVEU com 50% de vida (${hp} HP)!`,
+        logDefeat: (name) => `💀 <b>${name}</b> foi derrotado.`,
+        logDraw: "⚖️ COMBATE EMPATADO! Ambas as equipes caíram ao mesmo tempo.",
+        logVictoryBlue: (rnd) => `🏆 VITÓRIA DA EQUIPE AZUL na Rodada ${rnd}!`,
+        logVictoryRed: (rnd) => `🏆 VITÓRIA DA EQUIPE VERMELHA na Rodada ${rnd}!`,
+        logPoisonTick: (name, dmg) => `🧪 <b>${name}</b> sofre ${dmg} de dano de Veneno.`,
+        logBurnTick: (name, dmg) => `🔥 <b>${name}</b> sofre ${dmg} de dano de Queimadura.`,
+        logInfectTick: (name, dmg) => `💀 <b>${name}</b> sofre ${dmg} de dano de Infecção.`,
+        logFreezeSkip: (name) => `❄️ <b>${name}</b> está Congelado e perde o turno.`,
+        logParalyzeSkip: (name) => `⚡ <b>${name}</b> está totalmente paralisado e não pode se mover!`,
+        logRoundHeader: (rnd) => `Rodada ${rnd}`
+      },
+      ru: {
+        pageTitle: "Симулятор боя 2на2 - Clicker Chickens",
+        simTitle: "Симулятор боя 2на2",
+        simSubtitle: "Официальная тактическая арена Clicker Chickens: Силы, Пассивки, Трансформации и Выбор цели",
+        backToWiki: "Назад в Вики",
+        calcLink: "Калькулятор характеристик",
+        darkTheme: "🌙 Темная тема",
+        lightTheme: "☀️ Светлая тема",
+        lblBattleMode: "Режим боя:",
+        modeStandard: "⚔️ Стандартный бой (PvP / Wild)",
+        tournamentPrefix: "🏆 Турнир",
+        zones: ["Луга", "Вулкан", "Небо", "Пустыня", "Скалы", "Снега", "Кладбище", "Фабрика", "Arcana"],
+        ruleBadge: (r) => `Правило: ${r}`,
+        ruleSpecial: "Особое",
+        btnStartBattle: "Начать бой",
+        btnMonteCarlo: "Симулировать 500 боев",
+        btnRandomAll: "Все случайно",
+        teamManagerTitle: "Менеджер команд и кодов",
+        teamManagerSub: "Сохраняйте любимые комбинации команд или легко делитесь ими с помощью текстовых кодов.",
+        btnCopyFull: "Скопировать весь бой",
+        btnImportCode: "Импорт кода",
+        btnMyTeams: "Мои команды",
+        teamBlueTitle: "Синяя команда (Ваша сторона)",
+        teamRedTitle: "Красная команда (Противник)",
+        saveBtn: "Сохранить",
+        codeBtn: "Код",
+        pasteBtn: "Вставить",
+        maxBtn: "Макс",
+        presetQuick: "Быстрый пресет...",
+        presetLvl100: "👑 Уровень 100 (Макс)",
+        presetLvl50: "⚔️ Уровень 50 (Соревновательный)",
+        presetRandom: "🎲 Случайная команда",
+        groupSavedTeams: "⭐ Мои сохраненные команды",
+        groupMetaPresets: "🔥 Соревновательные мета-пресеты",
+        slotLeader: "Лидер (Поз. 0)",
+        slotCompanion: "Напарник (Поз. 1)",
+        selectedChicken: "Выбранная курица:",
+        searchPlaceholder: "🔍 Поиск курицы по имени или #...",
+        noChickensFound: "Курицы не найдены",
+        passivePrefix: "Пассивка:",
+        noPassive: "Без пассивки",
+        colLevel: "Уровень",
+        colGenetics: "Генетика",
+        colTraining: "Тренир.",
+        equippedItem: "Экипированный предмет:",
+        noItem: "Без предмета",
+        targetAI: "Стратегия выбора цели (Target AI):",
+        powerLabel: "Сила:",
+        powerHidden: "Скрытая",
+        noPower: "Базовая сила",
+        arenaTitle: "Боевая арена",
+        roundBadge: (r) => `Раунд ${r}`,
+        pauseBtn: "⏸ Пауза",
+        resumeBtn: "▶️ Продолжить",
+        stepBtn: "⏭ Шаг",
+        logTitle: "Журнал боя:",
+        clearLogBtn: "Очистить",
+        logInitial: "Настройте команды и нажмите 'Начать бой' для старта...",
+        mcTitle: "Результаты массовой симуляции (500 боев)",
+        mcClose: "✕ Закрыть",
+        mcBlueTitle: "Победы синей команды",
+        mcRedTitle: "Победы красной команды",
+        mcAvgTitle: "Средние показатели",
+        mcAvgDesc: "В среднем раундов за бой",
+        mcBarBlue: "Синяя команда",
+        mcBarRed: "Красная команда",
+        modalSavedTitle: "Мои сохраненные команды",
+        modalSavedDesc: "Команды, сохраненные в браузере и готовые к выходу на арену",
+        modalEmptyTitle: "У вас пока нет сохраненных команд.",
+        modalEmptyDesc: "Настройте команду и нажмите '💾 Сохранить Синюю' или '💾 Сохранить Красную'.",
+        modalLoadBlue: "Синий",
+        modalLoadRed: "Красный",
+        modalClose: "Закрыть",
+        modalSaveBlue: "Сохранить Синюю",
+        modalSaveRed: "Сохранить Красную",
+        promptTeamName: (t) => `Введите имя для ${t} команды:`,
+        defaultTeamName: (t) => `${t} команда`,
+        promptImportCode: "Вставьте код команды или боя сюда:",
+        toastTeamCopied: "Код команды скопирован в буфер обмена!",
+        toastMatchCopied: "Код полного боя скопирован в буфер обмена!",
+        toastTeamSaved: (n) => `Команда "${n}" успешно сохранена!`,
+        toastCodeLoaded: "Код успешно загружен!",
+        toastCodeInvalid: "Неверный или нераспознанный формат кода.",
+        confirmDeleteTeam: (n) => `Удалить команду "${n}"?`,
+        // Combat log phrases
+        logHit: (atk, tgt, dmg, cur, max) => `атакует <b>${tgt}</b>, нанося <b class="text-red-400 font-bold">${dmg}</b> урона (${cur}/${max} HP).`,
+        logEvade: (tgt) => `💨 <b>${tgt}</b> уклонился от атаки!`,
+        logHeal: (name, amt, cur, max) => `💚 <b>${name}</b> исцеляет <b class="text-emerald-400">+${amt}</b> HP (${cur}/${max}).`,
+        logRevive: (name, hp) => `✨ <b>${name}</b> ВОЗРОДИЛСЯ с 50% здоровья (${hp} HP)!`,
+        logDefeat: (name) => `💀 <b>${name}</b> потерпел поражение.`,
+        logDraw: "⚖️ НИЧЬЯ! Обе команды пали одновременно.",
+        logVictoryBlue: (rnd) => `🏆 ПОБЕДА СИНЕЙ КОМАНДЫ в Раунде ${rnd}!`,
+        logVictoryRed: (rnd) => `🏆 ПОБЕДА КРАСНОЙ КОМАНДЫ в Раунде ${rnd}!`,
+        logPoisonTick: (name, dmg) => `🧪 <b>${name}</b> получает ${dmg} урона от яда.`,
+        logBurnTick: (name, dmg) => `🔥 <b>${name}</b> получает ${dmg} урона от ожога.`,
+        logInfectTick: (name, dmg) => `💀 <b>${name}</b> получает ${dmg} урона от инфекции.`,
+        logFreezeSkip: (name) => `❄️ <b>${name}</b> заморожен и пропускает ход.`,
+        logParalyzeSkip: (name) => `⚡ <b>${name}</b> полностью парализован и не может двигаться!`,
+        logRoundHeader: (rnd) => `Раунд ${rnd}`
+      }
     };
+
+    function getItemName(id, lang = currentLang) {
+      if (id < 0) return (t_sim[lang] || t_sim.es).noItem;
+      const it = ITEMS.find(i => i.id === id);
+      if (!it) return "";
+      if (typeof it.name === 'object') return it.name[lang] || it.name.es || "";
+      return it.name || "";
+    }
+
+    function getItemDesc(id, lang = currentLang) {
+      const it = ITEMS.find(i => i.id === id);
+      if (!it) return "";
+      if (typeof it.desc === 'object') return it.desc[lang] || it.desc.es || "";
+      return it.desc || "";
+    }
+
+    function getPowerDesc(id, lang = currentLang) {
+      const p = POWERS.find(pw => pw.id === id);
+      if (!p) return (t_sim[lang] || t_sim.es).noPower;
+      if (typeof p.desc === 'object') return p.desc[lang] || p.desc.es || "";
+      return p.desc || "";
+    }
+
+    function getPassiveDesc(id, lang = currentLang) {
+      const ps = PASSIVES.find(p => p.id === id);
+      if (!ps) return (t_sim[lang] || t_sim.es).noPassive;
+      if (typeof ps.desc === 'object') return ps.desc[lang] || ps.desc.es || "";
+      return ps.desc || "";
+    }
+
+    function getTournamentRuleText(mode, lang = currentLang) {
+      if (TOURNAMENT_RULES[mode]) {
+        return TOURNAMENT_RULES[mode][lang] || TOURNAMENT_RULES[mode].es || "";
+      }
+      return (t_sim[lang] || t_sim.es).ruleSpecial;
+    }
+
+    function applyTranslations() {
+      const t = t_sim[currentLang] || t_sim.es;
+      document.title = t.pageTitle;
+      document.documentElement.lang = currentLang;
+
+      // Select sync
+      const langSel = document.getElementById('sim-lang-select');
+      if (langSel) langSel.value = currentLang;
+
+      const setText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setText('sim-title', t.simTitle);
+      setText('sim-subtitle', t.simSubtitle);
+      setText('back-to-wiki-text', t.backToWiki);
+      setText('calc-link-text', t.calcLink);
+      setText('lbl-battle-mode', t.lblBattleMode);
+
+      setText('lbl-btn-start', t.btnStartBattle);
+      setText('lbl-btn-mc', t.btnMonteCarlo);
+      setText('lbl-btn-rand-all', t.btnRandomAll);
+
+      setText('lbl-team-manager-title', t.teamManagerTitle);
+      setText('lbl-team-manager-sub', t.teamManagerSub);
+      setText('lbl-btn-copy-full', t.btnCopyFull);
+      setText('lbl-btn-import-code', t.btnImportCode);
+      setText('lbl-btn-my-teams', t.btnMyTeams);
+
+      setText('lbl-team-blue-title', t.teamBlueTitle);
+      setText('lbl-team-red-title', t.teamRedTitle);
+
+      setText('lbl-save-0', t.saveBtn);
+      setText('lbl-code-0', t.codeBtn);
+      setText('lbl-paste-0', t.pasteBtn);
+      setText('lbl-save-1', t.saveBtn);
+      setText('lbl-code-1', t.codeBtn);
+      setText('lbl-paste-1', t.pasteBtn);
+
+      setText('lbl-arena-title', t.arenaTitle);
+      setText('lbl-log-title', t.logTitle);
+      setText('btn-clear-log', t.clearLogBtn);
+
+      setText('lbl-mc-title', t.mcTitle);
+      setText('btn-mc-close', t.mcClose);
+      setText('lbl-mc-blue-title', t.mcBlueTitle);
+      setText('lbl-mc-red-title', t.mcRedTitle);
+      setText('lbl-mc-avg-title', t.mcAvgTitle);
+      setText('lbl-mc-avg-desc', t.mcAvgDesc);
+      setText('lbl-mc-bar-blue', t.mcBarBlue);
+      setText('lbl-mc-bar-red', t.mcBarRed);
+
+      setText('lbl-modal-saved-title', t.modalSavedTitle);
+      setText('lbl-modal-saved-desc', t.modalSavedDesc);
+      setText('btn-modal-close', t.modalClose);
+      setText('lbl-modal-save-blue', t.modalSaveBlue);
+      setText('lbl-modal-save-red', t.modalSaveRed);
+
+      // Rebuild battle mode options
+      const modeSel = document.getElementById('battle-mode');
+      if (modeSel) {
+        const curVal = modeSel.value;
+        let optHtml = `<option value="-1">${t.modeStandard}</option>`;
+        for (let r = 0; r < 9; r++) {
+          const zName = t.zones[r] || `Zona ${r}`;
+          const ruleBrief = getTournamentRuleText(r, currentLang);
+          optHtml += `<option value="${r}">${t.tournamentPrefix} ${r}: ${zName} (${ruleBrief})</option>`;
+        }
+        modeSel.innerHTML = optHtml;
+        modeSel.value = curVal;
+      }
+      onBattleModeChange();
+
+      // Update theme button
+      applyTheme(currentTheme);
+
+      // Re-render UI cards and presets
+      renderConfigCards();
+      updateSavedTeamsUI();
+    }
+
+    function setLanguage(lang) {
+      if (!['es', 'en', 'pt', 'ru'].includes(lang)) return;
+      currentLang = lang;
+      localStorage.setItem('cc_wiki_lang', lang);
+      applyTranslations();
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'cc_wiki_lang' && e.newValue && e.newValue !== currentLang) {
+        setLanguage(e.newValue);
+      }
+      if (e.key === 'cc_wiki_theme' && e.newValue && e.newValue !== currentTheme) {
+        applyTheme(e.newValue);
+      }
+    });
+
 
     // TEAM CONFIGURATIONS [team][slot]
     const teamConfigs = [
@@ -437,7 +1097,10 @@
       document.documentElement.setAttribute('data-theme', t);
       localStorage.setItem('cc_wiki_theme', t);
       const btn = document.getElementById('theme-btn');
-      if (btn) btn.innerHTML = (t === 'dark') ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
+      if (btn) {
+        const tr = t_sim[currentLang] || t_sim.es;
+        btn.innerHTML = (t === 'dark') ? tr.darkTheme : tr.lightTheme;
+      }
     }
     function toggleTheme() {
       applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
@@ -448,8 +1111,10 @@
     function onBattleModeChange() {
       const mode = parseInt(document.getElementById('battle-mode').value);
       const badge = document.getElementById('tournament-badge');
+      const t = t_sim[currentLang] || t_sim.es;
       if (mode >= 0) {
-        badge.textContent = `Regla: ${TOURNAMENT_RULES[mode] || "Especial"}`;
+        const ruleText = getTournamentRuleText(mode, currentLang);
+        badge.textContent = t.ruleBadge(ruleText);
         badge.classList.remove('hidden');
       } else {
         badge.classList.add('hidden');
@@ -458,6 +1123,7 @@
 
     // RENDER SLOT CONFIG CARDS
     function renderConfigCards() {
+      const tr = t_sim[currentLang] || t_sim.es;
       for (let t = 0; t < 2; t++) {
         for (let s = 0; s < 2; s++) {
           const cfg = teamConfigs[t][s];
@@ -465,13 +1131,13 @@
           const container = document.getElementById(`card-config-${t}-${s}`);
           if (!container) continue;
 
-          const slotTitle = (s === 0) ? "Líder (Pos 0)" : "Acompañante (Pos 1)";
+          const slotTitle = (s === 0) ? tr.slotLeader : tr.slotCompanion;
           const teamColor = (t === 0) ? "text-blue-400" : "text-red-400";
           const pwrDesc = (cfg.useHiddenPower && chicken.hidden_power_id >= 0)
-            ? (POWERS.find(p => p.id === chicken.hidden_power_id)?.desc || "Poder Oculto")
-            : (POWERS.find(p => p.id === chicken.power_id)?.desc || "Poder Base");
+            ? getPowerDesc(chicken.hidden_power_id, currentLang)
+            : getPowerDesc(chicken.power_id, currentLang);
 
-          const pasDesc = PASSIVES.find(p => p.id === chicken.passive_id)?.desc || "Sin pasiva";
+          const pasDesc = getPassiveDesc(chicken.passive_id, currentLang);
 
           // Calculate current base battle stats
           const stats = calculateStats(chicken, cfg.level, cfg.born, cfg.training);
@@ -487,14 +1153,14 @@
               <div class="flex items-center gap-3">
                 <img id="chicken-img-${t}-${s}" src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated shrink-0" onerror="this.src=''; this.alt='🐔';" alt="${chicken.name}">
                 <div class="flex-1 min-w-0">
-                  <div class="text-[11px] font-bold text-amber-500 uppercase tracking-wider">Pollo Seleccionado:</div>
+                  <div class="text-[11px] font-bold text-amber-500 uppercase tracking-wider">${tr.selectedChicken}</div>
                   <div id="chicken-name-${t}-${s}" class="text-sm font-black truncate">${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span></div>
                 </div>
               </div>
 
               <!-- Search and Select Dropdown -->
               <div class="space-y-1">
-                <input type="text" id="chicken-search-${t}-${s}" placeholder="🔍 Filtrar pollo por nombre o #..." value="${cfg.searchQuery || ''}" 
+                <input type="text" id="chicken-search-${t}-${s}" placeholder="${tr.searchPlaceholder}" value="${cfg.searchQuery || ''}" 
                   class="w-full px-2 py-1 text-xs rounded bg-[var(--input-bg)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-amber-500/50" 
                   oninput="filterSlotChicken(${t}, ${s}, this.value)"
                   onkeydown="if(event.key==='Enter') this.blur();">
@@ -505,21 +1171,21 @@
                 </select>
               </div>
 
-              <div id="chicken-pas-${t}-${s}" class="text-[11px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">Pasiva: ${pasDesc}</div>
+              <div id="chicken-pas-${t}-${s}" class="text-[11px] text-[var(--muted-foreground)] truncate" title="${pasDesc}">${tr.passivePrefix} ${pasDesc}</div>
             </div>
 
             <!-- Level / Born / Training -->
             <div class="grid grid-cols-3 gap-2 text-center text-xs">
               <div class="p-1.5 rounded bg-[var(--card)] border border-[var(--border)]">
-                <div class="text-[var(--muted-foreground)]">Nivel</div>
+                <div class="text-[var(--muted-foreground)]">${tr.colLevel}</div>
                 <input type="number" min="1" max="100" value="${cfg.level}" class="w-full font-bold text-center bg-transparent focus:outline-none text-amber-500" onchange="updateLevel(${t}, ${s}, this.value)">
               </div>
               <div class="p-1.5 rounded bg-[var(--card)] border border-[var(--border)]">
-                <div class="text-[var(--muted-foreground)]">Genética</div>
+                <div class="text-[var(--muted-foreground)]">${tr.colGenetics}</div>
                 <input type="number" min="1" max="100" value="${cfg.born}" class="w-full font-bold text-center bg-transparent focus:outline-none text-emerald-400" onchange="updateBorn(${t}, ${s}, this.value)">
               </div>
               <div class="p-1.5 rounded bg-[var(--card)] border border-[var(--border)]">
-                <div class="text-[var(--muted-foreground)]">Entren.</div>
+                <div class="text-[var(--muted-foreground)]">${tr.colTraining}</div>
                 <input type="number" step="0.1" min="1.0" max="2.0" value="${cfg.training.toFixed(1)}" class="w-full font-bold text-center bg-transparent focus:outline-none text-purple-400" onchange="updateTraining(${t}, ${s}, this.value)">
               </div>
             </div>
@@ -527,17 +1193,17 @@
             <!-- Item & Target AI -->
             <div class="space-y-1.5 text-xs">
               <div>
-                <label class="block text-[11px] text-[var(--muted-foreground)]">Objeto Equipado:</label>
+                <label class="block text-[11px] text-[var(--muted-foreground)]">${tr.equippedItem}</label>
                 <select class="w-full px-2 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none" onchange="updateItem(${t}, ${s}, parseInt(this.value))">
-                  <option value="-1">Sin objeto</option>
-                  ${ITEMS.map(it => `<option value="${it.id}" ${it.id === cfg.itemId ? 'selected' : ''}>${it.name}</option>`).join('')}
+                  <option value="-1">${tr.noItem}</option>
+                  ${ITEMS.map(it => `<option value="${it.id}" ${it.id === cfg.itemId ? 'selected' : ''}>${getItemName(it.id, currentLang)}</option>`).join('')}
                 </select>
               </div>
 
               <div>
-                <label class="block text-[11px] text-[var(--muted-foreground)]">Estrategia Objetivo (Target AI):</label>
+                <label class="block text-[11px] text-[var(--muted-foreground)]">${tr.targetAI}</label>
                 <select class="w-full px-2 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none font-medium" onchange="updateTargetAI(${t}, ${s}, parseInt(this.value))">
-                  ${TARGET_OPTIONS.map(opt => `<option value="${opt.id}" ${opt.id === cfg.targetAI ? 'selected' : ''}>${opt.name}</option>`).join('')}
+                  ${TARGET_OPTIONS_DATA.map(opt => `<option value="${opt.id}" ${opt.id === cfg.targetAI ? 'selected' : ''}>${opt.text[currentLang] || opt.text.es}</option>`).join('')}
                 </select>
               </div>
             </div>
@@ -545,10 +1211,10 @@
             <!-- Power Toggle (Base / Oculto) -->
             <div class="p-2 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs space-y-1">
               <div class="flex items-center justify-between">
-                <span class="font-semibold text-amber-500">Poder:</span>
+                <span class="font-semibold text-amber-500">${tr.powerLabel}</span>
                 <label class="flex items-center gap-1 cursor-pointer">
                   <input type="checkbox" ${cfg.useHiddenPower ? 'checked' : ''} onchange="toggleHiddenPower(${t}, ${s}, this.checked)">
-                  <span class="text-[11px] text-[var(--muted-foreground)]">Oculto</span>
+                  <span class="text-[11px] text-[var(--muted-foreground)]">${tr.powerHidden}</span>
                 </label>
               </div>
               <div id="chicken-pwr-${t}-${s}" class="text-[12px] text-[var(--foreground)] leading-tight">${pwrDesc}</div>
@@ -572,10 +1238,11 @@
       cfg.chickenId = cid;
       const chicken = CHICKENS.find(c => c.id === cid) || CHICKENS[0];
       const stats = calculateStats(chicken, cfg.level, cfg.born, cfg.training);
+      const tr = t_sim[currentLang] || t_sim.es;
       const pwrDesc = (cfg.useHiddenPower && chicken.hidden_power_id >= 0)
-        ? (POWERS.find(p => p.id === chicken.hidden_power_id)?.desc || "Poder Oculto")
-        : (POWERS.find(p => p.id === chicken.power_id)?.desc || "Poder Base");
-      const pasDesc = PASSIVES.find(p => p.id === chicken.passive_id)?.desc || "Sin pasiva";
+        ? getPowerDesc(chicken.hidden_power_id, currentLang)
+        : getPowerDesc(chicken.power_id, currentLang);
+      const pasDesc = getPassiveDesc(chicken.passive_id, currentLang);
 
       const badgeEl = document.getElementById(`slot-id-badge-${t}-${s}`);
       if (badgeEl) badgeEl.textContent = `#${String(chicken.id).padStart(3, '0')}`;
@@ -593,7 +1260,7 @@
 
       const pasEl = document.getElementById(`chicken-pas-${t}-${s}`);
       if (pasEl) {
-        pasEl.textContent = `Pasiva: ${pasDesc}`;
+        pasEl.textContent = `${tr.passivePrefix} ${pasDesc}`;
         pasEl.title = pasDesc;
       }
 
@@ -624,7 +1291,7 @@
       const filtered = q ? CHICKENS.filter(c => c.name.toLowerCase().includes(q) || String(c.id).includes(q)) : CHICKENS;
 
       if (filtered.length === 0) {
-        select.innerHTML = '<option value="" disabled selected>No se encontraron pollos</option>';
+        select.innerHTML = '<option value="" disabled selected>${(t_sim[currentLang] || t_sim.es).noChickensFound}</option>';
         return;
       }
 
@@ -811,7 +1478,8 @@
       entity.life = Math.min(entity.lifeMax, entity.life + amount);
       const actualHealed = entity.life - prevLife;
       if (actualHealed > 0 && log) {
-        logEvent(`💚 <b>${entity.name}</b> se cura <b class="text-emerald-400">+${actualHealed}</b> HP (${entity.life}/${entity.lifeMax}).`, "text-emerald-400");
+        const trHeal = t_sim[currentLang] || t_sim.es;
+        logEvent(trHeal.logHeal(entity.name, actualHealed, entity.life, entity.lifeMax), "text-emerald-400");
       }
       return actualHealed;
     }
@@ -1483,7 +2151,8 @@
       // 1. Evasion check
       if (target.avoid > 0) {
         target.avoid--;
-        if (log) logEvent(`💨 ¡<b>${target.name}</b> evadió el ataque!`, "text-cyan-400");
+        const trEv = t_sim[currentLang] || t_sim.es;
+        if (log) logEvent(trEv.logEvade(target.name), "text-cyan-400");
         return 0;
       }
 
@@ -1680,13 +2349,15 @@
           if (entity.reviveAsZombie) {
             transformEntity(entity, 6, log); // Revive as Zombie
           }
-          if (log) logEvent(`✨ ¡<b>${entity.name}</b> ha REVIVIDO con 50% de salud (${entity.life} HP)!`, "text-amber-400 font-bold");
+          const trDth = t_sim[currentLang] || t_sim.es;
+      if (log) logEvent(trDth.logRevive(entity.name, entity.life), "text-amber-400 font-bold");
           return;
         }
 
         entity.alive = false;
         entity.life = 0;
-        if (log) logEvent(`💀 <b>${entity.name}</b> ha sido derrotado.`, "text-red-500 font-semibold");
+        const trDth2 = t_sim[currentLang] || t_sim.es;
+      if (log) logEvent(trDth2.logDefeat(entity.name), "text-red-500 font-semibold");
 
         // On-death passives
         const allies = allEntities.filter(e => e.team === entity.team && e.alive);
@@ -1855,7 +2526,8 @@
           const dmg = Math.max(1, Math.round(ent.lifeMax * 0.08));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.poison--;
-          if (log) logEvent(`🧪 <b>${ent.name}</b> sufre ${dmg} daño por Veneno.`, "text-purple-400");
+          const trTk = t_sim[currentLang] || t_sim.es;
+            if (log) logEvent(trTk.logPoisonTick(ent.name, dmg), "text-purple-400");
           checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
@@ -1866,7 +2538,8 @@
           } else {
             const dmg = Math.max(1, Math.round(ent.lifeMax * 0.07));
             ent.life = Math.max(0, ent.life - dmg);
-            if (log) logEvent(`🔥 <b>${ent.name}</b> sufre ${dmg} daño por Quemadura.`, "text-orange-400");
+            const trTk2 = t_sim[currentLang] || t_sim.es;
+            if (log) logEvent(trTk2.logBurnTick(ent.name, dmg), "text-orange-400");
             checkDeath(ent, null, state.entities, log);
             if (!ent.alive) continue;
           }
@@ -1877,7 +2550,8 @@
           const dmg = Math.max(1, Math.round(ent.lifeMax * 0.10));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.infect--;
-          if (log) logEvent(`💀 <b>${ent.name}</b> sufre ${dmg} daño por Infección.`, "text-green-500");
+          const trTk3 = t_sim[currentLang] || t_sim.es;
+            if (log) logEvent(trTk3.logInfectTick(ent.name, dmg), "text-green-500");
           checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
@@ -1885,7 +2559,8 @@
         // B. Freeze check
         if (ent.states.freeze > 0) {
           ent.states.freeze--;
-          if (log) logEvent(`❄️ <b>${ent.name}</b> está Congelado y pierde su turno.`, "text-cyan-400");
+          const trSk = t_sim[currentLang] || t_sim.es;
+          if (log) logEvent(trSk.logFreezeSkip(ent.name), "text-cyan-400");
           continue;
         }
 
@@ -1893,7 +2568,8 @@
         if (ent.states.paralysis > 0) {
           ent.states.paralysis--;
           if (Math.random() < 0.25) {
-            if (log) logEvent(`⚡ <b>${ent.name}</b> está totalmente paralizado y no puede moverse!`, "text-yellow-400");
+            const trSk2 = t_sim[currentLang] || t_sim.es;
+          if (log) logEvent(trSk2.logParalyzeSkip(ent.name), "text-yellow-400");
             continue;
           }
         }
@@ -2457,6 +3133,7 @@
     }
 
     function renderSavedTeamsListModal() {
+      const tr = t_sim[currentLang] || t_sim.es;
       const container = document.getElementById('saved-teams-list');
       if (!container) return;
 
@@ -2465,8 +3142,8 @@
         container.innerHTML = `
           <div class="text-center py-8 text-[var(--muted-foreground)] space-y-2">
             <span class="text-3xl block">🐔</span>
-            <p class="font-semibold">No tienes ningún equipo guardado todavía.</p>
-            <p class="text-[11px]">Configura un bando y presiona "💾 Guardar Azul" o "💾 Guardar Rojo" para guardarlo aquí.</p>
+            <p class="font-semibold">${tr.modalEmptyTitle}</p>
+            <p class="text-[11px]">${tr.modalEmptyDesc}</p>
           </div>
         `;
         return;
@@ -2490,10 +3167,10 @@
             
             <div class="flex items-center gap-1.5 shrink-0">
               <button onclick="loadSavedTeam(0, '${s.id}'); closeManageSavedModal();" class="px-2.5 py-1 text-xs rounded bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 font-medium">
-                Azul
+                ${tr.modalLoadBlue}
               </button>
               <button onclick="loadSavedTeam(1, '${s.id}'); closeManageSavedModal();" class="px-2.5 py-1 text-xs rounded bg-red-600/20 text-red-400 hover:bg-red-600/30 border border-red-500/30 font-medium">
-                Rojo
+                ${tr.modalLoadRed}
               </button>
               <button onclick="copyToClipboard(exportSingleSavedTeamCode('${s.id}'), '¡Código del equipo copiado!');" class="px-2 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--border)]" title="Copiar código">
                 📋
@@ -2516,8 +3193,7 @@
     }
 
     // INIT
-    updateSavedTeamsUI();
-    renderConfigCards();
+    applyTranslations();
   
   </script>
 <!-- MODAL GESTOR DE EQUIPOS GUARDADOS -->
@@ -2527,8 +3203,8 @@
         <div class="flex items-center gap-2">
           <span class="text-xl">⭐</span>
           <div>
-            <h3 class="font-bold text-sm text-[var(--foreground)]">Mis Equipos Guardados</h3>
-            <p class="text-[11px] text-[var(--muted-foreground)]">Equipos almacenados en tu navegador listos para cargar en batalla</p>
+            <h3 id="lbl-modal-saved-title" class="font-bold text-sm text-[var(--foreground)]">Mis Equipos Guardados</h3>
+            <p id="lbl-modal-saved-desc" class="text-[11px] text-[var(--muted-foreground)]">Equipos almacenados en tu navegador listos para cargar en batalla</p>
           </div>
         </div>
         <button onclick="closeManageSavedModal()" class="text-[var(--muted-foreground)] hover:text-[var(--foreground)] text-2xl leading-none px-2 py-1 rounded-lg">&times;</button>
@@ -2540,14 +3216,14 @@
 
       <div class="p-3 border-t border-[var(--border)] bg-[var(--background)] flex flex-wrap items-center justify-between gap-2">
         <div class="flex items-center gap-2">
-          <button onclick="saveTeamPrompt(0)" class="px-3 py-1.5 text-xs rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600/30 font-medium">
-            💾 Guardar Azul
+          <button id="btn-modal-save-blue" onclick="saveTeamPrompt(0)" class="px-3 py-1.5 text-xs rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600/30 font-medium">
+            💾 <span id="lbl-modal-save-blue">Guardar Azul</span>
           </button>
-          <button onclick="saveTeamPrompt(1)" class="px-3 py-1.5 text-xs rounded-lg bg-red-600/20 text-red-400 border border-red-500/30 hover:bg-red-600/30 font-medium">
-            💾 Guardar Rojo
+          <button id="btn-modal-save-red" onclick="saveTeamPrompt(1)" class="px-3 py-1.5 text-xs rounded-lg bg-red-600/20 text-red-400 border border-red-500/30 hover:bg-red-600/30 font-medium">
+            💾 <span id="lbl-modal-save-red">Guardar Rojo</span>
           </button>
         </div>
-        <button onclick="closeManageSavedModal()" class="px-4 py-1.5 text-xs rounded-lg bg-[var(--border)] hover:bg-[var(--muted-foreground)]/20 font-bold">
+        <button id="btn-modal-close" onclick="closeManageSavedModal()" class="px-4 py-1.5 text-xs rounded-lg bg-[var(--border)] hover:bg-[var(--muted-foreground)]/20 font-bold">
           Cerrar
         </button>
       </div>

@@ -96,35 +96,41 @@
         <div class="flex items-center gap-3">
           <span class="text-3xl">🐔</span>
           <div>
-            <h1 class="text-xl md:text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              Calculadora de Estadísticas
-            </h1>
-            <p class="text-sm text-[var(--muted-foreground)]">
-              Simulador oficial de combate según fórmulas de la versión 0.117
-            </p>
+            <h1 id="calc-title" class="text-xl md:text-2xl font-bold tracking-tight text-[var(--foreground)]">
+            Calculadora de Estadísticas
+          </h1>
+            <p id="calc-subtitle" class="text-sm text-[var(--muted-foreground)]">
+            Simulador oficial de combate según fórmulas de la versión 0.117
+          </p>
           </div>
         </div>
       </div>
 
       <!-- BOTONES DE PRESET RÁPIDO -->
       <div class="flex flex-wrap items-center gap-2">
-        <a href="index.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)] mr-1">
-          <span>←</span> Volver a la Wiki
+        <a id="back-to-wiki-link" href="index.html" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--muted-foreground)] hover:text-[var(--foreground)] mr-1">
+          <span>←</span> <span id="back-to-wiki-text">Volver a la Wiki</span>
         </a>
         <button id="theme-btn" onclick="toggleTheme()" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition flex items-center gap-1.5 text-[var(--foreground)] mr-1">
           🌙 Modo Oscuro
         </button>
-        <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mr-1">Presets:</span>
-        <button onclick="applyPreset('base')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
+        <select id="calc-lang-select" onchange="setLanguage(this.value)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] text-[var(--foreground)] transition cursor-pointer mr-1 focus:outline-none focus:ring-2 focus:ring-amber-500/40">
+          <option value="es">🇪🇸 Español</option>
+          <option value="en">🇺🇸 English</option>
+          <option value="pt">🇧🇷 Português</option>
+          <option value="ru">🇷🇺 Русский</option>
+        </select>
+        <span id="lbl-presets" class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mr-1">Presets:</span>
+        <button id="btn-preset-base" onclick="applyPreset('base')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
           🐣 Base (Nv.1)
         </button>
-        <button onclick="applyPreset('mid')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
+        <button id="btn-preset-mid" onclick="applyPreset('mid')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
           ⚔️ Nivel 50
         </button>
-        <button onclick="applyPreset('max')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-amber-500/20 text-amber-500 border border-amber-500/30 hover:bg-amber-500/30 font-semibold transition">
+        <button id="btn-preset-max" onclick="applyPreset('max')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-amber-500/20 text-amber-500 border border-amber-500/30 hover:bg-amber-500/30 font-semibold transition">
           👑 Max (Nv.100)
         </button>
-        <button onclick="applyPreset('random')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
+        <button id="btn-preset-random" onclick="applyPreset('random')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--background)] hover:bg-[var(--border)] border border-[var(--border)] transition">
           🎲 Aleatorio
         </button>
       </div>
@@ -139,21 +145,21 @@
         <!-- 1. SELECCIÓN DE POLLO -->
         <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex items-center justify-between">
-            <h2 class="text-base font-semibold flex items-center gap-2">
+            <h2 id="sec-select-title" class="text-base font-semibold flex items-center gap-2">
               <span class="text-lg">🔍</span> Selecciona tu Pollo
             </h2>
-            <span class="text-xs text-[var(--muted-foreground)]">151 Pollos disponibles</span>
+            <span id="sec-select-sub" class="text-xs text-[var(--muted-foreground)]">151 Pollos disponibles</span>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-xs font-medium text-[var(--muted-foreground)] mb-1">Buscar por nombre o ID:</label>
+              <label id="lbl-search" class="block text-xs font-medium text-[var(--muted-foreground)] mb-1">Buscar por nombre o ID:</label>
               <input type="text" id="chicken-search" placeholder="Ej: Pollier, 15, Zombie..." 
                 class="w-full px-3 py-2 text-sm rounded-xl bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-amber-500/40"
                 oninput="filterChickens(this.value)">
             </div>
             <div>
-              <label class="block text-xs font-medium text-[var(--muted-foreground)] mb-1">Especie:</label>
+              <label id="lbl-species" class="block text-xs font-medium text-[var(--muted-foreground)] mb-1">Especie:</label>
               <select id="chicken-select" 
                 class="w-full px-3 py-2 text-sm rounded-xl bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-amber-500/40 cursor-pointer"
                 onchange="selectChicken(parseInt(this.value))">
@@ -178,26 +184,26 @@
 
           <!-- Base Stats Chips -->
           <div class="pt-2 border-t border-[var(--border)]">
-            <div class="text-xs font-medium text-[var(--muted-foreground)] mb-2">Estadísticas Base de la Especie (<span class="text-amber-500 font-semibold">55%</span> del cálculo total):</div>
+            <div id="lbl-base-stats-title" class="text-xs font-medium text-[var(--muted-foreground)] mb-2">Estadísticas Base de la Especie (<span class="text-amber-500 font-semibold">55%</span> del cálculo total):</div>
             <div class="grid grid-cols-5 gap-2 text-center">
               <div class="p-2 rounded-xl bg-[var(--background)] border border-[var(--border)]">
-                <div class="text-xs text-red-400 font-semibold">❤️ Vida</div>
+                <div id="chip-base-life" class="text-xs text-red-400 font-semibold">❤️ Vida</div>
                 <div id="base-life" class="text-sm font-bold mt-0.5">--</div>
               </div>
               <div class="p-2 rounded-xl bg-[var(--background)] border border-[var(--border)]">
-                <div class="text-xs text-orange-400 font-semibold">🗡️ Daño</div>
+                <div id="chip-base-damage" class="text-xs text-orange-400 font-semibold">🗡️ Daño</div>
                 <div id="base-damage" class="text-sm font-bold mt-0.5">--</div>
               </div>
               <div class="p-2 rounded-xl bg-[var(--background)] border border-[var(--border)]">
-                <div class="text-xs text-blue-400 font-semibold">⚡ Vel.</div>
+                <div id="chip-base-speed" class="text-xs text-blue-400 font-semibold">⚡ Vel.</div>
                 <div id="base-speed" class="text-sm font-bold mt-0.5">--</div>
               </div>
               <div class="p-2 rounded-xl bg-[var(--background)] border border-[var(--border)]">
-                <div class="text-xs text-emerald-400 font-semibold">🛡️ Arm.</div>
+                <div id="chip-base-armor" class="text-xs text-emerald-400 font-semibold">🛡️ Arm.</div>
                 <div id="base-armor" class="text-sm font-bold mt-0.5">--</div>
               </div>
               <div class="p-2 rounded-xl bg-[var(--background)] border border-[var(--border)]">
-                <div class="text-xs text-purple-400 font-semibold">✨ Poder</div>
+                <div id="chip-base-power" class="text-xs text-purple-400 font-semibold">✨ Poder</div>
                 <div id="base-power" class="text-sm font-bold mt-0.5">--</div>
               </div>
             </div>
@@ -207,11 +213,11 @@
         <!-- 2. NIVEL -->
         <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex items-center justify-between">
-            <h2 class="text-base font-semibold flex items-center gap-2">
+            <h2 id="sec-level-title" class="text-base font-semibold flex items-center gap-2">
               <span class="text-lg">⭐</span> Nivel del Pollo
             </h2>
             <div class="flex items-center gap-2">
-              <span class="text-xs text-[var(--muted-foreground)]">Nivel:</span>
+              <span id="lbl-level-input" class="text-xs text-[var(--muted-foreground)]">Nivel:</span>
               <input type="number" id="input-level" min="1" max="100" value="50" 
                 class="w-16 px-2 py-1 text-sm font-bold text-center rounded-lg bg-[var(--background)] border border-[var(--border)] text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/40"
                 onchange="setLevel(this.value)">
@@ -223,11 +229,11 @@
               class="w-full cursor-pointer h-2 rounded-lg bg-[var(--border)]"
               oninput="setLevel(this.value)">
             <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
-              <span>Nv. 1</span>
+              <span id="lbl-lvl-1">Nv. 1</span>
               <button onclick="setLevel(25)" class="hover:text-[var(--foreground)]">25</button>
               <button onclick="setLevel(50)" class="hover:text-[var(--foreground)] font-semibold text-amber-500">50</button>
               <button onclick="setLevel(75)" class="hover:text-[var(--foreground)]">75</button>
-              <span>Nv. 100</span>
+              <span id="lbl-lvl-100">Nv. 100</span>
             </div>
           </div>
         </section>
@@ -236,26 +242,26 @@
         <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <h2 class="text-base font-semibold flex items-center gap-2">
+              <h2 id="sec-born-title" class="text-base font-semibold flex items-center gap-2">
                 <span class="text-lg">🧬</span> Genética de Nacimiento (Born / IVs)
               </h2>
-              <div class="text-xs text-[var(--muted-foreground)]">
+              <div id="sec-born-sub" class="text-xs text-[var(--muted-foreground)]">
                 Aporta el <span class="text-emerald-500 font-semibold">25%</span> del cálculo (Rango: 1 a 100 por atributo)
               </div>
             </div>
 
             <!-- Global Born Quick Buttons -->
             <div class="flex items-center gap-1.5">
-              <button onclick="setAllBorn(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
+              <button id="btn-born-min" onclick="setAllBorn(1)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
                 Min (1)
               </button>
               <button onclick="setAllBorn(50)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
                 50
               </button>
-              <button onclick="setAllBorn(100)" class="px-2 py-1 text-xs rounded bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 hover:bg-emerald-500/30 font-semibold transition">
+              <button id="btn-born-max" onclick="setAllBorn(100)" class="px-2 py-1 text-xs rounded bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 hover:bg-emerald-500/30 font-semibold transition">
                 Max (100)
               </button>
-              <button onclick="randomizeBorn()" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
+              <button id="btn-born-rand" onclick="randomizeBorn()" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
                 🎲 Aleatorio
               </button>
             </div>
@@ -264,7 +270,7 @@
           <!-- Total Born Badge & Progress Bar (like in-game badge) -->
           <div class="p-3 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1.5">
             <div class="flex justify-between items-center text-xs">
-              <span class="text-[var(--muted-foreground)] font-medium">Potencial Genético (Born):</span>
+              <span id="lbl-born-pot-title" class="text-[var(--muted-foreground)] font-medium">Potencial Genético (Born):</span>
               <div class="flex items-center gap-2">
                 <span id="born-total-text" class="font-bold text-emerald-400 font-mono text-sm">250 / 500</span>
                 <span id="born-tier-badge" class="rank-badge rank-B text-xs font-black">B</span>
@@ -279,31 +285,31 @@
           <div class="space-y-3">
             <!-- Life Born -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-red-400">❤️ Vida:</span>
+              <span id="lbl-born-life" class="text-xs font-medium w-24 text-red-400">❤️ Vida:</span>
               <input type="range" id="born-slider-life" min="1" max="100" value="50" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateBorn('life', this.value)">
               <input type="number" id="born-input-life" min="1" max="100" value="50" class="w-14 px-1.5 py-0.5 text-xs text-center rounded bg-[var(--background)] border border-[var(--border)]" onchange="updateBorn('life', this.value)">
             </div>
             <!-- Damage Born -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-orange-400">🗡️ Daño:</span>
+              <span id="lbl-born-damage" class="text-xs font-medium w-24 text-orange-400">🗡️ Daño:</span>
               <input type="range" id="born-slider-damage" min="1" max="100" value="50" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateBorn('damage', this.value)">
               <input type="number" id="born-input-damage" min="1" max="100" value="50" class="w-14 px-1.5 py-0.5 text-xs text-center rounded bg-[var(--background)] border border-[var(--border)]" onchange="updateBorn('damage', this.value)">
             </div>
             <!-- Speed Born -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-blue-400">⚡ Velocidad:</span>
+              <span id="lbl-born-speed" class="text-xs font-medium w-24 text-blue-400">⚡ Velocidad:</span>
               <input type="range" id="born-slider-speed" min="1" max="100" value="50" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateBorn('speed', this.value)">
               <input type="number" id="born-input-speed" min="1" max="100" value="50" class="w-14 px-1.5 py-0.5 text-xs text-center rounded bg-[var(--background)] border border-[var(--border)]" onchange="updateBorn('speed', this.value)">
             </div>
             <!-- Armor Born -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-emerald-400">🛡️ Armadura:</span>
+              <span id="lbl-born-armor" class="text-xs font-medium w-24 text-emerald-400">🛡️ Armadura:</span>
               <input type="range" id="born-slider-armor" min="1" max="100" value="50" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateBorn('armor', this.value)">
               <input type="number" id="born-input-armor" min="1" max="100" value="50" class="w-14 px-1.5 py-0.5 text-xs text-center rounded bg-[var(--background)] border border-[var(--border)]" onchange="updateBorn('armor', this.value)">
             </div>
             <!-- Power Born -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-purple-400">✨ Carga Poder:</span>
+              <span id="lbl-born-power" class="text-xs font-medium w-24 text-purple-400">✨ Carga Poder:</span>
               <input type="range" id="born-slider-power_amount" min="1" max="100" value="50" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateBorn('power_amount', this.value)">
               <input type="number" id="born-input-power_amount" min="1" max="100" value="50" class="w-14 px-1.5 py-0.5 text-xs text-center rounded bg-[var(--background)] border border-[var(--border)]" onchange="updateBorn('power_amount', this.value)">
             </div>
@@ -314,23 +320,23 @@
         <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <h2 class="text-base font-semibold flex items-center gap-2">
+              <h2 id="sec-train-title" class="text-base font-semibold flex items-center gap-2">
                 <span class="text-lg">🏋️</span> Entrenamiento (Training / EVs)
               </h2>
-              <div class="text-xs text-[var(--muted-foreground)]">
+              <div id="sec-train-sub" class="text-xs text-[var(--muted-foreground)]">
                 Aporta el <span class="text-amber-500 font-semibold">20%</span> del cálculo (Multiplicador de 1.00x a 2.00x)
               </div>
             </div>
 
             <!-- Global Training Quick Buttons -->
             <div class="flex items-center gap-1.5">
-              <button onclick="setAllTraining(1.0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
+              <button id="btn-train-min" onclick="setAllTraining(1.0)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
                 1.00x (Inicial)
               </button>
               <button onclick="setAllTraining(1.5)" class="px-2 py-1 text-xs rounded bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--border)] transition">
                 1.50x
               </button>
-              <button onclick="setAllTraining(2.0)" class="px-2 py-1 text-xs rounded bg-amber-500/20 text-amber-500 border border-amber-500/30 hover:bg-amber-500/30 font-semibold transition">
+              <button id="btn-train-max" onclick="setAllTraining(2.0)" class="px-2 py-1 text-xs rounded bg-amber-500/20 text-amber-500 border border-amber-500/30 hover:bg-amber-500/30 font-semibold transition">
                 2.00x (Máximo)
               </button>
             </div>
@@ -340,31 +346,31 @@
           <div class="space-y-3">
             <!-- Life Training -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-red-400">❤️ Vida:</span>
+              <span id="lbl-born-life" class="text-xs font-medium w-24 text-red-400">❤️ Vida:</span>
               <input type="range" id="training-slider-life" min="1.0" max="2.0" step="0.05" value="1.0" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateTraining('life', this.value)">
               <span id="training-disp-life" class="w-14 text-xs font-mono text-center font-bold text-amber-500">1.00x</span>
             </div>
             <!-- Damage Training -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-orange-400">🗡️ Daño:</span>
+              <span id="lbl-born-damage" class="text-xs font-medium w-24 text-orange-400">🗡️ Daño:</span>
               <input type="range" id="training-slider-damage" min="1.0" max="2.0" step="0.05" value="1.0" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateTraining('damage', this.value)">
               <span id="training-disp-damage" class="w-14 text-xs font-mono text-center font-bold text-amber-500">1.00x</span>
             </div>
             <!-- Speed Training -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-blue-400">⚡ Velocidad:</span>
+              <span id="lbl-born-speed" class="text-xs font-medium w-24 text-blue-400">⚡ Velocidad:</span>
               <input type="range" id="training-slider-speed" min="1.0" max="2.0" step="0.05" value="1.0" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateTraining('speed', this.value)">
               <span id="training-disp-speed" class="w-14 text-xs font-mono text-center font-bold text-amber-500">1.00x</span>
             </div>
             <!-- Armor Training -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-emerald-400">🛡️ Armadura:</span>
+              <span id="lbl-born-armor" class="text-xs font-medium w-24 text-emerald-400">🛡️ Armadura:</span>
               <input type="range" id="training-slider-armor" min="1.0" max="2.0" step="0.05" value="1.0" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateTraining('armor', this.value)">
               <span id="training-disp-armor" class="w-14 text-xs font-mono text-center font-bold text-amber-500">1.00x</span>
             </div>
             <!-- Power Training -->
             <div class="flex items-center gap-3">
-              <span class="text-xs font-medium w-24 text-purple-400">✨ Carga Poder:</span>
+              <span id="lbl-born-power" class="text-xs font-medium w-24 text-purple-400">✨ Carga Poder:</span>
               <input type="range" id="training-slider-power_amount" min="1.0" max="2.0" step="0.05" value="1.0" class="flex-1 h-1.5 bg-[var(--border)] rounded cursor-pointer" oninput="updateTraining('power_amount', this.value)">
               <span id="training-disp-power_amount" class="w-14 text-xs font-mono text-center font-bold text-amber-500">1.00x</span>
             </div>
@@ -383,7 +389,7 @@
             <div>
               <div class="flex items-center gap-2">
                 <span class="text-xl">🕸️</span>
-                <h2 class="text-base font-bold tracking-tight text-[var(--foreground)]">
+                <h2 id="sec-radar-title" class="text-base font-bold tracking-tight text-[var(--foreground)]">
                   Radar Poligonal de Estadísticas
                 </h2>
               </div>
@@ -406,7 +412,7 @@
           <div class="space-y-2 py-2 border-b border-[var(--border)] text-xs">
             <!-- Línea 1: Rol / Perfil Táctico -->
             <div class="flex items-center justify-between gap-2">
-              <span class="text-[var(--muted-foreground)] font-medium">Perfil Táctico:</span>
+              <span id="lbl-radar-profile" class="text-[var(--muted-foreground)] font-medium">Perfil Táctico:</span>
               <span id="radar-archetype-badge" class="px-2.5 py-0.5 rounded-md font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 text-xs">
                 Todoterreno Equilibrado
               </span>
@@ -414,11 +420,11 @@
             <!-- Línea 2: Presupuesto Base y Ciclo de Poder -->
             <div class="flex items-center justify-between gap-2 text-[11px] text-[var(--muted-foreground)]">
               <div>
-                <span>Presupuesto Base:</span>
+                <span id="lbl-radar-budget">Presupuesto Base:</span>
                 <span id="radar-base-total-pts" class="font-bold text-amber-400 font-mono ml-1">200 pts</span>
               </div>
               <div>
-                <span>Carga de Poder:</span>
+                <span id="lbl-radar-power-cycle">Carga de Poder:</span>
                 <span id="radar-power-cycle" class="font-bold text-purple-400 font-mono ml-1">~5 turnos</span>
               </div>
             </div>
@@ -490,7 +496,7 @@
               <!-- LABELS AT VERTICES -->
               <!-- 0: TOP - VIDA -->
               <g transform="translate(210, 24)">
-                <text text-anchor="middle" class="font-sans font-bold text-xs" fill="#ef4444">❤️ VIDA</text>
+                <text id="radar-axis-0" text-anchor="middle" class="font-sans font-bold text-xs" fill="#ef4444">❤️ VIDA</text>
                 <text id="lbl-radar-val-0" y="16" text-anchor="middle" class="font-mono font-black text-sm" fill="var(--foreground)">--</text>
                 <rect id="bg-radar-badge-0" x="42" y="3" width="18" height="15" rx="3" fill="#64f078" opacity="0.25" stroke="#64f078" stroke-width="1" />
                 <text id="lbl-radar-badge-0" x="51" y="14" text-anchor="middle" font-size="10" font-family="monospace" font-weight="900" fill="#64f078">A</text>
@@ -498,7 +504,7 @@
 
               <!-- 1: TOP-RIGHT - DAÑO -->
               <g transform="translate(325, 140)">
-                <text text-anchor="start" class="font-sans font-bold text-xs" fill="#f97316">🗡️ DAÑO</text>
+                <text id="radar-axis-1" text-anchor="start" class="font-sans font-bold text-xs" fill="#f97316">🗡️ DAÑO</text>
                 <text id="lbl-radar-val-1" y="16" text-anchor="start" class="font-mono font-black text-sm" fill="var(--foreground)">--</text>
                 <rect id="bg-radar-badge-1" x="52" y="3" width="18" height="15" rx="3" fill="#5ab4ff" opacity="0.25" stroke="#5ab4ff" stroke-width="1" />
                 <text id="lbl-radar-badge-1" x="61" y="14" text-anchor="middle" font-size="10" font-family="monospace" font-weight="900" fill="#5ab4ff">B</text>
@@ -506,7 +512,7 @@
 
               <!-- 2: BOTTOM-RIGHT - VELOCIDAD -->
               <g transform="translate(280, 285)">
-                <text text-anchor="start" class="font-sans font-bold text-xs" fill="#3b82f6">⚡ VELOCIDAD</text>
+                <text id="radar-axis-2" text-anchor="start" class="font-sans font-bold text-xs" fill="#3b82f6">⚡ VELOCIDAD</text>
                 <text id="lbl-radar-val-2" y="16" text-anchor="start" class="font-mono font-black text-sm" fill="var(--foreground)">--</text>
                 <rect id="bg-radar-badge-2" x="78" y="3" width="18" height="15" rx="3" fill="#5ab4ff" opacity="0.25" stroke="#5ab4ff" stroke-width="1" />
                 <text id="lbl-radar-badge-2" x="87" y="14" text-anchor="middle" font-size="10" font-family="monospace" font-weight="900" fill="#5ab4ff">B</text>
@@ -514,7 +520,7 @@
 
               <!-- 3: BOTTOM-LEFT - ARMADURA -->
               <g transform="translate(140, 285)">
-                <text text-anchor="end" class="font-sans font-bold text-xs" fill="#10b981">🛡️ ARMADURA</text>
+                <text id="radar-axis-3" text-anchor="end" class="font-sans font-bold text-xs" fill="#10b981">🛡️ ARMADURA</text>
                 <text id="lbl-radar-val-3" y="16" text-anchor="end" class="font-mono font-black text-sm" fill="var(--foreground)">--</text>
                 <rect id="bg-radar-badge-3" x="-115" y="3" width="18" height="15" rx="3" fill="#b4b9c8" opacity="0.25" stroke="#b4b9c8" stroke-width="1" />
                 <text id="lbl-radar-badge-3" x="-106" y="14" text-anchor="middle" font-size="10" font-family="monospace" font-weight="900" fill="#b4b9c8">C</text>
@@ -522,7 +528,7 @@
 
               <!-- 4: TOP-LEFT - PODER -->
               <g transform="translate(95, 140)">
-                <text text-anchor="end" class="font-sans font-bold text-xs" fill="#a855f7">✨ PODER</text>
+                <text id="radar-axis-4" text-anchor="end" class="font-sans font-bold text-xs" fill="#a855f7">✨ PODER</text>
                 <text id="lbl-radar-val-4" y="16" text-anchor="end" class="font-mono font-black text-sm" fill="var(--foreground)">--</text>
                 <rect id="bg-radar-badge-4" x="-85" y="3" width="18" height="15" rx="3" fill="#b4b9c8" opacity="0.25" stroke="#b4b9c8" stroke-width="1" />
                 <text id="lbl-radar-badge-4" x="-76" y="14" text-anchor="middle" font-size="10" font-family="monospace" font-weight="900" fill="#b4b9c8">C</text>
@@ -534,7 +540,7 @@
           <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-2.5 text-xs">
             <div class="flex items-center justify-between border-b border-[var(--border)]/60 pb-2">
               <span class="font-bold text-[var(--foreground)] flex items-center gap-1.5 text-xs">
-                <span>🎯</span> Guía Táctica de Combate 2vs2
+                <span>🎯</span> <span id="lbl-tactical-header">Guía Táctica de Combate 2vs2</span>
               </span>
               <span id="tactical-role-title" class="text-[11px] font-bold text-amber-400 font-mono px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
                 Equilibrado
@@ -544,25 +550,25 @@
             <div class="space-y-2 text-[11px] leading-relaxed">
               <!-- Función en 2vs2 -->
               <div>
-                <span class="text-amber-400 font-bold block mb-0.5">⚔️ Función en el Dúo 2vs2:</span>
+                <span id="lbl-tactical-duo-title" class="text-amber-400 font-bold block mb-0.5">⚔️ Función en el Dúo 2vs2:</span>
                 <p id="tactical-duo" class="text-[var(--foreground)]"></p>
               </div>
 
               <!-- Aliados recomendados -->
               <div class="pt-1.5 border-t border-[var(--border)]/40">
-                <span class="text-emerald-400 font-bold block mb-0.5">🤝 Compañeros Recomendados:</span>
+                <span id="lbl-tactical-allies-title" class="text-emerald-400 font-bold block mb-0.5">🤝 Compañeros Recomendados:</span>
                 <p id="tactical-allies" class="text-[var(--muted-foreground)]"></p>
               </div>
 
               <!-- Ítems ideales -->
               <div class="pt-1.5 border-t border-[var(--border)]/40">
-                <span class="text-blue-400 font-bold block mb-0.5">🎒 Ítems Clave en 2vs2:</span>
+                <span id="lbl-tactical-items-title" class="text-blue-400 font-bold block mb-0.5">🎒 Ítems Clave en 2vs2:</span>
                 <p id="tactical-items" class="text-[var(--muted-foreground)]"></p>
               </div>
 
               <!-- Cómo contrarrestarlo -->
               <div class="pt-1.5 border-t border-[var(--border)]/40">
-                <span class="text-rose-400 font-bold block mb-0.5">🔴 Cómo Contrarrestarlo (Si es tu Rival):</span>
+                <span id="lbl-tactical-counter-title" class="text-rose-400 font-bold block mb-0.5">🔴 Cómo Contrarrestarlo (Si es tu Rival):</span>
                 <p id="tactical-counter" class="text-[var(--muted-foreground)]"></p>
               </div>
             </div>
@@ -570,7 +576,7 @@
 
           <!-- Footer Legend: Game Ranks -->
           <div class="pt-1 flex flex-wrap items-center justify-between gap-1 text-[11px] text-[var(--muted-foreground)]">
-            <span class="font-medium">Rangos por Estadística:</span>
+            <span id="lbl-radar-ranks-title" class="font-medium">Rangos por Estadística:</span>
             <div class="flex items-center gap-1.5 font-mono font-bold">
               <span class="text-[#a08c78]">D (&lt;35)</span>
               <span>·</span>
@@ -591,10 +597,10 @@
         <!-- RESUMEN PRINCIPAL DE RESULTADOS -->
         <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex items-center justify-between">
-            <h2 class="text-base font-semibold flex items-center gap-2">
+            <h2 id="sec-final-stats-title" class="text-base font-semibold flex items-center gap-2">
               <span class="text-lg">📊</span> Estadísticas Finales
             </h2>
-            <span class="text-xs text-[var(--muted-foreground)]">Valores en Batalla</span>
+            <span id="sec-final-stats-sub" class="text-xs text-[var(--muted-foreground)]">Valores en Batalla</span>
           </div>
 
           <div class="space-y-3">
@@ -604,7 +610,7 @@
               <div class="flex justify-between items-baseline">
                 <div class="flex items-center gap-2">
                   <span class="text-base">❤️</span>
-                  <span class="text-xs font-bold uppercase tracking-wider text-red-400">Vida Máxima</span>
+                  <span id="lbl-stat-life" class="text-xs font-bold uppercase tracking-wider text-red-400">Vida Máxima</span>
                 </div>
                 <div class="text-right">
                   <span id="res-round-life" class="text-2xl font-black text-[var(--foreground)]">--</span>
@@ -615,9 +621,9 @@
                 <div id="bar-life" class="h-full bg-red-500 transition-all duration-200" style="width: 0%;"></div>
               </div>
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
-                <span>Base: 50</span>
+                <span id="lbl-stat-life-base">Base: 50</span>
                 <span id="pct-life" class="font-mono">--%</span>
-                <span>Tope: 2,500</span>
+                <span id="lbl-stat-life-max">Tope: 2,500</span>
               </div>
             </div>
 
@@ -626,7 +632,7 @@
               <div class="flex justify-between items-baseline">
                 <div class="flex items-center gap-2">
                   <span class="text-base">🗡️</span>
-                  <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Daño</span>
+                  <span id="lbl-stat-damage" class="text-xs font-bold uppercase tracking-wider text-orange-400">Daño</span>
                 </div>
                 <div class="text-right">
                   <span id="res-round-damage" class="text-2xl font-black text-[var(--foreground)]">--</span>
@@ -637,9 +643,9 @@
                 <div id="bar-damage" class="h-full bg-orange-500 transition-all duration-200" style="width: 0%;"></div>
               </div>
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
-                <span>Base: 5</span>
+                <span id="lbl-stat-damage-base">Base: 5</span>
                 <span id="pct-damage" class="font-mono">--%</span>
-                <span>Tope: 300</span>
+                <span id="lbl-stat-damage-max">Tope: 300</span>
               </div>
             </div>
 
@@ -648,7 +654,7 @@
               <div class="flex justify-between items-baseline">
                 <div class="flex items-center gap-2">
                   <span class="text-base">⚡</span>
-                  <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Velocidad</span>
+                  <span id="lbl-stat-speed" class="text-xs font-bold uppercase tracking-wider text-blue-400">Velocidad</span>
                 </div>
                 <div class="text-right">
                   <span id="res-round-speed" class="text-2xl font-black text-[var(--foreground)]">--</span>
@@ -659,9 +665,9 @@
                 <div id="bar-speed" class="h-full bg-blue-500 transition-all duration-200" style="width: 0%;"></div>
               </div>
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
-                <span>Base: 10</span>
+                <span id="lbl-stat-speed-base">Base: 10</span>
                 <span id="pct-speed" class="font-mono">--%</span>
-                <span>Tope: 500</span>
+                <span id="lbl-stat-speed-max">Tope: 500</span>
               </div>
             </div>
 
@@ -670,7 +676,7 @@
               <div class="flex justify-between items-baseline">
                 <div class="flex items-center gap-2">
                   <span class="text-base">🛡️</span>
-                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Armadura</span>
+                  <span id="lbl-stat-armor" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Armadura</span>
                 </div>
                 <div class="text-right">
                   <span id="res-round-armor" class="text-2xl font-black text-[var(--foreground)]">--%</span>
@@ -681,9 +687,9 @@
                 <div id="bar-armor" class="h-full bg-emerald-500 transition-all duration-200" style="width: 0%;"></div>
               </div>
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
-                <span>Base: 0%</span>
-                <span class="text-[var(--muted-foreground)]">Mitigación porcentual</span>
-                <span>Tope: 80%</span>
+                <span id="lbl-stat-armor-base">Base: 0%</span>
+                <span id="lbl-stat-armor-desc" class="text-[var(--muted-foreground)]">Mitigación porcentual</span>
+                <span id="lbl-stat-armor-max">Tope: 80%</span>
               </div>
             </div>
 
@@ -692,7 +698,7 @@
               <div class="flex justify-between items-baseline">
                 <div class="flex items-center gap-2">
                   <span class="text-base">✨</span>
-                  <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Carga de Poder</span>
+                  <span id="lbl-stat-power" class="text-xs font-bold uppercase tracking-wider text-purple-400">Carga de Poder</span>
                 </div>
                 <div class="text-right">
                   <span class="text-sm font-semibold text-purple-400">+</span>
@@ -704,7 +710,7 @@
                 <div id="bar-power" class="h-full bg-purple-500 transition-all duration-200" style="width: 0%;"></div>
               </div>
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
-                <span>Carga por turno</span>
+                <span id="lbl-stat-power-desc">Carga por turno</span>
                 <span id="power-cost-badge" class="font-mono">Coste máx: 100</span>
               </div>
             </div>
@@ -715,21 +721,21 @@
         <!-- PROGRESIÓN POR NIVELES (TABLA RÁPIDA) -->
         <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
           <div class="flex items-center justify-between">
-            <h3 class="text-sm font-semibold flex items-center gap-2">
+            <h3 id="sec-prog-title" class="text-sm font-semibold flex items-center gap-2">
               <span>📈</span> Progresión de este Pollo
             </h3>
-            <span class="text-xs text-[var(--muted-foreground)]">Niveles Clave</span>
+            <span id="sec-prog-sub" class="text-xs text-[var(--muted-foreground)]">Niveles Clave</span>
           </div>
 
           <div class="overflow-x-auto">
             <table class="w-full text-xs text-center border-collapse">
               <thead>
                 <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
-                  <th class="py-1.5 px-2 text-left">Nivel</th>
-                  <th class="py-1.5 px-2 text-red-400">Vida</th>
-                  <th class="py-1.5 px-2 text-orange-400">Daño</th>
-                  <th class="py-1.5 px-2 text-blue-400">Vel.</th>
-                  <th class="py-1.5 px-2 text-emerald-400">Arm.</th>
+                  <th id="th-level" class="py-1.5 px-2 text-left">Nivel</th>
+                  <th id="th-life" class="py-1.5 px-2 text-red-400">Vida</th>
+                  <th id="th-damage" class="py-1.5 px-2 text-orange-400">Daño</th>
+                  <th id="th-speed" class="py-1.5 px-2 text-blue-400">Vel.</th>
+                  <th id="th-armor" class="py-1.5 px-2 text-emerald-400">Arm.</th>
                 </tr>
               </thead>
               <tbody id="progression-table-body" class="divide-y divide-[var(--border)] font-mono">
@@ -802,7 +808,8 @@
         currentChicken = found;
         document.getElementById('chicken-id-badge').textContent = `#${String(found.id).padStart(3, '0')}`;
         document.getElementById('chicken-display-name').textContent = found.name;
-        document.getElementById('chicken-power-info').textContent = `Coste Máx de Poder: ${found.power_max}`;
+        const trans = t_calc[currentLang] || t_calc.es;
+        document.getElementById('chicken-power-info').textContent = trans.powerMaxInfo.replace('{cost}', found.power_max);
         
         // Sprite with graceful fallback
         const spriteImg = document.getElementById('chicken-sprite');
@@ -816,7 +823,7 @@
         document.getElementById('base-speed').textContent = found.stats.speed;
         document.getElementById('base-armor').textContent = found.stats.armor;
         document.getElementById('base-power').textContent = found.stats.power_amount;
-        document.getElementById('power-cost-badge').textContent = `Coste máx: ${found.power_max}`;
+        document.getElementById('power-cost-badge').textContent = trans.lblStatPowerCost(found.power_max);
         recalculate();
       }
     }
@@ -1010,7 +1017,7 @@
           : 'hover:bg-[var(--border)]/30 transition';
         tr.innerHTML = `
           <td class="py-1.5 px-2 text-left font-sans">
-            <span class="cursor-pointer underline decoration-dotted" onclick="setLevel(${milestone})">Nv. ${milestone}</span>
+            <span class="cursor-pointer underline decoration-dotted" onclick="setLevel(${milestone})">${(t_calc[currentLang]||t_calc.es).lvlRow(milestone)}</span>
             ${isCurrent ? '<span class="ml-1 text-xs">◀</span>' : ''}
           </td>
           <td class="py-1.5 px-2">${mRes.life.round}</td>
@@ -1030,13 +1037,538 @@
       localStorage.setItem('cc_wiki_theme', t);
       const btn = document.getElementById('theme-btn');
       if (btn) {
-        btn.innerHTML = (t === 'dark') ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
+        const trans = t_calc[currentLang] || t_calc.es;
+        btn.innerHTML = (t === 'dark') ? trans.darkTheme : trans.lightTheme;
       }
     }
     function toggleTheme() {
       applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
     }
-    applyTheme(currentTheme);
+
+
+    // LOCALIZATION
+    let currentLang = localStorage.getItem('cc_wiki_lang') || 'es';
+    if (!['es', 'en', 'pt', 'ru'].includes(currentLang)) currentLang = 'es';
+
+    const t_calc = {
+      es: {
+        pageTitle: "Calculadora de Estadísticas - Clicker Chickens",
+        calcTitle: "Calculadora de Estadísticas",
+        calcSubtitle: "Simulador oficial de combate según fórmulas de la versión 0.117",
+        backToWiki: "Volver a la Wiki",
+        darkTheme: "🌙 Modo Oscuro",
+        lightTheme: "☀️ Modo Claro",
+        presets: "Presets:",
+        presetBase: "🐣 Base (Nv.1)",
+        presetMid: "⚔️ Nivel 50",
+        presetMax: "👑 Max (Nv.100)",
+        presetRandom: "🎲 Aleatorio",
+        secSelectTitle: "Selecciona tu Pollo",
+        secSelectSub: "151 Pollos disponibles",
+        lblSearch: "Buscar por nombre o ID:",
+        searchPlaceholder: "Ej: Pollier, 15, Zombie...",
+        lblSpecies: "Especie:",
+        powerMaxInfo: "Coste Máx de Poder: {cost}",
+        lblBaseStatsTitle: "Estadísticas Base de la Especie (55% del cálculo total):",
+        chipLife: "❤️ Vida",
+        chipDamage: "🗡️ Daño",
+        chipSpeed: "⚡ Vel.",
+        chipArmor: "🛡️ Arm.",
+        chipPower: "✨ Poder",
+        secLevelTitle: "Nivel del Pollo",
+        lblLevelInput: "Nivel:",
+        lblLvl1: "Nv. 1",
+        lblLvl100: "Nv. 100",
+        secBornTitle: "Genética de Nacimiento (Born / IVs)",
+        secBornSub: "Aporta el 25% del cálculo (Rango: 1 a 100 por atributo)",
+        btnMin: "Min (1)",
+        btnMax: "Max (100)",
+        btnRandom: "🎲 Aleatorio",
+        lblBornPotTitle: "Potencial Genético (Born):",
+        lblBornLife: "❤️ Vida:",
+        lblBornDamage: "🗡️ Daño:",
+        lblBornSpeed: "⚡ Velocidad:",
+        lblBornArmor: "🛡️ Armadura:",
+        lblBornPower: "✨ Carga Poder:",
+        secTrainTitle: "Entrenamiento (Training / EVs)",
+        secTrainSub: "Aporta el 20% del cálculo (Multiplicador de 1.00x a 2.00x)",
+        btnTrainInitial: "1.00x (Inicial)",
+        btnTrainMax: "2.00x (Máximo)",
+        lblTrainLife: "❤️ Vida:",
+        lblTrainDamage: "🗡️ Daño:",
+        lblTrainSpeed: "⚡ Velocidad:",
+        lblTrainArmor: "🛡️ Armadura:",
+        lblTrainPower: "✨ Carga Poder:",
+        secRadarTitle: "Radar Poligonal de Estadísticas",
+        btnModeCombat: "⚔️ Combate",
+        btnModeBase: "🧬 Base",
+        lblRadarProfile: "Perfil Táctico:",
+        lblRadarBudget: "Presupuesto Base:",
+        lblRadarPowerCycle: "Carga de Poder:",
+        turnUnit: (n) => `~${n} ${n === 1 ? 'turno' : 'turnos'}`,
+        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Nivel ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (Base Especie)`,
+        axisLife: "❤️ VIDA",
+        axisDamage: "🗡️ DAÑO",
+        axisSpeed: "⚡ VELOCIDAD",
+        axisArmor: "🛡️ ARMADURA",
+        axisPower: "✨ PODER",
+        lblRadarRanksTitle: "Rangos por Estadística:",
+        lblTacticalHeader: "Guía Táctica de Combate 2vs2",
+        lblTacticalDuoTitle: "⚔️ Función en el Dúo 2vs2:",
+        lblTacticalAlliesTitle: "🤝 Compañeros Recomendados:",
+        lblTacticalItemsTitle: "🎒 Ítems Clave en 2vs2:",
+        lblTacticalCounterTitle: "🔴 Cómo Contrarrestarlo (Si es tu Rival):",
+        secFinalStatsTitle: "Estadísticas Finales",
+        secFinalStatsSub: "Valores en Batalla",
+        lblStatLife: "Vida Máxima",
+        lblStatLifeBase: "Base: 50",
+        lblStatLifeMax: "Tope: 2,500",
+        lblStatDamage: "Daño",
+        lblStatDamageBase: "Base: 5",
+        lblStatDamageMax: "Tope: 300",
+        lblStatSpeed: "Velocidad",
+        lblStatSpeedBase: "Base: 10",
+        lblStatSpeedMax: "Tope: 500",
+        lblStatArmor: "Armadura",
+        lblStatArmorBase: "Base: 0%",
+        lblStatArmorDesc: "Mitigación porcentual",
+        lblStatArmorMax: "Tope: 80%",
+        lblStatPower: "Carga de Poder",
+        lblStatPowerDesc: "Carga por turno",
+        lblStatPowerCost: (cost) => `Coste máx: ${cost}`,
+        secProgTitle: "Progresión de este Pollo",
+        secProgSub: "Niveles Clave",
+        thLevel: "Nivel",
+        thLife: "Vida",
+        thDamage: "Daño",
+        thSpeed: "Vel.",
+        thArmor: "Arm.",
+        lvlRow: (lvl) => `Nv. ${lvl}`
+      },
+      en: {
+        pageTitle: "Stat Calculator - Clicker Chickens",
+        calcTitle: "Stat Calculator",
+        calcSubtitle: "Official combat simulator based on version 0.117 formulas",
+        backToWiki: "Back to Wiki",
+        darkTheme: "🌙 Dark Mode",
+        lightTheme: "☀️ Light Mode",
+        presets: "Presets:",
+        presetBase: "🐣 Base (Lv.1)",
+        presetMid: "⚔️ Level 50",
+        presetMax: "👑 Max (Lv.100)",
+        presetRandom: "🎲 Random",
+        secSelectTitle: "Select your Chicken",
+        secSelectSub: "151 Chickens available",
+        lblSearch: "Search by name or ID:",
+        searchPlaceholder: "Ex: Pollier, 15, Zombie...",
+        lblSpecies: "Species:",
+        powerMaxInfo: "Max Power Cost: {cost}",
+        lblBaseStatsTitle: "Species Base Stats (55% of total calculation):",
+        chipLife: "❤️ Life",
+        chipDamage: "🗡️ Damage",
+        chipSpeed: "⚡ Spd.",
+        chipArmor: "🛡️ Arm.",
+        chipPower: "✨ Power",
+        secLevelTitle: "Chicken Level",
+        lblLevelInput: "Level:",
+        lblLvl1: "Lv. 1",
+        lblLvl100: "Lv. 100",
+        secBornTitle: "Birth Genetics (Born / IVs)",
+        secBornSub: "Provides 25% of calculation (Range: 1 to 100 per attribute)",
+        btnMin: "Min (1)",
+        btnMax: "Max (100)",
+        btnRandom: "🎲 Random",
+        lblBornPotTitle: "Genetic Potential (Born):",
+        lblBornLife: "❤️ Life:",
+        lblBornDamage: "🗡️ Damage:",
+        lblBornSpeed: "⚡ Speed:",
+        lblBornArmor: "🛡️ Armor:",
+        lblBornPower: "✨ Power Charge:",
+        secTrainTitle: "Training (Training / EVs)",
+        secTrainSub: "Provides 20% of calculation (Multiplier from 1.00x to 2.00x)",
+        btnTrainInitial: "1.00x (Initial)",
+        btnTrainMax: "2.00x (Maximum)",
+        lblTrainLife: "❤️ Life:",
+        lblTrainDamage: "🗡️ Damage:",
+        lblTrainSpeed: "⚡ Speed:",
+        lblTrainArmor: "🛡️ Armor:",
+        lblTrainPower: "✨ Power Charge:",
+        secRadarTitle: "Polygon Stat Radar",
+        btnModeCombat: "⚔️ Combat",
+        btnModeBase: "🧬 Base",
+        lblRadarProfile: "Tactical Profile:",
+        lblRadarBudget: "Base Budget:",
+        lblRadarPowerCycle: "Power Charge:",
+        turnUnit: (n) => `~${n} ${n === 1 ? 'turn' : 'turns'}`,
+        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Level ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (Species Base)`,
+        axisLife: "❤️ LIFE",
+        axisDamage: "🗡️ DAMAGE",
+        axisSpeed: "⚡ SPEED",
+        axisArmor: "🛡️ ARMOR",
+        axisPower: "✨ POWER",
+        lblRadarRanksTitle: "Ranks by Stat:",
+        lblTacticalHeader: "2vs2 Combat Tactical Guide",
+        lblTacticalDuoTitle: "⚔️ Role in the 2vs2 Duo:",
+        lblTacticalAlliesTitle: "🤝 Recommended Teammates:",
+        lblTacticalItemsTitle: "🎒 Key Items in 2vs2:",
+        lblTacticalCounterTitle: "🔴 How to Counter It (If Opponent):",
+        secFinalStatsTitle: "Final Stats",
+        secFinalStatsSub: "In-Battle Values",
+        lblStatLife: "Max Life",
+        lblStatLifeBase: "Base: 50",
+        lblStatLifeMax: "Cap: 2,500",
+        lblStatDamage: "Damage",
+        lblStatDamageBase: "Base: 5",
+        lblStatDamageMax: "Cap: 300",
+        lblStatSpeed: "Speed",
+        lblStatSpeedBase: "Base: 10",
+        lblStatSpeedMax: "Cap: 500",
+        lblStatArmor: "Armor",
+        lblStatArmorBase: "Base: 0%",
+        lblStatArmorDesc: "Percentage mitigation",
+        lblStatArmorMax: "Cap: 80%",
+        lblStatPower: "Power Charge",
+        lblStatPowerDesc: "Charge per turn",
+        lblStatPowerCost: (cost) => `Max cost: ${cost}`,
+        secProgTitle: "Chicken Progression",
+        secProgSub: "Key Levels",
+        thLevel: "Level",
+        thLife: "Life",
+        thDamage: "Damage",
+        thSpeed: "Spd.",
+        thArmor: "Arm.",
+        lvlRow: (lvl) => `Lv. ${lvl}`
+      },
+      pt: {
+        pageTitle: "Calculadora de Estatísticas - Clicker Chickens",
+        calcTitle: "Calculadora de Estatísticas",
+        calcSubtitle: "Simulador oficial de combate segundo fórmulas da versão 0.117",
+        backToWiki: "Voltar à Wiki",
+        darkTheme: "🌙 Modo Escuro",
+        lightTheme: "☀️ Modo Claro",
+        presets: "Predefinições:",
+        presetBase: "🐣 Base (Nv.1)",
+        presetMid: "⚔️ Nível 50",
+        presetMax: "👑 Max (Nv.100)",
+        presetRandom: "🎲 Aleatório",
+        secSelectTitle: "Selecione seu Frango",
+        secSelectSub: "151 Frangos disponíveis",
+        lblSearch: "Pesquisar por nome ou ID:",
+        searchPlaceholder: "Ex: Pollier, 15, Zumbi...",
+        lblSpecies: "Espécie:",
+        powerMaxInfo: "Custo Máx de Poder: {cost}",
+        lblBaseStatsTitle: "Estatísticas Base da Espécie (55% do cálculo total):",
+        chipLife: "❤️ Vida",
+        chipDamage: "🗡️ Dano",
+        chipSpeed: "⚡ Vel.",
+        chipArmor: "🛡️ Arm.",
+        chipPower: "✨ Poder",
+        secLevelTitle: "Nível do Frango",
+        lblLevelInput: "Nível:",
+        lblLvl1: "Nv. 1",
+        lblLvl100: "Nv. 100",
+        secBornTitle: "Genética de Nascimento (Born / IVs)",
+        secBornSub: "Contribui com 25% do cálculo (Intervalo: 1 a 100 por atributo)",
+        btnMin: "Min (1)",
+        btnMax: "Max (100)",
+        btnRandom: "🎲 Aleatório",
+        lblBornPotTitle: "Potencial Genético (Born):",
+        lblBornLife: "❤️ Vida:",
+        lblBornDamage: "🗡️ Dano:",
+        lblBornSpeed: "⚡ Velocidade:",
+        lblBornArmor: "🛡️ Armadura:",
+        lblBornPower: "✨ Carga Poder:",
+        secTrainTitle: "Treinamento (Training / EVs)",
+        secTrainSub: "Contribui com 20% do cálculo (Multiplicador de 1.00x a 2.00x)",
+        btnTrainInitial: "1.00x (Inicial)",
+        btnTrainMax: "2.00x (Máximo)",
+        lblTrainLife: "❤️ Vida:",
+        lblTrainDamage: "🗡️ Dano:",
+        lblTrainSpeed: "⚡ Velocidade:",
+        lblTrainArmor: "🛡️ Armadura:",
+        lblTrainPower: "✨ Carga Poder:",
+        secRadarTitle: "Radar Poligonal de Estatísticas",
+        btnModeCombat: "⚔️ Combate",
+        btnModeBase: "🧬 Base",
+        lblRadarProfile: "Perfil Tático:",
+        lblRadarBudget: "Orçamento Base:",
+        lblRadarPowerCycle: "Carga de Poder:",
+        turnUnit: (n) => `~${n} ${n === 1 ? 'turno' : 'turnos'}`,
+        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Nível ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (Base da Espécie)`,
+        axisLife: "❤️ VIDA",
+        axisDamage: "🗡️ DANO",
+        axisSpeed: "⚡ VELOCIDADE",
+        axisArmor: "🛡️ ARMADURA",
+        axisPower: "✨ PODER",
+        lblRadarRanksTitle: "Ranks por Estatística:",
+        lblTacticalHeader: "Guia Tático de Combate 2vs2",
+        lblTacticalDuoTitle: "⚔️ Função na Dupla 2vs2:",
+        lblTacticalAlliesTitle: "🤝 Companheiros Recomendados:",
+        lblTacticalItemsTitle: "🎒 Itens-chave em 2vs2:",
+        lblTacticalCounterTitle: "🔴 Como Neutralizá-lo (Se for Rival):",
+        secFinalStatsTitle: "Estatísticas Finais",
+        secFinalStatsSub: "Valores em Batalha",
+        lblStatLife: "Vida Máxima",
+        lblStatLifeBase: "Base: 50",
+        lblStatLifeMax: "Limite: 2.500",
+        lblStatDamage: "Dano",
+        lblStatDamageBase: "Base: 5",
+        lblStatDamageMax: "Limite: 300",
+        lblStatSpeed: "Velocidade",
+        lblStatSpeedBase: "Base: 10",
+        lblStatSpeedMax: "Limite: 500",
+        lblStatArmor: "Armadura",
+        lblStatArmorBase: "Base: 0%",
+        lblStatArmorDesc: "Mitigação percentual",
+        lblStatArmorMax: "Limite: 80%",
+        lblStatPower: "Carga de Poder",
+        lblStatPowerDesc: "Carga por turno",
+        lblStatPowerCost: (cost) => `Custo máx: ${cost}`,
+        secProgTitle: "Progressão deste Frango",
+        secProgSub: "Níveis-chave",
+        thLevel: "Nível",
+        thLife: "Vida",
+        thDamage: "Dano",
+        thSpeed: "Vel.",
+        thArmor: "Arm.",
+        lvlRow: (lvl) => `Nv. ${lvl}`
+      },
+      ru: {
+        pageTitle: "Калькулятор характеристик - Clicker Chickens",
+        calcTitle: "Калькулятор характеристик",
+        calcSubtitle: "Официальный боевой симулятор по формулам версии 0.117",
+        backToWiki: "Назад в Вики",
+        darkTheme: "🌙 Темная тема",
+        lightTheme: "☀️ Светлая тема",
+        presets: "Пресеты:",
+        presetBase: "🐣 Базовый (Ур.1)",
+        presetMid: "⚔️ Уровень 50",
+        presetMax: "👑 Макс (Ур.100)",
+        presetRandom: "🎲 Случайный",
+        secSelectTitle: "Выберите курицу",
+        secSelectSub: "Доступно 151 кур",
+        lblSearch: "Поиск по имени или ID:",
+        searchPlaceholder: "Напр.: Pollier, 15, Zombie...",
+        lblSpecies: "Вид:",
+        powerMaxInfo: "Макс. стоимость силы: {cost}",
+        lblBaseStatsTitle: "Базовые характеристики вида (55% от общего расчета):",
+        chipLife: "❤️ Здоровье",
+        chipDamage: "🗡️ Урон",
+        chipSpeed: "⚡ Скор.",
+        chipArmor: "🛡️ Броня",
+        chipPower: "✨ Сила",
+        secLevelTitle: "Уровень курицы",
+        lblLevelInput: "Уровень:",
+        lblLvl1: "Ур. 1",
+        lblLvl100: "Ур. 100",
+        secBornTitle: "Врожденная генетика (Born / IVs)",
+        secBornSub: "Дает 25% расчета (Диапазон: от 1 до 100 на характеристику)",
+        btnMin: "Мин (1)",
+        btnMax: "Макс (100)",
+        btnRandom: "🎲 Случайный",
+        lblBornPotTitle: "Генетический потенциал (Born):",
+        lblBornLife: "❤️ Здоровье:",
+        lblBornDamage: "🗡️ Урон:",
+        lblBornSpeed: "⚡ Скорость:",
+        lblBornArmor: "🛡️ Броня:",
+        lblBornPower: "✨ Набор силы:",
+        secTrainTitle: "Тренировка (Training / EVs)",
+        secTrainSub: "Дает 20% расчета (Множитель от 1.00x до 2.00x)",
+        btnTrainInitial: "1.00x (Начальный)",
+        btnTrainMax: "2.00x (Максимум)",
+        lblTrainLife: "❤️ Здоровье:",
+        lblTrainDamage: "🗡️ Урон:",
+        lblTrainSpeed: "⚡ Скорость:",
+        lblTrainArmor: "🛡️ Броня:",
+        lblTrainPower: "✨ Набор силы:",
+        secRadarTitle: "Полигональный радар характеристик",
+        btnModeCombat: "⚔️ Бой",
+        btnModeBase: "🧬 База",
+        lblRadarProfile: "Тактический профиль:",
+        lblRadarBudget: "Базовый бюджет:",
+        lblRadarPowerCycle: "Набор силы:",
+        turnUnit: (n) => `~${n} ${n === 1 ? 'ход' : (n >= 2 && n <= 4 ? 'хода' : 'ходов')}`,
+        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Уровень ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (База вида)`,
+        axisLife: "❤️ ЗДОРОВЬЕ",
+        axisDamage: "🗡️ УРОН",
+        axisSpeed: "⚡ СКОРОСТЬ",
+        axisArmor: "🛡️ БРОНЯ",
+        axisPower: "✨ СИЛА",
+        lblRadarRanksTitle: "Ранги по характеристике:",
+        lblTacticalHeader: "Тактическое руководство для боя 2на2",
+        lblTacticalDuoTitle: "⚔️ Роль в дуэте 2на2:",
+        lblTacticalAlliesTitle: "🤝 Рекомендуемые союзники:",
+        lblTacticalItemsTitle: "🎒 Ключевые предметы в 2на2:",
+        lblTacticalCounterTitle: "🔴 Как контрить (Если противник):",
+        secFinalStatsTitle: "Итоговые характеристики",
+        secFinalStatsSub: "Значения в бою",
+        lblStatLife: "Макс. здоровье",
+        lblStatLifeBase: "База: 50",
+        lblStatLifeMax: "Предел: 2 500",
+        lblStatDamage: "Урон",
+        lblStatDamageBase: "База: 5",
+        lblStatDamageMax: "Предел: 300",
+        lblStatSpeed: "Скорость",
+        lblStatSpeedBase: "База: 10",
+        lblStatSpeedMax: "Предел: 500",
+        lblStatArmor: "Броня",
+        lblStatArmorBase: "База: 0%",
+        lblStatArmorDesc: "Процент снижения урона",
+        lblStatArmorMax: "Предел: 80%",
+        lblStatPower: "Набор силы",
+        lblStatPowerDesc: "Заряд за ход",
+        lblStatPowerCost: (cost) => `Макс. стоимость: ${cost}`,
+        secProgTitle: "Прогрессия этой курицы",
+        secProgSub: "Ключевые уровни",
+        thLevel: "Уровень",
+        thLife: "Здоровье",
+        thDamage: "Урон",
+        thSpeed: "Скор.",
+        thArmor: "Броня",
+        lvlRow: (lvl) => `Ур. ${lvl}`
+      }
+    };
+
+    function applyTranslations() {
+      const t = t_calc[currentLang] || t_calc.es;
+      document.title = t.pageTitle;
+      document.documentElement.lang = currentLang;
+
+      // Select sync
+      const langSel = document.getElementById('calc-lang-select');
+      if (langSel) langSel.value = currentLang;
+
+      const setText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setText('calc-title', t.calcTitle);
+      setText('calc-subtitle', t.calcSubtitle);
+      setText('back-to-wiki-text', t.backToWiki);
+      setText('lbl-presets', t.presets);
+      setText('btn-preset-base', t.presetBase);
+      setText('btn-preset-mid', t.presetMid);
+      setText('btn-preset-max', t.presetMax);
+      setText('btn-preset-random', t.presetRandom);
+
+      setText('sec-select-title', t.secSelectTitle);
+      setText('sec-select-sub', t.secSelectSub);
+      setText('lbl-search', t.lblSearch);
+      const searchInp = document.getElementById('chicken-search');
+      if (searchInp) searchInp.placeholder = t.searchPlaceholder;
+      setText('lbl-species', t.lblSpecies);
+      setText('lbl-base-stats-title', t.lblBaseStatsTitle);
+
+      setText('chip-base-life', t.chipLife);
+      setText('chip-base-damage', t.chipDamage);
+      setText('chip-base-speed', t.chipSpeed);
+      setText('chip-base-armor', t.chipArmor);
+      setText('chip-base-power', t.chipPower);
+
+      setText('sec-level-title', t.secLevelTitle);
+      setText('lbl-level-input', t.lblLevelInput);
+      setText('lbl-lvl-1', t.lblLvl1);
+      setText('lbl-lvl-100', t.lblLvl100);
+
+      setText('sec-born-title', t.secBornTitle);
+      setText('sec-born-sub', t.secBornSub);
+      setText('btn-born-min', t.btnMin);
+      setText('btn-born-max', t.btnMax);
+      setText('btn-born-rand', t.btnRandom);
+      setText('lbl-born-pot-title', t.lblBornPotTitle);
+      setText('lbl-born-life', t.lblBornLife);
+      setText('lbl-born-damage', t.lblBornDamage);
+      setText('lbl-born-speed', t.lblBornSpeed);
+      setText('lbl-born-armor', t.lblBornArmor);
+      setText('lbl-born-power', t.lblBornPower);
+
+      setText('sec-train-title', t.secTrainTitle);
+      setText('sec-train-sub', t.secTrainSub);
+      setText('btn-train-min', t.btnTrainInitial);
+      setText('btn-train-max', t.btnTrainMax);
+      setText('lbl-train-life', t.lblTrainLife);
+      setText('lbl-train-damage', t.lblTrainDamage);
+      setText('lbl-train-speed', t.lblTrainSpeed);
+      setText('lbl-train-armor', t.lblTrainArmor);
+      setText('lbl-train-power', t.lblTrainPower);
+
+      setText('sec-radar-title', t.secRadarTitle);
+      setText('btn-mode-combat', t.btnModeCombat);
+      setText('btn-mode-base', t.btnModeBase);
+      setText('lbl-radar-profile', t.lblRadarProfile);
+      setText('lbl-radar-budget', t.lblRadarBudget);
+      setText('lbl-radar-power-cycle', t.lblRadarPowerCycle);
+      setText('radar-axis-0', t.axisLife);
+      setText('radar-axis-1', t.axisDamage);
+      setText('radar-axis-2', t.axisSpeed);
+      setText('radar-axis-3', t.axisArmor);
+      setText('radar-axis-4', t.axisPower);
+      setText('lbl-radar-ranks-title', t.lblRadarRanksTitle);
+
+      setText('lbl-tactical-header', t.lblTacticalHeader);
+      setText('lbl-tactical-duo-title', t.lblTacticalDuoTitle);
+      setText('lbl-tactical-allies-title', t.lblTacticalAlliesTitle);
+      setText('lbl-tactical-items-title', t.lblTacticalItemsTitle);
+      setText('lbl-tactical-counter-title', t.lblTacticalCounterTitle);
+
+      setText('sec-final-stats-title', t.secFinalStatsTitle);
+      setText('sec-final-stats-sub', t.secFinalStatsSub);
+      setText('lbl-stat-life', t.lblStatLife);
+      setText('lbl-stat-life-base', t.lblStatLifeBase);
+      setText('lbl-stat-life-max', t.lblStatLifeMax);
+      setText('lbl-stat-damage', t.lblStatDamage);
+      setText('lbl-stat-damage-base', t.lblStatDamageBase);
+      setText('lbl-stat-damage-max', t.lblStatDamageMax);
+      setText('lbl-stat-speed', t.lblStatSpeed);
+      setText('lbl-stat-speed-base', t.lblStatSpeedBase);
+      setText('lbl-stat-speed-max', t.lblStatSpeedMax);
+      setText('lbl-stat-armor', t.lblStatArmor);
+      setText('lbl-stat-armor-base', t.lblStatArmorBase);
+      setText('lbl-stat-armor-desc', t.lblStatArmorDesc);
+      setText('lbl-stat-armor-max', t.lblStatArmorMax);
+      setText('lbl-stat-power', t.lblStatPower);
+      setText('lbl-stat-power-desc', t.lblStatPowerDesc);
+
+      setText('sec-prog-title', t.secProgTitle);
+      setText('sec-prog-sub', t.secProgSub);
+      setText('th-level', t.thLevel);
+      setText('th-life', t.thLife);
+      setText('th-damage', t.thDamage);
+      setText('th-speed', t.thSpeed);
+      setText('th-armor', t.thArmor);
+
+      // Theme button text sync
+      applyTheme(currentTheme);
+
+      // Refresh dynamic chicken info
+      if (currentChicken) {
+        document.getElementById('chicken-power-info').textContent = t.powerMaxInfo.replace('{cost}', currentChicken.power_max);
+        document.getElementById('power-cost-badge').textContent = t.lblStatPowerCost(currentChicken.power_max);
+      }
+      recalculate();
+    }
+
+    function setLanguage(lang) {
+      if (!['es', 'en', 'pt', 'ru'].includes(lang)) return;
+      currentLang = lang;
+      localStorage.setItem('cc_wiki_lang', lang);
+      applyTranslations();
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'cc_wiki_lang' && e.newValue && e.newValue !== currentLang) {
+        setLanguage(e.newValue);
+      }
+      if (e.key === 'cc_wiki_theme' && e.newValue && e.newValue !== currentTheme) {
+        applyTheme(e.newValue);
+      }
+    });
+
 
 
         // RADAR POLIGONAL DE ESTADÍSTICAS - RANGOS OFICIALES (D, C, B, A, S, P)
@@ -1146,16 +1678,20 @@
       // Subtitle with Chicken Name and ID
       const subElem = document.getElementById('radar-chicken-subtitle');
       if (subElem) {
-        subElem.textContent = `#${String(currentChicken.id).padStart(3, '0')} ${currentChicken.name} (${radarMode === 'combat' ? 'Nivel ' + currentLevel : 'Base Especie'})`;
+        const trans = t_calc[currentLang] || t_calc.es;
+        subElem.textContent = (radarMode === 'combat')
+          ? trans.radarSubCombat(currentChicken.id, currentChicken.name, currentLevel)
+          : trans.radarSubBase(currentChicken.id, currentChicken.name);
       }
 
       // Tactical Analysis & Role
-      const tactical = getChickenTacticalAnalysis(currentChicken);
+      const tactical = getChickenTacticalAnalysis(currentChicken, currentLang);
       const roleBadge = document.getElementById('radar-archetype-badge');
       if (roleBadge) roleBadge.textContent = tactical.role;
 
       const powerCycle = document.getElementById('radar-power-cycle');
-      if (powerCycle) powerCycle.textContent = `~${tactical.turns} ${tactical.turns === 1 ? 'turno' : 'turnos'}`;
+      const trans = t_calc[currentLang] || t_calc.es;
+      if (powerCycle) powerCycle.textContent = trans.turnUnit(tactical.turns);
 
       const tacTitle = document.getElementById('tactical-role-title');
       if (tacTitle) tacTitle.textContent = tactical.roleTitle;
@@ -1224,6 +1760,7 @@
     // INIT
     populateDropdown(CHICKENS);
     selectChicken(0);
+    applyTranslations();
   </script>
 </body>
 </html>

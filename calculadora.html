@@ -264,8 +264,11 @@
           <!-- Total Born Badge & Progress Bar (like in-game badge) -->
           <div class="p-3 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1.5">
             <div class="flex justify-between items-center text-xs">
-              <span class="text-[var(--muted-foreground)] font-medium">Suma Genética Total:</span>
-              <span id="born-total-text" class="font-bold text-emerald-400 font-mono text-sm">250 / 500</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Potencial Genético (Born):</span>
+              <div class="flex items-center gap-2">
+                <span id="born-total-text" class="font-bold text-emerald-400 font-mono text-sm">250 / 500</span>
+                <span id="born-tier-badge" class="rank-badge rank-B text-xs font-black">B</span>
+              </div>
             </div>
             <div class="w-full h-2 rounded-full bg-[var(--border)] overflow-hidden">
               <div id="born-total-bar" class="h-full bg-emerald-500 transition-all duration-200" style="width: 50%;"></div>
@@ -385,23 +388,10 @@
                 </h2>
               </div>
               <p id="radar-chicken-subtitle" class="text-xs text-[var(--muted-foreground)] mt-0.5">
-                Polígono de atributos según nivel y entrenamiento
+                #000 Pollier (Nivel 50)
               </p>
             </div>
-            <div class="text-right">
-              <div class="text-[10px] uppercase font-bold text-[var(--muted-foreground)]">Rango Global</div>
-              <div class="flex items-center justify-end mt-0.5">
-                <span id="radar-overall-badge" class="rank-badge rank-B text-base w-8 h-8 font-black">B</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Specialty Bar + Mode Toggle -->
-          <div class="flex flex-wrap items-center justify-between gap-2 text-xs py-1.5 border-b border-[var(--border)]">
-            <div class="flex items-center gap-1.5 min-w-0">
-              <span class="text-amber-500 font-bold shrink-0">Rol:</span>
-              <span id="radar-archetype-desc" class="text-amber-400 font-semibold text-xs truncate">Equilibrado (Estadísticas Balanceadas)</span>
-            </div>
+            <!-- Selector de Modo en la cabecera -->
             <div class="flex rounded-lg bg-[var(--background)] p-0.5 border border-[var(--border)] shrink-0">
               <button id="btn-mode-combat" onclick="setRadarMode('combat')" class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-amber-500 text-black shadow-sm transition">
                 ⚔️ Combate
@@ -409,6 +399,17 @@
               <button id="btn-mode-base" onclick="setRadarMode('base')" class="px-2.5 py-1 text-[11px] font-bold rounded-md text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
                 🧬 Base
               </button>
+            </div>
+          </div>
+
+          <!-- Distribución de Atributos (Total Base: 200 pts) -->
+          <div class="flex items-center justify-between text-xs py-1.5 border-b border-[var(--border)]">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="text-amber-500 font-bold shrink-0">Perfil de Atributos:</span>
+              <span id="radar-archetype-desc" class="text-amber-400 font-semibold text-xs truncate">Equilibrado (Estadísticas Balanceadas)</span>
+            </div>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono shrink-0">
+              Total Base: <span id="radar-base-total-pts" class="text-amber-400 font-bold">200 pts</span>
             </div>
           </div>
 
@@ -902,10 +903,16 @@
     }
 
     function recalculate() {
-      // Update Born Total
+      // Update Born Total & In-Game Potential Badge
       const bornSum = currentBorn.life + currentBorn.damage + currentBorn.speed + currentBorn.armor + currentBorn.power_amount;
       document.getElementById('born-total-text').textContent = `${bornSum} / 500`;
       document.getElementById('born-total-bar').style.width = `${(bornSum / 500) * 100}%`;
+      const bornRank = getBornPotentialRank(bornSum);
+      const bornBadge = document.getElementById('born-tier-badge');
+      if (bornBadge) {
+        bornBadge.textContent = bornRank.letter;
+        bornBadge.className = `rank-badge ${bornRank.cls} text-xs font-black`;
+      }
 
       // Compute Current
       const res = computeStatsForLevel(currentLevel);
@@ -1004,6 +1011,16 @@
       recalculate();
     }
 
+    // Rango oficial de Potencial Genético según scr_chicken_get_potential
+    function getBornPotentialRank(sum) {
+      if (sum >= 500) return { letter: 'P', cls: 'rank-P' };
+      if (sum >= 450) return { letter: 'S', cls: 'rank-S' };
+      if (sum >= 380) return { letter: 'A', cls: 'rank-A' };
+      if (sum >= 280) return { letter: 'B', cls: 'rank-B' };
+      if (sum >= 180) return { letter: 'C', cls: 'rank-C' };
+      return { letter: 'D', cls: 'rank-D' };
+    }
+
     // Rangos canónicos de Clicker Chickens (D, C, B, A, S, P) según scr_get_stat_rank_frame
     function getGameRank(pct) {
       if (pct >= 100) return { letter: 'P', color: '#ffd700', bg: 'rgba(255, 215, 0, 0.22)', cls: 'rank-P' };
@@ -1073,6 +1090,13 @@
         ];
       }
 
+      // Base total pts
+      const basePtsElem = document.getElementById('radar-base-total-pts');
+      if (basePtsElem) {
+        const bsSum = Object.values(currentChicken.stats).reduce((a, b) => a + b, 0);
+        basePtsElem.textContent = `${bsSum} pts`;
+      }
+
       // Subtitle with Chicken Name and ID
       const subElem = document.getElementById('radar-chicken-subtitle');
       if (subElem) {
@@ -1104,14 +1128,8 @@
         }
       }
 
-      // Overall Rank
-      const avgPct = statPcts.reduce((a, b) => a + b, 0) / 5;
-      const overallRank = getGameRank(avgPct);
-      const overallBadge = document.getElementById('radar-overall-badge');
-      if (overallBadge) {
-        overallBadge.textContent = overallRank.letter;
-        overallBadge.className = `rank-badge ${overallRank.cls} text-base w-8 h-8 font-black`;
-      }
+      // En Clicker Chickens casi todos los pollos tienen 200 pts base en total,
+      // por lo que cada vértice evalúa su propia especialización (D a P) de forma independiente.
     }
 
     // Continuous 60fps polygon animation loop

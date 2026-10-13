@@ -111,122 +111,122 @@
       <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
         <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
           <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
-            <span>🎨</span> Identidad & Concepto Visual
+            <span>🎨</span> Identidad & Sprite Studio (_strip5)
           </h2>
-          <span id="sketch-id-badge" class="font-mono text-xs text-[var(--text-muted)]">Boceto #151</span>
+          <span id="sketch-id-badge" class="font-mono text-xs text-[var(--text-muted)] font-bold">Boceto #151</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-start">
-          <!-- Sprite Preview & Picker -->
-          <div <!-- Sprite Preview, Slicer & Strip5 Animation Studio -->
-          <div class="sm:col-span-5 flex flex-col items-center space-y-3">
-            <!-- Main Sprite Box / Dropzone -->
-            <div id="sprite-dropzone" class="relative group w-full h-44 rounded-2xl bg-[var(--bg)] border-2 border-dashed border-[var(--border)] hover:border-amber-500/60 transition flex flex-col items-center justify-center overflow-hidden cursor-pointer shadow-inner">
-              <canvas id="anim-canvas" width="96" height="96" class="w-28 h-28 object-contain pixelated transition-transform group-hover:scale-105"></canvas>
-              <img id="chicken-sprite-preview" class="hidden w-28 h-28 object-contain pixelated" src="images/chickens/0.png" alt="Sprite">
+        <!-- Fila Superior: Nombre del Pollo, Zona y Estado -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+          <div class="sm:col-span-6">
+            <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Nombre del Pollo</label>
+            <input type="text" id="input-name" placeholder="Ej: Cosmochick, Titanium, Pyroclaw..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] font-bold text-base focus:outline-none focus:border-amber-500 transition">
+          </div>
+          <div class="sm:col-span-3">
+            <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Zona / Hábitat</label>
+            <input type="text" id="input-zone" placeholder="Ej: Laboratorio, Selva..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+          </div>
+          <div class="sm:col-span-3">
+            <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Estado de Diseño</label>
+            <select id="select-status" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] font-semibold focus:outline-none focus:border-amber-500 transition">
+              <option value="Idea">💡 Idea inicial</option>
+              <option value="Boceto" selected>✏️ Boceto</option>
+              <option value="En Desarrollo">⚙️ En desarrollo</option>
+              <option value="Listo">✅ Listo para el juego</option>
+            </select>
+          </div>
+        </div>
 
-              <!-- Hover overlay -->
-              <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white text-[11px] font-medium transition p-2 text-center pointer-events-none">
-                <span>📁 Clic para subir imagen o arrastra</span>
-                <span class="text-amber-400 font-bold mt-0.5">Compatible con _strip5.png</span>
-                <span class="text-[10px] text-gray-300 mt-0.5">O pega con Ctrl+V</span>
-              </div>
-              <input type="file" id="file-sprite-input" accept="image/*" class="hidden">
-
-              <!-- Badge Mode -->
-              <div class="absolute top-2 left-2 flex items-center gap-1 pointer-events-none">
-                <span id="strip-mode-badge" class="px-2 py-0.5 rounded-full text-[9px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">
-                  🎞️ _strip5
-                </span>
-                <span id="frame-res-badge" class="px-1.5 py-0.5 rounded text-[9px] font-mono text-[var(--text-muted)] bg-[var(--card)]/90 border border-[var(--border)]">
-                  --x--
-                </span>
-              </div>
+        <!-- Fila Central: Estudio de Sprite (_strip5) & Animación -->
+        <div class="p-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)]/60 pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-amber-400">🎞️ Animación & Tira de Frames</span>
+              <span id="strip-mode-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">
+                🎞️ _strip5
+              </span>
+              <span id="frame-res-badge" class="px-2 py-0.5 rounded text-[10px] font-mono text-[var(--text-muted)] bg-[var(--card)] border border-[var(--border)]">
+                --x--
+              </span>
             </div>
+            <div class="flex items-center gap-1.5">
+              <button id="btn-toggle-strip-mode" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[11px] font-semibold text-amber-400 border border-[var(--border)] transition">
+                Alternar Modo Tira
+              </button>
+              <button id="btn-download-frames" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[11px] font-semibold text-[var(--text-muted)] hover:text-amber-400 border border-[var(--border)] transition">
+                💾 Descargar Frames
+              </button>
+            </div>
+          </div>
 
-            <!-- Strip Controls: Play/Pause, Step, FPS -->
-            <div class="w-full bg-[var(--bg)] p-2.5 rounded-xl border border-[var(--border)] space-y-2 text-xs">
-              <div class="flex items-center justify-between gap-1">
-                <!-- Playback controls -->
-                <div class="flex items-center gap-1">
-                  <button id="btn-anim-play" class="w-7 h-7 rounded bg-[var(--card)] hover:bg-amber-500 hover:text-black font-bold flex items-center justify-center transition" title="Reproducir / Pausar">
-                    ⏸
-                  </button>
-                  <button id="btn-anim-prev" class="w-7 h-7 rounded bg-[var(--card)] hover:bg-[var(--border)] font-bold flex items-center justify-center transition" title="Frame Anterior">
-                    ⏮
-                  </button>
-                  <button id="btn-anim-next" class="w-7 h-7 rounded bg-[var(--card)] hover:bg-[var(--border)] font-bold flex items-center justify-center transition" title="Frame Siguiente">
-                    ⏭
-                  </button>
-                  <span id="lbl-frame-counter" class="font-mono text-[10px] text-amber-400 font-bold ml-1">F1/5</span>
+          <!-- Visor Principal & Dropzone -->
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+            <!-- Canvas Grande Central -->
+            <div class="sm:col-span-5 flex flex-col items-center">
+              <div id="sprite-dropzone" class="relative group w-40 h-40 rounded-2xl bg-[var(--card)] border-2 border-dashed border-[var(--border)] hover:border-amber-500/80 transition flex flex-col items-center justify-center overflow-hidden cursor-pointer shadow-inner">
+                <canvas id="anim-canvas" width="128" height="128" class="w-32 h-32 object-contain pixelated transition-transform group-hover:scale-105"></canvas>
+                <img id="chicken-sprite-preview" class="hidden w-32 h-32 object-contain pixelated" src="images/chickens/0.png" alt="Sprite">
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white text-xs font-medium transition p-2 text-center pointer-events-none">
+                  <span>📁 Clic para subir imagen o arrastra</span>
+                  <span class="text-amber-400 font-bold mt-1">Soporta _strip5.png</span>
+                  <span class="text-[10px] text-gray-300 mt-0.5">O pega con Ctrl+V</span>
                 </div>
-
-                <!-- FPS slider & label -->
-                <div class="flex items-center gap-1.5">
-                  <span class="text-[10px] text-[var(--text-muted)] font-mono">FPS:</span>
-                  <input type="range" id="anim-fps-slider" min="1" max="20" value="6" class="w-14 accent-amber-500 h-1 bg-[var(--card)] rounded cursor-pointer">
-                  <span id="lbl-anim-fps" class="font-mono text-[10px] text-amber-400 font-bold w-4">6</span>
-                </div>
+                <input type="file" id="file-sprite-input" accept="image/*" class="hidden">
               </div>
 
-              <!-- Strip 5 Frames Slicer Bar -->
-              <div>
-                <div class="flex items-center justify-between text-[10px] text-[var(--text-muted)] mb-1">
-                  <span>Fotogramas de la animación (_strip5):</span>
-                  <button id="btn-toggle-strip-mode" class="text-amber-400 hover:underline">
-                    Cambiar modo tira
-                  </button>
-                </div>
-                <div id="strip-frames-container" class="grid grid-cols-5 gap-1.5">
-                  <!-- 5 Frames rendered by JS -->
-                </div>
-              </div>
-
-              <!-- Extra tools -->
-              <div class="flex items-center justify-between gap-1 pt-1 border-t border-[var(--border)]/60 text-[10px]">
-                <div class="flex items-center gap-1">
-                  <button id="btn-pick-gen1-sprite" class="px-2 py-0.5 rounded bg-[var(--card)] hover:border-amber-500/50 text-[var(--text-muted)] hover:text-amber-400 transition">
-                    Base Gen 1
-                  </button>
-                  <button id="btn-random-sprite" class="px-2 py-0.5 rounded bg-[var(--card)] hover:border-amber-500/50 text-[var(--text-muted)] hover:text-amber-400 transition">
-                    🎲 Random
-                  </button>
-                </div>
-                <button id="btn-download-frames" class="text-[var(--text-muted)] hover:text-amber-400 transition" title="Descargar frames cortados">
-                  💾 Descargar Frames
+              <!-- Botones de Sprite -->
+              <div class="flex items-center gap-2 mt-2">
+                <button id="btn-pick-gen1-sprite" class="px-2.5 py-1 text-xs rounded-lg bg-[var(--card)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 border border-[var(--border)] transition">
+                  🎨 Base Gen 1
+                </button>
+                <button id="btn-random-sprite" class="px-2.5 py-1 text-xs rounded-lg bg-[var(--card)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 border border-[var(--border)] transition">
+                  🎲 Random
                 </button>
               </div>
             </div>
-          </div>
 
-          <!-- Basic Info Fields -->
-          <div class="sm:col-span-7 space-y-3">
-            <div>
-              <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Nombre del Pollo</label>
-              <input type="text" id="input-name" placeholder="Ej: Cosmochick, Titanium, Pyroclaw..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] font-bold text-sm focus:outline-none focus:border-amber-500 transition">
-            </div>
+            <!-- Controles de Reproducción y Slicer -->
+            <div class="sm:col-span-7 space-y-3">
+              <!-- Playback row -->
+              <div class="flex items-center justify-between bg-[var(--card)] p-2.5 rounded-xl border border-[var(--border)]">
+                <div class="flex items-center gap-1.5">
+                  <button id="btn-anim-play" class="w-8 h-8 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold flex items-center justify-center transition shadow-sm text-sm">
+                    ⏸
+                  </button>
+                  <button id="btn-anim-prev" class="w-8 h-8 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] font-bold flex items-center justify-center transition text-xs">
+                    ⏮
+                  </button>
+                  <button id="btn-anim-next" class="w-8 h-8 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] font-bold flex items-center justify-center transition text-xs">
+                    ⏭
+                  </button>
+                  <span id="lbl-frame-counter" class="font-mono text-xs text-amber-400 font-bold ml-2">F1/5</span>
+                </div>
 
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Zona / Hábitat Sugerido</label>
-                <input type="text" id="input-zone" placeholder="Ej: Laboratorio, Selva, Mina..." class="w-full px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs text-[var(--text-muted)] font-mono">Velocidad:</span>
+                  <input type="range" id="anim-fps-slider" min="1" max="20" value="6" class="w-20 accent-amber-500 h-1.5 bg-[var(--bg)] rounded cursor-pointer">
+                  <span id="lbl-anim-fps" class="font-mono text-xs text-amber-400 font-bold w-12 text-right">6 fps</span>
+                </div>
               </div>
+
+              <!-- Visor de los 5 Frames con buen tamaño (amplio) -->
               <div>
-                <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Estado de Diseño</label>
-                <select id="select-status" class="w-full px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
-                  <option value="Idea">💡 Idea inicial</option>
-                  <option value="Boceto" selected>✏️ Boceto conceptual</option>
-                  <option value="En Desarrollo">⚙️ En desarrollo</option>
-                  <option value="Listo">✅ Listo para el juego</option>
-                </select>
+                <span class="text-[11px] font-semibold text-[var(--text-muted)] block mb-1.5">
+                  Tira de fotogramas cortados (haz clic para inspeccionar):
+                </span>
+                <div id="strip-frames-container" class="grid grid-cols-5 gap-2">
+                  <!-- Los 5 frames renderizados por JS -->
+                </div>
               </div>
             </div>
-
-            <div>
-              <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Concepto, Lore & Notas de Sprite</label>
-              <textarea id="input-concept" rows="2" placeholder="Describe la apariencia física, elementos clave, animaciones o inspiración..." class="w-full px-3 py-1.5 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 resize-none transition"></textarea>
-            </div>
           </div>
+        </div>
+
+        <!-- Fila Inferior: Concepto y Lore -->
+        <div>
+          <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Concepto, Lore & Notas de Sprite</label>
+          <textarea id="input-concept" rows="2" placeholder="Describe la apariencia física, elementos clave, animaciones o inspiración..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 resize-none transition"></textarea>
         </div>
       </section>
 
@@ -804,12 +804,12 @@
 
       spriteState.frames.forEach((fCanvas, idx) => {
         const box = document.createElement('div');
-        box.className = `relative group flex flex-col items-center p-1 rounded-lg border cursor-pointer transition ${idx === spriteState.selectedCoverFrame ? 'border-amber-500 bg-amber-500/10' : 'border-[var(--border)] bg-[var(--card)] hover:border-amber-500/50'}`;
+        box.className = `relative group flex flex-col items-center p-1.5 rounded-xl border cursor-pointer transition ${idx === spriteState.selectedCoverFrame ? 'border-amber-500 bg-amber-500/10' : 'border-[var(--border)] bg-[var(--card)] hover:border-amber-500/50'}`;
         box.id = `thumb-frame-${idx}`;
         box.title = `Frame ${idx + 1} - Clic para pausar aquí / Doble clic para portada`;
 
         const imgThumb = document.createElement('img');
-        imgThumb.className = 'w-9 h-9 object-contain pixelated';
+        imgThumb.className = 'w-12 h-12 object-contain pixelated';
         imgThumb.src = fCanvas.toDataURL('image/png');
 
         const numBadge = document.createElement('span');

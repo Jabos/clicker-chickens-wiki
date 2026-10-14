@@ -166,6 +166,31 @@
       combinedLife: "Vida Combinada",
       avgSpeed: "Velocidad Promedio",
       estDamage: "Daño Total",
+      savedTeams: "Equipos Guardados",
+      saveTeam: "Guardar Equipo",
+      loadTeam: "Cargar",
+      deleteTeam: "Eliminar",
+      exportCode: "Exportar Código",
+      importCode: "Importar Código",
+      teamName: "Nombre del Equipo",
+      levelLabel: "Nivel",
+      geneticsLabel: "Genética (IV)",
+      trainingLabel: "Entrenamiento (EV)",
+      targetAiLabel: "Objetivo Táctico",
+      useHiddenPowerLabel: "Usar Poder Oculto",
+      useBasePower: "⚡ Poder Base",
+      useHiddenPower: "✨ Poder Oculto",
+      combatStatsLabel: "Estadísticas en Combate",
+      teamSavedSuccess: "¡Equipo guardado con éxito!",
+      teamLoadedSuccess: "¡Equipo cargado con éxito!",
+      teamDeletedSuccess: "Equipo eliminado.",
+      codeCopied: "¡Código de equipo copiado al portapapeles!",
+      invalidCode: "Código de equipo no válido.",
+      promptImportCode: "Pega aquí el código del equipo (formato CC-T1_...):",
+      promptTeamName: "Ingresa el nombre para tu equipo:",
+      presetMetaHeader: "⭐ Metagame & Presets Oficiales",
+      customTeamsHeader: "💾 Mis Equipos Guardados",
+      randomTeamBtn: "Equipo Aleatorio",
       rankingTitle: "Ranking de Estadísticas (Top 10)",
       rankingDesc: "Clasificación de los mejores pollos en cada atributo base según los datos oficiales.",
       topSpeed: "⚡ Más Rápidos (Velocidad)",
@@ -331,6 +356,31 @@
       combinedLife: "Combined HP",
       avgSpeed: "Average Speed",
       estDamage: "Total Damage",
+      savedTeams: "Saved Teams",
+      saveTeam: "Save Team",
+      loadTeam: "Load",
+      deleteTeam: "Delete",
+      exportCode: "Export Code",
+      importCode: "Import Code",
+      teamName: "Team Name",
+      levelLabel: "Level",
+      geneticsLabel: "Genetics (IV)",
+      trainingLabel: "Training (EV)",
+      targetAiLabel: "Target Priority",
+      useHiddenPowerLabel: "Use Hidden Power",
+      useBasePower: "⚡ Base Power",
+      useHiddenPower: "✨ Hidden Power",
+      combatStatsLabel: "Combat Stats",
+      teamSavedSuccess: "Team saved successfully!",
+      teamLoadedSuccess: "Team loaded successfully!",
+      teamDeletedSuccess: "Team deleted.",
+      codeCopied: "Team code copied to clipboard!",
+      invalidCode: "Invalid team code.",
+      promptImportCode: "Paste your team code here (CC-T1_... format):",
+      promptTeamName: "Enter a name for your team:",
+      presetMetaHeader: "⭐ Official Metagame Presets",
+      customTeamsHeader: "💾 My Saved Teams",
+      randomTeamBtn: "Random Team",
       rankingTitle: "Stat Leaderboards (Top 10)",
       rankingDesc: "Ranking of top chickens across all base attributes according to official game data.",
       topSpeed: "⚡ Fastest Chickens (Speed)",
@@ -496,6 +546,31 @@
       combinedLife: "Vida Combinada",
       avgSpeed: "Velocidade Média",
       estDamage: "Dano Total",
+      savedTeams: "Times Salvos",
+      saveTeam: "Salvar Time",
+      loadTeam: "Carregar",
+      deleteTeam: "Excluir",
+      exportCode: "Exportar Código",
+      importCode: "Importar Código",
+      teamName: "Nome do Time",
+      levelLabel: "Nível",
+      geneticsLabel: "Genética (IV)",
+      trainingLabel: "Treinamento (EV)",
+      targetAiLabel: "Alvo Tático",
+      useHiddenPowerLabel: "Usar Poder Oculto",
+      useBasePower: "⚡ Poder Base",
+      useHiddenPower: "✨ Poder Oculto",
+      combatStatsLabel: "Atributos em Combate",
+      teamSavedSuccess: "Time salvo com sucesso!",
+      teamLoadedSuccess: "Time carregado com sucesso!",
+      teamDeletedSuccess: "Time excluído.",
+      codeCopied: "Código do time copiado para a área de transferência!",
+      invalidCode: "Código de time inválido.",
+      promptImportCode: "Cole aqui o código do time (formato CC-T1_...):",
+      promptTeamName: "Digite o nome para o seu time:",
+      presetMetaHeader: "⭐ Metagame & Presets Oficiais",
+      customTeamsHeader: "💾 Meus Times Salvos",
+      randomTeamBtn: "Time Aleatório",
       rankingTitle: "Ranking de Atributos (Top 10)",
       rankingDesc: "Classificação dos melhores frangos em cada atributo base segundo dados oficiais.",
       topSpeed: "⚡ Mais Rápidos (Velocidade)",
@@ -661,6 +736,31 @@
       combinedLife: "Суммарное здоровье",
       avgSpeed: "Средняя скорость",
       estDamage: "Общий урон",
+      savedTeams: "Сохраненные команды",
+      saveTeam: "Сохранить команду",
+      loadTeam: "Загрузить",
+      deleteTeam: "Удалить",
+      exportCode: "Экспорт кода",
+      importCode: "Импорт кода",
+      teamName: "Имя команды",
+      levelLabel: "Уровень",
+      geneticsLabel: "Генетика (IV)",
+      trainingLabel: "Тренировка (EV)",
+      targetAiLabel: "Приоритет цели",
+      useHiddenPowerLabel: "Использовать скрытую силу",
+      useBasePower: "⚡ Базовая сила",
+      useHiddenPower: "✨ Скрытая сила",
+      combatStatsLabel: "Боевые параметры",
+      teamSavedSuccess: "Команда успешно сохранена!",
+      teamLoadedSuccess: "Команда загружена!",
+      teamDeletedSuccess: "Команда удалена.",
+      codeCopied: "Код команды скопирован в буфер обмена!",
+      invalidCode: "Неверный код команды.",
+      promptImportCode: "Вставьте код команды (формат CC-T1_...):",
+      promptTeamName: "Введите имя вашей команды:",
+      presetMetaHeader: "⭐ Официальные мета-пресеты",
+      customTeamsHeader: "💾 Мои сохраненные команды",
+      randomTeamBtn: "Случайная команда",
       rankingTitle: "Рейтинги характеристик (Топ-10)",
       rankingDesc: "Топ цыплят по каждому параметру на основе официальных данных игры.",
       topSpeed: "⚡ Самые быстрые (Скорость)",
@@ -2203,30 +2303,211 @@
   }
 
   // 11. TEAM BUILDER VIEW
-  let tbC1 = 0;
-  let tbI1 = 1;
-  let tbC2 = 1;
-  let tbI2 = 3;
+  function computeTeamBuilderStats(chicken, level, born, training) {
+    const lvl = Math.max(1, Math.min(100, level || 50));
+    const b = Math.max(1, Math.min(100, born || 50));
+    const t = Math.max(1.0, Math.min(2.0, training || 1.0));
+
+    const calcFactor = (baseVal) => ((baseVal * 0.55) + (b * 0.25) + ((t - 1.0) * 20.0)) / 100;
+
+    // 1. Vida
+    const lifeFactor = calcFactor(chicken.stats.life);
+    const lifeLvlFactor = Math.pow(lvl / 100, 1.15);
+    const life = Math.max(50, Math.min(2500, 50 + (2500 - 50) * lifeLvlFactor * lifeFactor));
+
+    // 2. Daño
+    const dmgFactor = calcFactor(chicken.stats.damage);
+    const dmgLvlFactor = Math.pow(lvl / 100, 0.85);
+    const damage = Math.max(5, Math.min(300, 5 + (300 - 5) * dmgLvlFactor * dmgFactor));
+
+    // 3. Velocidad
+    const spdFactor = calcFactor(chicken.stats.speed);
+    const spdLvlFactor = Math.pow(lvl / 100, 0.65);
+    const speed = Math.max(10, Math.min(500, 10 + (500 - 10) * spdLvlFactor * spdFactor));
+
+    // 4. Armadura
+    const armFactor = calcFactor(chicken.stats.armor);
+    const armLvlFactor = Math.pow(lvl / 100, 1.30);
+    const armor = Math.max(0, Math.min(80, 80 * armLvlFactor * armFactor));
+
+    // 5. Carga Poder
+    const maxPwr = Math.max(20, Math.min(70, chicken.power_max || 100));
+    const pwrFactor = calcFactor(chicken.stats.power_amount);
+    const pwrLvlFactor = Math.pow(lvl / 100, 1.10);
+    const pwrT = Math.max(0, Math.min(1, pwrLvlFactor * pwrFactor));
+    const powerAmount = 20 + (maxPwr - 20) * pwrT;
+
+    return {
+      life: Math.round(life),
+      damage: Math.round(damage),
+      speed: Math.round(speed),
+      armor: Math.round(armor),
+      powerAmount: Math.round(powerAmount)
+    };
+  }
+
+  function showWikiToast(msg, isSuccess = true) {
+    let container = document.getElementById('wikiToastContainer');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'wikiToastContainer';
+      container.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999;display:flex;flex-direction:column;gap:8px;pointer-events:none;';
+      document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.style.cssText = `padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;transition:all 0.3s ease;transform:translateY(10px);opacity:0;pointer-events:auto;background:${isSuccess ? '#064e3b' : '#7f1d1d'};color:${isSuccess ? '#6ee7b7' : '#fca5a5'};border:1px solid ${isSuccess ? '#059669' : '#dc2626'};`;
+    toast.innerHTML = `<span>${isSuccess ? '✅' : '⚠️'}</span><span>${msg}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => { toast.style.transform = 'translateY(0)'; toast.style.opacity = '1'; }, 10);
+    setTimeout(() => {
+      toast.style.transform = 'translateY(10px)';
+      toast.style.opacity = '0';
+      setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+    }, 3200);
+  }
+
+  const TB_DEFAULT_PRESETS = [
+    {
+      id: "meta_mechalex",
+      name: "🤖 Dúo Mecánico (Mechalex & Eggalex)",
+      team: [
+        { chickenId: 135, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false },
+        { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false }
+      ]
+    },
+    {
+      id: "meta_toxic",
+      name: "🧪 Dúo Veneno & Parálisis (Pasti & Polliwatt)",
+      team: [
+        { chickenId: 7, level: 100, born: 100, training: 2.0, itemId: 25, targetAI: 1, useHiddenPower: false },
+        { chickenId: 18, level: 100, born: 100, training: 2.0, itemId: 55, targetAI: 2, useHiddenPower: false }
+      ]
+    },
+    {
+      id: "meta_immortal",
+      name: "🛡️ Dúo Tanque & Inmortal (Iguanarto & Easy East)",
+      team: [
+        { chickenId: 29, level: 100, born: 100, training: 2.0, itemId: 6, targetAI: 2, useHiddenPower: false },
+        { chickenId: 13, level: 100, born: 100, training: 2.0, itemId: 23, targetAI: 1, useHiddenPower: false }
+      ]
+    },
+    {
+      id: "meta_zombie",
+      name: "🧟 Dúo Infección Zombie (Mali & Zombie)",
+      team: [
+        { chickenId: 4, level: 100, born: 100, training: 2.0, itemId: 31, targetAI: 1, useHiddenPower: false },
+        { chickenId: 6, level: 100, born: 100, training: 2.0, itemId: 52, targetAI: 1, useHiddenPower: false }
+      ]
+    },
+    {
+      id: "meta_evasion",
+      name: "💨 Dúo Evasión & Velocidad (Evil Gatarlos & Shiken)",
+      team: [
+        { chickenId: 56, level: 100, born: 100, training: 2.0, itemId: 4, targetAI: 1, useHiddenPower: false },
+        { chickenId: 61, level: 100, born: 100, training: 2.0, itemId: 18, targetAI: 1, useHiddenPower: false }
+      ]
+    }
+  ];
+
+  const TB_TARGET_OPTIONS = [
+    { id: 0, text: { es: "Automático (Equilibrado)", en: "Automatic (Balanced)", pt: "Automático (Equilibrado)", ru: "Автоматический" } },
+    { id: 1, text: { es: "Priorizar Vanguardia (Posición 1)", en: "Focus Frontline (Pos 1)", pt: "Priorizar Vanguarda (Posição 1)", ru: "Фокус авангарда (Позиция 1)" } },
+    { id: 2, text: { es: "Priorizar Retaguardia (Posición 2)", en: "Focus Backline (Pos 2)", pt: "Priorizar Retaguarda (Posição 2)", ru: "Фокус тыла (Позиция 2)" } },
+    { id: 3, text: { es: "Rematar Menor Vida", en: "Finish Lowest HP", pt: "Finalizar Menor Vida", ru: "Добивать наименьшее HP" } },
+    { id: 4, text: { es: "Enfocar Mayor Vida", en: "Target Highest HP", pt: "Focar Maior Vida", ru: "Фокус наибольшего HP" } },
+    { id: 5, text: { es: "Neutralizar Mayor Daño", en: "Counter Highest ATK", pt: "Neutralizar Maior Dano", ru: "Нейтрализовать высокий урон" } },
+    { id: 6, text: { es: "Frenar Mayor Velocidad", en: "Target Fastest Speed", pt: "Frear Maior Velocidade", ru: "Замедлить быстрейшего" } }
+  ];
+
+  function getTbSavedTeams() {
+    try {
+      const raw = localStorage.getItem('cc_saved_teams');
+      return raw ? JSON.parse(raw) : [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveTbTeams(teams) {
+    try {
+      localStorage.setItem('cc_saved_teams', JSON.stringify(teams));
+    } catch(e) {}
+  }
+
+  function serializeTbSlot(cfg) {
+    return `${cfg.chickenId}.${cfg.level}.${cfg.born}.${Number(cfg.training).toFixed(1)}.${cfg.itemId}.${cfg.targetAI}.${cfg.useHiddenPower ? 1 : 0}`;
+  }
+
+  function deserializeTbSlot(strVal) {
+    if (!strVal) return null;
+    const p = strVal.split('.');
+    if (p.length < 5) return null;
+    if (p.length >= 8) {
+      return {
+        chickenId: parseInt(p[0], 10) || 0,
+        level: Math.max(1, Math.min(100, parseInt(p[1], 10) || 50)),
+        born: Math.max(1, Math.min(100, parseInt(p[2], 10) || 50)),
+        training: Math.max(1.0, Math.min(2.0, parseFloat(p[3] + '.' + p[4]) || 1.0)),
+        itemId: parseInt(p[5], 10) !== undefined ? parseInt(p[5], 10) : -1,
+        targetAI: parseInt(p[6], 10) || 0,
+        useHiddenPower: p[7] === '1'
+      };
+    }
+    return {
+      chickenId: parseInt(p[0], 10) || 0,
+      level: Math.max(1, Math.min(100, parseInt(p[1], 10) || 50)),
+      born: Math.max(1, Math.min(100, parseInt(p[2], 10) || 50)),
+      training: Math.max(1.0, Math.min(2.0, parseFloat(p[3]) || 1.0)),
+      itemId: parseInt(p[4], 10) !== undefined ? parseInt(p[4], 10) : -1,
+      targetAI: parseInt(p[5], 10) || 0,
+      useHiddenPower: p[6] === '1'
+    };
+  }
+
+  let tbTeam = {
+    name: "Mi Dúo 2vs2",
+    slots: [
+      { chickenId: 0, level: 50, born: 80, training: 1.5, itemId: 1, targetAI: 1, useHiddenPower: false },
+      { chickenId: 1, level: 50, born: 80, training: 1.5, itemId: 3, targetAI: 1, useHiddenPower: false }
+    ]
+  };
 
   function renderTeamBuilder() {
     const container = document.getElementById('wikiContent');
-    const c1 = WIKI.chickens.find(x => x.id === tbC1) || WIKI.chickens[0];
-    const c2 = WIKI.chickens.find(x => x.id === tbC2) || WIKI.chickens[1];
-    const it1 = (tbI1 >= 0 && tbI1 < WIKI.items.length) ? WIKI.items[tbI1] : null;
-    const it2 = (tbI2 >= 0 && tbI2 < WIKI.items.length) ? WIKI.items[tbI2] : null;
+    if (!container) return;
+
+    const slot1 = tbTeam.slots[0];
+    const slot2 = tbTeam.slots[1];
+
+    const c1 = WIKI.chickens.find(x => x.id === slot1.chickenId) || WIKI.chickens[0];
+    const c2 = WIKI.chickens.find(x => x.id === slot2.chickenId) || WIKI.chickens[1];
+
+    const it1 = (slot1.itemId >= 0 && slot1.itemId < WIKI.items.length) ? WIKI.items[slot1.itemId] : null;
+    const it2 = (slot2.itemId >= 0 && slot2.itemId < WIKI.items.length) ? WIKI.items[slot2.itemId] : null;
 
     const p1 = WIKI.passives[c1.passive_id];
     const p2 = WIKI.passives[c2.passive_id];
     const pw1 = WIKI.powers[c1.power_id];
     const pw2 = WIKI.powers[c2.power_id];
+    const hp1 = (c1.hidden_power_id !== undefined && c1.hidden_power_id >= 0 && WIKI.powers[c1.hidden_power_id]) ? WIKI.powers[c1.hidden_power_id] : null;
+    const hp2 = (c2.hidden_power_id !== undefined && c2.hidden_power_id >= 0 && WIKI.powers[c2.hidden_power_id]) ? WIKI.powers[c2.hidden_power_id] : null;
 
     const tg1 = getChickenTacticalAnalysis(c1, currentLang);
     const tg2 = getChickenTacticalAnalysis(c2, currentLang);
 
+    const st1 = computeTeamBuilderStats(c1, slot1.level, slot1.born, slot1.training);
+    const st2 = computeTeamBuilderStats(c2, slot2.level, slot2.born, slot2.training);
+
+    const cost1 = slot1.useHiddenPower && hp1 ? hp1.cost : (c1.power_max || 100);
+    const turns1 = Math.max(1, Math.ceil(cost1 / Math.max(1, st1.powerAmount)));
+
+    const cost2 = slot2.useHiddenPower && hp2 ? hp2.cost : (c2.power_max || 100);
+    const turns2 = Math.max(1, Math.ceil(cost2 / Math.max(1, st2.powerAmount)));
+
     // Combined metrics
-    const totalHp = (c1.stats.life + c2.stats.life) * 10;
-    const totalDmg = c1.stats.damage + c2.stats.damage;
-    const avgSpd = Math.round((c1.stats.speed + c2.stats.speed) / 2);
+    const totalHp = st1.life + st2.life;
+    const totalDmg = st1.damage + st2.damage;
+    const avgSpd = Math.round((st1.speed + st2.speed) / 2);
 
     // Synergy analysis
     const p1Desc = (p1 && p1.description && p1.description.es ? p1.description.es : '').toLowerCase();
@@ -2237,8 +2518,8 @@
     const isFreezeSynergy = (pw1Desc.includes('congel') || pw2Desc.includes('congel')) && (p1Desc.includes('congel') || p2Desc.includes('congel'));
     const isPoisonSynergy = (pw1Desc.includes('envenen') || pw2Desc.includes('envenen')) || (p1Desc.includes('envenen') || p2Desc.includes('envenen'));
     const hasRevive = p1Desc.includes('reviv') || p2Desc.includes('reviv') || (it1 && it1.name.es.includes('fénix')) || (it2 && it2.name.es.includes('fénix'));
-    const hasTank = (c1.stats.life >= 60 || c1.stats.armor >= 50) || (c2.stats.life >= 60 || c2.stats.armor >= 50);
-    const hasStriker = (c1.stats.damage >= 65 || c2.stats.damage >= 65);
+    const hasTank = (st1.life >= 900 || st1.armor >= 35) || (st2.life >= 900 || st2.armor >= 35);
+    const hasStriker = (st1.damage >= 140 || st2.damage >= 140);
 
     let synergyTitle = currentLang === 'en' ? 'Balanced Duo' : 'Dúo Equilibrado';
     let synergyDesc = currentLang === 'en' ? 'Solid versatile team with well-rounded distribution.' : 'Equipo sólido y versátil con buena distribución de atributos.';
@@ -2246,7 +2527,7 @@
 
     if (hasTank && hasStriker) {
       synergyTitle = currentLang === 'en' ? '⭐ Optimal 2vs2 Synergy (Tank + Striker)' : '⭐ Sinergia Óptima 2vs2 (Tanque + Rematador)';
-      synergyDesc = currentLang === 'en' ? 'Frontline protects with high durability while the backline dishes out heavy burst damage.' : 'La vanguardia absorbe y mitiga impactos mientras la retaguardia asegura daño masivo para derribar rivales.';
+      synergyDesc = currentLang === 'en' ? 'Frontline absorbs damage while the backline dishes out heavy burst damage.' : 'La vanguardia absorbe y mitiga impactos mientras la retaguardia asegura daño masivo para derribar rivales.';
     } else if (hasStriker && !hasTank) {
       synergyTitle = currentLang === 'en' ? '⚡ High-Burst Glass Cannon Duo' : '⚡ Dúo Hiperofensivo (Cañón de Cristal)';
       synergyDesc = currentLang === 'en' ? 'Devastating early offensive power, but highly vulnerable if opponent survives turn 1.' : 'Poder de daño demoledor en primeros turnos, pero muy vulnerable si el rival sobrevive a la ráfaga inicial.';
@@ -2256,73 +2537,200 @@
       synergyDesc = currentLang === 'en' ? 'Incredible durability and armor mitigation, but slower match resolution.' : 'Extraordinaria resistencia y aguante defensivo, aunque las batallas requerirán desgaste prolongado.';
     }
 
+    const customTeams = getTbSavedTeams();
+
     container.innerHTML = `
       <div class="page-header">
         <h1 class="page-title">👥 ${str('teamBuilderTitle')}</h1>
         <p class="page-subtitle">${str('teamBuilderDesc')}</p>
       </div>
 
-      <!-- Slots Grid -->
-      <div class="teambuilder-slots">
-        <!-- Slot 1 (Frontline) -->
-        <div class="teambuilder-slot-card">
-          <div class="teambuilder-slot-header">
-            <span>🛡️ ${str('slot1Title')}</span>
-            <span style="font-weight:800;color:var(--wiki-accent);">#1</span>
-          </div>
-          <div>
-            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('searchBadgeChicken')}:</label>
-            <select id="tbChickenSelect1" class="filter-select" style="width:100%;">
-              ${WIKI.chickens.map(c => `<option value="${c.id}" ${c.id === c1.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</option>`).join('')}
-            </select>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:8px 0;">
-            <img class="pixelated" src="${c1.sprite}" style="width:52px;height:52px;" alt="${getLocalized(c1.name)}">
-            <div>
-              <div style="font-weight:800;font-size:15px;"><a href="#chicken-${c1.id}">#${String(c1.id + 1).padStart(3, '0')} ${getLocalized(c1.name)}</a></div>
-              <div style="font-size:11px;font-weight:700;color:#f59e0b;">${tg1.role}</div>
-              <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;">${p1 ? getLocalized(p1.description) : ''}</div>
-            </div>
-          </div>
-          <div>
-            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('thItem')}:</label>
-            <select id="tbItemSelect1" class="filter-select" style="width:100%;">
-              <option value="-1">${str('noItem')}</option>
-              ${WIKI.items.filter(it => it.type === 'equipable').map(it => `<option value="${it.id}" ${it.id === (it1 ? it1.id : -1) ? 'selected' : ''}>${getLocalized(it.name)}</option>`).join('')}
-            </select>
-          </div>
-          ${it1 ? `<div style="font-size:11px;color:var(--wiki-text-muted);background:var(--wiki-table-stripe);padding:6px;border-radius:4px;">🎒 <strong>${getLocalized(it1.name)}:</strong> ${getLocalized(it1.effect)}</div>` : ''}
+      <!-- Toolbar: Load/Save Teams & Presets -->
+      <div class="teambuilder-toolbar">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:12px;font-weight:700;color:var(--wiki-text-muted);">📁 ${str('savedTeams')}:</span>
+          <select id="tbSavedTeamsSelect" class="filter-select" style="min-width:230px;">
+            <optgroup label="${str('presetMetaHeader')}">
+              ${TB_DEFAULT_PRESETS.map(p => `<option value="${p.id}">${p.name}</option>`).join('')}
+            </optgroup>
+            ${customTeams.length > 0 ? `
+              <optgroup label="${str('customTeamsHeader')}">
+                ${customTeams.map(p => `<option value="${p.id}">${p.name}</option>`).join('')}
+              </optgroup>
+            ` : ''}
+          </select>
+          <button id="btnTbLoadTeam" class="btn-control" style="font-weight:700;">📂 ${str('loadTeam')}</button>
+          <button id="btnTbDeleteTeam" class="btn-control" style="color:#ef4444;border-color:rgba(239,68,68,0.4);" title="${str('deleteTeam')}">🗑️</button>
         </div>
 
-        <!-- Slot 2 (Backline) -->
-        <div class="teambuilder-slot-card">
-          <div class="teambuilder-slot-header">
-            <span>🗡️ ${str('slot2Title')}</span>
-            <span style="font-weight:800;color:var(--wiki-accent);">#2</span>
-          </div>
-          <div>
-            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('searchBadgeChicken')}:</label>
-            <select id="tbChickenSelect2" class="filter-select" style="width:100%;">
-              ${WIKI.chickens.map(c => `<option value="${c.id}" ${c.id === c2.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</option>`).join('')}
-            </select>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:8px 0;">
-            <img class="pixelated" src="${c2.sprite}" style="width:52px;height:52px;" alt="${getLocalized(c2.name)}">
-            <div>
-              <div style="font-weight:800;font-size:15px;"><a href="#chicken-${c2.id}">#${String(c2.id + 1).padStart(3, '0')} ${getLocalized(c2.name)}</a></div>
-              <div style="font-size:11px;font-weight:700;color:#f59e0b;">${tg2.role}</div>
-              <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;">${p2 ? getLocalized(p2.description) : ''}</div>
-            </div>
-          </div>
-          <div>
-            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('thItem')}:</label>
-            <select id="tbItemSelect2" class="filter-select" style="width:100%;">
-              <option value="-1">${str('noItem')}</option>
-              ${WIKI.items.filter(it => it.type === 'equipable').map(it => `<option value="${it.id}" ${it.id === (it2 ? it2.id : -1) ? 'selected' : ''}>${getLocalized(it.name)}</option>`).join('')}
-            </select>
-          </div>
-          ${it2 ? `<div style="font-size:11px;color:var(--wiki-text-muted);background:var(--wiki-table-stripe);padding:6px;border-radius:4px;">🎒 <strong>${getLocalized(it2.name)}:</strong> ${getLocalized(it2.effect)}</div>` : ''}
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <input type="text" id="tbTeamNameInput" class="search-input" placeholder="${str('teamName')}..." value="${tbTeam.name ? String(tbTeam.name).replace(/"/g, '&quot;') : ''}" style="width:160px;padding:5px 8px;font-size:12px;">
+          <button id="btnTbSaveTeam" class="btn-control" style="background:var(--wiki-accent);color:#000;font-weight:700;">💾 ${str('saveTeam')}</button>
+          <button id="btnTbExportCode" class="btn-control" title="${str('exportCode')}">📋 ${str('exportCode')}</button>
+          <button id="btnTbImportCode" class="btn-control" title="${str('importCode')}">📥 ${str('importCode')}</button>
+          <button id="btnTbRandomTeam" class="btn-control" title="${str('randomTeamBtn')}">🎲</button>
         </div>
+      </div>
+
+      <!-- Slots Grid -->
+      <div class="teambuilder-slots">
+        ${[0, 1].map(sIdx => {
+          const slot = tbTeam.slots[sIdx];
+          const c = sIdx === 0 ? c1 : c2;
+          const it = sIdx === 0 ? it1 : it2;
+          const p = sIdx === 0 ? p1 : p2;
+          const pw = sIdx === 0 ? pw1 : pw2;
+          const hp = sIdx === 0 ? hp1 : hp2;
+          const tg = sIdx === 0 ? tg1 : tg2;
+          const st = sIdx === 0 ? st1 : st2;
+          const turns = sIdx === 0 ? turns1 : turns2;
+
+          return `
+            <div class="teambuilder-slot-card">
+              <div class="teambuilder-slot-header">
+                <span>${sIdx === 0 ? '🛡️ ' + str('slot1Title') : '🗡️ ' + str('slot2Title')}</span>
+                <span style="font-weight:800;color:var(--wiki-accent);">#${sIdx + 1}</span>
+              </div>
+
+              <!-- Chicken Selector -->
+              <div>
+                <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('searchBadgeChicken')}:</label>
+                <select id="tbChickenSelect_${sIdx}" class="filter-select" style="width:100%;">
+                  ${WIKI.chickens.map(chk => `<option value="${chk.id}" ${chk.id === c.id ? 'selected' : ''}>#${String(chk.id + 1).padStart(3, '0')} - ${getLocalized(chk.name)}</option>`).join('')}
+                </select>
+              </div>
+
+              <!-- Chicken Info Banner -->
+              <div style="display:flex;align-items:center;gap:12px;padding:8px;background:var(--wiki-table-stripe);border-radius:6px;border:1px solid var(--wiki-border-light);">
+                <img class="pixelated" src="${c.sprite}" style="width:52px;height:52px;object-fit:contain;" alt="${getLocalized(c.name)}">
+                <div style="flex:1;min-width:0;">
+                  <div style="font-weight:800;font-size:15px;"><a href="#chicken-${c.id}">#${String(c.id + 1).padStart(3, '0')} ${getLocalized(c.name)}</a></div>
+                  <div style="font-size:11px;font-weight:700;color:#f59e0b;margin-top:2px;">${tg.role}</div>
+                  <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;line-height:1.3;">${p ? getLocalized(p.description) : ''}</div>
+                </div>
+              </div>
+
+              <!-- Item Selector (ALL 75 items) -->
+              <div>
+                <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('thItem')}:</label>
+                <select id="tbItemSelect_${sIdx}" class="filter-select" style="width:100%;">
+                  <option value="-1" ${slot.itemId === -1 ? 'selected' : ''}>${str('noItem')}</option>
+                  ${WIKI.items.map(item => `
+                    <option value="${item.id}" ${item.id === slot.itemId ? 'selected' : ''}>
+                      #${String(item.id + 1).padStart(2, '0')} ${item.consumable ? '🧪' : '🎒'} ${getLocalized(item.name)}
+                    </option>
+                  `).join('')}
+                </select>
+              </div>
+
+              <!-- Item Preview Card -->
+              ${it ? `
+                <div style="font-size:12px;background:var(--wiki-table-stripe);border:1px solid var(--wiki-border-light);padding:8px 10px;border-radius:6px;display:flex;align-items:center;gap:10px;">
+                  <img class="pixelated" src="${it.sprite}" style="width:30px;height:30px;object-fit:contain;" alt="${getLocalized(it.name)}">
+                  <div style="flex:1;min-width:0;">
+                    <div style="font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+                      <span>${getLocalized(it.name)}</span>
+                      <span style="font-size:11px;color:var(--wiki-gold);font-weight:700;">🪙 ${it.shop_price}</span>
+                    </div>
+                    <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;">${getLocalized(it.description)}</div>
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- Level, Genetics (IV), Training (EV) Controls -->
+              <div class="tb-control-group">
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+                  <!-- Level -->
+                  <div style="background:var(--wiki-card-bg);padding:8px;border-radius:6px;border:1px solid var(--wiki-border-light);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <label style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('levelLabel')}:</label>
+                      <span style="font-size:13px;font-weight:800;color:#f59e0b;">${slot.level}</span>
+                    </div>
+                    <input type="range" min="1" max="100" value="${slot.level}" id="tbLevelRange_${sIdx}" style="width:100%;accent-color:#f59e0b;">
+                    <div style="display:flex;gap:4px;margin-top:6px;">
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="lvl" data-val="1">1</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="lvl" data-val="50">50</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="lvl" data-val="100">100</button>
+                    </div>
+                  </div>
+
+                  <!-- Genetics (IV) -->
+                  <div style="background:var(--wiki-card-bg);padding:8px;border-radius:6px;border:1px solid var(--wiki-border-light);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <label style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('geneticsLabel')}:</label>
+                      <span style="font-size:13px;font-weight:800;color:#10b981;">${slot.born}</span>
+                    </div>
+                    <input type="range" min="1" max="100" value="${slot.born}" id="tbBornRange_${sIdx}" style="width:100%;accent-color:#10b981;">
+                    <div style="display:flex;gap:4px;margin-top:6px;">
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="born" data-val="1">1</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="born" data-val="50">50</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="born" data-val="80">80</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="born" data-val="100">100</button>
+                    </div>
+                  </div>
+
+                  <!-- Training (EV) -->
+                  <div style="background:var(--wiki-card-bg);padding:8px;border-radius:6px;border:1px solid var(--wiki-border-light);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <label style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('trainingLabel')}:</label>
+                      <span style="font-size:13px;font-weight:800;color:#a855f7;">${Number(slot.training).toFixed(2)}x</span>
+                    </div>
+                    <input type="range" min="1.0" max="2.0" step="0.05" value="${slot.training}" id="tbTrainRange_${sIdx}" style="width:100%;accent-color:#a855f7;">
+                    <div style="display:flex;gap:4px;margin-top:6px;">
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="train" data-val="1.0">1.0x</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="train" data-val="1.5">1.5x</button>
+                      <button type="button" class="tb-quick-btn" data-slot="${sIdx}" data-type="train" data-val="2.0">2.0x</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Computed Real Combat Stats -->
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:6px;">${str('combatStatsLabel')}:</div>
+                <div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:6px;text-align:center;">
+                  <div class="tb-stat-pill">
+                    <div style="font-size:10px;font-weight:700;color:var(--stat-life);">❤️ ${str('thHp')}</div>
+                    <div style="font-size:14px;font-weight:800;color:var(--stat-life);">${st.life}</div>
+                  </div>
+                  <div class="tb-stat-pill">
+                    <div style="font-size:10px;font-weight:700;color:var(--stat-dmg);">🗡️ ${str('thAtk')}</div>
+                    <div style="font-size:14px;font-weight:800;color:var(--stat-dmg);">${st.damage}</div>
+                  </div>
+                  <div class="tb-stat-pill">
+                    <div style="font-size:10px;font-weight:700;color:var(--stat-spd);">⚡ ${str('thSpd')}</div>
+                    <div style="font-size:14px;font-weight:800;color:var(--stat-spd);">${st.speed}</div>
+                  </div>
+                  <div class="tb-stat-pill">
+                    <div style="font-size:10px;font-weight:700;color:var(--stat-arm);">🛡️ ${str('thDef')}</div>
+                    <div style="font-size:14px;font-weight:800;color:var(--stat-arm);">${st.armor}%</div>
+                  </div>
+                  <div class="tb-stat-pill">
+                    <div style="font-size:10px;font-weight:700;color:var(--stat-pwr);">✨ ${str('thPwr')}</div>
+                    <div style="font-size:14px;font-weight:800;color:var(--stat-pwr);">${st.powerAmount} <span style="font-size:10px;font-weight:normal;">(~${turns}t)</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Power & Target Priority Selector -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div>
+                  <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">⚡ Poder en Batalla:</label>
+                  <select id="tbPowerSelect_${sIdx}" class="filter-select" style="width:100%;">
+                    <option value="base" ${!slot.useHiddenPower ? 'selected' : ''}>⚡ Base: ${pw ? getLocalized(pw.name) : '-'} (${c.power_max} pts)</option>
+                    ${hp ? `<option value="hidden" ${slot.useHiddenPower ? 'selected' : ''}>✨ Oculto: ${getLocalized(hp.name)} (${hp.cost} pts)</option>` : ''}
+                  </select>
+                </div>
+                <div>
+                  <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">🎯 ${str('targetAiLabel')}:</label>
+                  <select id="tbTargetSelect_${sIdx}" class="filter-select" style="width:100%;">
+                    ${TB_TARGET_OPTIONS.map(opt => `<option value="${opt.id}" ${opt.id === slot.targetAI ? 'selected' : ''}>${opt.text[currentLang] || opt.text.es}</option>`).join('')}
+                  </select>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('')}
       </div>
 
       <!-- Synergy Card -->
@@ -2332,9 +2740,9 @@
             <h3 style="font-size:17px;margin-bottom:4px;">${str('synergyAnalysis')}</h3>
             <span class="synergy-badge ${synergyClass}">${synergyTitle}</span>
           </div>
-          <a href="simulador.html" class="btn-control" style="background:#ef4444;color:#fff;border-color:#dc2626;font-weight:700;text-decoration:none;">
+          <button id="btnTbTestInSim" class="btn-control" style="background:#ef4444;color:#fff;border-color:#dc2626;font-weight:800;padding:8px 16px;cursor:pointer;">
             ${str('testInSimulator')}
-          </a>
+          </button>
         </div>
 
         <p style="font-size:13px;line-height:1.5;">${synergyDesc}</p>
@@ -2351,37 +2759,235 @@
         <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:8px;padding-top:12px;border-top:1px solid var(--wiki-border-light);text-align:center;">
           <div>
             <div style="font-size:11px;color:var(--wiki-text-muted);">${str('combinedLife')}</div>
-            <div style="font-size:18px;font-weight:800;color:var(--stat-life);">${c1.stats.life + c2.stats.life} pts</div>
+            <div style="font-size:20px;font-weight:800;color:var(--stat-life);">${totalHp} pts</div>
           </div>
           <div>
             <div style="font-size:11px;color:var(--wiki-text-muted);">${str('estDamage')}</div>
-            <div style="font-size:18px;font-weight:800;color:var(--stat-dmg);">${totalDmg} pts</div>
+            <div style="font-size:20px;font-weight:800;color:var(--stat-dmg);">${totalDmg} pts</div>
           </div>
           <div>
             <div style="font-size:11px;color:var(--wiki-text-muted);">${str('avgSpeed')}</div>
-            <div style="font-size:18px;font-weight:800;color:var(--stat-spd);">${avgSpd} pts</div>
+            <div style="font-size:20px;font-weight:800;color:var(--stat-spd);">${avgSpd} pts</div>
           </div>
         </div>
       </div>
     `;
 
-    document.getElementById('tbChickenSelect1').addEventListener('change', (e) => {
-      tbC1 = parseInt(e.target.value, 10);
-      renderTeamBuilder();
+    // ATTACH LISTENERS
+    [0, 1].forEach(sIdx => {
+      const chkSel = document.getElementById(`tbChickenSelect_${sIdx}`);
+      if (chkSel) {
+        chkSel.addEventListener('change', (e) => {
+          tbTeam.slots[sIdx].chickenId = parseInt(e.target.value, 10);
+          renderTeamBuilder();
+        });
+      }
+
+      const itSel = document.getElementById(`tbItemSelect_${sIdx}`);
+      if (itSel) {
+        itSel.addEventListener('change', (e) => {
+          tbTeam.slots[sIdx].itemId = parseInt(e.target.value, 10);
+          renderTeamBuilder();
+        });
+      }
+
+      const lvlRng = document.getElementById(`tbLevelRange_${sIdx}`);
+      if (lvlRng) {
+        lvlRng.addEventListener('input', (e) => {
+          tbTeam.slots[sIdx].level = parseInt(e.target.value, 10);
+          renderTeamBuilder();
+        });
+      }
+
+      const bornRng = document.getElementById(`tbBornRange_${sIdx}`);
+      if (bornRng) {
+        bornRng.addEventListener('input', (e) => {
+          tbTeam.slots[sIdx].born = parseInt(e.target.value, 10);
+          renderTeamBuilder();
+        });
+      }
+
+      const trRng = document.getElementById(`tbTrainRange_${sIdx}`);
+      if (trRng) {
+        trRng.addEventListener('input', (e) => {
+          tbTeam.slots[sIdx].training = parseFloat(e.target.value);
+          renderTeamBuilder();
+        });
+      }
+
+      const pwrSel = document.getElementById(`tbPowerSelect_${sIdx}`);
+      if (pwrSel) {
+        pwrSel.addEventListener('change', (e) => {
+          tbTeam.slots[sIdx].useHiddenPower = (e.target.value === 'hidden');
+          renderTeamBuilder();
+        });
+      }
+
+      const tgtSel = document.getElementById(`tbTargetSelect_${sIdx}`);
+      if (tgtSel) {
+        tgtSel.addEventListener('change', (e) => {
+          tbTeam.slots[sIdx].targetAI = parseInt(e.target.value, 10);
+        });
+      }
     });
-    document.getElementById('tbChickenSelect2').addEventListener('change', (e) => {
-      tbC2 = parseInt(e.target.value, 10);
-      renderTeamBuilder();
+
+    // Quick buttons
+    container.querySelectorAll('.tb-quick-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sIdx = parseInt(btn.getAttribute('data-slot'), 10);
+        const type = btn.getAttribute('data-type');
+        const val = btn.getAttribute('data-val');
+        if (type === 'lvl') tbTeam.slots[sIdx].level = parseInt(val, 10);
+        else if (type === 'born') tbTeam.slots[sIdx].born = parseInt(val, 10);
+        else if (type === 'train') tbTeam.slots[sIdx].training = parseFloat(val);
+        renderTeamBuilder();
+      });
     });
-    document.getElementById('tbItemSelect1').addEventListener('change', (e) => {
-      tbI1 = parseInt(e.target.value, 10);
-      renderTeamBuilder();
-    });
-    document.getElementById('tbItemSelect2').addEventListener('change', (e) => {
-      tbI2 = parseInt(e.target.value, 10);
-      renderTeamBuilder();
-    });
+
+    // Toolbar listeners
+    const teamNameInput = document.getElementById('tbTeamNameInput');
+    if (teamNameInput) {
+      teamNameInput.addEventListener('input', (e) => {
+        tbTeam.name = e.target.value;
+      });
+    }
+
+    const btnLoad = document.getElementById('btnTbLoadTeam');
+    if (btnLoad) {
+      btnLoad.addEventListener('click', () => {
+        const sel = document.getElementById('tbSavedTeamsSelect');
+        if (!sel) return;
+        const selId = sel.value;
+        const all = [...TB_DEFAULT_PRESETS, ...getTbSavedTeams()];
+        const target = all.find(x => x.id === selId);
+        if (target && target.team && target.team.length >= 2) {
+          tbTeam.name = target.name;
+          tbTeam.slots[0] = { ...tbTeam.slots[0], ...target.team[0] };
+          tbTeam.slots[1] = { ...tbTeam.slots[1], ...target.team[1] };
+          showWikiToast(str('teamLoadedSuccess'));
+          renderTeamBuilder();
+        }
+      });
+    }
+
+    const btnSave = document.getElementById('btnTbSaveTeam');
+    if (btnSave) {
+      btnSave.addEventListener('click', () => {
+        const nameVal = (teamNameInput && teamNameInput.value.trim()) || tbTeam.name || "Equipo Dúo";
+        const newTeam = {
+          id: "team_" + Date.now(),
+          name: nameVal,
+          team: [
+            { ...tbTeam.slots[0] },
+            { ...tbTeam.slots[1] }
+          ]
+        };
+        const list = getTbSavedTeams();
+        list.push(newTeam);
+        saveTbTeams(list);
+        showWikiToast(str('teamSavedSuccess'));
+        renderTeamBuilder();
+      });
+    }
+
+    const btnDel = document.getElementById('btnTbDeleteTeam');
+    if (btnDel) {
+      btnDel.addEventListener('click', () => {
+        const sel = document.getElementById('tbSavedTeamsSelect');
+        if (!sel) return;
+        const selId = sel.value;
+        let list = getTbSavedTeams();
+        if (!list.some(t => t.id === selId)) {
+          showWikiToast("No puedes eliminar un preset oficial.", false);
+          return;
+        }
+        list = list.filter(t => t.id !== selId);
+        saveTbTeams(list);
+        showWikiToast(str('teamDeletedSuccess'));
+        renderTeamBuilder();
+      });
+    }
+
+    const btnExp = document.getElementById('btnTbExportCode');
+    if (btnExp) {
+      btnExp.addEventListener('click', () => {
+        const s0 = serializeTbSlot(tbTeam.slots[0]);
+        const s1 = serializeTbSlot(tbTeam.slots[1]);
+        const code = `CC-T1_${s0}_${s1}`;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(() => {
+            showWikiToast(str('codeCopied'));
+          }).catch(() => {
+            prompt("Código de equipo:", code);
+          });
+        } else {
+          prompt("Código de equipo:", code);
+        }
+      });
+    }
+
+    const btnImp = document.getElementById('btnTbImportCode');
+    if (btnImp) {
+      btnImp.addEventListener('click', () => {
+        const code = prompt(str('promptImportCode'));
+        if (code && code.trim().startsWith('CC-T1_')) {
+          const parts = code.trim().replace('CC-T1_', '').split('_');
+          if (parts.length >= 2) {
+            const sl0 = deserializeTbSlot(parts[0]);
+            const sl1 = deserializeTbSlot(parts[1]);
+            if (sl0 && sl1) {
+              tbTeam.slots[0] = sl0;
+              tbTeam.slots[1] = sl1;
+              tbTeam.name = "Equipo Importado";
+              showWikiToast(str('teamLoadedSuccess'));
+              renderTeamBuilder();
+              return;
+            }
+          }
+        }
+        if (code) showWikiToast(str('invalidCode'), false);
+      });
+    }
+
+    const btnRand = document.getElementById('btnTbRandomTeam');
+    if (btnRand) {
+      btnRand.addEventListener('click', () => {
+        const chkCount = WIKI.chickens.length;
+        const itCount = WIKI.items.length;
+        tbTeam.name = "Dúo Aleatorio 🎲";
+        tbTeam.slots[0] = {
+          chickenId: Math.floor(Math.random() * chkCount),
+          itemId: Math.floor(Math.random() * itCount),
+          level: Math.floor(Math.random() * 51) + 50,
+          born: Math.floor(Math.random() * 41) + 60,
+          training: +(1.0 + Math.random()).toFixed(1),
+          targetAI: Math.floor(Math.random() * 7),
+          useHiddenPower: Math.random() > 0.5
+        };
+        tbTeam.slots[1] = {
+          chickenId: Math.floor(Math.random() * chkCount),
+          itemId: Math.floor(Math.random() * itCount),
+          level: Math.floor(Math.random() * 51) + 50,
+          born: Math.floor(Math.random() * 41) + 60,
+          training: +(1.0 + Math.random()).toFixed(1),
+          targetAI: Math.floor(Math.random() * 7),
+          useHiddenPower: Math.random() > 0.5
+        };
+        renderTeamBuilder();
+      });
+    }
+
+    const btnSim = document.getElementById('btnTbTestInSim');
+    if (btnSim) {
+      btnSim.addEventListener('click', () => {
+        try {
+          sessionStorage.setItem('cc_load_team_blue', JSON.stringify([tbTeam.slots[0], tbTeam.slots[1]]));
+        } catch(e) {}
+        window.location.href = 'simulador.html';
+      });
+    }
   }
+
 
   // 12. RANKING VIEW
   function renderRanking() {

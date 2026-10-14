@@ -1041,6 +1041,18 @@
       ]
     ];
 
+    try {
+      const pendingBlue = sessionStorage.getItem('cc_load_team_blue');
+      if (pendingBlue) {
+        sessionStorage.removeItem('cc_load_team_blue');
+        const parsed = JSON.parse(pendingBlue);
+        if (Array.isArray(parsed) && parsed.length >= 2) {
+          teamConfigs[0][0] = { ...teamConfigs[0][0], ...parsed[0] };
+          teamConfigs[0][1] = { ...teamConfigs[0][1], ...parsed[1] };
+        }
+      }
+    } catch(e) {}
+
     // HELPER: CLAMP
     function clamp(val, min, max) { return Math.max(min, Math.min(max, val)); }
 
@@ -2896,8 +2908,21 @@
     }
 
     function deserializeSlot(str) {
+      if (!str) return null;
       const p = str.split('.');
       if (p.length < 5) return null;
+      if (p.length >= 8) {
+        return {
+          chickenId: parseInt(p[0]) || 0,
+          level: clamp(parseInt(p[1]) || 50, 1, 100),
+          born: clamp(parseInt(p[2]) || 50, 1, 100),
+          training: clamp(parseFloat(p[3] + '.' + p[4]) || 1.0, 1.0, 2.0),
+          itemId: parseInt(p[5]) !== undefined ? parseInt(p[5]) : -1,
+          targetAI: parseInt(p[6]) || 0,
+          useHiddenPower: p[7] === '1',
+          searchQuery: ''
+        };
+      }
       return {
         chickenId: parseInt(p[0]) || 0,
         level: clamp(parseInt(p[1]) || 50, 1, 100),

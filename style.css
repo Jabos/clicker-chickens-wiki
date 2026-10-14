@@ -1030,6 +1030,50 @@ table.wiki-table tr:hover td {
 }
 
 /* Team Builder */
+.teambuilder-toolbar {
+  background: var(--wiki-card-bg);
+  border: 1px solid var(--wiki-border-light);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tb-stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px;
+  background: var(--wiki-table-stripe);
+  border: 1px solid var(--wiki-border-light);
+  border-radius: 6px;
+  text-align: center;
+}
+.tb-control-group {
+  background: var(--wiki-table-stripe);
+  border: 1px solid var(--wiki-border-light);
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tb-quick-btn {
+  flex: 1;
+  padding: 2px 4px !important;
+  font-size: 11px !important;
+  text-align: center;
+  background: var(--wiki-table-stripe);
+  border: 1px solid var(--wiki-border-light);
+  cursor: pointer;
+}
+.tb-quick-btn:hover {
+  background: var(--wiki-border-light);
+}
 .teambuilder-slots {
   display: grid;
   grid-template-columns: 1fr 1fr;

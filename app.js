@@ -182,6 +182,7 @@
       useHiddenPowerLabel: "Usar Poder Oculto",
       useBasePower: "⚡ Poder Base",
       useHiddenPower: "✨ Poder Oculto",
+      powerInBattle: "Poder en Batalla",
       combatStatsLabel: "Estadísticas en Combate",
       teamSavedSuccess: "¡Equipo guardado con éxito!",
       teamLoadedSuccess: "¡Equipo cargado con éxito!",
@@ -402,6 +403,7 @@
       useHiddenPowerLabel: "Use Hidden Power",
       useBasePower: "⚡ Base Power",
       useHiddenPower: "✨ Hidden Power",
+      powerInBattle: "Battle Power",
       combatStatsLabel: "Combat Stats",
       teamSavedSuccess: "Team saved successfully!",
       teamLoadedSuccess: "Team loaded successfully!",
@@ -622,6 +624,7 @@
       useHiddenPowerLabel: "Usar Poder Oculto",
       useBasePower: "⚡ Poder Base",
       useHiddenPower: "✨ Poder Oculto",
+      powerInBattle: "Poder em Batalha",
       combatStatsLabel: "Atributos em Combate",
       teamSavedSuccess: "Time salvo com sucesso!",
       teamLoadedSuccess: "Time carregado com sucesso!",
@@ -842,6 +845,7 @@
       useHiddenPowerLabel: "Использовать скрытую силу",
       useBasePower: "⚡ Базовая сила",
       useHiddenPower: "✨ Скрытая сила",
+      powerInBattle: "Сила в бою",
       combatStatsLabel: "Боевые параметры",
       teamSavedSuccess: "Команда успешно сохранена!",
       teamLoadedSuccess: "Команда загружена!",
@@ -1479,14 +1483,21 @@
         counter: tg.counter
       };
     }
+    const fallbacks = {
+      es: { role: 'Todoterreno Equilibrado', roleTitle: 'Equilibrado', duo: 'Compañero versátil para cualquier posición del dúo 2vs2.', allies: 'Combina con cualquier arquetipo.', items: 'Triflor; Circuito Vital; Poción mágica.', counter: 'Observar qué rol cumple y aislarlo.' },
+      en: { role: 'Balanced All-Rounder', roleTitle: 'All-Rounder', duo: 'Versatile partner for either position in 2vs2.', allies: 'Pairs well with any archetype.', items: 'Triflower; Vital Circuit; Magic Potion.', counter: 'Identify its role and isolate it.' },
+      pt: { role: 'Polivalente Equilibrado', roleTitle: 'Equilibrado', duo: 'Parceiro versátil para qualquer posição na dupla 2vs2.', allies: 'Combina com qualquer arquétipo.', items: 'Triflor; Circuito Vital; Poção Mágica.', counter: 'Identificar seu papel e isolá-lo.' },
+      ru: { role: 'Универсал', roleTitle: 'Универсал', duo: 'Универсальный напарник для любой позиции в дуэте 2на2.', allies: 'Сочетается с любым архетипом.', items: 'Трицвет; Контур жизни; Волшебное зелье.', counter: 'Определить его роль и изолировать.' }
+    };
+    const fb = fallbacks[lang] || fallbacks.es;
     return {
-      role: lang === 'en' ? 'Balanced All-Rounder' : 'Todoterreno Equilibrado',
-      roleTitle: lang === 'en' ? 'All-Rounder' : 'Equilibrado',
+      role: fb.role,
+      roleTitle: fb.roleTitle,
       turns: 1,
-      duo: lang === 'en' ? 'Versatile partner for either position in 2vs2.' : 'Compañero versátil para cualquier posición del dúo 2vs2.',
-      allies: lang === 'en' ? 'Pairs well with any archetype.' : 'Combina con cualquier arquetipo.',
-      items: lang === 'en' ? 'Triflor; Circuito Vital; Poción mágica.' : 'Triflor; Circuito Vital; Poción mágica.',
-      counter: lang === 'en' ? 'Identify its role and isolate it.' : 'Observar qué rol cumple y aislarlo.'
+      duo: fb.duo,
+      allies: fb.allies,
+      items: fb.items,
+      counter: fb.counter
     };
   }
 
@@ -2777,25 +2788,70 @@
 
     const isFreezeSynergy = (pw1Desc.includes('congel') || pw2Desc.includes('congel')) && (p1Desc.includes('congel') || p2Desc.includes('congel'));
     const isPoisonSynergy = (pw1Desc.includes('envenen') || pw2Desc.includes('envenen')) || (p1Desc.includes('envenen') || p2Desc.includes('envenen'));
-    const hasRevive = p1Desc.includes('reviv') || p2Desc.includes('reviv') || (it1 && it1.name.es.includes('fénix')) || (it2 && it2.name.es.includes('fénix'));
+    const hasRevive = p1Desc.includes('reviv') || p2Desc.includes('reviv') || (it1 && it1.id === 23) || (it2 && it2.id === 23);
     const hasTank = (st1.life >= 900 || st1.armor >= 35) || (st2.life >= 900 || st2.armor >= 35);
     const hasStriker = (st1.damage >= 140 || st2.damage >= 140);
 
-    let synergyTitle = currentLang === 'en' ? 'Balanced Duo' : 'Dúo Equilibrado';
-    let synergyDesc = currentLang === 'en' ? 'Solid versatile team with well-rounded distribution.' : 'Equipo sólido y versátil con buena distribución de atributos.';
-    let synergyClass = 'synergy-good';
+    const synDict = {
+      balanced: {
+        title: { es: 'Dúo Equilibrado', en: 'Balanced Duo', pt: 'Dupla Equilibrada', ru: 'Сбалансированный дуэт' },
+        desc: {
+          es: 'Equipo sólido y versátil con buena distribución de atributos.',
+          en: 'Solid versatile team with well-rounded distribution.',
+          pt: 'Equipe sólida e versátil com boa distribuição de atributos.',
+          ru: 'Надежная универсальная команда с гармоничным распределением параметров.'
+        },
+        cls: 'synergy-good'
+      },
+      optimal: {
+        title: { es: '⭐ Sinergia Óptima 2vs2 (Tanque + Rematador)', en: '⭐ Optimal 2vs2 Synergy (Tank + Striker)', pt: '⭐ Sinergia Ideal 2vs2 (Tanque + Finalizador)', ru: '⭐ Оптимальная синергия 2на2 (Танк + Ударник)' },
+        desc: {
+          es: 'La vanguardia absorbe y mitiga impactos mientras la retaguardia asegura daño masivo para derribar rivales.',
+          en: 'Frontline absorbs damage while the backline dishes out heavy burst damage.',
+          pt: 'A vanguarda absorve impactos enquanto a retaguarda aplica dano massivo para derrubar os adversários.',
+          ru: 'Авангард поглощает урон, а тыл наносит сокрушительный взрывной урон для быстрого устранения целей.'
+        },
+        cls: 'synergy-good'
+      },
+      cannon: {
+        title: { es: '⚡ Dúo Hiperofensivo (Cañón de Cristal)', en: '⚡ High-Burst Glass Cannon Duo', pt: '⚡ Dupla Hiperofensiva (Canhão de Cristal)', ru: '⚡ Сверхатакующий дуэт (Стеклянная пушка)' },
+        desc: {
+          es: 'Poder de daño demoledor en primeros turnos, pero muy vulnerable si el rival sobrevive a la ráfaga inicial.',
+          en: 'Devastating early offensive power, but highly vulnerable if opponent survives turn 1.',
+          pt: 'Poder de dano devastador nos primeiros turnos, mas muito vulnerável se o oponente resistir à rajada inicial.',
+          ru: 'Сокрушительный урон на первых ходах, но высокая уязвимость, если противник выдержит стартовый натиск.'
+        },
+        cls: 'synergy-warn'
+      },
+      fortress: {
+        title: { es: '🛡️ Fortaleza Doble (Desgaste)', en: '🛡️ Double Fortress (Endurance)', pt: '🛡️ Fortaleza Dupla (Resistência)', ru: '🛡️ Двойная крепость (Выносливость)' },
+        desc: {
+          es: 'Extraordinaria resistencia y aguante defensivo, aunque las batallas requerirán desgaste prolongado.',
+          en: 'Incredible durability and armor mitigation, but slower match resolution.',
+          pt: 'Extraordinária resistência e absorção defensiva, embora as batalhas exijam desgaste prolongado.',
+          ru: 'Невероятная выживаемость и снижение урона, хотя бои потребуют длительного измора.'
+        },
+        cls: 'synergy-good'
+      }
+    };
 
-    if (hasTank && hasStriker) {
-      synergyTitle = currentLang === 'en' ? '⭐ Optimal 2vs2 Synergy (Tank + Striker)' : '⭐ Sinergia Óptima 2vs2 (Tanque + Rematador)';
-      synergyDesc = currentLang === 'en' ? 'Frontline absorbs damage while the backline dishes out heavy burst damage.' : 'La vanguardia absorbe y mitiga impactos mientras la retaguardia asegura daño masivo para derribar rivales.';
-    } else if (hasStriker && !hasTank) {
-      synergyTitle = currentLang === 'en' ? '⚡ High-Burst Glass Cannon Duo' : '⚡ Dúo Hiperofensivo (Cañón de Cristal)';
-      synergyDesc = currentLang === 'en' ? 'Devastating early offensive power, but highly vulnerable if opponent survives turn 1.' : 'Poder de daño demoledor en primeros turnos, pero muy vulnerable si el rival sobrevive a la ráfaga inicial.';
-      synergyClass = 'synergy-warn';
-    } else if (hasTank && !hasStriker) {
-      synergyTitle = currentLang === 'en' ? '🛡️ Double Fortress (Endurance)' : '🛡️ Fortaleza Doble (Desgaste)';
-      synergyDesc = currentLang === 'en' ? 'Incredible durability and armor mitigation, but slower match resolution.' : 'Extraordinaria resistencia y aguante defensivo, aunque las batallas requerirán desgaste prolongado.';
-    }
+    let synKey = 'balanced';
+    if (hasTank && hasStriker) synKey = 'optimal';
+    else if (hasStriker && !hasTank) synKey = 'cannon';
+    else if (hasTank && !hasStriker) synKey = 'fortress';
+
+    const synergyObj = synDict[synKey];
+    const synergyTitle = synergyObj.title[currentLang] || synergyObj.title.es;
+    const synergyDesc = synergyObj.desc[currentLang] || synergyObj.desc.es;
+    const synergyClass = synergyObj.cls;
+
+    const comboLabels = {
+      freeze: { es: '❄️ Combo Congelamiento Activo', en: '❄️ Active Freeze Synergy', pt: '❄️ Combo de Congelamento Ativo', ru: '❄️ Активная связка заморозки' },
+      poison: { es: '🧪 Estrategia de Veneno / Desgaste', en: '🧪 Poison / Attrition Strategy', pt: '🧪 Estratégia de Veneno / Desgaste', ru: '🧪 Стратегия яда / истощения' },
+      revive: { es: '🔄 Capacidad de Revivir (Doble Vida)', en: '🔄 Revival Capacity (Double Life)', pt: '🔄 Capacidade de Reviver (Vida Dupla)', ru: '🔄 Способность к возрождению (Двойная жизнь)' },
+      taunt: { es: '🛡️ Provocación Activa (Picoteador Dorado)', en: '🛡️ Active Taunt (Golden Peckinator)', pt: '🛡️ Provocação Ativa (Bicador Dourado)', ru: '🛡️ Активная провокация (Золотой клеватель)' }
+    };
+    const hasTaunt = (it1 && it1.id === 6) || (it2 && it2.id === 6);
 
     const customTeams = getTbSavedTeams();
 
@@ -2975,10 +3031,10 @@
               <!-- Power & Target Priority Selector -->
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
                 <div>
-                  <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">⚡ Poder en Batalla:</label>
+                  <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">⚡ ${str('powerInBattle')}:</label>
                   <select id="tbPowerSelect_${sIdx}" class="filter-select" style="width:100%;">
-                    <option value="base" ${!slot.useHiddenPower ? 'selected' : ''}>⚡ Base: ${pw ? getLocalized(pw.name) : '-'} (${c.power_max} pts)</option>
-                    ${hp ? `<option value="hidden" ${slot.useHiddenPower ? 'selected' : ''}>✨ Oculto: ${getLocalized(hp.name)} (${hp.cost} pts)</option>` : ''}
+                    <option value="base" ${!slot.useHiddenPower ? 'selected' : ''}>${str('useBasePower')}: ${pw ? getLocalized(pw.name || pw.description) : '-'} (${c.power_max} pts)</option>
+                    ${hp ? `<option value="hidden" ${slot.useHiddenPower ? 'selected' : ''}>${str('useHiddenPower')}: ${getLocalized(hp.name || hp.description)} (${hp.cost} pts)</option>` : ''}
                   </select>
                 </div>
                 <div>
@@ -3009,10 +3065,10 @@
 
         <!-- Combos detected -->
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          ${isFreezeSynergy ? `<span class="synergy-badge synergy-combo">❄️ Combo Congelamiento Activo</span>` : ''}
-          ${isPoisonSynergy ? `<span class="synergy-badge synergy-combo">🧪 Estrategia de Veneno / Desgaste</span>` : ''}
-          ${hasRevive ? `<span class="synergy-badge synergy-good">🔄 Capacidad de Revivir (Doble Vida)</span>` : ''}
-          ${(it1 && it1.name.es.includes('Picoteador')) || (it2 && it2.name.es.includes('Picoteador')) ? `<span class="synergy-badge synergy-good">🎯 Provocación Activa (Picoteador Dorado)</span>` : ''}
+          ${isFreezeSynergy ? `<span class="synergy-badge synergy-combo">${comboLabels.freeze[currentLang] || comboLabels.freeze.es}</span>` : ''}
+          ${isPoisonSynergy ? `<span class="synergy-badge synergy-combo">${comboLabels.poison[currentLang] || comboLabels.poison.es}</span>` : ''}
+          ${hasRevive ? `<span class="synergy-badge synergy-good">${comboLabels.revive[currentLang] || comboLabels.revive.es}</span>` : ''}
+          ${hasTaunt ? `<span class="synergy-badge synergy-good">${comboLabels.taunt[currentLang] || comboLabels.taunt.es}</span>` : ''}
         </div>
 
         <!-- Combined Stats Overview -->

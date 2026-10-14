@@ -1420,34 +1420,35 @@
 
     // TARGET SELECTION (matching scr_battle_get_target)
     function getTarget(attacker, entities) {
-      const enemies = entities.filter(e => e.team !== attacker.team && e.alive);
-      if (enemies.length === 0) return null;
+      const allieFire = (attacker.passiveId === 39); // Pasiva Cacho: fuego aliado
+      const validTargets = entities.filter(e => (e.team !== attacker.team || allieFire) && e.id !== attacker.id && e.alive);
+      if (validTargets.length === 0) return null;
 
       // Focus / Taunt: Item 6 (Picoteador dorado) or Iguanarto passive (id 29) or hasFocus
-      const focusTarget = enemies.find(e => e.hasFocus || e.itemId === 6 || e.passiveId === 29);
+      const focusTarget = validTargets.find(e => e.hasFocus || e.itemId === 6 || e.passiveId === 29);
       if (focusTarget && attacker.passiveId !== 61) { // 61 = Shiken ignores focus
         return focusTarget;
       }
 
       switch (attacker.targetAI) {
         case 1: // Menos vida
-          return [...enemies].sort((a, b) => a.life - b.life)[0];
+          return [...validTargets].sort((a, b) => a.life - b.life)[0];
         case 2: // Más vida
-          return [...enemies].sort((a, b) => b.life - a.life)[0];
+          return [...validTargets].sort((a, b) => b.life - a.life)[0];
         case 6: // Más daño
-          return [...enemies].sort((a, b) => (b.damage * b.damageMulti) - (a.damage * a.damageMulti))[0];
+          return [...validTargets].sort((a, b) => (b.damage * b.damageMulti) - (a.damage * a.damageMulti))[0];
         case 8: // Más velocidad
-          return [...enemies].sort((a, b) => (b.speed * b.speedMulti) - (a.speed * a.speedMulti))[0];
+          return [...validTargets].sort((a, b) => (b.speed * b.speedMulti) - (a.speed * a.speedMulti))[0];
         case 9: // Menos armadura
-          return [...enemies].sort((a, b) => (a.armor * a.armorMulti) - (b.armor * b.armorMulti))[0];
+          return [...validTargets].sort((a, b) => (a.armor * a.armorMulti) - (b.armor * b.armorMulti))[0];
         case 15: // Venganza
-          if (attacker.lastAttackedMe && attacker.lastAttackedMe.alive && attacker.lastAttackedMe.team !== attacker.team) {
+          if (attacker.lastAttackedMe && attacker.lastAttackedMe.alive && (attacker.lastAttackedMe.team !== attacker.team || allieFire) && attacker.lastAttackedMe.id !== attacker.id) {
             return attacker.lastAttackedMe;
           }
-          return enemies[Math.floor(Math.random() * enemies.length)];
+          return validTargets[Math.floor(Math.random() * validTargets.length)];
         case 0: // Aleatorio
         default:
-          return enemies[Math.floor(Math.random() * enemies.length)];
+          return validTargets[Math.floor(Math.random() * validTargets.length)];
       }
     }
 
@@ -2252,7 +2253,11 @@
 
       if (log) {
         const teamColor = (attacker.team === 0) ? "text-blue-400" : "text-red-400";
-        logEvent(`⚔️ <b class="${teamColor}">${attacker.name}</b> golpea a <b>${target.name}</b> por <b class="text-red-400">${realDamage}</b> daño <span class="text-[var(--muted-foreground)]">(${Math.round(armorClamped * 100)}% mitigado)</span>.`);
+        const isFriendlyFire = (attacker.team === target.team);
+        const friendlyWarning = isFriendlyFire 
+          ? ` <span class="text-rose-400 font-bold">[¡FUEGO ALIADO - Pasiva Cacho!]</span>` 
+          : '';
+        logEvent(`⚔️ <b class="${teamColor}">${attacker.name}</b> golpea a <b>${target.name}</b>${friendlyWarning} por <b class="text-red-400">${realDamage}</b> daño <span class="text-[var(--muted-foreground)]">(${Math.round(armorClamped * 100)}% mitigado)</span>.`);
       }
 
       // Vampire beak lifesteal (item 66)

@@ -779,6 +779,15 @@
       return Math.max(min, Math.min(max, val));
     }
 
+    function getChickenName(c, lang) {
+      if (!c) return '';
+      const l = lang || currentLang || 'es';
+      if (typeof c.name === 'object' && c.name !== null) {
+        return c.name[l] || c.name.es || c.name.en || '';
+      }
+      return c.name || '';
+    }
+
     // POPULATE DROPDOWN
     function populateDropdown(list) {
       const select = document.getElementById('chicken-select');
@@ -786,7 +795,7 @@
       list.forEach(c => {
         const opt = document.createElement('option');
         opt.value = c.id;
-        opt.textContent = `#${String(c.id + 1).padStart(3, '0')} - ${c.name}`;
+        opt.textContent = `#${String(c.id + 1).padStart(3, '0')} - ${getChickenName(c)}`;
         if (c.id === currentChicken.id) opt.selected = true;
         select.appendChild(opt);
       });
@@ -794,9 +803,16 @@
 
     function filterChickens(query) {
       const q = query.toLowerCase().trim();
-      const filtered = CHICKENS.filter(c => 
-        c.name.toLowerCase().includes(q) || String(c.id + 1).includes(q) || String(c.id + 1).padStart(3, '0').includes(q)
-      );
+      const filtered = CHICKENS.filter(c => {
+        if (!q) return true;
+        const idStr = String(c.id + 1);
+        const idPad = idStr.padStart(3, '0');
+        if (idStr.includes(q) || idPad.includes(q)) return true;
+        if (typeof c.name === 'object' && c.name !== null) {
+          return Object.values(c.name).some(val => typeof val === 'string' && val.toLowerCase().includes(q));
+        }
+        return typeof c.name === 'string' && c.name.toLowerCase().includes(q);
+      });
       populateDropdown(filtered.length > 0 ? filtered : CHICKENS);
       if (filtered.length > 0) {
         selectChicken(filtered[0].id);
@@ -808,7 +824,7 @@
       if (found) {
         currentChicken = found;
         document.getElementById('chicken-id-badge').textContent = `#${String(found.id + 1).padStart(3, '0')}`;
-        document.getElementById('chicken-display-name').textContent = found.name;
+        document.getElementById('chicken-display-name').textContent = getChickenName(found);
         const trans = t_calc[currentLang] || t_calc.es;
         document.getElementById('chicken-power-info').textContent = trans.powerMaxInfo.replace('{cost}', found.power_max);
         
@@ -1548,6 +1564,8 @@
 
       // Refresh dynamic chicken info
       if (currentChicken) {
+        document.getElementById('chicken-display-name').textContent = getChickenName(currentChicken);
+        populateDropdown(CHICKENS);
         document.getElementById('chicken-power-info').textContent = t.powerMaxInfo.replace('{cost}', currentChicken.power_max);
         document.getElementById('power-cost-badge').textContent = t.lblStatPowerCost(currentChicken.power_max);
       }
@@ -1680,9 +1698,10 @@
       const subElem = document.getElementById('radar-chicken-subtitle');
       if (subElem) {
         const trans = t_calc[currentLang] || t_calc.es;
+        const cName = getChickenName(currentChicken);
         subElem.textContent = (radarMode === 'combat')
-          ? trans.radarSubCombat(currentChicken.id, currentChicken.name, currentLevel)
-          : trans.radarSubBase(currentChicken.id, currentChicken.name);
+          ? trans.radarSubCombat(currentChicken.id, cName, currentLevel)
+          : trans.radarSubBase(currentChicken.id, cName);
       }
 
       // Tactical Analysis & Role

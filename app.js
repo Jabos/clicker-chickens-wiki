@@ -2542,17 +2542,17 @@
     // 1. Vida
     const lifeFactor = calcFactor(chicken.stats.life);
     const lifeLvlFactor = Math.pow(lvl / 100, 1.15);
-    const life = Math.max(50, Math.min(2500, 50 + (2500 - 50) * lifeLvlFactor * lifeFactor));
+    const life = Math.max(50, 50 + (2500 - 50) * lifeLvlFactor * lifeFactor);
 
     // 2. Daño
     const dmgFactor = calcFactor(chicken.stats.damage);
     const dmgLvlFactor = Math.pow(lvl / 100, 0.85);
-    const damage = Math.max(5, Math.min(300, 5 + (300 - 5) * dmgLvlFactor * dmgFactor));
+    const damage = Math.max(5, 5 + (300 - 5) * dmgLvlFactor * dmgFactor);
 
     // 3. Velocidad
     const spdFactor = calcFactor(chicken.stats.speed);
     const spdLvlFactor = Math.pow(lvl / 100, 0.65);
-    const speed = Math.max(10, Math.min(500, 10 + (500 - 10) * spdLvlFactor * spdFactor));
+    const speed = Math.max(10, 10 + (500 - 10) * spdLvlFactor * spdFactor);
 
     // 4. Armadura
     const armFactor = calcFactor(chicken.stats.armor);

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador de Combate 2vs2 - Clicker Chickens</title>
-  <link rel="icon" type="image/png" href="images/chickens/0.png">
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     :root, [data-theme="dark"] {
@@ -1042,18 +1041,6 @@
       ]
     ];
 
-    try {
-      const pendingBlue = sessionStorage.getItem('cc_load_team_blue');
-      if (pendingBlue) {
-        sessionStorage.removeItem('cc_load_team_blue');
-        const parsed = JSON.parse(pendingBlue);
-        if (Array.isArray(parsed) && parsed.length >= 2) {
-          teamConfigs[0][0] = { ...teamConfigs[0][0], ...parsed[0] };
-          teamConfigs[0][1] = { ...teamConfigs[0][1], ...parsed[1] };
-        }
-      }
-    } catch(e) {}
-
     // HELPER: CLAMP
     function clamp(val, min, max) { return Math.max(min, Math.min(max, val)); }
 
@@ -1069,17 +1056,17 @@
       // 1. Vida
       const lifeFactor = calcFactor(chicken.stats.life);
       const lifeLvlFactor = Math.pow(lvl / 100, 1.15);
-      const life = clamp(50 + (2500 - 50) * lifeLvlFactor * lifeFactor, 50, 2500);
+      const life = Math.max(50, 50 + (2500 - 50) * lifeLvlFactor * lifeFactor);
 
       // 2. Daño
       const dmgFactor = calcFactor(chicken.stats.damage);
       const dmgLvlFactor = Math.pow(lvl / 100, 0.85);
-      const damage = clamp(5 + (300 - 5) * dmgLvlFactor * dmgFactor, 5, 300);
+      const damage = Math.max(5, 5 + (300 - 5) * dmgLvlFactor * dmgFactor);
 
       // 3. Velocidad
       const spdFactor = calcFactor(chicken.stats.speed);
       const spdLvlFactor = Math.pow(lvl / 100, 0.65);
-      const speed = clamp(10 + (500 - 10) * spdLvlFactor * spdFactor, 10, 500);
+      const speed = Math.max(10, 10 + (500 - 10) * spdLvlFactor * spdFactor);
 
       // 4. Armadura (0 a 80)
       const armFactor = calcFactor(chicken.stats.armor);
@@ -2831,11 +2818,11 @@
     // =========================================================================
     const META_PRESETS = [
       {
-        id: "meta_tech",
-        name: "🤖 Dúo Tecnológico (Eggalex & Astro)",
+        id: "meta_mechalex",
+        name: "🤖 Dúo Mecánico (Mechalex & Eggalex)",
         team: [
-          { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false },
-          { chickenId: 133, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false }
+          { chickenId: 135, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false },
+          { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false }
         ]
       },
       {
@@ -2864,9 +2851,9 @@
       },
       {
         id: "meta_evasion",
-        name: "💨 Dúo Evasión & Velocidad (Gatarlos & Shiken)",
+        name: "💨 Dúo Evasión & Velocidad (Evil Gatarlos & Shiken)",
         team: [
-          { chickenId: 55, level: 100, born: 100, training: 2.0, itemId: 4, targetAI: 1, useHiddenPower: false },
+          { chickenId: 56, level: 100, born: 100, training: 2.0, itemId: 4, targetAI: 1, useHiddenPower: false },
           { chickenId: 61, level: 100, born: 100, training: 2.0, itemId: 18, targetAI: 1, useHiddenPower: false }
         ]
       }
@@ -2909,21 +2896,8 @@
     }
 
     function deserializeSlot(str) {
-      if (!str) return null;
       const p = str.split('.');
       if (p.length < 5) return null;
-      if (p.length >= 8) {
-        return {
-          chickenId: parseInt(p[0]) || 0,
-          level: clamp(parseInt(p[1]) || 50, 1, 100),
-          born: clamp(parseInt(p[2]) || 50, 1, 100),
-          training: clamp(parseFloat(p[3] + '.' + p[4]) || 1.0, 1.0, 2.0),
-          itemId: parseInt(p[5]) !== undefined ? parseInt(p[5]) : -1,
-          targetAI: parseInt(p[6]) || 0,
-          useHiddenPower: p[7] === '1',
-          searchQuery: ''
-        };
-      }
       return {
         chickenId: parseInt(p[0]) || 0,
         level: clamp(parseInt(p[1]) || 50, 1, 100),

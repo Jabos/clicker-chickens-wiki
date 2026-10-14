@@ -624,7 +624,7 @@
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
                 <span id="lbl-stat-life-base">Base: 50</span>
                 <span id="pct-life" class="font-mono">--%</span>
-                <span id="lbl-stat-life-max">Tope: 2,500</span>
+                <span id="lbl-stat-life-max">Estándar: 2,500</span>
               </div>
             </div>
 
@@ -646,7 +646,7 @@
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
                 <span id="lbl-stat-damage-base">Base: 5</span>
                 <span id="pct-damage" class="font-mono">--%</span>
-                <span id="lbl-stat-damage-max">Tope: 300</span>
+                <span id="lbl-stat-damage-max">Estándar: 300</span>
               </div>
             </div>
 
@@ -668,7 +668,7 @@
               <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
                 <span id="lbl-stat-speed-base">Base: 10</span>
                 <span id="pct-speed" class="font-mono">--%</span>
-                <span id="lbl-stat-speed-max">Tope: 500</span>
+                <span id="lbl-stat-speed-max">Estándar: 500</span>
               </div>
             </div>
 
@@ -922,21 +922,21 @@
       const lifeMax = 2500;
       const lifeStatsFactor = ((type.life * 0.55) + (born.life * 0.25) + ((train.life - 1.0) * 20.0)) / 100;
       const lifeLevelFactor = Math.pow(lvl / 100, 1.15);
-      const life = clamp(lifeBase + (lifeMax - lifeBase) * lifeLevelFactor * lifeStatsFactor, lifeBase, lifeMax);
+      const life = Math.max(lifeBase, lifeBase + (lifeMax - lifeBase) * lifeLevelFactor * lifeStatsFactor);
 
       // 2. DAÑO
       const damageBase = 5;
       const damageMax = 300;
       const damageStatsFactor = ((type.damage * 0.55) + (born.damage * 0.25) + ((train.damage - 1.0) * 20.0)) / 100;
       const damageLevelFactor = Math.pow(lvl / 100, 0.85);
-      const damage = clamp(damageBase + (damageMax - damageBase) * damageLevelFactor * damageStatsFactor, damageBase, damageMax);
+      const damage = Math.max(damageBase, damageBase + (damageMax - damageBase) * damageLevelFactor * damageStatsFactor);
 
       // 3. VELOCIDAD
       const speedBase = 10;
       const speedMax = 500;
       const speedStatsFactor = ((type.speed * 0.55) + (born.speed * 0.25) + ((train.speed - 1.0) * 20.0)) / 100;
       const speedLevelFactor = Math.pow(lvl / 100, 0.65);
-      const speed = clamp(speedBase + (speedMax - speedBase) * speedLevelFactor * speedStatsFactor, speedBase, speedMax);
+      const speed = Math.max(speedBase, speedBase + (speedMax - speedBase) * speedLevelFactor * speedStatsFactor);
 
       // 4. ARMADURA
       const armorStatsFactor = ((type.armor * 0.55) + (born.armor * 0.25) + ((train.armor - 1.0) * 20.0)) / 100;
@@ -977,19 +977,19 @@
       // Render Life
       document.getElementById('res-round-life').textContent = res.life.round.toLocaleString();
       document.getElementById('res-exact-life').textContent = `(${res.life.val.toFixed(1)})`;
-      document.getElementById('bar-life').style.width = `${res.life.pct.toFixed(1)}%`;
+      document.getElementById('bar-life').style.width = `${Math.min(100, res.life.pct).toFixed(1)}%`;
       document.getElementById('pct-life').textContent = `${res.life.pct.toFixed(0)}%`;
 
       // Render Damage
       document.getElementById('res-round-damage').textContent = res.damage.round.toLocaleString();
       document.getElementById('res-exact-damage').textContent = `(${res.damage.val.toFixed(1)})`;
-      document.getElementById('bar-damage').style.width = `${res.damage.pct.toFixed(1)}%`;
+      document.getElementById('bar-damage').style.width = `${Math.min(100, res.damage.pct).toFixed(1)}%`;
       document.getElementById('pct-damage').textContent = `${res.damage.pct.toFixed(0)}%`;
 
       // Render Speed
       document.getElementById('res-round-speed').textContent = res.speed.round.toLocaleString();
       document.getElementById('res-exact-speed').textContent = `(${res.speed.val.toFixed(1)})`;
-      document.getElementById('bar-speed').style.width = `${res.speed.pct.toFixed(1)}%`;
+      document.getElementById('bar-speed').style.width = `${Math.min(100, res.speed.pct).toFixed(1)}%`;
       document.getElementById('pct-speed').textContent = `${res.speed.pct.toFixed(0)}%`;
 
       // Render Armor
@@ -1124,13 +1124,13 @@
         secFinalStatsSub: "Valores en Batalla",
         lblStatLife: "Vida Máxima",
         lblStatLifeBase: "Base: 50",
-        lblStatLifeMax: "Tope: 2,500",
+        lblStatLifeMax: "Estándar: 2,500",
         lblStatDamage: "Daño",
         lblStatDamageBase: "Base: 5",
-        lblStatDamageMax: "Tope: 300",
+        lblStatDamageMax: "Estándar: 300",
         lblStatSpeed: "Velocidad",
         lblStatSpeedBase: "Base: 10",
-        lblStatSpeedMax: "Tope: 500",
+        lblStatSpeedMax: "Estándar: 500",
         lblStatArmor: "Armadura",
         lblStatArmorBase: "Base: 0%",
         lblStatArmorDesc: "Mitigación porcentual",
@@ -1219,13 +1219,13 @@
         secFinalStatsSub: "In-Battle Values",
         lblStatLife: "Max Life",
         lblStatLifeBase: "Base: 50",
-        lblStatLifeMax: "Cap: 2,500",
+        lblStatLifeMax: "Standard: 2,500",
         lblStatDamage: "Damage",
         lblStatDamageBase: "Base: 5",
-        lblStatDamageMax: "Cap: 300",
+        lblStatDamageMax: "Standard: 300",
         lblStatSpeed: "Speed",
         lblStatSpeedBase: "Base: 10",
-        lblStatSpeedMax: "Cap: 500",
+        lblStatSpeedMax: "Standard: 500",
         lblStatArmor: "Armor",
         lblStatArmorBase: "Base: 0%",
         lblStatArmorDesc: "Percentage mitigation",
@@ -1314,13 +1314,13 @@
         secFinalStatsSub: "Valores em Batalha",
         lblStatLife: "Vida Máxima",
         lblStatLifeBase: "Base: 50",
-        lblStatLifeMax: "Limite: 2.500",
+        lblStatLifeMax: "Padrão: 2.500",
         lblStatDamage: "Dano",
         lblStatDamageBase: "Base: 5",
-        lblStatDamageMax: "Limite: 300",
+        lblStatDamageMax: "Padrão: 300",
         lblStatSpeed: "Velocidade",
         lblStatSpeedBase: "Base: 10",
-        lblStatSpeedMax: "Limite: 500",
+        lblStatSpeedMax: "Padrão: 500",
         lblStatArmor: "Armadura",
         lblStatArmorBase: "Base: 0%",
         lblStatArmorDesc: "Mitigação percentual",
@@ -1409,13 +1409,13 @@
         secFinalStatsSub: "Значения в бою",
         lblStatLife: "Макс. здоровье",
         lblStatLifeBase: "База: 50",
-        lblStatLifeMax: "Предел: 2 500",
+        lblStatLifeMax: "Стандарт: 2 500",
         lblStatDamage: "Урон",
         lblStatDamageBase: "База: 5",
-        lblStatDamageMax: "Предел: 300",
+        lblStatDamageMax: "Стандарт: 300",
         lblStatSpeed: "Скорость",
         lblStatSpeedBase: "База: 10",
-        lblStatSpeedMax: "Предел: 500",
+        lblStatSpeedMax: "Стандарт: 500",
         lblStatArmor: "Броня",
         lblStatArmorBase: "База: 0%",
         lblStatArmorDesc: "Процент снижения урона",

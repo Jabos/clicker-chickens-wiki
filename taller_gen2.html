@@ -1231,15 +1231,15 @@
 
       const lifeBase = 50, lifeMax = 2500;
       const lifeFactor = ((s.life * 0.55) + (50 * 0.25) + (0)) / 100;
-      const life = clamp(lifeBase + (lifeMax - lifeBase) * Math.pow(lvl / 100, 1.15) * lifeFactor, lifeBase, lifeMax);
+      const life = Math.max(lifeBase, lifeBase + (lifeMax - lifeBase) * Math.pow(lvl / 100, 1.15) * lifeFactor);
 
       const damageBase = 5, damageMax = 300;
       const damageFactor = ((s.damage * 0.55) + (50 * 0.25) + (0)) / 100;
-      const damage = clamp(damageBase + (damageMax - damageBase) * Math.pow(lvl / 100, 0.85) * damageFactor, damageBase, damageMax);
+      const damage = Math.max(damageBase, damageBase + (damageMax - damageBase) * Math.pow(lvl / 100, 0.85) * damageFactor);
 
       const speedBase = 10, speedMax = 500;
       const speedFactor = ((s.speed * 0.55) + (50 * 0.25) + (0)) / 100;
-      const speed = clamp(speedBase + (speedMax - speedBase) * Math.pow(lvl / 100, 0.65) * speedFactor, speedBase, speedMax);
+      const speed = Math.max(speedBase, speedBase + (speedMax - speedBase) * Math.pow(lvl / 100, 0.65) * speedFactor);
 
       const armorFactor = ((s.armor * 0.55) + (50 * 0.25) + (0)) / 100;
       const armor = clamp(80 * Math.pow(lvl / 100, 1.30) * armorFactor, 0, 80);

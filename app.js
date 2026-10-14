@@ -765,7 +765,10 @@
           const v = (WIKI && WIKI.version) ? ` • v${WIKI.version}` : ' • v0.107';
           el.textContent = str(k) + v;
         } else {
-          el.textContent = str(k);
+          const val = str(k);
+          if (val && val !== k) {
+            el.textContent = val;
+          }
         }
       }
     });

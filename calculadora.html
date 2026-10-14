@@ -785,7 +785,7 @@
       list.forEach(c => {
         const opt = document.createElement('option');
         opt.value = c.id;
-        opt.textContent = `#${String(c.id).padStart(3, '0')} - ${c.name}`;
+        opt.textContent = `#${String(c.id + 1).padStart(3, '0')} - ${c.name}`;
         if (c.id === currentChicken.id) opt.selected = true;
         select.appendChild(opt);
       });
@@ -794,7 +794,7 @@
     function filterChickens(query) {
       const q = query.toLowerCase().trim();
       const filtered = CHICKENS.filter(c => 
-        c.name.toLowerCase().includes(q) || String(c.id).includes(q)
+        c.name.toLowerCase().includes(q) || String(c.id + 1).includes(q) || String(c.id + 1).padStart(3, '0').includes(q)
       );
       populateDropdown(filtered.length > 0 ? filtered : CHICKENS);
       if (filtered.length > 0) {
@@ -806,7 +806,7 @@
       const found = CHICKENS.find(c => c.id === id);
       if (found) {
         currentChicken = found;
-        document.getElementById('chicken-id-badge').textContent = `#${String(found.id).padStart(3, '0')}`;
+        document.getElementById('chicken-id-badge').textContent = `#${String(found.id + 1).padStart(3, '0')}`;
         document.getElementById('chicken-display-name').textContent = found.name;
         const trans = t_calc[currentLang] || t_calc.es;
         document.getElementById('chicken-power-info').textContent = trans.powerMaxInfo.replace('{cost}', found.power_max);
@@ -1106,8 +1106,8 @@
         lblRadarBudget: "Presupuesto Base:",
         lblRadarPowerCycle: "Carga de Poder:",
         turnUnit: (n) => `~${n} ${n === 1 ? 'turno' : 'turnos'}`,
-        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Nivel ${lvl})`,
-        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (Base Especie)`,
+        radarSubCombat: (id, name, lvl) => `#${String(id + 1).padStart(3, '0')} ${name} (Nivel ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id + 1).padStart(3, '0')} ${name} (Base Especie)`,
         axisLife: "❤️ VIDA",
         axisDamage: "🗡️ DAÑO",
         axisSpeed: "⚡ VELOCIDAD",
@@ -1201,8 +1201,8 @@
         lblRadarBudget: "Base Budget:",
         lblRadarPowerCycle: "Power Charge:",
         turnUnit: (n) => `~${n} ${n === 1 ? 'turn' : 'turns'}`,
-        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Level ${lvl})`,
-        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (Species Base)`,
+        radarSubCombat: (id, name, lvl) => `#${String(id + 1).padStart(3, '0')} ${name} (Level ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id + 1).padStart(3, '0')} ${name} (Species Base)`,
         axisLife: "❤️ LIFE",
         axisDamage: "🗡️ DAMAGE",
         axisSpeed: "⚡ SPEED",
@@ -1296,8 +1296,8 @@
         lblRadarBudget: "Orçamento Base:",
         lblRadarPowerCycle: "Carga de Poder:",
         turnUnit: (n) => `~${n} ${n === 1 ? 'turno' : 'turnos'}`,
-        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Nível ${lvl})`,
-        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (Base da Espécie)`,
+        radarSubCombat: (id, name, lvl) => `#${String(id + 1).padStart(3, '0')} ${name} (Nível ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id + 1).padStart(3, '0')} ${name} (Base da Espécie)`,
         axisLife: "❤️ VIDA",
         axisDamage: "🗡️ DANO",
         axisSpeed: "⚡ VELOCIDADE",
@@ -1391,8 +1391,8 @@
         lblRadarBudget: "Базовый бюджет:",
         lblRadarPowerCycle: "Набор силы:",
         turnUnit: (n) => `~${n} ${n === 1 ? 'ход' : (n >= 2 && n <= 4 ? 'хода' : 'ходов')}`,
-        radarSubCombat: (id, name, lvl) => `#${String(id).padStart(3, '0')} ${name} (Уровень ${lvl})`,
-        radarSubBase: (id, name) => `#${String(id).padStart(3, '0')} ${name} (База вида)`,
+        radarSubCombat: (id, name, lvl) => `#${String(id + 1).padStart(3, '0')} ${name} (Уровень ${lvl})`,
+        radarSubBase: (id, name) => `#${String(id + 1).padStart(3, '0')} ${name} (База вида)`,
         axisLife: "❤️ ЗДОРОВЬЕ",
         axisDamage: "🗡️ УРОН",
         axisSpeed: "⚡ СКОРОСТЬ",

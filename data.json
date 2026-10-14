@@ -15896,6 +15896,64 @@
           }
         }
       ]
+    },
+    "skins_shinies": {
+      "title": {
+        "es": "Variocolor (Shiny) y Aspectos",
+        "en": "Shiny Chickens & Skins"
+      },
+      "icon": "✨",
+      "sections": [
+        {
+          "title": {
+            "es": "¿Cómo conseguir Pollos Variocolor (Shiny)?",
+            "en": "How to obtain Shiny Chickens?"
+          },
+          "content": {
+            "es": "Los pollos Shiny poseen una paleta de color alternativa y animaciones de destellos especiales en combate. Tienen un 0.5% (1 en 200) de probabilidad de eclosionar de huevos comunes. Sin embargo, si crías un huevo utilizando un progenitor que ya es Shiny, la probabilidad se dispara al 8% (1 en 12.5). Equipar el Nido especial en el progenitor añade un +10% extra a la probabilidad de cría.",
+            "en": "Shiny chickens feature an alternative color palette and sparkling animations in battle. They have a 0.5% (1 in 200) base chance to hatch from common eggs. However, breeding an egg using an already Shiny parent skyrockets the chance to 8% (1 in 12.5). Equipping the Special Nest on the parent adds an extra +10% to the breeding odds."
+          }
+        },
+        {
+          "title": {
+            "es": "Aspectos y Skins Cosméticas",
+            "en": "Cosmetic Skins"
+          },
+          "content": {
+            "es": "A lo largo del juego se pueden desbloquear y equipar skins cosméticas exclusivas para alterar la apariencia de tus pollos favoritos en el menú y en combate sin modificar sus atributos de batalla.",
+            "en": "Throughout the game, special cosmetic skins can be unlocked and equipped to alter the appearance of your favorite chickens in menus and battle without modifying their combat stats."
+          }
+        }
+      ]
+    },
+    "pvp_online": {
+      "title": {
+        "es": "Combate Online y Multijugador",
+        "en": "Online Battles & Multiplayer"
+      },
+      "icon": "🌐",
+      "sections": [
+        {
+          "title": {
+            "es": "Duelos 2vs2 en Línea",
+            "en": "Online 2vs2 Duels"
+          },
+          "content": {
+            "es": "El modo Online te permite desafiar a otros entrenadores en batallas 2vs2 en tiempo real. La sinergia entre tu vanguardia y retaguardia, junto con los objetos equipados y el orden de los turnos, define la victoria.",
+            "en": "Online mode allows you to challenge other players in real-time 2vs2 battles. The synergy between your frontline and backline, along with equipped items and turn order, decides the victory."
+          }
+        },
+        {
+          "title": {
+            "es": "Comercio e Intercambio de Pollos",
+            "en": "Chicken Trading"
+          },
+          "content": {
+            "es": "A través de la infraestructura online y el Tablón de Intercambios puedes comerciar pollos con otros jugadores, permitiendo conseguir especies raras, pollos con estadísticas genéticas altas (IVs) o variantes Shiny para completar tu Pollopedia.",
+            "en": "Through online features and the Exchange Board you can trade chickens with other players, allowing you to acquire rare species, high-IV genetic specimens, or Shiny variants to complete your Pollopedia."
+          }
+        }
+      ]
     }
   }
 }

@@ -1145,7 +1145,7 @@
           container.innerHTML = `
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold ${teamColor} uppercase">${slotTitle}</span>
-              <span id="slot-id-badge-${t}-${s}" class="text-xs font-mono text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>
+              <span id="slot-id-badge-${t}-${s}" class="text-xs font-mono text-[var(--muted-foreground)]">#${String(chicken.id + 1).padStart(3, '0')}</span>
             </div>
 
             <!-- Chicken Info, Sprite & Dropdown -->
@@ -1154,7 +1154,7 @@
                 <img id="chicken-img-${t}-${s}" src="images/chickens/${chicken.id}.png" class="w-10 h-10 object-contain pixelated shrink-0" onerror="this.src=''; this.alt='🐔';" alt="${chicken.name}">
                 <div class="flex-1 min-w-0">
                   <div class="text-[11px] font-bold text-amber-500 uppercase tracking-wider">${tr.selectedChicken}</div>
-                  <div id="chicken-name-${t}-${s}" class="text-sm font-black truncate">${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span></div>
+                  <div id="chicken-name-${t}-${s}" class="text-sm font-black truncate">${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id + 1).padStart(3, '0')}</span></div>
                 </div>
               </div>
 
@@ -1167,7 +1167,7 @@
                 
                 <select id="chicken-select-${t}-${s}" class="w-full text-xs font-semibold rounded px-2 py-1.5 bg-[var(--input-bg)] text-[var(--foreground)] border border-[var(--border)] cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-500/50" 
                   onchange="updateChicken(${t}, ${s}, parseInt(this.value))">
-                  ${(cfg.searchQuery ? CHICKENS.filter(c => c.name.toLowerCase().includes(cfg.searchQuery.toLowerCase().trim()) || String(c.id).includes(cfg.searchQuery.trim())) : CHICKENS).map(c => `<option value="${c.id}" ${c.id === chicken.id ? 'selected' : ''}>#${String(c.id).padStart(3, '0')} - ${c.name}</option>`).join('')}
+                  ${(cfg.searchQuery ? CHICKENS.filter(c => c.name.toLowerCase().includes(cfg.searchQuery.toLowerCase().trim()) || String(c.id + 1).includes(cfg.searchQuery.trim()) || String(c.id + 1).padStart(3, '0').includes(cfg.searchQuery.trim())) : CHICKENS).map(c => `<option value="${c.id}" ${c.id === chicken.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${c.name}</option>`).join('')}
                 </select>
               </div>
 
@@ -1245,7 +1245,7 @@
       const pasDesc = getPassiveDesc(chicken.passive_id, currentLang);
 
       const badgeEl = document.getElementById(`slot-id-badge-${t}-${s}`);
-      if (badgeEl) badgeEl.textContent = `#${String(chicken.id).padStart(3, '0')}`;
+      if (badgeEl) badgeEl.textContent = `#${String(chicken.id + 1).padStart(3, '0')}`;
 
       const imgEl = document.getElementById(`chicken-img-${t}-${s}`);
       if (imgEl) {
@@ -1255,7 +1255,7 @@
 
       const nameEl = document.getElementById(`chicken-name-${t}-${s}`);
       if (nameEl) {
-        nameEl.innerHTML = `${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id).padStart(3, '0')}</span>`;
+        nameEl.innerHTML = `${chicken.name} <span class="text-xs font-mono font-normal text-[var(--muted-foreground)]">#${String(chicken.id + 1).padStart(3, '0')}</span>`;
       }
 
       const pasEl = document.getElementById(`chicken-pas-${t}-${s}`);
@@ -1288,7 +1288,7 @@
 
       const q = query.toLowerCase().trim();
       const currentId = teamConfigs[t][s].chickenId;
-      const filtered = q ? CHICKENS.filter(c => c.name.toLowerCase().includes(q) || String(c.id).includes(q)) : CHICKENS;
+      const filtered = q ? CHICKENS.filter(c => c.name.toLowerCase().includes(q) || String(c.id + 1).includes(q) || String(c.id + 1).padStart(3, '0').includes(q)) : CHICKENS;
 
       if (filtered.length === 0) {
         select.innerHTML = '<option value="" disabled selected>${(t_sim[currentLang] || t_sim.es).noChickensFound}</option>';
@@ -1303,7 +1303,7 @@
       }
 
       select.innerHTML = filtered.map(c => 
-        `<option value="${c.id}" ${c.id === targetId ? 'selected' : ''}>#${String(c.id).padStart(3, '0')} - ${c.name}</option>`
+        `<option value="${c.id}" ${c.id === targetId ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${c.name}</option>`
       ).join('');
       select.value = targetId;
 
@@ -1474,15 +1474,6 @@
     // HEAL HELPER
     function healEntity(entity, amount, log = true) {
       if (!entity.alive) return 0;
-      // Curse block & damage matching scr_battle_heal
-      if (entity.states && entity.states.curse > 0) {
-        const curseDmg = Math.max(1, Math.round(entity.lifeMax * 0.10));
-        entity.life = Math.max(0, entity.life - curseDmg);
-        if (log) {
-          logEvent(`👁️ <b>${entity.name}</b> está <b class="text-gray-400">Maldito</b>: ¡La curación se convierte en <b class="text-red-400">${curseDmg}</b> de daño!`, "text-gray-400 font-bold");
-        }
-        return 0;
-      }
       const prevLife = entity.life;
       entity.life = Math.min(entity.lifeMax, entity.life + amount);
       const actualHealed = entity.life - prevLife;
@@ -2532,11 +2523,11 @@
 
         // A. Start of turn status effects (poison, burn, infect)
         if (ent.states.poison > 0) {
-          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.10));
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.08));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.poison--;
           const trTk = t_sim[currentLang] || t_sim.es;
-          if (log) logEvent(trTk.logPoisonTick(ent.name, dmg), "text-purple-400");
+            if (log) logEvent(trTk.logPoisonTick(ent.name, dmg), "text-purple-400");
           checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
@@ -2556,39 +2547,29 @@
         }
 
         if (ent.states.infect > 0) {
-          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.05));
+          const dmg = Math.max(1, Math.round(ent.lifeMax * 0.10));
           ent.life = Math.max(0, ent.life - dmg);
           ent.states.infect--;
           const trTk3 = t_sim[currentLang] || t_sim.es;
-          if (log) logEvent(trTk3.logInfectTick(ent.name, dmg) + " (+ cura al equipo rival)", "text-green-500");
-          // Infection heals alive enemies (5% max life) matching scr_event_start_turn
-          state.entities.forEach(other => {
-            if (other.alive && other.team !== ent.team) {
-              healEntity(other, Math.round(ent.lifeMax * 0.05), false);
-            }
-          });
+            if (log) logEvent(trTk3.logInfectTick(ent.name, dmg), "text-green-500");
           checkDeath(ent, null, state.entities, log);
           if (!ent.alive) continue;
         }
 
-        // B. Freeze check (deals 2.5% max HP and skips action, matching obj_battle/Step_0)
+        // B. Freeze check
         if (ent.states.freeze > 0) {
           ent.states.freeze--;
-          const fDmg = Math.max(1, Math.round(ent.lifeMax * 0.025));
-          ent.life = Math.max(0, ent.life - fDmg);
           const trSk = t_sim[currentLang] || t_sim.es;
-          if (log) logEvent(`❄️ <b>${ent.name}</b> sufre ${fDmg} daño por Congelamiento y pierde su turno.`, "text-cyan-400");
-          checkDeath(ent, null, state.entities, log);
-          if (!ent.alive) continue;
+          if (log) logEvent(trSk.logFreezeSkip(ent.name), "text-cyan-400");
           continue;
         }
 
-        // C. Paralysis check (reduces offensive stats & recoil on attack, matching scr_data_state)
+        // C. Paralysis 25% skip turn
         if (ent.states.paralysis > 0) {
           ent.states.paralysis--;
           if (Math.random() < 0.25) {
             const trSk2 = t_sim[currentLang] || t_sim.es;
-            if (log) logEvent(trSk2.logParalyzeSkip(ent.name), "text-yellow-400");
+          if (log) logEvent(trSk2.logParalyzeSkip(ent.name), "text-yellow-400");
             continue;
           }
         }

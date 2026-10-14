@@ -5,6 +5,7 @@
   let currentTheme = localStorage.getItem('cc_wiki_theme') || 'light';
   let currentView = 'pollopedia';
   let currentChickenFilterZone = 'all';
+  let currentChickenFilterRole = 'all';
   let currentChickenSort = 'id_asc';
   let currentChickenViewMode = 'grid'; // 'grid' or 'table'
   let currentItemTypeFilter = 'all';
@@ -133,7 +134,48 @@
       searchBadgeAchievement: "Logro",
       footerGen: "Generada directamente de los datos del juego v0.119",
       footerHosting: "Diseñada para alojarse gratis en",
-      footerStyle: "Estilo clásico, rápido y ligero"
+      footerStyle: "Estilo clásico, rápido y ligero",
+      navSecTools: "Herramientas y Combate",
+      navCompare: "Comparador",
+      navTeamBuilder: "Creador de Equipos",
+      navRanking: "Ranking de Stats",
+      navChangelog: "Notas de Parche",
+      filterAllRoles: "Todos los Roles",
+      roleTank: "Tanques Defensivos",
+      roleCannon: "Cañones de Cristal",
+      roleSpeed: "Velocistas Ágiles",
+      roleBattery: "Baterías de Poder",
+      roleFreeze: "Control / Congelar",
+      rolePoison: "Veneno / Infección",
+      roleHealer: "Soporte Curativo",
+      roleRevive: "Resurrección",
+      compareTitle: "Comparador Cara a Cara",
+      compareDesc: "Compara estadísticas base, ciclos de poder y habilidades entre dos pollos lado a lado.",
+      chickenA: "Primer Pollo",
+      chickenB: "Segundo Pollo",
+      swapChickens: "⇄ Intercambiar",
+      randomChickens: "🎲 Aleatorio",
+      teamBuilderTitle: "Creador de Equipos 2vs2",
+      teamBuilderDesc: "Diseña tu dúo titular con objetos equipados y analiza sus sinergias de combate en tiempo real.",
+      slot1Title: "Posición 1 (Vanguardia)",
+      slot2Title: "Posición 2 (Retaguardia)",
+      selectItem: "Seleccionar Objeto",
+      noItem: "-- Sin Objeto --",
+      synergyAnalysis: "Análisis Táctico del Dúo",
+      testInSimulator: "⚔️ Probar Dúo en el Simulador 2vs2",
+      combinedLife: "Vida Combinada",
+      avgSpeed: "Velocidad Promedio",
+      estDamage: "Daño Total",
+      rankingTitle: "Ranking de Estadísticas (Top 10)",
+      rankingDesc: "Clasificación de los mejores pollos en cada atributo base según los datos oficiales.",
+      topSpeed: "⚡ Más Rápidos (Velocidad)",
+      topDamage: "🗡️ Mayor Daño (Ataque)",
+      topArmor: "🛡️ Mayor Armadura (Defensa %)",
+      topLife: "❤️ Mayor Vida (HP)",
+      topPower: "✨ Mayor Carga de Poder (Turnos)",
+      topTotal: "👑 Mayor Suma Total de Stats",
+      changelogTitle: "Registro de Versiones y Notas de Parche",
+      changelogDesc: "Historial oficial de cambios, novedades, balances de combate y correcciones del juego."
     },
     en: {
       siteTitle: "Clicker Chickens Wiki",
@@ -257,7 +299,48 @@
       searchBadgeAchievement: "Achievement",
       footerGen: "Generated directly from game data v0.119",
       footerHosting: "Designed for free hosting on",
-      footerStyle: "Classic, lightweight and fast style"
+      footerStyle: "Classic, lightweight and fast style",
+      navSecTools: "Tools & Combat",
+      navCompare: "Comparator",
+      navTeamBuilder: "Team Builder",
+      navRanking: "Stat Rankings",
+      navChangelog: "Patch Notes",
+      filterAllRoles: "All Roles",
+      roleTank: "Defensive Tanks",
+      roleCannon: "Glass Cannons",
+      roleSpeed: "Agile Speedsters",
+      roleBattery: "Skill Batteries",
+      roleFreeze: "Control / Freeze",
+      rolePoison: "Poison / Infection",
+      roleHealer: "Healing Support",
+      roleRevive: "Revival",
+      compareTitle: "Head-to-Head Comparator",
+      compareDesc: "Compare species base stats, power cycles and combat abilities side-by-side.",
+      chickenA: "First Chicken",
+      chickenB: "Second Chicken",
+      swapChickens: "⇄ Swap",
+      randomChickens: "🎲 Random",
+      teamBuilderTitle: "2vs2 Team Builder",
+      teamBuilderDesc: "Design your starting duo with held items and evaluate combat synergies in real time.",
+      slot1Title: "Position 1 (Frontline)",
+      slot2Title: "Position 2 (Backline)",
+      selectItem: "Select Item",
+      noItem: "-- No Item --",
+      synergyAnalysis: "Duo Tactical Synergy Analysis",
+      testInSimulator: "⚔️ Test Duo in 2vs2 Simulator",
+      combinedLife: "Combined HP",
+      avgSpeed: "Average Speed",
+      estDamage: "Total Damage",
+      rankingTitle: "Stat Leaderboards (Top 10)",
+      rankingDesc: "Ranking of top chickens across all base attributes according to official game data.",
+      topSpeed: "⚡ Fastest Chickens (Speed)",
+      topDamage: "🗡️ Highest Damage (Attack)",
+      topArmor: "🛡️ Highest Armor (Defense %)",
+      topLife: "❤️ Highest Life (HP)",
+      topPower: "✨ Fastest Power Charge (Turns)",
+      topTotal: "👑 Highest Total Stats Sum",
+      changelogTitle: "Version History & Patch Notes",
+      changelogDesc: "Official log of game updates, balance adjustments, UI improvements and bug fixes."
     },
     pt: {
       siteTitle: "Wiki Clicker Chickens",
@@ -381,7 +464,48 @@
       searchBadgeAchievement: "Conquista",
       footerGen: "Gerada diretamente dos dados do jogo v0.119",
       footerHosting: "Criada para hospedagem gratuita no",
-      footerStyle: "Estilo clássico, rápido e leve"
+      footerStyle: "Estilo clássico, rápido e leve",
+      navSecTools: "Ferramentas e Combate",
+      navCompare: "Comparador",
+      navTeamBuilder: "Criador de Equipes",
+      navRanking: "Ranking de Atributos",
+      navChangelog: "Notas de Atualização",
+      filterAllRoles: "Todos os Papéis",
+      roleTank: "Tanques Defensivos",
+      roleCannon: "Canhões de Cristal",
+      roleSpeed: "Velocistas Ágeis",
+      roleBattery: "Baterias de Poder",
+      roleFreeze: "Controle / Congelar",
+      rolePoison: "Veneno / Infecção",
+      roleHealer: "Suporte Curativo",
+      roleRevive: "Ressurreição",
+      compareTitle: "Comparador Frente a Frente",
+      compareDesc: "Compare atributos base, ciclos de poder e habilidades entre dois frangos lado a lado.",
+      chickenA: "Primeiro Frango",
+      chickenB: "Segundo Frango",
+      swapChickens: "⇄ Inverter",
+      randomChickens: "🎲 Aleatório",
+      teamBuilderTitle: "Criador de Equipes 2vs2",
+      teamBuilderDesc: "Monte sua dupla titular com itens equipados e analise sinergias táticas em tempo real.",
+      slot1Title: "Posição 1 (Vanguarda)",
+      slot2Title: "Posição 2 (Retaguarda)",
+      selectItem: "Selecionar Item",
+      noItem: "-- Sem Item --",
+      synergyAnalysis: "Análise Tática da Dupla",
+      testInSimulator: "⚔️ Testar Dupla no Simulador 2vs2",
+      combinedLife: "Vida Combinada",
+      avgSpeed: "Velocidade Média",
+      estDamage: "Dano Total",
+      rankingTitle: "Ranking de Atributos (Top 10)",
+      rankingDesc: "Classificação dos melhores frangos em cada atributo base segundo dados oficiais.",
+      topSpeed: "⚡ Mais Rápidos (Velocidade)",
+      topDamage: "🗡️ Maior Dano (Ataque)",
+      topArmor: "🛡️ Maior Armadura (Defesa %)",
+      topLife: "❤️ Maior Vida (HP)",
+      topPower: "✨ Carga de Poder Mais Rápida",
+      topTotal: "👑 Maior Soma Total de Atributos",
+      changelogTitle: "Histórico de Versões e Atualizações",
+      changelogDesc: "Registro oficial de mudanças, novidades, balanço de combate e correções do jogo."
     },
     ru: {
       siteTitle: "Clicker Chickens Вики",
@@ -505,7 +629,48 @@
       searchBadgeAchievement: "Достижение",
       footerGen: "Сгенерировано напрямую из данных игры v0.119",
       footerHosting: "Разработано для бесплатного хостинга на",
-      footerStyle: "Классический, быстрый и легкий стиль"
+      footerStyle: "Классический, быстрый и легкий стиль",
+      navSecTools: "Инструменты и Бой",
+      navCompare: "Сравнение",
+      navTeamBuilder: "Создание команд",
+      navRanking: "Рейтинг параметров",
+      navChangelog: "Список изменений",
+      filterAllRoles: "Все роли",
+      roleTank: "Танки",
+      roleCannon: "Стеклянные пушки",
+      roleSpeed: "Скоростные",
+      roleBattery: "Батарейки способностей",
+      roleFreeze: "Контроль / Заморозка",
+      rolePoison: "Яд / Инфекция",
+      roleHealer: "Лекари",
+      roleRevive: "Воскрешение",
+      compareTitle: "Сравнение цыплят лицом к лицу",
+      compareDesc: "Сравните базовые характеристики, цикл способностей и боевые навыки двух цыплят бок о бок.",
+      chickenA: "Первый цыпленок",
+      chickenB: "Второй цыпленок",
+      swapChickens: "⇄ Поменять местами",
+      randomChickens: "🎲 Случайно",
+      teamBuilderTitle: "Конструктор команд 2на2",
+      teamBuilderDesc: "Соберите дуэт с экипировкой и оцените боевую синергию в реальном времени.",
+      slot1Title: "Позиция 1 (Авангард)",
+      slot2Title: "Позиция 2 (Арьергард)",
+      selectItem: "Выбрать предмет",
+      noItem: "-- Без предмета --",
+      synergyAnalysis: "Тактический анализ синергии дуэта",
+      testInSimulator: "⚔️ Проверить дуэт в Симуляторе 2на2",
+      combinedLife: "Суммарное здоровье",
+      avgSpeed: "Средняя скорость",
+      estDamage: "Общий урон",
+      rankingTitle: "Рейтинги характеристик (Топ-10)",
+      rankingDesc: "Топ цыплят по каждому параметру на основе официальных данных игры.",
+      topSpeed: "⚡ Самые быстрые (Скорость)",
+      topDamage: "🗡️ Максимальный урон (Атака)",
+      topArmor: "🛡️ Максимальная броня (Защита %)",
+      topLife: "❤️ Максимальное здоровье (HP)",
+      topPower: "✨ Быстрый набор силы",
+      topTotal: "👑 Наибольшая сумма параметров",
+      changelogTitle: "История версий и изменений",
+      changelogDesc: "Официальный журнал обновлений, правок баланса, улучшений интерфейса и исправлений ошибок."
     }
   };
 
@@ -654,6 +819,14 @@
       renderAchievements();
     } else if (mainRoute === 'mechanics') {
       renderMechanics();
+    } else if (mainRoute === 'compare') {
+      renderCompare();
+    } else if (mainRoute === 'teambuilder') {
+      renderTeamBuilder();
+    } else if (mainRoute === 'ranking') {
+      renderRanking();
+    } else if (mainRoute === 'changelog') {
+      renderChangelog();
     } else {
       renderPollopedia();
     }
@@ -834,6 +1007,25 @@
     });
   }
 
+  // Helper to match chicken tactical role
+  function matchesChickenRole(c, role) {
+    const pwObj = WIKI.powers[c.power_id];
+    const pObj = WIKI.passives[c.passive_id];
+    const pwDesc = (pwObj && pwObj.description && pwObj.description.es) ? pwObj.description.es.toLowerCase() : '';
+    const pDesc = (pObj && pObj.description && pObj.description.es) ? pObj.description.es.toLowerCase() : '';
+    switch(role) {
+      case 'tank': return c.stats.life >= 60 || c.stats.armor >= 50;
+      case 'cannon': return c.stats.damage >= 70 || (c.stats.damage >= 65 && c.stats.speed >= 55);
+      case 'speed': return c.stats.speed >= 70;
+      case 'battery': return c.stats.power_amount >= 45 || ((c.power_max + c.stats.power_amount - 1) / (c.stats.power_amount || 1) <= 2);
+      case 'freeze': return pwDesc.includes('congel') || pDesc.includes('congel');
+      case 'poison': return pwDesc.includes('envenen') || pwDesc.includes('infect') || pDesc.includes('envenen') || pDesc.includes('infect');
+      case 'healer': return pwDesc.includes('cura') || pDesc.includes('cura');
+      case 'revive': return pwDesc.includes('reviv') || pDesc.includes('reviv');
+      default: return true;
+    }
+  }
+
   // --- VIEWS ---
 
   // 1. POLLOPEDIA VIEW
@@ -851,6 +1043,18 @@
             <option value="all">${str('filterAllZones')}</option>
             ${WIKI.zones.map(z => `<option value="${z.id}" ${currentChickenFilterZone == z.id ? 'selected' : ''}>${str('searchBadgeZone')} ${z.id + 1}: ${getLocalized(z.name)}</option>`).join('')}
             <option value="evolutions" ${currentChickenFilterZone === 'evolutions' ? 'selected' : ''}>⭐ ${str('filterEvolutions')}</option>
+          </select>
+
+          <select id="chickenRoleFilter" class="filter-select">
+            <option value="all">${str('filterAllRoles')}</option>
+            <option value="tank" ${currentChickenFilterRole === 'tank' ? 'selected' : ''}>🛡️ ${str('roleTank')}</option>
+            <option value="cannon" ${currentChickenFilterRole === 'cannon' ? 'selected' : ''}>💥 ${str('roleCannon')}</option>
+            <option value="speed" ${currentChickenFilterRole === 'speed' ? 'selected' : ''}>⚡ ${str('roleSpeed')}</option>
+            <option value="battery" ${currentChickenFilterRole === 'battery' ? 'selected' : ''}>🔋 ${str('roleBattery')}</option>
+            <option value="freeze" ${currentChickenFilterRole === 'freeze' ? 'selected' : ''}>❄️ ${str('roleFreeze')}</option>
+            <option value="poison" ${currentChickenFilterRole === 'poison' ? 'selected' : ''}>🧪 ${str('rolePoison')}</option>
+            <option value="healer" ${currentChickenFilterRole === 'healer' ? 'selected' : ''}>💖 ${str('roleHealer')}</option>
+            <option value="revive" ${currentChickenFilterRole === 'revive' ? 'selected' : ''}>🔄 ${str('roleRevive')}</option>
           </select>
 
           <select id="chickenSort" class="sort-select">
@@ -878,6 +1082,11 @@
 
     document.getElementById('chickenZoneFilter').addEventListener('change', (e) => {
       currentChickenFilterZone = e.target.value;
+      updateChickensList();
+    });
+
+    document.getElementById('chickenRoleFilter').addEventListener('change', (e) => {
+      currentChickenFilterRole = e.target.value;
       updateChickensList();
     });
 
@@ -923,6 +1132,11 @@
         const pool = targetZone.combat_pool.concat(targetZone.egg_pool);
         list = list.filter(c => pool.includes(c.id));
       }
+    }
+
+    // Filter by Role
+    if (currentChickenFilterRole !== 'all') {
+      list = list.filter(c => matchesChickenRole(c, currentChickenFilterRole));
     }
 
     // Search filter
@@ -1076,9 +1290,10 @@
 
     const container = document.getElementById('wikiContent');
     container.innerHTML = `
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
         <a href="#pollopedia" class="btn-control">${str('backToList')}</a>
         <div style="display:flex;gap:8px;">
+          <a href="#compare" onclick="window.setCompareA(${c.id})" class="btn-control" style="color:var(--wiki-accent);font-weight:700;">⚖️ ${str('navCompare')}</a>
           <a href="#chicken-${prevId}" class="btn-control">${str('prevBtn')} (#${String(prevId + 1).padStart(3, '0')})</a>
           <a href="#chicken-${nextId}" class="btn-control">${str('nextBtn')} (#${String(nextId + 1).padStart(3, '0')})</a>
         </div>
@@ -1794,6 +2009,504 @@
             `;
           }).join('');
         })()}
+      </div>
+    `;
+  }
+
+  // 10. COMPARE VIEW
+  let compareAId = 0;
+  let compareBId = 1;
+  window.setCompareA = function(id) { compareAId = id; };
+
+  function renderCompare() {
+    const container = document.getElementById('wikiContent');
+    const cA = WIKI.chickens.find(x => x.id === compareAId) || WIKI.chickens[0];
+    const cB = WIKI.chickens.find(x => x.id === compareBId) || WIKI.chickens[1];
+
+    const pA = WIKI.passives[cA.passive_id];
+    const pB = WIKI.passives[cB.passive_id];
+    const pwA = WIKI.powers[cA.power_id];
+    const pwB = WIKI.powers[cB.power_id];
+    const hpA = (cA.hidden_power_id >= 0) ? WIKI.powers[cA.hidden_power_id] : null;
+    const hpB = (cB.hidden_power_id >= 0) ? WIKI.powers[cB.hidden_power_id] : null;
+
+    const turnsA = Math.max(1, Math.ceil(cA.power_max / (cA.stats.power_amount || 1)));
+    const turnsB = Math.max(1, Math.ceil(cB.power_max / (cB.stats.power_amount || 1)));
+
+    const tacticalA = getChickenTacticalAnalysis(cA, currentLang);
+    const tacticalB = getChickenTacticalAnalysis(cB, currentLang);
+
+    const statsList = [
+      { key: 'life', label: str('statLife'), color: 'var(--stat-life, #e03131)' },
+      { key: 'damage', label: str('statDamage'), color: 'var(--stat-dmg, #f76707)' },
+      { key: 'armor', label: str('statArmor'), color: 'var(--stat-arm, #1c7ed6)' },
+      { key: 'speed', label: str('statSpeed'), color: 'var(--stat-spd, #0ca678)' },
+      { key: 'power_amount', label: str('statPowerAmount'), color: 'var(--stat-pwr, #7048e8)' },
+      { key: 'total', label: str('statTotal'), color: 'var(--wiki-gold, #c89500)' }
+    ];
+
+    container.innerHTML = `
+      <div class="page-header">
+        <h1 class="page-title">⚖️ ${str('compareTitle')}</h1>
+        <p class="page-subtitle">${str('compareDesc')}</p>
+      </div>
+
+      <div class="compare-container">
+        <!-- Selectors Toolbar -->
+        <div class="compare-selectors">
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('chickenA')}:</label>
+            <select id="compareSelectA" class="filter-select" style="width:100%;">
+              ${WIKI.chickens.map(c => `<option value="${c.id}" ${c.id === cA.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</option>`).join('')}
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div class="compare-vs-badge">VS</div>
+            <div style="display:flex;gap:4px;">
+              <button id="btnSwapCompare" class="btn-control" style="font-size:11px;" title="${str('swapChickens')}">${str('swapChickens')}</button>
+              <button id="btnRandomCompare" class="btn-control" style="font-size:11px;" title="${str('randomChickens')}">${str('randomChickens')}</button>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('chickenB')}:</label>
+            <select id="compareSelectB" class="filter-select" style="width:100%;">
+              ${WIKI.chickens.map(c => `<option value="${c.id}" ${c.id === cB.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</option>`).join('')}
+            </select>
+          </div>
+        </div>
+
+        <!-- Top Avatars Summary -->
+        <div class="compare-grid">
+          <div class="compare-card" style="text-align:center;">
+            <img class="pixelated" src="${cA.sprite}" style="width:84px;height:84px;margin:0 auto;" alt="${getLocalized(cA.name)}">
+            <h2 style="margin:4px 0 0;"><a href="#chicken-${cA.id}">#${String(cA.id + 1).padStart(3, '0')} ${getLocalized(cA.name)}</a></h2>
+            <div style="font-size:12px;font-weight:700;color:#f59e0b;">${tacticalA.role}</div>
+          </div>
+          <div class="compare-card" style="text-align:center;">
+            <img class="pixelated" src="${cB.sprite}" style="width:84px;height:84px;margin:0 auto;" alt="${getLocalized(cB.name)}">
+            <h2 style="margin:4px 0 0;"><a href="#chicken-${cB.id}">#${String(cB.id + 1).padStart(3, '0')} ${getLocalized(cB.name)}</a></h2>
+            <div style="font-size:12px;font-weight:700;color:#f59e0b;">${tacticalB.role}</div>
+          </div>
+        </div>
+
+        <!-- Head to Head Stat Bars -->
+        <div class="article-box" style="padding:20px;">
+          <h3 style="margin-bottom:16px;font-size:16px;">📊 ${str('statBaseTitle')}</h3>
+          ${statsList.map(st => {
+            const valA = st.key === 'total' ? cA.stat_total : cA.stats[st.key];
+            const valB = st.key === 'total' ? cB.stat_total : cB.stats[st.key];
+            const maxVal = st.key === 'total' ? 250 : 100;
+            const pctA = Math.min(100, Math.round((valA / maxVal) * 100));
+            const pctB = Math.min(100, Math.round((valB / maxVal) * 100));
+            const diff = valA - valB;
+            const diffA = diff > 0 ? `<span class="win-badge">+${diff}</span>` : '';
+            const diffB = diff < 0 ? `<span class="win-badge">+${Math.abs(diff)}</span>` : '';
+
+            return `
+              <div style="margin-bottom:16px;">
+                <div class="compare-stat-row">
+                  <div style="font-weight:700;font-size:13px;color:var(--wiki-text);">
+                    ${valA} ${diffA}
+                  </div>
+                  <div style="font-weight:700;font-size:12px;color:var(--wiki-text-muted);text-transform:uppercase;">
+                    ${st.label}
+                  </div>
+                  <div style="font-weight:700;font-size:13px;color:var(--wiki-text);">
+                    ${diffB} ${valB}
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                  <div class="compare-bar-bg" style="transform:scaleX(-1);">
+                    <div class="compare-bar-fill" style="width:${pctA}%;background:${st.color};"></div>
+                  </div>
+                  <div class="compare-bar-bg">
+                    <div class="compare-bar-fill" style="width:${pctB}%;background:${st.color};"></div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Combat & Skills Comparison -->
+        <div class="compare-grid">
+          <div class="compare-card">
+            <h3 style="font-size:14px;border-bottom:1px solid var(--wiki-border-light);padding-bottom:8px;">⚡ ${str('combatSkillsTitle')}</h3>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('passiveSkill')}:</div>
+              <div style="font-size:13px;font-weight:700;margin-top:2px;">${pA ? getLocalized(pA.description) : '-'}</div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('activePower')} (${cA.power_max} pts):</div>
+              <div style="font-size:13px;font-weight:700;margin-top:2px;">${pwA ? getLocalized(pwA.description) : '-'}</div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('hiddenPower')}:</div>
+              <div style="font-size:13px;margin-top:2px;">${hpA ? `<strong>${getLocalized(hpA.description)}</strong> (${hpA.cost} pts)` : `<em style="color:var(--wiki-text-muted);">${str('noHiddenPower')}</em>`}</div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('powerCycle')}:</div>
+              <div style="font-size:13px;font-weight:700;color:#f59e0b;">~${turnsA} ${turnsA === 1 ? str('turn') : str('turns')}</div>
+            </div>
+          </div>
+
+          <div class="compare-card">
+            <h3 style="font-size:14px;border-bottom:1px solid var(--wiki-border-light);padding-bottom:8px;">⚡ ${str('combatSkillsTitle')}</h3>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('passiveSkill')}:</div>
+              <div style="font-size:13px;font-weight:700;margin-top:2px;">${pB ? getLocalized(pB.description) : '-'}</div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('activePower')} (${cB.power_max} pts):</div>
+              <div style="font-size:13px;font-weight:700;margin-top:2px;">${pwB ? getLocalized(pwB.description) : '-'}</div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('hiddenPower')}:</div>
+              <div style="font-size:13px;margin-top:2px;">${hpB ? `<strong>${getLocalized(hpB.description)}</strong> (${hpB.cost} pts)` : `<em style="color:var(--wiki-text-muted);">${str('noHiddenPower')}</em>`}</div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('powerCycle')}:</div>
+              <div style="font-size:13px;font-weight:700;color:#f59e0b;">~${turnsB} ${turnsB === 1 ? str('turn') : str('turns')}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('compareSelectA').addEventListener('change', (e) => {
+      compareAId = parseInt(e.target.value, 10);
+      renderCompare();
+    });
+
+    document.getElementById('compareSelectB').addEventListener('change', (e) => {
+      compareBId = parseInt(e.target.value, 10);
+      renderCompare();
+    });
+
+    document.getElementById('btnSwapCompare').addEventListener('click', () => {
+      const tmp = compareAId;
+      compareAId = compareBId;
+      compareBId = tmp;
+      renderCompare();
+    });
+
+    document.getElementById('btnRandomCompare').addEventListener('click', () => {
+      const len = WIKI.chickens.length;
+      compareAId = Math.floor(Math.random() * len);
+      compareBId = Math.floor(Math.random() * len);
+      if (compareBId === compareAId) compareBId = (compareBId + 1) % len;
+      renderCompare();
+    });
+  }
+
+  // 11. TEAM BUILDER VIEW
+  let tbC1 = 0;
+  let tbI1 = 1;
+  let tbC2 = 1;
+  let tbI2 = 3;
+
+  function renderTeamBuilder() {
+    const container = document.getElementById('wikiContent');
+    const c1 = WIKI.chickens.find(x => x.id === tbC1) || WIKI.chickens[0];
+    const c2 = WIKI.chickens.find(x => x.id === tbC2) || WIKI.chickens[1];
+    const it1 = (tbI1 >= 0 && tbI1 < WIKI.items.length) ? WIKI.items[tbI1] : null;
+    const it2 = (tbI2 >= 0 && tbI2 < WIKI.items.length) ? WIKI.items[tbI2] : null;
+
+    const p1 = WIKI.passives[c1.passive_id];
+    const p2 = WIKI.passives[c2.passive_id];
+    const pw1 = WIKI.powers[c1.power_id];
+    const pw2 = WIKI.powers[c2.power_id];
+
+    const tg1 = getChickenTacticalAnalysis(c1, currentLang);
+    const tg2 = getChickenTacticalAnalysis(c2, currentLang);
+
+    // Combined metrics
+    const totalHp = (c1.stats.life + c2.stats.life) * 10;
+    const totalDmg = c1.stats.damage + c2.stats.damage;
+    const avgSpd = Math.round((c1.stats.speed + c2.stats.speed) / 2);
+
+    // Synergy analysis
+    const p1Desc = (p1 && p1.description && p1.description.es ? p1.description.es : '').toLowerCase();
+    const p2Desc = (p2 && p2.description && p2.description.es ? p2.description.es : '').toLowerCase();
+    const pw1Desc = (pw1 && pw1.description && pw1.description.es ? pw1.description.es : '').toLowerCase();
+    const pw2Desc = (pw2 && pw2.description && pw2.description.es ? pw2.description.es : '').toLowerCase();
+
+    const isFreezeSynergy = (pw1Desc.includes('congel') || pw2Desc.includes('congel')) && (p1Desc.includes('congel') || p2Desc.includes('congel'));
+    const isPoisonSynergy = (pw1Desc.includes('envenen') || pw2Desc.includes('envenen')) || (p1Desc.includes('envenen') || p2Desc.includes('envenen'));
+    const hasRevive = p1Desc.includes('reviv') || p2Desc.includes('reviv') || (it1 && it1.name.es.includes('fénix')) || (it2 && it2.name.es.includes('fénix'));
+    const hasTank = (c1.stats.life >= 60 || c1.stats.armor >= 50) || (c2.stats.life >= 60 || c2.stats.armor >= 50);
+    const hasStriker = (c1.stats.damage >= 65 || c2.stats.damage >= 65);
+
+    let synergyTitle = currentLang === 'en' ? 'Balanced Duo' : 'Dúo Equilibrado';
+    let synergyDesc = currentLang === 'en' ? 'Solid versatile team with well-rounded distribution.' : 'Equipo sólido y versátil con buena distribución de atributos.';
+    let synergyClass = 'synergy-good';
+
+    if (hasTank && hasStriker) {
+      synergyTitle = currentLang === 'en' ? '⭐ Optimal 2vs2 Synergy (Tank + Striker)' : '⭐ Sinergia Óptima 2vs2 (Tanque + Rematador)';
+      synergyDesc = currentLang === 'en' ? 'Frontline protects with high durability while the backline dishes out heavy burst damage.' : 'La vanguardia absorbe y mitiga impactos mientras la retaguardia asegura daño masivo para derribar rivales.';
+    } else if (hasStriker && !hasTank) {
+      synergyTitle = currentLang === 'en' ? '⚡ High-Burst Glass Cannon Duo' : '⚡ Dúo Hiperofensivo (Cañón de Cristal)';
+      synergyDesc = currentLang === 'en' ? 'Devastating early offensive power, but highly vulnerable if opponent survives turn 1.' : 'Poder de daño demoledor en primeros turnos, pero muy vulnerable si el rival sobrevive a la ráfaga inicial.';
+      synergyClass = 'synergy-warn';
+    } else if (hasTank && !hasStriker) {
+      synergyTitle = currentLang === 'en' ? '🛡️ Double Fortress (Endurance)' : '🛡️ Fortaleza Doble (Desgaste)';
+      synergyDesc = currentLang === 'en' ? 'Incredible durability and armor mitigation, but slower match resolution.' : 'Extraordinaria resistencia y aguante defensivo, aunque las batallas requerirán desgaste prolongado.';
+    }
+
+    container.innerHTML = `
+      <div class="page-header">
+        <h1 class="page-title">👥 ${str('teamBuilderTitle')}</h1>
+        <p class="page-subtitle">${str('teamBuilderDesc')}</p>
+      </div>
+
+      <!-- Slots Grid -->
+      <div class="teambuilder-slots">
+        <!-- Slot 1 (Frontline) -->
+        <div class="teambuilder-slot-card">
+          <div class="teambuilder-slot-header">
+            <span>🛡️ ${str('slot1Title')}</span>
+            <span style="font-weight:800;color:var(--wiki-accent);">#1</span>
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('searchBadgeChicken')}:</label>
+            <select id="tbChickenSelect1" class="filter-select" style="width:100%;">
+              ${WIKI.chickens.map(c => `<option value="${c.id}" ${c.id === c1.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</option>`).join('')}
+            </select>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:8px 0;">
+            <img class="pixelated" src="${c1.sprite}" style="width:52px;height:52px;" alt="${getLocalized(c1.name)}">
+            <div>
+              <div style="font-weight:800;font-size:15px;"><a href="#chicken-${c1.id}">#${String(c1.id + 1).padStart(3, '0')} ${getLocalized(c1.name)}</a></div>
+              <div style="font-size:11px;font-weight:700;color:#f59e0b;">${tg1.role}</div>
+              <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;">${p1 ? getLocalized(p1.description) : ''}</div>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('thItem')}:</label>
+            <select id="tbItemSelect1" class="filter-select" style="width:100%;">
+              <option value="-1">${str('noItem')}</option>
+              ${WIKI.items.filter(it => it.type === 'equipable').map(it => `<option value="${it.id}" ${it.id === (it1 ? it1.id : -1) ? 'selected' : ''}>${getLocalized(it.name)}</option>`).join('')}
+            </select>
+          </div>
+          ${it1 ? `<div style="font-size:11px;color:var(--wiki-text-muted);background:var(--wiki-table-stripe);padding:6px;border-radius:4px;">🎒 <strong>${getLocalized(it1.name)}:</strong> ${getLocalized(it1.effect)}</div>` : ''}
+        </div>
+
+        <!-- Slot 2 (Backline) -->
+        <div class="teambuilder-slot-card">
+          <div class="teambuilder-slot-header">
+            <span>🗡️ ${str('slot2Title')}</span>
+            <span style="font-weight:800;color:var(--wiki-accent);">#2</span>
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('searchBadgeChicken')}:</label>
+            <select id="tbChickenSelect2" class="filter-select" style="width:100%;">
+              ${WIKI.chickens.map(c => `<option value="${c.id}" ${c.id === c2.id ? 'selected' : ''}>#${String(c.id + 1).padStart(3, '0')} - ${getLocalized(c.name)}</option>`).join('')}
+            </select>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:8px 0;">
+            <img class="pixelated" src="${c2.sprite}" style="width:52px;height:52px;" alt="${getLocalized(c2.name)}">
+            <div>
+              <div style="font-weight:800;font-size:15px;"><a href="#chicken-${c2.id}">#${String(c2.id + 1).padStart(3, '0')} ${getLocalized(c2.name)}</a></div>
+              <div style="font-size:11px;font-weight:700;color:#f59e0b;">${tg2.role}</div>
+              <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;">${p2 ? getLocalized(p2.description) : ''}</div>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;color:var(--wiki-text-muted);margin-bottom:4px;">${str('thItem')}:</label>
+            <select id="tbItemSelect2" class="filter-select" style="width:100%;">
+              <option value="-1">${str('noItem')}</option>
+              ${WIKI.items.filter(it => it.type === 'equipable').map(it => `<option value="${it.id}" ${it.id === (it2 ? it2.id : -1) ? 'selected' : ''}>${getLocalized(it.name)}</option>`).join('')}
+            </select>
+          </div>
+          ${it2 ? `<div style="font-size:11px;color:var(--wiki-text-muted);background:var(--wiki-table-stripe);padding:6px;border-radius:4px;">🎒 <strong>${getLocalized(it2.name)}:</strong> ${getLocalized(it2.effect)}</div>` : ''}
+        </div>
+      </div>
+
+      <!-- Synergy Card -->
+      <div class="synergy-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+          <div>
+            <h3 style="font-size:17px;margin-bottom:4px;">${str('synergyAnalysis')}</h3>
+            <span class="synergy-badge ${synergyClass}">${synergyTitle}</span>
+          </div>
+          <a href="simulador.html" class="btn-control" style="background:#ef4444;color:#fff;border-color:#dc2626;font-weight:700;text-decoration:none;">
+            ${str('testInSimulator')}
+          </a>
+        </div>
+
+        <p style="font-size:13px;line-height:1.5;">${synergyDesc}</p>
+
+        <!-- Combos detected -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          ${isFreezeSynergy ? `<span class="synergy-badge synergy-combo">❄️ Combo Congelamiento Activo</span>` : ''}
+          ${isPoisonSynergy ? `<span class="synergy-badge synergy-combo">🧪 Estrategia de Veneno / Desgaste</span>` : ''}
+          ${hasRevive ? `<span class="synergy-badge synergy-good">🔄 Capacidad de Revivir (Doble Vida)</span>` : ''}
+          ${(it1 && it1.name.es.includes('Picoteador')) || (it2 && it2.name.es.includes('Picoteador')) ? `<span class="synergy-badge synergy-good">🎯 Provocación Activa (Picoteador Dorado)</span>` : ''}
+        </div>
+
+        <!-- Combined Stats Overview -->
+        <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:8px;padding-top:12px;border-top:1px solid var(--wiki-border-light);text-align:center;">
+          <div>
+            <div style="font-size:11px;color:var(--wiki-text-muted);">${str('combinedLife')}</div>
+            <div style="font-size:18px;font-weight:800;color:var(--stat-life);">${c1.stats.life + c2.stats.life} pts</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--wiki-text-muted);">${str('estDamage')}</div>
+            <div style="font-size:18px;font-weight:800;color:var(--stat-dmg);">${totalDmg} pts</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--wiki-text-muted);">${str('avgSpeed')}</div>
+            <div style="font-size:18px;font-weight:800;color:var(--stat-spd);">${avgSpd} pts</div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('tbChickenSelect1').addEventListener('change', (e) => {
+      tbC1 = parseInt(e.target.value, 10);
+      renderTeamBuilder();
+    });
+    document.getElementById('tbChickenSelect2').addEventListener('change', (e) => {
+      tbC2 = parseInt(e.target.value, 10);
+      renderTeamBuilder();
+    });
+    document.getElementById('tbItemSelect1').addEventListener('change', (e) => {
+      tbI1 = parseInt(e.target.value, 10);
+      renderTeamBuilder();
+    });
+    document.getElementById('tbItemSelect2').addEventListener('change', (e) => {
+      tbI2 = parseInt(e.target.value, 10);
+      renderTeamBuilder();
+    });
+  }
+
+  // 12. RANKING VIEW
+  function renderRanking() {
+    const container = document.getElementById('wikiContent');
+    const categories = [
+      { key: 'speed', title: str('topSpeed'), color: 'var(--stat-spd)', unit: 'pts', getValue: c => c.stats.speed },
+      { key: 'damage', title: str('topDamage'), color: 'var(--stat-dmg)', unit: 'pts', getValue: c => c.stats.damage },
+      { key: 'armor', title: str('topArmor'), color: 'var(--stat-arm)', unit: '%', getValue: c => c.stats.armor },
+      { key: 'life', title: str('topLife'), color: 'var(--stat-life)', unit: 'pts', getValue: c => c.stats.life },
+      { key: 'power_amount', title: str('topPower'), color: 'var(--stat-pwr)', unit: 'pts', getValue: c => c.stats.power_amount },
+      { key: 'total', title: str('topTotal'), color: 'var(--wiki-gold)', unit: 'pts', getValue: c => c.stat_total }
+    ];
+
+    container.innerHTML = `
+      <div class="page-header">
+        <h1 class="page-title">🏆 ${str('rankingTitle')}</h1>
+        <p class="page-subtitle">${str('rankingDesc')}</p>
+      </div>
+
+      <div class="ranking-grid">
+        ${categories.map(cat => {
+          const sorted = WIKI.chickens.slice().sort((a, b) => cat.getValue(b) - cat.getValue(a)).slice(0, 10);
+          return `
+            <div class="ranking-card">
+              <div class="ranking-card-header">
+                <span>${cat.title}</span>
+              </div>
+              <div>
+                ${sorted.map((c, idx) => {
+                  let medalClass = '';
+                  let medalIcon = `#${idx + 1}`;
+                  if (idx === 0) { medalClass = 'gold'; medalIcon = '🥇'; }
+                  else if (idx === 1) { medalClass = 'silver'; medalIcon = '🥈'; }
+                  else if (idx === 2) { medalClass = 'bronze'; medalIcon = '🥉'; }
+                  const val = cat.getValue(c);
+
+                  return `
+                    <div class="ranking-row">
+                      <span class="rank-pos ${medalClass}">${medalIcon}</span>
+                      <img class="pixelated" src="${c.sprite}" width="28" height="28" alt="">
+                      <div style="flex:1;min-width:0;">
+                        <a href="#chicken-${c.id}" style="font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;">
+                          ${getLocalized(c.name)} <span style="font-weight:normal;color:var(--wiki-text-muted);font-size:11px;">#${String(c.id + 1).padStart(3, '0')}</span>
+                        </a>
+                      </div>
+                      <div style="font-weight:800;font-size:13px;color:${cat.color};">
+                        ${val}${cat.unit}
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  // 13. CHANGELOG VIEW
+  function renderChangelog() {
+    const container = document.getElementById('wikiContent');
+    const logs = [
+      {
+        version: "v0.119",
+        date: "Actual",
+        badge: "Versión Actual",
+        highlights: [
+          "<strong>Optimización en 'IR A CAJA':</strong> Se eliminó el botón redundante de cerrar ('X') en el panel de navegación rápida, unificando la salida a través del botón inferior de volver atrás.",
+          "<strong>Selector de Velocidad de Batalla:</strong> Se fijó la velocidad de combate de forma equilibrada a 1x y 2x para mantener la fluidez táctica y legibilidad de turnos.",
+          "<strong>Navegación de Corrales:</strong> Soporte completo para mantener presionado en los botones de cambio de pestañas de cajas, facilitando recorrer grandes inventarios.",
+          "<strong>Alineación y Centrado:</strong> Perfeccionado el centrado del texto del número de caja sobre el botón spr_ui_button_big.",
+          "<strong>Base de Datos y Poderes Ocultos:</strong> Actualización de la tabla de poderes ocultos en la enciclopedia oficial sincronizada con el código del juego.",
+          "<strong>Herramientas Web:</strong> Corrección de numeración de pollos en la Calculadora de Stats y el Simulador 2vs2 (mostrando correlativamente #001 en adelante, igual que en la Pollopedia)."
+        ]
+      },
+      {
+        version: "v0.118",
+        date: "Reciente",
+        badge: "Balance",
+        highlights: [
+          "<strong>Rebalanceo de Poderes Ocultos:</strong> Asignación estratégica renovada para varias especies de pollos.",
+          "<strong>Prevención de Clics Fantasma:</strong> Cooldown de seguridad implementado tras cerrar paneles de menú para evitar selecciones accidentales en el corral."
+        ]
+      },
+      {
+        version: "v0.117",
+        date: "Navegación",
+        badge: "Nueva Interfaz",
+        highlights: [
+          "<strong>Panel 'IR A CAJA':</strong> Nueva interfaz visual emergente para saltar instantáneamente entre los corrales 1 a 10.",
+          "<strong>Mejoras en Crianza y Reserva:</strong> Optimización en la asignación de nidos y gestión de pollos en granja."
+        ]
+      },
+      {
+        version: "v0.110 - v0.116",
+        date: "Expansión Genética",
+        badge: "Grandes Mecánicas",
+        highlights: [
+          "<strong>Genética y Deseo (Wish):</strong> Introducción del objeto Deseo para crianza perfecta de pollos 100/100/100/100/100.",
+          "<strong>Transformaciones en Combate:</strong> Sistema de evoluciones activables en batalla (Pollisor -> Pollisaur, Mechalex -> Mechalex 2.0, Gatarlos -> Evil Gatarlos).",
+          "<strong>Modo Infinito:</strong> Desafío de oleadas progresivas con recompensas míticas exclusivas (Fragmentos Prohibidos, Deseos, Plumas).",
+          "<strong>Tablón de Intercambio:</strong> Contratos comerciales cada 12 horas en la tienda."
+        ]
+      }
+    ];
+
+    container.innerHTML = `
+      <div class="page-header">
+        <h1 class="page-title">📜 ${str('changelogTitle')}</h1>
+        <p class="page-subtitle">${str('changelogDesc')}</p>
+      </div>
+
+      <div class="timeline">
+        ${logs.map(log => `
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="font-size:16px;font-weight:900;color:var(--wiki-accent);">${log.version}</span>
+                <span class="timeline-badge">${log.badge}</span>
+              </div>
+              <ul>
+                ${log.highlights.map(h => `<li style="margin-bottom:6px;">${h}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `).join('')}
       </div>
     `;
   }

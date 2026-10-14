@@ -1348,7 +1348,7 @@
         teamConfigs[team][s].born = Math.floor(Math.random() * 80) + 20;
         teamConfigs[team][s].training = +(1.0 + Math.random()).toFixed(1);
         teamConfigs[team][s].itemId = randIt;
-        teamConfigs[team][s].targetAI = TARGET_OPTIONS[Math.floor(Math.random() * TARGET_OPTIONS.length)].id;
+        teamConfigs[team][s].targetAI = TARGET_OPTIONS_DATA[Math.floor(Math.random() * TARGET_OPTIONS_DATA.length)].id;
       }
       renderConfigCards();
     }
@@ -1583,6 +1583,7 @@
       entities.forEach(ent => {
         const allies = entities.filter(e => e.team === ent.team);
         const enemies = entities.filter(e => e.team !== ent.team);
+        const target = getTarget(ent, entities);
 
         switch (ent.passiveId) {
           case 13: // Easy East: revive

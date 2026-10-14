@@ -976,7 +976,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 30,
+      "hidden_power_id": 11,
       "passive_id": 30,
       "action_type": 0,
       "stats": {
@@ -9726,6 +9726,14 @@ window.WIKI_DATA = {
           "sprite": "images/chickens/25.png"
         },
         {
+          "id": 30,
+          "name": {
+            "es": "Mosca",
+            "en": "Mosca"
+          },
+          "sprite": "images/chickens/30.png"
+        },
+        {
           "id": 122,
           "name": {
             "es": "Meta",
@@ -10698,14 +10706,6 @@ window.WIKI_DATA = {
             "en": "Zombie"
           },
           "sprite": "images/chickens/6.png"
-        },
-        {
-          "id": 30,
-          "name": {
-            "es": "Mosca",
-            "en": "Mosca"
-          },
-          "sprite": "images/chickens/30.png"
         },
         {
           "id": 62,

@@ -1478,9 +1478,14 @@
       const prevLife = entity.life;
       entity.life = Math.min(entity.lifeMax, entity.life + amount);
       const actualHealed = entity.life - prevLife;
-      if (actualHealed > 0 && log) {
-        const trHeal = t_sim[currentLang] || t_sim.es;
-        logEvent(trHeal.logHeal(entity.name, actualHealed, entity.life, entity.lifeMax), "text-emerald-400");
+      if (actualHealed > 0) {
+        if (entity.passiveId === 133) { // Astro: +3% daño al ser curado
+          entity.damageMulti += 0.03;
+        }
+        if (log) {
+          const trHeal = t_sim[currentLang] || t_sim.es;
+          logEvent(trHeal.logHeal(entity.name, actualHealed, entity.life, entity.lifeMax), "text-emerald-400");
+        }
       }
       return actualHealed;
     }
@@ -1527,6 +1532,13 @@
         if (buffStat === 'damage') entity.damageMulti += buffAmt;
         if (buffStat === 'speed') entity.speedMulti += buffAmt;
         if (buffStat === 'armor') entity.armorMulti += buffAmt;
+        if (entity.passiveId === 75) { // Titiro: poder al máximo al usar ítem
+          entity.powerValue = entity.powerMax;
+        }
+        if (entity.passiveId === 138) { // Felicie: +50 poder y +25% daño al usar ítem
+          entity.powerValue = Math.min(entity.powerMax, entity.powerValue + 50);
+          entity.damageMulti += 0.25;
+        }
       };
 
       if (hpPct <= 0.25) {
@@ -1643,6 +1655,15 @@
             break;
           case 56: // Evil Gatarlos: +1 evasión al equipo
             allies.forEach(a => a.avoid++);
+            break;
+          case 120: // Rick: lanza ataque inicial de mosca
+            if (target) dealDamage(ent, target, ent.damage, entities, log);
+            break;
+          case 127: // Jamer: lanza hacha inicial (80% daño, cura 40%)
+            if (target) {
+              const d = dealDamage(ent, target, Math.round(ent.damage * 0.8), entities, log);
+              healEntity(ent, Math.round(d * 0.4), log);
+            }
             break;
         }
       });
@@ -1822,6 +1843,11 @@
 
       allEntities.lastPower = attacker.powerId;
 
+      let powerRepeats = 1;
+      if (attacker.passiveId === 37) powerRepeats++; // Pastank: repite poder
+      if (attacker.passiveId === 58 && Math.random() < 0.5) powerRepeats++; // Duncan: 50% probabilidad de repetir poder
+
+      for (let rPow = 0; rPow < powerRepeats; rPow++) {
       switch (attacker.powerId) {
         case 0: // Doble ataque
           if (target) {
@@ -2143,6 +2169,117 @@
           if (target) dealDamage(attacker, target, Math.round(attacker.damage * 1.2), allEntities, log);
           break;
       }
+      } // end powerRepeats loop
+
+      // Author power passives
+      if (attacker.passiveId === 4) { // Mali: se cura 50% de su daño
+        healEntity(attacker, Math.round((attacker.damage * attacker.damageMulti) * 0.5), log);
+      }
+      if (attacker.passiveId === 11) attacker.damageMulti += 0.10; // Vio: +10% daño
+      if (attacker.passiveId === 14 && target) target.states.freeze = 3; // Snow: congela 3 turnos
+      if (attacker.passiveId === 17) { // Raro: estado aleatorio a todos los enemigos
+        const rSt = Math.floor(Math.random() * 4);
+        enemies.forEach(e => {
+          if (rSt === 0) e.states.poison = 3;
+          else if (rSt === 1) e.states.burn = 3;
+          else if (rSt === 2) e.states.freeze = 3;
+          else if (rSt === 3) e.states.paralysis = 3;
+        });
+      }
+      if (attacker.passiveId === 27) { // Invert: aliado +5% stat aleatorio
+        allies.filter(a => a.id !== attacker.id).forEach(a => {
+          const st = Math.random();
+          if (st < 0.33) a.damageMulti += 0.05;
+          else if (st < 0.66) a.speedMulti += 0.05;
+          else a.armorMulti += 0.05;
+        });
+      }
+      if (attacker.passiveId === 30 && target) { // Mosca: 2 ataques de mosca
+        dealDamage(attacker, target, attacker.damage, allEntities, log);
+        if (target.alive) dealDamage(attacker, target, attacker.damage, allEntities, log);
+      }
+      if (attacker.passiveId === 45) { // Vulcano: +5% daño, cura 10% HP
+        attacker.damageMulti += 0.05;
+        healEntity(attacker, Math.round(attacker.lifeMax * 0.1), log);
+      }
+      if (attacker.passiveId === 46) { // Robotop: +15% armadura, +1 avoid
+        attacker.armorMulti += 0.15;
+        attacker.avoid++;
+      }
+      if (attacker.passiveId === 53) enemies.forEach(e => e.states.poison = 3); // Queso: envenena enemigos
+      if (attacker.passiveId === 54) enemies.forEach(e => e.states.curse = 3); // Monocrom: maldice enemigos
+      if (attacker.passiveId === 63) { // Volcken: cura al aliado (15% dmg + 15% lifeMax)
+        allies.filter(a => a.id !== attacker.id).forEach(a => {
+          healEntity(a, Math.round((attacker.damage * attacker.damageMulti) * 0.15 + attacker.lifeMax * 0.15), log);
+        });
+      }
+      if (attacker.passiveId === 66) { // Ashy: -15% vel y quema a enemigos 2 turnos
+        enemies.forEach(e => { e.speedMulti = Math.max(0.2, e.speedMulti - 0.15); e.states.burn = 2; });
+      }
+      if (attacker.passiveId === 67) attacker.avoid++; // Pollulu: +1 avoid
+      if (attacker.passiveId === 71) enemies.forEach(e => e.states.silence = 3); // Nube: silencia enemigos 3 turnos
+      if (attacker.passiveId === 78) { // Wicken: cada 2 poderes, +1 avoid
+        attacker.wickenCount = (attacker.wickenCount || 0) + 1;
+        if (attacker.wickenCount % 2 === 0) attacker.avoid++;
+      }
+      if (attacker.passiveId === 92) { // Galland: +5% armadura, cura 10% HP
+        attacker.armorMulti += 0.05;
+        healEntity(attacker, Math.round(attacker.lifeMax * 0.1), log);
+      }
+      if (attacker.passiveId === 97) enemies.forEach(e => e.powerValue = 0); // Terra: resetea poder de enemigos
+      if (attacker.passiveId === 98 && target) { // Crystal: lanza bomba
+        dealDamage(attacker, target, Math.round(attacker.damage * 0.8), allEntities, log);
+        enemies.filter(e => e.id !== target.id).forEach(o => dealDamage(attacker, o, Math.round(attacker.damage * 0.4), allEntities, log));
+      }
+      if (attacker.passiveId === 110 && target) { // Springy: ataque básico extra
+        dealDamage(attacker, target, attacker.damage, allEntities, log);
+      }
+      if (attacker.passiveId === 114) { // Chird: +5% en stat aleatorio
+        const r = Math.random();
+        if (r < 0.33) attacker.damageMulti += 0.05;
+        else if (r < 0.66) attacker.speedMulti += 0.05;
+        else attacker.armorMulti += 0.05;
+      }
+      if (attacker.passiveId === 130) { // Jacko: reduce stat aleatorio de enemigos en 5%
+        enemies.forEach(e => {
+          const r = Math.random();
+          if (r < 0.33) e.damageMulti = Math.max(0.2, e.damageMulti - 0.05);
+          else if (r < 0.66) e.speedMulti = Math.max(0.2, e.speedMulti - 0.05);
+          else e.armorMulti = Math.max(0, e.armorMulti - 0.05);
+        });
+      }
+      if (attacker.passiveId === 144) { // Gice: da poción aleatoria a aliado sin ítem
+        const allyNoItem = allies.find(a => a.id !== attacker.id && (!a.itemId || a.itemId === -1));
+        if (allyNoItem) {
+          const potList = [0, 13, 7, 8, 9, 24, 34];
+          allyNoItem.itemId = potList[Math.floor(Math.random() * potList.length)];
+          allyNoItem.itemUsed = false;
+        }
+      }
+
+      // Reaction passives triggered when ANY power is used:
+      allEntities.filter(e => e.alive).forEach(other => {
+        if (other.team === attacker.team && other.passiveId === 20 && other.id !== attacker.id) { // Zeo: +5% daño
+          other.damageMulti += 0.05;
+        }
+        if (other.team === attacker.team && other.passiveId === 87 && other.id !== attacker.id) { // Plass: poder al máximo
+          other.powerValue = other.powerMax;
+        }
+        if (other.team !== attacker.team && other.passiveId === 91) { // Darkus: +5% daño cuando rival usa poder
+          other.damageMulti += 0.05;
+        }
+        if (other.team === attacker.team && other.passiveId === 145 && other.id !== attacker.id) { // Evelyn: cura al usuario el 33% del daño de Evelyn
+          healEntity(attacker, Math.round((other.damage * other.damageMulti) * 0.33), log);
+        }
+        if (other.team !== attacker.team && other.passiveId === 146) { // Sinestrer: lanza bomba cuando rival usa poder
+          const sTgt = getTarget(other, allEntities);
+          if (sTgt) dealDamage(other, sTgt, Math.round(other.damage * 0.8), allEntities, log);
+        }
+        if (other.passiveId === 25 && other.id !== attacker.id) { // Manic: lanza bomba cuando se usa poder
+          const mTgt = getTarget(other, allEntities);
+          if (mTgt) dealDamage(other, mTgt, Math.round(other.damage * 0.8), allEntities, log);
+        }
+      });
     }
 
     // DAMAGE RESOLUTION WITH ALL COMBAT PASSIVES & ITEMS
@@ -2220,6 +2357,74 @@
       if (attacker.passiveId === 143 && target.states.burn > 0) healEntity(attacker, Math.round(rawDmg * 0.20), log); // Blade (cura 20% si quemado)
       if (attacker.passiveId === 149 && target.states.freeze > 0) attacker.damageMulti += 0.30; // Chimir (+30% daño si congelado)
 
+      // Additional attacker on-hit passives
+      if (attacker.passiveId === 64) { // Nama: +5% daño, sufre 5% HP
+        attacker.damageMulti += 0.05;
+        attacker.life = Math.max(1, attacker.life - Math.round(attacker.lifeMax * 0.05));
+      }
+      if (attacker.passiveId === 76 && attacker.attackCount % 5 === 0 && target) { // Luso: 2 ataques extra cada 5 golpes
+        dealDamage(attacker, target, attacker.damage, allEntities, log);
+        if (target.alive) dealDamage(attacker, target, attacker.damage, allEntities, log);
+      }
+      if (attacker.passiveId === 77 && target.states.freeze > 0) { // Menta: cura 5% HP objetivo si congelado
+        healEntity(attacker, Math.round(target.lifeMax * 0.05), log);
+      }
+      if (attacker.passiveId === 79) { // Gota: cura 5% HP y +3% vel
+        healEntity(attacker, Math.round(attacker.lifeMax * 0.05), log);
+        attacker.speedMulti += 0.03;
+      }
+      if (attacker.passiveId === 80 && target.states.poison > 0) { // Mucken: cura 5% HP objetivo si envenenado
+        healEntity(attacker, Math.round(target.lifeMax * 0.05), log);
+      }
+      if (attacker.passiveId === 82 && target.states.infect > 0) { // Fingie: drena 10 poder e infecta al otro rival
+        target.powerValue = Math.max(0, target.powerValue - 10);
+        const otherEnemy = allEntities.find(e => e.team !== attacker.team && e.id !== target.id && e.alive && e.states.infect <= 0);
+        if (otherEnemy) otherEnemy.states.infect = 3;
+      }
+      if (attacker.passiveId === 86 && attacker.attackCount % 5 === 0) { // Yuntan: envenena y cura 33% HP objetivo
+        target.states.poison = 3;
+        healEntity(attacker, Math.round(target.lifeMax * 0.33), log);
+      }
+      if (attacker.passiveId === 94) { // Estepi: +5 poder y +3% vel
+        attacker.powerValue = Math.min(attacker.powerMax, attacker.powerValue + 5);
+        attacker.speedMulti += 0.03;
+      }
+      if (attacker.passiveId === 96) { // Garry: -5 poder rival
+        target.powerValue = Math.max(0, target.powerValue - 5);
+      }
+      if (attacker.passiveId === 101 && attacker.attackCount % 3 === 0 && target) { // Drago: lanza huevo helado
+        dealDamage(attacker, target, attacker.damage, allEntities, log);
+        target.states.freeze = 2;
+      }
+      if (attacker.passiveId === 106 && target.states.freeze > 0) { // Snick: +2% armor, +5 poder si congelado
+        attacker.armorMulti += 0.02;
+        attacker.powerValue = Math.min(attacker.powerMax, attacker.powerValue + 5);
+      }
+      if (attacker.passiveId === 108 && attacker.attackCount % 3 === 0 && target) { // Plumillas: lanza bomba
+        dealDamage(attacker, target, Math.round(attacker.damage * 0.8), allEntities, log);
+        allEntities.filter(e => e.team !== attacker.team && e.id !== target.id && e.alive).forEach(o => dealDamage(attacker, o, Math.round(attacker.damage * 0.4), allEntities, log));
+      }
+      if (attacker.passiveId === 111) { // Lock: stat aleatorio +5%
+        const rLock = Math.random();
+        if (rLock < 0.33) attacker.damageMulti += 0.05;
+        else if (rLock < 0.66) attacker.speedMulti += 0.05;
+        else attacker.armorMulti += 0.05;
+      }
+      if (attacker.passiveId === 119 && target.life <= target.lifeMax * 0.25 && !target.rhafaUsed) { // Rhafa: restaura toda la vida
+        target.rhafaUsed = true;
+        target.life = target.lifeMax;
+        if (log) logEvent(`✨ <b>${target.name}</b> [Rhafa] restaura toda su vida!`, "text-emerald-400 font-bold");
+      }
+      if (attacker.passiveId === 127) { // Jamer: -3% armadura al objetivo
+        target.armorMulti = Math.max(0, target.armorMulti - 0.03);
+      }
+      if (attacker.passiveId === 131) { // Cori: +10 poder al aliado
+        allEntities.filter(e => e.team === attacker.team && e.id !== attacker.id && e.alive).forEach(a => a.powerValue = Math.min(a.powerMax, a.powerValue + 10));
+      }
+      if (attacker.passiveId === 137 && target.states.infect > 0) { // Elfen: +25 poder si rival infectado
+        attacker.powerValue = Math.min(attacker.powerMax, attacker.powerValue + 25);
+      }
+
       // Attacker items
       if (attacker.itemId === 27 && attacker.itemId !== 60) { // Arena milagrosa (+5 poder en ataque)
         attacker.powerValue = Math.min(attacker.powerMax, attacker.powerValue + 5);
@@ -2264,6 +2469,14 @@
       if (attacker.itemId === 66 && realDamage > 0) {
         const healAmt = Math.max(1, Math.round(realDamage * 0.15));
         healEntity(attacker, healAmt, log);
+      }
+      if (attacker.passiveId === 93 && realDamage > 0) { // Drillen: cura 25% del daño infligido
+        healEntity(attacker, Math.round(realDamage * 0.25), log);
+      }
+      if (attacker.passiveId === 142 && target.states.freeze > 0 && realDamage > 0) { // Hium: cura 20% del daño a sí mismo y aliado
+        const hHium = Math.round(realDamage * 0.20);
+        healEntity(attacker, hHium, log);
+        allEntities.filter(e => e.team === attacker.team && e.id !== attacker.id && e.alive).forEach(a => healEntity(a, hHium, log));
       }
       // Mirador dorado (item 28) first attack heal
       if (attacker.itemId === 28 && attacker.attackCount === 1) {
@@ -2324,6 +2537,22 @@
           attacker.states.burn = 3;
           if (log) logEvent(`🔥 [Pasiva Lava] <b>${attacker.name}</b> se quema al golpear a ${target.name}.`, "text-orange-400");
         }
+        if (target.passiveId === 123) { // MetaSoldier: cura 5% HP al aliado al recibir daño
+          allEntities.filter(e => e.team === target.team && e.id !== target.id && e.alive).forEach(a => healEntity(a, Math.round(target.lifeMax * 0.05), false));
+        }
+        if (target.passiveId === 124 && target.life <= target.lifeMax * 0.5 && !target.ingerUsed) { // Inger: 3 misiles al bajar de 50% HP
+          target.ingerUsed = true;
+          const tInger = getTarget(target, allEntities);
+          if (tInger) {
+            dealDamage(target, tInger, target.damage, allEntities, log);
+            if (tInger.alive) dealDamage(target, tInger, target.damage, allEntities, log);
+            if (tInger.alive) dealDamage(target, tInger, target.damage, allEntities, log);
+          }
+        }
+        if (target.passiveId === 128) { // Jeraz: contragolpea con bomba
+          const tJeraz = getTarget(target, allEntities);
+          if (tJeraz) dealDamage(target, tJeraz, Math.round(target.damage * 0.8), allEntities, log);
+        }
 
         // When-hit items
         if (target.itemId === 41 && Math.random() < 0.20) { // Frozen beak (20% freeze)
@@ -2351,11 +2580,42 @@
         if (entity.revive) {
           entity.revive = false;
           entity.life = Math.round(entity.lifeMax * 0.5);
+          if (entity.passiveId === 13) entity.damageMulti += 0.25; // Easy East (+25% daño al revivir)
+          if (entity.passiveId === 51) entity.life = entity.lifeMax; // Bjorn (vida completa)
+          if (entity.passiveId === 56) transformEntity(entity, 26, log); // Evil Gatarlos -> Gatarlos
+          if (entity.passiveId === 104) entity.armorMulti += 0.25; // Friozero (+25% armadura)
+          if (entity.passiveId === 109) transformEntity(entity, 4, log); // Max -> Mali
           if (entity.reviveAsZombie) {
             transformEntity(entity, 6, log); // Revive as Zombie
           }
+          // Mayel reaction: ally revives -> +15% dmg & +1 avoid
+          allEntities.filter(e => e.team === entity.team && e.passiveId === 136 && e.id !== entity.id && e.alive).forEach(m => {
+            m.damageMulti += 0.15;
+            m.avoid++;
+          });
           const trDth = t_sim[currentLang] || t_sim.es;
       if (log) logEvent(trDth.logRevive(entity.name, entity.life), "text-amber-400 font-bold");
+          return;
+        }
+
+        // Leci sacrifice: ally dies -> Leci sacrifices self to revive ally
+        const alliesPreDeath = allEntities.filter(e => e.team === entity.team && e.alive && e.id !== entity.id);
+        const allyLeci = alliesPreDeath.find(a => a.passiveId === 48 && !a.leciUsed);
+        if (allyLeci) {
+          allyLeci.leciUsed = true;
+          entity.life = Math.round(entity.lifeMax * (allyLeci.life / allyLeci.lifeMax));
+          entity.alive = true;
+          allyLeci.life = 0;
+          allyLeci.alive = false;
+          if (log) logEvent(`🕊️ [Pasiva Leci] ¡<b>${allyLeci.name}</b> se sacrifica para revivir a ${entity.name}!`, "text-amber-400 font-bold");
+          return;
+        }
+
+        // Meta revival: revives up to 2 times if ally is alive
+        if (entity.passiveId === 122 && alliesPreDeath.length > 0 && (entity.metaRevives === undefined || entity.metaRevives > 0)) {
+          entity.metaRevives = (entity.metaRevives === undefined) ? 1 : entity.metaRevives - 1;
+          entity.life = Math.round(entity.lifeMax * 0.5);
+          if (log) logEvent(`🤖 [Pasiva Meta] ¡<b>${entity.name}</b> se reconstruye y revive!`, "text-cyan-400 font-bold");
           return;
         }
 
@@ -2405,6 +2665,12 @@
             a.speedMulti += 0.15;
             if (log) logEvent(`👁️ [Ojo del Vacío] <b>${a.name}</b> absorbe el alma caída (+15% a todas sus estadísticas)!`, "text-purple-400 font-bold");
           }
+          if (a.passiveId === 112) { // Law: absorbe estadísticas del compañero caído
+            a.damageMulti += (entity.damageMulti - 1);
+            a.speedMulti += (entity.speedMulti - 1);
+            a.armorMulti += (entity.armorMulti - 1);
+            if (log) logEvent(`⚖️ [Pasiva Law] <b>${a.name}</b> absorbe las mejoras de ${entity.name}!`, "text-amber-400");
+          }
         });
 
         // Killer on-kill events
@@ -2438,6 +2704,10 @@
               break;
             case 65: // Vapollo: +2 avoid
               killer.avoid += 2;
+              break;
+            case 90: // Ploom: cura 25% max HP, equipo +1 avoid
+              healEntity(killer, Math.round(killer.lifeMax * 0.25), log);
+              allEntities.filter(e => e.team === killer.team && e.alive).forEach(a => a.avoid++);
               break;
             case 102: // Niwato: +15% dmg & vel
               killer.damageMulti += 0.15;
@@ -2524,6 +2794,14 @@
           const missileTarget = getTarget(ent, state.entities);
           if (missileTarget) dealDamage(ent, missileTarget, ent.damage, state.entities, log);
           ent.armorMulti = Math.max(0, ent.armorMulti - 0.04);
+        }
+        if (ent.passiveId === 147) { // Intiken (Tribinti): pierde 10% vida max, +20 poder
+          const dmgIntiken = Math.max(1, Math.round(ent.lifeMax * 0.1));
+          ent.life = Math.max(0, ent.life - dmgIntiken);
+          ent.powerValue = Math.min(ent.powerMax, ent.powerValue + 20);
+          if (log) logEvent(`🩸 <b>${ent.name}</b> [Pasiva Intiken] sacrifica ${dmgIntiken} HP y gana +20 de Poder.`, "text-amber-400");
+          checkDeath(ent, null, state.entities, log);
+          if (!ent.alive) continue;
         }
 
         // A. Start of turn status effects (poison, burn, infect)

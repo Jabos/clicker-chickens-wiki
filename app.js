@@ -193,14 +193,42 @@
       presetMetaHeader: "⭐ Metagame & Presets Oficiales",
       customTeamsHeader: "💾 Mis Equipos Guardados",
       randomTeamBtn: "Equipo Aleatorio",
-      rankingTitle: "Ranking de Estadísticas (Top 10)",
-      rankingDesc: "Clasificación de los mejores pollos en cada atributo base según los datos oficiales.",
+      rankingTitle: "Ranking de Estadísticas",
+      rankingDesc: "Clasificación oficial de los mejores pollos del juego según estadísticas base, potencial máximo y roles tácticos.",
+      rankingTabMax: "⚡ Máximos en Combate (Nv. 100 Perfectos)",
+      rankingTabBase: "🌱 Estadísticas Base (Nacimiento)",
+      rankingTabArchetypes: "🎖️ Mejores por Arquetipo",
+      rankingMaxDesc: "Estadísticas reales calculadas a Nivel 100 con Genética 100 (Deseo) y Entrenamiento al 2.00x (Perfectos).",
+      rankingBaseDesc: "Clasificación según los atributos base puros de nacimiento de cada especie (Nivel 1 sin entrenar).",
+      rankingArchDesc: "Los pollos más determinantes del metagame agrupados por su rol táctico y función en equipos 2vs2.",
       topSpeed: "⚡ Más Rápidos (Velocidad)",
       topDamage: "🗡️ Mayor Daño (Ataque)",
-      topArmor: "🛡️ Mayor Armadura (Defensa %)",
+      topArmor: "🛡️ Mayor Armadura (Defensa)",
       topLife: "❤️ Mayor Vida (HP)",
       topPower: "✨ Mayor Carga de Poder (Turnos)",
       topTotal: "👑 Mayor Suma Total de Stats",
+      topSpeedMax: "⚡ Más Rápidos en Combate (Velocidad Nv.100)",
+      topDamageMax: "🗡️ Mayor Daño Real (Ataque Nv.100)",
+      topArmorMax: "🛡️ Mayor Armadura en Combate (Defensa Nv.100)",
+      topLifeMax: "❤️ Mayor Vida Real (HP Nv.100)",
+      topPowerMax: "✨ Mayor Carga de Poder (Energía/Turno Nv.100)",
+      topTotalMax: "👑 Mayor Poder de Combate Total",
+      archTanksTitle: "🛡️ Tanques & Bastiones Defensivos",
+      archTanksSub: "Especialistas en absorber daño, reducir impactos y proteger a su compañero.",
+      archStrikersTitle: "🗡️ Cañones de Cristal & Rematadores",
+      archStrikersSub: "Poder ofensivo demoledor para derribar amenazas en los primeros turnos.",
+      archSpeedstersTitle: "⚡ Velocistas & Evasión",
+      archSpeedstersSub: "Dominan la iniciativa de turno y eluden ataques con alta esquiva.",
+      archBatteriesTitle: "✨ Baterías de Poder (Casters)",
+      archBatteriesSub: "Generan energía masiva para activar habilidades devastadoras cada 1-2 turnos.",
+      archFreezeTitle: "❄️ Control de Estado & Congelamiento",
+      archFreezeSub: "Anulan turnos enemigos mediante congelación, sueño o parálisis.",
+      archPoisonTitle: "🧪 Veneno, Quemadura & Desgaste",
+      archPoisonSub: "Desgastan la salud rival gradualmente turno tras turno ignorando armadura.",
+      archHealersTitle: "💚 Soporte Curativo & Regeneración",
+      archHealersSub: "Restauran vitalidad y sostienen al equipo en combates prolongados.",
+      archReviveTitle: "🔄 Resurrección & Supervivencia Extrema",
+      archReviveSub: "Capaces de volver a la vida tras caer derrotados o resistir golpes fatales.",
       changelogTitle: "Registro de Versiones y Notas de Parche",
       changelogDesc: "Historial oficial de cambios, novedades, balances de combate y correcciones del juego."
     },
@@ -385,14 +413,42 @@
       presetMetaHeader: "⭐ Official Metagame Presets",
       customTeamsHeader: "💾 My Saved Teams",
       randomTeamBtn: "Random Team",
-      rankingTitle: "Stat Leaderboards (Top 10)",
-      rankingDesc: "Ranking of top chickens across all base attributes according to official game data.",
-      topSpeed: "⚡ Fastest Chickens (Speed)",
+      rankingTitle: "Stat Leaderboards",
+      rankingDesc: "Official leaderboards for top chickens based on base stats, max combat potential and tactical roles.",
+      rankingTabMax: "⚡ Max Combat Stats (Lv. 100 Perfect)",
+      rankingTabBase: "🌱 Base Stats (Birth)",
+      rankingTabArchetypes: "🎖️ Best by Archetype",
+      rankingMaxDesc: "Real combat statistics calculated at Level 100 with perfect Genetics (100) and max Training (2.00x).",
+      rankingBaseDesc: "Official rankings based on pure innate birth attributes of each species (Level 1 untrained).",
+      rankingArchDesc: "The most dominant metagame chickens grouped by their tactical role and synergy in 2vs2 teams.",
+      topSpeed: "⚡ Fastest (Speed)",
       topDamage: "🗡️ Highest Damage (Attack)",
-      topArmor: "🛡️ Highest Armor (Defense %)",
+      topArmor: "🛡️ Highest Armor (Defense)",
       topLife: "❤️ Highest Life (HP)",
-      topPower: "✨ Fastest Power Charge (Turns)",
-      topTotal: "👑 Highest Total Stats Sum",
+      topPower: "✨ Highest Power Gain (Turns)",
+      topTotal: "👑 Highest Total Base Stats",
+      topSpeedMax: "⚡ Fastest in Combat (Speed Lv.100)",
+      topDamageMax: "🗡️ Highest Combat Damage (Attack Lv.100)",
+      topArmorMax: "🛡️ Highest Combat Armor (Defense Lv.100)",
+      topLifeMax: "❤️ Highest Combat Life (HP Lv.100)",
+      topPowerMax: "✨ Highest Power Gain (Energy/Turn Lv.100)",
+      topTotalMax: "👑 Highest Total Combat Rating",
+      archTanksTitle: "🛡️ Defensive Tanks & Bastions",
+      archTanksSub: "Specialists in absorbing damage, mitigating hits and shielding partners.",
+      archStrikersTitle: "🗡️ Glass Cannons & Strikers",
+      archStrikersSub: "Devastating offensive power designed to take down threats early.",
+      archSpeedstersTitle: "⚡ Speedsters & Evasion",
+      archSpeedstersSub: "Dominate turn initiative and dodge incoming attacks with high agility.",
+      archBatteriesTitle: "✨ Power Batteries (Casters)",
+      archBatteriesSub: "Generate massive energy to cast devastating powers every 1-2 turns.",
+      archFreezeTitle: "❄️ Crowd Control & Freeze",
+      archFreezeSub: "Nullify enemy turns via freeze, sleep or paralyze effects.",
+      archPoisonTitle: "🧪 Poison, Burn & Attrition",
+      archPoisonSub: "Whittle down rival HP turn after turn, piercing raw defense.",
+      archHealersTitle: "💚 Healing Support & Sustain",
+      archHealersSub: "Restore HP and keep the duo healthy through drawn-out battles.",
+      archReviveTitle: "🔄 Immortals & Revive",
+      archReviveSub: "Able to rise after falling or survive fatal finishing blows.",
       changelogTitle: "Version History & Patch Notes",
       changelogDesc: "Official log of game updates, balance adjustments, UI improvements and bug fixes."
     },
@@ -577,14 +633,42 @@
       presetMetaHeader: "⭐ Metagame & Presets Oficiais",
       customTeamsHeader: "💾 Meus Times Salvos",
       randomTeamBtn: "Time Aleatório",
-      rankingTitle: "Ranking de Atributos (Top 10)",
-      rankingDesc: "Classificação dos melhores frangos em cada atributo base segundo dados oficiais.",
+      rankingTitle: "Classificação de Atributos",
+      rankingDesc: "Classificação oficial dos melhores frangos do jogo segundo atributos base, potencial máximo e papéis táticos.",
+      rankingTabMax: "⚡ Máximos em Combate (Nv. 100 Perfeitos)",
+      rankingTabBase: "🌱 Atributos Base (Nascimento)",
+      rankingTabArchetypes: "🎖️ Melhores por Arquétipo",
+      rankingMaxDesc: "Atributos reais calculados no Nível 100 com Genética 100 (Desejo) e Treinamento a 2.00x (Perfeitos).",
+      rankingBaseDesc: "Classificação oficial de acordo com os atributos base puros de nascimento de cada espécie (Nível 1 sem treino).",
+      rankingArchDesc: "Os frangos mais determinantes do metagame agrupados por seu papel tático e sinergia em equipes 2vs2.",
       topSpeed: "⚡ Mais Rápidos (Velocidade)",
       topDamage: "🗡️ Maior Dano (Ataque)",
-      topArmor: "🛡️ Maior Armadura (Defesa %)",
+      topArmor: "🛡️ Maior Armadura (Defesa)",
       topLife: "❤️ Maior Vida (HP)",
-      topPower: "✨ Carga de Poder Mais Rápida",
-      topTotal: "👑 Maior Soma Total de Atributos",
+      topPower: "✨ Maior Carga de Poder (Turnos)",
+      topTotal: "👑 Maior Soma Total de Stats",
+      topSpeedMax: "⚡ Mais Rápidos em Combate (Velocidade Nv.100)",
+      topDamageMax: "🗡️ Maior Dano Real (Ataque Nv.100)",
+      topArmorMax: "🛡️ Maior Armadura em Combate (Defesa Nv.100)",
+      topLifeMax: "❤️ Maior Vida Real (HP Nv.100)",
+      topPowerMax: "✨ Maior Ganho de Poder (Energia/Turno Nv.100)",
+      topTotalMax: "👑 Maior Poder de Combate Total",
+      archTanksTitle: "🛡️ Tanques & Bastiões Defensivos",
+      archTanksSub: "Especialistas em absorver dano, mitigar golpes e proteger o parceiro.",
+      archStrikersTitle: "🗡️ Canhões de Cristal & Finalizadores",
+      archStrikersSub: "Poder ofensivo avassalador para derrubar ameaças nos primeiros turnos.",
+      archSpeedstersTitle: "⚡ Velocistas & Evasão",
+      archSpeedstersSub: "Dominam a iniciativa do turno e esquivam de ataques com agilidade.",
+      archBatteriesTitle: "✨ Baterias de Poder (Conjuradores)",
+      archBatteriesSub: "Geram energia massiva para disparar poderes devastadores a cada 1-2 turnos.",
+      archFreezeTitle: "❄️ Controle de Grupo & Congelamento",
+      archFreezeSub: "Anulam turnos inimigos através de congelamento, sono ou paralisia.",
+      archPoisonTitle: "🧪 Veneno, Queimadura & Desgaste",
+      archPoisonSub: "Desgastam a vida rival turno a turno, perfurando armaduras.",
+      archHealersTitle: "💚 Suporte Curativo & Regeneração",
+      archHealersSub: "Restauram vitalidade e sustentam a dupla em batalhas prolongadas.",
+      archReviveTitle: "🔄 Imortais & Ressurreição",
+      archReviveSub: "Capazes de retornar à vida após derrotados ou resistir a golpes fatais.",
       changelogTitle: "Histórico de Versões e Atualizações",
       changelogDesc: "Registro oficial de mudanças, novidades, balanço de combate e correções do jogo."
     },
@@ -769,14 +853,42 @@
       presetMetaHeader: "⭐ Официальные мета-пресеты",
       customTeamsHeader: "💾 Мои сохраненные команды",
       randomTeamBtn: "Случайная команда",
-      rankingTitle: "Рейтинги характеристик (Топ-10)",
-      rankingDesc: "Топ цыплят по каждому параметру на основе официальных данных игры.",
-      topSpeed: "⚡ Самые быстрые (Скорость)",
-      topDamage: "🗡️ Максимальный урон (Атака)",
-      topArmor: "🛡️ Максимальная броня (Защита %)",
-      topLife: "❤️ Максимальное здоровье (HP)",
-      topPower: "✨ Быстрый набор силы",
-      topTotal: "👑 Наибольшая сумма параметров",
+      rankingTitle: "Рейтинг характеристик",
+      rankingDesc: "Официальный рейтинг лучших цыплят по базовым статам, боевому максимуму и тактическим ролям.",
+      rankingTabMax: "⚡ Боевой максимум (Ур. 100 Идеал)",
+      rankingTabBase: "🌱 Базовые хар-ки (Ур. 1)",
+      rankingTabArchetypes: "🎖️ Лучшие по архетипам",
+      rankingMaxDesc: "Реальные боевые статы на 100 уровне с идеальной генетикой (100) и тренировкой (2.00x).",
+      rankingBaseDesc: "Рейтинг по врожденным базовым характеристикам каждого вида (1 уровень).",
+      rankingArchDesc: "Сильнейшие цыплята метагейма по тактическим ролям и синергии в командах 2vs2.",
+      topSpeed: "⚡ Быстрейшие (Скорость)",
+      topDamage: "🗡️ Наибольший урон (Атака)",
+      topArmor: "🛡️ Наивысшая броня (Защита)",
+      topLife: "❤️ Наибольшее HP (Жизнь)",
+      topPower: "✨ Быстрый заряд силы (Ходы)",
+      topTotal: "👑 Наивысшая сумма базовых статов",
+      topSpeedMax: "⚡ Быстрейшие в бою (Скорость Ур.100)",
+      topDamageMax: "🗡️ Наибольший урон в бою (Атака Ур.100)",
+      topArmorMax: "🛡️ Наивысшая броня в бою (Защита Ур.100)",
+      topLifeMax: "❤️ Наибольшее HP в бою (Жизнь Ур.100)",
+      topPowerMax: "✨ Наибольший заряд энергии (Ур.100)",
+      topTotalMax: "👑 Наивысшая боевая мощь",
+      archTanksTitle: "🛡️ Танки и бастионы",
+      archTanksSub: "Специалисты по поглощению урона и защите напарника.",
+      archStrikersTitle: "🗡️ Стеклянные пушки и дамагеры",
+      archStrikersSub: "Сокрушительный урон для быстрого устранения угроз.",
+      archSpeedstersTitle: "⚡ Быстрые и уклонение",
+      archSpeedstersSub: "Доминируют по инициативе и уклоняются от атак.",
+      archBatteriesTitle: "✨ Батарейки энергии (Кастеры)",
+      archBatteriesSub: "Накапливают заряд для активации способностей каждые 1-2 хода.",
+      archFreezeTitle: "❄️ Контроль и заморозка",
+      archFreezeSub: "Лишают противника ходов заморозкой, сном или параличом.",
+      archPoisonTitle: "🧪 Яд, горение и изнурение",
+      archPoisonSub: "Истощают здоровье врага каждый ход, игнорируя броню.",
+      archHealersTitle: "💚 Поддержка и лечение",
+      archHealersSub: "Восстанавливают здоровье и поддерживают команду в затяжных боях.",
+      archReviveTitle: "🔄 Бессмертные и воскрешение",
+      archReviveSub: "Способны возрождаться после гибели или выдерживать смертельный урон.",
       changelogTitle: "История версий и изменений",
       changelogDesc: "Официальный журнал обновлений, правок баланса, улучшений интерфейса и исправлений ошибок."
     }
@@ -3149,61 +3261,360 @@
 
 
   // 12. RANKING VIEW
+  let currentRankingTab = 'max'; // 'max' | 'base' | 'archetypes'
+
+  const ARCHETYPES_DATA = [
+    {
+      key: 'tanks',
+      titleKey: 'archTanksTitle',
+      subKey: 'archTanksSub',
+      color: 'var(--stat-arm)',
+      chickens: [
+        { id: 10, note: { es: "100 ARM / 100 HP • Reinicia poder al vencer rivales", en: "100 DEF / 100 HP • Resets power on kills", pt: "100 ARM / 100 HP • Reinicia poder ao vencer", ru: "100 БРО / 100 HP • Сброс кулдауна" } },
+        { id: 19, note: { es: "100 ARM / 65 HP • Inmune a veneno + Contraataque", en: "100 DEF / 65 HP • Poison immune + Counter", pt: "100 ARM / 65 HP • Imune a veneno + Contra-ataque", ru: "100 БРО / 65 HP • Иммунитет к яду" } },
+        { id: 31, note: { es: "70 ARM / 100 HP • Reduce velocidad rival y cura", en: "70 DEF / 100 HP • Slows rival & heals", pt: "70 ARM / 100 HP • Reduz vel rival e cura", ru: "70 БРО / 100 HP • Замедляет и лечит" } },
+        { id: 37, note: { es: "100 ARM / 50 HP • Bastión de mitigación física pura", en: "100 DEF / 50 HP • Pure physical mitigation bastion", pt: "100 ARM / 50 HP • Bastião de mitigação pura", ru: "100 БРО / 50 HP • Чистый физический щит" } },
+        { id: 123, note: { es: "90 ARM / 70 HP • Cura a un aliado al recibir daño", en: "90 DEF / 70 HP • Heals ally when damaged", pt: "90 ARM / 70 HP • Cura aliado ao ser atingido", ru: "90 БРО / 70 HP • Лечит союзника при уроне" } }
+      ]
+    },
+    {
+      key: 'strikers',
+      titleKey: 'archStrikersTitle',
+      subKey: 'archStrikersSub',
+      color: 'var(--stat-dmg)',
+      chickens: [
+        { id: 39, note: { es: "130 ATK Base • El mayor ataque bruto de toda la wiki", en: "130 Base ATK • Highest raw damage in the wiki", pt: "130 ATK Base • O maior dano bruto de toda a wiki", ru: "130 Баз. АТК • Сильнейший урон в игре" } },
+        { id: 61, note: { es: "120 ATK / Evasión • Ignora enfoque y gana esquiva", en: "120 ATK / Evasion • Ignores focus & dodges", pt: "120 ATK / Evasão • Ignora foco e ganha esquiva", ru: "120 АТК / Уклонение • Игнорирует фокус" } },
+        { id: 110, note: { es: "120 ATK / Ataque Doble • Ráfagas letales al usar poder", en: "120 ATK / Double Attack • Lethal bursts on power", pt: "120 ATK / Ataque Duplo • Rajadas letais com poder", ru: "120 АТК / Двойная атака • Смертельные залпы" } },
+        { id: 42, note: { es: "110 ATK / Quemadura • Quema a todos los rivales", en: "110 ATK / Burn • Burns all enemies on defeat", pt: "110 ATK / Queimadura • Queima todos ao cair", ru: "110 АТК / Горение • Поджигает всех врагов" } },
+        { id: 56, note: { es: "105 ATK / Evolución • Otorga evasión y aumenta daño", en: "105 ATK / Evolution • Gives team evasion & buffs ATK", pt: "105 ATK / Evolução • Dá evasão e aumenta dano", ru: "105 АТК / Эволюция • Дает уклонение команде" } }
+      ]
+    },
+    {
+      key: 'speedsters',
+      titleKey: 'archSpeedstersTitle',
+      subKey: 'archSpeedstersSub',
+      color: 'var(--stat-spd)',
+      chickens: [
+        { id: 58, note: { es: "120 SPD Base • El pollo más rápido del juego", en: "120 Base SPD • Fastest chicken in the game", pt: "120 SPD Base • O frango mais rápido do jogo", ru: "120 Баз. СКР • Быстрейший цыпленок в игре" } },
+        { id: 12, note: { es: "100 SPD • Evita el próximo ataque tras lanzar shuriken", en: "100 SPD • Dodges next hit after shuriken", pt: "100 SPD • Evita o próximo ataque após shuriken", ru: "100 СКР • Уклоняется от атаки после сюрикена" } },
+        { id: 18, note: { es: "100 SPD • Paraliza a todos los enemigos al caer", en: "100 SPD • Paralyzes all enemies upon defeat", pt: "100 SPD • Paralisa todos ao ser derrotado", ru: "100 СКР • Парализует всех врагов при гибели" } },
+        { id: 53, note: { es: "100 SPD • Envenena a todo el equipo rival con su poder", en: "100 SPD • Poisons entire enemy team on power", pt: "100 SPD • Envenena todo o time rival com poder", ru: "100 СКР • Отравляет всю команду врага" } },
+        { id: 134, note: { es: "100 SPD • Reduce la armadura enemiga con cada impacto", en: "100 SPD • Shreds enemy armor with every hit", pt: "100 SPD • Reduz a armadura rival a cada golpe", ru: "100 СКР • Снижает броню врага с каждым ударом" } }
+      ]
+    },
+    {
+      key: 'batteries',
+      titleKey: 'archBatteriesTitle',
+      subKey: 'archBatteriesSub',
+      color: 'var(--stat-pwr)',
+      chickens: [
+        { id: 60, note: { es: "100 PWR Base • Carga de poder instantánea en 1 turno", en: "100 Base PWR • Instant 1-turn power charge", pt: "100 PWR Base • Carga de poder instantânea em 1 turno", ru: "100 Баз. ЭНР • Заряжает способность за 1 ход" } },
+        { id: 131, note: { es: "100 PWR Base • Curación aliada masiva cada turno", en: "100 Base PWR • Massive ally healing every turn", pt: "100 PWR Base • Cura aliada massiva a cada turno", ru: "100 Баз. ЭНР • Мощное лечение напарника каждый ход" } },
+        { id: 136, note: { es: "100 PWR Base • Prolonga estados alterados con bumerán", en: "100 Base PWR • Extends status effects with boomerang", pt: "100 PWR Base • Estende efeitos com bumerangue", ru: "100 Баз. ЭНР • Продлевает негативные эффекты" } },
+        { id: 10, note: { es: "80 PWR / Coste 90 • Rápida transformación a Pollisaur", en: "80 PWR / Cost 90 • Fast transformation into Pollisaur", pt: "80 PWR / Custo 90 • Rápida transformação em Pollisaur", ru: "80 ЭНР / Стоимость 90 • Быстрая эволюция" } },
+        { id: 78, note: { es: "80 PWR • Soporte curativo de alta frecuencia", en: "80 PWR • High-frequency healing support", pt: "80 PWR • Suporte curativo de alta frequência", ru: "80 ЭНР • Частое исцеление напарника" } }
+      ]
+    },
+    {
+      key: 'freeze',
+      titleKey: 'archFreezeTitle',
+      subKey: 'archFreezeSub',
+      color: '#38bdf8',
+      chickens: [
+        { id: 149, note: { es: "Congela al objetivo + Daño aumentado a congelados", en: "Freezes target + Bonus damage to frozen enemies", pt: "Congela o alvo + Dano bônus a congelados", ru: "Замораживает цель + Доп. урон по замороженным" } },
+        { id: 104, note: { es: "Huevo helado congelante + 25% armadura al revivir", en: "Freezing egg + 25% armor on revive", pt: "Ovo congelante + 25% armadura ao reviver", ru: "Ледяное яйцо + 25% брони при возрождении" } },
+        { id: 142, note: { es: "Congela al objetivo + Se cura al golpear congelados", en: "Freezes target + Heals when hitting frozen", pt: "Congela o alvo + Cura-se ao golpear congelados", ru: "Замораживает цель + Лечится об замороженных" } },
+        { id: 145, note: { es: "Congela a todos los enemigos con helado en área", en: "Freezes all enemies with AoE ice cream", pt: "Congela todos os inimigos com sorvete em área", ru: "Замораживает всех врагов мороженым" } },
+        { id: 144, note: { es: "Congela al objetivo + Escudo de barrera para el equipo", en: "Freezes target + Team barrier shield on power", pt: "Congela o alvo + Escudo de barreira para a equipe", ru: "Замораживает цель + Щит для всей команды" } }
+      ]
+    },
+    {
+      key: 'poison',
+      titleKey: 'archPoisonTitle',
+      subKey: 'archPoisonSub',
+      color: '#84cc16',
+      chickens: [
+        { id: 36, note: { es: "Empieza con poder al 100% y envenena en turno 1", en: "Starts with 100% power and poisons on turn 1", pt: "Começa com poder 100% e envenena no turno 1", ru: "Начинает с 100% энергии и травит в 1 ход" } },
+        { id: 23, note: { es: "Envenena al atacar y envenena a todos al caer", en: "Poisons on attack and poisons all on defeat", pt: "Envenena ao atacar e a todos ao cair", ru: "Травит при атаке и всех при гибели" } },
+        { id: 7, note: { es: "Gran maestro del veneno y el desgaste continuo", en: "Grandmaster of poison and continuous DoT", pt: "Mestre do veneno e desgaste contínuo", ru: "Мастер отравления и постепенного урона" } },
+        { id: 117, note: { es: "Envenena y roba vida máxima al derrotar enemigos", en: "Poisons and steals max HP on enemy kills", pt: "Envenena e rouba vida máxima ao derrotar", ru: "Травит и крадет макс. HP при убийстве" } },
+        { id: 6, note: { es: "Infección zombie imparable que desgasta la salud", en: "Unstoppable zombie infection eating HP", pt: "Infecção zumbi implacável consumindo vida", ru: "Зомби-инфекция, пожирающая здоровье" } }
+      ]
+    },
+    {
+      key: 'healers',
+      titleKey: 'archHealersTitle',
+      subKey: 'archHealersSub',
+      color: '#10b981',
+      chickens: [
+        { id: 31, note: { es: "Autocuración del 25% de vida y reduce velocidad rival", en: "25% self-heal & lowers attacker speed", pt: "Autocura de 25% de vida e reduz vel rival", ru: "Самолечение 25% HP и замедление врага" } },
+        { id: 3, note: { es: "Al curarse, cura a todos los aliados (50% efectividad)", en: "When healing, heals all allies (50% effectiveness)", pt: "Ao curar-se, cura todos os aliados (50%)", ru: "При лечении лечит всех союзников (50%)" } },
+        { id: 115, note: { es: "Otorga armadura al equipo y regenera 25% vida", en: "Grants armor to team and regens 25% HP", pt: "Dá armadura ao time e regenera 25% de vida", ru: "Дает броню команде и регенерирует 25% HP" } },
+        { id: 47, note: { es: "Gana armadura (+3%) al ser golpeado y se cura 25%", en: "Gains +3% armor when hit and heals 25%", pt: "Ganha armadura (+3%) ao ser golpeado e cura 25%", ru: "Получает +3% брони при ударе и лечит 25%" } },
+        { id: 7, note: { es: "Soporte multifunción de curación y limpieza de estados", en: "Multifunction sustain and status cleanser", pt: "Suporte multifuncional de cura e limpeza", ru: "Универсальная поддержка и очищение" } }
+      ]
+    },
+    {
+      key: 'revive',
+      titleKey: 'archReviveTitle',
+      subKey: 'archReviveSub',
+      color: '#f59e0b',
+      chickens: [
+        { id: 13, note: { es: "Revive automáticamente con +25% de daño extra", en: "Auto-revives with +25% bonus attack damage", pt: "Ressuscita automaticamente com +25% de dano", ru: "Авто-воскрешение с +25% к урону" } },
+        { id: 6, note: { es: "Revive con inmunidad temporal a la muerte", en: "Revives with temporary death immunity", pt: "Ressuscita com imunidade temporária à morte", ru: "Возрождается с временным бессмертием" } },
+        { id: 109, note: { es: "Revive como Mali manteniendo presencia en combate", en: "Revives as Mali keeping battlefield presence", pt: "Ressuscita como Mali mantendo presença", ru: "Возрождается как Мали, оставаясь в бою" } },
+        { id: 86, note: { es: "Obtiene revivir con su poder y se cura cada 5 ataques", en: "Gains revive via power & self-heals every 5 hits", pt: "Ganha reviver com poder e cura a cada 5 ataques", ru: "Получает воскрешение и лечится каждые 5 ударов" } },
+        { id: 56, note: { es: "Sobrevive a golpes letales otorgando evasión", en: "Survives lethal blows while granting team evasion", pt: "Sobrevive a golpes letais dando evasão", ru: "Переживает смертельный урон и дает уклонение" } }
+      ]
+    }
+  ];
+
   function renderRanking() {
     const container = document.getElementById('wikiContent');
-    const categories = [
-      { key: 'speed', title: str('topSpeed'), color: 'var(--stat-spd)', unit: 'pts', getValue: c => c.stats.speed },
-      { key: 'damage', title: str('topDamage'), color: 'var(--stat-dmg)', unit: 'pts', getValue: c => c.stats.damage },
-      { key: 'armor', title: str('topArmor'), color: 'var(--stat-arm)', unit: '%', getValue: c => c.stats.armor },
-      { key: 'life', title: str('topLife'), color: 'var(--stat-life)', unit: 'pts', getValue: c => c.stats.life },
-      { key: 'power_amount', title: str('topPower'), color: 'var(--stat-pwr)', unit: 'pts', getValue: c => c.stats.power_amount },
-      { key: 'total', title: str('topTotal'), color: 'var(--wiki-gold)', unit: 'pts', getValue: c => c.stat_total }
-    ];
+    if (!container) return;
 
-    container.innerHTML = `
-      <div class="page-header">
-        <h1 class="page-title">🏆 ${str('rankingTitle')}</h1>
-        <p class="page-subtitle">${str('rankingDesc')}</p>
-      </div>
+    let subDesc = str('rankingMaxDesc');
+    if (currentRankingTab === 'base') subDesc = str('rankingBaseDesc');
+    else if (currentRankingTab === 'archetypes') subDesc = str('rankingArchDesc');
 
-      <div class="ranking-grid">
-        ${categories.map(cat => {
-          const sorted = WIKI.chickens.slice().sort((a, b) => cat.getValue(b) - cat.getValue(a)).slice(0, 10);
-          return `
-            <div class="ranking-card">
-              <div class="ranking-card-header">
-                <span>${cat.title}</span>
+    let bodyHtml = '';
+
+    if (currentRankingTab === 'max') {
+      const maxCategories = [
+        {
+          key: 'life',
+          title: str('topLifeMax'),
+          color: 'var(--stat-life)',
+          unit: 'pts',
+          baseKey: 'life',
+          getValue: (c, st) => st.life
+        },
+        {
+          key: 'damage',
+          title: str('topDamageMax'),
+          color: 'var(--stat-dmg)',
+          unit: 'pts',
+          baseKey: 'damage',
+          getValue: (c, st) => st.damage
+        },
+        {
+          key: 'speed',
+          title: str('topSpeedMax'),
+          color: 'var(--stat-spd)',
+          unit: 'pts',
+          baseKey: 'speed',
+          getValue: (c, st) => st.speed
+        },
+        {
+          key: 'armor',
+          title: str('topArmorMax'),
+          color: 'var(--stat-arm)',
+          unit: 'pts',
+          baseKey: 'armor',
+          getValue: (c, st) => st.armor
+        },
+        {
+          key: 'powerAmount',
+          title: str('topPowerMax'),
+          color: 'var(--stat-pwr)',
+          unit: 'pts',
+          baseKey: 'power_amount',
+          getValue: (c, st) => st.powerAmount
+        },
+        {
+          key: 'total',
+          title: str('topTotalMax'),
+          color: 'var(--wiki-gold)',
+          unit: 'pts',
+          baseKey: null,
+          getValue: (c, st) => st.life + st.damage + st.speed + st.armor + st.powerAmount
+        }
+      ];
+
+      // Precalculate max stats
+      const maxStatsMap = new Map();
+      WIKI.chickens.forEach(c => {
+        maxStatsMap.set(c.id, computeTeamBuilderStats(c, 100, 100, 2.0));
+      });
+
+      bodyHtml = `
+        <div class="ranking-grid">
+          ${maxCategories.map(cat => {
+            const sorted = WIKI.chickens.slice().sort((a, b) => {
+              const stA = maxStatsMap.get(a.id);
+              const stB = maxStatsMap.get(b.id);
+              const valA = cat.getValue(a, stA);
+              const valB = cat.getValue(b, stB);
+              const diff = valB - valA;
+              if (diff !== 0) return diff;
+              if (cat.baseKey) {
+                const bDiff = b.stats[cat.baseKey] - a.stats[cat.baseKey];
+                if (bDiff !== 0) return bDiff;
+              }
+              return b.stat_total - a.stat_total;
+            }).slice(0, 10);
+
+            return `
+              <div class="ranking-card">
+                <div class="ranking-card-header">
+                  <span>${cat.title}</span>
+                </div>
+                <div>
+                  ${sorted.map((c, idx) => {
+                    let medalClass = '';
+                    let medalIcon = `#${idx + 1}`;
+                    if (idx === 0) { medalClass = 'gold'; medalIcon = '🥇'; }
+                    else if (idx === 1) { medalClass = 'silver'; medalIcon = '🥈'; }
+                    else if (idx === 2) { medalClass = 'bronze'; medalIcon = '🥉'; }
+                    const st = maxStatsMap.get(c.id);
+                    const val = cat.getValue(c, st);
+                    const baseVal = cat.baseKey ? c.stats[cat.baseKey] : null;
+
+                    return `
+                      <div class="ranking-row">
+                        <span class="rank-pos ${medalClass}">${medalIcon}</span>
+                        <img class="pixelated" src="${c.sprite}" width="28" height="28" alt="">
+                        <div style="flex:1;min-width:0;">
+                          <a href="#chicken-${c.id}" style="font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;">
+                            ${getLocalized(c.name)} <span style="font-weight:normal;color:var(--wiki-text-muted);font-size:11px;">#${String(c.id + 1).padStart(3, '0')}</span>
+                          </a>
+                        </div>
+                        <div style="font-weight:800;font-size:13px;color:${cat.color};text-align:right;">
+                          ${val} ${cat.unit}
+                          ${baseVal !== null ? `<div style="font-size:10px;font-weight:normal;color:var(--wiki-text-muted);">Base: ${baseVal}</div>` : ''}
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
               </div>
-              <div>
-                ${sorted.map((c, idx) => {
-                  let medalClass = '';
+            `;
+          }).join('')}
+        </div>
+      `;
+    } else if (currentRankingTab === 'base') {
+      const baseCategories = [
+        { key: 'speed', title: str('topSpeed'), color: 'var(--stat-spd)', unit: 'pts', getValue: c => c.stats.speed },
+        { key: 'damage', title: str('topDamage'), color: 'var(--stat-dmg)', unit: 'pts', getValue: c => c.stats.damage },
+        { key: 'armor', title: str('topArmor'), color: 'var(--stat-arm)', unit: 'pts', getValue: c => c.stats.armor },
+        { key: 'life', title: str('topLife'), color: 'var(--stat-life)', unit: 'pts', getValue: c => c.stats.life },
+        { key: 'power_amount', title: str('topPower'), color: 'var(--stat-pwr)', unit: 'pts', getValue: c => c.stats.power_amount },
+        { key: 'total', title: str('topTotal'), color: 'var(--wiki-gold)', unit: 'pts', getValue: c => c.stat_total }
+      ];
+
+      bodyHtml = `
+        <div class="ranking-grid">
+          ${baseCategories.map(cat => {
+            const sorted = WIKI.chickens.slice().sort((a, b) => cat.getValue(b) - cat.getValue(a)).slice(0, 10);
+            return `
+              <div class="ranking-card">
+                <div class="ranking-card-header">
+                  <span>${cat.title}</span>
+                </div>
+                <div>
+                  ${sorted.map((c, idx) => {
+                    let medalClass = '';
+                    let medalIcon = `#${idx + 1}`;
+                    if (idx === 0) { medalClass = 'gold'; medalIcon = '🥇'; }
+                    else if (idx === 1) { medalClass = 'silver'; medalIcon = '🥈'; }
+                    else if (idx === 2) { medalClass = 'bronze'; medalIcon = '🥉'; }
+                    const val = cat.getValue(c);
+
+                    return `
+                      <div class="ranking-row">
+                        <span class="rank-pos ${medalClass}">${medalIcon}</span>
+                        <img class="pixelated" src="${c.sprite}" width="28" height="28" alt="">
+                        <div style="flex:1;min-width:0;">
+                          <a href="#chicken-${c.id}" style="font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;">
+                            ${getLocalized(c.name)} <span style="font-weight:normal;color:var(--wiki-text-muted);font-size:11px;">#${String(c.id + 1).padStart(3, '0')}</span>
+                          </a>
+                        </div>
+                        <div style="font-weight:800;font-size:13px;color:${cat.color};">
+                          ${val} ${cat.unit}
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    } else if (currentRankingTab === 'archetypes') {
+      bodyHtml = `
+        <div class="ranking-grid">
+          ${ARCHETYPES_DATA.map(arch => `
+            <div class="arch-card">
+              <div class="arch-header">
+                <div class="arch-title" style="color:${arch.color};">${str(arch.titleKey)}</div>
+                <div class="arch-sub">${str(arch.subKey)}</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                ${arch.chickens.map((item, idx) => {
+                  const c = WIKI.chickens.find(x => x.id === item.id);
+                  if (!c) return '';
                   let medalIcon = `#${idx + 1}`;
-                  if (idx === 0) { medalClass = 'gold'; medalIcon = '🥇'; }
-                  else if (idx === 1) { medalClass = 'silver'; medalIcon = '🥈'; }
-                  else if (idx === 2) { medalClass = 'bronze'; medalIcon = '🥉'; }
-                  const val = cat.getValue(c);
+                  if (idx === 0) medalIcon = '🥇';
+                  else if (idx === 1) medalIcon = '🥈';
+                  else if (idx === 2) medalIcon = '🥉';
+                  const noteText = item.note[currentLang] || item.note.es;
 
                   return `
-                    <div class="ranking-row">
-                      <span class="rank-pos ${medalClass}">${medalIcon}</span>
-                      <img class="pixelated" src="${c.sprite}" width="28" height="28" alt="">
+                    <div class="arch-row">
+                      <span style="font-size:14px;font-weight:800;width:24px;text-align:center;">${medalIcon}</span>
+                      <img class="pixelated" src="${c.sprite}" width="32" height="32" alt="${getLocalized(c.name)}">
                       <div style="flex:1;min-width:0;">
-                        <a href="#chicken-${c.id}" style="font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;">
+                        <a href="#chicken-${c.id}" style="font-weight:800;font-size:13px;color:var(--wiki-text);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
                           ${getLocalized(c.name)} <span style="font-weight:normal;color:var(--wiki-text-muted);font-size:11px;">#${String(c.id + 1).padStart(3, '0')}</span>
                         </a>
-                      </div>
-                      <div style="font-weight:800;font-size:13px;color:${cat.color};">
-                        ${val}${cat.unit}
+                        <div style="font-size:11px;color:var(--wiki-text-muted);margin-top:2px;line-height:1.3;">
+                          ${noteText}
+                        </div>
                       </div>
                     </div>
                   `;
                 }).join('')}
               </div>
             </div>
-          `;
-        }).join('')}
+          `).join('')}
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="page-header">
+        <h1 class="page-title">🏆 ${str('rankingTitle')}</h1>
+        <p class="page-subtitle">${subDesc}</p>
       </div>
+
+      <!-- Ranking Mode Tabs -->
+      <div class="ranking-tabs-wrap">
+        <button class="ranking-tab-btn ${currentRankingTab === 'max' ? 'active' : ''}" data-tab="max">
+          ${str('rankingTabMax')}
+        </button>
+        <button class="ranking-tab-btn ${currentRankingTab === 'base' ? 'active' : ''}" data-tab="base">
+          ${str('rankingTabBase')}
+        </button>
+        <button class="ranking-tab-btn ${currentRankingTab === 'archetypes' ? 'active' : ''}" data-tab="archetypes">
+          ${str('rankingTabArchetypes')}
+        </button>
+      </div>
+
+      ${bodyHtml}
     `;
+
+    // Attach tab click handlers
+    container.querySelectorAll('.ranking-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        if (tab && tab !== currentRankingTab) {
+          currentRankingTab = tab;
+          renderRanking();
+        }
+      });
+    });
   }
 
   // 13. CHANGELOG VIEW

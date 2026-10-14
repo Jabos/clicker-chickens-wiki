@@ -1246,3 +1246,69 @@ table.wiki-table tr:hover td {
   }
 }
 
+/* Ranking Tabs & Archetype Cards */
+.ranking-tabs-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.ranking-tab-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  background: var(--wiki-card-bg);
+  border: 1px solid var(--wiki-border-light);
+  color: var(--wiki-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ranking-tab-btn:hover {
+  background: var(--wiki-border-light);
+  color: var(--wiki-text);
+}
+.ranking-tab-btn.active {
+  background: var(--wiki-accent);
+  color: #000 !important;
+  border-color: var(--wiki-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.arch-card {
+  background: var(--wiki-card-bg);
+  border: 1px solid var(--wiki-border-light);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.arch-header {
+  border-bottom: 1px solid var(--wiki-border-light);
+  padding-bottom: 10px;
+}
+.arch-title {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.arch-sub {
+  font-size: 12px;
+  color: var(--wiki-text-muted);
+  line-height: 1.4;
+}
+.arch-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--wiki-border-light);
+}
+.arch-row:last-child {
+  border-bottom: none;
+}
+
+

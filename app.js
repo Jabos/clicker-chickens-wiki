@@ -132,7 +132,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.119",
+      footerGen: "Generada directamente de los datos del juego v0.120",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero",
       navSecTools: "Herramientas y Combate",
@@ -353,7 +353,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.119",
+      footerGen: "Generated directly from game data v0.120",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style",
       navSecTools: "Tools & Combat",
@@ -574,7 +574,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.119",
+      footerGen: "Gerada diretamente dos dados do jogo v0.120",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve",
       navSecTools: "Ferramentas e Combate",
@@ -795,7 +795,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.119",
+      footerGen: "Сгенерировано напрямую из данных игры v0.120",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль",
       navSecTools: "Инструменты и Бой",
@@ -3678,9 +3678,20 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.119",
+        version: "v0.120",
         date: "Actual",
         badge: "Versión Actual",
+        highlights: [
+          "<strong>Escalado Libre de Estadísticas:</strong> Se retiraron los techos artificiales superiores en Vida (2,500), Daño (300) y Velocidad (500) en el motor del juego. Pollos especializados con estadísticas base superiores a 100 (como Cacho con 130 ATK alcanzando 349, Valu con 130 HP alcanzando 2,904, o Duncan con 120 SPD alcanzando 554) ahora expresan plenamente su potencial genético y entrenamiento.",
+          "<strong>Blindaje de Armadura:</strong> Se mantuvo el límite estricto de mitigación de daño al 80% para evitar invulnerabilidad física en combates competitivos.",
+          "<strong>Top 10 Máximo & Herramientas Web:</strong> Actualización del ranking oficial de atributos máximos, calculadora de combate y simulador 2vs2 sincronizados con las nuevas cotas dinámicas.",
+          "<strong>Revisión de Localización:</strong> Homogeneización multilingüe integral en descripciones, ítems, poderes y guías tácticas en español, inglés, portugués y ruso."
+        ]
+      },
+      {
+        version: "v0.119",
+        date: "Reciente",
+        badge: "Mejoras de Calidad de Vida",
         highlights: [
           "<strong>Optimización en 'IR A CAJA':</strong> Se eliminó el botón redundante de cerrar ('X') en el panel de navegación rápida, unificando la salida a través del botón inferior de volver atrás.",
           "<strong>Selector de Velocidad de Batalla:</strong> Se fijó la velocidad de combate de forma equilibrada a 1x y 2x para mantener la fluidez táctica y legibilidad de turnos.",

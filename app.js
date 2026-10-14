@@ -174,8 +174,10 @@
       importCode: "Importar Código",
       teamName: "Nombre del Equipo",
       levelLabel: "Nivel",
-      geneticsLabel: "Genética (IV)",
-      trainingLabel: "Entrenamiento (EV)",
+      geneticsLabel: "Valores Genéticos",
+      compareRadarTitle: "Radar Comparativo de Estadísticas Base",
+      compareRadarDesc: "Superposición poligonal de atributos para visualizar la especialización de ambos pollos.",
+      trainingLabel: "Valores de Entrenamiento",
       targetAiLabel: "Objetivo Táctico",
       useHiddenPowerLabel: "Usar Poder Oculto",
       useBasePower: "⚡ Poder Base",
@@ -364,8 +366,10 @@
       importCode: "Import Code",
       teamName: "Team Name",
       levelLabel: "Level",
-      geneticsLabel: "Genetics (IV)",
-      trainingLabel: "Training (EV)",
+      geneticsLabel: "Birth Genetics",
+      compareRadarTitle: "Base Stat Comparative Radar",
+      compareRadarDesc: "Polygonal stat overlay visualizing the specialization of both chickens.",
+      trainingLabel: "Training Values",
       targetAiLabel: "Target Priority",
       useHiddenPowerLabel: "Use Hidden Power",
       useBasePower: "⚡ Base Power",
@@ -554,8 +558,10 @@
       importCode: "Importar Código",
       teamName: "Nome do Time",
       levelLabel: "Nível",
-      geneticsLabel: "Genética (IV)",
-      trainingLabel: "Treinamento (EV)",
+      geneticsLabel: "Valores Genéticos",
+      compareRadarTitle: "Radar Comparativo de Atributos Base",
+      compareRadarDesc: "Sobreposição poligonal de atributos para visualizar a especialização de ambos os frangos.",
+      trainingLabel: "Valores de Treinamento",
       targetAiLabel: "Alvo Tático",
       useHiddenPowerLabel: "Usar Poder Oculto",
       useBasePower: "⚡ Poder Base",
@@ -744,8 +750,10 @@
       importCode: "Импорт кода",
       teamName: "Имя команды",
       levelLabel: "Уровень",
-      geneticsLabel: "Генетика (IV)",
-      trainingLabel: "Тренировка (EV)",
+      geneticsLabel: "Генетика",
+      compareRadarTitle: "Сравнительный радар базовых характеристик",
+      compareRadarDesc: "Наложение многоугольников характеристик для сравнения специализаций обоих цыплят.",
+      trainingLabel: "Боевая тренировка",
       targetAiLabel: "Приоритет цели",
       useHiddenPowerLabel: "Использовать скрытую силу",
       useBasePower: "⚡ Базовая сила",
@@ -2117,6 +2125,92 @@
   }
 
   // 10. COMPARE VIEW
+  function generateCompareRadarSvg(cA, cB) {
+    const CX = 180;
+    const CY = 145;
+    const R = 85;
+    const axes = [
+      { key: 'life', label: str('thHp'), max: 130 },
+      { key: 'damage', label: str('thAtk'), max: 130 },
+      { key: 'speed', label: str('thSpd'), max: 120 },
+      { key: 'armor', label: str('thDef'), max: 100 },
+      { key: 'power_amount', label: str('thPwr'), max: 100 }
+    ];
+
+    const angles = axes.map((_, i) => -Math.PI / 2 + (i * 2 * Math.PI) / 5);
+
+    // Background concentric pentagons (20%, 40%, 60%, 80%, 100%)
+    const gridLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
+    const gridSvg = gridLevels.map(lvl => {
+      const pts = angles.map(a => {
+        const x = CX + R * lvl * Math.cos(a);
+        const y = CY + R * lvl * Math.sin(a);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(' ');
+      return `<polygon points="${pts}" fill="none" stroke="var(--wiki-border-light, #38434f)" stroke-width="${lvl === 1.0 ? '1.5' : '1'}" stroke-dasharray="${lvl === 1.0 ? 'none' : '3 3'}" opacity="0.6"/>`;
+    }).join('');
+
+    // Radial axis lines & text labels
+    const axisLines = angles.map((a, i) => {
+      const xEnd = CX + R * Math.cos(a);
+      const yEnd = CY + R * Math.sin(a);
+      const xLabel = CX + (R + 24) * Math.cos(a);
+      const yLabel = CY + (R + 18) * Math.sin(a);
+      const valA = cA.stats[axes[i].key];
+      const valB = cB.stats[axes[i].key];
+      const unit = axes[i].key === 'armor' ? '%' : '';
+      const anchor = Math.abs(Math.cos(a)) < 0.2 ? 'middle' : (Math.cos(a) > 0 ? 'start' : 'end');
+
+      return `
+        <line x1="${CX}" y1="${CY}" x2="${xEnd.toFixed(1)}" y2="${yEnd.toFixed(1)}" stroke="var(--wiki-border-light, #38434f)" stroke-width="1" opacity="0.5"/>
+        <text x="${xLabel.toFixed(1)}" y="${yLabel.toFixed(1)}" text-anchor="${anchor}" font-size="11" font-weight="700" fill="var(--wiki-text-muted, #8b949e)">
+          ${axes[i].label}
+          <tspan dy="12" x="${xLabel.toFixed(1)}" text-anchor="${anchor}" font-size="10" font-weight="800">
+            <tspan fill="#3b82f6">${valA}${unit}</tspan> vs <tspan fill="#ef4444">${valB}${unit}</tspan>
+          </tspan>
+        </text>
+      `;
+    }).join('');
+
+    // Polygons for A and B
+    const ptsA = angles.map((a, i) => {
+      const pct = Math.max(0.08, Math.min(1.0, cA.stats[axes[i].key] / axes[i].max));
+      const x = CX + R * pct * Math.cos(a);
+      const y = CY + R * pct * Math.sin(a);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+
+    const ptsB = angles.map((a, i) => {
+      const pct = Math.max(0.08, Math.min(1.0, cB.stats[axes[i].key] / axes[i].max));
+      const x = CX + R * pct * Math.cos(a);
+      const y = CY + R * pct * Math.sin(a);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+
+    return `
+      <svg viewBox="0 0 360 295" style="width:100%;max-width:440px;height:auto;margin:0 auto;display:block;">
+        ${gridSvg}
+        ${axisLines}
+        <!-- Polygon A (Blue) -->
+        <polygon points="${ptsA}" fill="rgba(59, 130, 246, 0.25)" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"/>
+        ${angles.map((a, i) => {
+          const pct = Math.max(0.08, Math.min(1.0, cA.stats[axes[i].key] / axes[i].max));
+          const x = CX + R * pct * Math.cos(a);
+          const y = CY + R * pct * Math.sin(a);
+          return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1.5"/>`;
+        }).join('')}
+        <!-- Polygon B (Red) -->
+        <polygon points="${ptsB}" fill="rgba(239, 68, 68, 0.25)" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round"/>
+        ${angles.map((a, i) => {
+          const pct = Math.max(0.08, Math.min(1.0, cB.stats[axes[i].key] / axes[i].max));
+          const x = CX + R * pct * Math.cos(a);
+          const y = CY + R * pct * Math.sin(a);
+          return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="#ef4444" stroke="#fff" stroke-width="1.5"/>`;
+        }).join('')}
+      </svg>
+    `;
+  }
+
   let compareAId = 0;
   let compareBId = 1;
   window.setCompareA = function(id) { compareAId = id; };
@@ -2190,6 +2284,18 @@
             <h2 style="margin:4px 0 0;"><a href="#chicken-${cB.id}">#${String(cB.id + 1).padStart(3, '0')} ${getLocalized(cB.name)}</a></h2>
             <div style="font-size:12px;font-weight:700;color:#f59e0b;">${tacticalB.role}</div>
           </div>
+        </div>
+
+                <!-- Comparative Radar Chart -->
+        <div class="article-box" style="padding:18px;text-align:center;margin-bottom:20px;">
+          <h3 style="font-size:16px;margin-bottom:4px;">🕸️ ${str('compareRadarTitle')}</h3>
+          <p style="font-size:12px;color:var(--wiki-text-muted);margin-bottom:12px;">${str('compareRadarDesc')}</p>
+          <div style="display:flex;justify-content:center;align-items:center;gap:20px;margin-bottom:10px;font-size:12px;font-weight:800;">
+            <span style="color:#3b82f6;">🟦 #${String(cA.id + 1).padStart(3, '0')} ${getLocalized(cA.name)}</span>
+            <span style="color:var(--wiki-text-muted);">vs</span>
+            <span style="color:#ef4444;">🟥 #${String(cB.id + 1).padStart(3, '0')} ${getLocalized(cB.name)}</span>
+          </div>
+          ${generateCompareRadarSvg(cA, cB)}
         </div>
 
         <!-- Head to Head Stat Bars -->
@@ -2368,11 +2474,11 @@
 
   const TB_DEFAULT_PRESETS = [
     {
-      id: "meta_mechalex",
-      name: "🤖 Dúo Mecánico (Mechalex & Eggalex)",
+      id: "meta_tech",
+      name: "🤖 Dúo Tecnológico (Eggalex & Astro)",
       team: [
-        { chickenId: 135, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false },
-        { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false }
+        { chickenId: 134, level: 100, born: 100, training: 2.0, itemId: 5, targetAI: 6, useHiddenPower: false },
+        { chickenId: 133, level: 100, born: 100, training: 2.0, itemId: 60, targetAI: 1, useHiddenPower: false }
       ]
     },
     {
@@ -2401,9 +2507,9 @@
     },
     {
       id: "meta_evasion",
-      name: "💨 Dúo Evasión & Velocidad (Evil Gatarlos & Shiken)",
+      name: "💨 Dúo Evasión & Velocidad (Gatarlos & Shiken)",
       team: [
-        { chickenId: 56, level: 100, born: 100, training: 2.0, itemId: 4, targetAI: 1, useHiddenPower: false },
+        { chickenId: 55, level: 100, born: 100, training: 2.0, itemId: 4, targetAI: 1, useHiddenPower: false },
         { chickenId: 61, level: 100, born: 100, training: 2.0, itemId: 18, targetAI: 1, useHiddenPower: false }
       ]
     }
@@ -2471,6 +2577,48 @@
       { chickenId: 1, level: 50, born: 80, training: 1.5, itemId: 3, targetAI: 1, useHiddenPower: false }
     ]
   };
+
+  function updateSlotLive(sIdx) {
+    const slot = tbTeam.slots[sIdx];
+    const c = WIKI.chickens.find(x => x.id === slot.chickenId) || WIKI.chickens[sIdx];
+    const hp = (c.hidden_power_id !== undefined && c.hidden_power_id >= 0 && WIKI.powers[c.hidden_power_id]) ? WIKI.powers[c.hidden_power_id] : null;
+    const st = computeTeamBuilderStats(c, slot.level, slot.born, slot.training);
+    const activeCost = slot.useHiddenPower && hp ? hp.cost : (c.power_max || 100);
+    const turns = Math.max(1, Math.ceil(activeCost / Math.max(1, st.powerAmount)));
+
+    // 1. Text displays
+    const lvlEl = document.getElementById(`tbLevelVal_${sIdx}`);
+    if (lvlEl) lvlEl.textContent = slot.level;
+    const bornEl = document.getElementById(`tbBornVal_${sIdx}`);
+    if (bornEl) bornEl.textContent = slot.born;
+    const trEl = document.getElementById(`tbTrainVal_${sIdx}`);
+    if (trEl) trEl.textContent = `${Number(slot.training).toFixed(2)}x`;
+
+    // 2. Stat badges
+    const lifeEl = document.getElementById(`tbStatLife_${sIdx}`);
+    if (lifeEl) lifeEl.textContent = st.life;
+    const dmgEl = document.getElementById(`tbStatDmg_${sIdx}`);
+    if (dmgEl) dmgEl.textContent = st.damage;
+    const spdEl = document.getElementById(`tbStatSpd_${sIdx}`);
+    if (spdEl) spdEl.textContent = st.speed;
+    const armEl = document.getElementById(`tbStatArm_${sIdx}`);
+    if (armEl) armEl.textContent = `${st.armor}%`;
+    const pwrEl = document.getElementById(`tbStatPwr_${sIdx}`);
+    if (pwrEl) pwrEl.innerHTML = `${st.powerAmount} <span style="font-size:10px;font-weight:normal;">(~${turns}t)</span>`;
+
+    // 3. Combined metrics
+    const otherIdx = sIdx === 0 ? 1 : 0;
+    const otherSlot = tbTeam.slots[otherIdx];
+    const otherC = WIKI.chickens.find(x => x.id === otherSlot.chickenId) || WIKI.chickens[otherIdx];
+    const otherSt = computeTeamBuilderStats(otherC, otherSlot.level, otherSlot.born, otherSlot.training);
+
+    const combLifeEl = document.getElementById('tbCombinedLife');
+    if (combLifeEl) combLifeEl.textContent = `${st.life + otherSt.life} pts`;
+    const combDmgEl = document.getElementById('tbCombinedDmg');
+    if (combDmgEl) combDmgEl.textContent = `${st.damage + otherSt.damage} pts`;
+    const combSpdEl = document.getElementById('tbCombinedSpd');
+    if (combSpdEl) combSpdEl.textContent = `${Math.round((st.speed + otherSt.speed) / 2)} pts`;
+  }
 
   function renderTeamBuilder() {
     const container = document.getElementById('wikiContent');
@@ -2637,14 +2785,14 @@
                 </div>
               ` : ''}
 
-              <!-- Level, Genetics (IV), Training (EV) Controls -->
+              <!-- Level, Genetics, Training Controls -->
               <div class="tb-control-group">
                 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
                   <!-- Level -->
                   <div style="background:var(--wiki-card-bg);padding:8px;border-radius:6px;border:1px solid var(--wiki-border-light);">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
                       <label style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('levelLabel')}:</label>
-                      <span style="font-size:13px;font-weight:800;color:#f59e0b;">${slot.level}</span>
+                      <span id="tbLevelVal_${sIdx}" style="font-size:13px;font-weight:800;color:#f59e0b;">${slot.level}</span>
                     </div>
                     <input type="range" min="1" max="100" value="${slot.level}" id="tbLevelRange_${sIdx}" style="width:100%;accent-color:#f59e0b;">
                     <div style="display:flex;gap:4px;margin-top:6px;">
@@ -2654,11 +2802,11 @@
                     </div>
                   </div>
 
-                  <!-- Genetics (IV) -->
+                  <!-- Genetics -->
                   <div style="background:var(--wiki-card-bg);padding:8px;border-radius:6px;border:1px solid var(--wiki-border-light);">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
                       <label style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('geneticsLabel')}:</label>
-                      <span style="font-size:13px;font-weight:800;color:#10b981;">${slot.born}</span>
+                      <span id="tbBornVal_${sIdx}" style="font-size:13px;font-weight:800;color:#10b981;">${slot.born}</span>
                     </div>
                     <input type="range" min="1" max="100" value="${slot.born}" id="tbBornRange_${sIdx}" style="width:100%;accent-color:#10b981;">
                     <div style="display:flex;gap:4px;margin-top:6px;">
@@ -2669,11 +2817,11 @@
                     </div>
                   </div>
 
-                  <!-- Training (EV) -->
+                  <!-- Training -->
                   <div style="background:var(--wiki-card-bg);padding:8px;border-radius:6px;border:1px solid var(--wiki-border-light);">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
                       <label style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);">${str('trainingLabel')}:</label>
-                      <span style="font-size:13px;font-weight:800;color:#a855f7;">${Number(slot.training).toFixed(2)}x</span>
+                      <span id="tbTrainVal_${sIdx}" style="font-size:13px;font-weight:800;color:#a855f7;">${Number(slot.training).toFixed(2)}x</span>
                     </div>
                     <input type="range" min="1.0" max="2.0" step="0.05" value="${slot.training}" id="tbTrainRange_${sIdx}" style="width:100%;accent-color:#a855f7;">
                     <div style="display:flex;gap:4px;margin-top:6px;">
@@ -2691,23 +2839,23 @@
                 <div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:6px;text-align:center;">
                   <div class="tb-stat-pill">
                     <div style="font-size:10px;font-weight:700;color:var(--stat-life);">❤️ ${str('thHp')}</div>
-                    <div style="font-size:14px;font-weight:800;color:var(--stat-life);">${st.life}</div>
+                    <div id="tbStatLife_${sIdx}" style="font-size:14px;font-weight:800;color:var(--stat-life);">${st.life}</div>
                   </div>
                   <div class="tb-stat-pill">
                     <div style="font-size:10px;font-weight:700;color:var(--stat-dmg);">🗡️ ${str('thAtk')}</div>
-                    <div style="font-size:14px;font-weight:800;color:var(--stat-dmg);">${st.damage}</div>
+                    <div id="tbStatDmg_${sIdx}" style="font-size:14px;font-weight:800;color:var(--stat-dmg);">${st.damage}</div>
                   </div>
                   <div class="tb-stat-pill">
                     <div style="font-size:10px;font-weight:700;color:var(--stat-spd);">⚡ ${str('thSpd')}</div>
-                    <div style="font-size:14px;font-weight:800;color:var(--stat-spd);">${st.speed}</div>
+                    <div id="tbStatSpd_${sIdx}" style="font-size:14px;font-weight:800;color:var(--stat-spd);">${st.speed}</div>
                   </div>
                   <div class="tb-stat-pill">
                     <div style="font-size:10px;font-weight:700;color:var(--stat-arm);">🛡️ ${str('thDef')}</div>
-                    <div style="font-size:14px;font-weight:800;color:var(--stat-arm);">${st.armor}%</div>
+                    <div id="tbStatArm_${sIdx}" style="font-size:14px;font-weight:800;color:var(--stat-arm);">${st.armor}%</div>
                   </div>
                   <div class="tb-stat-pill">
                     <div style="font-size:10px;font-weight:700;color:var(--stat-pwr);">✨ ${str('thPwr')}</div>
-                    <div style="font-size:14px;font-weight:800;color:var(--stat-pwr);">${st.powerAmount} <span style="font-size:10px;font-weight:normal;">(~${turns}t)</span></div>
+                    <div id="tbStatPwr_${sIdx}" style="font-size:14px;font-weight:800;color:var(--stat-pwr);">${st.powerAmount} <span style="font-size:10px;font-weight:normal;">(~${turns}t)</span></div>
                   </div>
                 </div>
               </div>
@@ -2759,15 +2907,15 @@
         <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:8px;padding-top:12px;border-top:1px solid var(--wiki-border-light);text-align:center;">
           <div>
             <div style="font-size:11px;color:var(--wiki-text-muted);">${str('combinedLife')}</div>
-            <div style="font-size:20px;font-weight:800;color:var(--stat-life);">${totalHp} pts</div>
+            <div id="tbCombinedLife" style="font-size:20px;font-weight:800;color:var(--stat-life);">${totalHp} pts</div>
           </div>
           <div>
             <div style="font-size:11px;color:var(--wiki-text-muted);">${str('estDamage')}</div>
-            <div style="font-size:20px;font-weight:800;color:var(--stat-dmg);">${totalDmg} pts</div>
+            <div id="tbCombinedDmg" style="font-size:20px;font-weight:800;color:var(--stat-dmg);">${totalDmg} pts</div>
           </div>
           <div>
             <div style="font-size:11px;color:var(--wiki-text-muted);">${str('avgSpeed')}</div>
-            <div style="font-size:20px;font-weight:800;color:var(--stat-spd);">${avgSpd} pts</div>
+            <div id="tbCombinedSpd" style="font-size:20px;font-weight:800;color:var(--stat-spd);">${avgSpd} pts</div>
           </div>
         </div>
       </div>
@@ -2791,11 +2939,12 @@
         });
       }
 
+      // Smooth live input (no full render!)
       const lvlRng = document.getElementById(`tbLevelRange_${sIdx}`);
       if (lvlRng) {
         lvlRng.addEventListener('input', (e) => {
           tbTeam.slots[sIdx].level = parseInt(e.target.value, 10);
-          renderTeamBuilder();
+          updateSlotLive(sIdx);
         });
       }
 
@@ -2803,7 +2952,7 @@
       if (bornRng) {
         bornRng.addEventListener('input', (e) => {
           tbTeam.slots[sIdx].born = parseInt(e.target.value, 10);
-          renderTeamBuilder();
+          updateSlotLive(sIdx);
         });
       }
 
@@ -2811,7 +2960,7 @@
       if (trRng) {
         trRng.addEventListener('input', (e) => {
           tbTeam.slots[sIdx].training = parseFloat(e.target.value);
-          renderTeamBuilder();
+          updateSlotLive(sIdx);
         });
       }
 
@@ -2819,7 +2968,7 @@
       if (pwrSel) {
         pwrSel.addEventListener('change', (e) => {
           tbTeam.slots[sIdx].useHiddenPower = (e.target.value === 'hidden');
-          renderTeamBuilder();
+          updateSlotLive(sIdx);
         });
       }
 
@@ -2831,16 +2980,26 @@
       }
     });
 
-    // Quick buttons
+    // Quick buttons - smooth live update
     container.querySelectorAll('.tb-quick-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const sIdx = parseInt(btn.getAttribute('data-slot'), 10);
         const type = btn.getAttribute('data-type');
         const val = btn.getAttribute('data-val');
-        if (type === 'lvl') tbTeam.slots[sIdx].level = parseInt(val, 10);
-        else if (type === 'born') tbTeam.slots[sIdx].born = parseInt(val, 10);
-        else if (type === 'train') tbTeam.slots[sIdx].training = parseFloat(val);
-        renderTeamBuilder();
+        if (type === 'lvl') {
+          tbTeam.slots[sIdx].level = parseInt(val, 10);
+          const r = document.getElementById(`tbLevelRange_${sIdx}`);
+          if (r) r.value = val;
+        } else if (type === 'born') {
+          tbTeam.slots[sIdx].born = parseInt(val, 10);
+          const r = document.getElementById(`tbBornRange_${sIdx}`);
+          if (r) r.value = val;
+        } else if (type === 'train') {
+          tbTeam.slots[sIdx].training = parseFloat(val);
+          const r = document.getElementById(`tbTrainRange_${sIdx}`);
+          if (r) r.value = val;
+        }
+        updateSlotLive(sIdx);
       });
     });
 

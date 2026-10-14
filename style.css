@@ -1064,15 +1064,20 @@ table.wiki-table tr:hover td {
 }
 .tb-quick-btn {
   flex: 1;
-  padding: 2px 4px !important;
+  padding: 3px 6px !important;
   font-size: 11px !important;
+  font-weight: 700;
   text-align: center;
-  background: var(--wiki-table-stripe);
+  background: var(--wiki-card-bg);
   border: 1px solid var(--wiki-border-light);
+  color: var(--wiki-text) !important;
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 .tb-quick-btn:hover {
   background: var(--wiki-border-light);
+  color: var(--wiki-accent) !important;
 }
 .teambuilder-slots {
   display: grid;

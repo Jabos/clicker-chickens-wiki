@@ -976,7 +976,7 @@
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 11,
+      "hidden_power_id": 46,
       "passive_id": 30,
       "action_type": 0,
       "stats": {
@@ -5201,7 +5201,8 @@
       "consumable": false,
       "sprite": "images/items/23.png",
       "found_in_zones": [
-        "Cielo"
+        "Cielo",
+        "Arcana"
       ]
     },
     {
@@ -5850,7 +5851,8 @@
       "consumable": false,
       "sprite": "images/items/59.png",
       "found_in_zones": [
-        "La fábrica"
+        "La fábrica",
+        "Arcana"
       ]
     },
     {
@@ -5918,7 +5920,9 @@
       "shop_price": 75,
       "consumable": false,
       "sprite": "images/items/63.png",
-      "found_in_zones": []
+      "found_in_zones": [
+        "Arcana"
+      ]
     },
     {
       "id": 64,
@@ -9726,14 +9730,6 @@
           "sprite": "images/chickens/25.png"
         },
         {
-          "id": 30,
-          "name": {
-            "es": "Mosca",
-            "en": "Mosca"
-          },
-          "sprite": "images/chickens/30.png"
-        },
-        {
           "id": 122,
           "name": {
             "es": "Meta",
@@ -11370,6 +11366,14 @@
           "sprite": "images/chickens/26.png"
         },
         {
+          "id": 30,
+          "name": {
+            "es": "Mosca",
+            "en": "Mosca"
+          },
+          "sprite": "images/chickens/30.png"
+        },
+        {
           "id": 49,
           "name": {
             "es": "Cerol",
@@ -12547,7 +12551,10 @@
         11
       ],
       "shop_item_ids": [
-        53
+        53,
+        63,
+        59,
+        23
       ],
       "tournament": {
         "cup_name": {

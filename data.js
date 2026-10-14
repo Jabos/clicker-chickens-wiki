@@ -1,5 +1,5 @@
-window.WIKI_DATA = {
-  "version": "0.117",
+window.GAME_DATA = {
+  "version": "0.118",
   "chickens": [
     {
       "id": 0,
@@ -1082,7 +1082,7 @@ window.WIKI_DATA = {
       "default_item_id": 6,
       "power_max": 130,
       "power_id": 0,
-      "hidden_power_id": 23,
+      "hidden_power_id": 33,
       "passive_id": 14,
       "action_type": 0,
       "stats": {
@@ -2298,7 +2298,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 0,
-      "hidden_power_id": 13,
+      "hidden_power_id": 30,
       "passive_id": 30,
       "action_type": 0,
       "stats": {
@@ -4028,7 +4028,7 @@ window.WIKI_DATA = {
       "default_item_id": 25,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 13,
+      "hidden_power_id": 39,
       "passive_id": 53,
       "action_type": 0,
       "stats": {
@@ -4104,7 +4104,7 @@ window.WIKI_DATA = {
       "default_item_id": 3,
       "power_max": 100,
       "power_id": 1,
-      "hidden_power_id": 17,
+      "hidden_power_id": 48,
       "passive_id": 54,
       "action_type": 0,
       "stats": {

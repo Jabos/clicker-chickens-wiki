@@ -131,7 +131,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.117",
+      footerGen: "Generada directamente de los datos del juego v0.118",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero"
     },
@@ -255,7 +255,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.117",
+      footerGen: "Generated directly from game data v0.118",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style"
     },
@@ -379,7 +379,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.117",
+      footerGen: "Gerada diretamente dos dados do jogo v0.118",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve"
     },
@@ -503,7 +503,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.117",
+      footerGen: "Сгенерировано напрямую из данных игры v0.118",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль"
     }

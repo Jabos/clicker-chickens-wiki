@@ -132,7 +132,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.120",
+      footerGen: "Generada directamente de los datos del juego v0.121",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero",
       navSecTools: "Herramientas y Combate",
@@ -353,7 +353,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.120",
+      footerGen: "Generated directly from game data v0.121",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style",
       navSecTools: "Tools & Combat",
@@ -574,7 +574,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.120",
+      footerGen: "Gerada diretamente dos dados do jogo v0.121",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve",
       navSecTools: "Ferramentas e Combate",
@@ -795,7 +795,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.120",
+      footerGen: "Сгенерировано напрямую из данных игры v0.121",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль",
       navSecTools: "Инструменты и Бой",
@@ -2211,38 +2211,53 @@
   function renderMechanics() {
     const container = document.getElementById('wikiContent');
     const m = WIKI.mechanics;
+    const catKeys = Object.keys(m);
+
     container.innerHTML = `
       <div class="page-header">
         <h1 class="page-title">📖 ${str('navMechanics')}</h1>
         <p class="page-subtitle">${str('secMechanicsDesc')}</p>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:24px;">
-        ${(() => {
-          const defaultIcons = {
-            breeding: '🥚',
-            fusion: '🧬',
-            squad: '👥',
-            exchange: '📜',
-            infinite: '♾️',
-            formulas: '📊'
-          };
-          return Object.keys(m).map(key => {
-            const cat = m[key];
-            const icon = cat.icon || defaultIcons[key] || '📌';
-            return `
-              <div>
-                <h2 class="article-h2">${icon} ${getLocalized(cat.title)}</h2>
-                ${cat.sections.map(sec => `
-                  <div class="article-box">
-                    <h4>${getLocalized(sec.title)}</h4>
-                    <p style="font-size:13px;line-height:1.5;">${getLocalized(sec.content)}</p>
-                  </div>
-                `).join('')}
+      <!-- Quick Jump Navigation Pills -->
+      <div class="mechanics-nav-bar">
+        ${catKeys.map(key => {
+          const cat = m[key];
+          const icon = cat.icon || '📌';
+          return `<a class="mechanics-pill" href="#cat-${key}" onclick="event.preventDefault(); document.getElementById('cat-${key}').scrollIntoView({ behavior: 'smooth' });">${icon} ${getLocalized(cat.title)}</a>`;
+        }).join('')}
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        ${catKeys.map(key => {
+          const cat = m[key];
+          const icon = cat.icon || '📌';
+          return `
+            <div class="mechanics-category" id="cat-${key}">
+              <div class="mechanics-category-header">
+                <span style="font-size:24px;">${icon}</span>
+                <h2 class="mechanics-category-title">${getLocalized(cat.title)}</h2>
               </div>
-            `;
-          }).join('');
-        })()}
+              ${cat.sections.map(sec => `
+                <div class="mechanics-card">
+                  <h4>${getLocalized(sec.title)}</h4>
+                  <p>${getLocalized(sec.content)}</p>
+                  ${sec.formula ? `
+                    <div class="mechanics-formula-box">
+                      <span>📐</span>
+                      <code>${sec.formula}</code>
+                    </div>
+                  ` : ''}
+                  ${sec.tip ? `
+                    <div class="mechanics-tip-box">
+                      ${getLocalized(sec.tip)}
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }).join('')}
       </div>
     `;
   }
@@ -3678,9 +3693,22 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.120",
+        version: "v0.121",
         date: "Actual",
         badge: "Versión Actual",
+        highlights: [
+          "<strong>Ascensor y Checkpoints en Modo Infinito:</strong> Nuevo sistema de ascensor con puntos de control cada 25 pisos (pisos 26, 51, 76, 101...). Empezar desde el piso 1 es gratuito y los pisos avanzados tienen coste en semillas. Soporte para mantener presionado en las flechas de navegación del ascensor.",
+          "<strong>Jefes Abisales y Rebalanceo del Infinito:</strong> Expansión masiva de pools de jefes temáticos cada 10 pisos y combinaciones abisales cruzadas a partir del piso 110 con escalado infinito abisal (+3.5% por piso). Garra fue removido de los jefes del infinito para preservar su estatus de recompensa suprema del Torneo Arcano.",
+          "<strong>100% de Ítems Conseguibles:</strong> Auditoría completa de los 75 objetos del juego. Pico blindado, Primer boomerang y Primera hacha ahora son 100% obtenibles a través de incursiones en el Modo Infinito y contratos de intercambio.",
+          "<strong>Balance de Drops Únicos:</strong> Ajuste moderado en las probabilidades de ítems exclusivos en el Modo Infinito (3.5% Fragmento Prohibido y 7.5% ítems raros), desequipándose automáticamente al inventario al reclutar.",
+          "<strong>Zona Arcana Mejorada:</strong> Los pollos salvajes de la Zona Arcana ahora poseen valores de entrenamiento aleatorios tendientes a altos.",
+          "<strong>Arquitectura de Pasivas de Equipo:</strong> Preparación del terreno y hooks de eventos de combate para futuras pasivas globales de equipo mediante colgantes."
+        ]
+      },
+      {
+        version: "v0.120",
+        date: "Reciente",
+        badge: "Reciente",
         highlights: [
           "<strong>Escalado Libre de Estadísticas:</strong> Se retiraron los techos artificiales superiores en Vida (2,500), Daño (300) y Velocidad (500) en el motor del juego. Pollos especializados con estadísticas base superiores a 100 (como Cacho con 130 ATK alcanzando 349, Valu con 130 HP alcanzando 2,904, o Duncan con 120 SPD alcanzando 554) ahora expresan plenamente su potencial genético y entrenamiento.",
           "<strong>Blindaje de Armadura:</strong> Se mantuvo el límite estricto de mitigación de daño al 80% para evitar invulnerabilidad física en combates competitivos.",

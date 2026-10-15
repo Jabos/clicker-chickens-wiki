@@ -651,6 +651,119 @@ table.wiki-table tr:hover td {
   gap: 8px;
 }
 
+/* Enhanced Mechanics UI */
+.mechanics-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 12px;
+  background: var(--wiki-card-bg, #1a222d);
+  border: 1px solid var(--wiki-border-light, #2e3846);
+  border-radius: 8px;
+}
+
+.mechanics-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--wiki-bg, #0f141c);
+  border: 1px solid var(--wiki-border-light, #2e3846);
+  color: var(--wiki-text-muted, #94a3b8);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mechanics-pill:hover, .mechanics-pill.active {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+  color: #60a5fa;
+  transform: translateY(-1px);
+}
+
+.mechanics-category {
+  scroll-margin-top: 80px;
+  margin-bottom: 32px;
+}
+
+.mechanics-category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--wiki-border-light, #2e3846);
+  padding-bottom: 8px;
+}
+
+.mechanics-category-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--wiki-text, #f1f5f9);
+  margin: 0;
+}
+
+.mechanics-card {
+  background: var(--wiki-card-bg, #151b24);
+  border: 1px solid var(--wiki-border-light, #273140);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.2s ease;
+}
+
+.mechanics-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.mechanics-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mechanics-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--wiki-text, #cbd5e1);
+  margin: 0;
+}
+
+.mechanics-formula-box {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.7);
+  border-left: 3px solid #38bdf8;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12.5px;
+  color: #7dd3fc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.mechanics-tip-box {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: 6px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #fde047;
+}
+
 .badge {
   display: inline-block;
   padding: 2px 8px;

@@ -1,5 +1,5 @@
 {
-  "version": "0.120",
+  "version": "0.121",
   "chickens": [
     {
       "id": 0,
@@ -21928,66 +21928,59 @@
   "mechanics": {
     "breeding": {
       "title": {
-        "es": "Crianza y Huevos",
-        "en": "Breeding & Eggs",
-        "pt": "Criação e Ovos",
-        "ru": "Разведение и яйца"
+        "es": "Crianza y Genética de Nacimiento",
+        "en": "Breeding & Birth Genetics",
+        "pt": "Criação e Genética de Nascimento",
+        "ru": "Разведение и врожденная генетика"
       },
+      "icon": "🥚",
       "sections": [
         {
           "title": {
-            "es": "¿Cómo alimentar y obtener huevos?",
-            "en": "How to feed and lay eggs?",
-            "pt": "Como alimentar e obter ovos?",
-            "ru": "Как кормить и получать яйца?"
+            "es": "Alimentación, Gestación y Puesta de Huevos",
+            "en": "Feeding, Gestation & Egg Laying",
+            "pt": "Alimentação, Gestação e Postura de Ovos",
+            "ru": "Кормление, высиживание и кладка яиц"
           },
           "content": {
-            "es": "En la caja principal puedes alimentar a tus pollos con Semillas (Seeds). Tras alimentarlo, el pollo comenzará a gestar un huevo durante 5 combates. Al ganar o completar combates, el huevo será puesto en el corral (con capacidad máxima de 30 huevos en reserva y 3 en el nido de incubación).",
-            "en": "In the main box you can feed your chickens using Seeds. Once fed, the chicken will gestate an egg over 5 combats. Upon winning or completing battles, an egg is laid in the coop (max capacity of 30 stored eggs and 3 in the active nest).",
-            "pt": "Na caixa principal você pode alimentar seus frangos com Sementes. Após alimentado, o frango começará a gerar um ovo durante 5 combates. Ao vencer ou concluir batalhas, o ovo será colocado no galinheiro (com capacidade máxima de 30 ovos guardados e 3 no ninho de incubação).",
-            "ru": "В главном загоне вы можете кормить кур семенами. После кормления курица начнет высиживать яйцо в течение 5 боев. После победы или завершения сражений яйцо попадает в курятник (макс. вместимость 30 яиц в запасе и 3 в активном инкубаторе)."
+            "es": "Para iniciar la crianza, alimenta a cualquier pollo adulto en tu corral usando Semillas (Seeds). Tras ser alimentado, el pollo comenzará un periodo de gestación que dura exactamente 5 combates (victorias o derrotas). Al finalizar los 5 combates, el pollo pondrá un huevo que se almacena en el corral: puedes tener hasta 3 huevos activos en incubación simultánea y hasta 30 huevos en reserva en el inventario de huevos.",
+            "en": "To begin breeding, feed any adult chicken in your coop using Seeds. Once fed, the chicken begins a gestation period lasting exactly 5 battles (wins or defeats). Upon completing 5 battles, the chicken lays an egg in the coop: you can have up to 3 eggs actively incubating at once and up to 30 reserve eggs stored in your egg inventory.",
+            "pt": "Para iniciar a criação, alimente qualquer frango adulto no galinheiro com Sementes. Após alimentado, o frango inicia um período de gestação de exatamente 5 combates (vitórias ou derrotas). Ao final dos 5 combates, o frango põe um ovo no galinheiro: você pode ter até 3 ovos em incubação ativa simultânea e até 30 ovos de reserva no inventário.",
+            "ru": "Чтобы начать разведение, покормите взрослую курицу в загоне семенами. После кормления начинается период высиживания, длящийся ровно 5 боев (побед или поражений). По завершении 5 боев курица откладывает яйцо: можно инкубировать до 3 яиц одновременно и хранить до 30 яиц в резерве."
+          },
+          "tip": {
+            "es": "💡 Consejo Pro: El coste de semillas para alimentar a un pollo escala con su nivel. Alimentar a pollos de nivel bajo o usar semillas cosechadas en el Modo Infinito optimiza tu economía.",
+            "en": "💡 Pro Tip: Seed cost scales with chicken level. Feeding lower-level parents or gathering seeds from Infinite Mode maximizes your economy.",
+            "pt": "💡 Dica Pro: O custo de sementes escala com o nível do frango. Alimentar frangos de nível mais baixo ou coletar sementes no Modo Infinito otimiza sua economia.",
+            "ru": "💡 Совет: Стоимость семян зависит от уровня курицы. Кормление родителей низкого уровня или сбор семян в Бесконечном режиме экономит ресурсы."
           }
         },
         {
           "title": {
-            "es": "Herencia Genética de Estadísticas",
-            "en": "Genetic Stat Inheritance",
-            "pt": "Herança Genética de Atributos",
-            "ru": "Генетическое наследование характеристик"
+            "es": "Herencia Genética (Born Stats 0-100) y el Objeto Deseo",
+            "en": "Genetic Inheritance (Born Stats 0-100) & Wish Item",
+            "pt": "Herança Genética (Born Stats 0-100) e o Item Desejo",
+            "ru": "Генетическое наследование (Гены 0-100) и предмет Желание"
           },
           "content": {
-            "es": "Los pollitos que nacen de un huevo heredan los genes base (Born Stats) de su progenitor. Cada estadística (Vida, Daño, Armadura, Velocidad, Cantidad de Poder) fluctúa ligeramente entre -3 y +4 puntos respecto al padre. Si el progenitor tiene equipado el objeto Deseo (Wish / item_wish), las estadísticas heredadas aumentan entre +4 y +10 puntos, permitiendo alcanzar pollos genéticamente perfectos (100 en todas las estadísticas).",
-            "en": "Chicks hatched from eggs inherit their parent's base Born Stats. Each stat (Life, Damage, Armor, Speed, Power Amount) randomly fluctuates between -3 and +4 points relative to the parent. If the parent holds the Wish (item_wish) item, inherited stats increase by +4 to +10 points, making it possible to breed genetically perfect chickens (100 in all stats).",
-            "pt": "Os pintinhos nascidos de um ovo herdam os atributos genéticos (Born) do progenitor. Cada atributo (Vida, Dano, Armadura, Velocidade, Carga de Poder) flutua ligeiramente entre -3 e +4 pontos em relação ao pai. Se o progenitor estiver equipado com o item Desejo (Wish), os atributos herdados aumentam entre +4 e +10 pontos, permitindo atingir frangos geneticamente perfeitos (100 em todos os atributos).",
-            "ru": "Цыплята, вылупившиеся из яиц, наследуют врожденные гены (Born Stats) родителя. Каждый параметр (Здоровье, Урон, Броня, Скорость, Набор силы) колеблется от -3 до +4 относительно родительских значений. Если у родителя экипирован предмет Желание (Wish), наследуемые параметры увеличиваются на +4...+10 очков, что позволяет вывести генетически идеальных кур (100 во всех параметрах)."
+            "es": "Cada pollo posee 5 atributos de nacimiento (Born Stats o IVs): Vida, Daño, Velocidad, Armadura y Cantidad de Poder, evaluados de 0 a 100 puntos. Los polluelos heredan los atributos de su progenitor con una variación natural aleatoria de entre -3 y +4 puntos por estadística. Sin embargo, si equipas el objeto mítico Deseo (item_wish) en el progenitor antes de la puesta, ¡la herencia cambia a una ganancia garantizada de entre +4 y +10 puntos en CADA estadística! Con Deseo es posible alcanzar un pollo con genética 100/100 en todos sus atributos (500 de potencial genético total).",
+            "en": "Every chicken has 5 birth stats (Born Stats / IVs): Life, Damage, Speed, Armor, and Power Amount, ranging from 0 to 100. Chicks inherit their parent's values with a natural fluctuation of -3 to +4 points per stat. However, if you equip the mythical Wish (item_wish) item on the parent before laying, inheritance transforms into a guaranteed increase of +4 to +10 points across EVERY stat! Using Wish allows you to achieve 100/100 perfect genetics across all stats (500 total genetic potential).",
+            "pt": "Cada frango possui 5 atributos genéticos de nascimento (Born Stats): Vida, Dano, Velocidade, Armadura e Carga de Poder, variando de 0 a 100. Os pintinhos herdam os valores do pai com variação natural de -3 a +4 pontos por atributo. Contudo, se você equipar o item mítico Desejo (item_wish) no progenitor antes da postura, a herança passa a ser um ganho garantido de +4 a +10 pontos em CADA atributo! Com Desejo é possível alcançar 100/100 em todos os atributos (500 de potencial genético total).",
+            "ru": "У каждой курицы есть 5 врожденных генов (Born Stats): Здоровье, Урон, Скорость, Броня и Набор силы (от 0 до 100). Птенцы наследуют параметры родителя со случайным колебанием от -3 до +4 очков. Однако если экипировать на родителя мифический предмет Желание (Wish), наследование превращается в гарантированный прирост от +4 до +10 очков к КАЖДОМУ параметру! С Желанием можно вывести идеальную особь с генами 100/100 (500 суммарного потенциала)."
           }
         },
         {
           "title": {
-            "es": "Probabilidad de Pollos Variocolor (Shiny)",
-            "en": "Shiny Chicken Chances",
-            "pt": "Chances de Frangos Brilhantes (Shiny)",
-            "ru": "Шансы получения сияющих кур (Shiny)"
+            "es": "Pollos Variocolor (Shiny) y Aceleración de Eclosión",
+            "en": "Shiny Chickens & Hatching Acceleration",
+            "pt": "Frangos Brilhantes (Shiny) e Aceleração de Incubação",
+            "ru": "Сияющие куры (Shiny) и ускорение вылупления"
           },
           "content": {
-            "es": "La probabilidad base de conseguir un pollo Shiny al abrir cualquier huevo es de 0.5% (1 en 200). Sin embargo, si el huevo proviene de un progenitor Shiny mediante crianza, ¡la probabilidad de heredar la variante Shiny aumenta drásticamente al 8% (1 en 12.5)!",
-            "en": "The base chance to obtain a Shiny chicken from any egg is 0.5% (1 in 200). However, if an egg is bred from an already Shiny parent, the chance of inheriting the Shiny variant increases drastically to 8% (1 in 12.5)!",
-            "pt": "A chance básica de obter um frango Shiny em qualquer ovo é de 0,5% (1 em 200). No entanto, se o ovo vier de um progenitor Shiny por meio de criação, a chance de herdar a variante Shiny aumenta drasticamente para 8% (1 em 12,5)!",
-            "ru": "Базовый шанс получить Shiny-курицу из любого яйца составляет 0.5% (1 из 200). Однако если яйцо получено от родителя-Shiny через разведение, шанс унаследовать вариацию Shiny взлетает до 8% (1 из 12.5)!"
-          }
-        },
-        {
-          "title": {
-            "es": "Ítems Especiales de Crianza",
-            "en": "Special Breeding Items",
-            "pt": "Itens Especiais de Criação",
-            "ru": "Особые предметы для разведения"
-          },
-          "content": {
-            "es": "Existen dos ítems raros exclusivos que potencian la crianza al tenerlos equipados en el progenitor: la Pluma dorada (Golden Feather) reduce en un 40% los turnos de combate necesarios para que eclosionen sus huevos, y el Nido especial (Special Nest) aumenta en un +10% la probabilidad de que sus huevos pongan una cría Variocolor (Shiny).",
-            "en": "There are two exclusive rare items that empower breeding when equipped on the parent: the Golden Feather reduces the battle turns required to hatch eggs by 40%, and the Special Nest increases the chance of laying a Shiny egg by +10%.",
-            "pt": "Existem dois itens raros exclusivos que potencializam a criação quando equipados no progenitor: a Pena Dourada (Golden Feather) reduz em 40% os combates necessários para chocar ovos, e o Ninho Especial (Special Nest) adiciona +10% de chance de o ovo gerar uma cria Shiny.",
-            "ru": "Есть два эксклюзивных редких предмета для разведения: Золотое перо (Golden Feather) снижает необходимое количество боев для вылупления яиц на 40%, а Особое гнездо (Special Nest) повышает вероятность вылупления Shiny-птенца на +10%."
+            "es": "La probabilidad base de obtener un pollo Variocolor (Shiny) al abrir un huevo común es de 0.5% (1 en 200). Si el huevo se cría a partir de un progenitor que ya es Shiny, la probabilidad se dispara al 8.0% (1 en 12.5). Equipar el Nido especial (item_specialnest) en el progenitor suma un +10% de probabilidad de cría Shiny (alcanzando hasta un 18% por huevo). Además, equipar la Pluma dorada (item_goldenfeather) reduce en un 40% la cantidad de turnos de combate necesarios para que el huevo eclosione.",
+            "en": "The base chance to obtain a Shiny chicken from common eggs is 0.5% (1 in 200). Breeding from an already Shiny parent skyrockets the odds to 8.0% (1 in 12.5). Equipping the Special Nest (item_specialnest) on the parent adds an extra +10% Shiny breeding chance (up to 18% per egg). Furthermore, equipping the Golden Feather (item_goldenfeather) reduces required combat hatching turns by 40%.",
+            "pt": "A chance básica de obter um frango Shiny em ovos comuns é de 0,5% (1 em 200). Criar a partir de um progenitor Shiny eleva a taxa para 8,0% (1 em 12,5). Equipar o Ninho Especial (item_specialnest) no pai adiciona +10% de chance Shiny (atingindo até 18% por ovo). Além disso, a Pena Dourada (item_goldenfeather) reduz em 40% os combates necessários para a eclosão.",
+            "ru": "Базовый шанс получить Shiny-курицу из обычного яйца — 0.5% (1 из 200). Разведение от Shiny-родителя увеличивает шанс до 8.0% (1 из 12.5). Экипировка Особого гнезда (Special Nest) на родителя добавляет еще +10% к шансу Shiny (до 18% за яйцо). Золотое перо (Golden Feather) сокращает количество необходимых боев для вылупления на 40%."
           }
         }
       ]
@@ -21999,57 +21992,287 @@
         "pt": "Laboratório e Fusão Genética",
         "ru": "Лаборатория и генетическое слияние"
       },
+      "icon": "🧬",
       "sections": [
         {
           "title": {
-            "es": "Reglas de Fusión",
-            "en": "Fusion Rules",
-            "pt": "Regras de Fusão",
-            "ru": "Правила слияния"
+            "es": "Mecánica de Fusión: Base y Donante",
+            "en": "Fusion Mechanics: Base & Donor",
+            "pt": "Mecânica de Fusão: Base e Doador",
+            "ru": "Механика слияния: База и Донор"
           },
           "content": {
-            "es": "En el Laboratorio puedes fusionar un Pollo Base con un Pollo Donante sacrificando maíz (Maize). Si las estadísticas genéticas del donante son superiores a las del pollo base en alguna característica, el pollo base absorberá parte de esa ventaja genética. Además, fusionar un donante Shiny con una base normal tiene una probabilidad de transmitir el gen Shiny a la base.",
-            "en": "In the Laboratory you can fuse a Base Chicken with a Donor Chicken by consuming corn (Maize). If any born stats of the donor are higher than the base, the base chicken will absorb a portion of that genetic advantage. Furthermore, fusing a Shiny donor into a normal base has a chance to pass the Shiny trait to the base.",
-            "pt": "No Laboratório você pode fundir um Frango Base com um Frango Doador consumindo milho. Se os atributos genéticos do doador forem superiores aos da base em alguma característica, a base absorverá parte dessa vantagem genética. Além disso, fundir um doador Shiny em uma base comum tem chance de transferir a condição Shiny.",
-            "ru": "В Лаборатории можно слить Базовую курицу с Курицей-донором, затратив кукурузу. Если параметры донора выше параметров базы, базовая курица впитает часть генетического преимущества. Кроме того, слияние Shiny-донора с обычной базой дает шанс передать статус Shiny базовой курице."
+            "es": "En el Laboratorio puedes potenciar la genética de un Pollo Base sacrificando un Pollo Donante a cambio de Maíz (Corn). El Pollo Base conserva su especie, nivel, movimientos aprendidos y objeto equipado, mientras que el Donante es consumido permanentemente para transmitir su información genética superior.",
+            "en": "In the Laboratory you can empower the genetics of a Base Chicken by sacrificing a Donor Chicken in exchange for Corn (Maize). The Base Chicken retains its species, level, learned moves, and equipped item, while the Donor is permanently consumed to transfer its superior genetic traits.",
+            "pt": "No Laboratório você pode aprimorar a genética de um Frango Base sacrificando um Frango Doador em troca de Milho. O Frango Base preserva espécie, nível, golpes e item equipado, enquanto o Doador é consumido permanentemente para transferir suas qualidades genéticas superiores.",
+            "ru": "В Лаборатории можно улучшить гены Базовой курицы, пожертвовав Курицей-донором за Кукурузу. Базовая курица сохраняет вид, уровень, навыки и предмет, а Донор расходуется безвозвратно для передачи превосходящих генов."
+          }
+        },
+        {
+          "title": {
+            "es": "Transferencia de Estadísticas y Transmisión Shiny",
+            "en": "Stat Transfer & Shiny Transmission",
+            "pt": "Transferência de Atributos e Transmissão Shiny",
+            "ru": "Передача характеристик и статуса Shiny"
+          },
+          "content": {
+            "es": "Si el Donante tiene un valor genético de nacimiento (Born Stat) superior al de la Base en cualquier atributo, la Base absorberá parte de la diferencia hasta acercarse al valor del donante. Además, si sacrificas un Donante que es Variocolor (Shiny) sobre una Base normal, existe una probabilidad real de transmitir el gen Shiny a la base, transformándola permanentemente en Shiny con sus paletas de color y destellos únicos.",
+            "en": "If the Donor has a higher birth stat (Born Stat) than the Base in any attribute, the Base absorbs part of that difference. Furthermore, if you sacrifice a Shiny Donor into a normal Base, there is a distinct chance to pass the Shiny trait onto the base, permanently granting it alternative shiny colors and battle sparkles.",
+            "pt": "Se o Doador tiver um atributo genético (Born Stat) superior ao da Base em qualquer estatística, a Base absorve parte da diferença. Além disso, se você sacrificar um Doador Shiny em uma Base comum, há uma chance real de transferir o gene Shiny, transformando-a permanentemente em Shiny.",
+            "ru": "Если у Донора врожденный ген выше, чем у Базы, Базовая курица поглощает часть разницы. Кроме того, слияние Shiny-донора с обычной базой дает реальный шанс передать статус Shiny, навсегда открывая альтернативный окрас и искры в бою."
+          }
+        }
+      ]
+    },
+    "infinite": {
+      "title": {
+        "es": "Modo Infinito y Sistema de Ascensor",
+        "en": "Infinite Mode & Elevator System",
+        "pt": "Modo Infinito e Sistema de Elevador",
+        "ru": "Бесконечный режим и система Лифта"
+      },
+      "icon": "♾️",
+      "sections": [
+        {
+          "title": {
+            "es": "Escalado de Dificultad y el Abismo (Pisos 101+)",
+            "en": "Difficulty Scaling & The Abyss (Floors 101+)",
+            "pt": "Escalação de Dificuldade e o Abismo (Andares 101+)",
+            "ru": "Рост сложности и Бездна (Этажи 101+)"
+          },
+          "content": {
+            "es": "El Modo Infinito es un desafío continuo sin límite de pisos. Los rivales comienzan en nivel 5 (Piso 1) y aumentan exactamente +1 nivel por cada piso superado hasta alcanzar el nivel 100. A partir del Piso 101 se desata la dificultad Abisal: todos los atributos base de los enemigos escalan un +3.5% adicional por piso de forma multiplicativa. Tu récord de piso más alto alcanzado queda registrado para desbloquear recompensas y puntos de control.",
+            "en": "Infinite Mode is an endless endurance trial without a floor cap. Rivals start at level 5 (Floor 1) and increase by exactly +1 level per cleared floor up to level 100. Starting from Floor 101, Abyssal scaling activates: all enemy base stats scale by an additional +3.5% per floor multiplicatively. Your highest cleared floor is saved to unlock rewards and elevator checkpoints.",
+            "pt": "O Modo Infinito é um teste de resistência sem limite de andares. Os rivais começam no nível 5 (Andar 1) e ganham +1 nível a cada andar concluído até o nível 100. Do Andar 101 em diante, ativa-se a dificuldade Abissal: todos os atributos base dos inimigos escalam +3,5% adicionais por andar multiplicativamente. Seu recorde é salvo para liberar pontos de controle.",
+            "ru": "Бесконечный режим — испытание на выносливость без ограничения этажей. Враги начинают с 5 уровня (1 этаж) и прибавляют по +1 уровню за этаж вплоть до 100. С 101-го этажа включается Бездна: все базовые статы врагов умножаются на +3.5% за каждый последующий этаж. Рекорд сохраняется для открытия чекпоинтов."
+          }
+        },
+        {
+          "title": {
+            "es": "Ascensor, Puntos de Control y Coste de Semillas",
+            "en": "Elevator, Checkpoints & Seed Costs",
+            "pt": "Elevador, Pontos de Controle e Custo de Sementes",
+            "ru": "Лифт, контрольные точки и стоимость семян"
+          },
+          "content": {
+            "es": "El Ascensor permite retomar tu partida en puntos de control avanzados cada 25 pisos alcanzados (pisos 1, 26, 51, 76, 101, 126...). Comenzar desde el Piso 1 es siempre 100% GRATIS. Ascender a pisos avanzados requiere una inversión en semillas según la fórmula: Coste = (Piso ÷ 25) × 2,500 Semillas (Piso 26 = 2,500; Piso 51 = 5,000; Piso 76 = 7,500; Piso 101 = 10,000...). Puedes mantener presionadas las flechas de navegación del ascensor para desplazarte de manera rápida y continua entre los pisos desbloqueados.",
+            "en": "The Elevator allows you to launch runs from unlocked checkpoints every 25 reached floors (floors 1, 26, 51, 76, 101, 126...). Starting from Floor 1 is always 100% FREE. Ascending to higher floors requires a seed fee: Cost = (Floor ÷ 25) × 2,500 Seeds (Floor 26 = 2,500; Floor 51 = 5,000; Floor 76 = 7,500; Floor 101 = 10,000...). You can hold down the elevator navigation arrows to scroll quickly and continuously through your available floors.",
+            "pt": "O Elevador permite iniciar partidas em pontos de controle a cada 25 andares alcançados (andares 1, 26, 51, 76, 101, 126...). Começar do Andar 1 é sempre 100% GRÁTIS. Subir a andares avançados custa sementes: Custo = (Andar ÷ 25) × 2.500 Sementes (Andar 26 = 2.500; Andar 51 = 5.000; Andar 76 = 7.500; Andar 101 = 10.000...). Mantenha as setas pressionadas para rolar rapidamente pelos andares liberados.",
+            "ru": "Лифт позволяет начинать с контрольных точек, открывающихся каждые 25 пройденных этажей (1, 26, 51, 76, 101, 126...). Старт с 1 этажа всегда БЕСПЛАТЕН. Подъем на высокие этажи стоит семян: Цена = (Этаж ÷ 25) × 2 500 семян (Этаж 26 = 2 500; 51 = 5 000; 76 = 7 500; 101 = 10 000...). Стрелки навигации можно удерживать для быстрой прокрутки этажей."
+          }
+        },
+        {
+          "title": {
+            "es": "Jefes de Incursión cada 10 Pisos y Abismo Cruzado 110+",
+            "en": "Raid Bosses every 10 Floors & 110+ Crossover Abyss",
+            "pt": "Chefes de Incursão a cada 10 Andares e Abismo Cruzado 110+",
+            "ru": "Рейд-боссы каждые 10 этажей и Бездна 110+"
+          },
+          "content": {
+            "es": "Cada 10 pisos te enfrentarás a una pareja de Jefes con genética perfecta (100 en todos los atributos), alto entrenamiento y +35% de vida base. A partir del piso 110+, se desbloquean combinaciones cruzadas de Jefes Abisales (Choque Térmico, Singularidad Cibernética, Abismo de los Condenados, Furia Primigenia, Vórtice Dimensional...). Garra fue retirado de los jefes del infinito para salvaguardar su prestigio como recompensa suprema del Torneo Arcano.",
+            "en": "Every 10 floors you battle a Raid Boss pair with perfect genetics (100 in all birth stats), high training, and +35% base HP. Starting at floor 110+, crossover Abyssal Boss combinations unlock (Thermal Shock, Cybernetic Singularity, Damned Abyss, Primeval Fury, Dimensional Vortex...). Garra is excluded from infinite bosses to protect its prestige as the Arcana Tournament supreme reward.",
+            "pt": "A cada 10 andares você enfrenta uma dupla de Chefes com genética perfeita (100 em todos os atributos), treinamento elevado e +35% de vida base. Do andar 110 em diante, combinações cruzadas de Chefes Abissais são liberadas (Choque Térmico, Singularidade Cibernética, Abismo dos Condenados, Fúria Primitiva...). Garra foi removido do infinito para preservar seu prestígio como recompensa suprema do Torneio Arcano.",
+            "ru": "Каждые 10 этажей вас ждет бой с парой Рейд-боссов с идеальной генетикой (100 во всем), высокой тренировкой и +35% базового здоровья. С 110-го этажа открываются перекрестные боссы Бездны (Термошок, Кибер-сингулярность, Бездна проклятых, Первобытная ярость...). Гарра исключен из боссов бесконечного режима, сохраняя статус эксклюзивной награды Арканного Турнира."
+          }
+        },
+        {
+          "title": {
+            "es": "Ítems en Rivales, Desequipado Automático y 100% Obtenibles",
+            "en": "Rival Items, Auto-Unequip & 100% Obtainability",
+            "pt": "Itens em Rivais, Desequipar Automático e 100% Obtíveis",
+            "ru": "Предметы врагов, авто-снятие и 100% получение"
+          },
+          "content": {
+            "es": "A partir del piso 3, los rivales pueden aparecer equipados con ítems (escalando desde 35% hasta 85% de probabilidad en pisos altos). Tienen un 3.5% de portar el Fragmento Prohibido (+35% ATK, +10% SPD) y un 7.5% de portar ítems raros y exclusivos (Pluma dorada, Pluma de Brahma, Garra derrochadora, Nido especial, Ira, Pico blindado, Primer boomerang o Primera hacha). Al reclutar a un rival que los porte, ¡su ítem se desequipa automáticamente a tu inventario! Cada 10 pisos recibes un huevo especial con pollos exclusivos o shinies, y todo tu equipo es completamente curado.",
+            "en": "From floor 3 onward, rivals can spawn equipped with items (scaling from 35% up to 85% chance at high floors). They have a 3.5% chance to carry the Forbidden Fragment (+35% ATK, +10% SPD) and a 7.5% chance to carry rare/exclusive items (Golden Feather, Brahma Feather, Wasteful Claw, Special Nest, Wrath, Armored Beak, First Boomerang, or First Axe). Recruiting an equipped rival automatically transfers their item into your inventory! Clearing every 10 floors grants a special egg with exclusive chickens or shinies, plus full team healing.",
+            "pt": "A partir do andar 3, os rivais podem surgir equipados com itens (chance de 35% a 85% em andares altos). Há 3,5% de chance de carregarem o Fragmento Proibido (+35% dano, +10% velocidade) e 7,5% de portarem itens raros e exclusivos (Pena Dourada, Pena de Brahma, Garra Esbanjadora, Ninho Especial, Ira, Bico Blindado, Primeiro Bumerangue ou Primeiro Machado). Ao recrutar um rival equipado, o item vai direto para o seu inventário! A cada 10 andares concluídos, você ganha um ovo especial e cura total da equipe.",
+            "ru": "С 3-го этажа враги могут появляться с предметами (шанс от 35% до 85% на высоких этажах). С шансом 3.5% они несут Запретный осколок (+35% урона, +10% скорости) и с шансом 7.5% — редкие предметы (Золотое перо, Перо Брахмы, Расточительный коготь, Особое гнездо, Гнев, Бронированный клюв, Первый бумеранг, Первый топор). При найме экипированного противника его предмет автоматически отправляется в ваш инвентарь! Каждые 10 этажей дают особое яйцо и полное исцеление команды."
+          }
+        }
+      ]
+    },
+    "formulas": {
+      "title": {
+        "es": "Fórmulas de Combate y Estadísticas",
+        "en": "Combat Formulas & Stats",
+        "pt": "Fórmulas de Combate e Atributos",
+        "ru": "Боевые формулы и параметры"
+      },
+      "icon": "📊",
+      "sections": [
+        {
+          "title": {
+            "es": "Los 5 Atributos y su Fórmula Oficial",
+            "en": "The 5 Stats & Their Official Formula",
+            "pt": "Os 5 Atributos e sua Fórmula Oficial",
+            "ru": "5 характеристик и их официальная формула"
+          },
+          "content": {
+            "es": "El poder de un pollo se define por: Vida (salud máxima en combate), Daño (fuerza de ataque base), Velocidad (frecuencia de turnos), Armadura (mitigación de daño físico) y Cantidad de Poder (potencia de sus habilidades especiales). La estadística final en batalla se calcula combinando la Base de la especie, los genes de Nacimiento (Born 0-100), el Entrenamiento (Training 0-100) y el multiplicador de Nivel.",
+            "en": "A chicken's combat power is governed by: Life (maximum battle HP), Damage (base attack power), Speed (turn frequency), Armor (damage mitigation percentage), and Power Amount (skill magnitude). The final combat stat combines species Base Stat, Born Stats (0-100), Training Stats (0-100), and Level scaling.",
+            "pt": "O poder de combate é definido por: Vida (saúde máxima), Dano (força de ataque), Velocidade (frequência de turnos), Armadura (mitigação de dano) e Carga de Poder (potência das habilidades). O atributo final em batalha combina a Base da espécie, genes de Nascimento (Born 0-100), Treinamento (0-100) e escalonamento por Nível.",
+            "ru": "Сила курицы определяется 5 параметрами: Здоровье (макс. HP), Урон (сила атаки), Скорость (частота ходов), Броня (% снижения урона) и Набор силы (мощь способностей). Итоговый стат рассчитывается объединением базовых статов вида, врожденных генов (0-100), тренировки (0-100) и масштабирования уровня."
+          },
+          "formula": "Stat_Final = [Base × (1 + (Nivel - 1) × 0.05) × (1 + Born × 0.005)] + [Training × Factor_Nivel]"
+        },
+        {
+          "title": {
+            "es": "Escalado Libre de Estadísticas (v0.120+) y Blindaje de Armadura",
+            "en": "Uncapped Stat Scaling (v0.120+) & Armor Cap",
+            "pt": "Escalação Livre de Atributos (v0.120+) e Teto de Armadura",
+            "ru": "Снятие ограничений статов (v0.120+) и потолок брони"
+          },
+          "content": {
+            "es": "A partir de la versión v0.120 se eliminaron los techos artificiales superiores de Vida (2,500), Daño (300) y Velocidad (500). Pollos de élite con atributos base altos (como Cacho con 130 de daño alcanzando 349, Valu con 130 de vida alcanzando 2,904, o Duncan con 120 de velocidad alcanzando 554) ahora expresan plenamente su potencial genético. Para mantener el equilibrio competitivo, la Armadura mantiene un tope estricto de mitigación del 80% máximo para evitar invulnerabilidad física absoluta.",
+            "en": "Starting in v0.120, artificial stat ceilings on Life (2,500), Damage (300), and Speed (500) were completely removed. Elite chickens with exceptional base stats (such as Cacho with 130 ATK reaching 349, Valu with 130 HP reaching 2,904, or Duncan with 120 SPD reaching 554) fully express their genetic training. To preserve balance, Armor maintains a strict 80% maximum damage mitigation cap to prevent physical invulnerability.",
+            "pt": "A partir da versão v0.120, os tetos artificiais em Vida (2.500), Dano (300) e Velocidade (500) foram retirados. Frangos com atributos base superiores (como Cacho com 130 de ataque alcançando 349, Valu com 130 de vida alcançando 2.904, ou Duncan com 120 de velocidade alcançando 554) expressam todo o seu potencial. A Armadura mantém limite estrito de 80% de mitigação para evitar invulnerabilidade.",
+            "ru": "Начиная с версии v0.120, искусственные потолки на Здоровье (2 500), Урон (300) и Скорость (500) полностью сняты. Специализированные куры (например, Качо с 130 атаки достигает 349, Валу с 130 здоровья — 2 904, Дункан со 120 скорости — 554) полностью раскрывают потенциал. Броня сохраняет строгий лимит снижения урона в 80% во избежание неуязвимости."
+          }
+        },
+        {
+          "title": {
+            "es": "Barra de Acción Continua (ATB) y Curva de Experiencia (XP)",
+            "en": "Action Gauge (ATB) & Experience Curve (XP)",
+            "pt": "Barra de Ação Contínua (ATB) e Curva de Experiência (XP)",
+            "ru": "Шкала действия (ATB) и кривая опыта (XP)"
+          },
+          "content": {
+            "es": "El combate funciona por tiempo continuo: cada pollo llena una barra de acción invisible a una velocidad proporcional a su estadística de Velocidad. Al llegar al 100%, ejecuta su turno (ataque básico o poder especial si su energía está llena). La experiencia máxima necesaria para subir de nivel se calcula según la fórmula oficial: XP Máx = redondear(100 × (Nivel)^1.25). Por ejemplo, nivel 1 requiere 100 XP, nivel 10 requiere ~1,778 XP, y nivel 50 requiere ~13,335 XP.",
+            "en": "Combat runs on active time: each chicken fills an action gauge at a rate proportional to its Speed stat. Upon reaching 100%, it executes its turn (basic attack or special power if full energy). Maximum experience required to level up follows the official formula: Max XP = round(100 × (Level)^1.25). For example, level 1 requires 100 XP, level 10 requires ~1,778 XP, and level 50 requires ~13,335 XP.",
+            "pt": "O combate é em tempo contínuo: cada frango preenche uma barra de ação proporcional à sua Velocidade. Ao atingir 100%, executa o turno (ataque ou poder se a energia estiver cheia). A experiência máxima necessária para subir de nível segue a fórmula oficial: XP Máx = arredondar(100 × (Nível)^1.25). Exemplo: nível 1 requer 100 XP, nível 10 requer ~1.778 XP e nível 50 requer ~13.335 XP.",
+            "ru": "Бой протекает в реальном времени: каждая птица заполняет шкалу действия со скоростью, зависящей от параметра Скорости. При 100% совершается действие. Опыт для повышения уровня рассчитывается по формуле: Макс. XP = округлить(100 × (Уровень)^1.25). Например, для уровня 1 требуется 100 XP, для уровня 10 — ~1 778 XP, для 50 — ~13 335 XP."
+          },
+          "formula": "XP_Max = round(100 × (Nivel)^1.25)"
+        }
+      ]
+    },
+    "powers_hidden": {
+      "title": {
+        "es": "Poderes de Combate y Poder Oculto",
+        "en": "Battle Powers & Hidden Power",
+        "pt": "Poderes de Combate e Poder Oculto",
+        "ru": "Боевые способности и Скрытая сила"
+      },
+      "icon": "✨",
+      "sections": [
+        {
+          "title": {
+            "es": "Carga de Energía y Despliegue de Habilidades",
+            "en": "Energy Charging & Skill Deployment",
+            "pt": "Carga de Energia e Disparo de Habilidades",
+            "ru": "Накопление энергии и применение навыков"
+          },
+          "content": {
+            "es": "Cada especie cuenta con un Poder Especial nativo. Al atacar o recibir daño en combate, la barra azul de energía se llena. Cuando la energía llega a su tope, el siguiente turno del pollo desatará automáticamente su Poder Especial en lugar de un ataque básico, ejecutando efectos devastadores de daño masivo, curación de equipo, escudos protectores, control de turnos o debilitación del rival.",
+            "en": "Each species has a native Special Power. Dealing attacks or suffering damage charges the blue energy bar. Once energy is full, the chicken's next action automatically unleashes its Special Power instead of a basic strike, dealing massive damage, team heals, shields, turn control, or enemy debuffs.",
+            "pt": "Cada espécie possui um Poder Especial nativo. Ao atacar ou sofrer dano, a barra azul de energia enche. Quando a energia atinge o máximo, o próximo turno do frango dispara seu Poder Especial em vez de um ataque básico, gerando dano maciço, curas, escudos ou controle de turnos.",
+            "ru": "У каждого вида есть родная Особая сила. При атаках и получении урона синяя шкала энергии заряжается. При полном заряде курица вместо обычной атаки активирует Особую силу, нанося колоссальный урон, исцеляя команду, накладывая щиты или оглушая врагов."
+          }
+        },
+        {
+          "title": {
+            "es": "¿Qué es el Poder Oculto (Hidden Power)?",
+            "en": "What is Hidden Power?",
+            "pt": "O que é o Poder Oculto?",
+            "ru": "Что такое Скрытая сила (Hidden Power)?"
+          },
+          "content": {
+            "es": "El Poder Oculto es una segunda habilidad elemental secreta fija asignada a cada especie. Cuando un pollo nace o es invocado con Poder Oculto (5% de probabilidad base, aumentable en el Gacha con Suerte), su Poder Especial normal es sustituido por esta técnica secreta. Esto permite a especies especializadas sorprender a sus oponentes con coberturas elementales únicas que rompen las debilidades habituales de su tipo.",
+            "en": "Hidden Power is a fixed secret secondary elemental ability assigned to each species. When a chicken hatches or is summoned with Hidden Power (5% base chance, increased via Luck in Gacha), its standard Special Power is permanently replaced by this secret technique, granting surprise elemental coverage that counters traditional matchups.",
+            "pt": "O Poder Oculto é uma segunda habilidade elemental secreta fixa para cada espécie. Quando um frango nasce ou é invocado com Poder Oculto (5% de chance básica, expansível com Sorte no Gacha), seu poder comum é substituído por essa técnica secreta, concedendo coberturas elementais surpreendentes.",
+            "ru": "Скрытая сила — это фиксированная секретная вторичная способность каждого вида. Если курица рождается или призывается со Скрытой силой (базовый шанс 5%, растет от Удачи в Гаче), ее стандартный навык заменяется на секретный, открывая неожиданное стихийное преимущество."
+          }
+        },
+        {
+          "title": {
+            "es": "Pasivas de Equipo y Colgantes",
+            "en": "Team Passives & Pendants",
+            "pt": "Passivas de Equipe e Pingentes",
+            "ru": "Командные пассивки и кулоны"
+          },
+          "content": {
+            "es": "Además de las pasivas individuales innatas de cada pollo, la arquitectura del juego cuenta con soporte para Colgantes de Equipo. Al equipar un colgante en la escuadra, se otorga una pasiva adicional compartida que beneficia simultáneamente a los 4 miembros del equipo durante todo el combate.",
+            "en": "In addition to each chicken's innate personal passive, the game features groundwork for Team Pendants. Equipping a pendant grants a shared team-wide passive that benefits all 4 squad members simultaneously throughout the battle.",
+            "pt": "Além das passivas individuais de cada frango, o jogo conta com suporte para Pingentes de Equipe. Ao equipar um pingente, concede-se uma passiva compartilhada que beneficia simultaneamente todos os 4 membros da equipe.",
+            "ru": "Помимо личных врожденных пассивок каждой птицы, в игре заложена механика Командных кулонов. Экипировка кулона дает дополнительную общую пассивную способность, усиливающую всех 4 бойцов отряда в бою."
           }
         }
       ]
     },
     "squad": {
       "title": {
-        "es": "Escuadra y Suplentes",
-        "en": "Squad & Substitutes",
-        "pt": "Esquadrão e Reservas",
-        "ru": "Отряд и запасные"
+        "es": "Escuadra, Posicionamiento y Relevos",
+        "en": "Squad, Positioning & Tactical Swaps",
+        "pt": "Esquadrão, Posicionamento e Reservas",
+        "ru": "Отряд, расстановка и замены"
       },
+      "icon": "👥",
       "sections": [
         {
           "title": {
-            "es": "Escuadra de 4 Pollos",
-            "en": "4-Chicken Squad",
-            "pt": "Esquadrão de 4 Frangos",
-            "ru": "Отряд из 4 кур"
+            "es": "Formación de 4 Pollos: Titulares y Suplentes",
+            "en": "4-Chicken Squad: Starters & Reserves",
+            "pt": "Esquadrão de 4 Frangos: Titulares e Reservas",
+            "ru": "Отряд из 4 кур: Основа и Запас"
           },
           "content": {
-            "es": "Ahora puedes formar una escuadra completa con 2 pollos titulares y hasta 2 suplentes elegidos desde tu granja. Los titulares inician la batalla en primera línea, mientras que los suplentes esperan en reserva listos para entrar.",
-            "en": "You can now assemble a full squad with 2 starter chickens and up to 2 substitutes chosen from your farm. Starters begin the battle in front, while substitutes wait in reserve ready to jump in.",
-            "pt": "Agora você pode montar um esquadrão completo com 2 titulares e até 2 reservas escolhidos da sua fazenda. Os titulares começam o combate na frente, enquanto os reservas aguardam no banco prontos para entrar.",
-            "ru": "Теперь можно сформировать полный отряд из 2 основных кур и до 2 запасных из курятника. Основные бойцы начинают битву впереди, а запасные ждут своего выхода в резерве."
+            "es": "Puedes formar una escuadra completa de hasta 4 pollos desde el menú de combate: 2 Titulares en vanguardia (Posiciones 1 y 2) que inician el combate activo, y hasta 2 Suplentes en retaguardia (Posiciones 3 y 4) que esperan en la reserva con su salud completa.",
+            "en": "You can assemble a squad of up to 4 chickens: 2 Starters on the frontline (Positions 1 & 2) who begin active combat, and up to 2 Substitutes on the bench (Positions 3 & 4) who wait in reserve at full health.",
+            "pt": "Você pode montar um esquadrão de até 4 frangos: 2 Titulares na linha de frente (Posições 1 e 2) que iniciam o combate, e até 2 Reservas no banco (Posições 3 e 4) que aguardam com vida cheia.",
+            "ru": "Можно собрать полный отряд из 4 кур: 2 Основных бойца на передовой (Позиции 1 и 2) начинают бой, и до 2 Запасных на скамейке (Позиции 3 и 4) ждут своего часа с полным здоровьем."
           }
         },
         {
           "title": {
-            "es": "Relevos en Combate",
-            "en": "Battle Swaps",
-            "pt": "Substituições em Batalha",
-            "ru": "Замены в бою"
+            "es": "Mecánica de Relevos en Combate",
+            "en": "Mid-Battle Swapping Mechanic",
+            "pt": "Mecânica de Substituição em Batalha",
+            "ru": "Механика замен прямо в бою"
           },
           "content": {
-            "es": "Durante el combate, puedes tocar el indicador de un pollo para sustituirlo por uno de tus refuerzos. El relevo permite adaptar tu estrategia contra las fortalezas y debilidades elementales del rival.",
-            "en": "During combat, tap a chicken's indicator to swap it with one of your substitutes. Swapping allows you to adapt your strategy against the rival's elemental strengths and weaknesses.",
-            "pt": "Durante o combate, toque no indicador de um frango para substituí-lo por um dos seus reservas. A troca permite adaptar sua tática contra as fraquezas e pontos fortes do oponente.",
-            "ru": "Во время боя нажмите на индикатор курицы, чтобы заменить ее на резервную. Замены позволяют перестроить стратегию под уязвимости соперника."
+            "es": "Durante cualquier combate en curso, puedes tocar el indicador de un pollo titular en la pantalla para sustituirlo instantáneamente por uno de tus suplentes disponibles. El relevo te permite retirar a un aliado en peligro crítico, anular desventajas elementales o introducir un rematador de alta velocidad para asegurar la victoria.",
+            "en": "During any active battle, tap a frontline chicken's indicator to instantly swap it with one of your available bench substitutes. Mid-battle swaps allow you to save critically wounded allies, counter elemental matchups, or bring in a high-speed finisher to seal the match.",
+            "pt": "Durante qualquer combate ativo, toque no indicador de um frango titular para trocá-lo instantaneamente por um dos reservas disponíveis. A substituição permite salvar aliados feridos, reverter desvantagens elementais ou trazer um finalizador veloz.",
+            "ru": "Во время активного боя нажмите на индикатор основного бойца, чтобы мгновенно заменить его на одного из запасных. Замены позволяют спасти тяжело раненого союзника, сменить уязвимую стихию или выпустить быстрого финишера."
+          }
+        }
+      ]
+    },
+    "gacha": {
+      "title": {
+        "es": "Gacha Semanal y Sistema de Suerte (Pity)",
+        "en": "Weekly Gacha & Luck (Pity) System",
+        "pt": "Gacha Semanal e Sistema de Sorte (Pity)",
+        "ru": "Еженедельная Гача и система Удачи (Pity)"
+      },
+      "icon": "🎰",
+      "sections": [
+        {
+          "title": {
+            "es": "Probabilidades de Tirada del Banner",
+            "en": "Banner Pull Probabilities",
+            "pt": "Probabilidades de Tiro do Banner",
+            "ru": "Шансы призыва в баннере"
+          },
+          "content": {
+            "es": "El Gacha semanal cuenta con tasas claras y transparentes: 4 Pollos Destacados de la semana con un 10% de probabilidad cada uno (40% total del banner) y Otros Pollos Estándar con un 20% de probabilidad total. Además, cada tirada tiene una probabilidad base del 2.0% de ser Variocolor (Shiny) y un 5.0% de contar con Poder Oculto.",
+            "en": "The weekly Gacha offers clear and transparent rates: 4 Featured Chickens with 10% pull rate each (40% total banner chance), and Other Standard Chickens with 20% total rate. Furthermore, each pull has a 2.0% base chance to be Shiny and a 5.0% base chance to unlock Hidden Power.",
+            "pt": "O Gacha semanal oferece taxas transparentes: 4 Frangos em Destaque com 10% cada (40% do banner) e Outros Frangos Padrão com 20% total. Cada invocação possui 2,0% de chance básica de ser Shiny e 5,0% de vir com Poder Oculto.",
+            "ru": "Еженедельная Гача имеет прозрачные шансы: 4 Курицы недели по 10% каждая (40% суммарно) и Другие стандартные куры с 20% шансом. Каждый призыв имеет базовый шанс 2.0% на статус Shiny и 5.0% на Скрытую силу."
+          }
+        },
+        {
+          "title": {
+            "es": "Sistema de Suerte y Pity Garantizado (20 y 25)",
+            "en": "Luck Accumulation & Guaranteed Pity (20 & 25)",
+            "pt": "Sistema de Sorte e Pity Garantido (20 e 25)",
+            "ru": "Система Удачи и гарантированный Pity (20 и 25)"
+          },
+          "content": {
+            "es": "El sistema de Suerte (Pity) recompensa la perseverancia: obtener pollos de Rangos B, C o D suma +1 punto de Suerte (mientras que Rango A resta 4 puntos). Cada punto de suerte incrementa en +1.5% la probabilidad de Shiny y en +2.5% la probabilidad de Poder Oculto. ¡Al alcanzar 20 de Suerte se GARANTIZA un pollo de Rango S o Rango P! Y al alcanzar 25 de Suerte, ¡el siguiente pollo es 100% SHINY GARANTIZADO! Al obtener un Rango S, P o Shiny, el contador de Suerte se reinicia a 0.",
+            "en": "The Luck (Pity) system guarantees rewards: pulling Ranks B, C, or D grants +1 Luck point (while Rank A deducts 4 points). Each luck point adds +1.5% Shiny rate and +2.5% Hidden Power rate. Reaching 20 Luck GUARANTEES a Rank S or Rank P chicken! Reaching 25 Luck makes the next pull a 100% GUARANTEED SHINY! Pulling Rank S, P, or Shiny resets Luck to 0.",
+            "pt": "O sistema de Sorte (Pity) recompensa a constância: obter Rankings B, C ou D adiciona +1 ponto de Sorte (Ranking A subtrai 4 pontos). Cada ponto aumenta +1,5% de chance Shiny e +2,5% de Poder Oculto. Atingir 20 de Sorte GARANTE um frango Ranking S ou P! Atingir 25 de Sorte garante 100% SHINY! Obter Ranking S, P ou Shiny redefine a Sorte para 0.",
+            "ru": "Система Удачи (Pity) защищает игрока: выпадение рангов B, C, D дает +1 к Удаче (ранг A отнимает 4 очка). Каждое очко дает +1.5% к шансу Shiny и +2.5% к Скрытой силе. На 20 очках Удачи ГАРАНТИРОВАН ранг S или P! На 25 очках Удачи следующий призыв — 100% ГАРАНТИРОВАННЫЙ SHINY! Выпадение ранга S, P или Shiny сбрасывает Удачу в 0."
           }
         }
       ]
@@ -22061,13 +22284,14 @@
         "pt": "Quadro de Trocas (Contratos)",
         "ru": "Доска обмена (Контракты)"
       },
+      "icon": "📜",
       "sections": [
         {
           "title": {
-            "es": "Contratos cada 12 Horas",
-            "en": "Contracts every 12 Hours",
-            "pt": "Contratos a cada 12 Horas",
-            "ru": "Контракты каждые 12 часов"
+            "es": "Contratos cada 12 Horas y Requisitos",
+            "en": "Contracts every 12 Hours & Requirements",
+            "pt": "Contratos a cada 12 Horas e Requisitos",
+            "ru": "Контракты каждые 12 часов и требования"
           },
           "content": {
             "es": "En la tienda encontrarás un tablón que ofrece 6 contratos de intercambio que se renuevan cada 12 horas. Los contratos solicitan pollos que cumplan condiciones específicas (Tier 2+, Tier 3+, zona de procedencia, un ítem equipado o una especie determinada).",
@@ -22078,170 +22302,108 @@
         },
         {
           "title": {
-            "es": "Recompensas de Intercambio",
-            "en": "Exchange Rewards",
-            "pt": "Recompensas de Troca",
-            "ru": "Награды за обмен"
+            "es": "Recompensas de Intercambio e Ítems Raros Exclusivos",
+            "en": "Exchange Rewards & Exclusive Rare Items",
+            "pt": "Recompensas de Troca e Itens Raros Exclusivos",
+            "ru": "Награды за обмен и эксклюзивные редкие предметы"
           },
           "content": {
-            "es": "Al cumplir un contrato y entregar el pollo solicitado, abres una caja de recompensa con animación especial que puede contener: grandes cantidades de semillas (5,000-10,000), ítems de zona, huevos de crianza especiales o pollos de nivel 10 con genética mejorada. En el Contrato 5, puedes obtener ítems míticos y raros exclusivos como Deseo, Fragmento Prohibido, Pluma dorada, Pluma de Brama, Garra derrochadora, Nido especial e Ira.",
-            "en": "Fulfilling a contract and handing over the requested chicken opens a special reward box that can contain: abundant seeds (5,000-10,000), zone items, special breeding eggs, or level 10 chickens with enhanced genetics. In Contract 5, you can obtain exclusive mythic and rare items like Wish, Forbidden Fragment, Golden Feather, Brahma Feather, Wasteful Claw, Special Nest, and Wrath.",
-            "pt": "Ao cumprir um contrato e entregar o frango exigido, você ganha uma caixa de recompensa que pode conter: sementes abundantes (5.000-10.000), itens de zona, ovos especiais ou frangos de nível 10 com genética aprimorada. No Contrato 5 é possível obter itens míticos e raros exclusivos como Desejo, Fragmento Proibido, Pena Dourada, Pena de Brahma, Garra Esbanjadora, Ninho Especial e Ira.",
-            "ru": "За выполнение контракта и сдачу нужной курицы вы получаете сундук наград, где могут выпасть: горы семян (5 000-10 000), предметы зон, особые яйца или куры 10 уровня с усиленной генетикой. В 5-м контракте можно добыть мифические и редкие предметы: Желание, Запретный осколок, Золотое перо, Перо Брахмы, Расточительный коготь, Особое гнездо и Гнев."
+            "es": "Al cumplir un contrato y entregar el pollo solicitado, abres una caja de recompensa con animación especial que puede contener: grandes cantidades de semillas (5,000-10,000), ítems de zona, huevos de crianza especiales o pollos de nivel 10 con genética mejorada. En el Contrato 5, puedes obtener ítems míticos y raros exclusivos como Deseo, Fragmento Prohibido, Pluma dorada, Pluma de Brahma, Garra derrochadora, Nido especial, Ira, Pico blindado, Primer boomerang y Primera hacha.",
+            "en": "Fulfilling a contract and handing over the requested chicken opens a special reward box that can contain: abundant seeds (5,000-10,000), zone items, special breeding eggs, or level 10 chickens with enhanced genetics. In Contract 5, you can obtain exclusive mythic and rare items like Wish, Forbidden Fragment, Golden Feather, Brahma Feather, Wasteful Claw, Special Nest, Wrath, Armored Beak, First Boomerang, and First Axe.",
+            "pt": "Ao cumprir um contrato e entregar o frango exigido, você ganha uma caixa de recompensa que pode conter: sementes abundantes (5.000-10.000), itens de zona, ovos especiais ou frangos de nível 10 com genética aprimorada. No Contrato 5 é possível obter itens míticos e raros exclusivos como Desejo, Fragmento Proibido, Pena Dourada, Pena de Brahma, Garra Esbanjadora, Ninho Especial, Ira, Bico Blindado, Primeiro Bumerangue e Primeiro Machado.",
+            "ru": "За выполнение контракта и сдачу нужной курицы вы получаете сундук наград, где могут выпасть: горы семян (5 000-10 000), предметы зон, особые яйца или куры 10 уровня с усиленной генетикой. В 5-м контракте можно добыть мифические и редкие предметы: Желание, Запретный осколок, Золотое перо, Перо Брахмы, Расточительный коготь, Особое гнездо, Гнев, Бронированный клюв, Первый бумеранг и Первый топор."
           }
         }
       ]
     },
-    "infinite": {
+    "zones_tournaments": {
       "title": {
-        "es": "Modo Infinito",
-        "en": "Infinite Mode",
-        "pt": "Modo Infinito",
-        "ru": "Бесконечный режим"
+        "es": "Zonas, Torneo y Zona Arcana",
+        "en": "Zones, Tournament & Arcana Zone",
+        "pt": "Zonas, Torneio e Zona Arcana",
+        "ru": "Зоны, Турнир и Арканная Зона"
       },
+      "icon": "🏆",
       "sections": [
         {
           "title": {
-            "es": "Desafío y Escalado de Pisos",
-            "en": "Floor Scaling & Challenge",
-            "pt": "Desafio e Escalação de Andares",
-            "ru": "Испытание и прогрессия этажей"
+            "es": "Progresión por Zonas del Mapa",
+            "en": "Map Zones Progression",
+            "pt": "Progressão pelas Zonas do Mapa",
+            "ru": "Прохождение по зонам карты"
           },
           "content": {
-            "es": "Un modo de juego sin fin donde la dificultad escala continuamente. El piso 1 comienza con rivales de nivel 5, aumentando 1 nivel por cada piso superado hasta alcanzar el nivel 100.",
-            "en": "An endless battle mode where difficulty increases continuously. Floor 1 starts with level 5 rivals, increasing by 1 level per cleared floor up to level 100.",
-            "pt": "Um modo de batalha sem fim onde a dificuldade escala continuamente. O andar 1 começa com rivais de nível 5, aumentando 1 nível a cada andar concluído até atingir o nível 100.",
-            "ru": "Бесконечный боевой режим с постоянным ростом сложности. 1-й этаж начинается с соперников 5 уровня, поднимаясь на 1 уровень за каждый пройденный этаж вплоть до 100 уровня."
+            "es": "El mundo de Clicker Chickens se divide en 9 zonas temáticas (Granja, Bosque, Playa, Montaña, Volcán, Pantano, Ciudad Cyber, Cosmos y la mística Zona Arcana). Cada zona posee una tienda con objetos autóctonos, una selección de huevos locales y especies salvajes exclusivas con fortalezas elementales distintivas.",
+            "en": "The world of Clicker Chickens is divided into 9 themed zones (Farm, Forest, Beach, Mountain, Volcano, Swamp, Cyber City, Cosmos, and the mystical Arcana Zone). Each zone features a dedicated shop with local items, native egg varieties, and wild species with distinct elemental strengths.",
+            "pt": "O mundo de Clicker Chickens divide-se em 9 zonas temáticas (Fazenda, Floresta, Praia, Montanha, Vulcão, Pântano, Cidade Cyber, Cosmos e a mística Zona Arcana). Cada zona possui loja própria com itens locais, ovos nativos e espécies selvagens com vantagens elementais únicas.",
+            "ru": "Мир Clicker Chickens разделен на 9 зон (Ферма, Лес, Пляж, Горы, Вулкан, Болото, Кибер-город, Космос и Арканная Зона). Каждая зона имеет магазин с местными предметами, уникальные яйца и дикие виды со стихийными преимуществами."
           }
         },
         {
           "title": {
-            "es": "Ítems en Rivales y Recompensas",
-            "en": "Rival Items & Rewards",
-            "pt": "Itens em Rivais e Recompensas",
-            "ru": "Предметы врагов и награды"
+            "es": "El Torneo y la Recompensa de Garra",
+            "en": "The Tournament & Garra Reward",
+            "pt": "O Torneio e a Recompensa de Garra",
+            "ru": "Турнир и награда Гарры"
           },
           "content": {
-            "es": "A partir del piso 3, los rivales pueden aparecer equipados con ítems (escalando desde 35% hasta 80% de probabilidad en pisos altos). Hay un 5% de probabilidad de que lleven el Fragmento Prohibido (+35% daño, +10% velocidad) y un 10% de probabilidad de que lleven uno de los 5 ítems raros exclusivos: Pluma dorada, Pluma de Brama (+10% shinies en batalla), Garra derrochadora (+20% semillas), Nido especial o Ira (+2 ataques iniciales). Al derrotar y reclutar a un rival que los porte, ¡te quedarás con su ítem! Cada piso otorga semillas escaladas, y cada 10 pisos recibes un huevo especial con pollos exclusivos o shinies.",
-            "en": "From floor 3 onward, rivals can spawn equipped with items (scaling from 35% up to 80% chance at higher floors). There is a 5% chance they carry the Forbidden Fragment (+35% damage, +10% speed) and a 10% chance of carrying one of the 5 rare exclusive items: Golden Feather, Brahma Feather (+10% battle shinies), Wasteful Claw (+20% seeds), Special Nest, or Wrath (+2 initial attacks). By defeating and recruiting a rival who carries them, you keep their item! Each cleared floor grants scaled seeds, and every 10 floors awards a special egg with exclusive chickens or shinies.",
-            "pt": "A partir do andar 3, os rivais podem surgir equipados com itens (chance de 35% até 80% em andares altos). Há 5% de chance de carregarem o Fragmento Proibido (+35% dano, +10% velocidade) e 10% de chance de levarem um dos 5 itens raros exclusivos: Pena Dourada, Pena de Brahma (+10% shinies em batalha), Garra Esbanjadora (+20% sementes), Ninho Especial ou Ira (+2 ataques iniciais). Ao derrotar e recrutar quem os carrega, você fica com o item! Cada andar concede sementes e a cada 10 andares ganha-se um ovo especial com frangos exclusivos ou shinies.",
-            "ru": "С 3-го этажа соперники могут появляться с экипированными предметами (шанс от 35% до 80% на высоких этажах). С вероятностью 5% они несут Запретный осколок (+35% урона, +10% скорости) и с шансом 10% — один из 5 редких предметов: Золотое перо, Перо Брахмы (+10% к шансу Shiny в бою), Расточительный коготь (+20% семян), Особое гнездо или Гнев (+2 начальные атаки). Победив и наняв такого противника, вы забираете предмет себе! Каждый этаж дает семена, а каждые 10 этажей — особое яйцо с эксклюзивными или Shiny-курами."
-          }
-        }
-      ]
-    },
-    "formulas": {
-      "title": {
-        "es": "Fórmulas y Mecánicas de Combate",
-        "en": "Formulas & Battle Mechanics",
-        "pt": "Fórmulas e Mecânicas de Combate",
-        "ru": "Формулы и боевые механики"
-      },
-      "sections": [
-        {
-          "title": {
-            "es": "Escalado de Experiencia (XP)",
-            "en": "Experience Scaling (XP)",
-            "pt": "Escalação de Experiência (XP)",
-            "ru": "Прогрессия опыта (XP)"
-          },
-          "content": {
-            "es": "La experiencia máxima requerida para subir de nivel se calcula según la fórmula oficial del juego: XP Máx = redondear(100 × (Nivel)^1.25). Por ejemplo, nivel 1 requiere 100 XP, nivel 10 requiere ~1,778 XP, y nivel 50 requiere ~13,335 XP.",
-            "en": "The maximum experience required to level up follows the official formula: Max XP = round(100 × (Level)^1.25). For example, level 1 requires 100 XP, level 10 requires ~1,778 XP, and level 50 requires ~13,335 XP.",
-            "pt": "A experiência máxima necessária para subir de nível segue a fórmula oficial do jogo: XP Máx = arredondar(100 × (Nível)^1.25). Por exemplo, nível 1 requer 100 XP, nível 10 requer ~1.778 XP e nível 50 requer ~13.335 XP.",
-            "ru": "Максимальный опыт, необходимый для повышения уровня, рассчитывается по официальной формуле: Макс. XP = округлить(100 × (Уровень)^1.25). Например, для уровня 1 требуется 100 XP, уровня 10 — ~1 778 XP, а уровня 50 — ~13 335 XP."
+            "es": "En cada zona puedes desafiar el Torneo local: un torneo de eliminación directa donde cada ronda impone reglas y modificadores de combate especiales. Superar el Torneo Arcano representa el mayor reto del juego; coronarte campeón te premia con el huevo legendario de Garra, una criatura mítica que no puede obtenerse en el Modo Infinito ni en tiendas ordinarias.",
+            "en": "In each zone you can challenge the local Tournament: a knockout bracket where every round enforces special battle modifiers. Conquering the Arcana Tournament is the ultimate challenge; becoming champion awards the legendary egg of Garra, a mythical creature that cannot be acquired in Infinite Mode or standard shops.",
+            "pt": "Em cada zona você pode disputar o Torneio local: eliminatórias diretas com regras e modificadores especiais a cada rodada. Vencer o Torneio Arcano é o maior desafio do jogo; consagrar-se campeão premia você com o ovo lendário de Garra, criatura mítica inalcançável no Modo Infinito ou em lojas comuns.",
+            "ru": "В каждой зоне можно принять участие в Турнире: плей-офф с особыми модификаторами в каждом раунде. Победа в Арканном Турнире — вершина мастерства; чемпион получает легендарное яйцо Гарры, которого невозможно найти в Бесконечном режиме или магазинах."
           }
         },
         {
           "title": {
-            "es": "Barra de Acción y Turnos",
-            "en": "Action Gauge & Turns",
-            "pt": "Barra de Ação e Turnos",
-            "ru": "Шкала действия и ходы"
+            "es": "Zona Arcana: Entrenamiento de Élite",
+            "en": "Arcana Zone: Elite Training",
+            "pt": "Zona Arcana: Treinamento de Elite",
+            "ru": "Арканная Зона: Элитные тренировки"
           },
           "content": {
-            "es": "En combate, la barra de acción se llena a un ritmo determinado por la Velocidad del pollo. Cuando la barra llega al 100%, el pollo ejecuta una acción (ataque básico o uso de poder si la energía está completa). El daño infligido se mitiga porcentualmente según la Armadura del objetivo.",
-            "en": "During combat, each chicken's action gauge fills at a rate determined by its Speed stat. Upon reaching 100%, the chicken acts (performing a basic attack or triggering its Power if full energy). Outgoing damage is mitigated proportionally by the target's Armor.",
-            "pt": "No combate, a barra de ação enche em um ritmo determinado pela Velocidade do frango. Ao atingir 100%, o frango age (ataque básico ou disparo de Poder se a energia estiver completa). O dano causado é mitigado percentualmente pela Armadura do alvo.",
-            "ru": "В бою шкала действия заполняется со скоростью, зависящей от параметра Скорости курицы. Достигнув 100%, курица совершает действие (базовую атаку или использование Силы при полном заряде). Наносимый урон пропорционально снижается Броней цели."
-          }
-        }
-      ]
-    },
-    "skins_shinies": {
-      "title": {
-        "es": "Variocolor (Shiny) y Aspectos",
-        "en": "Shiny Chickens & Skins",
-        "pt": "Brilhantes (Shiny) e Visuais",
-        "ru": "Сияющие (Shiny) и облики"
-      },
-      "icon": "✨",
-      "sections": [
-        {
-          "title": {
-            "es": "¿Cómo conseguir Pollos Variocolor (Shiny)?",
-            "en": "How to obtain Shiny Chickens?",
-            "pt": "Como obter Frangos Brilhantes (Shiny)?",
-            "ru": "Как получить сияющих кур (Shiny)?"
-          },
-          "content": {
-            "es": "Los pollos Shiny poseen una paleta de color alternativa y animaciones de destellos especiales en combate. Tienen un 0.5% (1 en 200) de probabilidad de eclosionar de huevos comunes. Sin embargo, si crías un huevo utilizando un progenitor que ya es Shiny, la probabilidad se dispara al 8% (1 en 12.5). Equipar el Nido especial en el progenitor añade un +10% extra a la probabilidad de cría.",
-            "en": "Shiny chickens feature an alternative color palette and sparkling animations in battle. They have a 0.5% (1 in 200) base chance to hatch from common eggs. However, breeding an egg using an already Shiny parent skyrockets the chance to 8% (1 in 12.5). Equipping the Special Nest on the parent adds an extra +10% to the breeding odds.",
-            "pt": "Frangos Shiny possuem paleta de cores alternativa e efeitos de brilho em combate. Possuem 0,5% (1 em 200) de chance básica ao chocar ovos comuns. Contudo, ao criar ovos a partir de um progenitor Shiny, a chance sobe para 8% (1 em 12,5). Equipar o Ninho Especial no progenitor concede +10% adicionais na taxa de criação.",
-            "ru": "Shiny-куры имеют альтернативную цветовую палитру и сияющие искры в бою. Базовый шанс их вылупления из обычных яиц — 0.5% (1 из 200). Однако при разведении от Shiny-родителя шанс возрастает до 8% (1 из 12.5). Экипировка Особого гнезда родителю дает еще +10% к вероятности разведения."
-          }
-        },
-        {
-          "title": {
-            "es": "Aspectos y Skins Cosméticas",
-            "en": "Cosmetic Skins",
-            "pt": "Visuais e Skins Cosméticas",
-            "ru": "Косметические облики и скины"
-          },
-          "content": {
-            "es": "A lo largo del juego se pueden desbloquear y equipar skins cosméticas exclusivas para alterar la apariencia de tus pollos favoritos en el menú y en combate sin modificar sus atributos de batalla.",
-            "en": "Throughout the game, special cosmetic skins can be unlocked and equipped to alter the appearance of your favorite chickens in menus and battle without modifying their combat stats.",
-            "pt": "Ao longo do jogo você pode desbloquear e equipar skins exclusivas para alterar o visual dos seus frangos favoritos no menu e em combate sem alterar seus atributos.",
-            "ru": "По ходу игры можно открывать и экипировать косметические облики для изменения внешности любимых кур в меню и в бою без изменения боевых характеристик."
+            "es": "En la Zona Arcana (Zona 8), los pollos salvajes aparecen con valores de entrenamiento aleatorios tendientes a ser extremadamente altos. Dado que estos pollos salvajes no se pueden reclutar, enfrentarse a ellos en combate ofrece el escenario ideal para testear escuadras competitivas contra oponentes de máxima potencia.",
+            "en": "In the Arcana Zone (Zone 8), wild chickens spawn with randomized training stats that heavily skew towards the maximum. Since these wild chickens cannot be recruited, battling them serves as the premier testing ground to benchmark your competitive squads against peak opponents.",
+            "pt": "Na Zona Arcana (Zona 8), os frangos selvagens surgem com valores de treinamento aleatórios tendendo a ser muito altos. Como esses frangos selvagens não podem ser recrutados, enfrentá-los em combate é o cenário ideal para testar equipes competitivas contra adversários no auge do poder.",
+            "ru": "В Арканной Зоне (Зона 8) дикие куры появляются со случайными тренировочными статами, стремящимися к максимуму. Поскольку их нельзя завербовать, бои с ними — идеальный полигон для проверки боевых отрядов против сильнейших противников."
           }
         }
       ]
     },
     "pvp_online": {
       "title": {
-        "es": "Combate Online y Multijugador",
-        "en": "Online Battles & Multiplayer",
-        "pt": "Combates Online e Multijogador",
-        "ru": "Онлайн-бои и мультиплеер"
+        "es": "Arena Online, Defensas y Mercado",
+        "en": "Online Arena, Defense & Market",
+        "pt": "Arena Online, Defesa e Mercado",
+        "ru": "Сетевая Арена, Защита и Рынок"
       },
       "icon": "🌐",
       "sections": [
         {
           "title": {
-            "es": "Duelos 2vs2 en Línea",
-            "en": "Online 2vs2 Duels",
-            "pt": "Duelos 2vs2 Online",
-            "ru": "Сетевые дуэли 2на2"
+            "es": "Duelos 2vs2 en Línea y Reportes de Defensa",
+            "en": "Online 2vs2 Duels & Defense Reports",
+            "pt": "Duelos 2vs2 Online e Relatórios de Defesa",
+            "ru": "Сетевые бои 2на2 и отчеты о защите"
           },
           "content": {
-            "es": "El modo Online te permite desafiar a otros entrenadores en batallas 2vs2 en tiempo real. La sinergia entre tu vanguardia y retaguardia, junto con los objetos equipados y el orden de los turnos, define la victoria.",
-            "en": "Online mode allows you to challenge other players in real-time 2vs2 battles. The synergy between your frontline and backline, along with equipped items and turn order, decides the victory.",
-            "pt": "O modo Online permite desafiar outros treinadores em combates 2vs2 em tempo real. A sinergia entre a sua vanguarda e retaguarda, os itens equipados e a ordem dos turnos definem a vitória.",
-            "ru": "Онлайн-режим позволяет сражаться с другими тренерами в реальном времени в формате 2на2. Слаженность авангарда и тыла, экипировка и очередность ходов определяют исход битвы."
+            "es": "La Arena Online te permite poner a prueba tus mejores escuadras 2vs2 contra entrenadores de todo el mundo. Cuando otros jugadores desafíen a tu equipo mientras estás ausente, tus pollos defenderán tu granja automáticamente: al ingresar al juego recibirás un Reporte de Defensa con el historial de combates y la opción de solicitar una Revancha inmediata.",
+            "en": "The Online Arena lets you pit your finest 2vs2 squads against trainers worldwide. When other players challenge your squad while you are away, your chickens automatically defend your farm: upon returning, you receive a Defense Report with full match history and an option for immediate Rematch.",
+            "pt": "A Arena Online permite testar seus melhores esquadrões 2vs2 contra jogadores do mundo todo. Quando outros treinadores desafiarem sua equipe na sua ausência, seus frangos defenderão sua fazenda automaticamente: ao retornar, você receberá um Relatório de Defesa e opção de Revanche imediata.",
+            "ru": "Сетевая Арена позволяет сражаться лучшими отрядами 2на2 с игроками по всему миру. Когда другие игроки бросают вам вызов в ваше отсутствие, куры автоматически защищают ферму: при входе в игру вас ждет Отчет о защите и возможность мгновенного Реванша."
           }
         },
         {
           "title": {
-            "es": "Comercio e Intercambio de Pollos",
-            "en": "Chicken Trading",
-            "pt": "Comércio e Troca de Frangos",
-            "ru": "Торговля и обмен курами"
+            "es": "Mercado Global de Pollos",
+            "en": "Global Chicken Market",
+            "pt": "Mercado Global de Frangos",
+            "ru": "Глобальный рынок кур"
           },
           "content": {
-            "es": "A través de la infraestructura online y el Tablón de Intercambios puedes comerciar pollos con otros jugadores, permitiendo conseguir especies raras, pollos con valores genéticos de nacimiento altos o variantes Shiny para completar tu Pollopedia.",
-            "en": "Through online features and the Exchange Board you can trade chickens with other players, allowing you to acquire rare species, specimens with superior birth genetics, or Shiny variants to complete your Pollopedia.",
-            "pt": "Por meio dos recursos online e do Quadro de Trocas é possível negociar frangos com outros jogadores, facilitando obter espécies raras, valores genéticos altos ou variantes Shiny para completar sua Enciclopédia.",
-            "ru": "Через онлайн-функции и Доску обмена можно обмениваться курами с другими игроками, добывая редкие виды, кур с высокими врожденными генами или Shiny-особей для полного сбора коллекции."
+            "es": "En el Mercado Online puedes publicar pollos de tu granja fijando su precio en semillas para que otros usuarios los adquieran, o buscar ofertas para comprar especies que aún no tengas en tu Pollopedia, pollos con valores genéticos sobresalientes o variantes Variocolor (Shiny).",
+            "en": "In the Online Market you can list chickens from your farm by setting their price in seeds for other players to buy, or browse listings to acquire species missing from your Pollopedia, chickens with outstanding genetics, or rare Shiny variants.",
+            "pt": "No Mercado Online você pode listar frangos da sua fazenda definindo o preço em sementes para outros jogadores comprarem, ou buscar ofertas para adquirir espécies raras, frangos com genética de ponta ou variantes Shiny.",
+            "ru": "На Сетевом рынке можно продавать выращенных кур за семена или приобретать недостающие виды для Куропедии, птиц с выдающимися генами и редких Shiny-особей."
           }
         }
       ]

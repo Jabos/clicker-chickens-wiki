@@ -20536,15 +20536,15 @@ window.WIKI_DATA = {
         "ru": "Ожог"
       },
       "description": {
-        "es": "Pierde vida (5% del daño) al atacar o ser atacado",
-        "en": "Lose life (5% damage) when attacking or being attacked",
-        "pt": "Perde vida (5% do dano) ao atacar ou ser atacado",
-        "ru": "Теряет здоровье (5% от урона) при атаке или получении урона"
+        "es": "Pierde vida (25% del daño) al atacar o ser atacado",
+        "en": "Lose life (25% damage) when attacking or being attacked",
+        "pt": "Perde vida (25% do dano) ao atacar ou ser atacado",
+        "ru": "Теряет здоровье (25% от урона) при атаке или получении удара"
       },
       "name_es": "Quemadura",
       "name_en": "Burn",
-      "desc_es": "Pierde vida (5% del daño) al atacar o ser atacado",
-      "desc_en": "Lose life (5% damage) when attacking or being attacked"
+      "desc_es": "Pierde vida (25% del daño) al atacar o ser atacado",
+      "desc_en": "Lose life (25% damage) when attacking or being attacked"
     },
     {
       "id": 2,
@@ -20576,15 +20576,15 @@ window.WIKI_DATA = {
         "ru": "Паралич"
       },
       "description": {
-        "es": "Dano y velocidad reducidos un 50%, armadura reducida un 50%",
-        "en": "Damage and speed multi reduce 50%, armor reduce 50%",
-        "pt": "Dano e velocidade reduzidos em 50%, armadura reduzida em 50%",
-        "ru": "Урон и скорость снижены на 50%, броня снижена на 50%"
+        "es": "Daño, velocidad y armadura reducidos un 50%",
+        "en": "Damage, speed, and armor reduced by 50%",
+        "pt": "Dano, velocidade e armadura reduzidos em 50%",
+        "ru": "Урон, скорость и броня снижены на 50%"
       },
       "name_es": "Parálisis",
       "name_en": "Paralize",
-      "desc_es": "Dano y velocidad reducidos un 50%, armadura reducida un 50%",
-      "desc_en": "Damage and speed multi reduce 50%, armor reduce 50%"
+      "desc_es": "Daño, velocidad y armadura reducidos un 50%",
+      "desc_en": "Damage, speed, and armor reduced by 50%"
     },
     {
       "id": 4,

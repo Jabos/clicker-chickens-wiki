@@ -1282,15 +1282,20 @@
 
     function processImageSource(src, fileName = "") {
       const img = new Image();
-      img.crossOrigin = "anonymous";
+      if (src && (src.startsWith('http://') || src.startsWith('https://'))) {
+        img.crossOrigin = "anonymous";
+      }
       img.onload = () => {
-        const fn = fileName.toLowerCase();
-        const isNamedStrip = fn.includes('strip') || fn.includes('_strip5');
-        const isWideRatio = (img.width >= img.height * 2.5);
+        let count = 1;
+        const nameToCheck = (fileName || src || "").toLowerCase();
+        const stripMatch = nameToCheck.match(/_strip(\d+)/i);
+        if (stripMatch) {
+          count = parseInt(stripMatch[1], 10);
+        } else if (img.width > img.height) {
+          count = Math.max(1, Math.round(img.width / img.height));
+        }
 
-        // If it's a 5-strip or wide image, slice the first frame
-        const count = (isNamedStrip || isWideRatio) ? 5 : 1;
-        const fWidth = Math.floor(img.width / count);
+        const fWidth = Math.max(1, Math.floor(img.width / count));
         const fHeight = img.height;
 
         const c = document.createElement('canvas');
@@ -1298,25 +1303,97 @@
         c.height = fHeight;
         const ctx = c.getContext('2d');
         ctx.imageSmoothingEnabled = false;
-        // Draw exclusively the FIRST frame
+        // Draw exclusively the FIRST frame (Frame 0)
         ctx.drawImage(img, 0, 0, fWidth, fHeight, 0, 0, fWidth, fHeight);
 
         spriteState.firstFrameCanvas = c;
         spriteState.frameWidth = fWidth;
         spriteState.frameHeight = fHeight;
 
+        try {
+          const frame0DataUrl = c.toDataURL('image/png');
+          currentSketch.sprite = frame0DataUrl;
+        } catch(e) {}
+
         renderFirstFrame();
         updateCardCanvas();
 
         const badge = document.getElementById('frame-res-badge');
         if (badge) {
-          badge.textContent = fWidth + 'x' + fHeight + 'px' + (count > 1 ? ' (Frame 1)' : '');
+          badge.textContent = fWidth + 'x' + fHeight + 'px' + (count > 1 ? ' (Frame 0 de ' + count + ')' : '');
         }
       };
       img.onerror = () => {
         console.warn("Could not load image source:", src);
       };
       img.src = getSpriteUrl(src);
+    }
+
+    function renderFrame0IntoCanvas(canvas, src, onCropped = null) {
+      if (!canvas || !src) return;
+      const ctx = canvas.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+      const img = new Image();
+      if (src.startsWith('http://') || src.startsWith('https://')) {
+        img.crossOrigin = "anonymous";
+      }
+      img.onload = () => {
+        let count = 1;
+        const nameToCheck = (src || "").toLowerCase();
+        const stripMatch = nameToCheck.match(/_strip(\d+)/i);
+        if (stripMatch) {
+          count = parseInt(stripMatch[1], 10);
+        } else if (img.width > img.height) {
+          count = Math.max(1, Math.round(img.width / img.height));
+        }
+        const fWidth = Math.max(1, Math.floor(img.width / count));
+        const fHeight = img.height;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, fWidth, fHeight, 0, 0, canvas.width, canvas.height);
+
+        if (count > 1 && onCropped) {
+          try {
+            const dataUrl = canvas.toDataURL('image/png');
+            onCropped(dataUrl);
+          } catch(e) {}
+        }
+      };
+      img.src = getSpriteUrl(src);
+    }
+
+    function sanitizeSavedSketchesSprites() {
+      if (!savedSketches || savedSketches.length === 0) return;
+      savedSketches.forEach(sk => {
+        if (!sk.sprite) return;
+        const img = new Image();
+        if (sk.sprite.startsWith('http://') || sk.sprite.startsWith('https://')) {
+          img.crossOrigin = "anonymous";
+        }
+        img.onload = () => {
+          let count = 1;
+          const stripMatch = (sk.sprite || "").toLowerCase().match(/_strip(\d+)/i);
+          if (stripMatch) {
+            count = parseInt(stripMatch[1], 10);
+          } else if (img.width > img.height) {
+            count = Math.max(1, Math.round(img.width / img.height));
+          }
+          if (count > 1) {
+            const fWidth = Math.max(1, Math.floor(img.width / count));
+            const fHeight = img.height;
+            const c = document.createElement('canvas');
+            c.width = fWidth;
+            c.height = fHeight;
+            const ctx = c.getContext('2d');
+            ctx.imageSmoothingEnabled = false;
+            ctx.drawImage(img, 0, 0, fWidth, fHeight, 0, 0, fWidth, fHeight);
+            try {
+              sk.sprite = c.toDataURL('image/png');
+              localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+            } catch(e) {}
+          }
+        };
+        img.src = getSpriteUrl(sk.sprite);
+      });
     }
 
     function renderFirstFrame() {
@@ -1344,6 +1421,7 @@
     // ==========================================
     function init() {
       setupTheme();
+      sanitizeSavedSketchesSprites();
       initSpriteStudio();
       populateDropdowns();
       setupEventListeners();
@@ -1594,9 +1672,14 @@
 
     function syncStatInputs(key, val) {
       val = Math.max(0, parseInt(val, 10) || 0);
-      currentSketch.stats[key] = val;
-      document.getElementById('num-' + key).value = val;
-      document.getElementById('range-' + key).value = val;
+      const dataKey = (key === 'power' || key === 'power_amount') ? 'power_amount' : key;
+      const elKey = (key === 'power' || key === 'power_amount') ? 'power' : key;
+
+      currentSketch.stats[dataKey] = val;
+      const numEl = document.getElementById('num-' + elKey);
+      const rangeEl = document.getElementById('range-' + elKey);
+      if (numEl) numEl.value = val;
+      if (rangeEl) rangeEl.value = val;
       onDataChanged();
     }
 
@@ -1984,7 +2067,7 @@
         card.className = 'p-3.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/50 transition flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm';
         card.innerHTML = `
           <div class="flex items-center gap-3.5 min-w-0">
-            <img class="w-12 h-12 object-contain pixelated bg-[var(--card)] rounded-xl p-1 border border-[var(--border)] flex-shrink-0" src="` + getSpriteUrl(sk.sprite) + `" alt="">
+            <div class="sketch-thumb-placeholder w-12 h-12 flex-shrink-0"></div>
             <div class="min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
                 <span class="font-mono text-xs text-amber-400 font-bold">#` + (sk.id || 151) + `</span>
@@ -2020,6 +2103,19 @@
             </button>
           </div>
         `;
+
+        const ph = card.querySelector('.sketch-thumb-placeholder');
+        if (ph) {
+          const thumbCanvas = document.createElement('canvas');
+          thumbCanvas.width = 48;
+          thumbCanvas.height = 48;
+          thumbCanvas.className = 'w-12 h-12 object-contain pixelated bg-[var(--card)] rounded-xl p-1 border border-[var(--border)] flex-shrink-0';
+          renderFrame0IntoCanvas(thumbCanvas, sk.sprite, (croppedUrl) => {
+            sk.sprite = croppedUrl;
+            localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+          });
+          ph.replaceWith(thumbCanvas);
+        }
 
         card.querySelector('.btn-edit-sk').addEventListener('click', () => {
           loadSketch(sk);
@@ -2423,13 +2519,22 @@
           const card = document.createElement('div');
           card.className = 'p-2 rounded-xl border cursor-pointer transition flex items-center gap-2 ' + (inPool ? 'bg-emerald-500/20 border-emerald-500 ring-1 ring-emerald-500' : 'bg-[var(--bg)] border-[var(--border)] hover:border-emerald-500/50');
           card.innerHTML = `
-            <img class="w-8 h-8 object-contain pixelated bg-[var(--card)] rounded p-0.5" src="` + getSpriteUrl(sk.sprite) + `" alt="">
+            <div class="pool-sketch-thumb-placeholder w-8 h-8 flex-shrink-0"></div>
             <div class="min-w-0 flex-1 truncate">
               <span class="text-[9px] font-mono text-amber-400 font-bold block">#` + (sk.id || 151) + ` (Boceto)</span>
               <h4 class="text-xs font-bold text-[var(--text)] truncate">` + (sk.name || 'Sin nombre') + `</h4>
             </div>
             <span class="text-xs font-bold font-mono">` + (inPool ? '✅' : '➕') + `</span>
           `;
+          const poolPh = card.querySelector('.pool-sketch-thumb-placeholder');
+          if (poolPh) {
+            const pCanvas = document.createElement('canvas');
+            pCanvas.width = 32;
+            pCanvas.height = 32;
+            pCanvas.className = 'w-8 h-8 object-contain pixelated bg-[var(--card)] rounded p-0.5';
+            renderFrame0IntoCanvas(pCanvas, sk.sprite);
+            poolPh.replaceWith(pCanvas);
+          }
 
           card.addEventListener('click', () => {
             const exIdx = currentZoneCombatPool.findIndex(p => p.type === 'sketch' && p.id === sk.id);
@@ -2818,8 +2923,10 @@
 
       // Stat inputs & ranges
       ['life', 'damage', 'armor', 'speed', 'power'].forEach(key => {
-        document.getElementById('range-' + key).addEventListener('input', (e) => syncStatInputs(key === 'power' ? 'power_amount' : key, e.target.value));
-        document.getElementById('num-' + key).addEventListener('input', (e) => syncStatInputs(key === 'power' ? 'power_amount' : key, e.target.value));
+        const rEl = document.getElementById('range-' + key);
+        const nEl = document.getElementById('num-' + key);
+        if (rEl) rEl.addEventListener('input', (e) => syncStatInputs(key, e.target.value));
+        if (nEl) nEl.addEventListener('input', (e) => syncStatInputs(key, e.target.value));
       });
 
       // Text and select inputs

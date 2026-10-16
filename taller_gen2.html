@@ -69,7 +69,7 @@
             Taller Creativo Gen 2
             <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">DEV STUDIO</span>
           </h1>
-          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseñador de Pollos, Roster General, Armador de Poderes & Armador de Objetos</p>
+          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseñador de Pollos, Roster General, Armador de Zonas & Pools, Poderes y Objetos</p>
         </div>
       </div>
 
@@ -81,7 +81,7 @@
         <button id="btn-save" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition" title="Guardar cambios del boceto actual">
           <span>💾</span> Guardar Pollo
         </button>
-        <button id="btn-backup-all-json" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold flex items-center gap-1.5 transition" title="Descargar copia de seguridad completa (Pollos + Poderes + Objetos)">
+        <button id="btn-backup-all-json" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold flex items-center gap-1.5 transition" title="Descargar copia de seguridad completa (Pollos + Zonas + Poderes + Objetos)">
           <span>💾</span> Respaldar JSON
         </button>
         <label class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer" title="Restaurar copia de seguridad">
@@ -113,6 +113,10 @@
           <span>📋</span> Lista Roster (Gen 1 & Bocetos)
           <span id="tab-badge-sketches" class="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-400 font-mono text-[10px]">0</span>
         </button>
+        <button id="tab-btn-zones" class="nav-tab px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-2 transition text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--card)]">
+          <span>🗺️</span> Armador de Zonas & Pools
+          <span id="tab-badge-zones" class="px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px]">0</span>
+        </button>
         <button id="tab-btn-powers" class="nav-tab px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-2 transition text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--card)]">
           <span>✨</span> Armador de Poderes
           <span id="tab-badge-powers" class="px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-300 font-mono text-[10px]">0</span>
@@ -127,10 +131,10 @@
       <div class="hidden md:flex items-center gap-3 text-[11px] font-mono text-[var(--text-muted)]">
         <span class="flex items-center gap-1.5">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Base Gen 1: <strong>151 Pollos</strong></span>
+          <span>Gen 1 Oficial: <strong>151 Pollos</strong></span>
         </span>
         <span class="text-[var(--border)]">|</span>
-        <span id="quick-status-summary">0 Bocetos · 0 Poderes · 0 Objetos</span>
+        <span id="quick-status-summary">0 Bocetos · 0 Zonas · 0 Poderes · 0 Objetos</span>
       </div>
     </div>
   </nav>
@@ -143,11 +147,11 @@
     <!-- LEFT COLUMN: BUILDER & CONTROLS (7 Cols) -->
     <div class="lg:col-span-7 space-y-6">
 
-      <!-- 1. IDENTIDAD Y ARTE -->
+      <!-- 1. IDENTIDAD Y ARTE (SOLO PRIMER FRAME) -->
       <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
         <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
           <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
-            <span>🎨</span> Identidad & Sprite Studio (_strip5)
+            <span>🎨</span> Identidad & Sprite Visual
           </h2>
           <span id="sketch-id-badge" class="font-mono text-xs text-[var(--text-muted)] font-bold">Boceto #151</span>
         </div>
@@ -160,7 +164,8 @@
           </div>
           <div class="sm:col-span-3">
             <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Zona / Hábitat</label>
-            <input type="text" id="input-zone" placeholder="Ej: Laboratorio, Selva..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+            <input type="text" id="input-zone" list="zones-datalist" placeholder="Ej: Zona 10, Selva..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+            <datalist id="zones-datalist"></datalist>
           </div>
           <div class="sm:col-span-3">
             <label class="block text-xs font-semibold text-[var(--text-muted)] mb-1">Estado de Diseño</label>
@@ -173,88 +178,35 @@
           </div>
         </div>
 
-        <!-- Fila Central: Estudio de Sprite (_strip5) & Animación -->
-        <div class="p-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] space-y-3">
-          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)]/60 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-bold text-amber-400">🎞️ Animación & Tira de Frames</span>
-              <span id="strip-mode-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">
-                🎞️ _strip5
-              </span>
-              <span id="frame-res-badge" class="px-2 py-0.5 rounded text-[10px] font-mono text-[var(--text-muted)] bg-[var(--card)] border border-[var(--border)]">
-                --x--
-              </span>
+        <!-- Fila Central: Sprite Visual Limpio (Solo Primer Frame) -->
+        <div class="p-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex flex-col sm:flex-row items-center gap-5">
+          <!-- Canvas Dropzone -->
+          <div id="sprite-dropzone" class="relative group w-36 h-36 rounded-2xl bg-[var(--card)] border-2 border-dashed border-[var(--border)] hover:border-amber-500 transition flex flex-col items-center justify-center overflow-hidden cursor-pointer shadow-inner flex-shrink-0">
+            <canvas id="anim-canvas" width="128" height="128" class="w-28 h-28 object-contain pixelated transition-transform group-hover:scale-105"></canvas>
+            <div class="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white text-xs font-medium transition p-2 text-center pointer-events-none">
+              <span>📁 Clic para subir imagen</span>
+              <span class="text-amber-400 font-bold mt-0.5">Soporta PNG o _strip5</span>
+              <span class="text-[10px] text-gray-300 mt-0.5">O pega con Ctrl+V</span>
             </div>
-            <div class="flex items-center gap-1.5">
-              <button id="btn-toggle-strip-mode" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[11px] font-semibold text-amber-400 border border-[var(--border)] transition">
-                Alternar Modo Tira
-              </button>
-              <button id="btn-download-frames" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[11px] font-semibold text-[var(--text-muted)] hover:text-amber-400 border border-[var(--border)] transition">
-                💾 Descargar Frames
-              </button>
-            </div>
+            <input type="file" id="file-sprite-input" accept="image/*" class="hidden">
           </div>
 
-          <!-- Visor Principal & Dropzone -->
-          <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-            <!-- Canvas Grande Central -->
-            <div class="sm:col-span-5 flex flex-col items-center">
-              <div id="sprite-dropzone" class="relative group w-40 h-40 rounded-2xl bg-[var(--card)] border-2 border-dashed border-[var(--border)] hover:border-amber-500/80 transition flex flex-col items-center justify-center overflow-hidden cursor-pointer shadow-inner">
-                <canvas id="anim-canvas" width="128" height="128" class="w-32 h-32 object-contain pixelated transition-transform group-hover:scale-105"></canvas>
-                <img id="chicken-sprite-preview" class="hidden w-32 h-32 object-contain pixelated" src="images/chickens/0.png" alt="Sprite">
-                <!-- Hover overlay -->
-                <div class="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white text-xs font-medium transition p-2 text-center pointer-events-none">
-                  <span>📁 Clic para subir imagen o arrastra</span>
-                  <span class="text-amber-400 font-bold mt-1">Soporta _strip5.png</span>
-                  <span class="text-[10px] text-gray-300 mt-0.5">O pega con Ctrl+V</span>
-                </div>
-                <input type="file" id="file-sprite-input" accept="image/*" class="hidden">
-              </div>
-
-              <!-- Botones de Sprite -->
-              <div class="flex items-center gap-2 mt-2">
-                <button id="btn-pick-gen1-sprite" class="px-2.5 py-1 text-xs rounded-lg bg-[var(--card)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 border border-[var(--border)] transition">
-                  🎨 Base Gen 1
-                </button>
-                <button id="btn-random-sprite" class="px-2.5 py-1 text-xs rounded-lg bg-[var(--card)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 border border-[var(--border)] transition">
-                  🎲 Random
-                </button>
-              </div>
+          <!-- Info y Acciones del Sprite -->
+          <div class="flex-1 space-y-2.5 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-[var(--text)]">Vista Previa del Sprite (Primer Fotograma)</span>
+              <span id="frame-res-badge" class="px-2 py-0.5 rounded text-[10px] font-mono text-amber-400 bg-[var(--card)] border border-[var(--border)]">32x32px</span>
             </div>
-
-            <!-- Controles de Reproducción y Slicer -->
-            <div class="sm:col-span-7 space-y-3">
-              <!-- Playback row -->
-              <div class="flex items-center justify-between bg-[var(--card)] p-2.5 rounded-xl border border-[var(--border)]">
-                <div class="flex items-center gap-1.5">
-                  <button id="btn-anim-play" class="w-8 h-8 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold flex items-center justify-center transition shadow-sm text-sm">
-                    ⏸
-                  </button>
-                  <button id="btn-anim-prev" class="w-8 h-8 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] font-bold flex items-center justify-center transition text-xs">
-                    ⏮
-                  </button>
-                  <button id="btn-anim-next" class="w-8 h-8 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] font-bold flex items-center justify-center transition text-xs">
-                    ⏭
-                  </button>
-                  <span id="lbl-frame-counter" class="font-mono text-xs text-amber-400 font-bold ml-2">F1/5</span>
-                </div>
-
-                <div class="flex items-center gap-2">
-                  <span class="text-xs text-[var(--text-muted)] font-mono">Velocidad:</span>
-                  <input type="range" id="anim-fps-slider" min="1" max="20" value="6" class="w-20 accent-amber-500 h-1.5 bg-[var(--bg)] rounded cursor-pointer">
-                  <span id="lbl-anim-fps" class="font-mono text-xs text-amber-400 font-bold w-12 text-right">6 fps</span>
-                </div>
-              </div>
-
-              <!-- Visor de los 5 Frames con buen tamaño (amplio) -->
-              <div>
-                <span class="text-[11px] font-semibold text-[var(--text-muted)] block mb-1.5">
-                  Tira de fotogramas cortados (haz clic para inspeccionar):
-                </span>
-                <div id="strip-frames-container" class="grid grid-cols-5 gap-2">
-                  <!-- Los 5 frames renderizados por JS -->
-                </div>
-              </div>
+            <p class="text-[var(--text-muted)] text-[11px] leading-relaxed">
+              Si subes una tira de fotogramas (<em>_strip5.png</em>), el taller recortará y mostrará automáticamente el <strong>primer frame</strong> para la ficha y los listados.
+            </p>
+            <div class="flex items-center gap-2 pt-1">
+              <button id="btn-pick-gen1-sprite" class="px-3 py-1.5 rounded-lg bg-[var(--card)] hover:border-amber-500 text-[var(--text)] hover:text-amber-400 border border-[var(--border)] font-semibold transition">
+                🎨 Elegir de Gen 1
+              </button>
+              <button id="btn-random-sprite" class="px-3 py-1.5 rounded-lg bg-[var(--card)] hover:border-amber-500 text-[var(--text)] hover:text-amber-400 border border-[var(--border)] font-semibold transition">
+                🎲 Sprite Aleatorio
+              </button>
             </div>
           </div>
         </div>
@@ -268,16 +220,14 @@
 
       <!-- 2. ESTADÍSTICAS BASE & CONTROL DE BALANCE -->
       <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
-        <!-- Header with Live Total Budget Tracker -->
         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)] pb-3">
           <div>
             <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
               <span>⚖️</span> Estadísticas Base (Nivel 1)
             </h2>
-            <p class="text-xs text-[var(--text-muted)]">El estándar oficial de Gen 1 es exactamente <strong>200 puntos</strong>.</p>
+            <p class="text-xs text-[var(--text-muted)]">El estándar oficial de balance de Gen 1 es exactamente <strong>200 puntos</strong>.</p>
           </div>
 
-          <!-- Total Counter Badge -->
           <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-[var(--text-muted)]">Presupuesto:</span>
             <div id="stat-budget-badge" class="px-3 py-1 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono font-black text-sm flex items-center gap-1.5">
@@ -289,12 +239,10 @@
           </div>
         </div>
 
-        <!-- Budget Progress Bar -->
         <div class="w-full h-2 rounded-full bg-[var(--bg)] overflow-hidden border border-[var(--border)]/60">
           <div id="stat-budget-bar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 100%;"></div>
         </div>
 
-        <!-- Sliders & Inputs Grid -->
         <div class="space-y-3 pt-1">
           <!-- Vida (HP) -->
           <div class="space-y-1">
@@ -471,7 +419,6 @@
           <div class="flex items-center gap-4">
             <div class="w-20 h-20 rounded-xl bg-[var(--card)] border border-[var(--border)] p-1 flex items-center justify-center shadow-inner relative overflow-hidden">
               <canvas id="card-canvas" width="64" height="64" class="w-16 h-16 object-contain pixelated"></canvas>
-              <img id="card-sprite" class="hidden w-16 h-16 object-contain pixelated" src="images/chickens/0.png" alt="">
               <span id="card-cost-badge" class="absolute bottom-1 right-1 px-1.5 py-0.2 rounded bg-purple-500/80 text-[9px] font-mono font-bold text-white">100🔋</span>
             </div>
             <div class="flex-1 min-w-0">
@@ -571,15 +518,9 @@
         <!-- Animated SVG Radar -->
         <div class="flex justify-center py-2 bg-[var(--bg)] rounded-xl border border-[var(--border)] overflow-hidden">
           <svg id="radar-svg" width="300" height="260" viewBox="0 0 300 260" class="overflow-visible select-none">
-            <!-- Radar Background Grid Web -->
-            <g id="radar-web" stroke="var(--border)" stroke-width="1" fill="none" opacity="0.6">
-              <!-- Circles/Polygons generated by JS -->
-            </g>
-            <!-- Filled Stat Polygon -->
+            <g id="radar-web" stroke="var(--border)" stroke-width="1" fill="none" opacity="0.6"></g>
             <polygon id="radar-polygon" class="radar-polygon" points="" fill="rgba(245, 158, 11, 0.3)" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round" />
-            <!-- Vertex nodes -->
             <g id="radar-nodes"></g>
-            <!-- Vertex labels & ranks -->
             <g id="radar-labels" font-size="10" font-family="system-ui, sans-serif" font-weight="bold"></g>
           </svg>
         </div>
@@ -657,7 +598,7 @@
               Catálogo Oficial Gen 1 (151 Pollos)
               <span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono text-xs font-bold border border-blue-500/30">151</span>
             </h2>
-            <p class="text-xs text-[var(--text-muted)]">Lista compacta reducida con stats oficiales, arquetipos, pasivas, poderes y objetos de partida</p>
+            <p class="text-xs text-[var(--text-muted)]">Lista compacta reducida con sprites oficiales, arquetipos, stats, pasivas, poderes y objetos</p>
           </div>
         </div>
         <div id="roster-gen1-count-info" class="text-xs font-mono text-[var(--text-muted)]">
@@ -724,7 +665,159 @@
 
 
   <!-- ========================================================================= -->
-  <!-- TAB 3: ARMADOR DE PODERES (GEN 2 BUILDER + CATÁLOGO 52 OFICIALES) -->
+  <!-- TAB 3: ARMADOR DE ZONAS & POOLS (NUEVO) -->
+  <!-- ========================================================================= -->
+  <div id="view-zones" class="view-tab-content hidden max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
+
+    <!-- Top Banner -->
+    <div class="bg-gradient-to-r from-emerald-900/30 to-[var(--card)] border border-emerald-500/30 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-2xl shadow-inner text-emerald-300">
+          🗺️
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-[var(--text)] flex items-center gap-2">
+            Armador de Zonas & Pools de Encuentro
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">ZONE STUDIO</span>
+          </h2>
+          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseña nuevos hábitats, configura qué pollos aparecen en combate (de Gen 1 o de tus bocetos Gen 2) y define el Jefe de Zona.</p>
+        </div>
+      </div>
+      <button id="btn-export-zones-csv" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+        <span>📊</span> Exportar Zonas (CSV)
+      </button>
+    </div>
+
+    <!-- Main Grid: Form Left (5 Cols), Lists Right (7 Cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- LEFT: FORMULARIO CREADOR DE ZONA (5 Cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="bg-[var(--card)] border border-emerald-500/40 rounded-2xl p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+            <h3 id="zn-form-title" class="text-sm font-bold text-emerald-300 flex items-center gap-2">
+              <span>🗺️</span> Diseñar Nueva Zona
+            </h3>
+            <span id="zn-edit-badge" class="hidden px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-bold">Editando</span>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <!-- Nombre de la Zona -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Nombre de la Zona</label>
+              <input type="text" id="zn-name" placeholder="Ej: Zona 10 - Nebulosa Cósmica, Volcán..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] font-bold text-sm focus:outline-none focus:border-emerald-500 transition">
+            </div>
+
+            <!-- Fila Nivel y Precio -->
+            <div class="grid grid-cols-3 gap-2">
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Nivel Mín.</label>
+                <input type="number" id="zn-lvl-min" min="1" max="200" value="50" class="w-full px-2.5 py-1.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs font-mono font-bold text-amber-400 focus:outline-none focus:border-emerald-500 text-center">
+              </div>
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Nivel Máx.</label>
+                <input type="number" id="zn-lvl-max" min="1" max="250" value="70" class="w-full px-2.5 py-1.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs font-mono font-bold text-amber-400 focus:outline-none focus:border-emerald-500 text-center">
+              </div>
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Viaje (🌰)</label>
+                <input type="number" id="zn-price" min="0" max="9999" value="300" class="w-full px-2.5 py-1.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs font-mono font-bold text-emerald-400 focus:outline-none focus:border-emerald-500 text-center">
+              </div>
+            </div>
+
+            <!-- Bioma / Clima visual -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Bioma / Temática Visual</label>
+              <select id="zn-biome" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-emerald-500 transition">
+                <option value="Galáctico / Espacial">🌌 Galáctico / Espacial</option>
+                <option value="Volcánico / Magma">🌋 Volcánico / Magma</option>
+                <option value="Cumbres Nevadas / Hielo">❄️ Cumbres Nevadas / Hielo</option>
+                <option value="Laboratorio Futurista">🔬 Laboratorio Futurista</option>
+                <option value="Selva Prehistórica">🌴 Selva Prehistórica</option>
+                <option value="Templo Arcano / Ruinas">🏛️ Templo Arcano / Ruinas</option>
+                <option value="Submarino / Abisal">🌊 Submarino / Abisal</option>
+                <option value="Desierto Tormentoso">🏜️ Desierto Tormentoso</option>
+                <option value="Cementerio Sombrío">👻 Cementerio Sombrío</option>
+              </select>
+            </div>
+
+            <!-- Pool de Combate (Selector de Pollos) -->
+            <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-[var(--text)] flex items-center gap-1.5">
+                  <span>⚔️</span> Pool de Combate (<span id="zn-pool-count">0</span> pollos)
+                </span>
+                <button type="button" id="btn-open-pool-picker" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] flex items-center gap-1 transition">
+                  <span>➕</span> Agregar Pollos
+                </button>
+              </div>
+              <p class="text-[10px] text-[var(--text-muted)]">
+                Selecciona qué pollos aparecen como rivales. Puedes marcar uno como <strong>Jefe de Zona (👑)</strong>.
+              </p>
+              <!-- Container de Pollos en el Pool actual -->
+              <div id="zn-pool-items-container" class="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto p-1 bg-[var(--card)] rounded-lg border border-[var(--border)] min-h-[50px]">
+                <span class="text-[11px] text-[var(--text-muted)] p-2 m-auto">Ningún pollo en el pool todavía.</span>
+              </div>
+            </div>
+
+            <!-- Descripción y Lore -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Descripción & Lore de la Zona</label>
+              <textarea id="zn-desc" rows="2" placeholder="Atmósfera de la zona, peligros ambientales o historia..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-emerald-500 resize-none transition"></textarea>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="pt-2 flex items-center gap-2">
+              <button id="btn-save-zone" class="flex-1 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow transition">
+                <span>💾</span> Guardar Zona
+              </button>
+              <button id="btn-clear-zone" class="px-3 py-2 rounded-xl bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text-muted)] hover:text-[var(--text)] text-xs font-semibold transition" title="Limpiar formulario">
+                🧹 Limpiar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LISTAS DE ZONAS (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- 1. Mis Zonas Creadas para Gen 2 -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+          <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🗺️</span>
+              <h3 class="text-sm font-bold text-emerald-300">Zonas Creadas para Gen 2</h3>
+              <span id="custom-zones-count-badge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">0</span>
+            </div>
+          </div>
+          <div id="custom-zones-container" class="space-y-3 max-h-[380px] overflow-y-auto pr-1">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- 2. Catálogo Oficial de 9 Zonas de Gen 1 -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🏔️</span>
+              <h3 class="text-sm font-bold">Catálogo Oficial de Zonas (Gen 1)</h3>
+            </div>
+            <span class="text-xs text-[var(--text-muted)] font-mono">9 Zonas Oficiales</span>
+          </div>
+          <div id="official-zones-container" class="space-y-2.5 max-h-[360px] overflow-y-auto pr-1 text-xs">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- TAB 4: ARMADOR DE PODERES (GEN 2 BUILDER + CATÁLOGO 52 OFICIALES) -->
   <!-- ========================================================================= -->
   <div id="view-powers" class="view-tab-content hidden max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
 
@@ -873,7 +966,7 @@
 
 
   <!-- ========================================================================= -->
-  <!-- TAB 4: ARMADOR DE OBJETOS (GEN 2 BUILDER + CATÁLOGO 75 OFICIALES) -->
+  <!-- TAB 5: ARMADOR DE OBJETOS (GEN 2 BUILDER + CATÁLOGO 75 OFICIALES) -->
   <!-- ========================================================================= -->
   <div id="view-items" class="view-tab-content hidden max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
 
@@ -1063,6 +1156,43 @@
     </div>
   </div>
 
+  <!-- MODAL: ZONE POOL PICKER (AGREGAR POLLOS AL POOL) -->
+  <div id="modal-pool-picker" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-emerald-500/40 rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-[var(--border)] flex items-center justify-between gap-3 bg-[var(--bg)]">
+        <div>
+          <h3 class="text-sm font-bold text-emerald-300 flex items-center gap-1.5">
+            <span>➕</span> Agregar Pollos al Pool de la Zona
+          </h3>
+          <p class="text-xs text-[var(--text-muted)]">Haz clic en un pollo para añadirlo o quitarlo del pool</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="text" id="pool-picker-search" placeholder="🔍 Buscar pollo..." class="px-3 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs text-[var(--text)] w-40">
+          <button id="btn-close-pool-picker" class="px-2.5 py-1 rounded bg-[var(--card)] hover:bg-[var(--border)] text-xs font-bold transition">✕</button>
+        </div>
+      </div>
+
+      <!-- Selector Tabs: Bocetos Gen 2 vs Gen 1 Oficial -->
+      <div class="flex items-center gap-2 px-4 py-2 border-b border-[var(--border)] bg-[var(--card)]/50 text-xs font-semibold">
+        <button id="btn-pool-tab-sketches" class="px-3 py-1 rounded-lg bg-emerald-500 text-black font-bold transition">
+          🐣 Mis Bocetos Gen 2 (<span id="pool-tab-sketches-count">0</span>)
+        </button>
+        <button id="btn-pool-tab-gen1" class="px-3 py-1 rounded-lg bg-[var(--bg)] text-[var(--text-muted)] hover:text-[var(--text)] transition">
+          🐔 Gen 1 Oficial (151)
+        </button>
+      </div>
+
+      <div id="pool-picker-grid" class="flex-1 overflow-y-auto p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="p-3 border-t border-[var(--border)] bg-[var(--bg)] flex justify-end">
+        <button id="btn-done-pool-picker" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition">
+          Listo
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- LOAD WIKI DATA -->
   <script src="data.js"></script>
   <script src="docs/data.js"></script>
@@ -1070,23 +1200,22 @@
   <!-- APP ENGINE -->
   <script>
     
+    // Exact relative path resolution that works in both wiki root and docs/
     function getSpriteUrl(path) {
-      if (!path) return (window.location.pathname.includes('/docs/') || window.location.pathname.includes('\\docs\\') ? 'images/chickens/0.png' : 'docs/images/chickens/0.png');
-      if (path.startsWith('data:') || path.startsWith('http')) return path;
-      const inDocs = window.location.pathname.includes('/docs/') || window.location.pathname.includes('\\docs\\');
-      if (!inDocs && path.startsWith('images/')) {
-        return 'docs/' + path;
-      }
+      if (!path) return 'images/chickens/0.png';
+      if (path.startsWith('data:') || path.startsWith('http://') || path.startsWith('https://')) return path;
+      if (path.startsWith('docs/')) return path.slice(5);
       return path;
     }
 
     // Embedded or linked WIKI data fallback
-    const WIKI = window.WIKI_DATA || { chickens: [], passives: [], powers: [], items: [] };
+    const WIKI = window.WIKI_DATA || { chickens: [], passives: [], powers: [], items: [], zones: [] };
 
     // Persistent State
     let savedSketches = [];
     let customPowers = [];
     let customItems = [];
+    let customZones = [];
 
     try {
       savedSketches = JSON.parse(localStorage.getItem('cc_gen2_sketches') || '[]');
@@ -1100,12 +1229,16 @@
       customItems = JSON.parse(localStorage.getItem('cc_gen2_custom_items') || '[]');
     } catch(e) { customItems = []; }
 
+    try {
+      customZones = JSON.parse(localStorage.getItem('cc_gen2_custom_zones') || '[]');
+    } catch(e) { customZones = []; }
+
     // Current Editing Sketch State
     let currentSketch = {
       id: 151,
       name: "Cosmochick",
       sprite: "images/chickens/0.png",
-      zone: "Zona 10 (Espacio)",
+      zone: "Zona 10",
       status: "Boceto",
       concept: "Pollo astronauta con casco transparente y plumas galácticas estelares.",
       stats: {
@@ -1124,88 +1257,61 @@
 
     let editingPowerId = null;
     let editingItemId = null;
+    let editingZoneId = null;
+
+    // Temporary pool in Zone Form
+    let currentZoneCombatPool = []; // array of { type: 'sketch'|'gen1', id: num, name: str, sprite: str, is_boss: bool }
+    let poolPickerTab = 'sketches'; // 'sketches' or 'gen1'
 
     // Radar Geometry constants
     const RADAR_CX = 150, RADAR_CY = 130, RADAR_R = 85;
     const RADAR_ANGLES = [-90, -18, 54, 126, 198].map(a => a * Math.PI / 180);
 
     // ==========================================
-    // SPRITE & ANIMATION STUDIO (_strip5 SUPPORT)
+    // SPRITE STUDIO (SOLO PRIMER FRAME)
     // ==========================================
     const spriteState = {
-      isStrip: true,
-      frameCount: 5,
-      currentFrame: 0,
-      fps: 6,
-      isPlaying: true,
-      rawImage: null,
-      frames: [],
-      frameWidth: 0,
-      frameHeight: 0,
-      selectedCoverFrame: 0,
-      animInterval: null
+      firstFrameCanvas: null,
+      frameWidth: 32,
+      frameHeight: 32
     };
 
     function initSpriteStudio() {
       processImageSource(currentSketch.sprite || 'images/chickens/0.png');
-
-      document.getElementById('btn-anim-play').addEventListener('click', togglePlayPause);
-      document.getElementById('btn-anim-prev').addEventListener('click', stepPrevFrame);
-      document.getElementById('btn-anim-next').addEventListener('click', stepNextFrame);
-      
-      const fpsSlider = document.getElementById('anim-fps-slider');
-      fpsSlider.addEventListener('input', (e) => {
-        spriteState.fps = parseInt(e.target.value, 10) || 6;
-        document.getElementById('lbl-anim-fps').textContent = spriteState.fps + ' fps';
-        startAnimation();
-      });
-
-      document.getElementById('btn-toggle-strip-mode').addEventListener('click', () => {
-        spriteState.isStrip = !spriteState.isStrip;
-        reprocessCurrentRawImage();
-      });
-
-      document.getElementById('btn-download-frames').addEventListener('click', downloadCurrentFrames);
-    }
-
-    function togglePlayPause() {
-      spriteState.isPlaying = !spriteState.isPlaying;
-      document.getElementById('btn-anim-play').textContent = spriteState.isPlaying ? '⏸' : '▶';
-    }
-
-    function stepPrevFrame() {
-      if (spriteState.frames.length <= 1) return;
-      spriteState.isPlaying = false;
-      document.getElementById('btn-anim-play').textContent = '▶';
-      spriteState.currentFrame = (spriteState.currentFrame - 1 + spriteState.frames.length) % spriteState.frames.length;
-      renderCurrentFrame();
-    }
-
-    function stepNextFrame() {
-      if (spriteState.frames.length <= 1) return;
-      spriteState.isPlaying = false;
-      document.getElementById('btn-anim-play').textContent = '▶';
-      spriteState.currentFrame = (spriteState.currentFrame + 1) % spriteState.frames.length;
-      renderCurrentFrame();
     }
 
     function processImageSource(src, fileName = "") {
       const img = new Image();
       img.crossOrigin = "anonymous";
       img.onload = () => {
-        spriteState.rawImage = img;
         const fn = fileName.toLowerCase();
         const isNamedStrip = fn.includes('strip') || fn.includes('_strip5');
-        const isWideRatio = (img.width >= img.height * 3.5);
+        const isWideRatio = (img.width >= img.height * 2.5);
 
-        if (isNamedStrip || isWideRatio) {
-          spriteState.isStrip = true;
-          spriteState.frameCount = 5;
-        } else if (img.width === img.height && fn.includes('strip5')) {
-          spriteState.isStrip = true;
+        // If it's a 5-strip or wide image, slice the first frame
+        const count = (isNamedStrip || isWideRatio) ? 5 : 1;
+        const fWidth = Math.floor(img.width / count);
+        const fHeight = img.height;
+
+        const c = document.createElement('canvas');
+        c.width = fWidth;
+        c.height = fHeight;
+        const ctx = c.getContext('2d');
+        ctx.imageSmoothingEnabled = false;
+        // Draw exclusively the FIRST frame
+        ctx.drawImage(img, 0, 0, fWidth, fHeight, 0, 0, fWidth, fHeight);
+
+        spriteState.firstFrameCanvas = c;
+        spriteState.frameWidth = fWidth;
+        spriteState.frameHeight = fHeight;
+
+        renderFirstFrame();
+        updateCardCanvas();
+
+        const badge = document.getElementById('frame-res-badge');
+        if (badge) {
+          badge.textContent = fWidth + 'x' + fHeight + 'px' + (count > 1 ? ' (Frame 1)' : '');
         }
-
-        reprocessCurrentRawImage();
       };
       img.onerror = () => {
         console.warn("Could not load image source:", src);
@@ -1213,142 +1319,24 @@
       img.src = getSpriteUrl(src);
     }
 
-    function reprocessCurrentRawImage() {
-      if (!spriteState.rawImage) return;
-      const img = spriteState.rawImage;
-      const count = spriteState.frameCount || 5;
-
-      if (spriteState.isStrip && img.width >= count) {
-        const fWidth = Math.floor(img.width / count);
-        const fHeight = img.height;
-        spriteState.frameWidth = fWidth;
-        spriteState.frameHeight = fHeight;
-        spriteState.frames = [];
-
-        for (let i = 0; i < count; i++) {
-          const c = document.createElement('canvas');
-          c.width = fWidth;
-          c.height = fHeight;
-          const ctx = c.getContext('2d');
-          ctx.imageSmoothingEnabled = false;
-          ctx.drawImage(img, i * fWidth, 0, fWidth, fHeight, 0, 0, fWidth, fHeight);
-          spriteState.frames.push(c);
-        }
-      } else {
-        spriteState.frameWidth = img.width;
-        spriteState.frameHeight = img.height;
-        const c = document.createElement('canvas');
-        c.width = img.width;
-        c.height = img.height;
-        const ctx = c.getContext('2d');
-        ctx.imageSmoothingEnabled = false;
-        ctx.drawImage(img, 0, 0);
-        spriteState.frames = [c];
-      }
-
-      const badge = document.getElementById('strip-mode-badge');
-      if (spriteState.isStrip) {
-        badge.className = 'px-2 py-0.5 rounded-full text-[9px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40';
-        badge.textContent = '🎞️ _strip' + count;
-      } else {
-        badge.className = 'px-2 py-0.5 rounded-full text-[9px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40';
-        badge.textContent = '🖼️ 1 Frame';
-      }
-
-      document.getElementById('frame-res-badge').textContent = spriteState.frameWidth + 'x' + spriteState.frameHeight + 'px';
-
-      buildStripThumbnails();
-      spriteState.currentFrame = 0;
-      startAnimation();
-      renderCurrentFrame();
-    }
-
-    function buildStripThumbnails() {
-      const container = document.getElementById('strip-frames-container');
-      container.innerHTML = '';
-
-      spriteState.frames.forEach((frameCanvas, idx) => {
-        const thumbWrap = document.createElement('div');
-        thumbWrap.className = 'relative p-1 rounded-xl bg-[var(--card)] border cursor-pointer transition flex flex-col items-center justify-center ' + (idx === spriteState.selectedCoverFrame ? 'border-amber-500 ring-2 ring-amber-500/40' : 'border-[var(--border)] hover:border-amber-500/50');
-        
-        const preview = document.createElement('canvas');
-        preview.width = frameCanvas.width;
-        preview.height = frameCanvas.height;
-        preview.className = 'w-10 h-10 object-contain pixelated';
-        const pctx = preview.getContext('2d');
-        pctx.imageSmoothingEnabled = false;
-        pctx.drawImage(frameCanvas, 0, 0);
-
-        const lbl = document.createElement('span');
-        lbl.className = 'text-[9px] font-mono text-[var(--text-muted)] mt-0.5';
-        lbl.textContent = 'F' + (idx + 1);
-
-        thumbWrap.appendChild(preview);
-        thumbWrap.appendChild(lbl);
-
-        thumbWrap.addEventListener('click', () => {
-          spriteState.selectedCoverFrame = idx;
-          spriteState.currentFrame = idx;
-          spriteState.isPlaying = false;
-          document.getElementById('btn-anim-play').textContent = '▶';
-          buildStripThumbnails();
-          renderCurrentFrame();
-          updateCardCanvas();
-        });
-
-        container.appendChild(thumbWrap);
-      });
-    }
-
-    function startAnimation() {
-      if (spriteState.animInterval) clearInterval(spriteState.animInterval);
-      if (spriteState.frames.length <= 1) return;
-
-      const intervalMs = Math.max(30, Math.floor(1000 / spriteState.fps));
-      spriteState.animInterval = setInterval(() => {
-        if (!spriteState.isPlaying) return;
-        spriteState.currentFrame = (spriteState.currentFrame + 1) % spriteState.frames.length;
-        renderCurrentFrame();
-      }, intervalMs);
-    }
-
-    function renderCurrentFrame() {
-      if (!spriteState.frames || spriteState.frames.length === 0) return;
+    function renderFirstFrame() {
       const targetCanvas = document.getElementById('anim-canvas');
+      if (!targetCanvas || !spriteState.firstFrameCanvas) return;
       const ctx = targetCanvas.getContext('2d');
       ctx.imageSmoothingEnabled = false;
       ctx.clearRect(0, 0, targetCanvas.width, targetCanvas.height);
-
-      const f = spriteState.frames[spriteState.currentFrame];
-      if (f) {
-        ctx.drawImage(f, 0, 0, targetCanvas.width, targetCanvas.height);
-      }
-
-      document.getElementById('lbl-frame-counter').textContent = 'F' + (spriteState.currentFrame + 1) + '/' + spriteState.frames.length;
+      ctx.drawImage(spriteState.firstFrameCanvas, 0, 0, targetCanvas.width, targetCanvas.height);
     }
 
     function updateCardCanvas() {
       const cardCanvas = document.getElementById('card-canvas');
+      if (!cardCanvas) return;
       const ctx = cardCanvas.getContext('2d');
       ctx.imageSmoothingEnabled = false;
       ctx.clearRect(0, 0, cardCanvas.width, cardCanvas.height);
-
-      const frameIdx = Math.min(spriteState.selectedCoverFrame, spriteState.frames.length - 1);
-      const f = spriteState.frames[frameIdx] || spriteState.frames[0];
-      if (f) {
-        ctx.drawImage(f, 0, 0, cardCanvas.width, cardCanvas.height);
+      if (spriteState.firstFrameCanvas) {
+        ctx.drawImage(spriteState.firstFrameCanvas, 0, 0, cardCanvas.width, cardCanvas.height);
       }
-    }
-
-    function downloadCurrentFrames() {
-      if (!spriteState.frames || spriteState.frames.length === 0) return;
-      const baseName = (currentSketch.name || 'pollo').toLowerCase().replace(/\s+/g, '_');
-      spriteState.frames.forEach((fCanvas, idx) => {
-        const a = document.createElement('a');
-        a.href = fCanvas.toDataURL('image/png');
-        a.download = baseName + '_frame_' + (idx + 1) + '.png';
-        a.click();
-      });
     }
 
     // ==========================================
@@ -1365,6 +1353,7 @@
 
       // Render other tabs
       renderRosterView();
+      renderZonesView();
       renderPowersView();
       renderItemsView();
     }
@@ -1402,6 +1391,8 @@
 
       if (tabId === 'roster') {
         renderRosterView();
+      } else if (tabId === 'zones') {
+        renderZonesView();
       } else if (tabId === 'powers') {
         renderPowersView();
       } else if (tabId === 'items') {
@@ -1411,15 +1402,20 @@
 
     function updateAllCounts() {
       const sketchesCount = savedSketches.length;
+      const zonesCount = customZones.length;
       const powersCount = customPowers.length;
       const itemsCount = customItems.length;
 
       document.getElementById('tab-badge-sketches').textContent = sketchesCount;
+      document.getElementById('tab-badge-zones').textContent = zonesCount;
       document.getElementById('tab-badge-powers').textContent = powersCount;
       document.getElementById('tab-badge-items').textContent = itemsCount;
 
       const pill = document.getElementById('roster-sketches-count-pill');
       if (pill) pill.textContent = sketchesCount;
+
+      const customZnBadge = document.getElementById('custom-zones-count-badge');
+      if (customZnBadge) customZnBadge.textContent = zonesCount;
 
       const customPwBadge = document.getElementById('custom-powers-count-badge');
       if (customPwBadge) customPwBadge.textContent = powersCount;
@@ -1429,12 +1425,33 @@
 
       const summary = document.getElementById('quick-status-summary');
       if (summary) {
-        summary.textContent = sketchesCount + ' Bocetos · ' + powersCount + ' Poderes · ' + itemsCount + ' Objetos';
+        summary.textContent = sketchesCount + ' Bocetos · ' + zonesCount + ' Zonas · ' + powersCount + ' Poderes · ' + itemsCount + ' Objetos';
       }
+
+      // Update datalist for zones in chicken builder
+      updateZonesDatalist();
+    }
+
+    function updateZonesDatalist() {
+      const dl = document.getElementById('zones-datalist');
+      if (!dl) return;
+      dl.innerHTML = '';
+      if (WIKI.zones) {
+        WIKI.zones.forEach((z, idx) => {
+          const opt = document.createElement('option');
+          opt.value = (z.name && (z.name.es || z.name)) || ('Zona ' + (idx + 1));
+          dl.appendChild(opt);
+        });
+      }
+      customZones.forEach(z => {
+        const opt = document.createElement('option');
+        opt.value = z.name;
+        dl.appendChild(opt);
+      });
     }
 
     // ==========================================
-    // POPULATE DROPDOWNS (WITH CUSTOM POWERS & ITEMS)
+    // POPULATE DROPDOWNS
     // ==========================================
     function populateDropdowns() {
       // 1. Hidden powers dropdown (Official 52 + Custom Gen 2)
@@ -1652,17 +1669,17 @@
         dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-rose-500 text-white';
         dupBadge.textContent = '🚨 DUPLICADO IDÉNTICO';
         const em = exactMatches[0];
-        dupDetail.innerHTML = '⚠️ <strong>¡Mismos stats exactos que #' + em.id + ' ' + em.name + '!</strong> (HP: ' + em.stats.life + ', ATK: ' + em.stats.damage + ', DEF: ' + em.stats.armor + ', SPD: ' + em.stats.speed + ', PWR: ' + em.stats.power_amount + '). Modifica algunos valores para que tu pollo tenga una identidad única en combate.';
+        dupDetail.innerHTML = '⚠️ <strong>¡Mismos stats exactos que #' + (em.id + 1) + ' ' + em.name + '!</strong> (HP: ' + em.stats.life + ', ATK: ' + em.stats.damage + ', DEF: ' + em.stats.armor + ', SPD: ' + em.stats.speed + ', PWR: ' + em.stats.power_amount + '). Modifica algunos valores para que tu pollo tenga una identidad única en combate.';
       } else if (minDistance <= 15 && closest) {
         dupCard.className = 'p-3 rounded-xl bg-amber-500/10 border border-amber-500/40 text-xs transition space-y-1';
         dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40';
-        dupBadge.textContent = '⚠️ SIMILAR A #' + closest.id;
-        dupDetail.innerHTML = 'Se asemeja mucho al perfil de <strong>#' + closest.id + ' ' + closest.name + '</strong> (diferencia de solo ~' + closest.dist + ' pts globales: HP ' + closest.stats.life + ', ATK ' + closest.stats.damage + ', DEF ' + closest.stats.armor + ', SPD ' + closest.stats.speed + ', PWR ' + closest.stats.power_amount + ').';
+        dupBadge.textContent = '⚠️ SIMILAR A #' + (closest.id + 1);
+        dupDetail.innerHTML = 'Se asemeja mucho al perfil de <strong>#' + (closest.id + 1) + ' ' + closest.name + '</strong> (diferencia de solo ~' + closest.dist + ' pts globales: HP ' + closest.stats.life + ', ATK ' + closest.stats.damage + ', DEF ' + closest.stats.armor + ', SPD ' + closest.stats.speed + ', PWR ' + closest.stats.power_amount + ').';
       } else if (closest) {
         dupCard.className = 'p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-xs transition space-y-1';
         dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40';
         dupBadge.textContent = '✅ PERFIL ÚNICO';
-        dupDetail.innerHTML = 'Distribución de estadísticas original y distinguible. El pollo más cercano es <em>#' + closest.id + ' ' + closest.name + '</em> con una diferencia de ' + closest.dist + ' pts.';
+        dupDetail.innerHTML = 'Distribución de estadísticas original y distinguible. El pollo más cercano es <em>#' + (closest.id + 1) + ' ' + closest.name + '</em> con una diferencia de ' + closest.dist + ' pts.';
       }
     }
 
@@ -2152,6 +2169,386 @@
     }
 
     // ==========================================
+    // ZONES BUILDER VIEW (NUEVO)
+    // ==========================================
+    function renderZonesView() {
+      renderZoneFormPoolItems();
+      renderCustomZonesList();
+      renderOfficialZonesList();
+    }
+
+    function renderZoneFormPoolItems() {
+      const container = document.getElementById('zn-pool-items-container');
+      const countLabel = document.getElementById('zn-pool-count');
+      if (!container || !countLabel) return;
+
+      countLabel.textContent = currentZoneCombatPool.length;
+      container.innerHTML = '';
+
+      if (currentZoneCombatPool.length === 0) {
+        container.innerHTML = '<span class="text-[11px] text-[var(--text-muted)] p-2 m-auto">Ningún pollo en el pool todavía.</span>';
+        return;
+      }
+
+      currentZoneCombatPool.forEach((item, idx) => {
+        const chip = document.createElement('div');
+        chip.className = 'px-2 py-1 rounded-lg bg-[var(--bg)] border ' + (item.is_boss ? 'border-amber-500 ring-1 ring-amber-500/50 bg-amber-500/10' : 'border-[var(--border)]') + ' flex items-center gap-1.5 text-[11px] shadow-sm';
+        chip.innerHTML = `
+          <img class="w-5 h-5 object-contain pixelated" src="` + getSpriteUrl(item.sprite) + `" alt="">
+          <span class="font-bold text-[var(--text)] truncate max-w-[90px]">` + item.name + `</span>
+          <button type="button" class="btn-toggle-boss text-[10px] px-1 rounded ` + (item.is_boss ? 'text-amber-400 font-bold' : 'text-[var(--text-muted)] hover:text-amber-400') + `" title="` + (item.is_boss ? 'Jefe de Zona (Clic para quitar jefe)' : 'Marcar como Jefe de Zona') + `">
+            ` + (item.is_boss ? '👑' : '⭐') + `
+          </button>
+          <button type="button" class="btn-remove-pool-item text-[var(--text-muted)] hover:text-rose-400 font-bold ml-0.5">✕</button>
+        `;
+
+        chip.querySelector('.btn-toggle-boss').addEventListener('click', () => {
+          // Toggle boss (only one boss or toggle)
+          const wasBoss = item.is_boss;
+          currentZoneCombatPool.forEach(p => p.is_boss = false);
+          item.is_boss = !wasBoss;
+          renderZoneFormPoolItems();
+        });
+
+        chip.querySelector('.btn-remove-pool-item').addEventListener('click', () => {
+          currentZoneCombatPool.splice(idx, 1);
+          renderZoneFormPoolItems();
+        });
+
+        container.appendChild(chip);
+      });
+    }
+
+    function renderCustomZonesList() {
+      const container = document.getElementById('custom-zones-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (customZones.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 text-center bg-[var(--bg)] rounded-xl border border-dashed border-[var(--border)] text-[var(--text-muted)]">
+            <span class="text-2xl block mb-1">🗺️</span>
+            <p class="font-bold text-xs text-[var(--text)]">Aún no has creado zonas para Gen 2.</p>
+            <p class="text-[11px]">Usa el formulario a la izquierda para definir hábitats y pools de combate.</p>
+          </div>
+        `;
+        return;
+      }
+
+      customZones.forEach((z, idx) => {
+        const item = document.createElement('div');
+        item.className = 'p-3.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-emerald-500/50 transition space-y-2 text-xs shadow-sm';
+        
+        // Find boss if any
+        const boss = z.combat_pool?.find(p => p.is_boss);
+        const poolChickens = z.combat_pool || [];
+
+        // Build sprites row
+        const spritesHtml = poolChickens.slice(0, 10).map(p => `
+          <div class="relative group" title="` + p.name + (p.is_boss ? ' (👑 Jefe)' : '') + `">
+            <img class="w-7 h-7 object-contain pixelated bg-[var(--card)] rounded p-0.5 border ` + (p.is_boss ? 'border-amber-500 ring-1 ring-amber-500' : 'border-[var(--border)]') + `" src="` + getSpriteUrl(p.sprite) + `" alt="">
+            ` + (p.is_boss ? '<span class="absolute -top-1.5 -right-1.5 text-[9px]">👑</span>' : '') + `
+          </div>
+        `).join('');
+
+        item.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-0.5">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-bold text-sm text-emerald-300">` + z.name + `</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">Nv. ` + z.level_min + ` - ` + z.level_max + `</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] font-mono text-emerald-400 bg-[var(--card)]">` + (z.travel_price || 0) + ` 🌰</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] bg-[var(--card)] text-[var(--text-muted)]">` + (z.biome || 'Bioma') + `</span>
+              </div>
+              <p class="text-[var(--text-muted)] text-[11px] leading-snug">` + (z.description || '') + `</p>
+            </div>
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+              <button class="btn-edit-zn px-2.5 py-1 rounded bg-[var(--card)] hover:bg-emerald-500 hover:text-black text-[11px] font-semibold transition" title="Editar zona">
+                ✏️
+              </button>
+              <button class="btn-dup-zn px-2 py-1 rounded bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] text-[11px] transition" title="Duplicar zona">
+                📋
+              </button>
+              <button class="btn-del-zn px-2 py-1 rounded bg-[var(--card)] hover:bg-rose-500 hover:text-white text-rose-400 text-[11px] transition" title="Eliminar zona">
+                🗑️
+              </button>
+            </div>
+          </div>
+
+          <!-- Pool preview -->
+          <div class="pt-2 border-t border-[var(--border)]/60 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 flex-wrap min-w-0">
+              <span class="text-[10px] text-[var(--text-muted)] font-bold">Pool (` + poolChickens.length + `):</span>
+              <div class="flex items-center gap-1 flex-wrap">
+                ` + spritesHtml + `
+                ` + (poolChickens.length > 10 ? ('<span class="text-[10px] text-[var(--text-muted)]">+' + (poolChickens.length - 10) + ' más</span>') : '') + `
+              </div>
+            </div>
+            ` + (boss ? ('<div class="text-[10px] font-bold text-amber-400 flex items-center gap-1 whitespace-nowrap">👑 Jefe: ' + boss.name + '</div>') : '') + `
+          </div>
+        `;
+
+        item.querySelector('.btn-edit-zn').addEventListener('click', () => {
+          editingZoneId = z.id;
+          document.getElementById('zn-form-title').innerHTML = '<span>✏️</span> Editar Zona Gen 2';
+          document.getElementById('zn-edit-badge').classList.remove('hidden');
+          document.getElementById('zn-name').value = z.name || '';
+          document.getElementById('zn-lvl-min').value = z.level_min || 50;
+          document.getElementById('zn-lvl-max').value = z.level_max || 70;
+          document.getElementById('zn-price').value = z.travel_price || 300;
+          document.getElementById('zn-biome').value = z.biome || 'Galáctico / Espacial';
+          document.getElementById('zn-desc').value = z.description || '';
+          currentZoneCombatPool = JSON.parse(JSON.stringify(z.combat_pool || []));
+          renderZoneFormPoolItems();
+        });
+
+        item.querySelector('.btn-dup-zn').addEventListener('click', () => {
+          const clone = JSON.parse(JSON.stringify(z));
+          clone.id = 'zone_' + Date.now();
+          clone.name = clone.name + ' (Copia)';
+          customZones.push(clone);
+          localStorage.setItem('cc_gen2_custom_zones', JSON.stringify(customZones));
+          updateAllCounts();
+          renderCustomZonesList();
+        });
+
+        item.querySelector('.btn-del-zn').addEventListener('click', () => {
+          if (confirm('¿Eliminar la zona "' + z.name + '"?')) {
+            customZones.splice(idx, 1);
+            localStorage.setItem('cc_gen2_custom_zones', JSON.stringify(customZones));
+            updateAllCounts();
+            renderCustomZonesList();
+          }
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    function renderOfficialZonesList() {
+      const container = document.getElementById('official-zones-container');
+      if (!container || !WIKI.zones) return;
+      container.innerHTML = '';
+
+      WIKI.zones.forEach((z, idx) => {
+        const name = (z.name && (z.name.es || z.name)) || ('Zona ' + (idx + 1));
+        const poolIds = z.combat_pool || [];
+        const lvlMin = (z.level_range && z.level_range[0]) || 1;
+        const lvlMax = (z.level_range && z.level_range[1]) || 10;
+
+        // Take some sprites
+        const spritesHtml = poolIds.slice(0, 8).map(cid => {
+          const c = WIKI.chickens && WIKI.chickens[cid];
+          const cName = c ? (c.name && (c.name.es || c.name)) : ('#' + (cid + 1));
+          const cSprite = c ? c.sprite : ('images/chickens/' + cid + '.png');
+          return '<img class="w-6 h-6 object-contain pixelated bg-[var(--bg)] rounded p-0.5 border border-[var(--border)]" src="' + getSpriteUrl(cSprite) + '" title="' + cName + '" alt="">';
+        }).join('');
+
+        const item = document.createElement('div');
+        item.className = 'p-2.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-emerald-500/40 transition flex items-center justify-between gap-3';
+        item.innerHTML = `
+          <div class="space-y-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-bold text-sm text-[var(--text)]">#` + (idx + 1) + ` ` + name + `</span>
+              <span class="px-2 py-0.2 rounded text-[10px] font-mono text-amber-400 bg-[var(--card)]">Nv. ` + lvlMin + ` - ` + lvlMax + `</span>
+              <span class="px-2 py-0.2 rounded text-[10px] font-mono text-emerald-400 bg-[var(--card)]">` + (z.travel_price || 0) + ` 🌰</span>
+            </div>
+            <div class="flex items-center gap-1 flex-wrap pt-0.5">
+              <span class="text-[10px] text-[var(--text-muted)]">Pool (` + poolIds.length + ` pollos):</span>
+              ` + spritesHtml + `
+              ` + (poolIds.length > 8 ? ('<span class="text-[10px] text-[var(--text-muted)]">+' + (poolIds.length - 8) + '</span>') : '') + `
+            </div>
+          </div>
+          <button class="btn-clone-zn px-2.5 py-1 rounded bg-[var(--card)] hover:bg-emerald-500 hover:text-black text-[10px] font-bold transition flex-shrink-0">
+            📋 Clonar
+          </button>
+        `;
+
+        item.querySelector('.btn-clone-zn').addEventListener('click', () => {
+          editingZoneId = null;
+          document.getElementById('zn-form-title').innerHTML = '<span>🗺️</span> Diseñar Nueva Zona';
+          document.getElementById('zn-edit-badge').classList.add('hidden');
+          document.getElementById('zn-name').value = name + ' (Gen 2)';
+          document.getElementById('zn-lvl-min').value = lvlMin + 20;
+          document.getElementById('zn-lvl-max').value = lvlMax + 25;
+          document.getElementById('zn-price').value = (z.travel_price || 100) + 150;
+          document.getElementById('zn-desc').value = 'Expansión de la zona clásica de ' + name + ' con nuevos encuentros y pollos de Gen 2.';
+          
+          currentZoneCombatPool = [];
+          poolIds.forEach((cid, pidx) => {
+            const c = WIKI.chickens && WIKI.chickens[cid];
+            if (c) {
+              currentZoneCombatPool.push({
+                type: 'gen1',
+                id: c.id,
+                name: c.name && (c.name.es || c.name),
+                sprite: c.sprite,
+                is_boss: (pidx === poolIds.length - 1)
+              });
+            }
+          });
+          renderZoneFormPoolItems();
+          document.getElementById('zn-name').focus();
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    // Modal Pool Picker
+    function openPoolPicker() {
+      document.getElementById('modal-pool-picker').classList.remove('hidden');
+      renderPoolPickerGrid();
+    }
+
+    function renderPoolPickerGrid() {
+      const container = document.getElementById('pool-picker-grid');
+      const searchVal = (document.getElementById('pool-picker-search')?.value || '').toLowerCase().trim();
+      document.getElementById('pool-tab-sketches-count').textContent = savedSketches.length;
+      container.innerHTML = '';
+
+      if (poolPickerTab === 'sketches') {
+        let list = savedSketches.slice();
+        if (searchVal) {
+          list = list.filter(sk => (sk.name || '').toLowerCase().includes(searchVal) || String(sk.id).includes(searchVal));
+        }
+
+        if (list.length === 0) {
+          container.innerHTML = '<div class="col-span-full p-6 text-center text-xs text-[var(--text-muted)]">No hay bocetos de Gen 2 que coincidan. Crea bocetos en el Taller de Pollos.</div>';
+          return;
+        }
+
+        list.forEach(sk => {
+          const inPool = currentZoneCombatPool.some(p => p.type === 'sketch' && p.id === sk.id);
+          const card = document.createElement('div');
+          card.className = 'p-2 rounded-xl border cursor-pointer transition flex items-center gap-2 ' + (inPool ? 'bg-emerald-500/20 border-emerald-500 ring-1 ring-emerald-500' : 'bg-[var(--bg)] border-[var(--border)] hover:border-emerald-500/50');
+          card.innerHTML = `
+            <img class="w-8 h-8 object-contain pixelated bg-[var(--card)] rounded p-0.5" src="` + getSpriteUrl(sk.sprite) + `" alt="">
+            <div class="min-w-0 flex-1 truncate">
+              <span class="text-[9px] font-mono text-amber-400 font-bold block">#` + (sk.id || 151) + ` (Boceto)</span>
+              <h4 class="text-xs font-bold text-[var(--text)] truncate">` + (sk.name || 'Sin nombre') + `</h4>
+            </div>
+            <span class="text-xs font-bold font-mono">` + (inPool ? '✅' : '➕') + `</span>
+          `;
+
+          card.addEventListener('click', () => {
+            const exIdx = currentZoneCombatPool.findIndex(p => p.type === 'sketch' && p.id === sk.id);
+            if (exIdx >= 0) {
+              currentZoneCombatPool.splice(exIdx, 1);
+            } else {
+              currentZoneCombatPool.push({
+                type: 'sketch',
+                id: sk.id,
+                name: sk.name,
+                sprite: sk.sprite,
+                is_boss: false
+              });
+            }
+            renderPoolPickerGrid();
+            renderZoneFormPoolItems();
+          });
+
+          container.appendChild(card);
+        });
+
+      } else {
+        // Gen 1 Oficial
+        let list = (WIKI.chickens || []).slice();
+        if (searchVal) {
+          list = list.filter(c => {
+            const name = (c.name && (c.name.es || c.name) || '').toLowerCase();
+            return name.includes(searchVal) || String(c.id + 1).includes(searchVal);
+          });
+        }
+
+        list.forEach(c => {
+          const name = c.name && (c.name.es || c.name);
+          const inPool = currentZoneCombatPool.some(p => p.type === 'gen1' && p.id === c.id);
+          const card = document.createElement('div');
+          card.className = 'p-2 rounded-xl border cursor-pointer transition flex items-center gap-2 ' + (inPool ? 'bg-emerald-500/20 border-emerald-500 ring-1 ring-emerald-500' : 'bg-[var(--bg)] border-[var(--border)] hover:border-emerald-500/50');
+          card.innerHTML = `
+            <img class="w-8 h-8 object-contain pixelated bg-[var(--card)] rounded p-0.5" src="` + getSpriteUrl(c.sprite) + `" alt="">
+            <div class="min-w-0 flex-1 truncate">
+              <span class="text-[9px] font-mono text-blue-400 font-bold block">#` + String(c.id + 1).padStart(3, '0') + `</span>
+              <h4 class="text-xs font-bold text-[var(--text)] truncate">` + name + `</h4>
+            </div>
+            <span class="text-xs font-bold font-mono">` + (inPool ? '✅' : '➕') + `</span>
+          `;
+
+          card.addEventListener('click', () => {
+            const exIdx = currentZoneCombatPool.findIndex(p => p.type === 'gen1' && p.id === c.id);
+            if (exIdx >= 0) {
+              currentZoneCombatPool.splice(exIdx, 1);
+            } else {
+              currentZoneCombatPool.push({
+                type: 'gen1',
+                id: c.id,
+                name: name,
+                sprite: c.sprite,
+                is_boss: false
+              });
+            }
+            renderPoolPickerGrid();
+            renderZoneFormPoolItems();
+          });
+
+          container.appendChild(card);
+        });
+      }
+    }
+
+    function saveCustomZone() {
+      const name = document.getElementById('zn-name').value.trim();
+      if (!name) {
+        alert('Por favor, ingresa un nombre para la zona.');
+        return;
+      }
+      if (currentZoneCombatPool.length === 0) {
+        if (!confirm('Esta zona no tiene ningún pollo en su pool de combate. ¿Deseas guardarla de todas formas?')) {
+          return;
+        }
+      }
+
+      const znObj = {
+        id: editingZoneId || ('zone_' + Date.now()),
+        name: name,
+        level_min: parseInt(document.getElementById('zn-lvl-min').value, 10) || 50,
+        level_max: parseInt(document.getElementById('zn-lvl-max').value, 10) || 70,
+        travel_price: parseInt(document.getElementById('zn-price').value, 10) || 300,
+        biome: document.getElementById('zn-biome').value,
+        description: document.getElementById('zn-desc').value.trim(),
+        combat_pool: JSON.parse(JSON.stringify(currentZoneCombatPool))
+      };
+
+      if (editingZoneId) {
+        const idx = customZones.findIndex(z => z.id === editingZoneId);
+        if (idx >= 0) customZones[idx] = znObj;
+      } else {
+        customZones.push(znObj);
+      }
+
+      localStorage.setItem('cc_gen2_custom_zones', JSON.stringify(customZones));
+      clearZoneForm();
+      updateAllCounts();
+      renderCustomZonesList();
+      alert('🗺️ ¡Zona "' + name + '" guardada correctamente con su pool!');
+    }
+
+    function clearZoneForm() {
+      editingZoneId = null;
+      document.getElementById('zn-form-title').innerHTML = '<span>🗺️</span> Diseñar Nueva Zona';
+      document.getElementById('zn-edit-badge').classList.add('hidden');
+      document.getElementById('zn-name').value = '';
+      document.getElementById('zn-lvl-min').value = '50';
+      document.getElementById('zn-lvl-max').value = '70';
+      document.getElementById('zn-price').value = '300';
+      document.getElementById('zn-biome').value = 'Galáctico / Espacial';
+      document.getElementById('zn-desc').value = '';
+      currentZoneCombatPool = [];
+      renderZoneFormPoolItems();
+    }
+
+    // ==========================================
     // POWERS BUILDER VIEW
     // ==========================================
     function renderPowersView() {
@@ -2325,7 +2722,7 @@
 
         item.querySelector('.btn-edit-it').addEventListener('click', () => {
           editingItemId = it.id;
-          document.getElementById('it-form-title').innerHTML = '<span>✏️</span> Editar Objeto Gen 2';
+          document.getElementById('it-form-title').innerHTML = '<span>🎒</span> Editar Objeto Gen 2';
           document.getElementById('it-edit-badge').classList.remove('hidden');
           document.getElementById('it-icon').value = it.icon || '🎒';
           document.getElementById('it-name').value = it.name || '';
@@ -2378,7 +2775,7 @@
         item.className = 'p-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-blue-500/40 transition flex items-center justify-between gap-3';
         item.innerHTML = `
           <div class="flex items-center gap-2.5 min-w-0">
-            <img class="w-7 h-7 object-contain pixelated" src="` + it.sprite + `" alt="">
+            <img class="w-7 h-7 object-contain pixelated" src="` + getSpriteUrl(it.sprite) + `" alt="">
             <div class="min-w-0">
               <div class="flex items-center gap-2">
                 <span class="font-mono text-[10px] text-[var(--text-muted)]">#` + String(it.id + 1).padStart(2, '0') + `</span>
@@ -2415,6 +2812,7 @@
       // Tab navigation buttons
       document.getElementById('tab-btn-builder').addEventListener('click', () => switchTab('builder'));
       document.getElementById('tab-btn-roster').addEventListener('click', () => switchTab('roster'));
+      document.getElementById('tab-btn-zones').addEventListener('click', () => switchTab('zones'));
       document.getElementById('tab-btn-powers').addEventListener('click', () => switchTab('powers'));
       document.getElementById('tab-btn-items').addEventListener('click', () => switchTab('items'));
 
@@ -2541,6 +2939,28 @@
       document.getElementById('roster-gen1-filter-archetype')?.addEventListener('change', renderRosterGen1);
       document.getElementById('roster-gen1-sort')?.addEventListener('change', renderRosterGen1);
 
+      // Zones builder listeners
+      document.getElementById('btn-save-zone')?.addEventListener('click', saveCustomZone);
+      document.getElementById('btn-clear-zone')?.addEventListener('click', clearZoneForm);
+      document.getElementById('btn-open-pool-picker')?.addEventListener('click', openPoolPicker);
+      document.getElementById('btn-close-pool-picker')?.addEventListener('click', () => document.getElementById('modal-pool-picker').classList.add('hidden'));
+      document.getElementById('btn-done-pool-picker')?.addEventListener('click', () => document.getElementById('modal-pool-picker').classList.add('hidden'));
+      document.getElementById('pool-picker-search')?.addEventListener('input', renderPoolPickerGrid);
+      document.getElementById('btn-export-zones-csv')?.addEventListener('click', exportZonesCSV);
+
+      document.getElementById('btn-pool-tab-sketches')?.addEventListener('click', () => {
+        poolPickerTab = 'sketches';
+        document.getElementById('btn-pool-tab-sketches').className = 'px-3 py-1 rounded-lg bg-emerald-500 text-black font-bold transition';
+        document.getElementById('btn-pool-tab-gen1').className = 'px-3 py-1 rounded-lg bg-[var(--bg)] text-[var(--text-muted)] hover:text-[var(--text)] transition';
+        renderPoolPickerGrid();
+      });
+      document.getElementById('btn-pool-tab-gen1')?.addEventListener('click', () => {
+        poolPickerTab = 'gen1';
+        document.getElementById('btn-pool-tab-gen1').className = 'px-3 py-1 rounded-lg bg-emerald-500 text-black font-bold transition';
+        document.getElementById('btn-pool-tab-sketches').className = 'px-3 py-1 rounded-lg bg-[var(--bg)] text-[var(--text-muted)] hover:text-[var(--text)] transition';
+        renderPoolPickerGrid();
+      });
+
       // Powers builder listeners
       document.getElementById('btn-save-power')?.addEventListener('click', saveCustomPower);
       document.getElementById('btn-clear-power')?.addEventListener('click', clearPowerForm);
@@ -2569,7 +2989,7 @@
         id: nextId,
         name: "Nuevo Pollo " + nextId,
         sprite: "images/chickens/0.png",
-        zone: "Nueva Zona",
+        zone: "Zona 10",
         status: "Idea",
         concept: "",
         stats: { life: 40, damage: 45, armor: 35, speed: 45, power_amount: 35 },
@@ -2696,6 +3116,7 @@
         version: "0.123",
         export_date: new Date().toISOString(),
         sketches: savedSketches,
+        custom_zones: customZones,
         custom_powers: customPowers,
         custom_items: customItems
       };
@@ -2712,7 +3133,7 @@
         reader.onload = (re) => {
           try {
             const data = JSON.parse(re.target.result);
-            let importedSk = 0, importedPw = 0, importedIt = 0;
+            let importedSk = 0, importedZn = 0, importedPw = 0, importedIt = 0;
 
             if (Array.isArray(data)) {
               savedSketches = data;
@@ -2721,6 +3142,10 @@
               if (Array.isArray(data.sketches)) {
                 savedSketches = data.sketches;
                 importedSk = data.sketches.length;
+              }
+              if (Array.isArray(data.custom_zones)) {
+                customZones = data.custom_zones;
+                importedZn = data.custom_zones.length;
               }
               if (Array.isArray(data.custom_powers)) {
                 customPowers = data.custom_powers;
@@ -2733,15 +3158,17 @@
             }
 
             localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+            localStorage.setItem('cc_gen2_custom_zones', JSON.stringify(customZones));
             localStorage.setItem('cc_gen2_custom_powers', JSON.stringify(customPowers));
             localStorage.setItem('cc_gen2_custom_items', JSON.stringify(customItems));
 
             updateAllCounts();
             populateDropdowns();
             renderRosterView();
+            renderZonesView();
             renderPowersView();
             renderItemsView();
-            alert('✅ ¡Importación completada!\n- Pollos: ' + importedSk + '\n- Poderes: ' + importedPw + '\n- Objetos: ' + importedIt);
+            alert('✅ ¡Importación completada!\n- Pollos: ' + importedSk + '\n- Zonas: ' + importedZn + '\n- Poderes: ' + importedPw + '\n- Objetos: ' + importedIt);
           } catch(err) {
             alert('Error al leer el archivo JSON.');
           }
@@ -2796,11 +3223,41 @@
         ]);
       });
 
-      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = 'Clicker_Chickens_Gen2_Bocetos_Sheets_' + new Date().toISOString().slice(0, 10) + '.csv';
+      a.click();
+    }
+
+    function exportZonesCSV() {
+      if (customZones.length === 0) {
+        alert('No hay zonas de Gen 2 para exportar.');
+        return;
+      }
+      const headers = ["ID", "Nombre Zona", "Nivel Min", "Nivel Max", "Precio Viaje (Semillas)", "Bioma", "Jefe de Zona", "Pool de Pollos", "Descripcion"];
+      const rows = [headers];
+      customZones.forEach(z => {
+        const boss = z.combat_pool?.find(p => p.is_boss);
+        const poolNames = (z.combat_pool || []).map(p => p.name).join('; ');
+        rows.push([
+          z.id,
+          z.name,
+          z.level_min,
+          z.level_max,
+          z.travel_price,
+          z.biome,
+          boss ? boss.name : "Ninguno",
+          poolNames,
+          z.description || ""
+        ]);
+      });
+      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Clicker_Chickens_Gen2_Zonas_' + new Date().toISOString().slice(0, 10) + '.csv';
       a.click();
     }
 
@@ -2814,7 +3271,7 @@
       customPowers.forEach(pw => {
         rows.push([pw.id, pw.name, pw.type, pw.cost, pw.theme, pw.description, pw.notes || ""]);
       });
-      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -2832,7 +3289,7 @@
       customItems.forEach(it => {
         rows.push([it.id, it.icon, it.name, it.type, it.price, it.trigger, it.zone || "", it.description]);
       });
-      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -2843,7 +3300,7 @@
     // Modal Gen 1 Grid
     function renderGen1Grid(pickSpriteMode = false) {
       const container = document.getElementById('gen1-grid');
-      const searchVal = (document.getElementById('gen1-search').value || '').toLowerCase().trim();
+      const searchVal = (document.getElementById('gen1-search')?.value || '').toLowerCase().trim();
       container.innerHTML = '';
       if (!WIKI.chickens) return;
 

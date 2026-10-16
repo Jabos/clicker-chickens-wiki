@@ -6,6 +6,7 @@
   <title>Taller Creativo Gen 2 & Roster - Clicker Chickens</title>
   <link rel="icon" type="image/png" href="images/chickens/0.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <style>
     :root {
       --bg: #0f172a;
@@ -89,8 +90,8 @@
           <input type="file" id="file-import-all-json" accept=".json" class="hidden">
         </label>
         <div class="h-6 w-px bg-[var(--border)] mx-1"></div>
-        <button id="btn-export-csv" title="Descargar en CSV para Google Sheets" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold transition">
-          📊 Exportar Sheets
+        <button id="btn-sync-google-sheets" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition" title="Sincronizar todo el juego con tu Google Calc">
+          <span>📊</span> Guardar en Google Calc
         </button>
         <button id="btn-theme" class="p-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs transition" title="Cambiar Tema">
           🌙
@@ -1193,6 +1194,198 @@
     </div>
   </div>
 
+
+  <!-- MODAL: GOOGLE CALC / SHEETS SYNC -->
+  <div id="modal-google-sync" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+      <!-- Modal Header -->
+      <div class="p-4 border-b border-[var(--border)] flex items-center justify-between bg-[var(--bg)]">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">📊</span>
+          <div>
+            <h3 class="font-bold text-base text-[var(--text)] flex items-center gap-2">
+              Sincronizador con Google Calc
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">ONLINE & EN VIVO</span>
+            </h3>
+            <p class="text-xs text-[var(--text-muted)]">Guarda bocetos, zonas, pools, objetos, poderes, pasivas y estados alterados en tu hoja de cálculo</p>
+          </div>
+        </div>
+        <button id="btn-close-google-sync" class="text-[var(--text-muted)] hover:text-[var(--text)] text-lg p-1">✕</button>
+      </div>
+
+      <!-- Quick Link to Spreadsheet Banner -->
+      <div class="px-5 py-3 bg-gradient-to-r from-emerald-950/40 via-blue-950/40 to-purple-950/40 border-b border-[var(--border)] flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-base">📑</span>
+          <span class="text-[var(--text-muted)]">Hoja vinculada: <strong class="text-[var(--text)]">Clicker Chickens - Pollopedia</strong></span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/19W6cFPa82-3iyPvCw1lck6OUyjjGylRK/edit?usp=sharing&ouid=115821842929209364014&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-1.5 transition shadow">
+          <span>🌐</span> Abrir Google Calc en nueva pestaña ↗️
+        </a>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-5 overflow-y-auto space-y-6 text-xs flex-1">
+
+        <!-- SECCIÓN 1: SINCRONIZACIÓN AUTOMÁTICA EN LA NUBE (WEBHOOK) -->
+        <div class="p-4 rounded-xl bg-[var(--bg)] border border-emerald-500/40 shadow-sm space-y-3">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h4 class="font-bold text-sm text-emerald-400 flex items-center gap-1.5">
+                <span>🚀</span> Método 1: Guardado Automático en 1 Clic (Nube)
+              </h4>
+              <p class="text-[var(--text-muted)] text-[11px] mt-0.5">
+                Envía al instante todos los datos actualizados a las 7 pestañas de tu Google Calc sin tener que copiar ni pegar nada.
+              </p>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 font-mono">RECOMENDADO</span>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-[11px] font-semibold text-[var(--text-muted)]">URL de tu Web App de Google Apps Script:</label>
+            <div class="flex gap-2">
+              <input type="url" id="input-sheets-webhook" placeholder="https://script.google.com/macros/s/.../exec" class="flex-1 px-3 py-2 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--text)] font-mono text-xs focus:outline-none focus:border-emerald-500 transition">
+              <button id="btn-save-webhook-url" class="px-3 py-2 rounded-xl bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] font-semibold text-xs transition">
+                Guardar URL
+              </button>
+            </div>
+            <p class="text-[10px] text-[var(--text-muted)]">Se almacena únicamente en tu navegador para que no tengas que volver a escribirla.</p>
+          </div>
+
+          <div class="flex items-center gap-3 pt-1">
+            <button id="btn-trigger-cloud-sync" class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition">
+              <span id="cloud-sync-spinner" class="hidden animate-spin">⏳</span>
+              <span>⚡</span> <span id="cloud-sync-btn-text">Guardar Todo en mi Google Calc Ahora</span>
+            </button>
+          </div>
+
+          <div id="cloud-sync-feedback" class="hidden p-3 rounded-lg text-xs font-medium"></div>
+
+          <!-- Instrucciones Desplegables de Apps Script -->
+          <details class="pt-2 text-[11px] text-[var(--text-muted)] border-t border-[var(--border)]/60">
+            <summary class="cursor-pointer font-bold text-amber-400 hover:underline flex items-center gap-1 select-none">
+              <span>📖</span> ¿Cómo conectar tu Google Calc en 30 segundos? (Instrucciones sencillas)
+            </summary>
+            <div class="mt-2.5 p-3 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2 text-[11px] text-[var(--text)]">
+              <ol class="list-decimal pl-4 space-y-1.5 text-[var(--text-muted)]">
+                <li>Abre tu <a href="https://docs.google.com/spreadsheets/d/19W6cFPa82-3iyPvCw1lck6OUyjjGylRK/edit" target="_blank" class="text-blue-400 underline font-bold">Google Calc</a>.</li>
+                <li>En el menú superior, ve a <strong>Extensiones ➔ Apps Script</strong>.</li>
+                <li>Borra el código que aparezca y pega el siguiente script (haz clic en el botón de abajo para copiarlo con 1 clic).</li>
+                <li>Haz clic en <strong>Implementar ➔ Nueva implementación</strong> (arriba a la derecha).</li>
+                <li>En el icono de engranaje (⚙️), selecciona tipo: <strong>Aplicación web</strong>.</li>
+                <li>En <em>"Quién tiene acceso"</em> (Who has access), selecciona: <strong>Cualquier usuario</strong> (Anyone).</li>
+                <li>Haz clic en <strong>Implementar</strong>, copia la <strong>URL de la aplicación web</strong> generada y pégala en el campo de arriba.</li>
+              </ol>
+
+              <div class="pt-2 flex items-center justify-between">
+                <span class="text-[10px] text-[var(--text-muted)] font-mono">Código Apps Script listo para usar:</span>
+                <button id="btn-copy-gas-code" class="px-2.5 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1 shadow transition">
+                  📋 Copiar Código del Script
+                </button>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- SECCIÓN 2: COPIADO RÁPIDO AL PORTAPAPELES (TABLAS TSV) -->
+        <div class="p-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] space-y-3">
+          <div>
+            <h4 class="font-bold text-sm text-blue-400 flex items-center gap-1.5">
+              <span>📋</span> Método 2: Copiado Rápido al Portapapeles (Pegar con Ctrl+V)
+            </h4>
+            <p class="text-[var(--text-muted)] text-[11px] mt-0.5">
+              Copia cualquier tabla completa en formato de hoja de cálculo. Al presionar Ctrl+V en tu Google Calc, se pegarán todas las celdas automáticamente.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-amber-500 hover:text-amber-400 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2" data-table="gen2_sketches">
+              <span>✏️</span>
+              <div class="truncate">
+                <span class="block font-bold">Bocetos Gen 2</span>
+                <span class="text-[10px] text-[var(--text-muted)]">19 columnas</span>
+              </div>
+            </button>
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-emerald-500 hover:text-emerald-400 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2" data-table="zones_pools">
+              <span>🗺️</span>
+              <div class="truncate">
+                <span class="block font-bold">Zonas & Pools</span>
+                <span class="text-[10px] text-[var(--text-muted)]">Gen 1 + Gen 2</span>
+              </div>
+            </button>
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-blue-500 hover:text-blue-400 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2" data-table="gen1_chickens">
+              <span>🐔</span>
+              <div class="truncate">
+                <span class="block font-bold">Pollos Gen 1</span>
+                <span class="text-[10px] text-[var(--text-muted)]">151 especies</span>
+              </div>
+            </button>
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-purple-500 hover:text-purple-400 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2" data-table="items">
+              <span>🎒</span>
+              <div class="truncate">
+                <span class="block font-bold">Objetos & Items</span>
+                <span class="text-[10px] text-[var(--text-muted)]">75 Oficiales + G2</span>
+              </div>
+            </button>
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-purple-500 hover:text-purple-400 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2" data-table="powers">
+              <span>⚡</span>
+              <div class="truncate">
+                <span class="block font-bold">Poderes</span>
+                <span class="text-[10px] text-[var(--text-muted)]">52 Oficiales + G2</span>
+              </div>
+            </button>
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-gray-400 hover:text-gray-200 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2" data-table="passives">
+              <span>🛡️</span>
+              <div class="truncate">
+                <span class="block font-bold">Pasivas</span>
+                <span class="text-[10px] text-[var(--text-muted)]">151 habilidades</span>
+              </div>
+            </button>
+            <button class="btn-copy-table px-3 py-2 rounded-xl bg-[var(--card)] hover:border-rose-500 hover:text-rose-400 border border-[var(--border)] font-semibold text-xs text-left transition flex items-center gap-2 col-span-2 sm:col-span-3" data-table="states">
+              <span>💫</span>
+              <div class="truncate">
+                <span class="block font-bold">Estados Alterados & Mecánicas del Juego</span>
+                <span class="text-[10px] text-[var(--text-muted)]">Veneno, Quemadura, Congelamiento, Parálisis, Maldición, Silenciado, Infectado con fórmulas reales</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 3: DESCARGA DIRECTA DE ARCHIVO EXCEL (.XLSX) -->
+        <div class="p-4 rounded-xl bg-[var(--bg)] border border-[var(--border)] space-y-3">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h4 class="font-bold text-sm text-purple-400 flex items-center gap-1.5">
+                <span>📁</span> Método 3: Descargar Archivo Excel (.xlsx) con las 7 Hojas
+              </h4>
+              <p class="text-[var(--text-muted)] text-[11px] mt-0.5">
+                Genera el archivo completo con todas las pestañas nombradas listo para abrir en Excel o subir a Google Drive.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 pt-1">
+            <button id="btn-download-full-xlsx" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs flex items-center gap-2 shadow transition">
+              <span>📥</span> Descargar "Clicker Chickens - Pollopedia.xlsx"
+            </button>
+            <button id="btn-download-active-csv" class="px-3 py-2 rounded-xl bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+              <span>📊</span> Descargar Bocetos (CSV)
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-3 border-t border-[var(--border)] bg-[var(--bg)] flex items-center justify-between text-xs text-[var(--text-muted)]">
+        <span class="font-mono">Clicker Chickens Dev Studio · Sincronizador v2.0</span>
+        <button id="btn-close-google-sync-bottom" class="px-4 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] font-semibold text-xs border border-[var(--border)] transition">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- LOAD WIKI DATA -->
   <script src="data.js"></script>
   <script src="docs/data.js"></script>
@@ -1428,6 +1621,7 @@
       buildRadarGrid();
       loadSketch(currentSketch);
       updateAllCounts();
+      initGoogleSyncEngine();
 
       // Render other tabs
       renderRosterView();
@@ -2913,6 +3107,459 @@
     // ==========================================
     // EVENT LISTENERS SETUP
     // ==========================================
+
+    // ==========================================
+    // GOOGLE CALC & POLLOPEDIA SYNCHRONIZER
+    // ==========================================
+    const GOOGLE_APPS_SCRIPT_TEMPLATE = `// SCRIPT DE SINCRONIZACIÓN AUTOMÁTICA PARA CLICKER CHICKENS POLLOPEDIA
+// =====================================================================
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    function writeSheet(sheetName, headers, rows, headerBg) {
+      let sheet = ss.getSheetByName(sheetName);
+      if (!sheet) {
+        sheet = ss.insertSheet(sheetName);
+      }
+      sheet.clear();
+      
+      const allRows = [headers, ...rows];
+      if (allRows.length > 0 && headers.length > 0) {
+        const range = sheet.getRange(1, 1, allRows.length, headers.length);
+        range.setValues(allRows);
+        
+        const headerRange = sheet.getRange(1, 1, 1, headers.length);
+        headerRange.setBackground(headerBg || "#1e293b");
+        headerRange.setFontColor("#ffffff");
+        headerRange.setFontWeight("bold");
+        sheet.setFrozenRows(1);
+        try { sheet.autoResizeColumns(1, headers.length); } catch(e) {}
+      }
+    }
+
+    if (data.gen2_sketches) writeSheet("Gen 2 - Bocetos y Diseño", data.gen2_sketches.headers, data.gen2_sketches.rows, "#d97706");
+    if (data.zones_pools) writeSheet("Zonas y Pools", data.zones_pools.headers, data.zones_pools.rows, "#059669");
+    if (data.gen1_chickens) writeSheet("Gen 1 - Actualizada", data.gen1_chickens.headers, data.gen1_chickens.rows, "#2563eb");
+    if (data.items) writeSheet("Objetos e Items", data.items.headers, data.items.rows, "#7c3aed");
+    if (data.powers) writeSheet("Poderes y Habilidades", data.powers.headers, data.powers.rows, "#9333ea");
+    if (data.passives) writeSheet("Pasivas", data.passives.headers, data.passives.rows, "#4b5563");
+    if (data.states) writeSheet("Estados Alterados", data.states.headers, data.states.rows, "#dc2626");
+
+    return ContentService.createTextOutput(JSON.stringify({ status: "success", message: "¡Google Calc sincronizado con éxito!" }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet(e) {
+  return ContentService.createTextOutput(JSON.stringify({ status: "online", message: "Webhook de Clicker Chickens Pollopedia listo para recibir sincronizaciones." }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+`;
+
+    function buildFullPollopediaData() {
+      // 1. Gen 2 Sketches
+      const gen2Headers = ["# ID", "Nombre Propuesto", "Rol Táctico", "Concepto / Lore", "Pasiva Propuesta", "Poder Activo Propuesto", "Coste Energía (🔋)", "Poder Oculto Sugerido", "Vida (HP)", "Daño (ATK)", "Armadura (DEF)", "Velocidad (SPD)", "Poder Base (PWR)", "Total Stats", "Balance (180-240)", "Objeto Inicial", "Zona / Origen Sugerido", "Estado del Diseño", "Notas y Sinergias 2vs2"];
+      const listSketches = (savedSketches && savedSketches.length > 0) ? savedSketches : [currentSketch];
+      const gen2Rows = listSketches.map(sk => {
+        const s = sk.stats || { life: 40, damage: 40, armor: 40, speed: 40, power_amount: 40 };
+        const sum = (s.life || 0) + (s.damage || 0) + (s.armor || 0) + (s.speed || 0) + (s.power_amount || 0);
+        let bal = "✅ Balanceado";
+        if (sum < 185) bal = "⚠️ Por debajo (<190)";
+        else if (sum > 215) bal = "⚠️ Excedido (>210)";
+        
+        let hpName = "-";
+        if (typeof sk.hidden_power_id === 'string' && sk.hidden_power_id.startsWith('custom_')) {
+          const found = customPowers.find(p => p.id === sk.hidden_power_id.replace('custom_', ''));
+          if (found) hpName = "[Gen 2] " + found.name;
+        } else if (WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
+          const pw = WIKI.powers[sk.hidden_power_id];
+          hpName = pw.description && (pw.description.es || pw.description);
+        }
+
+        let itName = "-";
+        if (typeof sk.default_item_id === 'string' && sk.default_item_id.startsWith('custom_')) {
+          const found = customItems.find(it => it.id === sk.default_item_id.replace('custom_', ''));
+          if (found) itName = (found.icon || '🎒') + ' ' + found.name;
+        } else if (WIKI.items && sk.default_item_id >= 0 && WIKI.items[sk.default_item_id]) {
+          const it = WIKI.items[sk.default_item_id];
+          itName = it.name && (it.name.es || it.name);
+        }
+
+        const diag = diagnoseArchetype(sk);
+
+        return [
+          sk.id || 151,
+          sk.name || "Sin Nombre",
+          diag.archetype || "Equilibrado",
+          sk.concept || "",
+          sk.passive || "-",
+          sk.active_power || "-",
+          sk.power_max || 100,
+          hpName,
+          s.life || 0,
+          s.damage || 0,
+          s.armor || 0,
+          s.speed || 0,
+          s.power_amount || 0,
+          sum,
+          bal,
+          itName,
+          sk.zone || "Gen 2",
+          sk.status || "Boceto",
+          diag.roleDuo || "Compatible con formato 2vs2"
+        ];
+      });
+
+      // 2. Gen 1 Official Chickens
+      const gen1Headers = ["#", "Nombre", "Rol Táctico", "Pasiva", "Poder Activo", "Poder Oculto", "Vida (HP)", "Daño (ATK)", "Armadura (DEF)", "Velocidad (SPD)", "Poder Base (PWR)", "Poder Máx", "Total Stats", "Objeto Inicial", "Hábitat / Origen", "Hecho"];
+      const gen1Rows = (WIKI.chickens || []).map((c, idx) => {
+        const s = c.stats || {};
+        const sum = (s.life || 0) + (s.damage || 0) + (s.armor || 0) + (s.speed || 0) + (s.power_amount || 0);
+        const p = WIKI.passives && WIKI.passives[c.passive_id];
+        const pDesc = p ? (p.description.es || p.description) : "-";
+        const pw = WIKI.powers && WIKI.powers[c.power_id];
+        const pwDesc = pw ? (pw.description.es || pw.description) : "-";
+        const hp = WIKI.powers && WIKI.powers[c.hidden_power_id];
+        const hpDesc = hp ? (hp.description.es || hp.description) : "-";
+        const it = WIKI.items && WIKI.items[c.default_item_id];
+        const itName = it ? (it.name && (it.name.es || it.name)) : "-";
+        const cName = c.name && (c.name.es || c.name);
+        const diag = diagnoseArchetype(c);
+
+        return [
+          idx,
+          cName,
+          diag.archetype || "Oficial",
+          pDesc,
+          pwDesc,
+          hpDesc,
+          s.life || 0,
+          s.damage || 0,
+          s.armor || 0,
+          s.speed || 0,
+          s.power_amount || 0,
+          c.power_max || 100,
+          sum,
+          itName,
+          c.zone || "Gen 1",
+          "Sí"
+        ];
+      });
+
+      // 3. Zonas & Pools
+      const zonesHeaders = ["ID / Nº", "Nombre de la Zona", "Generación", "Rango de Niveles", "Nivel Mín", "Nivel Máx", "Precio Viaje (🌰 Granos)", "Bioma / Descripción", "Jefe de Zona (👑 Boss)", "Pool de Combate (Pollos)", "Total Especies en Pool"];
+      const zonesRows = [];
+      
+      (WIKI.zones || []).forEach((z, idx) => {
+        const zName = (z.name && (z.name.es || z.name)) || ('Zona ' + (idx + 1));
+        const pool = z.combat_pool || [];
+        const lvlMin = (z.level_range && z.level_range[0]) || 1;
+        const lvlMax = (z.level_range && z.level_range[1]) || 10;
+        const poolNames = pool.map(cid => {
+          const c = WIKI.chickens && WIKI.chickens[cid];
+          return c ? (c.name && (c.name.es || c.name)) : ('#' + (cid + 1));
+        });
+        const bossName = poolNames.length > 0 ? poolNames[poolNames.length - 1] : "-";
+
+        zonesRows.push([
+          "Z" + (idx + 1),
+          zName,
+          "Gen 1 (Oficial)",
+          "Nv. " + lvlMin + " - " + lvlMax,
+          lvlMin,
+          lvlMax,
+          z.travel_price || 0,
+          "Hábitat oficial del juego",
+          bossName,
+          poolNames.join(", "),
+          poolNames.length
+        ]);
+      });
+
+      customZones.forEach((z, idx) => {
+        const boss = z.combat_pool && z.combat_pool.find(p => p.is_boss);
+        const poolNames = (z.combat_pool || []).map(p => p.name + (p.is_boss ? " (👑 Boss)" : ""));
+        zonesRows.push([
+          "Z-G2_" + (idx + 1),
+          z.name,
+          "Gen 2 (Nueva)",
+          "Nv. " + z.level_min + " - " + z.level_max,
+          z.level_min,
+          z.level_max,
+          z.travel_price || 0,
+          (z.biome ? "[" + z.biome + "] " : "") + (z.description || ""),
+          boss ? boss.name : "-",
+          poolNames.join(", "),
+          poolNames.length
+        ]);
+      });
+
+      // 4. Objetos e Items
+      const itemsHeaders = ["ID", "Icono", "Nombre", "Generación", "Tipo", "Precio Tienda (🪙)", "Zona / Obtención", "Descripción y Efecto Oficial"];
+      const itemsRows = [];
+      (WIKI.items || []).forEach((it, idx) => {
+        const itName = it.name && (it.name.es || it.name);
+        const itDesc = it.description && (it.description.es || it.description);
+        itemsRows.push([
+          idx,
+          it.icon || "🎒",
+          itName,
+          "Gen 1 (Oficial)",
+          it.type || (idx < 25 ? "Equipable" : "Consumible"),
+          it.price || 0,
+          it.zone || "Tienda / Zonas Gen 1",
+          itDesc || "-"
+        ]);
+      });
+      customItems.forEach(it => {
+        itemsRows.push([
+          it.id,
+          it.icon || "🎒",
+          it.name,
+          "Gen 2 (Nuevo)",
+          it.type || "Equipable",
+          it.price || 0,
+          it.zone || "Taller Gen 2",
+          it.description || "-"
+        ]);
+      });
+
+      // 5. Poderes
+      const powersHeaders = ["ID", "Nombre / Efecto del Poder", "Tipo", "Coste Energía (Máx)", "Cantidad Pollos Oficiales", "Pollos con este Poder / Notas"];
+      const powersRows = [];
+      (WIKI.powers || []).forEach((pw, idx) => {
+        const desc = pw.description && (pw.description.es || pw.description);
+        const chickensWithPw = (WIKI.chickens || []).filter(c => c.power_id === idx || c.hidden_power_id === idx).map(c => c.name && (c.name.es || c.name));
+        powersRows.push([
+          idx,
+          desc || ("Poder #" + idx),
+          idx < 15 ? "Poder Activo" : "Poder Oculto",
+          pw.cost || 100,
+          chickensWithPw.length,
+          chickensWithPw.slice(0, 8).join(", ") + (chickensWithPw.length > 8 ? "..." : "")
+        ]);
+      });
+      customPowers.forEach(pw => {
+        powersRows.push([
+          pw.id,
+          pw.name,
+          "Gen 2 (Nuevo)",
+          pw.cost || 100,
+          0,
+          pw.description || pw.notes || "-"
+        ]);
+      });
+
+      // 6. Pasivas
+      const passivesHeaders = ["ID", "Efecto de la Pasiva (Español)", "Pollo Asignado (Gen 1)"];
+      const passivesRows = (WIKI.passives || []).map((p, idx) => {
+        const desc = p.description && (p.description.es || p.description);
+        const c = WIKI.chickens && WIKI.chickens[idx];
+        const cName = c ? (c.name && (c.name.es || c.name)) : ("Pollo #" + idx);
+        return [
+          idx,
+          desc || ("Pasiva #" + idx),
+          "#" + (idx + 1) + " " + cName
+        ];
+      });
+
+      // 7. Estados Alterados
+      const statesHeaders = ["ID", "Estado", "Nombre en Inglés", "Color / Icono", "Efecto Oficial (Español)", "Mecánica Real (Código del Juego)", "Sinergias Tácticas 2vs2"];
+      const statesRows = (WIKI.states || []).map(st => {
+        let sinergia = "";
+        if (st.name_es === "Veneno") sinergia = "Excelente contra tanques con mucha armadura; ignora la defensa reduciendo vida máxima.";
+        else if (st.name_es === "Quemadura") sinergia = "Castiga a DPS rápidos y de ataques múltiples. Reduce la vida al atacar o ser atacado.";
+        else if (st.name_es === "Congelamiento") sinergia = "Control total de turno. Anula la acción del rival mientras sufre daño pasivo.";
+        else if (st.name_es === "Parálisis") sinergia = "Debuff masivo (-50% Daño, SPD y DEF). Deja vulnerable a cualquier amenaza enemiga.";
+        else if (st.name_es === "Maldición") sinergia = "Counter absoluto de curanderos (Pastank, Candle, etc.). Convierte curación en daño.";
+        else if (st.name_es === "Silenciado") sinergia = "Evita que magos y nukers carguen o activen su habilidad especial de energía.";
+        else if (st.name_es === "Infectado") sinergia = "Drena vida del objetivo y cura a los enemigos al actuar. Muy destructivo.";
+
+        return [
+          st.id,
+          st.name_es || (st.name && st.name.es) || "",
+          st.name_en || (st.name && st.name.en) || "",
+          st.color || "",
+          st.desc_es || (st.description && st.description.es) || "",
+          st.desc_es || "",
+          sinergia
+        ];
+      });
+
+      return {
+        gen2_sketches: { headers: gen2Headers, rows: gen2Rows, name: "Bocetos Gen 2" },
+        zones_pools: { headers: zonesHeaders, rows: zonesRows, name: "Zonas y Pools" },
+        gen1_chickens: { headers: gen1Headers, rows: gen1Rows, name: "Pollos Gen 1" },
+        items: { headers: itemsHeaders, rows: itemsRows, name: "Objetos e Items" },
+        powers: { headers: powersHeaders, rows: powersRows, name: "Poderes y Habilidades" },
+        passives: { headers: passivesHeaders, rows: passivesRows, name: "Pasivas" },
+        states: { headers: statesHeaders, rows: statesRows, name: "Estados Alterados" }
+      };
+    }
+
+    function initGoogleSyncEngine() {
+      const modal = document.getElementById('modal-google-sync');
+      const btnOpen = document.getElementById('btn-sync-google-sheets');
+      const btnClose = document.getElementById('btn-close-google-sync');
+      const btnCloseBottom = document.getElementById('btn-close-google-sync-bottom');
+      const webhookInput = document.getElementById('input-sheets-webhook');
+      const btnSaveWebhook = document.getElementById('btn-save-webhook-url');
+      const btnTriggerSync = document.getElementById('btn-trigger-cloud-sync');
+      const feedback = document.getElementById('cloud-sync-feedback');
+      const btnCopyGas = document.getElementById('btn-copy-gas-code');
+      const btnDownloadXlsx = document.getElementById('btn-download-full-xlsx');
+      const btnDownloadCsv = document.getElementById('btn-download-active-csv');
+
+      if (!modal) return;
+
+      // Load saved webhook URL
+      const savedWebhook = localStorage.getItem('cc_google_sheets_webhook') || '';
+      if (webhookInput) webhookInput.value = savedWebhook;
+
+      // Open/Close
+      btnOpen?.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        if (feedback) feedback.classList.add('hidden');
+      });
+      btnClose?.addEventListener('click', () => modal.classList.add('hidden'));
+      btnCloseBottom?.addEventListener('click', () => modal.classList.add('hidden'));
+
+      // Save Webhook URL
+      btnSaveWebhook?.addEventListener('click', () => {
+        const val = (webhookInput?.value || '').trim();
+        localStorage.setItem('cc_google_sheets_webhook', val);
+        alert(val ? '✅ URL del Webhook guardada correctamente.' : 'ℹ️ URL limpiada.');
+      });
+
+      // Copy Apps Script Template
+      btnCopyGas?.addEventListener('click', () => {
+        navigator.clipboard.writeText(GOOGLE_APPS_SCRIPT_TEMPLATE).then(() => {
+          alert('📋 ¡Código de Apps Script copiado al portapapeles!\n\nPégalo en Extensiones ➔ Apps Script en tu Google Calc.');
+        }).catch(() => {
+          prompt('Copia este código para tu Google Apps Script:', GOOGLE_APPS_SCRIPT_TEMPLATE);
+        });
+      });
+
+      // Trigger Cloud Webhook Sync
+      btnTriggerSync?.addEventListener('click', async () => {
+        const url = (webhookInput?.value || localStorage.getItem('cc_google_sheets_webhook') || '').trim();
+        if (!url) {
+          alert('⚠️ Primero pega la URL de tu Web App de Google Apps Script en el campo de arriba.\n\nSi aún no la creaste, despliega la guía de abajo "¿Cómo conectar tu Google Calc en 30 segundos?".');
+          webhookInput?.focus();
+          return;
+        }
+
+        const spinner = document.getElementById('cloud-sync-spinner');
+        const btnText = document.getElementById('cloud-sync-btn-text');
+        if (spinner) spinner.classList.remove('hidden');
+        if (btnText) btnText.textContent = 'Sincronizando con Google Calc...';
+        if (feedback) feedback.classList.add('hidden');
+
+        const payload = buildFullPollopediaData();
+
+        try {
+          // Send request with no-cors or simple POST to handle Google Apps Script redirect cleanly
+          await fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (feedback) {
+            feedback.className = 'p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-semibold space-y-1 block';
+            feedback.innerHTML = '<strong>✅ ¡Datos enviados a tu Google Calc con éxito!</strong><br><span class="text-[11px] font-normal text-[var(--text-muted)]">Las 7 pestañas (Bocetos, Zonas, Pollos, Items, Poderes, Pasivas y Estados) se están actualizando.</span>';
+          }
+          alert('🚀 ¡Sincronización enviada con éxito a tu Google Calc!');
+        } catch (err) {
+          console.error("Sync error:", err);
+          if (feedback) {
+            feedback.className = 'p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 font-semibold block';
+            feedback.innerHTML = '<strong>❌ Error al conectar con el Webhook:</strong> ' + err.message;
+          }
+          alert('❌ Hubo un problema al conectar con el Webhook de Google Apps Script: ' + err.message);
+        } finally {
+          if (spinner) spinner.classList.add('hidden');
+          if (btnText) btnText.textContent = 'Guardar Todo en mi Google Calc Ahora';
+        }
+      });
+
+      // Quick Copy Table Buttons
+      document.querySelectorAll('.btn-copy-table').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tableKey = btn.getAttribute('data-table');
+          const payload = buildFullPollopediaData();
+          const tableData = payload[tableKey];
+          if (!tableData) return;
+
+          const tsv = [
+            tableData.headers.join('\t'),
+            ...tableData.rows.map(r => r.map(c => String(c ?? '').replace(/\t/g, ' ').replace(/\n/g, ' ')).join('\t'))
+          ].join('\n');
+
+          navigator.clipboard.writeText(tsv).then(() => {
+            alert('📋 ¡Tabla "' + tableData.name + '" copiada al portapapeles en formato Google Calc!\n\nVe a tu hoja en Google Calc y presiona Ctrl+V en la celda A1.');
+          }).catch(() => {
+            const ta = document.createElement('textarea');
+            ta.value = tsv;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            alert('📋 ¡Tabla "' + tableData.name + '" copiada al portapapeles! Presiona Ctrl+V en tu Google Calc.');
+          });
+        });
+      });
+
+      // Download Full .XLSX using SheetJS
+      btnDownloadXlsx?.addEventListener('click', () => {
+        if (typeof XLSX === 'undefined') {
+          alert('La librería SheetJS aún se está descargando desde el CDN. Intenta de nuevo en unos segundos.');
+          return;
+        }
+
+        const payload = buildFullPollopediaData();
+        const wb = XLSX.utils.book_new();
+
+        function addSheet(name, data) {
+          const aoa = [data.headers, ...data.rows];
+          const ws = XLSX.utils.aoa_to_sheet(aoa);
+          XLSX.utils.book_append_sheet(wb, ws, name);
+        }
+
+        addSheet("Gen 2 - Bocetos", payload.gen2_sketches);
+        addSheet("Zonas y Pools", payload.zones_pools);
+        addSheet("Gen 1 - Actualizada", payload.gen1_chickens);
+        addSheet("Objetos e Items", payload.items);
+        addSheet("Poderes y Habilidades", payload.powers);
+        addSheet("Pasivas", payload.passives);
+        addSheet("Estados Alterados", payload.states);
+
+        XLSX.writeFile(wb, "Clicker Chickens - Pollopedia.xlsx");
+      });
+
+      // Download Active CSV
+      btnDownloadCsv?.addEventListener('click', () => {
+        const payload = buildFullPollopediaData();
+        const data = payload.gen2_sketches;
+        const csvContent = "\uFEFF" + [data.headers, ...data.rows].map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Clicker_Chickens_Gen2_Bocetos_" + new Date().toISOString().slice(0, 10) + ".csv";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    }
+
     function setupEventListeners() {
       // Tab navigation buttons
       document.getElementById('tab-btn-builder').addEventListener('click', () => switchTab('builder'));

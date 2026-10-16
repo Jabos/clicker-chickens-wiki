@@ -90,7 +90,7 @@
           <input type="file" id="file-import-all-json" accept=".json" class="hidden">
         </label>
         <div class="h-6 w-px bg-[var(--border)] mx-1"></div>
-        <button id="btn-sync-google-sheets" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition" title="Sincronizar todo el juego con tu Google Calc">
+        <button id="btn-sync-google-sheets" onclick="openGoogleSyncModal()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Sincronizar todo el juego con tu Google Calc">
           <span>📊</span> Guardar en Google Calc
         </button>
         <button id="btn-theme" class="p-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs transition" title="Cambiar Tema">
@@ -1196,7 +1196,7 @@
 
 
   <!-- MODAL: GOOGLE CALC / SHEETS SYNC -->
-  <div id="modal-google-sync" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div id="modal-google-sync" onclick="if(event.target===this)closeGoogleSyncModal()" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
       <!-- Modal Header -->
       <div class="p-4 border-b border-[var(--border)] flex items-center justify-between bg-[var(--bg)]">
@@ -1210,7 +1210,7 @@
             <p class="text-xs text-[var(--text-muted)]">Guarda bocetos, zonas, pools, objetos, poderes, pasivas y estados alterados en tu hoja de cálculo</p>
           </div>
         </div>
-        <button id="btn-close-google-sync" class="text-[var(--text-muted)] hover:text-[var(--text)] text-lg p-1">✕</button>
+        <button id="btn-close-google-sync" onclick="closeGoogleSyncModal()" class="text-[var(--text-muted)] hover:text-[var(--text)] text-lg p-1 cursor-pointer">✕</button>
       </div>
 
       <!-- Quick Link to Spreadsheet Banner -->
@@ -1379,7 +1379,7 @@
       <!-- Modal Footer -->
       <div class="p-3 border-t border-[var(--border)] bg-[var(--bg)] flex items-center justify-between text-xs text-[var(--text-muted)]">
         <span class="font-mono">Clicker Chickens Dev Studio · Sincronizador v2.0</span>
-        <button id="btn-close-google-sync-bottom" class="px-4 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] font-semibold text-xs border border-[var(--border)] transition">
+        <button id="btn-close-google-sync-bottom" onclick="closeGoogleSyncModal()" class="px-4 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] font-semibold text-xs border border-[var(--border)] transition cursor-pointer">
           Cerrar
         </button>
       </div>
@@ -1392,7 +1392,16 @@
 
   <!-- APP ENGINE -->
   <script>
-    
+    // Global Modal Controllers
+    window.openGoogleSyncModal = function() {
+      const modal = document.getElementById('modal-google-sync');
+      if (modal) modal.style.display = 'flex';
+    };
+    window.closeGoogleSyncModal = function() {
+      const modal = document.getElementById('modal-google-sync');
+      if (modal) modal.style.display = 'none';
+    };
+
     // Exact relative path resolution that works in both wiki root and docs/
     function getSpriteUrl(path) {
       if (!path) return 'images/chickens/0.png';
@@ -3423,11 +3432,11 @@ function doGet(e) {
 
       // Open/Close
       btnOpen?.addEventListener('click', () => {
-        modal.classList.remove('hidden');
+        openGoogleSyncModal();
         if (feedback) feedback.classList.add('hidden');
       });
-      btnClose?.addEventListener('click', () => modal.classList.add('hidden'));
-      btnCloseBottom?.addEventListener('click', () => modal.classList.add('hidden'));
+      btnClose?.addEventListener('click', closeGoogleSyncModal);
+      btnCloseBottom?.addEventListener('click', closeGoogleSyncModal);
 
       // Save Webhook URL
       btnSaveWebhook?.addEventListener('click', () => {

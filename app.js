@@ -132,7 +132,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.121",
+      footerGen: "Generada directamente de los datos del juego v0.123",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero",
       navSecTools: "Herramientas y Combate",
@@ -353,7 +353,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.121",
+      footerGen: "Generated directly from game data v0.123",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style",
       navSecTools: "Tools & Combat",
@@ -574,7 +574,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.121",
+      footerGen: "Gerada diretamente dos dados do jogo v0.123",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve",
       navSecTools: "Ferramentas e Combate",
@@ -795,7 +795,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.121",
+      footerGen: "Сгенерировано напрямую из данных игры v0.123",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль",
       navSecTools: "Инструменты и Бой",
@@ -2019,46 +2019,46 @@
     lang = lang || currentLang || 'es';
     const tips = {
       0: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Curado por <em>Gota milagro (#48)</em> o <em>Poción mágica (#35)</em>. Rufux y otros pollos ganan vida al golpear enemigos envenenados.",
-        en: "💡 <strong>Counters & Synergies:</strong> Cleansed by <em>Miracle Drop (#48)</em> or <em>Magic Potion (#35)</em>. Rufux and other chickens heal when attacking poisoned foes.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Curado por <em>Gota Milagrosa (#48)</em> ou <em>Poção Mágica (#35)</em>. Rufux e outros frangos recuperam vida ao atingir inimigos envenenados.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Снимается предметами <em>Чудо-капля (#48)</em> или <em>Волшебное зелье (#35)</em>. Rufux и другие восстанавливают здоровье при атаке отравленных врагов."
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Causa 10% de daño indirecto sobre la vida máxima al iniciar la acción. Curado por <em>Gota milagro (#48)</em> o <em>Poción mágica (#35)</em>. <strong>Inmunidad:</strong> <em>Coraza (#36)</em> es inmune a veneno y gana +5% de armadura al ser atacado por un rival envenenado. <strong>Sinergias:</strong> <em>Mucken (#116)</em> se cura un 5% de la vida máxima del rival al golpearlo si está envenenado; <em>Chick (#139)</em> y <em>Toxic (#148)</em> se curan el 20% y 33% del daño infligido a objetivos envenenados.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> Deals 10% max HP indirect damage when starting an action. Cleansed by <em>Miracle Drop (#48)</em> or <em>Magic Potion (#35)</em>. <strong>Immunity:</strong> <em>Coraza (#36)</em> is immune to poison and gains +5% armor when struck by a poisoned foe. <strong>Synergies:</strong> <em>Mucken (#116)</em> heals 5% of target's max HP when hitting a poisoned enemy; <em>Chick (#139)</em> and <em>Toxic (#148)</em> heal 20% and 33% of damage dealt against poisoned targets.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Causa 10% de dano da vida máxima ao iniciar a ação. Curado por <em>Gota Milagrosa (#48)</em> ou <em>Poção Mágica (#35)</em>. <strong>Imunidade:</strong> <em>Coraza (#36)</em> é imune a veneno e ganha +5% de armadura ao ser atacado por um rival envenenado. <strong>Sinergias:</strong> <em>Mucken (#116)</em> se cura em 5% da vida máxima do alvo ao atingir um inimigo envenenado; <em>Chick (#139)</em> e <em>Toxic (#148)</em> recuperam 20% e 33% do dano causado contra alvos envenenados.",
+        ru: "💡 <strong>Механика и синергии:</strong> Наносит 10% макс. ОЗ непрямого урона в начале действия. Снимается предметами <em>Чудо-капля (#48)</em> или <em>Волшебное зелье (#35)</em>. <strong>Иммунитет:</strong> <em>Coraza (#36)</em> имеет иммунитет к яду и получает +5% к броне при атаке отравленного врага. <strong>Синергии:</strong> <em>Mucken (#116)</em> исцеляет 5% макс. ОЗ цели при ударе по отравленному врагу; <em>Chick (#139)</em> и <em>Toxic (#148)</em> восстанавливают 20% и 33% от нанесенного урона."
       },
       1: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Se activa tanto al atacar como al recibir daño. Curado por <em>Flama burbujeante (#16)</em>. El objeto <em>Sanación ardiente (#11)</em> convierte el daño de quemadura en curación!",
-        en: "💡 <strong>Counters & Synergies:</strong> Triggers both when attacking and when struck. Cleansed by <em>Flame fizz (#16)</em>. Equipping <em>Sizzle heal (#11)</em> reverses burn damage into healing!",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Ativa ao atacar e ao receber dano. Curado por <em>Chama Efervescente (#16)</em>. O item <em>Cura Ardente (#11)</em> converte o dano de queimadura em cura!",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Срабатывает при атаке и получении урона. Снимается <em>Гаситель пламени (#16)</em>. Предмет <em>Жгучее лечение (#11)</em> превращает ожог в исцеление!"
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Causa daño indirecto equivalente al 25% del ataque base tanto al atacar como al recibir golpes. Curado por <em>Flama burbujeante (#16)</em> o <em>Poción mágica (#35)</em>. <strong>Inmunidad:</strong> <em>Magni (#44)</em> es inmune a quemadura y gana +10% de daño al intentar quemarlo. <em>Sanación ardiente (#11)</em> invierte el efecto convirtiendo el 25% de daño en curación. <strong>Sinergias:</strong> <em>Blade (#146)</em> se cura un 20% del daño y gana +20 de poder al golpear enemigos quemados; <em>Magni (#44)</em> gana +10% de daño contra rivales quemados.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> Deals damage equal to 25% of base ATK both when attacking and when struck. Cleansed by <em>Flame Fizz (#16)</em> or <em>Magic Potion (#35)</em>. <strong>Immunity:</strong> <em>Magni (#44)</em> is immune to burn and gains +10% damage when burn is attempted. <em>Sizzle Heal (#11)</em> reverses the burn damage into healing (+25%). <strong>Synergies:</strong> <em>Blade (#146)</em> heals 20% damage and gains +20 power when hitting burned foes; <em>Magni (#44)</em> gains +10% damage multiplier against burned targets.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Causa dano igual a 25% do ataque base ao atacar e ao receber golpes. Curado por <em>Chama Efervescente (#16)</em> ou <em>Poção Mágica (#35)</em>. <strong>Imunidade:</strong> <em>Magni (#44)</em> é imune a queimadura e ganha +10% de dano ao tentarem queimá-lo. <em>Cura Ardente (#11)</em> inverte o dano em cura (+25%). <strong>Sinergias:</strong> <em>Blade (#146)</em> recupera 20% do dano e ganha +20 de poder ao atingir queimados; <em>Magni (#44)</em> ganha +10% de dano contra queimados.",
+        ru: "💡 <strong>Механика и синергии:</strong> Наносит урон в размере 25% от базовой атаки при каждом ударе или получении урона. Снимается <em>Гаситель пламени (#16)</em> или <em>Волшебное зелье (#35)</em>. <strong>Иммунитет:</strong> <em>Magni (#44)</em> имеет иммунитет к ожогу и получает +10% урона при попытке поджога. <em>Жгучее лечение (#11)</em> превращает ожог в исцеление (+25%). <strong>Синергии:</strong> <em>Blade (#146)</em> восстанавливает 20% урона и дает +20 энергии при ударе по обожженным; <em>Magni (#44)</em> получает +10% урона против обожженных целей."
       },
       2: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide que el pollo actúe mientras está congelado. Curado por <em>Té caliente (#41)</em>. Ciertos pollos helados causan daño extra a objetivos congelados.",
-        en: "💡 <strong>Counters & Synergies:</strong> Prevents the frozen chicken from taking actions. Cleansed by <em>Hot Tea (#41)</em>. Attacking frozen targets can trigger critical bonus damage.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Impede ações enquanto congelado. Curado por <em>Chá Quente (#41)</em>. Ataques contra alvos congelados causam dano bônus.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Полностью блокирует действия цели. Снимается <em>Горячий чай (#41)</em>. Атаки по замороженным врагам могут наносить повышенный урон."
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Causa 2.5% de daño sobre la vida máxima y cancela por completo el turno del pollo mientras permanezca congelado (no acumulable). Curado por <em>Té caliente (#41)</em> (cura 100 de vida) o <em>Poción mágica (#35)</em>. <strong>Inmunidad:</strong> <em>Pingü (#31)</em> es totalmente inmune al congelamiento. <strong>Sinergias:</strong> <em>Chimir (#150)</em> gana +30% de daño multiplicador; <em>Cloudy (#107)</em> inflige 30% de daño extra y reduce 5% de armadura; <em>Hium (#149)</em> se cura un 20% del daño y cura a sus aliados; <em>Menta (#113)</em> recupera un 5% de vida del rival.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> Deals 2.5% max HP damage and completely skips the chicken's turn while frozen (cannot be re-frozen while already frozen). Cleansed by <em>Hot Tea (#41)</em> (also restores 100 HP) or <em>Magic Potion (#35)</em>. <strong>Immunity:</strong> <em>Pengu (#31)</em> is completely immune to freeze. <strong>Synergies:</strong> <em>Chimir (#150)</em> gains +30% damage multiplier; <em>Cloudy (#107)</em> deals 30% extra damage and strips 5% armor; <em>Hium (#149)</em> heals 20% of damage dealt to self and allies; <em>Menta (#113)</em> restores 5% of target's max HP.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Causa 2.5% de dano da vida máxima e pula totalmente o turno do frango enquanto congelado (não acumula). Curado por <em>Chá Quente (#41)</em> (cura 100 de vida) ou <em>Poção Mágica (#35)</em>. <strong>Imunidade:</strong> <em>Pingü (#31)</em> é totalmente imune ao congelamento. <strong>Sinergias:</strong> <em>Chimir (#150)</em> ganha +30% de dano multiplicador; <em>Cloudy (#107)</em> causa 30% de dano extra e reduz 5% de armadura; <em>Hium (#149)</em> cura 20% do dano para si e aliados; <em>Menta (#113)</em> recupera 5% da vida máxima do alvo.",
+        ru: "💡 <strong>Механика и синергии:</strong> Наносит 2.5% макс. ОЗ урона и полностью отменяет ход замороженной птицы (повторная заморозка не накладывается). Снимается <em>Горячий чай (#41)</em> (лечит 100 ОЗ) или <em>Волшебное зелье (#35)</em>. <strong>Иммунитет:</strong> <em>Pengu (#31)</em> полностью невосприимчив к заморозке. <strong>Синергии:</strong> <em>Chimir (#150)</em> получает +30% к урону; <em>Cloudy (#107)</em> наносит 30% доп. урона и срезает 5% брони; <em>Hium (#149)</em> исцеляет 20% урона себе и союзникам; <em>Menta (#113)</em> восстанавливает 5% макс. ОЗ цели."
       },
       3: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Reduce el daño, velocidad y armadura a la mitad (50%). Curado por <em>Reinicio Neural (#55)</em>. Ideal para incapacitar enemigos rápidos o con alta defensa.",
-        en: "💡 <strong>Counters & Synergies:</strong> Halves (50%) damage, speed, and armor. Cleansed by <em>Neural Reset (#55)</em>. Excellent for crippling high-speed or heavily armored foes.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Reduz dano, velocidade e armadura pela metade (50%). Curado por <em>Reinício Neural (#55)</em>. Excelente para neutralizar alvos velozes.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Снижает урон, скорость и броню вдвое (50%). Снимается <em>Нейроперезагрузка (#55)</em>. Идеально против быстрых и бронированных врагов."
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Reduce de forma directa a la mitad (50% / multiplicador x0.5) el daño infligido, la velocidad de movimiento y la mitigación de armadura de la criatura (no causa pérdida de turnos). Curado por <em>Reinicio neural (#55)</em> o <em>Poción mágica (#35)</em>. <strong>Inmunidad:</strong> <em>Jhonatan (#41)</em> es inmune a parálisis. <strong>Sinergias:</strong> <em>Rama (#142)</em> inflige 30% del daño en chispas al compañero del rival paralizado; el objeto <em>Enlace crítico (#70)</em> otorga +2% de daño multiplicador al atacar a un rival paralizado.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> Directly halves (50% / x0.5 multiplier) damage dealt, movement speed, and armor mitigation (does not cause turn loss). Cleansed by <em>Neural Reset (#55)</em> or <em>Magic Potion (#35)</em>. <strong>Immunity:</strong> <em>Jhonatan (#41)</em> is immune to paralysis. <strong>Synergies:</strong> <em>Rama (#142)</em> zaps the other enemy for 30% damage when striking a paralyzed foe; <em>Critical Link (#70)</em> item grants +2% damage multiplier when attacking paralyzed targets.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Reduz diretamente pela metade (50% / multiplicador x0.5) o dano causado, a velocidade de movimento e a mitigação de armadura (não faz perder turnos). Curado por <em>Reinício Neural (#55)</em> ou <em>Poção Mágica (#35)</em>. <strong>Imunidade:</strong> <em>Jhonatan (#41)</em> é imune a paralisia. <strong>Sinergias:</strong> <em>Rama (#142)</em> causa 30% de dano elétrico ao outro inimigo ao atingir um alvo paralisado; item <em>Enlace Crítico (#70)</em> concede +2% de dano contra paralisados.",
+        ru: "💡 <strong>Механика и синергии:</strong> Снижает вдвое (50% / множитель x0.5) наносимый урон, скорость передвижения и броню (не пропускает ходы). Снимается <em>Нейроперезагрузка (#55)</em> или <em>Волшебное зелье (#35)</em>. <strong>Иммунитет:</strong> <em>Jhonatan (#41)</em> имеет иммунитет к параличу. <strong>Синергии:</strong> <em>Rama (#142)</em> бьет током второго врага на 30% урона при ударе по парализованному; предмет <em>Критическая связь (#70)</em> дает +2% к урону по парализованным целям."
       },
       4: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Bloquea cualquier curación y causa 10% de daño si la criatura intenta curarse. Curado por <em>Poción mágica (#35)</em>. Letal contra equipos basados en pociones y regeneración.",
-        en: "💡 <strong>Counters & Synergies:</strong> Blocks all healing and inflicts 10% damage if the afflicted unit attempts to heal. Cleansed by <em>Magic Potion (#35)</em>.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Bloqueia qualquer cura e causa 10% de dano se a unidade tentar se curar. Curado por <em>Poção Mágica (#35)</em>.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Блокирует любое лечение и наносит 10% урона при попытке исцелиться. Снимается <em>Волшебное зелье (#35)</em>."
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Bloquea totalmente cualquier curación (muestra +0) e inflige daño indirecto equivalente al 10% de su vida máxima cada vez que la criatura intenta recibir curación. Curado por <em>Poción mágica (#35)</em>. <strong>Inmunidad:</strong> <em>Gatarlos (#47)</em> es totalmente inmune a maldición. <strong>Eficacia:</strong> Anula por completo estrategias basadas en curación de área, regeneración pasiva y pociones.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> Completely blocks all healing (+0) and inflicts 10% max HP indirect damage whenever the afflicted chicken attempts to heal. Cleansed by <em>Magic Potion (#35)</em>. <strong>Immunity:</strong> <em>Gatarlos (#47)</em> is completely immune to curse. <strong>Utility:</strong> Hard-counters sustain squads, heal-over-time items, and health regeneration potions.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Bloqueia totalmente qualquer cura (+0) e causa 10% de dano da vida máxima toda vez que a criatura tenta se curar. Curado por <em>Poção Mágica (#35)</em>. <strong>Imunidade:</strong> <em>Gatarlos (#47)</em> é totalmente imune a maldição. <strong>Utilidade:</strong> Anula completamente equipes baseadas em suporte de cura e poções de regeneração.",
+        ru: "💡 <strong>Механика и синергии:</strong> Полностью блокирует любое исцеление (+0) и наносит 10% макс. ОЗ непрямого урона каждый раз при попытке исцелиться. Снимается <em>Волшебное зелье (#35)</em>. <strong>Иммунитет:</strong> <em>Gatarlos (#47)</em> полностью невосприимчив к проклятию. <strong>Эффективность:</strong> Полностью контрит лекарей, зелья восстановления и лечение по времени."
       },
       5: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Impide acumular energía para desatar poderes especiales. Curado por <em>Gran pico (#18)</em>. Muy eficaz contra jefes con poderes devastadores.",
-        en: "💡 <strong>Counters & Synergies:</strong> Blocks charging power energy. Cleansed by <em>Big Beak (#18)</em>. Strong against boss encounters with devastating powers.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Impede o carregamento de energia para usar poderes especiais. Curado por <em>Grande Bico (#18)</em>.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Не дает накапливать энергию для применения способностей. Снимается <em>Большой клюв (#18)</em>."
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Impide que el pollo acumule carga de poder al terminar su acción, bloqueando la ejecución de su técnica o habilidad especial. Curado por <em>Gran pico (#18)</em> o <em>Poción mágica (#35)</em>. Muy eficaz contra rivales dependientes de poderes de alto impacto en batallas 2vs2.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> Prevents the chicken from charging power energy after taking an action, disabling its Special Power execution. Cleansed by <em>Big Beak (#18)</em> or <em>Magic Potion (#35)</em>. Extremely effective at shutting down chickens relying on game-changing powers.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Impede o frango de carregar energia de poder ao finalizar a ação, bloqueando o uso do poder especial. Curado por <em>Grande Bico (#18)</em> ou <em>Poção Mágica (#35)</em>. Muito eficaz contra rivais dependentes de habilidades de alto impacto.",
+        ru: "💡 <strong>Механика и синергии:</strong> Блокирует набор энергии способности в конце действия, не позволяя применить суперсилу. Снимается <em>Большой клюв (#18)</em> или <em>Волшебное зелье (#35)</em>. Очень эффективно нейтрализует противников, зависящих от мощных способностей."
       },
       6: {
-        es: "💡 <strong>Contramedidas e Interacciones:</strong> Causa daño al portador y al mismo tiempo cura a sus enemigos un 5% de su vida máxima al empezar una acción. Curado por <em>Medicina (#27)</em>.",
-        en: "💡 <strong>Counters & Synergies:</strong> Drains the victim's life and simultaneously heals the opposing team on each action. Cleansed by <em>Cure-All (#27)</em>.",
-        pt: "💡 <strong>Contramedidas e Sinergias:</strong> Drena a vida da vítima e cura a equipe adversária em 5% da vida máxima a cada ação. Curado por <em>Cura-Tudo (#27)</em>.",
-        ru: "💡 <strong>Противодействие и синергия:</strong> Истощает здоровье жертвы и лечит команду врага на 5% от макс. здоровья за каждое действие. Снимается <em>Панацея (#27)</em>."
+        es: "💡 <strong>Mecánica e Interacciones:</strong> Al iniciar su acción, el pollo infectado pierde un 5% de su vida máxima y cura a todos los rivales un 5% de su vida máxima. Curado por <em>Medicina (#27)</em> o <em>Poción mágica (#35)</em>. <strong>Sinergias:</strong> <em>Fingie (#120)</em> roba 10 de poder y contagia al otro rival; <em>Elfen (#147)</em> gana +25 de poder al golpear un infectado; <em>Ala pútrida (#63)</em> cura el 100% de vida faltante al derrotar a un infectado.",
+        en: "💡 <strong>Mechanics & Synergies:</strong> When starting an action, the infected chicken loses 5% max HP and heals all opposing enemies for 5% of its max HP. Cleansed by <em>Cure-All (#27)</em> or <em>Magic Potion (#35)</em>. <strong>Synergies:</strong> <em>Fingie (#120)</em> drains 10 power and spreads infection to the other enemy; <em>Elfen (#147)</em> gains +25 power when striking an infected foe; <em>Rotten Wing (#63)</em> fully restores missing HP on defeating an infected target.",
+        pt: "💡 <strong>Mecânica e Sinergias:</strong> Ao iniciar a ação, o frango infectado perde 5% da vida máxima e cura todos os inimigos em 5% da vida máxima. Curado por <em>Cura-Tudo (#27)</em> ou <em>Poção Mágica (#35)</em>. <strong>Sinergias:</strong> <em>Fingie (#120)</em> drena 10 de poder e contagia o outro rival; <em>Elfen (#147)</em> ganha +25 de poder ao golpear um infectado; <em>Asa Podre (#63)</em> recupera 100% da vida perdida ao derrotar um infectado.",
+        ru: "💡 <strong>Механика и синергии:</strong> При начале действия зараженная птица теряет 5% макс. ОЗ и лечит всех врагов на 5% от своего макс. ОЗ. Снимается <em>Панацея (#27)</em> или <em>Волшебное зелье (#35)</em>. <strong>Синергии:</strong> <em>Fingie (#120)</em> крадет 10 энергии и заражает второго врага; <em>Elfen (#147)</em> получает +25 энергии при ударе по зараженному; <em>Гнилое крыло (#63)</em> полностью восстанавливает недостающее здоровье при добивании зараженного."
       }
     };
     const tEntry = tips[stateId];
@@ -3693,9 +3693,20 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.121",
+        version: "v0.123",
         date: "Actual",
         badge: "Versión Actual",
+        highlights: [
+          "<strong>Salón de la Fama y Premios Mensuales del Coliseo:</strong> Nueva vitrina histórica que inmortaliza al Top 5 de cada temporada. Koila entrega recompensas exclusivas al finalizar el mes: pollos shiny únicos de podio para el Top 3 (Prisma Rango S, Cósmico Rango A, Magma Rango B) y semillas para los puestos 4 y 5.",
+          "<strong>Shaders Shiny Renovados:</strong> Rediseño completo de la iluminación y coloreado de pollos shiny con gradientes dinámicos armónicos, sin saltos abruptos de color ni ruido en sombras, mejorando drásticamente la visibilidad de los 10 shinies clásicos.",
+          "<strong>Corrección Integral de Estados Alterados:</strong> Auditoría exhaustiva basada al 100% en el código fuente del juego. Eliminación de datos inexactos sobre estados y sinergias (como la errónea mención a Rufux) y documentación exacta de contramedidas, pasivas e inmunidades (Coraza, Magni, Pingü, Jhonatan, Gatarlos, etc.).",
+          "<strong>Mejoras en Coliseo y Navegación:</strong> Hitboxes perfectamente alineadas para la inspección de pollos del ranking, paginación suave en el historial de combates y optimizaciones generales."
+        ]
+      },
+      {
+        version: "v0.121",
+        date: "Reciente",
+        badge: "Reciente",
         highlights: [
           "<strong>Ascensor y Checkpoints en Modo Infinito:</strong> Nuevo sistema de ascensor con puntos de control cada 25 pisos (pisos 26, 51, 76, 101...). Empezar desde el piso 1 es gratuito y los pisos avanzados tienen coste en semillas. Soporte para mantener presionado en las flechas de navegación del ascensor.",
           "<strong>Jefes Abisales y Rebalanceo del Infinito:</strong> Expansión masiva de pools de jefes temáticos cada 10 pisos y combinaciones abisales cruzadas a partir del piso 110 con escalado infinito abisal (+3.5% por piso). Garra fue removido de los jefes del infinito para preservar su estatus de recompensa suprema del Torneo Arcano.",

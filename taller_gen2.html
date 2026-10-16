@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taller de Diseño Gen 2 - Clicker Chickens</title>
+  <title>Taller Creativo Gen 2 & Roster - Clicker Chickens</title>
   <link rel="icon" type="image/png" href="images/chickens/0.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -57,7 +57,7 @@
 <body class="min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
 
   <!-- TOP NAVBAR -->
-  <header class="sticky top-0 z-40 bg-[var(--card)]/90 backdrop-blur border-b border-[var(--border)] px-4 py-3">
+  <header class="sticky top-0 z-40 bg-[var(--card)]/95 backdrop-blur border-b border-[var(--border)] px-4 py-3 shadow-md">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <!-- Brand -->
       <div class="flex items-center gap-3">
@@ -69,24 +69,25 @@
             Taller Creativo Gen 2
             <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">DEV STUDIO</span>
           </h1>
-          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseñador de Pollos, Calculadora de Balance & Detector de Arquetipos</p>
+          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseñador de Pollos, Roster General, Armador de Poderes & Armador de Objetos</p>
         </div>
       </div>
 
       <!-- Action buttons -->
       <div class="flex items-center gap-2 flex-wrap">
-        <button id="btn-new" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1.5 shadow transition">
-          <span>✨</span> Nuevo Boceto
+        <button id="btn-new" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1.5 shadow transition" title="Crear un nuevo boceto vacío">
+          <span>✨</span> Nuevo Pollo
         </button>
-        <button id="btn-save" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition">
-          <span>💾</span> Guardar Boceto
+        <button id="btn-save" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition" title="Guardar cambios del boceto actual">
+          <span>💾</span> Guardar Pollo
         </button>
-        <button id="btn-my-sketches" class="px-3 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
-          <span>📁</span> Mis Bocetos <span id="sketches-count-badge" class="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-400 font-mono text-[10px]">0</span>
+        <button id="btn-backup-all-json" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold flex items-center gap-1.5 transition" title="Descargar copia de seguridad completa (Pollos + Poderes + Objetos)">
+          <span>💾</span> Respaldar JSON
         </button>
-        <button id="btn-browse-gen1" class="px-3 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
-          <span>🐔</span> Ver Gen 1 (151)
-        </button>
+        <label class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer" title="Restaurar copia de seguridad">
+          <span>📥</span> Importar JSON
+          <input type="file" id="file-import-all-json" accept=".json" class="hidden">
+        </label>
         <div class="h-6 w-px bg-[var(--border)] mx-1"></div>
         <button id="btn-export-csv" title="Descargar en CSV para Google Sheets" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold transition">
           📊 Exportar Sheets
@@ -101,8 +102,43 @@
     </div>
   </header>
 
-  <!-- MAIN WORKSPACE -->
-  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+  <!-- SUB-HEADER / TAB NAVIGATION -->
+  <nav class="bg-[var(--card)]/60 border-b border-[var(--border)] px-4 py-2 sticky top-[61px] z-30 backdrop-blur">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 overflow-x-auto">
+      <div class="flex items-center gap-1.5 min-w-max">
+        <button id="tab-btn-builder" class="nav-tab px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-2 transition bg-amber-500 text-black shadow-sm">
+          <span>🎨</span> Taller de Pollos
+        </button>
+        <button id="tab-btn-roster" class="nav-tab px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-2 transition text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--card)]">
+          <span>📋</span> Lista Roster (Gen 1 & Bocetos)
+          <span id="tab-badge-sketches" class="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-400 font-mono text-[10px]">0</span>
+        </button>
+        <button id="tab-btn-powers" class="nav-tab px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-2 transition text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--card)]">
+          <span>✨</span> Armador de Poderes
+          <span id="tab-badge-powers" class="px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-300 font-mono text-[10px]">0</span>
+        </button>
+        <button id="tab-btn-items" class="nav-tab px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-2 transition text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--card)]">
+          <span>🎒</span> Armador de Objetos
+          <span id="tab-badge-items" class="px-1.5 py-0.2 rounded-full bg-blue-500/20 text-blue-300 font-mono text-[10px]">0</span>
+        </button>
+      </div>
+
+      <!-- Quick status indicator -->
+      <div class="hidden md:flex items-center gap-3 text-[11px] font-mono text-[var(--text-muted)]">
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Base Gen 1: <strong>151 Pollos</strong></span>
+        </span>
+        <span class="text-[var(--border)]">|</span>
+        <span id="quick-status-summary">0 Bocetos · 0 Poderes · 0 Objetos</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================= -->
+  <!-- TAB 1: WORKSPACE / TALLER DE POLLOS -->
+  <!-- ========================================================================= -->
+  <main id="view-builder" class="view-tab-content flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
 
     <!-- LEFT COLUMN: BUILDER & CONTROLS (7 Cols) -->
     <div class="lg:col-span-7 space-y-6">
@@ -353,9 +389,12 @@
 
       <!-- 4. HABILIDADES, PODERES & OBJETO -->
       <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
-        <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400 border-b border-[var(--border)] pb-3">
-          <span>⚡</span> Habilidades & Poderes de Combate
-        </h2>
+        <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+          <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
+            <span>⚡</span> Habilidades & Poderes de Combate
+          </h2>
+          <span class="text-[10px] text-[var(--text-muted)]">Soporta Poderes y Objetos creados en el Taller</span>
+        </div>
 
         <div class="space-y-4 text-xs">
           <!-- Habilidad Pasiva -->
@@ -377,8 +416,8 @@
               <label class="font-bold text-[var(--text)] flex items-center gap-1.5">
                 <span>🔥</span> Poder Activo Principal
               </label>
-              <select id="preset-power-select" class="text-[11px] bg-[var(--bg)] text-[var(--text-muted)] border border-[var(--border)] rounded px-2 py-0.5 max-w-[200px] truncate">
-                <option value="">-- Cargar de Gen 1 --</option>
+              <select id="preset-power-select" class="text-[11px] bg-[var(--bg)] text-[var(--text-muted)] border border-[var(--border)] rounded px-2 py-0.5 max-w-[220px] truncate">
+                <option value="">-- Seleccionar Poder --</option>
               </select>
             </div>
             <input type="text" id="input-active-power" value="Ataque doble" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
@@ -390,7 +429,7 @@
               <label class="font-bold text-[var(--text)] flex items-center gap-1.5 text-purple-400">
                 <span>🔮</span> Poder Oculto Asignado
               </label>
-              <span class="text-[10px] text-[var(--text-muted)]">Catálogo de 52 poderes ocultos</span>
+              <span class="text-[10px] text-[var(--text-muted)]">52 Oficiales + Poderes Gen 2</span>
             </div>
             <select id="select-hidden-power" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-purple-300 font-semibold focus:outline-none focus:border-purple-500 transition">
               <!-- Populated by JS -->
@@ -399,7 +438,10 @@
 
           <!-- Objeto Inicial -->
           <div>
-            <label class="block font-bold text-[var(--text)] mb-1">🎒 Objeto Inicial Equipado</label>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block font-bold text-[var(--text)]">🎒 Objeto Inicial Equipado</label>
+              <span class="text-[10px] text-[var(--text-muted)]">75 Oficiales + Objetos Gen 2</span>
+            </div>
             <select id="select-default-item" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
               <!-- Populated by JS -->
             </select>
@@ -448,54 +490,68 @@
           <!-- Skills box -->
           <div class="space-y-2 text-xs border-t border-[var(--border)]/60 pt-3">
             <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
-              <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider block mb-0.5">Pasiva:</span>
-              <p id="card-passive" class="text-[11px] text-[var(--text)] leading-relaxed">El primer ataque hace 50% más de daño</p>
+              <span class="text-[10px] font-bold text-[var(--text-muted)] uppercase block">Pasiva:</span>
+              <p id="card-passive" class="font-medium text-[var(--text)] mt-0.5 leading-snug">El primer ataque hace 50% más de daño</p>
             </div>
-            <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
-              <span class="text-[10px] font-bold text-orange-400 uppercase tracking-wider block mb-0.5">Poder Activo:</span>
-              <p id="card-active" class="text-[11px] text-[var(--text)] font-semibold">Ataque doble</p>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
+                <span class="text-[10px] font-bold text-amber-400 uppercase block">Poder Activo:</span>
+                <p id="card-power" class="font-medium text-[var(--text)] mt-0.5 truncate">Ataque doble</p>
+              </div>
+              <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
+                <span class="text-[10px] font-bold text-purple-400 uppercase block">Poder Oculto:</span>
+                <p id="card-hidden-power" class="font-medium text-purple-300 mt-0.5 truncate">#5 Daño +15%</p>
+              </div>
             </div>
-            <div class="bg-[var(--card)]/80 p-2.5 rounded-xl border border-[var(--border)]/50">
-              <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider block mb-0.5">Poder Oculto:</span>
-              <p id="card-hidden" class="text-[11px] text-purple-300">Pierde vida (-10% de su vida máxima), gana daño (+25%)</p>
+            <div class="bg-[var(--card)]/80 p-2 rounded-xl border border-[var(--border)]/50 flex items-center justify-between text-[11px]">
+              <span class="text-[var(--text-muted)] font-semibold flex items-center gap-1.5">
+                <span>🎒</span> Objeto inicial:
+              </span>
+              <span id="card-item" class="font-bold text-amber-400 truncate">Ninguno</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 2. MOTOR TÁCTICO & PREDICCIÓN DE ARQUETIPO -->
+      <!-- 2. DIAGNÓSTICO TÁCTICO 2VS2 -->
       <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
-        <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
-          <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
-            <span>🧠</span> Diagnóstico Táctico 2vs2
-          </h2>
-          <span id="power-cycle-badge" class="font-mono text-xs text-purple-400 font-bold">~5 turnos de carga</span>
-        </div>
+        <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400 border-b border-[var(--border)] pb-2">
+          <span>🤝</span> Rol Competitivo en Combate 2vs2
+        </h2>
 
-        <div class="space-y-3 text-xs leading-relaxed">
-          <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
-            <span class="text-amber-400 font-bold block mb-1">⚔️ Función en el Dúo:</span>
-            <p id="diag-duo-role" class="text-[var(--text)] text-[11px]"></p>
+        <div class="space-y-2.5 text-xs">
+          <div>
+            <span class="font-bold text-[var(--text-muted)] block mb-0.5">Función en la Dupla:</span>
+            <p id="tac-duo-role" class="text-[var(--text)] leading-relaxed">
+              Equilibrado para cubrir cualquier posición en el equipo.
+            </p>
           </div>
-
-          <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
-            <span class="text-emerald-400 font-bold block mb-1">🤝 Sinergias & Compañeros Ideales:</span>
-            <p id="diag-allies" class="text-[var(--text-muted)] text-[11px]"></p>
+          <div>
+            <span class="font-bold text-emerald-400 block mb-0.5">Compañeros Ideales:</span>
+            <p id="tac-allies" class="text-[var(--text)] leading-relaxed">
+              Combina con cualquier arquetipo gracias a su perfil balanceado.
+            </p>
           </div>
-
-          <div class="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
-            <span class="text-rose-400 font-bold block mb-1">🔴 Vulnerabilidad / Cómo Contrarrestarlo:</span>
-            <p id="diag-counter" class="text-[var(--text-muted)] text-[11px]"></p>
+          <div>
+            <span class="font-bold text-rose-400 block mb-0.5">Contramedida (Si es enemigo):</span>
+            <p id="tac-counter" class="text-[var(--text)] leading-relaxed">
+              Observar su objeto equipado y no permitirle cargar su poder.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-[var(--border)]/60 flex items-center justify-between text-[11px] font-mono">
+            <span class="text-[var(--text-muted)]">Ciclo de Activación:</span>
+            <span id="tac-turn-cycle" class="text-amber-400 font-bold">~5 turnos para Poder</span>
           </div>
         </div>
       </section>
 
-      <!-- 3. RADAR POLIGONAL JOJO & ESCALADO DE NIVEL -->
+      <!-- 3. RADAR & ESCALADO DE ESTADÍSTICAS -->
       <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
         <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
           <h2 class="text-sm font-bold flex items-center gap-2 text-amber-400">
-            <span>📊</span> Radar JoJo & Simulación de Stats
+            <span>📊</span> Radar Poligonal & Escalado
           </h2>
+          <!-- Level selector -->
           <div class="flex items-center gap-2">
             <span class="text-xs text-[var(--text-muted)]">Nivel:</span>
             <input type="number" id="sim-level-input" min="1" max="100" value="50" class="w-14 px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-center font-mono font-bold text-amber-400 text-xs">
@@ -552,6 +608,439 @@
     </div>
   </main>
 
+
+  <!-- ========================================================================= -->
+  <!-- TAB 2: ROSTER VIEW (MIS BOCETOS GEN 2 + LISTA REDUCIDA GEN 1) -->
+  <!-- ========================================================================= -->
+  <div id="view-roster" class="view-tab-content hidden max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-8">
+
+    <!-- SECCIÓN 1: MIS BOCETOS GEN 2 (SEPARADOS) -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] pb-3">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold text-base">
+            🐣
+          </div>
+          <div>
+            <h2 class="text-base font-bold flex items-center gap-2">
+              Mis Bocetos Gen 2 (Creados por ti)
+              <span id="roster-sketches-count-pill" class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-mono text-xs font-bold border border-amber-500/30">0</span>
+            </h2>
+            <p class="text-xs text-[var(--text-muted)]">Lista completa y reducida de los pollos que estás diseñando para la segunda generación</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-roster-new-sketch" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1.5 transition">
+            <span>✨</span> Nuevo Boceto
+          </button>
+          <button id="btn-roster-export-sketches-csv" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+            <span>📊</span> Exportar CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Container for Sketches Cards / Rows -->
+      <div id="roster-sketches-container" class="space-y-3">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: GEN 1 OFICIAL (151 POLLOS) - LISTA REDUCIDA -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] pb-3">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-bold text-base">
+            🐔
+          </div>
+          <div>
+            <h2 class="text-base font-bold flex items-center gap-2">
+              Catálogo Oficial Gen 1 (151 Pollos)
+              <span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono text-xs font-bold border border-blue-500/30">151</span>
+            </h2>
+            <p class="text-xs text-[var(--text-muted)]">Lista compacta reducida con stats oficiales, arquetipos, pasivas, poderes y objetos de partida</p>
+          </div>
+        </div>
+        <div id="roster-gen1-count-info" class="text-xs font-mono text-[var(--text-muted)]">
+          Mostrando 151 de 151
+        </div>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 bg-[var(--bg)] p-3 rounded-xl border border-[var(--border)]">
+        <div class="sm:col-span-5">
+          <input type="text" id="roster-gen1-search" placeholder="🔍 Buscar por nombre, #ID, pasiva o poder..." class="w-full px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+        </div>
+        <div class="sm:col-span-4">
+          <select id="roster-gen1-filter-archetype" class="w-full px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+            <option value="all">Todos los Arquetipos</option>
+            <option value="Tanque Muralla">🛡️ Tanque Muralla</option>
+            <option value="Asesino Veloz">🗡️ Asesino Veloz</option>
+            <option value="Ariete Pesado">🔨 Ariete Pesado</option>
+            <option value="Brujo de Poder">✨ Brujo de Poder</option>
+            <option value="Soporte Médico">💚 Soporte Médico</option>
+            <option value="Baluarte / Muralla">🏰 Baluarte / Muralla</option>
+            <option value="Todoterreno">⚖️ Todoterreno / Equilibrado</option>
+          </select>
+        </div>
+        <div class="sm:col-span-3">
+          <select id="roster-gen1-sort" class="w-full px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-mono text-[var(--text)] focus:outline-none focus:border-amber-500 transition">
+            <option value="id-asc"># ID (1 ➔ 151)</option>
+            <option value="id-desc"># ID (151 ➔ 1)</option>
+            <option value="name-asc">Nombre (A ➔ Z)</option>
+            <option value="hp-desc">Mayor Vida (HP)</option>
+            <option value="atk-desc">Mayor Daño (ATK)</option>
+            <option value="def-desc">Mayor Armadura (DEF)</option>
+            <option value="spd-desc">Mayor Velocidad (SPD)</option>
+            <option value="pwr-desc">Mayor Carga (PWR)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Compact High-Density Table -->
+      <div class="overflow-x-auto rounded-xl border border-[var(--border)]">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-[var(--bg)] border-b border-[var(--border)] text-[var(--text-muted)] font-mono text-[11px]">
+              <th class="p-2.5 w-12 text-center">#</th>
+              <th class="p-2.5 w-12 text-center">Sprite</th>
+              <th class="p-2.5 font-bold min-w-[130px]">Nombre</th>
+              <th class="p-2.5 min-w-[110px]">Arquetipo</th>
+              <th class="p-2.5 min-w-[180px]">Stats Base (HP/ATK/DEF/SPD/PWR)</th>
+              <th class="p-2.5 min-w-[170px]">Pasiva Oficial</th>
+              <th class="p-2.5 min-w-[140px]">Poder Activo</th>
+              <th class="p-2.5 min-w-[140px]">Poder Oculto</th>
+              <th class="p-2.5 min-w-[110px]">Objeto</th>
+              <th class="p-2.5 text-center min-w-[100px]">Acción</th>
+            </tr>
+          </thead>
+          <tbody id="roster-gen1-tbody" class="divide-y divide-[var(--border)]/60 bg-[var(--card)]/40 font-mono">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- TAB 3: ARMADOR DE PODERES (GEN 2 BUILDER + CATÁLOGO 52 OFICIALES) -->
+  <!-- ========================================================================= -->
+  <div id="view-powers" class="view-tab-content hidden max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
+
+    <!-- Top Banner -->
+    <div class="bg-gradient-to-r from-purple-900/30 to-[var(--card)] border border-purple-500/30 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-2xl shadow-inner text-purple-300">
+          ✨
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-[var(--text)] flex items-center gap-2">
+            Armador & Diseñador de Poderes (Gen 2)
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">POWER LAB</span>
+          </h2>
+          <p class="text-xs text-[var(--text-muted)] mt-0.5">Diseña nuevos poderes activos y técnicas ocultas. Aparecerán listados automáticamente en el Taller de Pollos.</p>
+        </div>
+      </div>
+      <button id="btn-export-powers-csv" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+        <span>📊</span> Exportar Poderes (CSV)
+      </button>
+    </div>
+
+    <!-- Main Grid: Form Left (5 Cols), Lists Right (7 Cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- LEFT: FORMULARIO CREADOR DE PODER (5 Cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="bg-[var(--card)] border border-purple-500/40 rounded-2xl p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+            <h3 id="pw-form-title" class="text-sm font-bold text-purple-300 flex items-center gap-2">
+              <span>⚡</span> Diseñar Nuevo Poder
+            </h3>
+            <span id="pw-edit-badge" class="hidden px-2 py-0.5 rounded text-[10px] font-mono bg-purple-500/30 text-purple-300 border border-purple-500/40 font-bold">Editando</span>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <!-- Nombre -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Nombre del Poder</label>
+              <input type="text" id="pw-name" placeholder="Ej: Tormenta Céleste, Golpe Sísmico..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] font-bold text-sm focus:outline-none focus:border-purple-500 transition">
+            </div>
+
+            <!-- Fila Tipo y Coste -->
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Tipo de Poder</label>
+                <select id="pw-type" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] font-semibold focus:outline-none focus:border-purple-500 transition">
+                  <option value="Activo">🔥 Poder Activo</option>
+                  <option value="Oculto">🔮 Poder Oculto</option>
+                  <option value="Híbrido" selected>✨ Híbrido (Ambos)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Coste Energía (🔋)</label>
+                <select id="pw-cost" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs font-mono font-bold text-purple-300 focus:outline-none focus:border-purple-500 transition">
+                  <option value="90">90 (Rápido ~2t)</option>
+                  <option value="100" selected>100 (Estándar ~3t)</option>
+                  <option value="120">120 (Fuerte ~4t)</option>
+                  <option value="140">140 (Devastador)</option>
+                  <option value="150">150 (Supremo)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Mecánica Temática / Estado Alterado -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Mecánica Principal / Efecto</label>
+              <select id="pw-effect-theme" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-purple-500 transition">
+                <option value="Daño Directo">💥 Daño Directo Aumentado (Burst)</option>
+                <option value="Ataque Doble / Multihit">⚔️ Ataque Doble o Múltiple</option>
+                <option value="Veneno">☠️ Aplica Veneno (-10% vida máxima/turno)</option>
+                <option value="Quemadura">🔥 Aplica Quemadura (-25% daño al golpear/recibir)</option>
+                <option value="Congelamiento">❄️ Aplica Congelamiento (Pierde turno y 2.5% vida)</option>
+                <option value="Parálisis">⚡ Aplica Parálisis (-50% daño, velocidad y armadura)</option>
+                <option value="Maldición">💀 Aplica Maldición (0 curación + 10% daño al curar)</option>
+                <option value="Silencio">🔇 Aplica Silencio (Bloquea ganancia de energía)</option>
+                <option value="Infección">☣️ Aplica Infección (-5% vida y cura a rivales 5%)</option>
+                <option value="Curación Aliada">💚 Curación Aliada / Regeneración</option>
+                <option value="Escudo / Armadura">🛡️ Escudo / Refuerzo de Armadura</option>
+                <option value="Robo de Energía / Stats">🔋 Robo o Drenado de Energía / Stats</option>
+                <option value="Control de Campo">🌀 Control de Campo / Retroceso</option>
+              </select>
+            </div>
+
+            <!-- Descripción del Efecto -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Descripción Detallada en Batalla</label>
+              <textarea id="pw-desc" rows="3" placeholder="Describe el efecto exacto, multiplicadores o condiciones de activación..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-purple-500 resize-none transition"></textarea>
+            </div>
+
+            <!-- Notas de Lore o Sinergias -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Sinergias & Notas de Animación</label>
+              <input type="text" id="pw-notes" placeholder="Ej: Rayos púrpuras, combina bien con pollos rápidos..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-purple-500 transition">
+            </div>
+
+            <!-- Action buttons -->
+            <div class="pt-2 flex items-center gap-2">
+              <button id="btn-save-power" class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow transition">
+                <span>💾</span> Guardar Poder
+              </button>
+              <button id="btn-clear-power" class="px-3 py-2 rounded-xl bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text-muted)] hover:text-[var(--text)] text-xs font-semibold transition" title="Limpiar formulario">
+                🧹 Limpiar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LISTAS DE PODERES (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- 1. Mis Poderes Creados para Gen 2 -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+          <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">⚡</span>
+              <h3 class="text-sm font-bold text-purple-300">Poderes Creados para Gen 2</h3>
+              <span id="custom-powers-count-badge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">0</span>
+            </div>
+          </div>
+          <div id="custom-powers-container" class="space-y-2.5 max-h-[350px] overflow-y-auto pr-1">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- 2. Catálogo Oficial de 52 Poderes de Gen 1 -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🔮</span>
+              <h3 class="text-sm font-bold">Catálogo Oficial de 52 Poderes (Gen 1)</h3>
+            </div>
+            <input type="text" id="search-official-powers" placeholder="🔍 Filtrar poderes oficiales..." class="px-3 py-1 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-purple-500 w-48">
+          </div>
+          <div id="official-powers-container" class="space-y-2 max-h-[420px] overflow-y-auto pr-1 text-xs">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- TAB 4: ARMADOR DE OBJETOS (GEN 2 BUILDER + CATÁLOGO 75 OFICIALES) -->
+  <!-- ========================================================================= -->
+  <div id="view-items" class="view-tab-content hidden max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
+
+    <!-- Top Banner -->
+    <div class="bg-gradient-to-r from-blue-900/30 to-[var(--card)] border border-blue-500/30 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-2xl shadow-inner text-blue-300">
+          🎒
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-[var(--text)] flex items-center gap-2">
+            Armador & Diseñador de Objetos (Gen 2)
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">ITEM FORGE</span>
+          </h2>
+          <p class="text-xs text-[var(--text-muted)] mt-0.5">Crea objetos equipables y consumibles con efectos pasivos o disparadores en batalla.</p>
+        </div>
+      </div>
+      <button id="btn-export-items-csv" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+        <span>📊</span> Exportar Objetos (CSV)
+      </button>
+    </div>
+
+    <!-- Main Grid: Form Left (5 Cols), Lists Right (7 Cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- LEFT: FORMULARIO CREADOR DE OBJETO (5 Cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="bg-[var(--card)] border border-blue-500/40 rounded-2xl p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+            <h3 id="it-form-title" class="text-sm font-bold text-blue-300 flex items-center gap-2">
+              <span>🎒</span> Diseñar Nuevo Objeto
+            </h3>
+            <span id="it-edit-badge" class="hidden px-2 py-0.5 rounded text-[10px] font-mono bg-blue-500/30 text-blue-300 border border-blue-500/40 font-bold">Editando</span>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <!-- Icono y Nombre -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-3">
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Icono</label>
+                <select id="it-icon" class="w-full px-2 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-base text-center focus:outline-none focus:border-blue-500 transition">
+                  <option value="🎒">🎒</option>
+                  <option value="🛡️">🛡️</option>
+                  <option value="💎">💎</option>
+                  <option value="🧪">🧪</option>
+                  <option value="🔮">🔮</option>
+                  <option value="🗡️">🗡️</option>
+                  <option value="⚡">⚡</option>
+                  <option value="🪶">🪶</option>
+                  <option value="👑">👑</option>
+                  <option value="💊">💊</option>
+                  <option value="🍖">🍖</option>
+                  <option value="💍">💍</option>
+                  <option value="📜">📜</option>
+                  <option value="🧤">🧤</option>
+                  <option value="👢">👢</option>
+                  <option value="🪓">🪓</option>
+                  <option value="🏹">🏹</option>
+                  <option value="🧿">🧿</option>
+                  <option value="🪞">🪞</option>
+                </select>
+              </div>
+              <div class="col-span-9">
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Nombre del Objeto</label>
+                <input type="text" id="it-name" placeholder="Ej: Anillo de Fénix, Pluma de Viento..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] font-bold text-sm focus:outline-none focus:border-blue-500 transition">
+              </div>
+            </div>
+
+            <!-- Fila Tipo y Precio -->
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Tipo de Objeto</label>
+                <select id="it-type" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] font-semibold focus:outline-none focus:border-blue-500 transition">
+                  <option value="Equipable" selected>🛡️ Equipable (Combate)</option>
+                  <option value="Consumible">🧪 Consumible (Uso)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-[var(--text-muted)] mb-1">Precio en Semillas (🌰)</label>
+                <input type="number" id="it-price" min="0" max="9999" value="150" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs font-mono font-bold text-amber-400 focus:outline-none focus:border-blue-500 transition">
+              </div>
+            </div>
+
+            <!-- Gatillo de Activación -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Momento de Activación (Gatillo)</label>
+              <select id="it-trigger" class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-blue-500 transition">
+                <option value="Permanente">♾️ Permanente (Stats pasivos directos)</option>
+                <option value="Al golpear">⚔️ Al golpear al rival (On Hit)</option>
+                <option value="Al recibir daño">🛡️ Al recibir un impacto (On Damaged)</option>
+                <option value="Al iniciar el turno">⏱️ Al iniciar el turno (Turn Start)</option>
+                <option value="Al noquear a un enemigo">💀 Al derrotar un enemigo (On Kill)</option>
+                <option value="Emergencia (<25% vida)">🚨 Emergencia (Vida menor al 25%)</option>
+                <option value="Uso en Inventario">🎒 Uso directo desde inventario</option>
+              </select>
+            </div>
+
+            <!-- Descripción del Efecto -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Descripción del Efecto</label>
+              <textarea id="it-desc" rows="3" placeholder="Describe el efecto exacto en batalla, curación o modificación de atributos..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-blue-500 resize-none transition"></textarea>
+            </div>
+
+            <!-- Zona / Origen -->
+            <div>
+              <label class="block font-semibold text-[var(--text-muted)] mb-1">Zona u Origen de Obtención</label>
+              <input type="text" id="it-zone" placeholder="Ej: Tienda, Zona 10, Coliseo, Ascensor Infinito..." class="w-full px-3 py-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-blue-500 transition">
+            </div>
+
+            <!-- Action buttons -->
+            <div class="pt-2 flex items-center gap-2">
+              <button id="btn-save-item" class="flex-1 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow transition">
+                <span>💾</span> Guardar Objeto
+              </button>
+              <button id="btn-clear-item" class="px-3 py-2 rounded-xl bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text-muted)] hover:text-[var(--text)] text-xs font-semibold transition" title="Limpiar formulario">
+                🧹 Limpiar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LISTAS DE OBJETOS (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- 1. Mis Objetos Creados para Gen 2 -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+          <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🎒</span>
+              <h3 class="text-sm font-bold text-blue-300">Objetos Creados para Gen 2</h3>
+              <span id="custom-items-count-badge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">0</span>
+            </div>
+          </div>
+          <div id="custom-items-container" class="space-y-2.5 max-h-[350px] overflow-y-auto pr-1">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- 2. Catálogo Oficial de 75 Objetos de Gen 1 -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)] pb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🏺</span>
+              <h3 class="text-sm font-bold">Catálogo Oficial de 75 Objetos (Gen 1)</h3>
+            </div>
+            <div class="flex items-center gap-2">
+              <select id="filter-official-item-type" class="px-2 py-1 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)]">
+                <option value="all">Todos</option>
+                <option value="equipable">Equipables</option>
+                <option value="consumable">Consumibles</option>
+              </select>
+              <input type="text" id="search-official-items" placeholder="🔍 Filtrar objetos..." class="px-3 py-1 rounded-lg bg-[var(--bg)] border border-[var(--border)] text-xs text-[var(--text)] focus:outline-none focus:border-blue-500 w-40">
+            </div>
+          </div>
+          <div id="official-items-container" class="space-y-2 max-h-[420px] overflow-y-auto pr-1 text-xs">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
   <!-- MODAL: BROWSE GEN 1 (151 CHICKENS) -->
   <div id="modal-gen1" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-4xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
@@ -569,31 +1058,6 @@
         </div>
       </div>
       <div id="gen1-grid" class="flex-1 overflow-y-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-        <!-- Rendered by JS -->
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: MY SAVED SKETCHES -->
-  <div id="modal-sketches" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
-      <div class="p-4 border-b border-[var(--border)] flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="text-xl">📁</span>
-          <h3 class="text-sm font-bold">Bocetos Guardados en tu Navegador</h3>
-        </div>
-        <div class="flex items-center gap-2">
-          <button id="btn-backup-json" class="px-2.5 py-1 text-xs rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 transition">
-            💾 Respaldar JSON
-          </button>
-          <label class="px-2.5 py-1 text-xs rounded bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500 text-[var(--text-muted)] hover:text-amber-400 transition cursor-pointer">
-            📥 Importar JSON
-            <input type="file" id="file-import-json" accept=".json" class="hidden">
-          </label>
-          <button id="btn-close-sketches" class="px-2.5 py-1 rounded bg-[var(--bg)] hover:bg-[var(--border)] text-xs font-bold transition">✕</button>
-        </div>
-      </div>
-      <div id="sketches-list-container" class="flex-1 overflow-y-auto p-4 space-y-3">
         <!-- Rendered by JS -->
       </div>
     </div>
@@ -619,6 +1083,23 @@
     // Embedded or linked WIKI data fallback
     const WIKI = window.WIKI_DATA || { chickens: [], passives: [], powers: [], items: [] };
 
+    // Persistent State
+    let savedSketches = [];
+    let customPowers = [];
+    let customItems = [];
+
+    try {
+      savedSketches = JSON.parse(localStorage.getItem('cc_gen2_sketches') || '[]');
+    } catch(e) { savedSketches = []; }
+
+    try {
+      customPowers = JSON.parse(localStorage.getItem('cc_gen2_custom_powers') || '[]');
+    } catch(e) { customPowers = []; }
+
+    try {
+      customItems = JSON.parse(localStorage.getItem('cc_gen2_custom_items') || '[]');
+    } catch(e) { customItems = []; }
+
     // Current Editing Sketch State
     let currentSketch = {
       id: 151,
@@ -641,18 +1122,13 @@
       default_item_id: 1
     };
 
-    let savedSketches = [];
-    try {
-      savedSketches = JSON.parse(localStorage.getItem('cc_gen2_sketches') || '[]');
-    } catch(e) {
-      savedSketches = [];
-    }
+    let editingPowerId = null;
+    let editingItemId = null;
 
     // Radar Geometry constants
     const RADAR_CX = 150, RADAR_CY = 130, RADAR_R = 85;
     const RADAR_ANGLES = [-90, -18, 54, 126, 198].map(a => a * Math.PI / 180);
 
-    
     // ==========================================
     // SPRITE & ANIMATION STUDIO (_strip5 SUPPORT)
     // ==========================================
@@ -671,13 +1147,8 @@
     };
 
     function initSpriteStudio() {
-      const animCanvas = document.getElementById('anim-canvas');
-      const cardCanvas = document.getElementById('card-canvas');
-
-      // Load initial default chicken sprite
       processImageSource(currentSketch.sprite || 'images/chickens/0.png');
 
-      // Event listeners for Play/Pause, Step, FPS
       document.getElementById('btn-anim-play').addEventListener('click', togglePlayPause);
       document.getElementById('btn-anim-prev').addEventListener('click', stepPrevFrame);
       document.getElementById('btn-anim-next').addEventListener('click', stepNextFrame);
@@ -685,7 +1156,7 @@
       const fpsSlider = document.getElementById('anim-fps-slider');
       fpsSlider.addEventListener('input', (e) => {
         spriteState.fps = parseInt(e.target.value, 10) || 6;
-        document.getElementById('lbl-anim-fps').textContent = spriteState.fps;
+        document.getElementById('lbl-anim-fps').textContent = spriteState.fps + ' fps';
         startAnimation();
       });
 
@@ -727,16 +1198,11 @@
         const isNamedStrip = fn.includes('strip') || fn.includes('_strip5');
         const isWideRatio = (img.width >= img.height * 3.5);
 
-        // Auto-detect strip if ratio is wide or name says strip
         if (isNamedStrip || isWideRatio) {
           spriteState.isStrip = true;
           spriteState.frameCount = 5;
-        } else if (img.width === img.height) {
-          // If square 1:1, assume single frame unless user toggled
-          // but if user has strip mode active, we can allow 5 frames slice or single
-          if (fn.includes('strip5')) {
-            spriteState.isStrip = true;
-          }
+        } else if (img.width === img.height && fn.includes('strip5')) {
+          spriteState.isStrip = true;
         }
 
         reprocessCurrentRawImage();
@@ -780,17 +1246,16 @@
         spriteState.frames = [c];
       }
 
-      // Update badge
       const badge = document.getElementById('strip-mode-badge');
       if (spriteState.isStrip) {
         badge.className = 'px-2 py-0.5 rounded-full text-[9px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40';
-        badge.textContent = `🎞️ _strip${count}`;
+        badge.textContent = '🎞️ _strip' + count;
       } else {
         badge.className = 'px-2 py-0.5 rounded-full text-[9px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40';
         badge.textContent = '🖼️ 1 Frame';
       }
 
-      document.getElementById('frame-res-badge').textContent = `${spriteState.frameWidth}x${spriteState.frameHeight}px`;
+      document.getElementById('frame-res-badge').textContent = spriteState.frameWidth + 'x' + spriteState.frameHeight + 'px';
 
       buildStripThumbnails();
       spriteState.currentFrame = 0;
@@ -802,99 +1267,76 @@
       const container = document.getElementById('strip-frames-container');
       container.innerHTML = '';
 
-      spriteState.frames.forEach((fCanvas, idx) => {
-        const box = document.createElement('div');
-        box.className = `relative group flex flex-col items-center p-1.5 rounded-xl border cursor-pointer transition ${idx === spriteState.selectedCoverFrame ? 'border-amber-500 bg-amber-500/10' : 'border-[var(--border)] bg-[var(--card)] hover:border-amber-500/50'}`;
-        box.id = `thumb-frame-${idx}`;
-        box.title = `Frame ${idx + 1} - Clic para pausar aquí / Doble clic para portada`;
+      spriteState.frames.forEach((frameCanvas, idx) => {
+        const thumbWrap = document.createElement('div');
+        thumbWrap.className = 'relative p-1 rounded-xl bg-[var(--card)] border cursor-pointer transition flex flex-col items-center justify-center ' + (idx === spriteState.selectedCoverFrame ? 'border-amber-500 ring-2 ring-amber-500/40' : 'border-[var(--border)] hover:border-amber-500/50');
+        
+        const preview = document.createElement('canvas');
+        preview.width = frameCanvas.width;
+        preview.height = frameCanvas.height;
+        preview.className = 'w-10 h-10 object-contain pixelated';
+        const pctx = preview.getContext('2d');
+        pctx.imageSmoothingEnabled = false;
+        pctx.drawImage(frameCanvas, 0, 0);
 
-        const imgThumb = document.createElement('img');
-        imgThumb.className = 'w-12 h-12 object-contain pixelated';
-        imgThumb.src = fCanvas.toDataURL('image/png');
+        const lbl = document.createElement('span');
+        lbl.className = 'text-[9px] font-mono text-[var(--text-muted)] mt-0.5';
+        lbl.textContent = 'F' + (idx + 1);
 
-        const numBadge = document.createElement('span');
-        numBadge.className = 'text-[9px] font-mono font-bold text-[var(--text-muted)] mt-0.5';
-        numBadge.textContent = `#${idx + 1}`;
+        thumbWrap.appendChild(preview);
+        thumbWrap.appendChild(lbl);
 
-        box.appendChild(imgThumb);
-        box.appendChild(numBadge);
-
-        // Click to inspect/pause on this frame
-        box.addEventListener('click', () => {
+        thumbWrap.addEventListener('click', () => {
+          spriteState.selectedCoverFrame = idx;
+          spriteState.currentFrame = idx;
           spriteState.isPlaying = false;
           document.getElementById('btn-anim-play').textContent = '▶';
-          spriteState.currentFrame = idx;
-          spriteState.selectedCoverFrame = idx;
-          highlightThumbnails();
+          buildStripThumbnails();
           renderCurrentFrame();
+          updateCardCanvas();
         });
 
-        container.appendChild(box);
-      });
-      highlightThumbnails();
-    }
-
-    function highlightThumbnails() {
-      spriteState.frames.forEach((_, idx) => {
-        const el = document.getElementById(`thumb-frame-${idx}`);
-        if (!el) return;
-        if (idx === spriteState.currentFrame) {
-          el.classList.add('ring-2', 'ring-amber-400');
-        } else {
-          el.classList.remove('ring-2', 'ring-amber-400');
-        }
-        if (idx === spriteState.selectedCoverFrame) {
-          el.classList.add('border-amber-500');
-        } else {
-          el.classList.remove('border-amber-500');
-        }
+        container.appendChild(thumbWrap);
       });
     }
 
     function startAnimation() {
-      if (spriteState.animInterval) {
-        clearInterval(spriteState.animInterval);
-      }
-      if (!spriteState.isStrip || spriteState.frames.length <= 1) {
-        renderCurrentFrame();
-        return;
-      }
+      if (spriteState.animInterval) clearInterval(spriteState.animInterval);
+      if (spriteState.frames.length <= 1) return;
 
-      const ms = Math.round(1000 / Math.max(1, spriteState.fps || 6));
+      const intervalMs = Math.max(30, Math.floor(1000 / spriteState.fps));
       spriteState.animInterval = setInterval(() => {
-        if (spriteState.isPlaying && spriteState.frames.length > 1) {
-          spriteState.currentFrame = (spriteState.currentFrame + 1) % spriteState.frames.length;
-          renderCurrentFrame();
-          highlightThumbnails();
-        }
-      }, ms);
+        if (!spriteState.isPlaying) return;
+        spriteState.currentFrame = (spriteState.currentFrame + 1) % spriteState.frames.length;
+        renderCurrentFrame();
+      }, intervalMs);
     }
 
     function renderCurrentFrame() {
       if (!spriteState.frames || spriteState.frames.length === 0) return;
-      const fCanvas = spriteState.frames[spriteState.currentFrame] || spriteState.frames[0];
-      if (!fCanvas) return;
-
-      // Render to main dropzone canvas
-      const animCanvas = document.getElementById('anim-canvas');
-      const ctx = animCanvas.getContext('2d');
+      const targetCanvas = document.getElementById('anim-canvas');
+      const ctx = targetCanvas.getContext('2d');
       ctx.imageSmoothingEnabled = false;
-      ctx.clearRect(0, 0, animCanvas.width, animCanvas.height);
-      ctx.drawImage(fCanvas, 0, 0, animCanvas.width, animCanvas.height);
+      ctx.clearRect(0, 0, targetCanvas.width, targetCanvas.height);
 
-      // Render to Card Canvas (Live animated card)
-      const cardCanvas = document.getElementById('card-canvas');
-      if (cardCanvas) {
-        const cCtx = cardCanvas.getContext('2d');
-        cCtx.imageSmoothingEnabled = false;
-        cCtx.clearRect(0, 0, cardCanvas.width, cardCanvas.height);
-        cCtx.drawImage(fCanvas, 0, 0, cardCanvas.width, cardCanvas.height);
+      const f = spriteState.frames[spriteState.currentFrame];
+      if (f) {
+        ctx.drawImage(f, 0, 0, targetCanvas.width, targetCanvas.height);
       }
 
-      // Update frame counter text
-      const counter = document.getElementById('lbl-frame-counter');
-      if (counter) {
-        counter.textContent = `F${spriteState.currentFrame + 1}/${spriteState.frames.length}`;
+      document.getElementById('lbl-frame-counter').textContent = 'F' + (spriteState.currentFrame + 1) + '/' + spriteState.frames.length;
+    }
+
+    function updateCardCanvas() {
+      const cardCanvas = document.getElementById('card-canvas');
+      const ctx = cardCanvas.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, cardCanvas.width, cardCanvas.height);
+
+      const frameIdx = Math.min(spriteState.selectedCoverFrame, spriteState.frames.length - 1);
+      const f = spriteState.frames[frameIdx] || spriteState.frames[0];
+      if (f) {
+        ctx.drawImage(f, 0, 0, cardCanvas.width, cardCanvas.height);
       }
     }
 
@@ -904,12 +1346,14 @@
       spriteState.frames.forEach((fCanvas, idx) => {
         const a = document.createElement('a');
         a.href = fCanvas.toDataURL('image/png');
-        a.download = `${baseName}_frame_${idx + 1}.png`;
+        a.download = baseName + '_frame_' + (idx + 1) + '.png';
         a.click();
       });
     }
 
-    // Initialize UI
+    // ==========================================
+    // INITIALIZATION & TAB SWITCHER
+    // ==========================================
     function init() {
       setupTheme();
       initSpriteStudio();
@@ -917,7 +1361,12 @@
       setupEventListeners();
       buildRadarGrid();
       loadSketch(currentSketch);
-      updateSketchesCount();
+      updateAllCounts();
+
+      // Render other tabs
+      renderRosterView();
+      renderPowersView();
+      renderItemsView();
     }
 
     function setupTheme() {
@@ -933,58 +1382,170 @@
       });
     }
 
+    function switchTab(tabId) {
+      document.querySelectorAll('.view-tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-tab').forEach(el => {
+        el.classList.remove('bg-amber-500', 'text-black', 'shadow-sm', 'font-bold');
+        el.classList.add('text-[var(--text-muted)]', 'font-semibold');
+      });
+
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-amber-500', 'text-black', 'shadow-sm', 'font-bold');
+        activeBtn.classList.remove('text-[var(--text-muted)]', 'font-semibold');
+      }
+
+      const activeContent = document.getElementById('view-' + tabId);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+      }
+
+      if (tabId === 'roster') {
+        renderRosterView();
+      } else if (tabId === 'powers') {
+        renderPowersView();
+      } else if (tabId === 'items') {
+        renderItemsView();
+      }
+    }
+
+    function updateAllCounts() {
+      const sketchesCount = savedSketches.length;
+      const powersCount = customPowers.length;
+      const itemsCount = customItems.length;
+
+      document.getElementById('tab-badge-sketches').textContent = sketchesCount;
+      document.getElementById('tab-badge-powers').textContent = powersCount;
+      document.getElementById('tab-badge-items').textContent = itemsCount;
+
+      const pill = document.getElementById('roster-sketches-count-pill');
+      if (pill) pill.textContent = sketchesCount;
+
+      const customPwBadge = document.getElementById('custom-powers-count-badge');
+      if (customPwBadge) customPwBadge.textContent = powersCount;
+
+      const customItBadge = document.getElementById('custom-items-count-badge');
+      if (customItBadge) customItBadge.textContent = itemsCount;
+
+      const summary = document.getElementById('quick-status-summary');
+      if (summary) {
+        summary.textContent = sketchesCount + ' Bocetos · ' + powersCount + ' Poderes · ' + itemsCount + ' Objetos';
+      }
+    }
+
+    // ==========================================
+    // POPULATE DROPDOWNS (WITH CUSTOM POWERS & ITEMS)
+    // ==========================================
     function populateDropdowns() {
-      // Hidden powers dropdown
+      // 1. Hidden powers dropdown (Official 52 + Custom Gen 2)
       const hpSelect = document.getElementById('select-hidden-power');
       hpSelect.innerHTML = '';
+
+      if (customPowers.length > 0) {
+        const customGroup = document.createElement('optgroup');
+        customGroup.label = '⚡ Poderes Creados para Gen 2';
+        customPowers.forEach(pw => {
+          if (pw.type === 'Oculto' || pw.type === 'Híbrido' || !pw.type) {
+            const opt = document.createElement('option');
+            opt.value = 'custom_' + pw.id;
+            opt.textContent = '✨ [Gen 2] ' + pw.name + ' - ' + (pw.description || '').substring(0, 35) + '...';
+            customGroup.appendChild(opt);
+          }
+        });
+        if (customGroup.children.length > 0) hpSelect.appendChild(customGroup);
+      }
+
+      const officialGroup = document.createElement('optgroup');
+      officialGroup.label = '🔮 Catálogo Oficial Gen 1 (52 Poderes)';
       if (WIKI.powers) {
         WIKI.powers.forEach((pw, idx) => {
           const opt = document.createElement('option');
           opt.value = idx;
           const desc = pw.description && (pw.description.es || pw.description);
-          opt.textContent = `#${idx + 1} - ${desc}`;
-          hpSelect.appendChild(opt);
+          opt.textContent = '#' + (idx + 1) + ' - ' + desc;
+          officialGroup.appendChild(opt);
         });
       }
+      hpSelect.appendChild(officialGroup);
 
-      // Default items dropdown
+      // 2. Default items dropdown (Official 75 + Custom Gen 2)
       const itemSelect = document.getElementById('select-default-item');
       itemSelect.innerHTML = '<option value="-1">-- Ninguno --</option>';
+
+      if (customItems.length > 0) {
+        const customItGroup = document.createElement('optgroup');
+        customItGroup.label = '🎒 Objetos Creados para Gen 2';
+        customItems.forEach(it => {
+          const opt = document.createElement('option');
+          opt.value = 'custom_' + it.id;
+          opt.textContent = (it.icon || '🎒') + ' [Gen 2] ' + it.name + ' (' + (it.type || 'Equipable') + ')';
+          customItGroup.appendChild(opt);
+        });
+        itemSelect.appendChild(customItGroup);
+      }
+
+      const officialItGroup = document.createElement('optgroup');
+      officialItGroup.label = '🏺 Objetos Oficiales Gen 1 (75 Items)';
       if (WIKI.items) {
         WIKI.items.forEach(it => {
           const opt = document.createElement('option');
           opt.value = it.id;
           const name = it.name && (it.name.es || it.name);
-          opt.textContent = `#${it.id + 1} - ${name}`;
-          itemSelect.appendChild(opt);
+          opt.textContent = '#' + (it.id + 1) + ' - ' + name;
+          officialItGroup.appendChild(opt);
         });
       }
+      itemSelect.appendChild(officialItGroup);
 
-      // Presets dropdowns for passives and powers
-      const passSelect = document.getElementById('preset-passive-select');
-      if (WIKI.passives) {
-        WIKI.passives.forEach(p => {
-          const opt = document.createElement('option');
-          const desc = p.description && (p.description.es || p.description);
-          opt.value = desc;
-          opt.textContent = `#${p.id + 1} ${desc.substring(0, 35)}...`;
-          passSelect.appendChild(opt);
-        });
-      }
-
+      // 3. Preset active power dropdown
       const powSelect = document.getElementById('preset-power-select');
+      powSelect.innerHTML = '<option value="">-- Seleccionar Poder --</option>';
+
+      if (customPowers.length > 0) {
+        const cgPow = document.createElement('optgroup');
+        cgPow.label = '⚡ Poderes Creados para Gen 2';
+        customPowers.forEach(pw => {
+          if (pw.type === 'Activo' || pw.type === 'Híbrido' || !pw.type) {
+            const opt = document.createElement('option');
+            opt.value = pw.name;
+            opt.setAttribute('data-cost', pw.cost || 100);
+            opt.textContent = '✨ [Gen 2] ' + pw.name + ' (' + (pw.cost || 100) + '🔋)';
+            cgPow.appendChild(opt);
+          }
+        });
+        if (cgPow.children.length > 0) powSelect.appendChild(cgPow);
+      }
+
+      const ogPow = document.createElement('optgroup');
+      ogPow.label = '🔥 Poderes Oficiales Gen 1';
       if (WIKI.powers) {
         WIKI.powers.forEach(pw => {
           const opt = document.createElement('option');
           const desc = pw.description && (pw.description.es || pw.description);
           opt.value = desc;
-          opt.textContent = `#${pw.id + 1} ${desc.substring(0, 35)}...`;
-          powSelect.appendChild(opt);
+          opt.textContent = '#' + (pw.id + 1) + ' ' + desc.substring(0, 35) + '...';
+          ogPow.appendChild(opt);
+        });
+      }
+      powSelect.appendChild(ogPow);
+
+      // 4. Presets passives
+      const passSelect = document.getElementById('preset-passive-select');
+      passSelect.innerHTML = '<option value="">-- Cargar de Gen 1 --</option>';
+      if (WIKI.passives) {
+        WIKI.passives.forEach(p => {
+          const opt = document.createElement('option');
+          const desc = p.description && (p.description.es || p.description);
+          opt.value = desc;
+          opt.textContent = '#' + (p.id + 1) + ' ' + desc.substring(0, 35) + '...';
+          passSelect.appendChild(opt);
         });
       }
     }
 
-    // Build Static Radar Grid Web
+    // ==========================================
+    // RADAR GRID SVG
+    // ==========================================
     function buildRadarGrid() {
       const g = document.getElementById('radar-web');
       g.innerHTML = '';
@@ -993,7 +1554,7 @@
         const pts = RADAR_ANGLES.map(a => {
           const x = RADAR_CX + RADAR_R * lvl * Math.cos(a);
           const y = RADAR_CY + RADAR_R * lvl * Math.sin(a);
-          return `${x.toFixed(1)},${y.toFixed(1)}`;
+          return x.toFixed(1) + ',' + y.toFixed(1);
         }).join(' ');
         const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         poly.setAttribute('points', pts);
@@ -1003,7 +1564,6 @@
         g.appendChild(poly);
       });
 
-      // Axis lines
       RADAR_ANGLES.forEach(a => {
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', RADAR_CX);
@@ -1015,17 +1575,15 @@
       });
     }
 
-    // Synchronize inputs & recalculate everything
     function syncStatInputs(key, val) {
       val = Math.max(0, parseInt(val, 10) || 0);
       currentSketch.stats[key] = val;
-      document.getElementById(`num-${key}`).value = val;
-      document.getElementById(`range-${key}`).value = val;
+      document.getElementById('num-' + key).value = val;
+      document.getElementById('range-' + key).value = val;
       onDataChanged();
     }
 
     function onDataChanged() {
-      // Collect current inputs
       currentSketch.name = document.getElementById('input-name').value.trim() || 'Sin Nombre';
       currentSketch.zone = document.getElementById('input-zone').value.trim();
       currentSketch.status = document.getElementById('select-status').value;
@@ -1033,16 +1591,15 @@
       currentSketch.power_max = parseInt(document.getElementById('select-power-cost').value, 10) || 100;
       currentSketch.passive = document.getElementById('input-passive').value.trim();
       currentSketch.active_power = document.getElementById('input-active-power').value.trim();
-      currentSketch.hidden_power_id = parseInt(document.getElementById('select-hidden-power').value, 10);
-      currentSketch.default_item_id = parseInt(document.getElementById('select-default-item').value, 10);
+      currentSketch.hidden_power_id = document.getElementById('select-hidden-power').value;
+      currentSketch.default_item_id = document.getElementById('select-default-item').value;
 
-      // 1. Budget total & balance check
       const sum = Object.values(currentSketch.stats).reduce((a, b) => a + b, 0);
       document.getElementById('stat-sum-val').textContent = sum;
       const budgetPct = Math.min(100, (sum / 200) * 100);
       const budgetBar = document.getElementById('stat-budget-bar');
       const budgetBadge = document.getElementById('stat-budget-badge');
-      budgetBar.style.width = `${budgetPct}%`;
+      budgetBar.style.width = budgetPct + '%';
 
       if (sum === 200) {
         budgetBadge.className = 'px-3 py-1 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono font-black text-sm flex items-center gap-1.5';
@@ -1055,26 +1612,17 @@
         budgetBar.className = 'h-full bg-rose-500 transition-all duration-300';
       }
 
-      // 2. Duplicate & Similarity Detector
       checkDuplicates();
-
-      // 3. Archetype Diagnosis & Turn Cycle
       const diag = diagnoseArchetype(currentSketch);
       updateTacticalUI(diag);
-
-      // 4. Update Trading Card Preview
       updateCardPreview(diag);
-
-      // 5. Update Radar Chart & Scaled Battle Stats
       updateRadarAndSimulation();
     }
 
-    // Duplicate detection algorithm
     function checkDuplicates() {
       const s = currentSketch.stats;
       const curVec = [s.life, s.damage, s.armor, s.speed, s.power_amount];
       const dupBadge = document.getElementById('dup-badge');
-      const dupTitle = document.getElementById('dup-status-title');
       const dupDetail = document.getElementById('dup-detail');
       const dupCard = document.getElementById('duplicate-detector-card');
 
@@ -1091,7 +1639,6 @@
           const cName = c.name && (c.name.es || c.name);
           exactMatches.push({ id: c.id, name: cName, stats: c.stats });
         }
-        // Euclidean distance
         const dist = Math.sqrt(curVec.reduce((acc, val, idx) => acc + Math.pow(val - cVec[idx], 2), 0));
         if (dist < minDistance) {
           minDistance = dist;
@@ -1105,34 +1652,30 @@
         dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-rose-500 text-white';
         dupBadge.textContent = '🚨 DUPLICADO IDÉNTICO';
         const em = exactMatches[0];
-        dupDetail.innerHTML = `⚠️ <strong>¡Mismos stats exactos que #${em.id} ${em.name}!</strong> (HP: ${em.stats.life}, ATK: ${em.stats.damage}, DEF: ${em.stats.armor}, SPD: ${em.stats.speed}, PWR: ${em.stats.power_amount}). Modifica algunos valores para que tu pollo tenga una identidad única en combate.`;
+        dupDetail.innerHTML = '⚠️ <strong>¡Mismos stats exactos que #' + em.id + ' ' + em.name + '!</strong> (HP: ' + em.stats.life + ', ATK: ' + em.stats.damage + ', DEF: ' + em.stats.armor + ', SPD: ' + em.stats.speed + ', PWR: ' + em.stats.power_amount + '). Modifica algunos valores para que tu pollo tenga una identidad única en combate.';
       } else if (minDistance <= 15 && closest) {
         dupCard.className = 'p-3 rounded-xl bg-amber-500/10 border border-amber-500/40 text-xs transition space-y-1';
         dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40';
-        dupBadge.textContent = `⚠️ SIMILAR A #${closest.id}`;
-        dupDetail.innerHTML = `Se asemeja mucho al perfil de <strong>#${closest.id} ${closest.name}</strong> (diferencia de solo ~${closest.dist} pts globales: HP ${closest.stats.life}, ATK ${closest.stats.damage}, DEF ${closest.stats.armor}, SPD ${closest.stats.speed}, PWR ${closest.stats.power_amount}).`;
+        dupBadge.textContent = '⚠️ SIMILAR A #' + closest.id;
+        dupDetail.innerHTML = 'Se asemeja mucho al perfil de <strong>#' + closest.id + ' ' + closest.name + '</strong> (diferencia de solo ~' + closest.dist + ' pts globales: HP ' + closest.stats.life + ', ATK ' + closest.stats.damage + ', DEF ' + closest.stats.armor + ', SPD ' + closest.stats.speed + ', PWR ' + closest.stats.power_amount + ').';
       } else if (closest) {
         dupCard.className = 'p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-xs transition space-y-1';
         dupBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40';
         dupBadge.textContent = '✅ PERFIL ÚNICO';
-        dupDetail.innerHTML = `Distribución de estadísticas original y distinguible. El pollo más cercano es <em>#${closest.id} ${closest.name}</em> con una diferencia de ${closest.dist} pts.`;
+        dupDetail.innerHTML = 'Distribución de estadísticas original y distinguible. El pollo más cercano es <em>#' + closest.id + ' ' + closest.name + '</em> con una diferencia de ' + closest.dist + ' pts.';
       }
     }
 
-    // Smart Archetype Diagnostic Engine
     function diagnoseArchetype(s) {
       const bs = s.stats;
       const turns = Math.max(1, Math.ceil(s.power_max / Math.max(1, bs.power_amount)));
-      const pText = (s.passive + " " + s.active_power).toLowerCase();
+      const pText = ((s.passive || "") + " " + (s.active_power || "")).toLowerCase();
 
       let archetype = "Todoterreno";
       let archetypeDesc = "Equilibrado";
       let roleDuo = "";
       let allies = "";
       let counter = "";
-
-      const isHealer = pText.includes('curac') || pText.includes('cura') || pText.includes('recupera');
-      const isControl = pText.includes('congel') || pText.includes('quema') || pText.includes('venen') || pText.includes('aturd');
 
       if (bs.armor >= 55 || (bs.life >= 70 && bs.armor >= 40)) {
         archetype = "Tanque Muralla";
@@ -1148,247 +1691,740 @@
         counter = "Enfocarlo en turno 1. Tiende a tener baja vida o armadura; un ataque doble veloz lo elimina.";
       } else if (bs.damage >= 75 && bs.speed < 45) {
         archetype = "Ariete Pesado";
-        archetypeDesc = "Glass Cannon";
-        roleDuo = "Inflige un castigo devastador turno a turno. Excelente rematador si logra sobrevivir.";
-        allies = "Imprescindible acompañarlo con un Soporte con Curación/Escudo o un Velocista que debilite.";
-        counter = "Atacarlo con velocistas antes de que mueva o congelarlo/aturdirlo para negar sus golpes.";
-      } else if (bs.power_amount >= 50 || (turns <= 2 && bs.damage >= 45)) {
-        archetype = "Mago de Ráfaga";
-        archetypeDesc = "Nuke de Poder";
-        roleDuo = "Especialista en desatar su poder activo repetidamente cada 1 o 2 turnos, volteando la partida.";
-        allies = "Compañeros con Palo de raíz, generadores de energía o atacantes de distracción.";
-        counter = "Drenar su poder con habilidades de bloqueo de energía o noquearlo antes de su primer ciclo.";
-      } else if (bs.speed >= 75) {
-        archetype = "Velocista Táctico";
-        archetypeDesc = "Iniciador / Abridor";
-        roleDuo = "Garantiza tomar la iniciativa en la ronda 1 para colocar estados o desgastar la vanguardia.";
-        allies = "Cualquier pollo pesado que aproveche las aperturas que deja en las defensas rivales.";
-        counter = "Aguantar su primera oleada con armadura pesada y contraatacar en los turnos posteriores.";
-      } else if (isHealer) {
-        archetype = "Soporte Sanador";
-        archetypeDesc = "Sostén de Equipo";
-        roleDuo = "Mantiene al equipo con vida en Retaguardia mientras regenera salud y limpia penalizaciones.";
-        allies = "Tanques masivos y luchadores que ganen stats al recibir golpes o curarse (Zombie, Toro).";
-        counter = "Aislarlo y eliminar a su compañero para dejarlo indefenso en un 2 contra 1.";
-      } else if (isControl) {
-        archetype = "Disruptor de Estados";
-        archetypeDesc = "Controlador";
-        roleDuo = "Inutiliza o quema el ritmo del combate enemigo aplicando congelamiento, veneno o quemadura.";
-        allies = "Pollos con sinergias elementales que hagan más daño contra enemigos con estados.";
-        counter = "Llevar objetos de limpieza (Gota milagro, Poción mágica) para nulificar sus estados.";
+        archetypeDesc = "Brawler Contundente";
+        roleDuo = "Daño masivo sostenido. Aunque actúa después, cada golpe impacta con fuerza demoledora.";
+        allies = "Compañeros con control (Congelamiento, Parálisis) o aceleradores de velocidad.";
+        counter = "Aturdirlo, congelarlo o reducirle el ataque antes de su acción.";
+      } else if (bs.power_amount >= 50 || turns <= 2) {
+        archetype = "Brujo de Poder";
+        archetypeDesc = "Especialista Arcano";
+        roleDuo = "Carga su poder especial en tiempo récord (1-2 turnos) para desatar habilidades devastadoras.";
+        allies = "Tanques protectores o compañeros con Silencio/Parálisis para comprar tiempo.";
+        counter = "Silenciarlo (Gran pico #18) o drenar su energía para evitar que use su poder.";
+      } else if (pText.includes('curac') || pText.includes('cura') || pText.includes('recupera') || bs.life >= 75) {
+        archetype = "Soporte Médico";
+        archetypeDesc = "Sanador de Equipo";
+        roleDuo = "Mantiene con vida a su aliado curando o mitigando desgaste de estados alterados.";
+        allies = "Hiper-carries ofensivos que necesiten sostén continuo para barrer el combate.";
+        counter = "Maldición (#35 / #47) para anular por completo sus curaciones y castigarlo.";
+      } else if (bs.armor >= 45) {
+        archetype = "Baluarte / Muralla";
+        archetypeDesc = "Tanque Táctico";
+        roleDuo = "Provee presencia resistente y reduce el daño global que recibe la dupla.";
+        allies = "Magos o atacantes a distancia con alto escalado.";
+        counter = "Ataques indirectos de estados alterados o quemadura.";
       } else {
         archetype = "Todoterreno";
         archetypeDesc = "Equilibrado";
-        roleDuo = "Versátil en cualquier posición del dúo 2vs2. Adapta su juego según el compañero.";
-        allies = "Combina con cualquier arquetipo sin penalizar la sinergia general del equipo.";
-        counter = "Identificar qué objeto lleva equipado y contrarrestar su mecánica principal.";
+        roleDuo = "Compañero versátil apto para cualquier alineación. Se adapta a la estrategia que demande la batalla.";
+        allies = "Combina bien con especialistas definidos (Tanques o Asesinos).";
+        counter = "Aislarlo y neutralizar su objeto o poder con contramedidas directas.";
       }
 
-      return { archetype, archetypeDesc, turns, roleDuo, allies, counter };
+      return { archetype, archetypeDesc, roleDuo, allies, counter, turns };
     }
 
     function updateTacticalUI(diag) {
       document.getElementById('preview-archetype-badge').textContent = diag.archetype;
-      document.getElementById('card-archetype-sub').textContent = `${diag.archetype} (${diag.archetypeDesc})`;
-      document.getElementById('power-cycle-badge').textContent = `~${diag.turns} ${diag.turns === 1 ? 'turno' : 'turnos'} de carga`;
-      document.getElementById('diag-duo-role').textContent = diag.roleDuo;
-      document.getElementById('diag-allies').textContent = diag.allies;
-      document.getElementById('diag-counter').textContent = diag.counter;
+      document.getElementById('card-archetype-sub').textContent = diag.archetype + ' · ' + diag.archetypeDesc;
+      document.getElementById('tac-duo-role').textContent = diag.roleDuo;
+      document.getElementById('tac-allies').textContent = diag.allies;
+      document.getElementById('tac-counter').textContent = diag.counter;
+      document.getElementById('tac-turn-cycle').textContent = '~' + diag.turns + ' ' + (diag.turns === 1 ? 'turno' : 'turnos') + ' para Poder';
     }
 
     function updateCardPreview(diag) {
-      document.getElementById('card-name').textContent = currentSketch.name || 'Sin Nombre';
-      document.getElementById('card-sprite').src = getSpriteUrl(currentSketch.sprite);
-      document.getElementById('chicken-sprite-preview').src = getSpriteUrl(currentSketch.sprite);
-      document.getElementById('card-cost-badge').textContent = `${currentSketch.power_max}🔋`;
-
       const s = currentSketch.stats;
+      document.getElementById('card-name').textContent = currentSketch.name;
       document.getElementById('card-hp').textContent = s.life;
       document.getElementById('card-atk').textContent = s.damage;
       document.getElementById('card-def').textContent = s.armor;
       document.getElementById('card-spd').textContent = s.speed;
       document.getElementById('card-pwr').textContent = s.power_amount;
+      document.getElementById('card-cost-badge').textContent = currentSketch.power_max + '🔋';
+      document.getElementById('card-passive').textContent = currentSketch.passive || 'Sin habilidad pasiva';
+      document.getElementById('card-power').textContent = currentSketch.active_power || 'Sin poder activo';
 
-      document.getElementById('card-passive').textContent = currentSketch.passive;
-      document.getElementById('card-active').textContent = currentSketch.active_power;
-
-      // Hidden power string
-      let hpDesc = "Ninguno";
-      if (WIKI.powers && WIKI.powers[currentSketch.hidden_power_id]) {
-        const p = WIKI.powers[currentSketch.hidden_power_id];
-        hpDesc = p.description && (p.description.es || p.description);
+      // Hidden power label
+      let hpStr = "Ninguno";
+      const hpVal = currentSketch.hidden_power_id;
+      if (typeof hpVal === 'string' && hpVal.startsWith('custom_')) {
+        const cId = hpVal.replace('custom_', '');
+        const found = customPowers.find(p => p.id === cId);
+        if (found) hpStr = '✨ ' + found.name;
+      } else if (WIKI.powers && WIKI.powers[hpVal]) {
+        const pw = WIKI.powers[hpVal];
+        hpStr = '#' + (pw.id + 1) + ' ' + ((pw.description && (pw.description.es || pw.description)) || '');
       }
-      document.getElementById('card-hidden').textContent = hpDesc;
+      document.getElementById('card-hidden-power').textContent = hpStr;
+
+      // Item label
+      let itemStr = "Ninguno";
+      const itVal = currentSketch.default_item_id;
+      if (typeof itVal === 'string' && itVal.startsWith('custom_')) {
+        const cId = itVal.replace('custom_', '');
+        const found = customItems.find(it => it.id === cId);
+        if (found) itemStr = (found.icon || '🎒') + ' ' + found.name;
+      } else if (WIKI.items && itVal >= 0 && WIKI.items[itVal]) {
+        const it = WIKI.items[itVal];
+        itemStr = it.name && (it.name.es || it.name);
+      }
+      document.getElementById('card-item').textContent = itemStr;
+
+      updateCardCanvas();
     }
 
-    // Radar math & 60fps polygon update + Level simulation
     function updateRadarAndSimulation() {
       const s = currentSketch.stats;
       const lvl = parseInt(document.getElementById('sim-level-input').value, 10) || 50;
 
-      // Official GameMaker formula engine scr_calculate_stats
-      const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-
-      const lifeBase = 50, lifeMax = 2500;
-      const lifeFactor = ((s.life * 0.55) + (50 * 0.25) + (0)) / 100;
-      const life = Math.max(lifeBase, lifeBase + (lifeMax - lifeBase) * Math.pow(lvl / 100, 1.15) * lifeFactor);
-
-      const damageBase = 5, damageMax = 300;
-      const damageFactor = ((s.damage * 0.55) + (50 * 0.25) + (0)) / 100;
-      const damage = Math.max(damageBase, damageBase + (damageMax - damageBase) * Math.pow(lvl / 100, 0.85) * damageFactor);
-
-      const speedBase = 10, speedMax = 500;
-      const speedFactor = ((s.speed * 0.55) + (50 * 0.25) + (0)) / 100;
-      const speed = Math.max(speedBase, speedBase + (speedMax - speedBase) * Math.pow(lvl / 100, 0.65) * speedFactor);
-
-      const armorFactor = ((s.armor * 0.55) + (50 * 0.25) + (0)) / 100;
-      const armor = clamp(80 * Math.pow(lvl / 100, 1.30) * armorFactor, 0, 80);
-
-      document.getElementById('scaled-hp').textContent = Math.round(life).toLocaleString();
-      document.getElementById('scaled-atk').textContent = Math.round(damage).toLocaleString();
-      document.getElementById('scaled-def').textContent = `${Math.round(armor)}%`;
-      document.getElementById('scaled-spd').textContent = Math.round(speed).toLocaleString();
-
-      // Radar polygon vertices: [HP, ATK, SPD, DEF, PWR]
-      const statPcts = [
-        Math.min(1.0, Math.max(0.1, s.life / 100)),
-        Math.min(1.0, Math.max(0.1, s.damage / 100)),
-        Math.min(1.0, Math.max(0.1, s.speed / 100)),
-        Math.min(1.0, Math.max(0.1, s.armor / 100)),
-        Math.min(1.0, Math.max(0.1, s.power_amount / 80))
+      // Radar normalization
+      const maxLife = 100, maxDamage = 100, maxArmor = 80, maxSpeed = 100, maxPower = 80;
+      const normValues = [
+        Math.min(1.0, Math.max(0.1, s.life / maxLife)),
+        Math.min(1.0, Math.max(0.1, s.damage / maxDamage)),
+        Math.min(1.0, Math.max(0.05, s.armor / maxArmor)),
+        Math.min(1.0, Math.max(0.1, s.speed / maxSpeed)),
+        Math.min(1.0, Math.max(0.1, s.power_amount / maxPower))
       ];
 
-      const pts = RADAR_ANGLES.map((a, i) => {
-        const r = RADAR_R * statPcts[i];
+      const polyPoints = RADAR_ANGLES.map((a, idx) => {
+        const r = RADAR_R * normValues[idx];
         const x = RADAR_CX + r * Math.cos(a);
         const y = RADAR_CY + r * Math.sin(a);
-        return `${x.toFixed(1)},${y.toFixed(1)}`;
+        return x.toFixed(1) + ',' + y.toFixed(1);
       }).join(' ');
 
-      document.getElementById('radar-polygon').setAttribute('points', pts);
+      document.getElementById('radar-polygon').setAttribute('points', polyPoints);
 
-      // Node circles & labels
-      const nodesG = document.getElementById('radar-nodes');
-      const labelsG = document.getElementById('radar-labels');
-      nodesG.innerHTML = '';
-      labelsG.innerHTML = '';
+      // Vertex nodes & labels
+      const nodesGroup = document.getElementById('radar-nodes');
+      const labelsGroup = document.getElementById('radar-labels');
+      nodesGroup.innerHTML = '';
+      labelsGroup.innerHTML = '';
 
-      const labels = [
-        { name: "HP", color: "#f43f5e", val: s.life },
-        { name: "ATK", color: "#fb923c", val: s.damage },
-        { name: "SPD", color: "#34d399", val: s.speed },
-        { name: "DEF", color: "#60a5fa", val: s.armor },
-        { name: "PWR", color: "#c084fc", val: s.power_amount }
-      ];
+      const statKeys = ['HP', 'ATK', 'DEF', 'SPD', 'PWR'];
+      const statColors = ['#f43f5e', '#fb923c', '#60a5fa', '#34d399', '#c084fc'];
 
-      RADAR_ANGLES.forEach((a, i) => {
-        const r = RADAR_R * statPcts[i];
+      RADAR_ANGLES.forEach((a, idx) => {
+        const r = RADAR_R * normValues[idx];
         const x = RADAR_CX + r * Math.cos(a);
         const y = RADAR_CY + r * Math.sin(a);
 
-        // Circle node
-        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        c.setAttribute('cx', x.toFixed(1));
-        c.setAttribute('cy', y.toFixed(1));
-        c.setAttribute('r', '4');
-        c.setAttribute('fill', labels[i].color);
-        c.setAttribute('stroke', '#ffffff');
-        c.setAttribute('stroke-width', '1.5');
-        nodesG.appendChild(c);
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x.toFixed(1));
+        circle.setAttribute('cy', y.toFixed(1));
+        circle.setAttribute('r', '3.5');
+        circle.setAttribute('fill', statColors[idx]);
+        nodesGroup.appendChild(circle);
 
-        // Text label around perimeter
-        const lx = RADAR_CX + (RADAR_R + 18) * Math.cos(a);
-        const ly = RADAR_CY + (RADAR_R + 18) * Math.sin(a);
+        const labelR = RADAR_R + 18;
+        const lx = RADAR_CX + labelR * Math.cos(a);
+        const ly = RADAR_CY + labelR * Math.sin(a) + 3;
+
         const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         text.setAttribute('x', lx.toFixed(1));
-        text.setAttribute('y', (ly + 4).toFixed(1));
-        text.setAttribute('text-anchor', Math.abs(Math.cos(a)) < 0.2 ? 'middle' : (Math.cos(a) > 0 ? 'start' : 'end'));
-        text.setAttribute('fill', labels[i].color);
-        text.textContent = `${labels[i].name} (${labels[i].val})`;
-        labelsG.appendChild(text);
+        text.setAttribute('y', ly.toFixed(1));
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('fill', statColors[idx]);
+        text.textContent = statKeys[idx] + ' ' + Object.values(s)[idx];
+        labelsGroup.appendChild(text);
       });
+
+      // Combat formula scaling (Official Clicker Chickens formula)
+      const baseMult = 0.55;
+      const bornMult = 0.25 * (50 / 100);
+      const trainMult = 0.20 * (1.00 - 1.0);
+      const factor = (baseMult + bornMult + trainMult) * (lvl / 100);
+
+      const calcHP = Math.round(50 + 2450 * (s.life / 100) * factor);
+      const calcATK = Math.round(5 + 295 * (s.damage / 100) * factor);
+      const calcDEF = Math.min(80, Math.round((s.armor / 100) * 80 * (0.55 + 0.45 * (lvl / 100))));
+      const calcSPD = Math.round(10 + 490 * (s.speed / 100) * factor);
+
+      document.getElementById('scaled-hp').textContent = calcHP.toLocaleString();
+      document.getElementById('scaled-atk').textContent = calcATK.toLocaleString();
+      document.getElementById('scaled-def').textContent = calcDEF + '%';
+      document.getElementById('scaled-spd').textContent = calcSPD.toLocaleString();
     }
 
-    // Auto-balance to 200 pts
     function autobalanceStats() {
       const s = currentSketch.stats;
-      const currentSum = Object.values(s).reduce((a, b) => a + b, 0);
-      if (currentSum === 0) return;
-      const targetSum = 200;
-      const factor = targetSum / currentSum;
+      const sum = Object.values(s).reduce((a, b) => a + b, 0);
+      if (sum === 0) return;
+      const factor = 200 / sum;
+      s.life = Math.max(10, Math.round(s.life * factor));
+      s.damage = Math.max(10, Math.round(s.damage * factor));
+      s.armor = Math.max(0, Math.round(s.armor * factor));
+      s.speed = Math.max(5, Math.round(s.speed * factor));
+      s.power_amount = Math.max(10, 200 - (s.life + s.damage + s.armor + s.speed));
 
-      s.life = Math.round(s.life * factor);
-      s.damage = Math.round(s.damage * factor);
-      s.armor = Math.round(s.armor * factor);
-      s.speed = Math.round(s.speed * factor);
-      s.power_amount = Math.round(s.power_amount * factor);
-
-      // Handle small rounding delta
-      let delta = targetSum - Object.values(s).reduce((a, b) => a + b, 0);
-      s.life += delta;
-
-      // Update inputs
-      ['life', 'damage', 'armor', 'speed', 'power'].forEach(k => {
-        const v = s[k === 'power' ? 'power_amount' : k];
-        document.getElementById(`num-${k}`).value = v;
-        document.getElementById(`range-${k}`).value = v;
-      });
-
-      onDataChanged();
+      loadSketch(currentSketch);
     }
 
-    // Load sketch into editor
     function loadSketch(sk) {
-      currentSketch = JSON.parse(JSON.stringify(sk));
-      document.getElementById('sketch-id-badge').textContent = `Boceto #${sk.id || 151}`;
-      document.getElementById('input-name').value = sk.name || '';
-      document.getElementById('input-zone').value = sk.zone || '';
-      document.getElementById('select-status').value = sk.status || 'Boceto';
-      document.getElementById('input-concept').value = sk.concept || '';
-      document.getElementById('select-power-cost').value = sk.power_max || 100;
-      document.getElementById('input-passive').value = sk.passive || '';
-      document.getElementById('input-active-power').value = sk.active_power || '';
-      document.getElementById('select-hidden-power').value = sk.hidden_power_id ?? 4;
-      document.getElementById('select-default-item').value = sk.default_item_id ?? 1;
+      currentSketch = { ...sk, stats: { ...sk.stats } };
+      document.getElementById('sketch-id-badge').textContent = 'Boceto #' + (currentSketch.id || 151);
+      document.getElementById('input-name').value = currentSketch.name || 'Sin Nombre';
+      document.getElementById('input-zone').value = currentSketch.zone || '';
+      document.getElementById('select-status').value = currentSketch.status || 'Boceto';
+      document.getElementById('input-concept').value = currentSketch.concept || '';
+      document.getElementById('select-power-cost').value = currentSketch.power_max || 100;
+      document.getElementById('input-passive').value = currentSketch.passive || '';
+      document.getElementById('input-active-power').value = currentSketch.active_power || '';
 
-      ['life', 'damage', 'armor', 'speed'].forEach(k => {
-        document.getElementById(`num-${k}`).value = sk.stats[k] || 40;
-        document.getElementById(`range-${k}`).value = sk.stats[k] || 40;
+      const s = currentSketch.stats || { life: 60, damage: 40, armor: 40, speed: 40, power_amount: 20 };
+      ['life', 'damage', 'armor', 'speed', 'power'].forEach(key => {
+        const val = key === 'power' ? (s.power_amount || 20) : s[key];
+        document.getElementById('num-' + key).value = val;
+        document.getElementById('range-' + key).value = val;
       });
-      document.getElementById('num-power').value = sk.stats.power_amount || 20;
-      document.getElementById('range-power').value = sk.stats.power_amount || 20;
+
+      if (currentSketch.hidden_power_id !== undefined) {
+        document.getElementById('select-hidden-power').value = currentSketch.hidden_power_id;
+      }
+      if (currentSketch.default_item_id !== undefined) {
+        document.getElementById('select-default-item').value = currentSketch.default_item_id;
+      }
+
+      if (currentSketch.sprite) {
+        processImageSource(currentSketch.sprite);
+      }
 
       onDataChanged();
     }
 
-    // Save current sketch to LocalStorage
     function saveCurrentSketch() {
-      const idx = savedSketches.findIndex(s => s.id === currentSketch.id);
-      if (idx >= 0) {
-        savedSketches[idx] = JSON.parse(JSON.stringify(currentSketch));
+      onDataChanged();
+      const existingIdx = savedSketches.findIndex(s => s.id === currentSketch.id);
+      if (existingIdx >= 0) {
+        savedSketches[existingIdx] = JSON.parse(JSON.stringify(currentSketch));
       } else {
         savedSketches.push(JSON.parse(JSON.stringify(currentSketch)));
       }
       localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
-      updateSketchesCount();
-      alert(`✅ ¡Boceto "${currentSketch.name}" (#${currentSketch.id}) guardado con éxito!`);
+      updateAllCounts();
+      renderRosterView();
+      alert('💾 ¡Boceto "#' + currentSketch.id + ' ' + currentSketch.name + '" guardado con éxito!');
     }
 
-    function updateSketchesCount() {
-      document.getElementById('sketches-count-badge').textContent = savedSketches.length;
+    // ==========================================
+    // ROSTER VIEW (GEN 1 + BOCETOS GEN 2)
+    // ==========================================
+    function renderRosterView() {
+      renderRosterSketches();
+      renderRosterGen1();
     }
 
-    // Setup All Event Listeners
-    function setupEventListeners() {
-      // Stat inputs linking
-      ['life', 'damage', 'armor', 'speed'].forEach(k => {
-        document.getElementById(`num-${k}`).addEventListener('input', (e) => syncStatInputs(k, e.target.value));
-        document.getElementById(`range-${k}`).addEventListener('input', (e) => syncStatInputs(k, e.target.value));
+    function renderRosterSketches() {
+      const container = document.getElementById('roster-sketches-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (savedSketches.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center bg-[var(--bg)] rounded-xl border border-dashed border-[var(--border)] text-[var(--text-muted)] space-y-2">
+            <span class="text-3xl block">📭</span>
+            <p class="font-bold text-[var(--text)]">Aún no has guardado ningún boceto de Gen 2.</p>
+            <p class="text-xs">Diseña tu primer pollo en la pestaña <strong>🎨 Taller de Pollos</strong> y haz clic en <strong>"Guardar Pollo"</strong>.</p>
+            <button id="btn-empty-create-sketch" class="mt-2 px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs inline-flex items-center gap-1.5 shadow transition">
+              <span>✨</span> Ir al Taller a Diseñar
+            </button>
+          </div>
+        `;
+        document.getElementById('btn-empty-create-sketch')?.addEventListener('click', () => switchTab('builder'));
+        return;
+      }
+
+      savedSketches.forEach((sk, idx) => {
+        const s = sk.stats || {};
+        const sum = Object.values(s).reduce((a, b) => a + b, 0);
+        const diag = diagnoseArchetype(sk);
+
+        // Resolve hidden power
+        let hpName = "Ninguno";
+        if (typeof sk.hidden_power_id === 'string' && sk.hidden_power_id.startsWith('custom_')) {
+          const cId = sk.hidden_power_id.replace('custom_', '');
+          const found = customPowers.find(p => p.id === cId);
+          if (found) hpName = '✨ ' + found.name;
+        } else if (WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
+          const pw = WIKI.powers[sk.hidden_power_id];
+          hpName = pw.description && (pw.description.es || pw.description);
+        }
+
+        // Resolve item
+        let itName = "Ninguno";
+        if (typeof sk.default_item_id === 'string' && sk.default_item_id.startsWith('custom_')) {
+          const cId = sk.default_item_id.replace('custom_', '');
+          const found = customItems.find(it => it.id === cId);
+          if (found) itName = (found.icon || '🎒') + ' ' + found.name;
+        } else if (WIKI.items && sk.default_item_id >= 0 && WIKI.items[sk.default_item_id]) {
+          const it = WIKI.items[sk.default_item_id];
+          itName = it.name && (it.name.es || it.name);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'p-3.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/50 transition flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm';
+        card.innerHTML = `
+          <div class="flex items-center gap-3.5 min-w-0">
+            <img class="w-12 h-12 object-contain pixelated bg-[var(--card)] rounded-xl p-1 border border-[var(--border)] flex-shrink-0" src="` + getSpriteUrl(sk.sprite) + `" alt="">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-mono text-xs text-amber-400 font-bold">#` + (sk.id || 151) + `</span>
+                <h4 class="text-sm font-bold truncate text-[var(--text)]">` + sk.name + `</h4>
+                <span class="px-2 py-0.2 rounded-full text-[10px] font-semibold bg-[var(--card)] border border-[var(--border)] text-[var(--text-muted)]">` + (sk.status || 'Boceto') + `</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 font-mono">` + diag.archetype + `</span>
+              </div>
+              <div class="text-[11px] font-mono text-[var(--text-muted)] mt-1 flex flex-wrap gap-x-2 gap-y-0.5">
+                <span class="text-rose-400">HP ` + s.life + `</span>
+                <span class="text-orange-400">ATK ` + s.damage + `</span>
+                <span class="text-blue-400">DEF ` + s.armor + `</span>
+                <span class="text-emerald-400">SPD ` + s.speed + `</span>
+                <span class="text-purple-400">PWR ` + s.power_amount + `</span>
+                <span class="text-[var(--text)] font-bold">(` + sum + ` pts)</span>
+              </div>
+              <div class="text-[11px] text-[var(--text-muted)] mt-1 truncate max-w-xl">
+                <span>🛡️ <strong>Pasiva:</strong> ` + (sk.passive || '-') + `</span> | 
+                <span>🔥 <strong>Poder:</strong> ` + (sk.active_power || '-') + ` (` + (sk.power_max || 100) + `🔋)</span> | 
+                <span>🔮 <strong>Oculto:</strong> ` + hpName + `</span> | 
+                <span>🎒 <strong>Item:</strong> ` + itName + `</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 flex-shrink-0 self-end md:self-center">
+            <button class="btn-edit-sk px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1 transition">
+              <span>✏️</span> Editar en Taller
+            </button>
+            <button class="btn-dup-sk px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold transition" title="Duplicar boceto">
+              📋 Duplicar
+            </button>
+            <button class="btn-del-sk px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-rose-500 hover:text-white text-rose-400 border border-[var(--border)] text-xs transition" title="Eliminar boceto">
+              🗑️
+            </button>
+          </div>
+        `;
+
+        card.querySelector('.btn-edit-sk').addEventListener('click', () => {
+          loadSketch(sk);
+          switchTab('builder');
+        });
+
+        card.querySelector('.btn-dup-sk').addEventListener('click', () => {
+          const nextId = Math.max(...savedSketches.map(s => s.id || 151)) + 1;
+          const clone = JSON.parse(JSON.stringify(sk));
+          clone.id = nextId;
+          clone.name = clone.name + ' (Copia)';
+          savedSketches.push(clone);
+          localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+          updateAllCounts();
+          renderRosterSketches();
+        });
+
+        card.querySelector('.btn-del-sk').addEventListener('click', () => {
+          if (confirm('¿Eliminar el boceto "#' + sk.id + ' ' + sk.name + '"?')) {
+            savedSketches.splice(idx, 1);
+            localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+            updateAllCounts();
+            renderRosterSketches();
+          }
+        });
+
+        container.appendChild(card);
       });
-      document.getElementById('num-power').addEventListener('input', (e) => syncStatInputs('power_amount', e.target.value));
-      document.getElementById('range-power').addEventListener('input', (e) => syncStatInputs('power_amount', e.target.value));
+    }
 
-      // Info inputs
+    function renderRosterGen1() {
+      const tbody = document.getElementById('roster-gen1-tbody');
+      if (!tbody || !WIKI.chickens) return;
+
+      const searchVal = (document.getElementById('roster-gen1-search')?.value || '').toLowerCase().trim();
+      const archFilter = document.getElementById('roster-gen1-filter-archetype')?.value || 'all';
+      const sortVal = document.getElementById('roster-gen1-sort')?.value || 'id-asc';
+
+      let list = WIKI.chickens.slice();
+
+      // Search
+      if (searchVal) {
+        list = list.filter(c => {
+          const name = (c.name && (c.name.es || c.name) || '').toLowerCase();
+          const p = WIKI.passives && WIKI.passives[c.passive_id];
+          const pStr = (p && p.description && (p.description.es || p.description) || '').toLowerCase();
+          const pw = WIKI.powers && WIKI.powers[c.power_id];
+          const pwStr = (pw && pw.description && (pw.description.es || pw.description) || '').toLowerCase();
+          const idStr = String(c.id);
+          const padIdStr = String(c.id + 1).padStart(3, '0');
+          return name.includes(searchVal) || idStr === searchVal || padIdStr === searchVal || pStr.includes(searchVal) || pwStr.includes(searchVal);
+        });
+      }
+
+      // Archetype filter
+      if (archFilter !== 'all') {
+        list = list.filter(c => {
+          const diag = diagnoseArchetype(c);
+          return diag.archetype.toLowerCase().includes(archFilter.toLowerCase());
+        });
+      }
+
+      // Sort
+      list.sort((a, b) => {
+        if (sortVal === 'id-asc') return a.id - b.id;
+        if (sortVal === 'id-desc') return b.id - a.id;
+        if (sortVal === 'name-asc') {
+          const na = a.name && (a.name.es || a.name);
+          const nb = b.name && (b.name.es || b.name);
+          return na.localeCompare(nb);
+        }
+        if (sortVal === 'hp-desc') return b.stats.life - a.stats.life;
+        if (sortVal === 'atk-desc') return b.stats.damage - a.stats.damage;
+        if (sortVal === 'def-desc') return b.stats.armor - a.stats.armor;
+        if (sortVal === 'spd-desc') return b.stats.speed - a.stats.speed;
+        if (sortVal === 'pwr-desc') return b.stats.power_amount - a.stats.power_amount;
+        return 0;
+      });
+
+      document.getElementById('roster-gen1-count-info').textContent = 'Mostrando ' + list.length + ' de ' + WIKI.chickens.length + ' pollos';
+
+      tbody.innerHTML = '';
+      list.forEach(c => {
+        const name = c.name && (c.name.es || c.name);
+        const diag = diagnoseArchetype(c);
+        const p = WIKI.passives && WIKI.passives[c.passive_id];
+        const pDesc = p ? (p.description.es || p.description) : '-';
+        const pw = WIKI.powers && WIKI.powers[c.power_id];
+        const pwDesc = pw ? (pw.description.es || pw.description) : '-';
+        const hp = WIKI.powers && WIKI.powers[c.hidden_power_id];
+        const hpDesc = hp ? (hp.description.es || hp.description) : '-';
+        const it = WIKI.items && c.default_item_id >= 0 && WIKI.items[c.default_item_id];
+        const itName = it ? (it.name.es || it.name) : '-';
+
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-[var(--card)] transition';
+        tr.innerHTML = `
+          <td class="p-2.5 text-center font-bold text-[var(--text-muted)]">#` + String(c.id + 1).padStart(3, '0') + `</td>
+          <td class="p-2.5 text-center">
+            <img class="w-8 h-8 object-contain pixelated mx-auto" src="` + getSpriteUrl(c.sprite) + `" alt="">
+          </td>
+          <td class="p-2.5 font-bold text-[var(--text)] font-sans">` + name + `</td>
+          <td class="p-2.5 font-sans">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30 whitespace-nowrap">` + diag.archetype + `</span>
+          </td>
+          <td class="p-2.5 font-mono text-[11px]">
+            <span class="text-rose-400">` + c.stats.life + `</span> / 
+            <span class="text-orange-400">` + c.stats.damage + `</span> / 
+            <span class="text-blue-400">` + c.stats.armor + `</span> / 
+            <span class="text-emerald-400">` + c.stats.speed + `</span> / 
+            <span class="text-purple-400">` + c.stats.power_amount + `</span> 
+            <span class="text-[var(--text-muted)]">(` + (c.stat_total || 200) + `)</span>
+          </td>
+          <td class="p-2.5 text-[11px] font-sans text-[var(--text-muted)] truncate max-w-[200px]" title="` + pDesc + `">` + pDesc + `</td>
+          <td class="p-2.5 text-[11px] font-sans text-amber-400 truncate max-w-[160px]" title="` + pwDesc + `">` + pwDesc + ` <span class="text-[10px] text-purple-300">(` + (c.power_max || 100) + `🔋)</span></td>
+          <td class="p-2.5 text-[11px] font-sans text-purple-300 truncate max-w-[160px]" title="` + hpDesc + `">` + hpDesc + `</td>
+          <td class="p-2.5 text-[11px] font-sans text-[var(--text-muted)] truncate max-w-[120px]">` + itName + `</td>
+          <td class="p-2.5 text-center">
+            <button class="btn-clone-base px-2.5 py-1 rounded-lg bg-[var(--bg)] hover:bg-amber-500 hover:text-black text-[var(--text)] border border-[var(--border)] text-[11px] font-bold transition whitespace-nowrap">
+              🎨 Usar como Base
+            </button>
+          </td>
+        `;
+
+        tr.querySelector('.btn-clone-base').addEventListener('click', () => {
+          const nextId = savedSketches.length > 0 ? Math.max(...savedSketches.map(s => s.id || 151)) + 1 : 151;
+          currentSketch = {
+            id: nextId,
+            name: name + ' (Gen 2)',
+            sprite: c.sprite,
+            zone: "Nueva Zona",
+            status: "Boceto",
+            concept: 'Variante inspirada en la especie oficial #' + (c.id + 1) + ' ' + name + '.',
+            stats: { ...c.stats },
+            power_max: c.power_max || 100,
+            passive: pDesc,
+            active_power: pwDesc,
+            hidden_power_id: c.hidden_power_id ?? 4,
+            default_item_id: c.default_item_id ?? -1
+          };
+          loadSketch(currentSketch);
+          switchTab('builder');
+        });
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    // ==========================================
+    // POWERS BUILDER VIEW
+    // ==========================================
+    function renderPowersView() {
+      renderCustomPowersList();
+      renderOfficialPowersList();
+    }
+
+    function renderCustomPowersList() {
+      const container = document.getElementById('custom-powers-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (customPowers.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 text-center bg-[var(--bg)] rounded-xl border border-dashed border-[var(--border)] text-[var(--text-muted)]">
+            <span class="text-2xl block mb-1">✨</span>
+            <p class="font-bold text-xs text-[var(--text)]">Aún no has creado poderes para Gen 2.</p>
+            <p class="text-[11px]">Usa el formulario a la izquierda para diseñar técnicas activas u ocultas.</p>
+          </div>
+        `;
+        return;
+      }
+
+      customPowers.forEach((pw, idx) => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-purple-500/50 transition flex items-start justify-between gap-3 text-xs';
+        item.innerHTML = `
+          <div class="space-y-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-bold text-sm text-purple-300 truncate">` + pw.name + `</span>
+              <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">` + (pw.type || 'Activo') + `</span>
+              <span class="px-2 py-0.2 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">` + (pw.cost || 100) + `🔋</span>
+              <span class="px-2 py-0.2 rounded-full text-[10px] bg-[var(--card)] text-[var(--text-muted)]">` + (pw.theme || 'Daño') + `</span>
+            </div>
+            <p class="text-[var(--text)] leading-relaxed">` + (pw.description || '') + `</p>
+            ` + (pw.notes ? ('<p class="text-[11px] text-[var(--text-muted)] italic font-sans">Notas: ' + pw.notes + '</p>') : '') + `
+          </div>
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <button class="btn-edit-pw px-2.5 py-1 rounded bg-[var(--card)] hover:bg-purple-500 hover:text-white text-[11px] font-semibold transition">
+              ✏️
+            </button>
+            <button class="btn-del-pw px-2.5 py-1 rounded bg-[var(--card)] hover:bg-rose-500 hover:text-white text-rose-400 text-[11px] transition">
+              🗑️
+            </button>
+          </div>
+        `;
+
+        item.querySelector('.btn-edit-pw').addEventListener('click', () => {
+          editingPowerId = pw.id;
+          document.getElementById('pw-form-title').innerHTML = '<span>✏️</span> Editar Poder Gen 2';
+          document.getElementById('pw-edit-badge').classList.remove('hidden');
+          document.getElementById('pw-name').value = pw.name || '';
+          document.getElementById('pw-type').value = pw.type || 'Activo';
+          document.getElementById('pw-cost').value = pw.cost || 100;
+          document.getElementById('pw-effect-theme').value = pw.theme || 'Daño Directo';
+          document.getElementById('pw-desc').value = pw.description || '';
+          document.getElementById('pw-notes').value = pw.notes || '';
+        });
+
+        item.querySelector('.btn-del-pw').addEventListener('click', () => {
+          if (confirm('¿Eliminar el poder "' + pw.name + '"?')) {
+            customPowers.splice(idx, 1);
+            localStorage.setItem('cc_gen2_custom_powers', JSON.stringify(customPowers));
+            updateAllCounts();
+            populateDropdowns();
+            renderCustomPowersList();
+          }
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    function renderOfficialPowersList() {
+      const container = document.getElementById('official-powers-container');
+      if (!container || !WIKI.powers) return;
+
+      const searchVal = (document.getElementById('search-official-powers')?.value || '').toLowerCase().trim();
+      let list = WIKI.powers.slice();
+
+      if (searchVal) {
+        list = list.filter(pw => {
+          const desc = (pw.description && (pw.description.es || pw.description) || '').toLowerCase();
+          return desc.includes(searchVal) || String(pw.id + 1) === searchVal;
+        });
+      }
+
+      container.innerHTML = '';
+      list.forEach(pw => {
+        const desc = pw.description && (pw.description.es || pw.description);
+        const item = document.createElement('div');
+        item.className = 'p-2.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-purple-500/40 transition flex items-center justify-between gap-3';
+        item.innerHTML = `
+          <div class="min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] text-purple-400 font-bold">#` + (pw.id + 1) + `</span>
+              <p class="font-medium text-[var(--text)] truncate max-w-md">` + desc + `</p>
+            </div>
+          </div>
+          <button class="btn-clone-pw px-2 py-1 rounded bg-[var(--card)] hover:bg-purple-500 hover:text-white text-[10px] font-bold transition flex-shrink-0">
+            📋 Clonar
+          </button>
+        `;
+
+        item.querySelector('.btn-clone-pw').addEventListener('click', () => {
+          editingPowerId = null;
+          document.getElementById('pw-form-title').innerHTML = '<span>⚡</span> Diseñar Nuevo Poder';
+          document.getElementById('pw-edit-badge').classList.add('hidden');
+          document.getElementById('pw-name').value = 'Variante de ' + desc.substring(0, 20) + '...';
+          document.getElementById('pw-desc').value = desc;
+          document.getElementById('pw-cost').value = 100;
+          document.getElementById('pw-name').focus();
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    // ==========================================
+    // ITEMS BUILDER VIEW
+    // ==========================================
+    function renderItemsView() {
+      renderCustomItemsList();
+      renderOfficialItemsList();
+    }
+
+    function renderCustomItemsList() {
+      const container = document.getElementById('custom-items-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (customItems.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 text-center bg-[var(--bg)] rounded-xl border border-dashed border-[var(--border)] text-[var(--text-muted)]">
+            <span class="text-2xl block mb-1">🎒</span>
+            <p class="font-bold text-xs text-[var(--text)]">Aún no has creado objetos para Gen 2.</p>
+            <p class="text-[11px]">Usa el formulario a la izquierda para crear equipables o consumibles.</p>
+          </div>
+        `;
+        return;
+      }
+
+      customItems.forEach((it, idx) => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-blue-500/50 transition flex items-start justify-between gap-3 text-xs';
+        item.innerHTML = `
+          <div class="flex items-start gap-3 min-w-0">
+            <div class="w-10 h-10 rounded-xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-xl flex-shrink-0">
+              ` + (it.icon || '🎒') + `
+            </div>
+            <div class="space-y-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-bold text-sm text-[var(--text)] truncate">` + it.name + `</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">` + (it.type || 'Equipable') + `</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">` + (it.price || 150) + ` 🌰</span>
+                <span class="px-2 py-0.2 rounded-full text-[10px] bg-[var(--card)] text-[var(--text-muted)]">` + (it.trigger || 'Permanente') + `</span>
+              </div>
+              <p class="text-[var(--text)] leading-relaxed">` + (it.description || '') + `</p>
+              ` + (it.zone ? ('<p class="text-[11px] text-[var(--text-muted)]">📍 Obtención: ' + it.zone + '</p>') : '') + `
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <button class="btn-edit-it px-2.5 py-1 rounded bg-[var(--card)] hover:bg-blue-500 hover:text-white text-[11px] font-semibold transition">
+              ✏️
+            </button>
+            <button class="btn-del-it px-2.5 py-1 rounded bg-[var(--card)] hover:bg-rose-500 hover:text-white text-rose-400 text-[11px] transition">
+              🗑️
+            </button>
+          </div>
+        `;
+
+        item.querySelector('.btn-edit-it').addEventListener('click', () => {
+          editingItemId = it.id;
+          document.getElementById('it-form-title').innerHTML = '<span>✏️</span> Editar Objeto Gen 2';
+          document.getElementById('it-edit-badge').classList.remove('hidden');
+          document.getElementById('it-icon').value = it.icon || '🎒';
+          document.getElementById('it-name').value = it.name || '';
+          document.getElementById('it-type').value = it.type || 'Equipable';
+          document.getElementById('it-price').value = it.price || 150;
+          document.getElementById('it-trigger').value = it.trigger || 'Permanente';
+          document.getElementById('it-desc').value = it.description || '';
+          document.getElementById('it-zone').value = it.zone || '';
+        });
+
+        item.querySelector('.btn-del-it').addEventListener('click', () => {
+          if (confirm('¿Eliminar el objeto "' + it.name + '"?')) {
+            customItems.splice(idx, 1);
+            localStorage.setItem('cc_gen2_custom_items', JSON.stringify(customItems));
+            updateAllCounts();
+            populateDropdowns();
+            renderCustomItemsList();
+          }
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    function renderOfficialItemsList() {
+      const container = document.getElementById('official-items-container');
+      if (!container || !WIKI.items) return;
+
+      const searchVal = (document.getElementById('search-official-items')?.value || '').toLowerCase().trim();
+      const typeFilter = document.getElementById('filter-official-item-type')?.value || 'all';
+
+      let list = WIKI.items.slice();
+
+      if (typeFilter === 'equipable') list = list.filter(i => !i.consumable);
+      if (typeFilter === 'consumable') list = list.filter(i => i.consumable);
+
+      if (searchVal) {
+        list = list.filter(it => {
+          const name = (it.name && (it.name.es || it.name) || '').toLowerCase();
+          const desc = (it.description && (it.description.es || it.description) || '').toLowerCase();
+          return name.includes(searchVal) || desc.includes(searchVal) || String(it.id + 1) === searchVal;
+        });
+      }
+
+      container.innerHTML = '';
+      list.forEach(it => {
+        const name = it.name && (it.name.es || it.name);
+        const desc = it.description && (it.description.es || it.description);
+        const item = document.createElement('div');
+        item.className = 'p-2 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-blue-500/40 transition flex items-center justify-between gap-3';
+        item.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0">
+            <img class="w-7 h-7 object-contain pixelated" src="` + it.sprite + `" alt="">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-[10px] text-[var(--text-muted)]">#` + String(it.id + 1).padStart(2, '0') + `</span>
+                <span class="font-bold text-[var(--text)] truncate">` + name + `</span>
+                <span class="text-[10px] font-mono text-amber-400">` + (it.shop_price || it.price) + ` 🌰</span>
+              </div>
+              <p class="text-[11px] text-[var(--text-muted)] truncate max-w-md">` + desc + `</p>
+            </div>
+          </div>
+          <button class="btn-clone-it px-2 py-1 rounded bg-[var(--card)] hover:bg-blue-500 hover:text-white text-[10px] font-bold transition flex-shrink-0">
+            📋 Clonar
+          </button>
+        `;
+
+        item.querySelector('.btn-clone-it').addEventListener('click', () => {
+          editingItemId = null;
+          document.getElementById('it-form-title').innerHTML = '<span>🎒</span> Diseñar Nuevo Objeto';
+          document.getElementById('it-edit-badge').classList.add('hidden');
+          document.getElementById('it-name').value = name + ' Mk.II';
+          document.getElementById('it-type').value = it.consumable ? 'Consumible' : 'Equipable';
+          document.getElementById('it-price').value = it.shop_price || it.price || 150;
+          document.getElementById('it-desc').value = desc;
+          document.getElementById('it-name').focus();
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    // ==========================================
+    // EVENT LISTENERS SETUP
+    // ==========================================
+    function setupEventListeners() {
+      // Tab navigation buttons
+      document.getElementById('tab-btn-builder').addEventListener('click', () => switchTab('builder'));
+      document.getElementById('tab-btn-roster').addEventListener('click', () => switchTab('roster'));
+      document.getElementById('tab-btn-powers').addEventListener('click', () => switchTab('powers'));
+      document.getElementById('tab-btn-items').addEventListener('click', () => switchTab('items'));
+
+      // Stat inputs & ranges
+      ['life', 'damage', 'armor', 'speed', 'power'].forEach(key => {
+        document.getElementById('range-' + key).addEventListener('input', (e) => syncStatInputs(key === 'power' ? 'power_amount' : key, e.target.value));
+        document.getElementById('num-' + key).addEventListener('input', (e) => syncStatInputs(key === 'power' ? 'power_amount' : key, e.target.value));
+      });
+
+      // Text and select inputs
       ['input-name', 'input-zone', 'select-status', 'input-concept', 'select-power-cost', 'input-passive', 'input-active-power', 'select-hidden-power', 'select-default-item'].forEach(id => {
         document.getElementById(id).addEventListener('input', onDataChanged);
         document.getElementById(id).addEventListener('change', onDataChanged);
@@ -1402,13 +2438,17 @@
         }
       });
       document.getElementById('preset-power-select').addEventListener('change', (e) => {
-        if (e.target.value) {
-          document.getElementById('input-active-power').value = e.target.value;
+        const sel = e.target;
+        if (sel.value) {
+          document.getElementById('input-active-power').value = sel.value;
+          const opt = sel.options[sel.selectedIndex];
+          const cost = opt.getAttribute('data-cost');
+          if (cost) document.getElementById('select-power-cost').value = cost;
           onDataChanged();
         }
       });
 
-      // Level slider & presets
+      // Level simulation
       document.getElementById('sim-level-input').addEventListener('input', updateRadarAndSimulation);
       document.querySelectorAll('.btn-lvl-preset').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -1422,25 +2462,13 @@
 
       // Save & New buttons
       document.getElementById('btn-save').addEventListener('click', saveCurrentSketch);
-      document.getElementById('btn-new').addEventListener('click', () => {
-        const nextId = savedSketches.length > 0 ? Math.max(...savedSketches.map(s => s.id || 151)) + 1 : 151;
-        loadSketch({
-          id: nextId,
-          name: "Nuevo Pollo " + nextId,
-          sprite: "images/chickens/0.png",
-          zone: "Nueva Zona",
-          status: "Idea",
-          concept: "",
-          stats: { life: 40, damage: 45, armor: 35, speed: 45, power_amount: 35 },
-          power_max: 100,
-          passive: "Habilidad pasiva única...",
-          active_power: "Poder activo...",
-          hidden_power_id: 4,
-          default_item_id: -1
-        });
+      document.getElementById('btn-new').addEventListener('click', createNewSketch);
+      document.getElementById('btn-roster-new-sketch')?.addEventListener('click', () => {
+        createNewSketch();
+        switchTab('builder');
       });
 
-      // Image upload & drag drop
+      // Sprite image upload & drag drop
       const dropzone = document.getElementById('sprite-dropzone');
       const fileInput = document.getElementById('file-sprite-input');
 
@@ -1458,7 +2486,6 @@
         }
       });
 
-      // Drag and Drop
       dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('border-amber-500'); });
       dropzone.addEventListener('dragleave', () => dropzone.classList.remove('border-amber-500'));
       dropzone.addEventListener('drop', (e) => {
@@ -1476,7 +2503,6 @@
         }
       });
 
-      // Paste handler (Ctrl + V for images)
       window.addEventListener('paste', (e) => {
         if (e.clipboardData && e.clipboardData.items) {
           for (let item of e.clipboardData.items) {
@@ -1495,190 +2521,235 @@
         }
       });
 
-      // Random sprite from Gen 1
       document.getElementById('btn-random-sprite').addEventListener('click', () => {
         const randId = Math.floor(Math.random() * (WIKI.chickens ? WIKI.chickens.length : 151));
-        currentSketch.sprite = `images/chickens/${randId}.png`;
+        currentSketch.sprite = 'images/chickens/' + randId + '.png';
         processImageSource(currentSketch.sprite);
         onDataChanged();
       });
 
       // Modal Gen 1 Browser
       const modalGen1 = document.getElementById('modal-gen1');
-      document.getElementById('btn-browse-gen1').addEventListener('click', () => {
-        renderGen1Grid();
-        modalGen1.classList.remove('hidden');
-      });
       document.getElementById('btn-pick-gen1-sprite').addEventListener('click', () => {
-        renderGen1Grid(true); // Pick mode
+        renderGen1Grid(true);
         modalGen1.classList.remove('hidden');
       });
       document.getElementById('btn-close-gen1').addEventListener('click', () => modalGen1.classList.add('hidden'));
 
-      // Modal Sketches Browser
-      const modalSketches = document.getElementById('modal-sketches');
-      document.getElementById('btn-my-sketches').addEventListener('click', () => {
-        renderSketchesList();
-        modalSketches.classList.remove('hidden');
-      });
-      document.getElementById('btn-close-sketches').addEventListener('click', () => modalSketches.classList.add('hidden'));
+      // Roster search and filters
+      document.getElementById('roster-gen1-search')?.addEventListener('input', renderRosterGen1);
+      document.getElementById('roster-gen1-filter-archetype')?.addEventListener('change', renderRosterGen1);
+      document.getElementById('roster-gen1-sort')?.addEventListener('change', renderRosterGen1);
 
-      // Export CSV (for Google Sheets)
+      // Powers builder listeners
+      document.getElementById('btn-save-power')?.addEventListener('click', saveCustomPower);
+      document.getElementById('btn-clear-power')?.addEventListener('click', clearPowerForm);
+      document.getElementById('search-official-powers')?.addEventListener('input', renderOfficialPowersList);
+      document.getElementById('btn-export-powers-csv')?.addEventListener('click', exportPowersCSV);
+
+      // Items builder listeners
+      document.getElementById('btn-save-item')?.addEventListener('click', saveCustomItem);
+      document.getElementById('btn-clear-item')?.addEventListener('click', clearItemForm);
+      document.getElementById('search-official-items')?.addEventListener('input', renderOfficialItemsList);
+      document.getElementById('filter-official-item-type')?.addEventListener('change', renderOfficialItemsList);
+      document.getElementById('btn-export-items-csv')?.addEventListener('click', exportItemsCSV);
+
+      // Exports and backups
       document.getElementById('btn-export-csv').addEventListener('click', exportToGoogleSheetsCSV);
+      document.getElementById('btn-roster-export-sketches-csv')?.addEventListener('click', exportToGoogleSheetsCSV);
 
       // JSON backup & import
-      document.getElementById('btn-backup-json').addEventListener('click', () => {
-        const blob = new Blob([JSON.stringify(savedSketches, null, 2)], { type: 'application/json' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = `Clicker_Chickens_Gen2_Bocetos_${new Date().toISOString().slice(0, 10)}.json`;
-        a.click();
-      });
+      document.getElementById('btn-backup-all-json').addEventListener('click', backupAllJSON);
+      document.getElementById('file-import-all-json').addEventListener('change', importAllJSON);
+    }
 
-      document.getElementById('file-import-json').addEventListener('change', (e) => {
-        if (e.target.files && e.target.files[0]) {
-          const reader = new FileReader();
-          reader.onload = (re) => {
-            try {
-              const data = JSON.parse(re.target.result);
-              if (Array.isArray(data)) {
-                savedSketches = data;
-                localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
-                updateSketchesCount();
-                renderSketchesList();
-                alert(`✅ ¡${savedSketches.length} bocetos importados con éxito!`);
-              }
-            } catch(err) {
-              alert('Error al leer el archivo JSON.');
-            }
-          };
-          reader.readAsText(e.target.files[0]);
-        }
+    function createNewSketch() {
+      const nextId = savedSketches.length > 0 ? Math.max(...savedSketches.map(s => s.id || 151)) + 1 : 151;
+      loadSketch({
+        id: nextId,
+        name: "Nuevo Pollo " + nextId,
+        sprite: "images/chickens/0.png",
+        zone: "Nueva Zona",
+        status: "Idea",
+        concept: "",
+        stats: { life: 40, damage: 45, armor: 35, speed: 45, power_amount: 35 },
+        power_max: 100,
+        passive: "Habilidad pasiva única...",
+        active_power: "Poder activo...",
+        hidden_power_id: 4,
+        default_item_id: -1
       });
     }
 
-    // Render Gen 1 Grid in Modal
-    function renderGen1Grid(pickSpriteMode = false) {
-      const container = document.getElementById('gen1-grid');
-      const searchVal = (document.getElementById('gen1-search').value || '').toLowerCase().trim();
-      container.innerHTML = '';
-
-      if (!WIKI.chickens) return;
-
-      const filtered = WIKI.chickens.filter(c => {
-        const name = (c.name && (c.name.es || c.name) || '').toLowerCase();
-        return name.includes(searchVal) || c.id.toString() === searchVal;
-      });
-
-      filtered.forEach(c => {
-        const name = c.name && (c.name.es || c.name);
-        const card = document.createElement('div');
-        card.className = 'p-2.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/60 transition flex items-center justify-between gap-3 cursor-pointer group';
-        card.innerHTML = `
-          <div class="flex items-center gap-2.5 min-w-0">
-            <img class="w-10 h-10 object-contain pixelated" src="${getSpriteUrl(c.sprite)}" alt="">
-            <div class="truncate">
-              <span class="font-mono text-[10px] text-[var(--text-muted)]">#${String(c.id).padStart(3, '0')}</span>
-              <h4 class="text-xs font-bold truncate group-hover:text-amber-400 transition">${name}</h4>
-              <span class="text-[10px] font-mono text-amber-500">${c.stat_total || 200} pts</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 items-end">
-            <button class="px-2 py-1 rounded bg-[var(--card)] hover:bg-amber-500 hover:text-black text-[10px] font-bold transition">
-              ${pickSpriteMode ? 'Usar Sprite' : 'Clonar Stats'}
-            </button>
-          </div>
-        `;
-        card.addEventListener('click', () => {
-          if (pickSpriteMode) {
-            currentSketch.sprite = c.sprite;
-            processImageSource(c.sprite);
-            onDataChanged();
-          } else {
-            // Clone as base for Gen 2
-            currentSketch.stats = { ...c.stats };
-            currentSketch.power_max = c.power_max || 100;
-            if (WIKI.passives && WIKI.passives[c.passive_id]) {
-              currentSketch.passive = WIKI.passives[c.passive_id].description.es || WIKI.passives[c.passive_id].description;
-            }
-            if (WIKI.powers && WIKI.powers[c.power_id]) {
-              currentSketch.active_power = WIKI.powers[c.power_id].description.es || WIKI.powers[c.power_id].description;
-            }
-            currentSketch.hidden_power_id = c.hidden_power_id ?? 4;
-            loadSketch(currentSketch);
-          }
-          document.getElementById('modal-gen1').classList.add('hidden');
-        });
-        container.appendChild(card);
-      });
-    }
-
-    document.getElementById('gen1-search').addEventListener('input', () => renderGen1Grid());
-
-    // Render Saved Sketches
-    function renderSketchesList() {
-      const container = document.getElementById('sketches-list-container');
-      container.innerHTML = '';
-
-      if (savedSketches.length === 0) {
-        container.innerHTML = `
-          <div class="p-8 text-center text-[var(--text-muted)] space-y-2">
-            <span class="text-3xl block">📭</span>
-            <p>Aún no has guardado ningún boceto de Gen 2.</p>
-            <p class="text-xs">Usa el botón "💾 Guardar Boceto" arriba para almacenar tus creaciones.</p>
-          </div>
-        `;
+    // ==========================================
+    // CUSTOM POWERS CRUD
+    // ==========================================
+    function saveCustomPower() {
+      const name = document.getElementById('pw-name').value.trim();
+      const desc = document.getElementById('pw-desc').value.trim();
+      if (!name) {
+        alert('Por favor, ingresa un nombre para el poder.');
+        return;
+      }
+      if (!desc) {
+        alert('Por favor, ingresa una descripción para el efecto del poder.');
         return;
       }
 
-      savedSketches.forEach((sk, idx) => {
-        const s = sk.stats || {};
-        const sum = Object.values(s).reduce((a, b) => a + b, 0);
-        const item = document.createElement('div');
-        item.className = 'p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/40 transition flex items-center justify-between gap-4';
-        item.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0">
-            <img class="w-12 h-12 object-contain pixelated bg-[var(--card)] rounded-lg p-1 border border-[var(--border)]" src="${getSpriteUrl(sk.sprite)}" alt="">
-            <div class="truncate">
-              <div class="flex items-center gap-2">
-                <span class="font-mono text-xs text-amber-400 font-bold">#${sk.id || 151}</span>
-                <h4 class="text-sm font-bold truncate">${sk.name}</h4>
-                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[var(--card)] border border-[var(--border)] text-[var(--text-muted)]">${sk.status || 'Boceto'}</span>
-              </div>
-              <div class="text-[11px] font-mono text-[var(--text-muted)] mt-0.5">
-                HP ${s.life} · ATK ${s.damage} · DEF ${s.armor} · SPD ${s.speed} · PWR ${s.power_amount} · <strong>${sum} pts</strong>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center gap-2">
-            <button class="btn-load-sk px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs transition">
-              Cargar
-            </button>
-            <button class="btn-del-sk px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-rose-500 hover:text-white text-rose-400 border border-[var(--border)] text-xs transition">
-              🗑️
-            </button>
-          </div>
-        `;
+      const pwObj = {
+        id: editingPowerId || ('pw_' + Date.now()),
+        name: name,
+        type: document.getElementById('pw-type').value,
+        cost: parseInt(document.getElementById('pw-cost').value, 10) || 100,
+        theme: document.getElementById('pw-effect-theme').value,
+        description: desc,
+        notes: document.getElementById('pw-notes').value.trim()
+      };
 
-        item.querySelector('.btn-load-sk').addEventListener('click', () => {
-          loadSketch(sk);
-          document.getElementById('modal-sketches').classList.add('hidden');
-        });
+      if (editingPowerId) {
+        const idx = customPowers.findIndex(p => p.id === editingPowerId);
+        if (idx >= 0) customPowers[idx] = pwObj;
+      } else {
+        customPowers.push(pwObj);
+      }
 
-        item.querySelector('.btn-del-sk').addEventListener('click', () => {
-          if (confirm(`¿Eliminar boceto "${sk.name}"?`)) {
-            savedSketches.splice(idx, 1);
-            localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
-            updateSketchesCount();
-            renderSketchesList();
-          }
-        });
-
-        container.appendChild(item);
-      });
+      localStorage.setItem('cc_gen2_custom_powers', JSON.stringify(customPowers));
+      clearPowerForm();
+      updateAllCounts();
+      populateDropdowns();
+      renderCustomPowersList();
+      alert('⚡ ¡Poder "' + name + '" guardado correctamente!');
     }
 
-    // Export to CSV for Google Sheets
+    function clearPowerForm() {
+      editingPowerId = null;
+      document.getElementById('pw-form-title').innerHTML = '<span>⚡</span> Diseñar Nuevo Poder';
+      document.getElementById('pw-edit-badge').classList.add('hidden');
+      document.getElementById('pw-name').value = '';
+      document.getElementById('pw-type').value = 'Híbrido';
+      document.getElementById('pw-cost').value = '100';
+      document.getElementById('pw-effect-theme').value = 'Daño Directo';
+      document.getElementById('pw-desc').value = '';
+      document.getElementById('pw-notes').value = '';
+    }
+
+    // ==========================================
+    // CUSTOM ITEMS CRUD
+    // ==========================================
+    function saveCustomItem() {
+      const name = document.getElementById('it-name').value.trim();
+      const desc = document.getElementById('it-desc').value.trim();
+      if (!name) {
+        alert('Por favor, ingresa un nombre para el objeto.');
+        return;
+      }
+      if (!desc) {
+        alert('Por favor, ingresa una descripción para el objeto.');
+        return;
+      }
+
+      const itObj = {
+        id: editingItemId || ('it_' + Date.now()),
+        name: name,
+        icon: document.getElementById('it-icon').value,
+        type: document.getElementById('it-type').value,
+        price: parseInt(document.getElementById('it-price').value, 10) || 150,
+        trigger: document.getElementById('it-trigger').value,
+        description: desc,
+        zone: document.getElementById('it-zone').value.trim()
+      };
+
+      if (editingItemId) {
+        const idx = customItems.findIndex(i => i.id === editingItemId);
+        if (idx >= 0) customItems[idx] = itObj;
+      } else {
+        customItems.push(itObj);
+      }
+
+      localStorage.setItem('cc_gen2_custom_items', JSON.stringify(customItems));
+      clearItemForm();
+      updateAllCounts();
+      populateDropdowns();
+      renderCustomItemsList();
+      alert('🎒 ¡Objeto "' + name + '" guardado correctamente!');
+    }
+
+    function clearItemForm() {
+      editingItemId = null;
+      document.getElementById('it-form-title').innerHTML = '<span>🎒</span> Diseñar Nuevo Objeto';
+      document.getElementById('it-edit-badge').classList.add('hidden');
+      document.getElementById('it-icon').value = '🎒';
+      document.getElementById('it-name').value = '';
+      document.getElementById('it-type').value = 'Equipable';
+      document.getElementById('it-price').value = '150';
+      document.getElementById('it-trigger').value = 'Permanente';
+      document.getElementById('it-desc').value = '';
+      document.getElementById('it-zone').value = '';
+    }
+
+    // ==========================================
+    // BACKUP & EXPORTS
+    // ==========================================
+    function backupAllJSON() {
+      const bundle = {
+        app: "Clicker Chickens Gen 2 Studio",
+        version: "0.123",
+        export_date: new Date().toISOString(),
+        sketches: savedSketches,
+        custom_powers: customPowers,
+        custom_items: customItems
+      };
+      const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Clicker_Chickens_Gen2_Completo_' + new Date().toISOString().slice(0, 10) + '.json';
+      a.click();
+    }
+
+    function importAllJSON(e) {
+      if (e.target.files && e.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (re) => {
+          try {
+            const data = JSON.parse(re.target.result);
+            let importedSk = 0, importedPw = 0, importedIt = 0;
+
+            if (Array.isArray(data)) {
+              savedSketches = data;
+              importedSk = data.length;
+            } else if (data && typeof data === 'object') {
+              if (Array.isArray(data.sketches)) {
+                savedSketches = data.sketches;
+                importedSk = data.sketches.length;
+              }
+              if (Array.isArray(data.custom_powers)) {
+                customPowers = data.custom_powers;
+                importedPw = data.custom_powers.length;
+              }
+              if (Array.isArray(data.custom_items)) {
+                customItems = data.custom_items;
+                importedIt = data.custom_items.length;
+              }
+            }
+
+            localStorage.setItem('cc_gen2_sketches', JSON.stringify(savedSketches));
+            localStorage.setItem('cc_gen2_custom_powers', JSON.stringify(customPowers));
+            localStorage.setItem('cc_gen2_custom_items', JSON.stringify(customItems));
+
+            updateAllCounts();
+            populateDropdowns();
+            renderRosterView();
+            renderPowersView();
+            renderItemsView();
+            alert('✅ ¡Importación completada!\n- Pollos: ' + importedSk + '\n- Poderes: ' + importedPw + '\n- Objetos: ' + importedIt);
+          } catch(err) {
+            alert('Error al leer el archivo JSON.');
+          }
+        };
+        reader.readAsText(e.target.files[0]);
+      }
+    }
+
     function exportToGoogleSheetsCSV() {
       const listToExport = savedSketches.length > 0 ? savedSketches : [currentSketch];
       const headers = [
@@ -1694,8 +2765,13 @@
         const s = sk.stats || {};
         const sum = Object.values(s).reduce((a, b) => a + b, 0);
         const diag = diagnoseArchetype(sk);
+        
         let hpDesc = "Ninguno";
-        if (WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
+        if (typeof sk.hidden_power_id === 'string' && sk.hidden_power_id.startsWith('custom_')) {
+          const cId = sk.hidden_power_id.replace('custom_', '');
+          const found = customPowers.find(p => p.id === cId);
+          if (found) hpDesc = '[Gen 2] ' + found.name;
+        } else if (WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
           const p = WIKI.powers[sk.hidden_power_id];
           hpDesc = p.description && (p.description.es || p.description);
         }
@@ -1720,14 +2796,103 @@
         ]);
       });
 
-      // Build CSV with UTF-8 BOM
-      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = `Clicker_Chickens_Gen2_Bocetos_Sheets_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.download = 'Clicker_Chickens_Gen2_Bocetos_Sheets_' + new Date().toISOString().slice(0, 10) + '.csv';
       a.click();
     }
+
+    function exportPowersCSV() {
+      if (customPowers.length === 0) {
+        alert('No hay poderes de Gen 2 para exportar.');
+        return;
+      }
+      const headers = ["ID", "Nombre", "Tipo", "Coste Energia", "Efecto / Mecanica", "Descripcion", "Notas / Sinergias"];
+      const rows = [headers];
+      customPowers.forEach(pw => {
+        rows.push([pw.id, pw.name, pw.type, pw.cost, pw.theme, pw.description, pw.notes || ""]);
+      });
+      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Clicker_Chickens_Gen2_Poderes_' + new Date().toISOString().slice(0, 10) + '.csv';
+      a.click();
+    }
+
+    function exportItemsCSV() {
+      if (customItems.length === 0) {
+        alert('No hay objetos de Gen 2 para exportar.');
+        return;
+      }
+      const headers = ["ID", "Icono", "Nombre", "Tipo", "Precio Semillas", "Gatillo / Activacion", "Zona / Origen", "Descripcion"];
+      const rows = [headers];
+      customItems.forEach(it => {
+        rows.push([it.id, it.icon, it.name, it.type, it.price, it.trigger, it.zone || "", it.description]);
+      });
+      const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Clicker_Chickens_Gen2_Objetos_' + new Date().toISOString().slice(0, 10) + '.csv';
+      a.click();
+    }
+
+    // Modal Gen 1 Grid
+    function renderGen1Grid(pickSpriteMode = false) {
+      const container = document.getElementById('gen1-grid');
+      const searchVal = (document.getElementById('gen1-search').value || '').toLowerCase().trim();
+      container.innerHTML = '';
+      if (!WIKI.chickens) return;
+
+      const filtered = WIKI.chickens.filter(c => {
+        const name = (c.name && (c.name.es || c.name) || '').toLowerCase();
+        return name.includes(searchVal) || c.id.toString() === searchVal;
+      });
+
+      filtered.forEach(c => {
+        const name = c.name && (c.name.es || c.name);
+        const card = document.createElement('div');
+        card.className = 'p-2.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] hover:border-amber-500/60 transition flex items-center justify-between gap-3 cursor-pointer group';
+        card.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0">
+            <img class="w-10 h-10 object-contain pixelated" src="` + getSpriteUrl(c.sprite) + `" alt="">
+            <div class="truncate">
+              <span class="font-mono text-[10px] text-[var(--text-muted)]">#` + String(c.id + 1).padStart(3, '0') + `</span>
+              <h4 class="text-xs font-bold truncate group-hover:text-amber-400 transition">` + name + `</h4>
+              <span class="text-[10px] font-mono text-amber-500">` + (c.stat_total || 200) + ` pts</span>
+            </div>
+          </div>
+          <button class="px-2 py-1 rounded bg-[var(--card)] hover:bg-amber-500 hover:text-black text-[10px] font-bold transition flex-shrink-0">
+            ` + (pickSpriteMode ? 'Usar Sprite' : 'Clonar Stats') + `
+          </button>
+        `;
+        card.addEventListener('click', () => {
+          if (pickSpriteMode) {
+            currentSketch.sprite = c.sprite;
+            processImageSource(c.sprite);
+            onDataChanged();
+          } else {
+            currentSketch.stats = { ...c.stats };
+            currentSketch.power_max = c.power_max || 100;
+            if (WIKI.passives && WIKI.passives[c.passive_id]) {
+              currentSketch.passive = WIKI.passives[c.passive_id].description.es || WIKI.passives[c.passive_id].description;
+            }
+            if (WIKI.powers && WIKI.powers[c.power_id]) {
+              currentSketch.active_power = WIKI.powers[c.power_id].description.es || WIKI.powers[c.power_id].description;
+            }
+            currentSketch.hidden_power_id = c.hidden_power_id ?? 4;
+            loadSketch(currentSketch);
+          }
+          document.getElementById('modal-gen1').classList.add('hidden');
+        });
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById('gen1-search')?.addEventListener('input', () => renderGen1Grid());
 
     // Run on load
     window.addEventListener('DOMContentLoaded', init);

@@ -1244,12 +1244,12 @@
           <div class="space-y-2">
             <label class="block text-[11px] font-semibold text-[var(--text-muted)]">URL de tu Web App de Google Apps Script:</label>
             <div class="flex gap-2">
-              <input type="url" id="input-sheets-webhook" placeholder="https://script.google.com/macros/s/.../exec" class="flex-1 px-3 py-2 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--text)] font-mono text-xs focus:outline-none focus:border-emerald-500 transition">
-              <button id="btn-save-webhook-url" class="px-3 py-2 rounded-xl bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] font-semibold text-xs transition">
-                Guardar URL
+              <input type="url" id="input-sheets-webhook" value="https://script.google.com/macros/s/AKfycbyRBGDKsb_NPkw5SInWXl_3Qf5omilXmQ55cjVPhHbV3GGpsvxMeHWCVgQC2GSW2XFh0Q/exec" placeholder="https://script.google.com/macros/s/.../exec" class="flex-1 px-3 py-2 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--text)] font-mono text-xs focus:outline-none focus:border-emerald-500 transition">
+              <button id="btn-save-webhook-url" class="px-3 py-2 rounded-xl bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] font-semibold text-xs transition" title="Guarda esta dirección en tu navegador">
+                💾 Recordar URL
               </button>
             </div>
-            <p class="text-[10px] text-[var(--text-muted)]">Se almacena únicamente en tu navegador para que no tengas que volver a escribirla.</p>
+            <p class="text-[10px] text-[var(--text-muted)]">Se guarda automáticamente en tu navegador. Pulsa el botón verde inferior para enviar los datos a tus hojas de cálculo.</p>
           </div>
 
           <div class="flex items-center gap-3 pt-1">
@@ -3148,15 +3148,22 @@ function doPost(e) {
       }
     }
 
-    if (data.gen2_sketches) writeSheet("Gen 2 - Bocetos y Diseño", data.gen2_sketches.headers, data.gen2_sketches.rows, "#d97706");
-    if (data.zones_pools) writeSheet("Zonas y Pools", data.zones_pools.headers, data.zones_pools.rows, "#059669");
-    if (data.gen1_chickens) writeSheet("Gen 1 - Actualizada", data.gen1_chickens.headers, data.gen1_chickens.rows, "#2563eb");
-    if (data.items) writeSheet("Objetos e Items", data.items.headers, data.items.rows, "#7c3aed");
-    if (data.powers) writeSheet("Poderes y Habilidades", data.powers.headers, data.powers.rows, "#9333ea");
-    if (data.passives) writeSheet("Pasivas", data.passives.headers, data.passives.rows, "#4b5563");
-    if (data.states) writeSheet("Estados Alterados", data.states.headers, data.states.rows, "#dc2626");
+    const bocetosData = data.gen2_sketches || data.bocetos;
+    if (bocetosData) writeSheet("Gen 2 - Bocetos y Diseño", bocetosData.headers, bocetosData.rows, "#d97706");
+    const zonasData = data.zones_pools || data.zonas;
+    if (zonasData) writeSheet("Zonas y Pools", zonasData.headers, zonasData.rows, "#059669");
+    const gen1Data = data.gen1_chickens || data.gen1;
+    if (gen1Data) writeSheet("Gen 1 - Actualizada", gen1Data.headers, gen1Data.rows, "#2563eb");
+    const itemsData = data.items || data.objetos;
+    if (itemsData) writeSheet("Objetos e Items", itemsData.headers, itemsData.rows, "#7c3aed");
+    const powersData = data.powers || data.poderes;
+    if (powersData) writeSheet("Poderes y Habilidades", powersData.headers, powersData.rows, "#9333ea");
+    const passivesData = data.passives || data.pasivas;
+    if (passivesData) writeSheet("Pasivas", passivesData.headers, passivesData.rows, "#4b5563");
+    const statesData = data.states || data.estados;
+    if (statesData) writeSheet("Estados Alterados", statesData.headers, statesData.rows, "#dc2626");
 
-    return ContentService.createTextOutput(JSON.stringify({ status: "success", message: "¡Google Calc sincronizado con éxito!" }))
+    return ContentService.createTextOutput(JSON.stringify({ status: "success", message: "¡Google Calc sincronizado con éxito! 7 pestañas actualizadas." }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
     return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() }))
@@ -3426,9 +3433,15 @@ function doGet(e) {
 
       if (!modal) return;
 
-      // Load saved webhook URL
-      const savedWebhook = localStorage.getItem('cc_google_sheets_webhook') || '';
-      if (webhookInput) webhookInput.value = savedWebhook;
+      // Load saved webhook URL (defaults to user's deployed Webhook)
+      const DEFAULT_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyRBGDKsb_NPkw5SInWXl_3Qf5omilXmQ55cjVPhHbV3GGpsvxMeHWCVgQC2GSW2XFh0Q/exec';
+      const savedWebhook = localStorage.getItem('cc_google_sheets_webhook') || DEFAULT_WEBHOOK_URL;
+      if (webhookInput) {
+        webhookInput.value = savedWebhook;
+        webhookInput.addEventListener('input', () => {
+          localStorage.setItem('cc_google_sheets_webhook', webhookInput.value.trim());
+        });
+      }
 
       // Open/Close
       btnOpen?.addEventListener('click', () => {
@@ -3438,11 +3451,11 @@ function doGet(e) {
       btnClose?.addEventListener('click', closeGoogleSyncModal);
       btnCloseBottom?.addEventListener('click', closeGoogleSyncModal);
 
-      // Save Webhook URL
+      // Save Webhook URL Button
       btnSaveWebhook?.addEventListener('click', () => {
         const val = (webhookInput?.value || '').trim();
         localStorage.setItem('cc_google_sheets_webhook', val);
-        alert(val ? '✅ URL del Webhook guardada correctamente.' : 'ℹ️ URL limpiada.');
+        alert(val ? '💾 URL guardada en tu navegador.\n\nAhora haz clic en el botón verde inferior "Guardar Todo en mi Google Calc Ahora" para sincronizar tus hojas.' : 'ℹ️ URL limpiada.');
       });
 
       // Copy Apps Script Template
@@ -3456,23 +3469,26 @@ function doGet(e) {
 
       // Trigger Cloud Webhook Sync
       btnTriggerSync?.addEventListener('click', async () => {
-        const url = (webhookInput?.value || localStorage.getItem('cc_google_sheets_webhook') || '').trim();
+        const url = (webhookInput?.value || localStorage.getItem('cc_google_sheets_webhook') || DEFAULT_WEBHOOK_URL).trim();
         if (!url) {
           alert('⚠️ Primero pega la URL de tu Web App de Google Apps Script en el campo de arriba.\n\nSi aún no la creaste, despliega la guía de abajo "¿Cómo conectar tu Google Calc en 30 segundos?".');
           webhookInput?.focus();
           return;
         }
 
+        // Always save url in localStorage
+        localStorage.setItem('cc_google_sheets_webhook', url);
+
         const spinner = document.getElementById('cloud-sync-spinner');
         const btnText = document.getElementById('cloud-sync-btn-text');
         if (spinner) spinner.classList.remove('hidden');
-        if (btnText) btnText.textContent = 'Sincronizando con Google Calc...';
+        if (btnText) btnText.textContent = 'Enviando a Google Calc (5 seg)...';
         if (feedback) feedback.classList.add('hidden');
 
         const payload = buildFullPollopediaData();
 
         try {
-          // Send request with no-cors or simple POST to handle Google Apps Script redirect cleanly
+          // Send request with text/plain to handle Google Apps Script POST redirect cleanly
           await fetch(url, {
             method: 'POST',
             mode: 'no-cors',
@@ -3483,10 +3499,23 @@ function doGet(e) {
           });
 
           if (feedback) {
-            feedback.className = 'p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-semibold space-y-1 block';
-            feedback.innerHTML = '<strong>✅ ¡Datos enviados a tu Google Calc con éxito!</strong><br><span class="text-[11px] font-normal text-[var(--text-muted)]">Las 7 pestañas (Bocetos, Zonas, Pollos, Items, Poderes, Pasivas y Estados) se están actualizando.</span>';
+            feedback.className = 'p-3.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-semibold space-y-2 block shadow';
+            feedback.innerHTML = `
+              <div class="flex items-center gap-2">
+                <span class="text-base">✅</span>
+                <span>¡Datos enviados con éxito a tu Google Calc!</span>
+              </div>
+              <p class="text-[11px] font-normal text-[var(--text-muted)]">
+                Las 7 pestañas (Bocetos, Zonas, Pollos, Items, Poderes, Pasivas y Estados) se han actualizado.
+              </p>
+              <div class="pt-1">
+                <a href="https://docs.google.com/spreadsheets/d/1nUbM5FWJk-iGruC8idvXantHG7K_RKCenFhwWcdb3Yg/edit" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition">
+                  <span>🌐</span> Abrir Google Calc para ver los datos ↗️
+                </a>
+              </div>
+            `;
           }
-          alert('🚀 ¡Sincronización enviada con éxito a tu Google Calc!');
+          alert('🚀 ¡Sincronización enviada con éxito!\n\nPuedes abrir tu Google Calc en la pestaña del navegador para ver todas las hojas actualizadas.');
         } catch (err) {
           console.error("Sync error:", err);
           if (feedback) {

@@ -2107,7 +2107,7 @@ window.WIKI_DATA = {
         "es": {
           "role": "Todoterreno Equilibrado",
           "role_title": "Equilibrado",
-          "duo": "Se ubica idealmente en flexible (Vanguardia o Retaguardia). Su pasiva (Cuando usa poder, +5% en una estadística aleatoria de un aliado) define su estilo de juego, complementada por su poder (Todos los multiplicadores obtienen valores al azar (25% a 175%)) que requiere 100 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "duo": "Se ubica idealmente en flexible (Vanguardia o Retaguardia). Su pasiva (Cuando usa poder, +5% en una estadística aleatoria de un aliado) define su estilo de juego, complementada por su poder (Aleatoriza sus propios multiplicadores de daño, armadura y velocidad (25% a 175%)) que requiere 100 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
           "allies": "Combina tanto con atacantes rápidos (Chica, Mosca) para cerrar partidas como con tanques defensivos (Pastank, Armor) para un juego más paciente.",
           "items": "triflor (+5% a daño, armadura y velocidad); Circuito Vital (cura 700 de salud si baja de 35% de vida); Poción mágica (limpia cualquier estado alterado).",
           "counter": "Observar qué rol cumple en el dúo y aislarlo eliminando primero a su compañero para dejarlo en una situación vulnerable de 2 contra 1."
@@ -2115,7 +2115,7 @@ window.WIKI_DATA = {
         "en": {
           "role": "Balanced All-Rounder",
           "role_title": "All-Rounder",
-          "duo": "Ideally positioned in Flexible (Frontline or Backline). Its passive (When use power, +5% to a random ally stat) dictates its combat style, complemented by its power (Randomize all multis (0.25 to 1.75)) requiring 100 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "duo": "Ideally positioned in Flexible (Frontline or Backline). Its passive (When use power, +5% to a random ally stat) dictates its combat style, complemented by its power (Randomizes own damage, armor, and speed multipliers (0.25 to 1.75)) requiring 100 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
           "items": "Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
@@ -2123,7 +2123,7 @@ window.WIKI_DATA = {
         "pt": {
           "role": "Polivalente Equilibrado",
           "role_title": "Equilibrado",
-          "duo": "Posiciona-se idealmente na Flexível (Vanguarda ou Retaguarda). Sua passiva (Ao usar poder, +5% para um atributo aleatório de aliado) define seu estilo de jogo, complementada pelo seu poder (Aleatoriza todos os multiplicadores (0.25 a 1.75)) que requer 100 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "duo": "Posiciona-se idealmente na Flexível (Vanguarda ou Retaguarda). Sua passiva (Ao usar poder, +5% para um atributo aleatório de aliado) define seu estilo de jogo, complementada pelo seu poder (Aleatoriza os próprios multiplicadores de dano, armadura e velocidade (0.25 a 1.75)) que requer 100 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
           "allies": "Combina perfeitamente tanto com atacantes rápidos (Chica, Mosca) quanto com tanques defensivos (Pastank, Armor).",
           "items": "Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 de vida se cair abaixo de 35% de vida); Poção Mágica (remove qualquer efeito de estado alterado).",
           "counter": "Identificar seu papel na dupla e isolá-lo eliminando primeiro o parceiro para forçar uma situação vulnerável de 2 contra 1."
@@ -2131,7 +2131,7 @@ window.WIKI_DATA = {
         "ru": {
           "role": "Универсал",
           "role_title": "Универсал",
-          "duo": "Идеально подходит для размещения в Любой позиции (Авангард или Тыл). Пассивная способность (При использовании силы +5% случайному стату союзника) определяет стиль боя вместе с активной способностью (Рандомизирует все множители (от 0.25 до 1.75)), требующей 100 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "duo": "Идеально подходит для размещения в Любой позиции (Авангард или Тыл). Пассивная способность (При использовании силы +5% случайному стату союзника) определяет стиль боя вместе с активной способностью (Случайные значения для собственных множителей урона, брони и скорости (от 0.25 до 1.75)), требующей 100 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
           "allies": "Отлично сочетается как с быстрыми атакующими (Chica, Mosca), так и с оборонительными танками (Pastank, Armor).",
           "items": "Трицвет (+5% к урону, броне и скорости); Витальная цепь (лечит 700 ОЗ при падении ниже 35% здоровья); Волшебное зелье (снимает любые наложенные эффекты).",
           "counter": "Определить его роль в связке и изолировать, сначала устранив напарника для создания преимущества 2 против 1."
@@ -18128,16 +18128,16 @@ window.WIKI_DATA = {
       "id": 15,
       "cost": 100,
       "name": {
-        "es": "Todos los multiplicadores obtienen valores al azar (25% a 175%)",
-        "en": "Randomize all multis (0.25 to 1.75)",
-        "pt": "Aleatoriza todos os multiplicadores (0.25 a 1.75)",
-        "ru": "Рандомизирует все множители (от 0.25 до 1.75)"
+        "es": "Aleatoriza sus propios multiplicadores de daño, armadura y velocidad (25% a 175%)",
+        "en": "Randomizes own damage, armor, and speed multipliers (0.25 to 1.75)",
+        "pt": "Aleatoriza os próprios multiplicadores de dano, armadura e velocidade (0.25 a 1.75)",
+        "ru": "Случайные значения для собственных множителей урона, брони и скорости (от 0.25 до 1.75)"
       },
       "description": {
-        "es": "Todos los multiplicadores obtienen valores al azar (25% a 175%)",
-        "en": "Randomize all multis (0.25 to 1.75)",
-        "pt": "Aleatoriza todos os multiplicadores (0.25 a 1.75)",
-        "ru": "Рандомизирует все множители (от 0.25 до 1.75)"
+        "es": "Aleatoriza sus propios multiplicadores de daño, armadura y velocidad (25% a 175%)",
+        "en": "Randomizes own damage, armor, and speed multipliers (0.25 to 1.75)",
+        "pt": "Aleatoriza os próprios multiplicadores de dano, armadura e velocidade (0.25 a 1.75)",
+        "ru": "Случайные значения для собственных множителей урона, брони и скорости (от 0.25 до 1.75)"
       },
       "chickens": [
         {

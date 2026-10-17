@@ -22232,19 +22232,837 @@
         "ru": "Боевые архетипы и тактические роли"
       },
       "icon": "🎖️",
+      "banner": {
+        "es": "El sistema de combate de Clicker Chickens cuenta con dos niveles de clasificación: los <strong>4 Arquetipos Fundamentales del Manual de Combate</strong> (pilares base del juego) y los <strong>10 Arquetipos Tácticos Especializados</strong> (roles competitivos del metagame en la Pollopedia). Entender ambos niveles es clave para armar sinergias ganadoras en arenas 2vs2.",
+        "en": "Clicker Chickens features a dual classification combat system: the <strong>4 Core Battle Manual Archetypes</strong> (foundational pillars) and the <strong>10 Specialized Tactical Roles</strong> (competitive metagame roles in the Pollopedia). Mastering both layers is essential for building winning 2vs2 arena synergies.",
+        "pt": "O sistema de combate de Clicker Chickens conta com dois níveis de classificação: os <strong>4 Arquétipos Fundamentais do Manual de Combate</strong> (pilares do jogo) e os <strong>10 Arquétipos Táticos Especializados</strong> (papéis competitivos na Pollopédia). Dominar ambos é essencial para montar duplas vencedoras em arenas 2vs2.",
+        "ru": "Боевая система Clicker Chickens включает два уровня классификации: <strong>4 базовых архетипа боевого руководства</strong> (основа игры) и <strong>10 специализированных тактических ролей</strong> (соревновательные роли меты в Цыплопедии). Понимание обоих уровней необходимо для создания непобедимых дуэтов 2на2."
+      },
+      "pillars_title": {
+        "es": "📘 Los 4 Arquetipos del Manual de Combate (Pilares Fundamentales)",
+        "en": "📘 The 4 Battle Manual Archetypes (Foundational Pillars)",
+        "pt": "📘 Os 4 Arquétipos do Manual de Combate (Pilares Fundamentais)",
+        "ru": "📘 4 базовых архетипа боевого руководства (Фундаментальные столпы)"
+      },
+      "pillars_intro": {
+        "es": "Toda especie de pollo nace con una vocación natural orientada a uno de los 4 grandes pilares del juego. Al ganar combates y obtener puntos de mejora (+2 pts, o +4 pts con Guantes de Boxeo equipados), puedes orientar el entrenamiento a reforzar su pilar nato o balancear sus puntos débiles.",
+        "en": "Every chicken species is born with a natural calling oriented toward one of the game's 4 core pillars. By winning battles and earning stat upgrade points (+2 pts, or +4 pts with Boxing Gloves equipped), you can specialize in its natural pillar or patch up vital weaknesses.",
+        "pt": "Toda espécie de frango nasce com uma vocação natural voltada para um dos 4 pilares do jogo. Ao vencer lutas e obter pontos de melhoria (+2 pts, ou +4 pts com Luvas de Boxe equipadas), você pode reforçar seu pilar nato ou equilibrar pontos fracos.",
+        "ru": "Каждый вид цыплят от рождения предрасположен к одному из 4 основных столпов игры. Побеждая в боях и получая очки улучшения (+2 очка, или +4 очка с Боксерскими перчатками), вы можете усиливать врожденный столп или закрывать слабые стороны."
+      },
+      "pillars": [
+        {
+          "id": "tank",
+          "icon": "🛡️",
+          "color": "#10b981",
+          "title": {
+            "es": "Tanque",
+            "en": "Tank",
+            "pt": "Tanque",
+            "ru": "Танк"
+          },
+          "badge": {
+            "es": "Supervivencia y Mitigación",
+            "en": "Survival & Mitigation",
+            "pt": "Sobrevivência e Mitigação",
+            "ru": "Выживаемость и защита"
+          },
+          "stats": {
+            "es": "Vida (PS) + Armadura (ARM)",
+            "en": "Life (HP) + Armor (DEF)",
+            "pt": "Vida (HP) + Armadura (DEF)",
+            "ru": "Здоровье (HP) + Броня (DEF)"
+          },
+          "desc": {
+            "es": "Absorbe el castigo enemigo en primera línea, mitiga daño masivo y protege a compañeros frágiles para alargar los combates.",
+            "en": "Absorbs incoming front-line punishment, mitigates heavy burst damage, and shields fragile teammates to prolong matches.",
+            "pt": "Absorve os golpes na linha de frente, mitiga danos pesados e protege parceiros frágeis para estender a luta.",
+            "ru": "Впитывает удары на передовой, смягчает взрывной урон и прикрывает уязвимых союзников, затягивая бой."
+          },
+          "training": {
+            "es": "Priorizar Vida y Armadura en el panel de mejora (+4 pts con Guantes de Boxeo).",
+            "en": "Focus on Life and Armor in training (+4 pts with Boxing Gloves).",
+            "pt": "Priorizar Vida e Armadura no treinamento (+4 pts com Luvas de Boxe).",
+            "ru": "Качать Здоровье и Броню в тренировках (+4 очка с Боксерскими перчатками)."
+          }
+        },
+        {
+          "id": "striker",
+          "icon": "⚔️",
+          "color": "#ef4444",
+          "title": {
+            "es": "Atacante",
+            "en": "Striker",
+            "pt": "Atacante",
+            "ru": "Атакующий"
+          },
+          "badge": {
+            "es": "Ofensiva y Remate",
+            "en": "Offense & Execution",
+            "pt": "Ofensiva e Finalização",
+            "ru": "Атака и добивание"
+          },
+          "stats": {
+            "es": "Daño (ATK) + Críticos",
+            "en": "Damage (ATK) + Crits",
+            "pt": "Dano (ATK) + Críticos",
+            "ru": "Урон (ATK) + Криты"
+          },
+          "desc": {
+            "es": "Especialista en desgaste físico rápido y noqueo de piezas enemigas en el menor número de turnos posible.",
+            "en": "Specializes in swift physical damage and knocking out key enemy units in the fewest turns possible.",
+            "pt": "Especialista em dano físico rápido e eliminação de alvos inimigos no menor número de turnos.",
+            "ru": "Специализируется на быстром физическом уроне и выбивании вражеских целей за минимальное число ходов."
+          },
+          "training": {
+            "es": "Concentrar puntos en Daño para superar la armadura rival y asegurar remates.",
+            "en": "Pump points into Damage to penetrate enemy armor and secure knockouts.",
+            "pt": "Concentrar pontos em Dano para superar a armadura rival e garantir finalizações.",
+            "ru": "Вкладывать очки в Урон для пробития вражеской брони и быстрого добивания."
+          }
+        },
+        {
+          "id": "speedster",
+          "icon": "⚡",
+          "color": "#eab308",
+          "title": {
+            "es": "Velocista",
+            "en": "Speedster",
+            "pt": "Velocista",
+            "ru": "Скороход"
+          },
+          "badge": {
+            "es": "Iniciativa y Ritmo",
+            "en": "Initiative & Tempo",
+            "pt": "Iniciativa e Ritmo",
+            "ru": "Инициатива и темп"
+          },
+          "stats": {
+            "es": "Velocidad (VEL)",
+            "en": "Speed (SPD)",
+            "pt": "Velocidade (VEL)",
+            "ru": "Скорость (SPD)"
+          },
+          "desc": {
+            "es": "Reclama siempre el turno 1 de la ronda, impone estados alterados tempranos y desbarata las rotaciones del adversario.",
+            "en": "Guarantees Turn 1 initiative in each round, applying early crowd control to disrupt enemy rotations.",
+            "pt": "Garante o Turno 1 em cada rodada, aplicando controle precoce para desestruturar a equipe adversária.",
+            "ru": "Забирает 1 ход в каждом раунде, накладывая негативные эффекты до ответных действий врага."
+          },
+          "training": {
+            "es": "Impulsar Velocidad para sobrepasar siempre el umbral del rival más veloz.",
+            "en": "Boost Speed to consistently stay ahead of the fastest enemy thresholds.",
+            "pt": "Aumentar Velocidade para superar constantemente os adversários mais velozes.",
+            "ru": "Повышать Скорость, чтобы всегда опережать быстрейших соперников."
+          }
+        },
+        {
+          "id": "support",
+          "icon": "✨",
+          "color": "#a855f7",
+          "title": {
+            "es": "Soporte de Poder",
+            "en": "Power Support",
+            "pt": "Suporte de Poder",
+            "ru": "Поддержка силы"
+          },
+          "badge": {
+            "es": "Energía y Utilidad",
+            "en": "Energy & Utility",
+            "pt": "Energia e Utilidade",
+            "ru": "Энергия и польза"
+          },
+          "stats": {
+            "es": "Poder (POD/SP)",
+            "en": "Power (PWR/SP)",
+            "pt": "Poder (POD/SP)",
+            "ru": "Сила (PWR/SP)"
+          },
+          "desc": {
+            "es": "Genera energía a gran velocidad o cuenta con costes reducidos para desatar curaciones, escudos y efectos continuos.",
+            "en": "Generates energy rapidly or uses low skill costs to deploy heals, shields, and ongoing tactical buffs.",
+            "pt": "Gera energia rapidamente ou tem custos baixos para disparar curas, escudos e efeitos táticos contínuos.",
+            "ru": "Быстро накапливает энергию или применяет дешевые умения для щитов, лечения и контроля."
+          },
+          "training": {
+            "es": "Potenciar Cantidad de Poder para disparar habilidades especiales frecuentemente.",
+            "en": "Invest in Power Amount to cycle special abilities every 1-2 turns.",
+            "pt": "Investir em Quantidade de Poder para ciclar habilidades a cada 1-2 turnos.",
+            "ru": "Увеличивать параметр Силы для применения способностей каждые 1-2 хода."
+          }
+        }
+      ],
+      "pillars_formula": "Entrenamiento = +2 pts stat por victoria (+4 pts con Guantes de Boxeo equipados)",
+      "pillars_tip": {
+        "es": "Identifica siempre el arquetipo base de tu pollo en la Pollopedia antes de asignar entrenamientos: potenciar sus estadísticas dominantes maximiza el impacto del multiplicador de entrenamiento (hasta x2.00).",
+        "en": "Always check your chicken's innate archetype in the Pollopedia before allocating training points: doubling down on dominant stats maximizes the value of the x2.00 training multiplier.",
+        "pt": "Sempre verifique o arquétipo base do seu frango na Pollopédia antes de treinar: focar nos atributos dominantes maximiza o retorno do multiplicador de treinamento de até x2.00.",
+        "ru": "Всегда проверяйте базовый архетип цыпленка в Цыплопедии перед распределением тренировок: прокачка доминирующих статов дает максимальную отдачу от множителя x2.00."
+      },
+      "tactical_title": {
+        "es": "🎯 Los 10 Arquetipos Tácticos Especializados (Pollopedia y Metagame)",
+        "en": "🎯 The 10 Specialized Tactical Roles (Pollopedia & Metagame)",
+        "pt": "🎯 Os 10 Arquétipos Táticos Especializados (Pollopédia e Metagame)",
+        "ru": "🎯 10 специализированных тактических ролей (Цыплопедия и метагейм)"
+      },
+      "tactical_intro": {
+        "es": "Para profundizar en el juego competitivo 2vs2, la Pollopedia y la comunidad clasifican a las 145 especies en 10 arquetipos de precisión según sus números de nacimiento, sinergia de pasivas y ciclo de habilidad especial:",
+        "en": "For advanced 2vs2 competitive play, the Pollopedia and metagame categorize all 145 species into 10 precision archetypes based on innate stats, passive traits, and special power cycles:",
+        "pt": "Para o jogo competitivo 2vs2 avançado, a Pollopédia e o metagame dividem as 145 espécies em 10 arquétipos de precisão com base em atributos inatos, passivas e ciclo de poder:",
+        "ru": "Для соревновательных боев 2на2 Цыплопедия и мета разделяют все 145 видов на 10 точных тактических ролей по базовым характеристикам, пассивкам и циклу суперспособностей:"
+      },
+      "tactical_archetypes": [
+        {
+          "id": "balanced",
+          "icon": "⚖️",
+          "color": "#3b82f6",
+          "count": 22,
+          "title": {
+            "es": "Todoterreno Equilibrado",
+            "en": "Balanced All-Rounder",
+            "pt": "Polivalente Equilibrado",
+            "ru": "Универсал"
+          },
+          "key_stats": {
+            "es": "Stats Balanceadas (Sin fisuras)",
+            "en": "Balanced Stats (No weak points)",
+            "pt": "Atributos Equilibrados",
+            "ru": "Сбалансированные параметры"
+          },
+          "profile": {
+            "es": "Distribución armónica de vida, ataque, armadura y velocidad. No sufre penalizaciones críticas contra ningún estilo de combate.",
+            "en": "Even distribution across life, damage, armor, and speed. Suffers no crippling vulnerabilities against any archetype.",
+            "pt": "Distribuição harmônica de vida, ataque, armadura e velocidade. Sem vulnerabilidades críticas contra nenhum estilo.",
+            "ru": "Гармоничный баланс здоровья, урона, брони и скорости. Не имеет критических уязвимостей ни против одного стиля."
+          },
+          "combat_role": {
+            "es": "Adaptabilidad total. Puede actuar tanto en vanguardia absorbiendo daño moderado como en retaguardia cerrando combates con consistencia.",
+            "en": "Universal flexibility. Thrives in frontline trading moderate hits or backline securing steady knockouts.",
+            "pt": "Versatilidade universal. Atua na vanguarda absorvendo dano moderado ou na retaguarda finalizando com consistência.",
+            "ru": "Универсальная гибкость. Отлично чувствует себя на передовой в разменах и в тылу для стабильного добивания."
+          },
+          "chickens": [
+            0,
+            4,
+            7,
+            27,
+            34
+          ],
+          "items": {
+            "es": "Mirador Dorado, Ira, Palo de Raíz",
+            "en": "Golden Perch, Wrath, Roost Stick",
+            "pt": "Poleiro Dourado, Ira, Poleiro",
+            "ru": "Золотой насест, Гнев, Насест"
+          }
+        },
+        {
+          "id": "cannon",
+          "icon": "💥",
+          "color": "#ef4444",
+          "count": 9,
+          "title": {
+            "es": "Cañón de Cristal",
+            "en": "Glass Cannon",
+            "pt": "Canhão de Cristal",
+            "ru": "Стеклянная пушка"
+          },
+          "key_stats": {
+            "es": "Ataque Máximo + Velocidad Alta",
+            "en": "Max Attack + High Speed",
+            "pt": "Ataque Máximo + Velocidade Alta",
+            "ru": "Максимальный урон + Высокая скорость"
+          },
+          "profile": {
+            "es": "Daño destructivo y velocidad extraordinaria combinados con vida y armadura ínfimas. No tolera recibir impactos directos.",
+            "en": "Overwhelming offensive power and great speed paired with fragile health and armor. Cannot withstand prolonged fire.",
+            "pt": "Dano devastador e alta velocidade aliados a pouquíssima vida e armadura. Não tolera impactos diretos prolongados.",
+            "ru": "Колоссальный урон и скорость при хрупком здоровье и броне. Не выдерживает длительного обстрела."
+          },
+          "combat_role": {
+            "es": "Eliminación inmediata de objetivos prioritarios en turnos 1-2 antes de que el adversario despliegue sus poderes o barreras.",
+            "en": "Fast execution of priority threats on turns 1-2 before opponents can activate defenses or deploy crowd control.",
+            "pt": "Eliminação relâmpago de ameaças nos turnos 1-2 antes do rival ativar barreiras ou habilidades.",
+            "ru": "Молниеносное устранение опасных целей в первые 1-2 хода до активации вражеских щитов и умений."
+          },
+          "chickens": [
+            1,
+            20,
+            30,
+            49,
+            52
+          ],
+          "items": {
+            "es": "Palo de Raíz, Guante de Boxeo, Mirador Dorado",
+            "en": "Roost Stick, Boxing Glove, Golden Perch",
+            "pt": "Poleiro, Luva de Boxe, Poleiro Dourado",
+            "ru": "Насест, Боксерская перчатка, Золотой насест"
+          }
+        },
+        {
+          "id": "heavy",
+          "icon": "🔨",
+          "color": "#f97316",
+          "count": 17,
+          "title": {
+            "es": "Fuerza Bruta / Golpeador",
+            "en": "Heavy Hitter",
+            "pt": "Força Bruta / Golpeador",
+            "ru": "Тяжелый ударник"
+          },
+          "key_stats": {
+            "es": "Ataque Físico Masivo + Salud Media",
+            "en": "Massive Physical Attack + Solid Bulk",
+            "pt": "Ataque Físico Maciço + Boa Resistência",
+            "ru": "Массивный физ. урон + Стойкость"
+          },
+          "profile": {
+            "es": "Enorme fuerza de impacto físico respaldada por suficiente salud para resistir intercambios directos, sacrificando velocidad.",
+            "en": "Immense physical striking power backed by enough bulk to trade blows steadily, sacrificing speed.",
+            "pt": "Impacto físico esmagador respaldado por durabilidade sólida para trocas diretas, abrindo mão de velocidade.",
+            "ru": "Сокрушительная сила удара и солидный запас прочности для разменов ценой низкой скорости."
+          },
+          "combat_role": {
+            "es": "Destructor de tanques y murallas. Sobrevive a los primeros turnos y castiga implacablemente con daño físico demoledor.",
+            "en": "Wall-breaker and tank buster. Absorbs initial hits and crushes defensive anchors with relentless heavy blows.",
+            "pt": "Demolidor de tanques e muralhas. Sobrevive aos primeiros golpes e destrói barreiras com força bruta.",
+            "ru": "Сокрушитель танков и стен. Переживает первые атаки и проламывает любую защиту тяжелыми ударами."
+          },
+          "chickens": [
+            6,
+            24,
+            28,
+            33,
+            39
+          ],
+          "items": {
+            "es": "Ira, Escudo Espinado, Mirador Dorado",
+            "en": "Wrath, Spiked Shield, Golden Perch",
+            "pt": "Ira, Escudo de Espinhos, Poleiro Dourado",
+            "ru": "Гнев, Шипастый щит, Золотой насест"
+          }
+        },
+        {
+          "id": "ranged",
+          "icon": "🏹",
+          "color": "#06b6d4",
+          "count": 15,
+          "title": {
+            "es": "Artillero de Proyectiles",
+            "en": "Ranged Artillery",
+            "pt": "Artilheiro de Projéteis",
+            "ru": "Артиллерист"
+          },
+          "key_stats": {
+            "es": "Ataque a Distancia + Daño Sostenido",
+            "en": "Ranged Damage + Sustained Scaling",
+            "pt": "Ataque à Distância + Dano Contínuo",
+            "ru": "Дистанционный урон + Стабильный обстрел"
+          },
+          "profile": {
+            "es": "Ofensiva concentrada en habilidades directas y ráfagas a distancia que escalan intensamente con el daño base.",
+            "en": "Focused on targeted skill bursts and sustained ranged salvos that scale heavily with base attack.",
+            "pt": "Focado em rajadas à distância e habilidades que escalam fortemente com o dano base.",
+            "ru": "Специализируется на дистанционных залпах и навыках с высоким коэффициентом урона."
+          },
+          "combat_role": {
+            "es": "Bombardeo continuo desde la retaguardia, desgastando rivales blindados sin exponerse a represalias físicas directas.",
+            "en": "Safe backline bombardment, softening heavily armored opponents without risking direct melee counters.",
+            "pt": "Bombardeio seguro da retaguarda, desgastando alvos blindados sem sofrer contra-ataques corpo a corpo.",
+            "ru": "Непрерывный обстрел из тыла, истощающий бронированных врагов без риска контратак."
+          },
+          "chickens": [
+            2,
+            17,
+            22,
+            25,
+            26
+          ],
+          "items": {
+            "es": "Mirador Dorado, Palo de Raíz, Monóculo",
+            "en": "Golden Perch, Roost Stick, Monocle",
+            "pt": "Poleiro Dourado, Poleiro, Monóculo",
+            "ru": "Золотой насест, Насест, Монокль"
+          }
+        },
+        {
+          "id": "speed",
+          "icon": "⚡",
+          "color": "#eab308",
+          "count": 15,
+          "title": {
+            "es": "Velocista Ágil",
+            "en": "Agile Speedster",
+            "pt": "Velocista Ágil",
+            "ru": "Ловкий скороход"
+          },
+          "key_stats": {
+            "es": "Velocidad Élite (Iniciativa turno 1)",
+            "en": "Elite Speed (Turn 1 initiative)",
+            "pt": "Velocidade Elite (Iniciativa turno 1)",
+            "ru": "Элитная скорость (Инициатива хода 1)"
+          },
+          "profile": {
+            "es": "Velocidad tope de metagame. Diseñado para atacar antes que cualquier oponente sin importar la zona o torneo.",
+            "en": "Top-tier metagame speed. Engineered to act before any enemy regardless of tournament tier.",
+            "pt": "Velocidade máxima no metagame. Projetado para agir antes de qualquer oponente em qualquer zona.",
+            "ru": "Максимальная скорость в мете. Всегда атакует раньше соперников в любых зонах и турнирах."
+          },
+          "combat_role": {
+            "es": "Iniciador del combate. Aplica estados debilitantes (congelar, veneno, parálisis) en turno 1 para desarmar la táctica rival.",
+            "en": "Match initiator. Applies crippling status effects (freeze, poison, paralysis) on Turn 1 to dismantle enemy strategies.",
+            "pt": "Iniciador de combate. Aplica controle (congelamento, veneno, paralisia) no Turno 1 para neutralizar a estratégia rival.",
+            "ru": "Инициатор боя. Накладывает заморозку, яд или паралич на 1 ходу, ломая тактику врага."
+          },
+          "chickens": [
+            5,
+            8,
+            9,
+            12,
+            18
+          ],
+          "items": {
+            "es": "Palo de Raíz, Mirador Dorado, Pluma Veloz",
+            "en": "Roost Stick, Golden Perch, Swift Feather",
+            "pt": "Poleiro, Poleiro Dourado, Pena Veloz",
+            "ru": "Насест, Золотой насест, Быстрое перо"
+          }
+        },
+        {
+          "id": "tank_hp",
+          "icon": "🩸",
+          "color": "#ec4899",
+          "count": 14,
+          "title": {
+            "es": "Tanque de Salud (Esponja)",
+            "en": "Health Tank (HP Sponge)",
+            "pt": "Tanque de Vida (Esponja)",
+            "ru": "Танк здоровья (Губка)"
+          },
+          "key_stats": {
+            "es": "Vida Colosal (Resistencia a penetración)",
+            "en": "Colossal HP (Penetration resilience)",
+            "pt": "Vida Colossal (Resistente a perfuração)",
+            "ru": "Огромный запас HP (Стойкость к пробитию)"
+          },
+          "profile": {
+            "es": "Reserva gigantesca de vida base. Amortigua daño masivo directo y no depende exclusivamente de la armadura.",
+            "en": "Mammoth base health pool. Absorbs massive direct impact and remains effective even against armor-piercing skills.",
+            "pt": "Reserva colossal de vida base. Amortece danos pesados e não depende unicamente de armadura.",
+            "ru": "Колоссальный запас здоровья. Впитывает любой урон и эффективен даже против пробития брони."
+          },
+          "combat_role": {
+            "es": "Pilar de aguante. Sobrevive a ráfagas críticas y daño verdadero, protegiendo a su compañero durante turnos prolongados.",
+            "en": "Endurance anchor. Survives critical bursts and true damage, shielding allies across extended battles.",
+            "pt": "Âncora de resistência. Sobrevive a críticos e dano verdadeiro, mantendo a equipe protegida por muito tempo.",
+            "ru": "Оплот выносливости. Переживает критические удары и чистый урон, удерживая строй."
+          },
+          "chickens": [
+            3,
+            15,
+            16,
+            23,
+            36
+          ],
+          "items": {
+            "es": "Baya de Regeneración, Escudo Espinado, Amuleto Vital",
+            "en": "Regen Berry, Spiked Shield, Vital Amulet",
+            "pt": "Fruta de Regeneração, Escudo de Espinhos, Amuleto Vital",
+            "ru": "Ягода регенерации, Шипастый щит, Амулет жизни"
+          }
+        },
+        {
+          "id": "tank_armor",
+          "icon": "🛡️",
+          "color": "#10b981",
+          "count": 22,
+          "title": {
+            "es": "Muralla Blindada",
+            "en": "Armored Wall",
+            "pt": "Muralha Blindada",
+            "ru": "Бронированная стена"
+          },
+          "key_stats": {
+            "es": "Armadura Alta + Vida Equilibrada",
+            "en": "High Armor + Solid Health",
+            "pt": "Armadura Alta + Vida Equilibrada",
+            "ru": "Высокая броня + Надежное HP"
+          },
+          "profile": {
+            "es": "Balance perfecto de mitigación porcentual y reserva de vida. Convierte ataques físicos enemigos en daño residual.",
+            "en": "Optimal blend of percentage damage reduction and solid health. Turns incoming physical attacks into minor scratches.",
+            "pt": "Equilíbrio perfeito de redução percentual e vida. Converte ataques físicos inimigos em arranhões.",
+            "ru": "Идеальный баланс процентного снижения урона и HP. Превращает удары соперника в царапины."
+          },
+          "combat_role": {
+            "es": "Vanguardia defensiva clásica. Bloquea el daño principal del dúo enemigo mientras desgasta con contraataques o veneno.",
+            "en": "Classic frontline guardian. Absorbs main enemy duo pressure while returning steady counter-damage or poison.",
+            "pt": "Vanguarda defensiva clássica. Absorve a pressão inimiga enquanto responde com contra-ataques ou veneno.",
+            "ru": "Классический танк передовой. Сдерживает натиск вражеской связки, отвечая контратаками или ядом."
+          },
+          "chickens": [
+            10,
+            11,
+            13,
+            19,
+            21
+          ],
+          "items": {
+            "es": "Escudo de Roca, Mirador Dorado, Escudo Espinado",
+            "en": "Rock Shield, Golden Perch, Spiked Shield",
+            "pt": "Escudo de Pedra, Poleiro Dourado, Escudo de Espinhos",
+            "ru": "Каменный щит, Золотой насест, Шипастый щит"
+          }
+        },
+        {
+          "id": "bastion",
+          "icon": "🏰",
+          "color": "#64748b",
+          "count": 8,
+          "title": {
+            "es": "Bastión de Armadura",
+            "en": "Iron Bastion",
+            "pt": "Bastião de Armadura",
+            "ru": "Железный бастион"
+          },
+          "key_stats": {
+            "es": "Armadura Hiper-Especializada (100 ARM)",
+            "en": "Hyper-Specialized Armor (100 DEF)",
+            "pt": "Armadura Hiper-Especializada (100 ARM)",
+            "ru": "Экстремальная броня (100 БРО)"
+          },
+          "profile": {
+            "es": "Especialización defensiva extrema en armadura base pura. Mitigación física en el límite matemático del motor de combate.",
+            "en": "Extreme physical defense tuning reaching the game engine's maximum mathematical damage reduction limits.",
+            "pt": "Especialização defensiva extrema em armadura pura no limite matemático do motor de combate.",
+            "ru": "Предельная концентрация на броне, достигающая математического потолка снижения физ. урона."
+          },
+          "combat_role": {
+            "es": "Inmunidad casi total contra atacantes físicos directos. Obliga al adversario a recurrir a daño indirecto o veneno.",
+            "en": "Near-immunity against raw physical strikers. Forces opponents to rely on status conditions or piercing damage.",
+            "pt": "Quase imunidade contra atacantes físicos puros. Força o adversário a recorrer a veneno ou dano indireto.",
+            "ru": "Почти полная неуязвимость к физ. атакам. Вынуждает соперника использовать яд или особый урон."
+          },
+          "chickens": [
+            37,
+            46,
+            77,
+            92,
+            98
+          ],
+          "items": {
+            "es": "Escudo Espinado, Baya de Curación, Escudo de Roca",
+            "en": "Spiked Shield, Healing Berry, Rock Shield",
+            "pt": "Escudo de Espinhos, Fruta de Cura, Escudo de Pedra",
+            "ru": "Шипастый щит, Ягода лечения, Каменный щит"
+          }
+        },
+        {
+          "id": "battery",
+          "icon": "🔋",
+          "color": "#a855f7",
+          "count": 20,
+          "title": {
+            "es": "Batería de Habilidades",
+            "en": "Skill Battery",
+            "pt": "Bateria de Habilidades",
+            "ru": "Батарея навыков"
+          },
+          "key_stats": {
+            "es": "Poder Alto / Ciclo Rápido (1-2 turnos)",
+            "en": "High Power / Fast Cycle (1-2 turns)",
+            "pt": "Poder Alto / Ciclo Rápido (1-2 turnos)",
+            "ru": "Высокая сила / Быстрый цикл (1-2 хода)"
+          },
+          "profile": {
+            "es": "Atributo de Poder sobrehumano o costes de energía mínimos. Capaz de activar su habilidad especial en casi cada ronda.",
+            "en": "Massive Power generation stat or ultra-cheap energy costs. Casts special abilities on virtually every turn.",
+            "pt": "Geração massiva de Poder ou custos ínfimos. Dispara habilidades especiais praticamente a cada rodada.",
+            "ru": "Огромный прирост силы или мизерная стоимость способностей. Применяет ульту почти каждый ход."
+          },
+          "combat_role": {
+            "es": "Ciclador continuo de curaciones, escudos, veneno o daño mágico. Ahoga al rival bajo una lluvia de efectos constantes.",
+            "en": "Continuous caster of heals, barriers, poison, or magic burst. Drowns opponents in unrelenting utility and effects.",
+            "pt": "Conjurador contínuo de curas, escudos, veneno ou dano. Sufoca o adversário sob constante pressão de efeitos.",
+            "ru": "Постоянный кастер лечения, щитов, яда или урона. Истощает соперника непрерывным градом эффектов."
+          },
+          "chickens": [
+            14,
+            38,
+            40,
+            43,
+            48
+          ],
+          "items": {
+            "es": "Palo de Raíz, Monóculo, Mirador Dorado",
+            "en": "Roost Stick, Monocle, Golden Perch",
+            "pt": "Poleiro, Monóculo, Poleiro Dourado",
+            "ru": "Насест, Монокль, Золотой насест"
+          }
+        },
+        {
+          "id": "colossus",
+          "icon": "🦏",
+          "color": "#d97706",
+          "count": 9,
+          "title": {
+            "es": "Coloso Ofensivo (Bruiser)",
+            "en": "Offensive Colossus (Bruiser)",
+            "pt": "Colosso Ofensivo (Lutador)",
+            "ru": "Атакующий колосс (Боец)"
+          },
+          "key_stats": {
+            "es": "Vida Titánica + Ataque Devastador",
+            "en": "Titanic HP + Crushing Attack",
+            "pt": "Vida Titânica + Ataque Devastador",
+            "ru": "Титаническое HP + Сокрушительный урон"
+          },
+          "profile": {
+            "es": "Híbrido colosal que combina salud digna de un tanque con potencia ofensiva de primer nivel. Un verdadero titán en la arena.",
+            "en": "Formidable juggernaut combining tank-tier health with top-tier offensive force. A true titan on the battlefield.",
+            "pt": "Híbrido colossal que combina vida de tanque com poder ofensivo de alto nível. Um titã na arena.",
+            "ru": "Могучий гибрид, сочетающий здоровье танка с сокрушительной атакой. Настоящий титан на арене."
+          },
+          "combat_role": {
+            "es": "Luchador de asalto en primera línea. Absorbe fuego concentrado mientras demuele la formación enemiga con golpes letales.",
+            "en": "Frontline juggernaut brawler. Soaks concentrated enemy attacks while smashing opposing lines with lethal blows.",
+            "pt": "Lutador de impacto na vanguarda. Absorve fogo focado enquanto destrói a formação inimiga com golpes letais.",
+            "ru": "Боец передовой. Выдерживает концентрированный огонь, сокрушая строй соперника мощными ударами."
+          },
+          "chickens": [
+            29,
+            35,
+            62,
+            67,
+            76
+          ],
+          "items": {
+            "es": "Ira, Mirador Dorado, Escudo Espinado",
+            "en": "Wrath, Golden Perch, Spiked Shield",
+            "pt": "Ira, Poleiro Dourado, Escudo de Espinhos",
+            "ru": "Гнев, Золотой насест, Шипастый щит"
+          }
+        }
+      ],
+      "tactical_tip": {
+        "es": "En la Pollopedia puedes consultar la ficha detallada de cada pollo para ver su rol táctico, tiempo exacto de ciclo de poder (~turnos), compañeros ideales y sugerencias de equipamiento.",
+        "en": "In the Pollopedia you can open any chicken card to view its exact tactical role, power cycle timing (~turns), best partner synergies, and recommended gear.",
+        "pt": "Na Pollopédia você pode conferir a ficha de cada frango com seu papel tático exato, tempo de recarga de poder (~turnos), parceiros recomendados e equipamentos ideais.",
+        "ru": "В Цыплопедии можно открыть карточку любого цыпленка, чтобы увидеть его тактическую роль, цикл перезарядки (~ходов), лучших напарников и экипировку."
+      },
+      "synergies_title": {
+        "es": "👥 Sinergias Competitivas de Dúos 2vs2",
+        "en": "👥 Competitive 2vs2 Duo Synergies",
+        "pt": "👥 Sinergias Competitivas de Duplas 2vs2",
+        "ru": "👥 Соревновательные синергии дуэтов 2на2"
+      },
+      "synergies_intro": {
+        "es": "El combate en Clicker Chickens se juega en arenas de 2 contra 2. Juntar dos pollos del mismo arquetipo suele crear debilidades graves. Las composiciones de mayor porcentaje de victoria combinan roles complementarios:",
+        "en": "Combat in Clicker Chickens unfolds in 2vs2 arena matches. Stacking two units with identical roles usually creates severe weaknesses. Top win-rate teams merge complementary archetypes:",
+        "pt": "As batalhas em Clicker Chickens ocorrem em duplas 2vs2. Juntar dois frangos do mesmo arquétipo costuma gerar fraquezas graves. As duplas mais vitoriosas unem papéis complementares:",
+        "ru": "Бои в Clicker Chickens проходят в формате 2 на 2. Выбор двух одинаковых ролей создает критические уязвимости. Победные связки всегда строятся на взаимодополняющих ролях:"
+      },
+      "synergies": [
+        {
+          "title": {
+            "es": "🛡️ + 💥 Muro Protector + Cañón de Cristal",
+            "en": "🛡️ + 💥 Protective Wall + Glass Cannon",
+            "pt": "🛡️ + 💥 Muralha Protetora + Canhão de Cristal",
+            "ru": "🛡️ + 💥 Защитная стена + Стеклянная пушка"
+          },
+          "desc": {
+            "es": "El Tanque o Bastión absorbe el fuego concentrado enemigo mientras el cañón de cristal liquida objetivos prioritarios con total impunidad.",
+            "en": "The Tank or Bastion draws and mitigates enemy focus fire while the glass cannon eliminates priority targets with total impunity.",
+            "pt": "O Tanque ou Bastião absorve os ataques concentrados enquanto o canhão elimina alvos prioritários com total segurança.",
+            "ru": "Танк или Бастион отвлекает и держит урон, пока пушка безнаказанно уничтожает ключевые цели."
+          },
+          "chickens": [
+            37,
+            1
+          ]
+        },
+        {
+          "title": {
+            "es": "⚡ + 🔨 Velocista de Control + Golpeador Pesado",
+            "en": "⚡ + 🔨 Control Speedster + Heavy Hitter",
+            "pt": "⚡ + 🔨 Velocista de Controle + Golpeador Pesado",
+            "ru": "⚡ + 🔨 Скороход контроля + Тяжелый ударник"
+          },
+          "desc": {
+            "es": "El velocista actúa en Turno 1 aplicando congelamiento o parálisis; el golpeador pesado ejecuta al enemigo indefenso sin recibir daño de vuelta.",
+            "en": "The speedster strikes on Turn 1 inflicting freeze or paralysis; the heavy hitter obliterates the helpless foe without taking retaliation.",
+            "pt": "O velocista age no Turno 1 congelando ou paralisando; o golpeador executa o inimigo imóvel sem sofrer retaliação.",
+            "ru": "Скороход на 1 ходу накладывает заморозку или паралич; тяжелый боец добивает цель без ответного урона."
+          },
+          "chickens": [
+            5,
+            6
+          ]
+        },
+        {
+          "title": {
+            "es": "🔋 + 🩸 Batería de Habilidades + Tanque de Salud",
+            "en": "🔋 + 🩸 Skill Battery + Health Tank",
+            "pt": "🔋 + 🩸 Bateria de Habilidades + Tanque de Vida",
+            "ru": "🔋 + 🩸 Батарея навыков + Танк здоровья"
+          },
+          "desc": {
+            "es": "Ciclos ininterrumpidos de escudos, veneno o curación masiva que ahogan la ofensiva enemiga y aseguran la victoria por desgaste.",
+            "en": "Endless loops of barriers, poison DoT, or team heals that exhaust enemy offense and secure attrition victories.",
+            "pt": "Ciclos contínuos de barreiras, veneno ou cura massiva que esgotam a ofensiva rival e garantem a vitória por desgaste.",
+            "ru": "Бесконечный цикл щитов, яда или лечения, истощающий нападение врага и гарантирующий победу измором."
+          },
+          "chickens": [
+            14,
+            3
+          ]
+        },
+        {
+          "title": {
+            "es": "🦏 + ⚖️ Doble Coloso / Asalto Equilibrado",
+            "en": "🦏 + ⚖️ Dual Colossus / Balanced Assault",
+            "pt": "🦏 + ⚖️ Colosso Duplo / Assalto Equilibrado",
+            "ru": "🦏 + ⚖️ Двойной колосс / Сбалансированный штурм"
+          },
+          "desc": {
+            "es": "Composición todoterreno de gran durabilidad y daño constante sin fisuras evidentes que el rival pueda explotar con facilidad.",
+            "en": "All-around composition with high durability and steady damage, presenting zero obvious vulnerabilities for rivals to exploit.",
+            "pt": "Composição equilibrada de alta durabilidade e dano consistente sem pontos fracos fáceis de explorar pelo oponente.",
+            "ru": "Универсальный состав с высокой выживаемостью и постоянным уроном без явных слабых мест."
+          },
+          "chickens": [
+            29,
+            0
+          ]
+        }
+      ],
+      "synergies_tip": {
+        "es": "Usa la herramienta interactiva 'Creador de Equipos 2vs2' en la barra lateral de la wiki para probar emparejamientos y comprobar su compatibilidad táctica antes de entrar al torneo.",
+        "en": "Use the interactive '2vs2 Team Builder' tool in the wiki sidebar to test pairings and inspect tactical synergy before entering tournament matches.",
+        "pt": "Utilize o 'Criador de Equipes 2vs2' no menu lateral da wiki para testar duplas e avaliar sinergias táticas antes dos torneios.",
+        "ru": "Используйте инструмент 'Конструктор отрядов 2vs2' в боковом меню вики для тестирования связок и проверки синергии перед турнирами."
+      },
+      "targets_title": {
+        "es": "🎯 Configuración Táctica de Blancos y Enfoque de Daño (IA)",
+        "en": "🎯 Tactical Target Priority Configuration & Focus Fire (AI)",
+        "pt": "🎯 Configuração Tática de Alvos e Foco de Dano (IA)",
+        "ru": "🎯 Тактический выбор целей и концентрация урона (ИИ)"
+      },
+      "targets_intro": {
+        "es": "En cada combate y en la pantalla de gestión de equipo puedes definir el comportamiento táctico de ataque de cada pollo. Ajustar la prioridad según el arquetipo es la clave para superar rivales con estadísticas superiores:",
+        "en": "In every battle and squad management screen, you can configure each chicken's target priority. Tuning target behaviors to match chicken archetypes is key to defeating opponents with superior raw stats:",
+        "pt": "Em cada combate e na tela de equipe, você pode configurar o comportamento de ataque de cada frango. Ajustar os alvos de acordo com o arquétipo é a chave para vencer oponentes com atributos superiores:",
+        "ru": "В каждом бою и на экране отряда можно настраивать поведение цыплят при выборе целей. Правильная настройка под архетип бойца — ключ к победе над соперниками с превосходящими статами:"
+      },
+      "targets": [
+        {
+          "id": "random",
+          "icon": "🎲",
+          "title": {
+            "es": "Al Azar (Por Defecto)",
+            "en": "Random (Default)",
+            "pt": "Ao Acaso (Padrão)",
+            "ru": "Случайно (По умолчанию)"
+          },
+          "desc": {
+            "es": "El pollo elige objetivo aleatoriamente. Es impredecible y reparte el daño entre ambos contrincantes, diluyendo la presión de eliminación.",
+            "en": "Attacks a random opponent. Damage splits between both targets, lowering individual knockout pressure.",
+            "pt": "Ataca um alvo aleatório. O dano se divide entre os oponentes, reduzindo a pressão de finalização.",
+            "ru": "Атакует случайную цель. Урон распыляется между обоими врагами, снижая шанс быстрого добивания."
+          },
+          "recommendation": {
+            "es": "Útil en combates casuales o cuando ambos rivales poseen defensas similares.",
+            "en": "Acceptable for casual grinding or when both enemies share identical defenses.",
+            "pt": "Aceitável para combates casuais ou quando ambos os rivais têm defesas similares.",
+            "ru": "Подходит для обычных боев или когда оба соперника имеют схожую защиту."
+          }
+        },
+        {
+          "id": "lowest_hp",
+          "icon": "🎯",
+          "title": {
+            "es": "Menos Vida (Prioridad de Remate)",
+            "en": "Lowest HP (Finisher Priority)",
+            "pt": "Menor Vida (Finalização)",
+            "ru": "Меньше HP (Добивание)"
+          },
+          "desc": {
+            "es": "Ataca siempre al rival con menor porcentaje de salud actual. Clave para transformar rápidamente el combate en un 2 contra 1 ventajoso.",
+            "en": "Always attacks the enemy with the lowest current HP percentage. Essential for quickly securing a decisive 2-on-1 numbers advantage.",
+            "pt": "Ataca sempre o inimigo com menor porcentagem de vida atual. Cria rapidamente a vantagem numérica de 2 contra 1.",
+            "ru": "Всегда атакует цель с наименьшим текущим HP. Создает численное преимущество 2 против 1."
+          },
+          "recommendation": {
+            "es": "Esencial para Atacantes, Cañones de Cristal y Velocistas.",
+            "en": "Essential for Strikers, Glass Cannons, and Speedsters.",
+            "pt": "Essencial para Atacantes, Canhões de Cristal e Velocistas.",
+            "ru": "Обязательно для Атакующих, Стеклянных пушек и Скороходов."
+          }
+        },
+        {
+          "id": "highest_dmg",
+          "icon": "⚔️",
+          "title": {
+            "es": "Más Daño (Prioridad de Amenaza)",
+            "en": "Highest Damage (Threat Priority)",
+            "pt": "Maior Dano (Ameaça)",
+            "ru": "Больше урона (Устранение угрозы)"
+          },
+          "desc": {
+            "es": "Focaliza los ataques sobre el enemigo con mayor estadística de ataque para noquearlo o incapacitarlo antes de que active su poder.",
+            "en": "Focuses attacks on the opponent with the highest attack stat to disable or eliminate it before it unleashes lethal skills.",
+            "pt": "Foca no adversário com maior ataque para neutralizá-lo antes que ative seu poder.",
+            "ru": "Фокусирует удары на враге с максимальным уроном, чтобы вывести его из строя до ульты."
+          },
+          "recommendation": {
+            "es": "Ideal para Velocistas de control y Baterías de aturdimiento.",
+            "en": "Ideal for Control Speedsters and stun Batteries.",
+            "pt": "Ideal para Velocistas de controle e Baterias de atordoamento.",
+            "ru": "Идеально для Скороходов контроля и оглушающих Батареек."
+          }
+        },
+        {
+          "id": "highest_tank",
+          "icon": "🛡️",
+          "title": {
+            "es": "Mayor Vida / Mayor Armadura",
+            "en": "Highest HP / Highest Armor",
+            "pt": "Maior Vida / Armadura",
+            "ru": "Больше HP / Больше брони"
+          },
+          "desc": {
+            "es": "Enfoca al pilar defensivo enemigo con ataques que ignoran defensa, veneno o daño porcentual continuo.",
+            "en": "Directs true damage, poison DoT, or percentage shred onto the enemy tank, melting their defensive anchor.",
+            "pt": "Foca o tanque rival com veneno, dano penetrante ou efeitos contínuos.",
+            "ru": "Направляет чистый урон, яд или процентный измор на тяжелого танка врага."
+          },
+          "recommendation": {
+            "es": "Recomendado para Baterías de Veneno/Infección o daño penetrante.",
+            "en": "Recommended for Poison/Infection batteries and piercing attackers.",
+            "pt": "Recomendado para baterias de Veneno/Infecção ou dano penetrante.",
+            "ru": "Рекомендуется для ядовитых Батареек и бойцов с пробитием."
+          }
+        }
+      ],
+      "targets_formula": "Táctica 2vs1 = Eliminar 1 objetivo rival duplica el daño relativo de tu equipo sobre el sobreviviente",
+      "targets_tip": {
+        "es": "En torneos avanzados y Coliseo Online, configurar a tu atacante más rápido con 'Menos Vida' garantiza remates limpios y evita que enemigos al borde de la derrota alcancen a cargar su poder.",
+        "en": "In high-tier tournaments and Online Colosseum, setting your fastest striker to 'Lowest HP' ensures clean finishes and prevents near-dead enemies from firing off their specials.",
+        "pt": "Em torneios avançados e Coliseu Online, configurar seu atacante mais veloz com 'Menor Vida' garante finalizações limpas e impede que inimigos quase derrotados ativem seus poderes.",
+        "ru": "В турнирах высокого уровня и Онлайн-Колизее настройка быстрейшего дамагера на 'Меньше HP' гарантирует добивание и не дает врагам на грани гибели применить ульту."
+      },
       "sections": [
         {
           "title": {
-            "es": "Los 4 Arquetipos Fundamentales (Manual de Combate)",
-            "en": "The 4 Core In-Game Archetypes (Battle Manual)",
-            "pt": "Os 4 Arquétipos Fundamentais (Manual de Combate)",
-            "ru": "4 базовых боевых архетипа (Боевое руководство)"
+            "es": "📘 Los 4 Arquetipos del Manual de Combate (Pilares Fundamentales)",
+            "en": "📘 The 4 Battle Manual Archetypes (Foundational Pillars)",
+            "pt": "📘 Os 4 Arquétipos do Manual de Combate (Pilares Fundamentais)",
+            "ru": "📘 4 базовых архетипа боевого руководства (Фундаментальные столпы)"
           },
           "content": {
-            "es": "En Clicker Chickens, cada especie de pollo posee un ADN numérico único que define su inclinación natural hacia uno de los 4 grandes pilares de combate del juego:\n\n• 🛡️ Tanque: Pollos con alta concentración de Vida (PS) y Armadura (ARM). Su propósito es absorber el castigo del enemigo en primera línea, mitigar daño masivo y proteger a compañeros frágiles para alargar los combates.\n• ⚔️ Atacante: Especialistas en Daño (ATK) físico y golpes críticos. Su objetivo primordial es desgastar y noquear a las piezas enemigas en el menor número de turnos posible.\n• ⚡ Velocista: Dominantes en Velocidad (VEL). Actúan primero en la ronda de turnos, dictando la iniciativa del combate, ejecutando ataques de apertura y aplicando estados alterados antes de que el adversario pueda reaccionar.\n• ✨ Soporte de Poder: Pollos centrados en Poder (POD/SP) y habilidades tácticas. Cargan su barra de energía a gran velocidad o cuentan con costes reducidos para desatar efectos especiales continuos, curaciones, escudos o control de masas.\n\nAl entrenar a tus pollos ganando combates (obteniendo +2 puntos de mejora, o +4 si equipas Guantes de Boxeo), puedes elegir orientar los puntos a reforzar el arquetipo nato de la especie o compensar sus carencias defensivas u ofensivas.",
-            "en": "In Clicker Chickens, every chicken species has unique DNA numbers that define its natural inclination toward one of the game's 4 core combat pillars:\n\n• 🛡️ Tank: High Life (HP) and Armor (ARM). Their mission is to absorb incoming front-line punishment, mitigate heavy burst damage, and shield fragile teammates to prolong matches.\n• ⚔️ Striker: Masters of physical Attack (ATK) and critical strikes. Their primary objective is knocking out key enemy units in the fewest turns possible.\n• ⚡ Speedster: Dominant in Speed (SPD). They take the very first turn in each combat round, seizing the initiative to strike or apply debilitating status conditions before enemies can react.\n• ✨ Power Support: Focused on Power stat (PWR/SP) and tactical abilities. They generate energy rapidly or possess cheap skill costs to unleash non-stop special effects, heals, shields, and crowd control.\n\nWhen training your chickens by winning matches (+2 stat points, or +4 when equipped with Boxing Gloves), you can choose to reinforce your chicken's innate archetype or patch up vital defensive/offensive weaknesses.",
-            "pt": "Em Clicker Chickens, cada espécie de frango possui um DNA numérico único que define sua inclinação natural para um dos 4 grandes pilares de combate:\n\n• 🛡️ Tanque: Frangos com alta Vida (HP) e Armadura (ARM). Seu propósito é absorver os golpes na linha de frente, mitigar danos pesados e proteger parceiros frágeis para estender a luta.\n• ⚔️ Atacante: Especialistas em Dano (ATK) físico e acertos críticos. Seu objetivo principal é derrubar os alvos inimigos no menor número de turnos possível.\n• ⚡ Velocista: Dominantes em Velocidade (VEL). Agem primeiro em cada rodada, ditando o ritmo, desferindo golpes de abertura e aplicando estados alterados antes da reação rival.\n• ✨ Suporte de Poder: Frangos focados em Poder (POD/SP) e habilidades táticas. Geram energia em ritmo acelerado ou possuem custos baixos para disparar efeitos especiais, curas, escudos e controle de grupo.\n\nAo treinar seus frangos vencendo combates (+2 pontos de melhoria, ou +4 com Luvas de Boxe equipadas), você pode optar por reforçar o arquétipo nato da espécie ou compensar fraquezas vitais.",
-            "ru": "В Clicker Chickens каждый вид цыплят обладает уникальным числовым ДНК, определяющим его естественную предрасположенность к одному из 4 основных боевых столпов игры:\n\n• 🛡️ Танк: Высокие показатели Здоровья (HP) и Брони (ARM). Их задача — впитывать удары на передовой, смягчать взрывной урон и прикрывать уязвимых союзников, затягивая бой.\n• ⚔️ Атакующий: Мастера физического Урона (ATK) и критических атак. Их главная цель — выбивать ключевые цели противника за минимальное число ходов.\n• ⚡ Скороход: Доминируют в Скорости (SPD). Они ходят первыми в каждом раунде, захватывая инициативу и накладывая негативные эффекты до того, как враг успеет среагировать.\n• ✨ Поддержка силы: Сосредоточены на Силе (PWR/SP) и тактических умениях. Они накапливают энергию с огромной скоростью или имеют дешевые способности, постоянно применяя щиты, лечение и контроль.\n\nТренируя цыплят за победы (+2 очка улучшения, или +4 при экипировке Боксерских перчаток), вы можете усиливать врожденный архетип вида или закрывать слабые стороны."
+            "es": "Toda especie de pollo nace con una vocación natural orientada a uno de los 4 grandes pilares del juego. Al ganar combates y obtener puntos de mejora (+2 pts, o +4 pts con Guantes de Boxeo equipados), puedes orientar el entrenamiento a reforzar su pilar nato o balancear sus puntos débiles.",
+            "en": "Every chicken species is born with a natural calling oriented toward one of the game's 4 core pillars. By winning battles and earning stat upgrade points (+2 pts, or +4 pts with Boxing Gloves equipped), you can specialize in its natural pillar or patch up vital weaknesses.",
+            "pt": "Toda espécie de frango nasce com uma vocação natural voltada para um dos 4 pilares do jogo. Ao vencer lutas e obter pontos de melhoria (+2 pts, ou +4 pts com Luvas de Boxe equipadas), você pode reforçar seu pilar nato ou equilibrar pontos fracos.",
+            "ru": "Каждый вид цыплят от рождения предрасположен к одному из 4 основных столпов игры. Побеждая в боях и получая очки улучшения (+2 очка, или +4 очка с Боксерскими перчатками), вы можете усиливать врожденный столп или закрывать слабые стороны."
           },
           "formula": "Entrenamiento = +2 pts stat por victoria (+4 pts con Guantes de Boxeo equipados)",
           "tip": {
@@ -22256,16 +23074,16 @@
         },
         {
           "title": {
-            "es": "Los 10 Arquetipos Tácticos Especializados (Pollopedia y Meta)",
-            "en": "The 10 Specialized Tactical Roles (Pollopedia & Meta)",
-            "pt": "Os 10 Arquétipos Táticos Especializados (Pollopédia e Meta)",
-            "ru": "10 специализированных тактических ролей (Цыплопедия и мета)"
+            "es": "🎯 Los 10 Arquetipos Tácticos Especializados (Pollopedia y Metagame)",
+            "en": "🎯 The 10 Specialized Tactical Roles (Pollopedia & Metagame)",
+            "pt": "🎯 Os 10 Arquétipos Táticos Especializados (Pollopédia e Metagame)",
+            "ru": "🎯 10 специализированных тактических ролей (Цыплопедия и метагейм)"
           },
           "content": {
-            "es": "Para profundizar en la estrategia competitiva 2vs2, la Pollopedia y el metagame clasifican a las 145 especies en 10 arquetipos tácticos de alta precisión según su distribución numérica y el impacto de su poder:\n\n1. ⚖️ Todoterreno Equilibrado (All-Rounder) [22 Especies]:\n• Perfil: Estadísticas balanceadas en todos los atributos sin puntos débiles críticos.\n• Función: Adaptabilidad total; rinde de manera sobresaliente tanto en vanguardia como en retaguardia.\n• Ejemplos: Pollier (#1), Mali (#5), Pasti (#8), Invert (#28), Phantom (#35).\n\n2. 💥 Cañón de Cristal (Glass Cannon) [9 Especies]:\n• Perfil: Ataque y velocidad extraordinarios acoplados a una salud y armadura muy bajas.\n• Función: Eliminación relámpago de objetivos prioritarios en turnos 1-2 antes de sufrir represalias.\n• Ejemplos: Chica (#2), Zeo (#21), Mosca (#31), Cerol (#50), Sharky (#53).\n\n3. 🔨 Fuerza Bruta / Golpeador Pesado (Heavy Hitter) [17 Especies]:\n• Perfil: Ataque físico masivo y salud media-alta, sacrificando velocidad.\n• Función: Intercambios directos demoledores; resiste golpes y destruye murallas enemigas.\n• Ejemplos: Zombie (#7), Lápiz (#25), Alien (#29), Nevermore (#34), Cacho (#40).\n\n4. 🏹 Artillero de Proyectiles (Ranged Artillery) [15 Especies]:\n• Perfil: Ataque a distancia con alto escalado de habilidad y daño sostenido.\n• Función: Bombardeo continuo y castigo a enemigos resistentes desde una posición segura.\n• Ejemplos: McDuck (#3), Raro (#18), Mega (#23), Manic (#26), Jeff (#27).\n\n5. ⚡ Velocista Ágil (Agile Speedster) [15 Especies]:\n• Perfil: Velocidad superior a la media para garantizar siempre la iniciativa del turno.\n• Función: Aplicación inmediata de estados (congelar, veneno, parálisis) y golpes tempranos.\n• Ejemplos: Cay (#6), Iris (#9), Pollisor (#10), Polliro (#13), Polliwatt (#19).\n\n6. 🩸 Tanque de Salud (Health Tank / HP Sponge) [14 Especies]:\n• Perfil: Reserva masiva de Vida (PS) que amortigua daño directo y daño penetrante.\n• Función: Absorber ráfagas enemigas y permanecer de pie cuando la armadura es perforada.\n• Ejemplos: Ponk (#4), Eustavio (#16), Gallo (#17), Porky (#24), Valu (#37).\n\n7. 🛡️ Muralla Blindada (Defensive Tank / Armored Wall) [22 Especies]:\n• Perfil: Armonía perfecta entre alta armadura y buena vida base.\n• Función: Máxima mitigación porcentual; convierte los ataques regulares en rasguños.\n• Ejemplos: Pollisaur (#11), Vio (#12), Easy East (#14), Armor (#20), Jhona (#22).\n\n8. 🏰 Bastión de Armadura (Iron Bastion) [8 Especies]:\n• Perfil: Armadura hiper-especializada llevada al límite del diseño numérico.\n• Función: Inmunidad virtual a atacantes físicos que carezcan de estados alterados o perforación.\n• Ejemplos: Pastank (#38), Robotop (#47), Menta (#78), Galland (#93), Crystal (#99).\n\n9. 🔋 Batería de Habilidades (Skill Battery) [20 Especies]:\n• Perfil: Alto atributo de Poder (PWR) o costes de energía ínfimos (ciclos de 1-2 turnos).\n• Función: Disparo incesante de habilidades especiales, curaciones continuas y control de masas.\n• Ejemplos: Snow (#15), Pastinni (#39), Candle (#41), Ignarto (#44), Leci (#49).\n\n10. 🦏 Coloso Ofensivo (Bruiser / Offensive Colossus) [9 Especies]:\n• Perfil: Híbrido imponente con vida colosal y daño elevado simultáneamente.\n• Función: Juggernaut de choque; absorbe castigo en primera línea mientras aniquila con fuerza bruta.\n• Ejemplos: Iguanarto (#30), País (#36), Miedo (#63), Pollulu (#68), Luso (#77).",
-            "en": "To master competitive 2vs2 battles, the Pollopedia and competitive metagame classify all 145 species into 10 high-precision tactical archetypes based on their stat spread and active skill synergy:\n\n1. ⚖️ Balanced All-Rounder [22 Species]:\n• Profile: Well-rounded stats across the board with no glaring weaknesses.\n• Role: Maximum versatility; excels equally in frontline defense or backline support.\n• Examples: Pollier (#1), Mali (#5), Pasti (#8), Invert (#28), Phantom (#35).\n\n2. 💥 Glass Cannon [9 Species]:\n• Profile: Sky-high attack and speed paired with minimal health and armor.\n• Role: Turn 1-2 priority target execution before taking retaliatory damage.\n• Examples: Chica (#2), Zeo (#21), Mosca (#31), Cerol (#50), Sharky (#53).\n\n3. 🔨 Heavy Hitter [17 Species]:\n• Profile: Crushing physical attack and solid bulk at the expense of speed.\n• Role: Winning sustained trades, breaking enemy frontline defensive walls.\n• Examples: Zombie (#7), Lapiz (#25), Alien (#29), Nevermore (#34), Cacho (#40).\n\n4. 🏹 Ranged Artillery [15 Species]:\n• Profile: Sustained ranged damage with potent skill scaling.\n• Role: Reliable continuous bombardment from a safe position without risking direct melee counters.\n• Examples: McDuck (#3), Raro (#18), Mega (#23), Manic (#26), Jeff (#27).\n\n5. ⚡ Agile Speedster [15 Species]:\n• Profile: Top-tier speed ensuring guaranteed first-turn initiative.\n• Role: Applying opening crowd control (freeze, poison, paralysis) to dictate match pace.\n• Examples: Cay (#6), Iris (#9), Pollisor (#10), Polliro (#13), Polliwatt (#19).\n\n6. 🩸 Health Tank (HP Sponge) [14 Species]:\n• Profile: Giant base Health pool buffering raw impact and true damage.\n• Role: Absorbing burst damage and staying alive when enemy skills bypass armor.\n• Examples: Ponk (#4), Eustavio (#16), Gallo (#17), Porky (#24), Valu (#37).\n\n7. 🛡️ Armored Wall (Defensive Tank) [22 Species]:\n• Profile: Sturdy balance of high armor and respectable health.\n• Role: Percentage-based mitigation that reduces standard attacks to mere scratches.\n• Examples: Pollisaur (#11), Vio (#12), Easy East (#14), Armor (#20), Jhona (#22).\n\n8. 🏰 Iron Bastion (Armor Specialist) [8 Species]:\n• Profile: Hyper-specialized armor tuned to the mathematical ceiling.\n• Role: Near-total immunity to physical strikers lacking armor shred or status effects.\n• Examples: Pastank (#38), Robotop (#47), Menta (#78), Galland (#93), Crystal (#99).\n\n9. 🔋 Skill Battery (Continuous Caster) [20 Species]:\n• Profile: High Power stat (PWR) or ultra-low skill costs (~1-2 turn cycles).\n• Role: Relentless ability spamming, constant healing, team barriers, and status loops.\n• Examples: Snow (#15), Pastinni (#39), Candle (#41), Ignarto (#44), Leci (#49).\n\n10. 🦏 Offensive Colossus (Bruiser) [9 Species]:\n• Profile: Imposing hybrid combining titan-like HP with brutal attack power.\n• Role: Unstoppable frontline brawler that withstands enemy fire while crushing opposition.\n• Examples: Iguanarto (#30), Pais (#36), Miedo (#63), Pollulu (#68), Luso (#77).",
-            "pt": "Para aprofundar a estratégia competitiva 2vs2, a Pollopédia e o metagame classificam as 145 espécies em 10 arquétipos táticos de alta precisão baseados em seus atributos e habilidades ativas:\n\n1. ⚖️ Polivalente Equilibrado [22 Espécies]:\n• Perfil: Estatísticas balanceadas em todas as áreas sem fraquezas graves.\n• Função: Máxima versatilidade; desempenha muito bem tanto na vanguarda quanto na retaguarda.\n• Exemplos: Pollier (#1), Mali (#5), Pasti (#8), Invert (#28), Phantom (#35).\n\n2. 💥 Canhão de Cristal [9 Espécies]:\n• Perfil: Dano e velocidade absurdos aliados a pouquíssima vida e armadura.\n• Função: Eliminar alvos prioritários nos turnos 1-2 antes de ser atingido.\n• Exemplos: Chica (#2), Zeo (#21), Mosca (#31), Cerol (#50), Sharky (#53).\n\n3. 🔨 Força Bruta / Golpeador Pesado [17 Espécies]:\n• Perfil: Dano físico maciço e boa resistência, sacrificando velocidade.\n• Função: Vencer trocas diretas e romper muros defensivos inimigos.\n• Exemplos: Zombie (#7), Lápiz (#25), Alien (#29), Nevermore (#34), Cacho (#40).\n\n4. 🏹 Artilheiro de Projéteis [15 Espécies]:\n• Perfil: Ataque à distância com alto escalonamento de poder e dano constante.\n• Função: Bombardeio contínuo e punição segura sem expor-se a contra-ataques.\n• Exemplos: McDuck (#3), Raro (#18), Mega (#23), Manic (#26), Jeff (#27).\n\n5. ⚡ Velocista Ágil [15 Espécies]:\n• Perfil: Velocidade superior para garantir a iniciativa da rodada.\n• Função: Aplicação imediata de controle (congelamento, veneno, paralisia) e golpes rápidos.\n• Exemplos: Cay (#6), Iris (#9), Pollisor (#10), Polliro (#13), Polliwatt (#19).\n\n6. 🩸 Tanque de Vida (Esponja de HP) [14 Espécies]:\n• Perfil: Enorme quantidade de HP para amortecer dano bruto e efeitos contínuos.\n• Função: Manter-se de pé mesmo quando as defesas de armadura são perfuradas.\n• Exemplos: Ponk (#4), Eustavio (#16), Gallo (#17), Porky (#24), Valu (#37).\n\n7. 🛡️ Muralha Blindada [22 Espécies]:\n• Perfil: Harmonia sólida entre armadura pesada e boa vida base.\n• Função: Mitigação percentual que reduz ataques inimigos a danos residuais.\n• Exemplos: Pollisaur (#11), Vio (#12), Easy East (#14), Armor (#20), Jhona (#22).\n\n8. 🏰 Bastião de Armadura [8 Espécies]:\n• Perfil: Foco absoluto em armadura pura no limite matemático do jogo.\n• Função: Quase imunidade contra atacantes físicos sem penetração de defesa.\n• Exemplos: Pastank (#38), Robotop (#47), Menta (#78), Galland (#93), Crystal (#99).\n\n9. 🔋 Bateria de Habilidades [20 Espécies]:\n• Perfil: Alto atributo de Poder (PWR) ou custos minúsculos (ciclos de 1-2 turnos).\n• Função: Disparo contínuo de habilidades especiais, curas frequentes e escudos.\n• Exemplos: Snow (#15), Pastinni (#39), Candle (#41), Ignarto (#44), Leci (#49).\n\n10. 🦏 Colosso Ofensivo [9 Espécies]:\n• Perfil: Híbrido imponente combinando muita vida com dano destruidor.\n• Função: Lutador de choque que absorve castigo na linha de frente enquanto trucida adversários.\n• Exemplos: Iguanarto (#30), País (#36), Miedo (#63), Pollulu (#68), Luso (#77).",
-            "ru": "Для углубления в соревновательную тактику 2vs2 Цыплопедия и метагейм делят все 145 видов на 10 точных тактических ролей в зависимости от баланса параметров и действия умения:\n\n1. ⚖️ Универсал (All-Rounder) [22 вида]:\n• Профиль: Сбалансированные параметры во всех областях без явных уязвимостей.\n• Роль: Абсолютная гибкость; одинаково эффективен на передовой и в тылу.\n• Примеры: Pollier (#1), Mali (#5), Pasti (#8), Invert (#28), Phantom (#35).\n\n2. 💥 Стеклянная пушка (Glass Cannon) [9 видов]:\n• Профиль: Колоссальный урон и скорость при минимальном запасе HP и брони.\n• Роль: Молниеносное устранение ключевых врагов в первые 1-2 хода.\n• Примеры: Chica (#2), Zeo (#21), Mosca (#31), Cerol (#50), Sharky (#53).\n\n3. 🔨 Тяжелый ударник (Heavy Hitter) [17 видов]:\n• Профиль: Огромный физический урон и высокая выживаемость ценой скорости.\n• Роль: Прямой размен ударами и взлом тяжелой брони противника.\n• Примеры: Zombie (#7), Lapiz (#25), Alien (#29), Nevermore (#34), Cacho (#40).\n\n4. 🏹 Артиллерист (Ranged Artillery) [15 видов]:\n• Профиль: Дистанционный урон с мощным масштабированием навыков.\n• Роль: Непрерывный обстрел из безопасной позиции без риска контратак.\n• Примеры: McDuck (#3), Raro (#18), Mega (#23), Manic (#26), Jeff (#27).\n\n5. ⚡ Ловкий скороход (Agile Speedster) [15 видов]:\n• Профиль: Максимальная скорость, гарантирующая первый ход в раунде.\n• Роль: Мгновенное наложение негативных эффектов (заморозка, яд, паралич) на старте.\n• Примеры: Cay (#6), Iris (#9), Pollisor (#10), Polliro (#13), Polliwatt (#19).\n\n6. 🩸 Танк здоровья (HP Sponge) [14 видов]:\n• Профиль: Гигантский запас здоровья, амортизирующий чистый и взрывной урон.\n• Роль: Стойкость под обстрелом, когда враги пробивают или игнорируют броню.\n• Примеры: Ponk (#4), Eustavio (#16), Gallo (#17), Porky (#24), Valu (#37).\n\n7. 🛡️ Бронированная стена (Armored Wall) [22 вида]:\n• Профиль: Отличный баланс высокой брони и надежного запаса HP.\n• Роль: Процентное снижение входящего урона, превращающее удары в царапины.\n• Примеры: Pollisaur (#11), Vio (#12), Easy East (#14), Armor (#20), Jhona (#22).\n\n8. 🏰 Железный бастион (Iron Bastion) [8 видов]:\n• Профиль: Экстремальная концентрация на параметре брони.\n• Роль: Неуязвимость к физическим атакам без снижения защиты или яда.\n• Примеры: Pastank (#38), Robotop (#47), Menta (#78), Galland (#93), Crystal (#99).\n\n9. 🔋 Батарея навыков (Skill Battery) [20 видов]:\n• Профиль: Высокий параметр Силы (PWR) или сверхнизкая стоимость умений (цикл 1-2 хода).\n• Роль: Безостановочный каст способностей, лечение, щиты и постоянный контроль.\n• Примеры: Snow (#15), Pastinni (#39), Candle (#41), Ignarto (#44), Leci (#49).\n\n10. 🦏 Атакующий колосс (Bruiser) [9 видов]:\n• Профиль: Мощный гибрид огромного запаса HP и сокрушительного урона.\n• Роль: Неудержимый боец передовой, впитывающий огонь и сметающий врагов.\n• Примеры: Iguanarto (#30), Pais (#36), Miedo (#63), Pollulu (#68), Luso (#77)."
+            "es": "Para profundizar en el juego competitivo 2vs2, la Pollopedia y la comunidad clasifican a las 145 especies en 10 arquetipos de precisión según sus números de nacimiento, sinergia de pasivas y ciclo de habilidad especial:",
+            "en": "For advanced 2vs2 competitive play, the Pollopedia and metagame categorize all 145 species into 10 precision archetypes based on innate stats, passive traits, and special power cycles:",
+            "pt": "Para o jogo competitivo 2vs2 avançado, a Pollopédia e o metagame dividem as 145 espécies em 10 arquétipos de precisão com base em atributos inatos, passivas e ciclo de poder:",
+            "ru": "Для соревновательных боев 2на2 Цыплопедия и мета разделяют все 145 видов на 10 точных тактических ролей по базовым характеристикам, пассивкам и циклу суперспособностей:"
           },
           "tip": {
             "es": "En la Pollopedia puedes consultar la ficha detallada de cada pollo para ver su rol táctico, tiempo exacto de ciclo de poder (~turnos), compañeros ideales y sugerencias de equipamiento.",
@@ -22276,16 +23094,156 @@
         },
         {
           "title": {
-            "es": "Sinergias de Dúos 2vs2 y Creación de Equipos",
-            "en": "2vs2 Duo Synergies & Team Building",
-            "pt": "Sinergias de Duplas 2vs2 e Criação de Equipes",
-            "ru": "Синергии дуэтов 2vs2 и построение отряда"
+            "es": "⚖️ Todoterreno Equilibrado (22 Especies)",
+            "en": "⚖️ Balanced All-Rounder (22 Species)",
+            "pt": "⚖️ Polivalente Equilibrado (22 Espécies)",
+            "ru": "⚖️ Универсал (22 Видов)"
           },
           "content": {
-            "es": "El combate en Clicker Chickens se define en arenas de 2 contra 2. Juntar dos pollos del mismo rol suele generar debilidades graves. Las composiciones más exitosas combinan arquetipos complementarios:\n\n• Muro Protector + Cañón de Cristal / Artillero:\nEl Tanque o Bastión absorbe el fuego enemigo mientras el atacante frágil aniquila con total seguridad. Ej: Pastank (#38) + Chica (#2).\n\n• Velocista de Control + Golpeador Pesado:\nEl velocista inicia aplicando Congelamiento o Parálisis en el turno 1, permitiendo que el golpeador pesado elimine al objetivo indefenso sin recibir daño de vuelta. Ej: Cay (#6) + Zombie (#7).\n\n• Batería de Habilidades + Tanque de Salud / Regeneración:\nCiclos ininterrumpidos de escudos, veneno o curación masiva que fuerzan una victoria inexorable por desgaste. Ej: Snow (#15) + Ponk (#4).\n\n• Doble Coloso / Todoterreno Pesado:\nEstrategia de asalto equilibrada sin puntos débiles obvios; ambos pollos tienen estadísticas sólidas y pueden alternar funciones de absorción y remate. Ej: Iguanarto (#30) + Pollier (#1).",
-            "en": "Clicker Chickens combat takes place in 2vs2 arena duels. Pairing two chickens of the exact same role often creates fatal vulnerabilities. Winning teams combine complementary archetypes:\n\n• Protective Wall + Glass Cannon / Artillery:\nThe Tank or Bastion soaks incoming focus fire while the fragile glass cannon sweeps enemies with impunity. E.g., Pastank (#38) + Chica (#2).\n\n• Control Speedster + Heavy Hitter:\nThe speedster acts first on Turn 1 to inflict Freeze or Paralysis, allowing the slow heavy hitter to obliterate the helpless target without taking damage. E.g., Cay (#6) + Zombie (#7).\n\n• Skill Battery + Health Tank / Regen:\nEndless loops of barriers, poison DoT, or team heals that grind down the enemy team through sheer attrition. E.g., Snow (#15) + Ponk (#4).\n\n• Dual Bruisers / Heavy All-Rounders:\nA balanced powerhouse setup without obvious weak points; both units possess high durability and high damage to trade blows reliably. E.g., Iguanarto (#30) + Pollier (#1).",
-            "pt": "As batalhas em Clicker Chickens ocorrem em duplas 2vs2. Juntar dois frangos com a mesma função cria fraquezas críticas. As composições mais vitoriosas unem arquétipos complementares:\n\n• Muralha Protetora + Canhão de Cristal / Artilheiro:\nO Tanque ou Bastião absorve o foco inimigo enquanto o atacante frágil elimina ameaças com segurança. Ex: Pastank (#38) + Chica (#2).\n\n• Velocista de Controle + Golpeador Pesado:\nO velocista ataca no Turno 1 congelando ou paralisando, permitindo que o golpeador pesado execute o rival imóvel. Ex: Cay (#6) + Zombie (#7).\n\n• Bateria de Habilidades + Tanque de Vida / Suporte:\nCiclos contínuos de barreiras, veneno ou cura massiva que vencem por desgaste garantido. Ex: Snow (#15) + Ponk (#4).\n\n• Colosso Duplo / Polivalente Pesado:\nFormação de alta durabilidade e dano equilibrado sem pontos fracos fáceis de explorar pelo rival. Ex: Iguanarto (#30) + Pollier (#1).",
-            "ru": "Сражения в Clicker Chickens проходят в формате 2 на 2. Объединение двух бойцов одинаковой роли создает критические уязвимости. Сильнейшие команды строятся на синергии взаимодополняющих архетипов:\n\n• Защитная стена + Стеклянная пушка / Артиллерист:\nТанк или Бастион принимает на себя удары, пока хрупкий дамагер безнаказанно зачищает поле. Пример: Pastank (#38) + Chica (#2).\n\n• Скороход контроля + Тяжелый ударник:\nСкороход на 1 ходу накладывает Заморозку или Паралич, позволяя медленному тяжелому бойцу уничтожить цель без ответного урона. Пример: Cay (#6) + Zombie (#7).\n\n• Батарея навыков + Танк здоровья / Лекарь:\nБесконечный цикл щитов, яда или лечения, неумолимо истощающий команду соперника. Пример: Snow (#15) + Ponk (#4).\n\n• Двойной колосс / Тяжелые универсалы:\nСбалансированная и несокрушимая связка без слабых мест; оба бойца обладают отличной живучестью и высоким уроном. Пример: Iguanarto (#30) + Pollier (#1)."
+            "es": "Distribución armónica de vida, ataque, armadura y velocidad. No sufre penalizaciones críticas contra ningún estilo de combate.\n\n• Rol en combate: Adaptabilidad total. Puede actuar tanto en vanguardia absorbiendo daño moderado como en retaguardia cerrando combates con consistencia.\n• Atributos clave: Stats Balanceadas (Sin fisuras)\n• Objetos recomendados: Mirador Dorado, Ira, Palo de Raíz",
+            "en": "Even distribution across life, damage, armor, and speed. Suffers no crippling vulnerabilities against any archetype.\n\n• Rol en combate: Universal flexibility. Thrives in frontline trading moderate hits or backline securing steady knockouts.\n• Atributos clave: Balanced Stats (No weak points)\n• Objetos recomendados: Golden Perch, Wrath, Roost Stick",
+            "pt": "Distribuição harmônica de vida, ataque, armadura e velocidade. Sem vulnerabilidades críticas contra nenhum estilo.\n\n• Rol en combate: Versatilidade universal. Atua na vanguarda absorvendo dano moderado ou na retaguarda finalizando com consistência.\n• Atributos clave: Atributos Equilibrados\n• Objetos recomendados: Poleiro Dourado, Ira, Poleiro",
+            "ru": "Гармоничный баланс здоровья, урона, брони и скорости. Не имеет критических уязвимостей ни против одного стиля.\n\n• Rol en combate: Универсальная гибкость. Отлично чувствует себя на передовой в разменах и в тылу для стабильного добивания.\n• Atributos clave: Сбалансированные параметры\n• Objetos recomendados: Золотой насест, Гнев, Насест"
+          }
+        },
+        {
+          "title": {
+            "es": "💥 Cañón de Cristal (9 Especies)",
+            "en": "💥 Glass Cannon (9 Species)",
+            "pt": "💥 Canhão de Cristal (9 Espécies)",
+            "ru": "💥 Стеклянная пушка (9 Видов)"
+          },
+          "content": {
+            "es": "Daño destructivo y velocidad extraordinaria combinados con vida y armadura ínfimas. No tolera recibir impactos directos.\n\n• Rol en combate: Eliminación inmediata de objetivos prioritarios en turnos 1-2 antes de que el adversario despliegue sus poderes o barreras.\n• Atributos clave: Ataque Máximo + Velocidad Alta\n• Objetos recomendados: Palo de Raíz, Guante de Boxeo, Mirador Dorado",
+            "en": "Overwhelming offensive power and great speed paired with fragile health and armor. Cannot withstand prolonged fire.\n\n• Rol en combate: Fast execution of priority threats on turns 1-2 before opponents can activate defenses or deploy crowd control.\n• Atributos clave: Max Attack + High Speed\n• Objetos recomendados: Roost Stick, Boxing Glove, Golden Perch",
+            "pt": "Dano devastador e alta velocidade aliados a pouquíssima vida e armadura. Não tolera impactos diretos prolongados.\n\n• Rol en combate: Eliminação relâmpago de ameaças nos turnos 1-2 antes do rival ativar barreiras ou habilidades.\n• Atributos clave: Ataque Máximo + Velocidade Alta\n• Objetos recomendados: Poleiro, Luva de Boxe, Poleiro Dourado",
+            "ru": "Колоссальный урон и скорость при хрупком здоровье и броне. Не выдерживает длительного обстрела.\n\n• Rol en combate: Молниеносное устранение опасных целей в первые 1-2 хода до активации вражеских щитов и умений.\n• Atributos clave: Максимальный урон + Высокая скорость\n• Objetos recomendados: Насест, Боксерская перчатка, Золотой насест"
+          }
+        },
+        {
+          "title": {
+            "es": "🔨 Fuerza Bruta / Golpeador (17 Especies)",
+            "en": "🔨 Heavy Hitter (17 Species)",
+            "pt": "🔨 Força Bruta / Golpeador (17 Espécies)",
+            "ru": "🔨 Тяжелый ударник (17 Видов)"
+          },
+          "content": {
+            "es": "Enorme fuerza de impacto físico respaldada por suficiente salud para resistir intercambios directos, sacrificando velocidad.\n\n• Rol en combate: Destructor de tanques y murallas. Sobrevive a los primeros turnos y castiga implacablemente con daño físico demoledor.\n• Atributos clave: Ataque Físico Masivo + Salud Media\n• Objetos recomendados: Ira, Escudo Espinado, Mirador Dorado",
+            "en": "Immense physical striking power backed by enough bulk to trade blows steadily, sacrificing speed.\n\n• Rol en combate: Wall-breaker and tank buster. Absorbs initial hits and crushes defensive anchors with relentless heavy blows.\n• Atributos clave: Massive Physical Attack + Solid Bulk\n• Objetos recomendados: Wrath, Spiked Shield, Golden Perch",
+            "pt": "Impacto físico esmagador respaldado por durabilidade sólida para trocas diretas, abrindo mão de velocidade.\n\n• Rol en combate: Demolidor de tanques e muralhas. Sobrevive aos primeiros golpes e destrói barreiras com força bruta.\n• Atributos clave: Ataque Físico Maciço + Boa Resistência\n• Objetos recomendados: Ira, Escudo de Espinhos, Poleiro Dourado",
+            "ru": "Сокрушительная сила удара и солидный запас прочности для разменов ценой низкой скорости.\n\n• Rol en combate: Сокрушитель танков и стен. Переживает первые атаки и проламывает любую защиту тяжелыми ударами.\n• Atributos clave: Массивный физ. урон + Стойкость\n• Objetos recomendados: Гнев, Шипастый щит, Золотой насест"
+          }
+        },
+        {
+          "title": {
+            "es": "🏹 Artillero de Proyectiles (15 Especies)",
+            "en": "🏹 Ranged Artillery (15 Species)",
+            "pt": "🏹 Artilheiro de Projéteis (15 Espécies)",
+            "ru": "🏹 Артиллерист (15 Видов)"
+          },
+          "content": {
+            "es": "Ofensiva concentrada en habilidades directas y ráfagas a distancia que escalan intensamente con el daño base.\n\n• Rol en combate: Bombardeo continuo desde la retaguardia, desgastando rivales blindados sin exponerse a represalias físicas directas.\n• Atributos clave: Ataque a Distancia + Daño Sostenido\n• Objetos recomendados: Mirador Dorado, Palo de Raíz, Monóculo",
+            "en": "Focused on targeted skill bursts and sustained ranged salvos that scale heavily with base attack.\n\n• Rol en combate: Safe backline bombardment, softening heavily armored opponents without risking direct melee counters.\n• Atributos clave: Ranged Damage + Sustained Scaling\n• Objetos recomendados: Golden Perch, Roost Stick, Monocle",
+            "pt": "Focado em rajadas à distância e habilidades que escalam fortemente com o dano base.\n\n• Rol en combate: Bombardeio seguro da retaguarda, desgastando alvos blindados sem sofrer contra-ataques corpo a corpo.\n• Atributos clave: Ataque à Distância + Dano Contínuo\n• Objetos recomendados: Poleiro Dourado, Poleiro, Monóculo",
+            "ru": "Специализируется на дистанционных залпах и навыках с высоким коэффициентом урона.\n\n• Rol en combate: Непрерывный обстрел из тыла, истощающий бронированных врагов без риска контратак.\n• Atributos clave: Дистанционный урон + Стабильный обстрел\n• Objetos recomendados: Золотой насест, Насест, Монокль"
+          }
+        },
+        {
+          "title": {
+            "es": "⚡ Velocista Ágil (15 Especies)",
+            "en": "⚡ Agile Speedster (15 Species)",
+            "pt": "⚡ Velocista Ágil (15 Espécies)",
+            "ru": "⚡ Ловкий скороход (15 Видов)"
+          },
+          "content": {
+            "es": "Velocidad tope de metagame. Diseñado para atacar antes que cualquier oponente sin importar la zona o torneo.\n\n• Rol en combate: Iniciador del combate. Aplica estados debilitantes (congelar, veneno, parálisis) en turno 1 para desarmar la táctica rival.\n• Atributos clave: Velocidad Élite (Iniciativa turno 1)\n• Objetos recomendados: Palo de Raíz, Mirador Dorado, Pluma Veloz",
+            "en": "Top-tier metagame speed. Engineered to act before any enemy regardless of tournament tier.\n\n• Rol en combate: Match initiator. Applies crippling status effects (freeze, poison, paralysis) on Turn 1 to dismantle enemy strategies.\n• Atributos clave: Elite Speed (Turn 1 initiative)\n• Objetos recomendados: Roost Stick, Golden Perch, Swift Feather",
+            "pt": "Velocidade máxima no metagame. Projetado para agir antes de qualquer oponente em qualquer zona.\n\n• Rol en combate: Iniciador de combate. Aplica controle (congelamento, veneno, paralisia) no Turno 1 para neutralizar a estratégia rival.\n• Atributos clave: Velocidade Elite (Iniciativa turno 1)\n• Objetos recomendados: Poleiro, Poleiro Dourado, Pena Veloz",
+            "ru": "Максимальная скорость в мете. Всегда атакует раньше соперников в любых зонах и турнирах.\n\n• Rol en combate: Инициатор боя. Накладывает заморозку, яд или паралич на 1 ходу, ломая тактику врага.\n• Atributos clave: Элитная скорость (Инициатива хода 1)\n• Objetos recomendados: Насест, Золотой насест, Быстрое перо"
+          }
+        },
+        {
+          "title": {
+            "es": "🩸 Tanque de Salud (Esponja) (14 Especies)",
+            "en": "🩸 Health Tank (HP Sponge) (14 Species)",
+            "pt": "🩸 Tanque de Vida (Esponja) (14 Espécies)",
+            "ru": "🩸 Танк здоровья (Губка) (14 Видов)"
+          },
+          "content": {
+            "es": "Reserva gigantesca de vida base. Amortigua daño masivo directo y no depende exclusivamente de la armadura.\n\n• Rol en combate: Pilar de aguante. Sobrevive a ráfagas críticas y daño verdadero, protegiendo a su compañero durante turnos prolongados.\n• Atributos clave: Vida Colosal (Resistencia a penetración)\n• Objetos recomendados: Baya de Regeneración, Escudo Espinado, Amuleto Vital",
+            "en": "Mammoth base health pool. Absorbs massive direct impact and remains effective even against armor-piercing skills.\n\n• Rol en combate: Endurance anchor. Survives critical bursts and true damage, shielding allies across extended battles.\n• Atributos clave: Colossal HP (Penetration resilience)\n• Objetos recomendados: Regen Berry, Spiked Shield, Vital Amulet",
+            "pt": "Reserva colossal de vida base. Amortece danos pesados e não depende unicamente de armadura.\n\n• Rol en combate: Âncora de resistência. Sobrevive a críticos e dano verdadeiro, mantendo a equipe protegida por muito tempo.\n• Atributos clave: Vida Colossal (Resistente a perfuração)\n• Objetos recomendados: Fruta de Regeneração, Escudo de Espinhos, Amuleto Vital",
+            "ru": "Колоссальный запас здоровья. Впитывает любой урон и эффективен даже против пробития брони.\n\n• Rol en combate: Оплот выносливости. Переживает критические удары и чистый урон, удерживая строй.\n• Atributos clave: Огромный запас HP (Стойкость к пробитию)\n• Objetos recomendados: Ягода регенерации, Шипастый щит, Амулет жизни"
+          }
+        },
+        {
+          "title": {
+            "es": "🛡️ Muralla Blindada (22 Especies)",
+            "en": "🛡️ Armored Wall (22 Species)",
+            "pt": "🛡️ Muralha Blindada (22 Espécies)",
+            "ru": "🛡️ Бронированная стена (22 Видов)"
+          },
+          "content": {
+            "es": "Balance perfecto de mitigación porcentual y reserva de vida. Convierte ataques físicos enemigos en daño residual.\n\n• Rol en combate: Vanguardia defensiva clásica. Bloquea el daño principal del dúo enemigo mientras desgasta con contraataques o veneno.\n• Atributos clave: Armadura Alta + Vida Equilibrada\n• Objetos recomendados: Escudo de Roca, Mirador Dorado, Escudo Espinado",
+            "en": "Optimal blend of percentage damage reduction and solid health. Turns incoming physical attacks into minor scratches.\n\n• Rol en combate: Classic frontline guardian. Absorbs main enemy duo pressure while returning steady counter-damage or poison.\n• Atributos clave: High Armor + Solid Health\n• Objetos recomendados: Rock Shield, Golden Perch, Spiked Shield",
+            "pt": "Equilíbrio perfeito de redução percentual e vida. Converte ataques físicos inimigos em arranhões.\n\n• Rol en combate: Vanguarda defensiva clássica. Absorve a pressão inimiga enquanto responde com contra-ataques ou veneno.\n• Atributos clave: Armadura Alta + Vida Equilibrada\n• Objetos recomendados: Escudo de Pedra, Poleiro Dourado, Escudo de Espinhos",
+            "ru": "Идеальный баланс процентного снижения урона и HP. Превращает удары соперника в царапины.\n\n• Rol en combate: Классический танк передовой. Сдерживает натиск вражеской связки, отвечая контратаками или ядом.\n• Atributos clave: Высокая броня + Надежное HP\n• Objetos recomendados: Каменный щит, Золотой насест, Шипастый щит"
+          }
+        },
+        {
+          "title": {
+            "es": "🏰 Bastión de Armadura (8 Especies)",
+            "en": "🏰 Iron Bastion (8 Species)",
+            "pt": "🏰 Bastião de Armadura (8 Espécies)",
+            "ru": "🏰 Железный бастион (8 Видов)"
+          },
+          "content": {
+            "es": "Especialización defensiva extrema en armadura base pura. Mitigación física en el límite matemático del motor de combate.\n\n• Rol en combate: Inmunidad casi total contra atacantes físicos directos. Obliga al adversario a recurrir a daño indirecto o veneno.\n• Atributos clave: Armadura Hiper-Especializada (100 ARM)\n• Objetos recomendados: Escudo Espinado, Baya de Curación, Escudo de Roca",
+            "en": "Extreme physical defense tuning reaching the game engine's maximum mathematical damage reduction limits.\n\n• Rol en combate: Near-immunity against raw physical strikers. Forces opponents to rely on status conditions or piercing damage.\n• Atributos clave: Hyper-Specialized Armor (100 DEF)\n• Objetos recomendados: Spiked Shield, Healing Berry, Rock Shield",
+            "pt": "Especialização defensiva extrema em armadura pura no limite matemático do motor de combate.\n\n• Rol en combate: Quase imunidade contra atacantes físicos puros. Força o adversário a recorrer a veneno ou dano indireto.\n• Atributos clave: Armadura Hiper-Especializada (100 ARM)\n• Objetos recomendados: Escudo de Espinhos, Fruta de Cura, Escudo de Pedra",
+            "ru": "Предельная концентрация на броне, достигающая математического потолка снижения физ. урона.\n\n• Rol en combate: Почти полная неуязвимость к физ. атакам. Вынуждает соперника использовать яд или особый урон.\n• Atributos clave: Экстремальная броня (100 БРО)\n• Objetos recomendados: Шипастый щит, Ягода лечения, Каменный щит"
+          }
+        },
+        {
+          "title": {
+            "es": "🔋 Batería de Habilidades (20 Especies)",
+            "en": "🔋 Skill Battery (20 Species)",
+            "pt": "🔋 Bateria de Habilidades (20 Espécies)",
+            "ru": "🔋 Батарея навыков (20 Видов)"
+          },
+          "content": {
+            "es": "Atributo de Poder sobrehumano o costes de energía mínimos. Capaz de activar su habilidad especial en casi cada ronda.\n\n• Rol en combate: Ciclador continuo de curaciones, escudos, veneno o daño mágico. Ahoga al rival bajo una lluvia de efectos constantes.\n• Atributos clave: Poder Alto / Ciclo Rápido (1-2 turnos)\n• Objetos recomendados: Palo de Raíz, Monóculo, Mirador Dorado",
+            "en": "Massive Power generation stat or ultra-cheap energy costs. Casts special abilities on virtually every turn.\n\n• Rol en combate: Continuous caster of heals, barriers, poison, or magic burst. Drowns opponents in unrelenting utility and effects.\n• Atributos clave: High Power / Fast Cycle (1-2 turns)\n• Objetos recomendados: Roost Stick, Monocle, Golden Perch",
+            "pt": "Geração massiva de Poder ou custos ínfimos. Dispara habilidades especiais praticamente a cada rodada.\n\n• Rol en combate: Conjurador contínuo de curas, escudos, veneno ou dano. Sufoca o adversário sob constante pressão de efeitos.\n• Atributos clave: Poder Alto / Ciclo Rápido (1-2 turnos)\n• Objetos recomendados: Poleiro, Monóculo, Poleiro Dourado",
+            "ru": "Огромный прирост силы или мизерная стоимость способностей. Применяет ульту почти каждый ход.\n\n• Rol en combate: Постоянный кастер лечения, щитов, яда или урона. Истощает соперника непрерывным градом эффектов.\n• Atributos clave: Высокая сила / Быстрый цикл (1-2 хода)\n• Objetos recomendados: Насест, Монокль, Золотой насест"
+          }
+        },
+        {
+          "title": {
+            "es": "🦏 Coloso Ofensivo (Bruiser) (9 Especies)",
+            "en": "🦏 Offensive Colossus (Bruiser) (9 Species)",
+            "pt": "🦏 Colosso Ofensivo (Lutador) (9 Espécies)",
+            "ru": "🦏 Атакующий колосс (Боец) (9 Видов)"
+          },
+          "content": {
+            "es": "Híbrido colosal que combina salud digna de un tanque con potencia ofensiva de primer nivel. Un verdadero titán en la arena.\n\n• Rol en combate: Luchador de asalto en primera línea. Absorbe fuego concentrado mientras demuele la formación enemiga con golpes letales.\n• Atributos clave: Vida Titánica + Ataque Devastador\n• Objetos recomendados: Ira, Mirador Dorado, Escudo Espinado",
+            "en": "Formidable juggernaut combining tank-tier health with top-tier offensive force. A true titan on the battlefield.\n\n• Rol en combate: Frontline juggernaut brawler. Soaks concentrated enemy attacks while smashing opposing lines with lethal blows.\n• Atributos clave: Titanic HP + Crushing Attack\n• Objetos recomendados: Wrath, Golden Perch, Spiked Shield",
+            "pt": "Híbrido colossal que combina vida de tanque com poder ofensivo de alto nível. Um titã na arena.\n\n• Rol en combate: Lutador de impacto na vanguarda. Absorve fogo focado enquanto destrói a formação inimiga com golpes letais.\n• Atributos clave: Vida Titânica + Ataque Devastador\n• Objetos recomendados: Ira, Poleiro Dourado, Escudo de Espinhos",
+            "ru": "Могучий гибрид, сочетающий здоровье танка с сокрушительной атакой. Настоящий титан на арене.\n\n• Rol en combate: Боец передовой. Выдерживает концентрированный огонь, сокрушая строй соперника мощными ударами.\n• Atributos clave: Титаническое HP + Сокрушительный урон\n• Objetos recomendados: Гнев, Золотой насест, Шипастый щит"
+          }
+        },
+        {
+          "title": {
+            "es": "👥 Sinergias Competitivas de Dúos 2vs2",
+            "en": "👥 Competitive 2vs2 Duo Synergies",
+            "pt": "👥 Sinergias Competitivas de Duplas 2vs2",
+            "ru": "👥 Соревновательные синергии дуэтов 2на2"
+          },
+          "content": {
+            "es": "El combate en Clicker Chickens se juega en arenas de 2 contra 2. Juntar dos pollos del mismo arquetipo suele crear debilidades graves. Las composiciones de mayor porcentaje de victoria combinan roles complementarios:",
+            "en": "Combat in Clicker Chickens unfolds in 2vs2 arena matches. Stacking two units with identical roles usually creates severe weaknesses. Top win-rate teams merge complementary archetypes:",
+            "pt": "As batalhas em Clicker Chickens ocorrem em duplas 2vs2. Juntar dois frangos do mesmo arquétipo costuma gerar fraquezas graves. As duplas mais vitoriosas unem papéis complementares:",
+            "ru": "Бои в Clicker Chickens проходят в формате 2 на 2. Выбор двух одинаковых ролей создает критические уязвимости. Победные связки всегда строятся на взаимодополняющих ролях:"
           },
           "tip": {
             "es": "Usa la herramienta interactiva 'Creador de Equipos 2vs2' en la barra lateral de la wiki para probar emparejamientos y comprobar su compatibilidad táctica antes de entrar al torneo.",
@@ -22296,16 +23254,16 @@
         },
         {
           "title": {
-            "es": "Configuración Táctica de Blancos y Enfoque de Daño",
-            "en": "Target Priority Configuration & Focus Fire",
-            "pt": "Configuração Tática de Alvos e Foco de Dano",
-            "ru": "Тактический выбор целей и концентрация урона"
+            "es": "🎯 Configuración Táctica de Blancos y Enfoque de Daño (IA)",
+            "en": "🎯 Tactical Target Priority Configuration & Focus Fire (AI)",
+            "pt": "🎯 Configuração Tática de Alvos e Foco de Dano (IA)",
+            "ru": "🎯 Тактический выбор целей и концентрация урона (ИИ)"
           },
           "content": {
-            "es": "En cada combate y en la pantalla de gestión de equipo puedes definir el comportamiento de ataque de cada pollo. Ajustar la prioridad según el arquetipo es la clave para derrotar rivales con estadísticas superiores:\n\n• 🎲 Al Azar (Por Defecto): El pollo elige objetivo aleatoriamente. Es impredecible y reparte el daño entre ambos contrincantes, diluyendo la presión de eliminación.\n\n• 🎯 Menos Vida (Prioridad de Remate): El pollo atacará siempre al rival con menor porcentaje de salud actual. Ideal para Atacantes, Cañones de Cristal y Velocistas con el fin de convertir rápidamente la pelea en una ventaja numérica de 2 contra 1.\n\n• ⚔️ Más Daño (Prioridad de Amenaza): El pollo enfoca sus ataques sobre el enemigo con mayor estadística de ataque. Fundamental para Velocistas de control o Baterías que buscan incapacitar o noquear al atacante enemigo antes de que lance su habilidad especial.\n\n• 🛡️ Mayor Vida / Mayor Armadura: Recomendado para baterías de daño continuo (Veneno/DoT) o habilidades de daño porcentual que ignoran defensa física, desgastando al pilar defensivo enemigo mientras tu compañero se encarga del atacante rival.",
-            "en": "In every combat and squad setup screen, you can configure each chicken's target priority. Tuning priorities to match each chicken's archetype is key to defeating teams with higher stats:\n\n• 🎲 Random (Default): Attacks a random target. Damage gets split across both opponents, reducing knockout pressure.\n\n• 🎯 Lowest HP (Finisher Priority): Always attacks the enemy with the lowest current health. Crucial for Strikers, Glass Cannons, and Speedsters to rapidly turn the match into an overwhelming 2-on-1 advantage.\n\n• ⚔️ Highest Damage (Threat Priority): Focuses attacks on the opponent with the highest attack stat. Ideal for Control Speedsters and crowd-control casters seeking to disable the enemy carry before it unleashes lethal skills.\n\n• 🛡️ Highest HP / Highest Armor: Recommended for poison/DoT batteries or true damage skills that bypass defense, melting the enemy's defensive anchor while your teammate handles the opposing damage dealer.",
-            "pt": "Em cada combate e na gestão do time, você pode ajustar a prioridade de ataque de cada frango. Configurar os alvos de acordo com o arquétipo é a chave para vencer oponentes com atributos superiores:\n\n• 🎲 Ao Acaso (Padrão): Ataca um alvo aleatório. O dano se divide entre os oponentes, reduzindo a pressão de finalização.\n\n• 🎯 Menor Vida (Prioridade de Finalização): Foca sempre no inimigo com menor vida atual. Essencial para Atacantes, Canhões de Cristal e Velocistas para criar rápido uma vantagem de 2 contra 1.\n\n• ⚔️ Maior Dano (Prioridade de Ameaça): Ataca o adversário com maior poder ofensivo. Ideal para Velocistas de controle neutralizarem o atacante rival antes de sua habilidade especial.\n\n• 🛡️ Maior Vida / Maior Armadura: Indicado para baterias de dano contínuo (Veneno/DoT) ou dano penetrante, derretendo o tanque adversário enquanto seu parceiro cuida do resto.",
-            "ru": "В каждом бою и на экране отряда можно настраивать поведение цыплят при выборе целей. Правильная настройка под архетип бойца — ключ к победе над соперниками с превосходящими статами:\n\n• 🎲 Случайно (По умолчанию): Атакует случайную цель. Урон распыляется между обоими врагами, снижая шанс быстрого добивания.\n\n• 🎯 Меньше HP (Добивание): Атакует цель с наименьшим текущим здоровьем. Незаменимо для Атакующих, Стеклянных пушек и Скороходов для быстрого создания численного перевеса 2 против 1.\n\n• ⚔️ Больше урона (Устранение угрозы): Фокусирует удары на противнике с максимальным уроном. Идеально для Скороходов контроля, стремящихся вывести из строя вражеского керри до применения его суперспособности.\n\n• 🛡️ Больше HP / Больше брони: Рекомендуется для бойцов с постепенным уроном (Яд/DoT) или эффектами, игнорирующими броню, для измора тяжелых танков соперника."
+            "es": "En cada combate y en la pantalla de gestión de equipo puedes definir el comportamiento táctico de ataque de cada pollo. Ajustar la prioridad según el arquetipo es la clave para superar rivales con estadísticas superiores:",
+            "en": "In every battle and squad management screen, you can configure each chicken's target priority. Tuning target behaviors to match chicken archetypes is key to defeating opponents with superior raw stats:",
+            "pt": "Em cada combate e na tela de equipe, você pode configurar o comportamento de ataque de cada frango. Ajustar os alvos de acordo com o arquétipo é a chave para vencer oponentes com atributos superiores:",
+            "ru": "В каждом бою и на экране отряда можно настраивать поведение цыплят при выборе целей. Правильная настройка под архетип бойца — ключ к победе над соперниками с превосходящими статами:"
           },
           "formula": "Táctica 2vs1 = Eliminar 1 objetivo rival duplica el daño relativo de tu equipo sobre el sobreviviente",
           "tip": {

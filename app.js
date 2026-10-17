@@ -2236,6 +2236,207 @@
     `;
   }
 
+
+  function renderArchetypesCategoryHtml(cat) {
+    const banner = cat.banner ? getLocalized(cat.banner) : '';
+    const pillarsTitle = cat.pillars_title ? getLocalized(cat.pillars_title) : '';
+    const pillarsIntro = cat.pillars_intro ? getLocalized(cat.pillars_intro) : '';
+    const tacticalTitle = cat.tactical_title ? getLocalized(cat.tactical_title) : '';
+    const tacticalIntro = cat.tactical_intro ? getLocalized(cat.tactical_intro) : '';
+    const synergiesTitle = cat.synergies_title ? getLocalized(cat.synergies_title) : '';
+    const synergiesIntro = cat.synergies_intro ? getLocalized(cat.synergies_intro) : '';
+    const targetsTitle = cat.targets_title ? getLocalized(cat.targets_title) : '';
+    const targetsIntro = cat.targets_intro ? getLocalized(cat.targets_intro) : '';
+
+    function getChipsHtml(chIds) {
+      if (!chIds || !chIds.length) return '';
+      return `
+        <div class="mini-chicken-list" style="margin-top:6px;gap:6px;display:flex;flex-wrap:wrap;">
+          ${chIds.map(id => {
+            const c = WIKI.chickens.find(x => x.id === id);
+            if (!c) return '';
+            return `
+              <div class="mini-chicken-chip" onclick="location.hash='chicken-${c.id}'">
+                <img class="pixelated" src="${c.sprite}" width="24" height="24" alt="">
+                <span>${getLocalized(c.name)} <small style="color:var(--wiki-text-muted);font-weight:normal;">#${String(c.id + 1).padStart(2, '0')}</small></span>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    return `
+      <div class="mechanics-category" id="cat-archetypes">
+        <div class="mechanics-category-header">
+          <span style="font-size:24px;">${cat.icon || '🎖️'}</span>
+          <h2 class="mechanics-category-title">${getLocalized(cat.title)}</h2>
+        </div>
+
+        ${banner ? `
+          <div class="arch-guide-banner">
+            <p style="margin:0;">${banner}</p>
+          </div>
+        ` : ''}
+
+        <!-- BLOQUE 1: LOS 4 PILARES DEL MANUAL -->
+        <div class="arch-block-header">
+          <h3>${pillarsTitle}</h3>
+        </div>
+        ${pillarsIntro ? `<p style="font-size:13.5px;color:var(--wiki-text);margin-bottom:12px;">${pillarsIntro}</p>` : ''}
+        
+        <div class="arch-pillar-grid">
+          ${(cat.pillars || []).map(p => `
+            <div class="arch-pillar-card" style="border-left: 4px solid ${p.color};">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
+                <div style="font-size:15px;font-weight:800;color:var(--wiki-text);display:flex;align-items:center;gap:6px;">
+                  <span>${p.icon}</span> <span>${getLocalized(p.title)}</span>
+                </div>
+                <span class="badge" style="background:${p.color};color:#fff;font-size:10px;font-weight:800;">${getLocalized(p.badge)}</span>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:var(--wiki-accent);">
+                📊 ${getLocalized(p.stats)}
+              </div>
+              <p style="font-size:13px;line-height:1.45;color:var(--wiki-text);margin:0;">
+                ${getLocalized(p.desc)}
+              </p>
+              <div style="font-size:12px;background:var(--wiki-surface);padding:8px 10px;border-radius:4px;border:1px solid var(--wiki-border-light);margin-top:auto;">
+                <strong style="color:var(--wiki-gold);display:block;font-size:11px;text-transform:uppercase;margin-bottom:2px;">🥊 Asignación de Entrenamiento:</strong>
+                ${getLocalized(p.training)}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        ${cat.pillars_formula ? `
+          <div class="mechanics-formula-box">
+            <span>📐</span>
+            <code>${cat.pillars_formula}</code>
+          </div>
+        ` : ''}
+        ${cat.pillars_tip ? `
+          <div class="mechanics-tip-box">
+            ${getLocalized(cat.pillars_tip)}
+          </div>
+        ` : ''}
+
+        <!-- BLOQUE 2: LOS 10 ARQUETIPOS TÁCTICOS -->
+        <div class="arch-block-header" style="margin-top:32px;">
+          <h3>${tacticalTitle}</h3>
+        </div>
+        ${tacticalIntro ? `<p style="font-size:13.5px;color:var(--wiki-text);margin-bottom:12px;">${tacticalIntro}</p>` : ''}
+
+        <div class="tactical-grid">
+          ${(cat.tactical_archetypes || []).map(a => `
+            <div class="tactical-card" style="border-left: 4px solid ${a.color};">
+              <div class="tactical-card-header">
+                <div class="tactical-card-title">
+                  <span style="font-size:20px;">${a.icon}</span>
+                  <span>${getLocalized(a.title)}</span>
+                </div>
+                <div class="tactical-card-badges">
+                  <span class="tactical-badge-count">${a.count} ${str('speciesCount')}</span>
+                  <span class="tactical-badge-stat" style="background:${a.color}22;color:${a.color};border:1px solid ${a.color}55;">
+                    ${getLocalized(a.key_stats)}
+                  </span>
+                </div>
+              </div>
+
+              <div class="tactical-section-block">
+                <span class="tactical-section-label">📋 Perfil Táctico</span>
+                <div>${getLocalized(a.profile)}</div>
+              </div>
+
+              <div class="tactical-section-block">
+                <span class="tactical-section-label">⚔️ Función en Combate</span>
+                <div>${getLocalized(a.combat_role)}</div>
+              </div>
+
+              <div class="tactical-section-block">
+                <span class="tactical-section-label">🐣 Especies Representativas</span>
+                ${getChipsHtml(a.chickens)}
+              </div>
+
+              <div class="tactical-section-block" style="background:var(--wiki-surface);padding:8px 12px;border-radius:6px;border:1px solid var(--wiki-border-light);margin-top:auto;">
+                <span class="tactical-section-label" style="color:var(--wiki-gold);">🎒 Equipamiento Recomendado</span>
+                <div style="font-size:12px;color:var(--wiki-text);">${getLocalized(a.items)}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        ${cat.tactical_tip ? `
+          <div class="mechanics-tip-box">
+            ${getLocalized(cat.tactical_tip)}
+          </div>
+        ` : ''}
+
+        <!-- BLOQUE 3: SINERGIAS 2VS2 -->
+        <div class="arch-block-header" style="margin-top:32px;">
+          <h3>${synergiesTitle}</h3>
+        </div>
+        ${synergiesIntro ? `<p style="font-size:13.5px;color:var(--wiki-text);margin-bottom:12px;">${synergiesIntro}</p>` : ''}
+
+        <div class="synergy-grid">
+          ${(cat.synergies || []).map(syn => `
+            <div class="synergy-card">
+              <div style="font-size:14px;font-weight:800;color:var(--wiki-accent);border-bottom:1px solid var(--wiki-border-light);padding-bottom:6px;">
+                ${getLocalized(syn.title)}
+              </div>
+              <p style="font-size:13px;line-height:1.45;color:var(--wiki-text);margin:0;">
+                ${getLocalized(syn.desc)}
+              </p>
+              <div>
+                <span style="font-size:11px;font-weight:700;color:var(--wiki-text-muted);text-transform:uppercase;">Dúo de Ejemplo:</span>
+                ${getChipsHtml(syn.chickens)}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        ${cat.synergies_tip ? `
+          <div class="mechanics-tip-box">
+            ${getLocalized(cat.synergies_tip)}
+          </div>
+        ` : ''}
+
+        <!-- BLOQUE 4: PRIORIDAD DE BLANCOS (IA) -->
+        <div class="arch-block-header" style="margin-top:32px;">
+          <h3>${targetsTitle}</h3>
+        </div>
+        ${targetsIntro ? `<p style="font-size:13.5px;color:var(--wiki-text);margin-bottom:12px;">${targetsIntro}</p>` : ''}
+
+        <div class="target-priority-grid">
+          ${(cat.targets || []).map(tgt => `
+            <div class="target-priority-card">
+              <div style="font-size:13.5px;font-weight:800;color:var(--wiki-text);display:flex;align-items:center;gap:6px;">
+                <span>${tgt.icon}</span> <span>${getLocalized(tgt.title)}</span>
+              </div>
+              <p style="font-size:12.5px;line-height:1.4;color:var(--wiki-text);margin:0;">
+                ${getLocalized(tgt.desc)}
+              </p>
+              <div style="font-size:11.5px;background:var(--wiki-surface);padding:6px 8px;border-radius:4px;border:1px solid var(--wiki-border-light);margin-top:auto;">
+                <strong style="color:#10b981;">💡 Uso Recomendado:</strong> ${getLocalized(tgt.recommendation)}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        ${cat.targets_formula ? `
+          <div class="mechanics-formula-box">
+            <span>📐</span>
+            <code>${cat.targets_formula}</code>
+          </div>
+        ` : ''}
+        ${cat.targets_tip ? `
+          <div class="mechanics-tip-box">
+            ${getLocalized(cat.targets_tip)}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }
+
   // 9. MECHANICS VIEW
   function renderMechanics() {
     const container = document.getElementById('wikiContent');
@@ -2260,6 +2461,9 @@
       <div style="display:flex;flex-direction:column;gap:12px;">
         ${catKeys.map(key => {
           const cat = m[key];
+          if (key === 'archetypes' && cat.tactical_archetypes) {
+            return renderArchetypesCategoryHtml(cat);
+          }
           const icon = cat.icon || '📌';
           return `
             <div class="mechanics-category" id="cat-${key}">

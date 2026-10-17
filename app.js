@@ -3698,7 +3698,7 @@
         badge: "Versión Actual",
         highlights: [
           "<strong>Corrección Integral del 100% de Partida:</strong> Resuelto el bug en la tarjeta del menú donde el límite fijo impedía validar el 9º torneo (Zona Arcana), permitiendo ahora desbloquear legítimamente la tarjeta dorada de maestría.",
-          "<strong>Manual de Combate Interactivo In-Game:</strong> Nuevo libro interactivo de 7 páginas accesible desde combate e inspección, detallando atributos, estados alterados, genética y fusión con localización completa en 4 idiomas.",
+          "<strong>Manual de Combate Interactivo In-Game:</strong> Libro interactivo ampliado a 11 páginas accesible desde combate e inspección, detallando atributos, estados alterados, especie, genética, entrenamiento, fusión, blancos tácticos y torneos con localización completa en 4 idiomas.",
           "<strong>Venta Masiva y Animaciones de Game Feel:</strong> Despegue satisfactorio de pollos vendidos con sonido propio, humo y trayectoria fluida; saltitos de emergencia y parpadeos adorables al eclosionar huevos en gacha y fusión."
         ]
       },

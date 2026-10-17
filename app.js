@@ -132,7 +132,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.124",
+      footerGen: "Generada directamente de los datos del juego v0.125",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero",
       navSecTools: "Herramientas y Combate",
@@ -353,7 +353,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.124",
+      footerGen: "Generated directly from game data v0.125",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style",
       navSecTools: "Tools & Combat",
@@ -574,7 +574,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.124",
+      footerGen: "Gerada diretamente dos dados do jogo v0.125",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve",
       navSecTools: "Ferramentas e Combate",
@@ -795,7 +795,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.124",
+      footerGen: "Сгенерировано напрямую из данных игры v0.125",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль",
       navSecTools: "Инструменты и Бой",
@@ -3693,9 +3693,19 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.124",
+        version: "v0.125",
         date: "Actual",
         badge: "Versión Actual",
+        highlights: [
+          "<strong>Corrección Integral del 100% de Partida:</strong> Resuelto el bug en la tarjeta del menú donde el límite fijo impedía validar el 9º torneo (Zona Arcana), permitiendo ahora desbloquear legítimamente la tarjeta dorada de maestría.",
+          "<strong>Manual de Combate Interactivo In-Game:</strong> Nuevo libro interactivo de 7 páginas accesible desde combate e inspección, detallando atributos, estados alterados, genética y fusión con localización completa en 4 idiomas.",
+          "<strong>Venta Masiva y Animaciones de Game Feel:</strong> Despegue satisfactorio de pollos vendidos con sonido propio, humo y trayectoria fluida; saltitos de emergencia y parpadeos adorables al eclosionar huevos en gacha y fusión."
+        ]
+      },
+      {
+        version: "v0.124",
+        date: "Reciente",
+        badge: "Reciente",
         highlights: [
           "<strong>Salón de la Fama y Premios Mensuales del Coliseo:</strong> Nueva vitrina histórica que inmortaliza al Top 5 de cada temporada. Koila entrega recompensas exclusivas al finalizar el mes: pollos shiny únicos de podio para el Top 3 (Prisma Rango S, Cósmico Rango A, Magma Rango B) y semillas para los puestos 4 y 5.",
           "<strong>Shaders Shiny Renovados:</strong> Rediseño completo de la iluminación y coloreado de pollos shiny con gradientes dinámicos armónicos, sin saltos abruptos de color ni ruido en sombras, mejorando drásticamente la visibilidad de los 10 shinies clásicos.",

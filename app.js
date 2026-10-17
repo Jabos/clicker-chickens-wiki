@@ -149,6 +149,9 @@
       rolePoison: "Veneno / Infección",
       roleHealer: "Soporte Curativo",
       roleRevive: "Resurrección",
+      viewArchetypesGuide: "📖 Ver guía de arquetipos",
+      rankingArchBannerText: "Conoce a fondo los 4 arquetipos base del juego y los 10 roles tácticos especializados del metagame.",
+      rankingArchBannerLink: "Ver Guía de Arquetipos y Tácticas",
       compareTitle: "Comparador Cara a Cara",
       compareDesc: "Compara estadísticas base, ciclos de poder y habilidades entre dos pollos lado a lado.",
       chickenA: "Primer Pollo",
@@ -370,6 +373,9 @@
       rolePoison: "Poison / Infection",
       roleHealer: "Healing Support",
       roleRevive: "Revival",
+      viewArchetypesGuide: "📖 View archetypes guide",
+      rankingArchBannerText: "Explore in depth the 4 core in-game archetypes and 10 specialized metagame tactical roles.",
+      rankingArchBannerLink: "View Archetypes & Tactics Guide",
       compareTitle: "Head-to-Head Comparator",
       compareDesc: "Compare species base stats, power cycles and combat abilities side-by-side.",
       chickenA: "First Chicken",
@@ -591,6 +597,9 @@
       rolePoison: "Veneno / Infecção",
       roleHealer: "Suporte Curativo",
       roleRevive: "Ressurreição",
+      viewArchetypesGuide: "📖 Ver guia de arquétipos",
+      rankingArchBannerText: "Conheça a fundo os 4 arquétipos base do jogo e os 10 papéis táticos especializados do metagame.",
+      rankingArchBannerLink: "Ver Guia de Arquétipos e Táticas",
       compareTitle: "Comparador Frente a Frente",
       compareDesc: "Compare atributos base, ciclos de poder e habilidades entre dois frangos lado a lado.",
       chickenA: "Primeiro Frango",
@@ -812,6 +821,9 @@
       rolePoison: "Яд / Инфекция",
       roleHealer: "Лекари",
       roleRevive: "Воскрешение",
+      viewArchetypesGuide: "📖 Справочник архетипов",
+      rankingArchBannerText: "Узнайте всё о 4 базовых архетипах игры и 10 специализированных тактических ролях метагейма.",
+      rankingArchBannerLink: "Справочник архетипов и тактик",
       compareTitle: "Сравнение цыплят лицом к лицу",
       compareDesc: "Сравните базовые характеристики, цикл способностей и боевые навыки двух цыплят бок о бок.",
       chickenA: "Первый цыпленок",
@@ -1046,6 +1058,18 @@
       renderAchievements();
     } else if (mainRoute === 'mechanics') {
       renderMechanics();
+      if (parts[1]) {
+        setTimeout(() => {
+          const el = document.getElementById(`cat-${parts[1]}`);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 80);
+      }
+    } else if (mainRoute === 'archetypes') {
+      renderMechanics();
+      setTimeout(() => {
+        const el = document.getElementById('cat-archetypes');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 80);
     } else if (mainRoute === 'compare') {
       renderCompare();
     } else if (mainRoute === 'teambuilder') {
@@ -1630,7 +1654,12 @@
                     <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--wiki-text-muted);display:block;">
                       ${str('tacticalArchetype')}
                     </span>
-                    <span style="font-size:15px;font-weight:700;color:#f59e0b;">${tactical.role}</span>
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                      <span style="font-size:15px;font-weight:700;color:#f59e0b;">${tactical.role}</span>
+                      <a href="#archetypes" onclick="document.getElementById('modalOverlay')?.remove();" style="font-size:11px;font-weight:600;color:var(--wiki-accent);text-decoration:underline;">
+                        ${str('viewArchetypesGuide')}
+                      </a>
+                    </div>
                   </div>
                   <div style="text-align:right;">
                     <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--wiki-text-muted);display:block;">
@@ -3615,6 +3644,10 @@
       `;
     } else if (currentRankingTab === 'archetypes') {
       bodyHtml = `
+        <div style="margin-bottom:16px;padding:12px 16px;background:var(--wiki-bg-card, var(--wiki-bg));border:1px solid var(--wiki-border);border-left:4px solid var(--wiki-gold);border-radius:8px;font-size:13px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+          <span>${str('rankingArchBannerText')}</span>
+          <a href="#archetypes" style="color:var(--wiki-accent);font-weight:700;text-decoration:underline;">${str('rankingArchBannerLink')} →</a>
+        </div>
         <div class="ranking-grid">
           ${ARCHETYPES_DATA.map(arch => `
             <div class="arch-card">

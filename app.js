@@ -132,7 +132,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.127",
+      footerGen: "Generada directamente de los datos del juego v0.128",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero",
       navSecTools: "Herramientas y Combate",
@@ -356,7 +356,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.127",
+      footerGen: "Generated directly from game data v0.128",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style",
       navSecTools: "Tools & Combat",
@@ -580,7 +580,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.127",
+      footerGen: "Gerada diretamente dos dados do jogo v0.128",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve",
       navSecTools: "Ferramentas e Combate",
@@ -804,7 +804,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.127",
+      footerGen: "Сгенерировано напрямую из данных игры v0.128",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль",
       navSecTools: "Инструменты и Бой",
@@ -3930,9 +3930,20 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.127",
+        version: "v0.128",
         date: "Actual",
         badge: "Versión Actual",
+        highlights: [
+          "<strong>160 Especies en Pollopedia:</strong> Adición completa de las nuevas especies (#150-#159: Estopeca, Fénix, Aguijón, Alquimista, etc.), sus estadísticas base, poderes y habilidades pasivas.",
+          "<strong>Estabilidad de Anuncios y Memoria:</strong> Restauración integral de precarga para formatos Rewarded e Interstitial, prevención de cierres inesperados por reanudación en Android y optimización de recolección de memoria (GC).",
+          "<strong>Ordenamiento por Pollopedia en Granja:</strong> Nuevo criterio de orden (#9) por número de especie en el menú de mover pollos para completar y organizar la colección.",
+          "<strong>Simulador 2vs2 Actualizado:</strong> Soporte total para las 160 especies, nuevos poderes (52, 53) y pasivas (150-159)."
+        ]
+      },
+      {
+        version: "v0.127",
+        date: "Reciente",
+        badge: "Reciente",
         highlights: [
           "<strong>Corrección Integral del 100% de Partida:</strong> Resuelto el bug en la tarjeta del menú donde el límite fijo impedía validar el 9º torneo (Zona Arcana), permitiendo ahora desbloquear legítimamente la tarjeta dorada de maestría.",
           "<strong>Manual de Combate Interactivo In-Game:</strong> Libro interactivo ampliado a 11 páginas accesible desde combate e inspección, detallando atributos, estados alterados, especie, genética, entrenamiento, fusión, blancos tácticos y torneos con localización completa en 4 idiomas.",

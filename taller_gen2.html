@@ -90,6 +90,9 @@
           <input type="file" id="file-import-all-json" accept=".json" class="hidden">
         </label>
         <div class="h-6 w-px bg-[var(--border)] mx-1"></div>
+        <button id="btn-export-csv" onclick="exportToGoogleSheetsCSV()" class="px-2.5 py-1.5 rounded-lg bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer" title="Exportar bocetos en formato CSV (Google Sheets / Excel)">
+          <span>📊</span> Exportar CSV
+        </button>
         <button id="btn-sync-google-sheets" onclick="openGoogleSyncModal()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Sincronizar todo el juego con tu Google Calc">
           <span>📊</span> Guardar en Google Calc
         </button>
@@ -575,7 +578,7 @@
           <button id="btn-roster-new-sketch" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs flex items-center gap-1.5 transition">
             <span>✨</span> Nuevo Boceto
           </button>
-          <button id="btn-roster-export-sketches-csv" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+          <button id="btn-roster-export-sketches-csv" onclick="exportToGoogleSheetsCSV()" class="px-3 py-1.5 rounded-lg bg-[var(--bg)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition cursor-pointer">
             <span>📊</span> Exportar CSV
           </button>
         </div>
@@ -1368,7 +1371,7 @@
             <button id="btn-download-full-xlsx" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs flex items-center gap-2 shadow transition">
               <span>📥</span> Descargar "Clicker Chickens - Pollopedia.xlsx"
             </button>
-            <button id="btn-download-active-csv" class="px-3 py-2 rounded-xl bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition">
+            <button id="btn-download-active-csv" onclick="exportToGoogleSheetsCSV()" class="px-3 py-2 rounded-xl bg-[var(--card)] hover:bg-[var(--border)] text-[var(--text)] border border-[var(--border)] font-semibold text-xs flex items-center gap-1.5 transition cursor-pointer">
               <span>📊</span> Descargar Bocetos (CSV)
             </button>
           </div>
@@ -3587,13 +3590,15 @@ function doGet(e) {
       btnDownloadCsv?.addEventListener('click', () => {
         const payload = buildFullPollopediaData();
         const data = payload.gen2_sketches;
-        const csvContent = "\uFEFF" + [data.headers, ...data.rows].map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\n");
+        const csvContent = "\uFEFF" + [data.headers, ...data.rows].map(r => r.map(cell => '"' + String(cell ?? '').replace(/"/g, '""') + '"').join(",")).join("\n");
         const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
         a.download = "Clicker_Chickens_Gen2_Bocetos_" + new Date().toISOString().slice(0, 10) + ".csv";
+        document.body.appendChild(a);
         a.click();
+        document.body.removeChild(a);
         URL.revokeObjectURL(url);
       });
     }
@@ -3767,12 +3772,12 @@ function doGet(e) {
       document.getElementById('btn-export-items-csv')?.addEventListener('click', exportItemsCSV);
 
       // Exports and backups
-      document.getElementById('btn-export-csv').addEventListener('click', exportToGoogleSheetsCSV);
+      document.getElementById('btn-export-csv')?.addEventListener('click', exportToGoogleSheetsCSV);
       document.getElementById('btn-roster-export-sketches-csv')?.addEventListener('click', exportToGoogleSheetsCSV);
 
       // JSON backup & import
-      document.getElementById('btn-backup-all-json').addEventListener('click', backupAllJSON);
-      document.getElementById('file-import-all-json').addEventListener('change', importAllJSON);
+      document.getElementById('btn-backup-all-json')?.addEventListener('click', backupAllJSON);
+      document.getElementById('file-import-all-json')?.addEventListener('change', importAllJSON);
     }
 
     function createNewSketch() {
@@ -3905,7 +3910,7 @@ function doGet(e) {
     function backupAllJSON() {
       const bundle = {
         app: "Clicker Chickens Gen 2 Studio",
-        version: "0.126",
+        version: "0.127",
         export_date: new Date().toISOString(),
         sketches: savedSketches,
         custom_zones: customZones,
@@ -3969,125 +3974,199 @@ function doGet(e) {
       }
     }
 
-    function exportToGoogleSheetsCSV() {
-      const listToExport = savedSketches.length > 0 ? savedSketches : [currentSketch];
-      const headers = [
-        "#", "Nombre Propuesto", "Concepto / Boceto", "Rol Táctico", 
-        "Pasiva Propuesta", "Poder Activo Propuesto", "Poder Oculto Sugerido", 
-        "Vida (HP)", "Daño (ATK)", "Armadura (DEF)", "Velocidad (SPD)", "Poder Base (PWR)", 
-        "Poder Máx (Coste)", "Total Stats", "Zona / Origen Sugerido", "Estado del Diseño"
-      ];
-
-      const rows = [headers];
-
-      listToExport.forEach(sk => {
-        const s = sk.stats || {};
-        const sum = Object.values(s).reduce((a, b) => a + b, 0);
-        const diag = diagnoseArchetype(sk);
-        
-        let hpDesc = "Ninguno";
-        if (typeof sk.hidden_power_id === 'string' && sk.hidden_power_id.startsWith('custom_')) {
-          const cId = sk.hidden_power_id.replace('custom_', '');
-          const found = customPowers.find(p => p.id === cId);
-          if (found) hpDesc = '[Gen 2] ' + found.name;
-        } else if (WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
-          const p = WIKI.powers[sk.hidden_power_id];
-          hpDesc = p.description && (p.description.es || p.description);
+    function triggerDownloadCSV(filename, csvContent) {
+      try {
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+          window.navigator.msSaveOrOpenBlob(blob, filename);
+          return;
         }
 
-        rows.push([
-          sk.id || 151,
-          sk.name || "Sin Nombre",
-          sk.concept || "",
-          diag.archetype,
-          sk.passive || "",
-          sk.active_power || "",
-          hpDesc,
-          s.life || 0,
-          s.damage || 0,
-          s.armor || 0,
-          s.speed || 0,
-          s.power_amount || 0,
-          sk.power_max || 100,
-          sum,
-          sk.zone || "",
-          sk.status || "Boceto"
-        ]);
-      });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.setAttribute('download', filename);
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          if (a.parentNode) a.parentNode.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 3000);
+      } catch (err) {
+        console.warn("Blob download failed, using data URI fallback...", err);
+        try {
+          const encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = encodedUri;
+          a.setAttribute('download', filename);
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            if (a.parentNode) a.parentNode.removeChild(a);
+          }, 3000);
+        } catch (fallbackErr) {
+          console.error("All CSV download methods failed:", fallbackErr);
+          alert("No se pudo iniciar la descarga automática de " + filename + ". Revisa la consola del navegador.");
+        }
+      }
+    }
 
-      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
-      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'Clicker_Chickens_Gen2_Bocetos_Sheets_' + new Date().toISOString().slice(0, 10) + '.csv';
-      a.click();
+    function exportToGoogleSheetsCSV() {
+      try {
+        if (typeof onDataChanged === 'function') {
+          onDataChanged();
+        }
+
+        let listToExport = [];
+        if (Array.isArray(savedSketches) && savedSketches.length > 0) {
+          listToExport = [...savedSketches];
+          const curIdx = listToExport.findIndex(s => s && s.id === currentSketch.id);
+          if (curIdx >= 0) {
+            listToExport[curIdx] = JSON.parse(JSON.stringify(currentSketch));
+          } else if (currentSketch && currentSketch.name) {
+            listToExport.push(JSON.parse(JSON.stringify(currentSketch)));
+          }
+        } else if (currentSketch) {
+          listToExport = [currentSketch];
+        }
+
+        if (!listToExport || listToExport.length === 0) {
+          alert('No hay bocetos para exportar.');
+          return;
+        }
+
+        const headers = [
+          "#", "Nombre Propuesto", "Concepto / Boceto", "Rol Táctico", 
+          "Pasiva Propuesta", "Poder Activo Propuesto", "Poder Oculto Sugerido", 
+          "Vida (HP)", "Daño (ATK)", "Armadura (DEF)", "Velocidad (SPD)", "Poder Base (PWR)", 
+          "Poder Máx (Coste)", "Total Stats", "Zona / Origen Sugerido", "Estado del Diseño"
+        ];
+
+        const rows = [headers];
+
+        listToExport.forEach(sk => {
+          if (!sk) return;
+          const s = sk.stats || {};
+          const sum = Object.values(s).reduce((a, b) => a + (Number(b) || 0), 0);
+          const diag = typeof diagnoseArchetype === 'function' ? diagnoseArchetype(sk) : { archetype: "Equilibrado" };
+          
+          let hpDesc = "Ninguno";
+          if (typeof sk.hidden_power_id === 'string' && sk.hidden_power_id.startsWith('custom_')) {
+            const cId = sk.hidden_power_id.replace('custom_', '');
+            const found = Array.isArray(customPowers) ? customPowers.find(p => p.id === cId) : null;
+            if (found) hpDesc = '[Gen 2] ' + found.name;
+          } else if (window.WIKI && WIKI.powers && WIKI.powers[sk.hidden_power_id]) {
+            const p = WIKI.powers[sk.hidden_power_id];
+            hpDesc = p && p.description && (p.description.es || p.description);
+          }
+
+          rows.push([
+            sk.id || 151,
+            sk.name || "Sin Nombre",
+            sk.concept || "",
+            (diag && diag.archetype) || "Equilibrado",
+            sk.passive || "",
+            sk.active_power || "",
+            hpDesc || "Ninguno",
+            s.life || 0,
+            s.damage || 0,
+            s.armor || 0,
+            s.speed || 0,
+            s.power_amount || 0,
+            sk.power_max || 100,
+            sum,
+            sk.zone || "",
+            sk.status || "Boceto"
+          ]);
+        });
+
+        const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell ?? '').replace(/"/g, '""') + '"').join(",")).join("\n");
+        const filename = 'Clicker_Chickens_Gen2_Bocetos_' + new Date().toISOString().slice(0, 10) + '.csv';
+        triggerDownloadCSV(filename, csvContent);
+      } catch (err) {
+        console.error("Error al exportar CSV de bocetos:", err);
+        alert("Ocurrió un error al exportar el CSV: " + err.message);
+      }
     }
 
     function exportZonesCSV() {
-      if (customZones.length === 0) {
-        alert('No hay zonas de Gen 2 para exportar.');
-        return;
+      try {
+        if (!customZones || customZones.length === 0) {
+          alert('No hay zonas de Gen 2 para exportar.');
+          return;
+        }
+        const headers = ["ID", "Nombre Zona", "Nivel Min", "Nivel Max", "Precio Viaje (Semillas)", "Bioma", "Jefe de Zona", "Pool de Pollos", "Descripcion"];
+        const rows = [headers];
+        customZones.forEach(z => {
+          const boss = z.combat_pool?.find(p => p.is_boss);
+          const poolNames = (z.combat_pool || []).map(p => p.name).join('; ');
+          rows.push([
+            z.id,
+            z.name,
+            z.level_min,
+            z.level_max,
+            z.travel_price,
+            z.biome,
+            boss ? boss.name : "Ninguno",
+            poolNames,
+            z.description || ""
+          ]);
+        });
+        const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell ?? '').replace(/"/g, '""') + '"').join(",")).join("\n");
+        const filename = 'Clicker_Chickens_Gen2_Zonas_' + new Date().toISOString().slice(0, 10) + '.csv';
+        triggerDownloadCSV(filename, csvContent);
+      } catch (err) {
+        console.error("Error al exportar CSV de zonas:", err);
+        alert("Ocurrió un error al exportar las zonas: " + err.message);
       }
-      const headers = ["ID", "Nombre Zona", "Nivel Min", "Nivel Max", "Precio Viaje (Semillas)", "Bioma", "Jefe de Zona", "Pool de Pollos", "Descripcion"];
-      const rows = [headers];
-      customZones.forEach(z => {
-        const boss = z.combat_pool?.find(p => p.is_boss);
-        const poolNames = (z.combat_pool || []).map(p => p.name).join('; ');
-        rows.push([
-          z.id,
-          z.name,
-          z.level_min,
-          z.level_max,
-          z.travel_price,
-          z.biome,
-          boss ? boss.name : "Ninguno",
-          poolNames,
-          z.description || ""
-        ]);
-      });
-      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
-      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'Clicker_Chickens_Gen2_Zonas_' + new Date().toISOString().slice(0, 10) + '.csv';
-      a.click();
     }
 
     function exportPowersCSV() {
-      if (customPowers.length === 0) {
-        alert('No hay poderes de Gen 2 para exportar.');
-        return;
+      try {
+        if (!customPowers || customPowers.length === 0) {
+          alert('No hay poderes de Gen 2 para exportar.');
+          return;
+        }
+        const headers = ["ID", "Nombre", "Tipo", "Coste Energia", "Efecto / Mecanica", "Descripcion", "Notas / Sinergias"];
+        const rows = [headers];
+        customPowers.forEach(pw => {
+          rows.push([pw.id, pw.name, pw.type, pw.cost, pw.theme, pw.description, pw.notes || ""]);
+        });
+        const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell ?? '').replace(/"/g, '""') + '"').join(",")).join("\n");
+        const filename = 'Clicker_Chickens_Gen2_Poderes_' + new Date().toISOString().slice(0, 10) + '.csv';
+        triggerDownloadCSV(filename, csvContent);
+      } catch (err) {
+        console.error("Error al exportar CSV de poderes:", err);
+        alert("Ocurrió un error al exportar los poderes: " + err.message);
       }
-      const headers = ["ID", "Nombre", "Tipo", "Coste Energia", "Efecto / Mecanica", "Descripcion", "Notas / Sinergias"];
-      const rows = [headers];
-      customPowers.forEach(pw => {
-        rows.push([pw.id, pw.name, pw.type, pw.cost, pw.theme, pw.description, pw.notes || ""]);
-      });
-      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
-      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'Clicker_Chickens_Gen2_Poderes_' + new Date().toISOString().slice(0, 10) + '.csv';
-      a.click();
     }
 
     function exportItemsCSV() {
-      if (customItems.length === 0) {
-        alert('No hay objetos de Gen 2 para exportar.');
-        return;
+      try {
+        if (!customItems || customItems.length === 0) {
+          alert('No hay objetos de Gen 2 para exportar.');
+          return;
+        }
+        const headers = ["ID", "Icono", "Nombre", "Tipo", "Precio Semillas", "Gatillo / Activacion", "Zona / Origen", "Descripcion"];
+        const rows = [headers];
+        customItems.forEach(it => {
+          rows.push([it.id, it.icon, it.name, it.type, it.price, it.trigger, it.zone || "", it.description]);
+        });
+        const csvContent = "\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell ?? '').replace(/"/g, '""') + '"').join(",")).join("\n");
+        const filename = 'Clicker_Chickens_Gen2_Objetos_' + new Date().toISOString().slice(0, 10) + '.csv';
+        triggerDownloadCSV(filename, csvContent);
+      } catch (err) {
+        console.error("Error al exportar CSV de objetos:", err);
+        alert("Ocurrió un error al exportar los objetos: " + err.message);
       }
-      const headers = ["ID", "Icono", "Nombre", "Tipo", "Precio Semillas", "Gatillo / Activacion", "Zona / Origen", "Descripcion"];
-      const rows = [headers];
-      customItems.forEach(it => {
-        rows.push([it.id, it.icon, it.name, it.type, it.price, it.trigger, it.zone || "", it.description]);
-      });
-      const csvContent = "\\uFEFF" + rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(",")).join("\\n");
-      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'Clicker_Chickens_Gen2_Objetos_' + new Date().toISOString().slice(0, 10) + '.csv';
-      a.click();
     }
+
+    window.exportToGoogleSheetsCSV = exportToGoogleSheetsCSV;
+    window.exportZonesCSV = exportZonesCSV;
+    window.exportPowersCSV = exportPowersCSV;
+    window.exportItemsCSV = exportItemsCSV;
 
     // Modal Gen 1 Grid
     function renderGen1Grid(pickSpriteMode = false) {

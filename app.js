@@ -132,7 +132,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Logro",
-      footerGen: "Generada directamente de los datos del juego v0.126",
+      footerGen: "Generada directamente de los datos del juego v0.127",
       footerHosting: "Diseñada para alojarse gratis en",
       footerStyle: "Estilo clásico, rápido y ligero",
       navSecTools: "Herramientas y Combate",
@@ -356,7 +356,7 @@
       searchBadgePower: "Power",
       searchBadgeZone: "Zone",
       searchBadgeAchievement: "Achievement",
-      footerGen: "Generated directly from game data v0.126",
+      footerGen: "Generated directly from game data v0.127",
       footerHosting: "Designed for free hosting on",
       footerStyle: "Classic, lightweight and fast style",
       navSecTools: "Tools & Combat",
@@ -580,7 +580,7 @@
       searchBadgePower: "Poder",
       searchBadgeZone: "Zona",
       searchBadgeAchievement: "Conquista",
-      footerGen: "Gerada diretamente dos dados do jogo v0.126",
+      footerGen: "Gerada diretamente dos dados do jogo v0.127",
       footerHosting: "Criada para hospedagem gratuita no",
       footerStyle: "Estilo clássico, rápido e leve",
       navSecTools: "Ferramentas e Combate",
@@ -804,7 +804,7 @@
       searchBadgePower: "Способность",
       searchBadgeZone: "Зона",
       searchBadgeAchievement: "Достижение",
-      footerGen: "Сгенерировано напрямую из данных игры v0.126",
+      footerGen: "Сгенерировано напрямую из данных игры v0.127",
       footerHosting: "Разработано для бесплатного хостинга на",
       footerStyle: "Классический, быстрый и легкий стиль",
       navSecTools: "Инструменты и Бой",
@@ -3930,7 +3930,7 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.126",
+        version: "v0.127",
         date: "Actual",
         badge: "Versión Actual",
         highlights: [

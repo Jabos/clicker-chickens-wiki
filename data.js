@@ -1,5 +1,5 @@
 window.WIKI_DATA = {
-  "version": "0.128",
+  "version": "0.129",
   "chickens": [
     {
       "id": 0,
@@ -11941,6 +11941,706 @@ window.WIKI_DATA = {
           "counter": "Использовать низкую выживаемость: фокусить через тактику «цель с наименьшим здоровьем» или парализовать Электрошип."
         }
       }
+    },
+    {
+      "id": 160,
+      "name": {
+        "es": "Kentucky",
+        "en": "Kentucky",
+        "pt": "Kentucky",
+        "ru": "Kentucky"
+      },
+      "sprite": "images/chickens/160.png",
+      "default_item_id": 56,
+      "power_max": 100,
+      "power_id": 36,
+      "hidden_power_id": 32,
+      "passive_id": 160,
+      "action_type": 0,
+      "stats": {
+        "life": 70,
+        "damage": 65,
+        "armor": 25,
+        "speed": 15,
+        "power_amount": 25
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 4,
+        "es": {
+          "role": "Atacante de Apoyo Reactivo (Artillería Pesada)",
+          "role_title": "Artillería Pesada",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Cuando un aliado usa su poder, lanza un misil al enemigo) define su estilo de juego, complementada por su poder (Lanza una estrella rápida de daño a distancia) que requiere 100 puntos de energía (~4 turnos). Cada vez que su compañero activa un poder, Kentucky responde de inmediato disparando un misil devastador sin gastar su propio turno.",
+          "allies": "Aliados de carga rápida de poder (como Aelita, Eustavio, Cori o Drillen) que utilicen sus habilidades con frecuencia para activar misiles continuos de Kentucky.",
+          "items": "Dinamita (hace explotar en área con su poder); Triflor (+5% daño, armadura, velocidad); Ojo loco (+15% daño); Circuito Vital (+700 HP al caer bajo 35%).",
+          "counter": "Controlar a su compañero con Silencio o Parálisis para evitar que activen poderes, neutralizando los disparos de misil pasivos de Kentucky."
+        },
+        "en": {
+          "role": "Reactive Support Striker (Heavy Artillery)",
+          "role_title": "Heavy Artillery",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (When an ally uses their power, launches a missile) defines its playstyle, paired with its power (Throws a swift star for ranged damage) requiring 100 energy (~4 turns). Whenever its ally unleashes a power, Kentucky fires a heavy missile without consuming its turn.",
+          "allies": "Rapid-power charging teammates (such as Aelita, Eustavio, Cori, or Drillen) that trigger frequent powers to keep Kentucky's missile barrage active.",
+          "items": "Dynamite (triggers area explosion on power); Triflower (+5% stats); Crazy Eye (+15% damage); Vital Circuit (+700 HP below 35%).",
+          "counter": "Disrupt its partner with Silence or Paralysis to prevent power casts, neutralizing Kentucky's reactive missile battery."
+        },
+        "pt": {
+          "role": "Atacante de Suporte Reativo (Artilharia Pesada)",
+          "role_title": "Artilharia Pesada",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando um aliado usa seu poder, lança um míssil no inimigo) dita seu ritmo, aliada ao poder (Lança uma estrela veloz) que requer 100 de energia (~4 turnos). Sempre que o parceiro ativa uma habilidade, Kentucky dispara um míssil sem gastar seu turno.",
+          "allies": "Companheiros com carga rápida de poder (como Aelita, Eustavio, Cori ou Drillen) para acionar misseis em cadeia.",
+          "items": "Dinamite (explosão em área); Triflor (+5% em tudo); Olho Loco (+15% dano); Circuito Vital (+700 HP).",
+          "counter": "Silenciar ou paralisar o aliado para impedir o uso de poderes e cancelar os disparos automáticos de Kentucky."
+        },
+        "ru": {
+          "role": "Реактивный артиллерист поддержки",
+          "role_title": "Тяжелая артиллерия",
+          "duo": "Идеально подходит для Тыла (Позиция 2). Пассивная способность (При использовании способности союзником выпускает ракету во врага) определяет стиль боя вместе со способностью (Бросает быструю звезду), требующей 100 энергии (~4 хода). Каждый раз, когда союзник применяет способность, Kentucky мгновенно отвечает ракетным залпом.",
+          "allies": "Союзники с быстрой зарядкой энергии (Aelita, Eustavio, Cori, Drillen), вызывающие частые залпы ракет.",
+          "items": "Динамит (взрыв по площади); Трицвет (+5% к характеристикам); Сумасшедший глаз (+15% урона); Витальная цепь (+700 ОЗ).",
+          "counter": "Накладывать на напарника Безмолвие или Паралич, чтобы пресечь активацию ракетных батарей Kentucky."
+        }
+      }
+    },
+    {
+      "id": 161,
+      "name": {
+        "es": "Maarek",
+        "en": "Maarek",
+        "pt": "Maarek",
+        "ru": "Maarek"
+      },
+      "sprite": "images/chickens/161.png",
+      "default_item_id": 29,
+      "power_max": 100,
+      "power_id": 48,
+      "hidden_power_id": 48,
+      "passive_id": 161,
+      "action_type": 0,
+      "stats": {
+        "life": 70,
+        "damage": 15,
+        "armor": 50,
+        "speed": 35,
+        "power_amount": 30
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 3,
+        "es": {
+          "role": "Tanque Tóxico Contagioso",
+          "role_title": "Tanque Tóxico",
+          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Su pasiva (Al usar su poder, infecta a todos los enemigos) complementa su poder (Roba 15% de vida máxima del objetivo) que requiere 100 de energía (~3 turnos). Posee gran armadura (50) para absorber daño mientras esparce infección continua sobre los dos rivales.",
+          "allies": "Compañeros que aprovechen enemigos infectados (como Elfen, Fingie, o portadores de Pluma infectada) para maximizar la presión de plaga.",
+          "items": "Ojo arcano (convierte su sólida armadura en 50 de daño directo al inicio); Pluma infectada (se cura al ver daño rival); Pico podrido; Diente de cuervo (+15% armadura).",
+          "counter": "Usar curaciones de estado (Poción mágica, Magaurina) o daño directo que perfore armadura antes de que propague la infección."
+        },
+        "en": {
+          "role": "Contagious Toxic Tank",
+          "role_title": "Toxic Tank",
+          "duo": "Ideally positioned in Frontline (Position 1). Its passive (When using power, infects all enemies) pairs with its power (Steals 15% max health from target) requiring 100 energy (~3 turns). Sturdy 50 armor absorbs hits while spreading permanent plague to both opponents.",
+          "allies": "Allies synergizing with infection (Elfen, Fingie, or Infected Feather users) to capitalize on widespread plague.",
+          "items": "Arcane Eye (turns its 50 armor into base damage at battle start); Infected Feather (sustained healing); Raven's Tooth (+15% armor).",
+          "counter": "Cleanse status effects with Magic Potion or Magaurina, or focus with armor-piercing damage before infection spreads."
+        },
+        "pt": {
+          "role": "Tanque Tóxico Contagioso",
+          "role_title": "Tanque Tóxico",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar seu poder, infecta todos os inimigos) e poder (Rouba 15% de vida máxima) requerem 100 de energia (~3 turnos). Excelente armadura (50) para suportar ataques enquanto espalha peste.",
+          "allies": "Parceiros que sinergizam com infecção (Elfen, Fingie, portadores de Pena Infectada).",
+          "items": "Olho Arcano (converte 50 de armadura em dano); Pena Infectada; Dente de Corvo (+15% armadura).",
+          "counter": "Remover efeitos negativos com Poção Mágica ou Magaurina antes da infecção minar a equipe."
+        },
+        "ru": {
+          "role": "Заразный токсичный танк",
+          "role_title": "Токсичный танк",
+          "duo": "Идеально подходит для Авангарда (Позиция 1). Пассивная способность (При использовании способности заражает всех врагов) дополняет кражу 15% макс. здоровья цели при 100 энергии (~3 хода). Высокая броня (50) позволяет держать удар, разнося чуму.",
+          "allies": "Союзники, усиливающиеся от заражения врагов (Elfen, Fingie, Зараженное перо).",
+          "items": "Тайный глаз (конвертирует 50 брони в урон на старте); Зараженное перо; Зуб ворона (+15% брони).",
+          "counter": "Очищение эффектов Волшебным зельем или Magaurina, либо пробивание брони до распространения заразы."
+        }
+      }
+    },
+    {
+      "id": 162,
+      "name": {
+        "es": "Alectrica",
+        "en": "Alectrica",
+        "pt": "Alectrica",
+        "ru": "Alectrica"
+      },
+      "sprite": "images/chickens/162.png",
+      "default_item_id": 56,
+      "power_max": 100,
+      "power_id": 49,
+      "hidden_power_id": 49,
+      "passive_id": 162,
+      "action_type": 0,
+      "stats": {
+        "life": 25,
+        "damage": 80,
+        "armor": 10,
+        "speed": 55,
+        "power_amount": 30
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 3,
+        "es": {
+          "role": "Asesino de Precisión Antiesquive",
+          "role_title": "Asesino Eléctrico",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Ignora esquives; roba un 5% de vida máxima al atacar a enemigos paralizados) anula por completo las acumulaciones de Evasión enemigas. Su poder (Lanza huevo eléctrico que paraliza y da +15 poder al equipo) genera el estado ideal para drenar vida permanentemente en cada golpe.",
+          "allies": "Inductores de parálisis rápida (Polliwatt, Miedo, o aliados equipados con Descarga masiva / Pico electrostático).",
+          "items": "Descarga masiva (paraliza a todos al inicio); Dinamita; Ojo loco (+15% daño); Zapatillas escurridizas (+15% velocidad).",
+          "counter": "Protegerse con inmunidad a estados o eliminarla rápido debido a su reducida vida base (25 HP)."
+        },
+        "en": {
+          "role": "Precision Anti-Dodge Assassin",
+          "role_title": "Electric Assassin",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (Ignores dodges; steals 5% max HP from paralyzed foes) completely invalidates enemy Avoid stacks. Its power (Fires electric egg that paralyzes and grants +15 power to team) fuels perpetual max-life theft on every subsequent strike.",
+          "allies": "Paralysis enablers (Polliwatt, Miedo, or carriers of Mass Discharge / Electrostatic Spike).",
+          "items": "Mass Discharge (paralyzes entire enemy team at start); Dynamite; Crazy Eye (+15% damage); Sneaky Sneakers.",
+          "counter": "Status cleanse or burst damage focus to punish its fragile 25 HP pool before it establishes paralysis loops."
+        },
+        "pt": {
+          "role": "Assassino de Precisão Antiesquiva",
+          "role_title": "Assassino Elétrico",
+          "duo": "Posiciona-se na Retaguarda (Posição 2). Sua passiva (Ignora esquivas; rouba 5% de vida máxima de alvos paralisados) destrói estratégias baseadas em evasão. O poder (Ovo elétrico que paralisa e concede +15 de poder à equipe) garante roubo contínuo de vida.",
+          "allies": "Geradores de paralisia rápida (Polliwatt, Miedo, Descarga em Massa).",
+          "items": "Descarga em Massa (paralisa a equipe inimiga no início); Dinamite; Olho Loco (+15% dano).",
+          "counter": "Foco rápido de dano para derrubá-la rapidamente antes que comece a drenar vida com seus 25 HP."
+        },
+        "ru": {
+          "role": "Электрический убийца против уклонений",
+          "role_title": "Электрический убийца",
+          "duo": "Идеально подходит для Тыла (Позиция 2). Пассивная способность (Игнорирует уклонения; крадет 5% макс. здоровья у парализованных врагов) полностью обесценивает уклонение противника. Активная способность (Электрояйцо с параличом и +15 энергии команде) запускает бесконечный отбор здоровья.",
+          "allies": "Источники паралича (Polliwatt, Miedo, Массовый разряд).",
+          "items": "Массовый разряд (паралич всех врагов на старте); Динамит; Сумасшедший глаз (+15% урона).",
+          "counter": "Быстрый фокус урона, наказывающий за низкий запас здоровья в 25 ОЗ."
+        }
+      }
+    },
+    {
+      "id": 163,
+      "name": {
+        "es": "Aelita",
+        "en": "Aelita",
+        "pt": "Aelita",
+        "ru": "Aelita"
+      },
+      "sprite": "images/chickens/163.png",
+      "default_item_id": 5,
+      "power_max": 100,
+      "power_id": 43,
+      "hidden_power_id": 43,
+      "passive_id": 163,
+      "action_type": 0,
+      "stats": {
+        "life": 25,
+        "damage": 10,
+        "armor": 20,
+        "speed": 45,
+        "power_amount": 100
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 1,
+        "es": {
+          "role": "Batería de Apoyo Táctico (Anti-Provocación)",
+          "role_title": "Soporte Táctico",
+          "duo": "Se ubica en Vanguardia o Retaguardia. Su pasiva (Inhabilita el enfoque forzado de objetivos del equipo enemigo) anula los efectos de Picoteador dorado y pasivas de provocación rivales. Con 100 de Carga de Poder, activa su poder en cada turno, otorgando +5% daño continuo al aliado y limpiándole cualquier alteración de estado.",
+          "allies": "Atacantes de élite que se beneficien de acumulaciones infinitas de daño limpio (Chica, Ente, Miumiau, Magaurina).",
+          "items": "Fragmentos perforantes (reduce armadura rival al golpear); Palo de raíz (inicia con poder al máximo); Triflor; Circuito vital.",
+          "counter": "Aprovechar su bajo ataque directo para eliminar a su compañero atacante o aturdirla con Silencio."
+        },
+        "en": {
+          "role": "Tactical Energy Battery (Anti-Taunt)",
+          "role_title": "Tactical Support",
+          "duo": "Flexible position. Its passive (Disables enemy focus targeting) nullifies enemy Golden Peckinator and taunt mechanics. With an incredible 100 Power Amount, it fires its power every single turn, giving +5% permanent damage and full status cleanses to its teammate.",
+          "allies": "Elite offensive hypercarries (Chica, Ente, Miumiau, Magaurina) stacking perpetual clean buffs.",
+          "items": "Piercing Shards (reduces foe armor on hit); Roost Stick (starts fully charged); Triflower; Vital Circuit.",
+          "counter": "Capitalize on its low offensive stats by eliminating its offensive partner or applying Silence."
+        },
+        "pt": {
+          "role": "Bateria de Suporte Tático (Anti-Provocação)",
+          "role_title": "Suporte Tático",
+          "duo": "Posição flexível. Sua passiva (Desativa o foco de alvos forçado da equipe inimiga) anula Bicador Dourado e provocações inimigas. Com 100 de Carga de Poder, ativa seu poder todo turno, concedendo +5% de dano e limpeza de efeitos ao aliado.",
+          "allies": "Atacantes de alto impacto (Chica, Ente, Miumiau, Magaurina).",
+          "items": "Fragmentos Perfurantes; Vara de Poleiro (começa com poder cheio); Triflor.",
+          "counter": "Explorar seu baixo dano direto para eliminar seu parceiro ou aplicar Silêncio."
+        },
+        "ru": {
+          "role": "Тактическая батарея поддержки (Анти-провокация)",
+          "role_title": "Тактическая поддержка",
+          "duo": "Любая позиция. Пассивная способность (Отключает принудительную фокусировку целей у врагов) нейтрализует Золотой клеватель и насмешки. С параметром силы 100 применяет способность каждый ход, давая союзнику +5% к урону и полное очищение эффектов.",
+          "allies": "Мощные керри-дамагеры (Chica, Ente, Miumiau, Magaurina).",
+          "items": "Пронзающие осколки; Жердь насеста (старт с полной энергией); Трицвет.",
+          "counter": "Воспользоваться ее минимальным уроном для быстрого устранения напарника или наложить Безмолвие."
+        }
+      }
+    },
+    {
+      "id": 164,
+      "name": {
+        "es": "Cururucken",
+        "en": "Cururucken",
+        "pt": "Cururucken",
+        "ru": "Cururucken"
+      },
+      "sprite": "images/chickens/164.png",
+      "default_item_id": 1,
+      "power_max": 100,
+      "power_id": 19,
+      "hidden_power_id": 20,
+      "passive_id": 164,
+      "action_type": 0,
+      "stats": {
+        "life": 80,
+        "damage": 10,
+        "armor": 70,
+        "speed": 5,
+        "power_amount": 35
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 3,
+        "es": {
+          "role": "Muralla Defensiva Simbiótica",
+          "role_title": "Muralla Simbiótica",
+          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Posee una colosal armadura de 70 y 80 de vida. Su pasiva (Al atacar, cura al equipo si tiene algún efecto (5% vida máxima) y le otorga +4% armadura) convierte las quemaduras, venenos o infecciones en fuentes inagotables de regeneración y robustez.",
+          "allies": "Aliados que se autoinfligen efectos (Nama, Intiken, Trinagle) o que combaten en arenas de entorno hostil (Desierto, Volcán).",
+          "items": "Semilla rompepicos (+15% vida máxima); Picoteador dorado (atrae todos los ataques hacia su armadura impenetrable); Diente de cuervo (+15% armadura).",
+          "counter": "Evitar aplicarle efectos de estado para no activar sus curaciones pasivas masivas, o derrotar primero a su compañero."
+        },
+        "en": {
+          "role": "Symbiotic Defensive Wall",
+          "role_title": "Symbiotic Wall",
+          "duo": "Positioned in Frontline (Position 1). Boasts a monumental 70 Armor and 80 HP. Its passive (When attacking, heals team with status by 5% max HP and grants +4% armor) turns burns, poison, and infection into teamwide sustain engines.",
+          "allies": "Self-inflicting allies (Nama, Intiken, Trinagle) or hazardous arena environments (Desert, Vulcan).",
+          "items": "Beak Breaker Seed (+15% max HP); Golden Peckinator (draws all fire into its 70 armor fortress); Raven's Tooth (+15% armor).",
+          "counter": "Withhold status debuffs to deny its passive trigger, or bypass it to target the backline carry."
+        },
+        "pt": {
+          "role": "Muralha Defensiva Simbiótica",
+          "role_title": "Muralha Simbiótica",
+          "duo": "Vanguarda (Posição 1). Possui colossais 70 de armadura e 80 de vida. Sua passiva (Ao atacar, cura a equipe sob efeitos em 5% HP e concede +4% armadura) transforma efeitos negativos em cura e proteção constantes.",
+          "allies": "Aliados que se auto-afligem (Nama, Intiken, Trinagle) ou lutas em áreas com efeitos de ambiente.",
+          "items": "Semente Quebra-Bicos (+15% vida); Bicador Dourado (atrai todos os golpes); Dente de Corvo.",
+          "counter": "Evitar aplicar efeitos de estado para não ativar suas curas e focar o parceiro."
+        },
+        "ru": {
+          "role": "Симбиотическая оборонительная стена",
+          "role_title": "Симбиотическая стена",
+          "duo": "Авангард (Позиция 1). Обладает монументальной броней 70 и 80 ОЗ. Пассивная способность (При атаке лечит союзников с эффектами на 5% макс. HP и дает +4% брони) превращает дебаффы во благо команды.",
+          "allies": "Союзники с самоналожением эффектов (Nama, Intiken, Trinagle) или турниры с постоянными статусами.",
+          "items": "Семя-клюволом (+15% макс. HP); Золотой клеватель (притягивает весь урон на броню 70); Зуб ворона.",
+          "counter": "Не накладывать статусы, чтобы лишить его источника исцеления, или устранять напарника."
+        }
+      }
+    },
+    {
+      "id": 165,
+      "name": {
+        "es": "Ente",
+        "en": "Ente",
+        "pt": "Ente",
+        "ru": "Ente"
+      },
+      "sprite": "images/chickens/165.png",
+      "default_item_id": 62,
+      "power_max": 120,
+      "power_id": 54,
+      "hidden_power_id": 29,
+      "passive_id": 165,
+      "action_type": 0,
+      "stats": {
+        "life": 50,
+        "damage": 85,
+        "armor": 30,
+        "speed": 15,
+        "power_amount": 20
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 6,
+        "es": {
+          "role": "Castigador Arcano de Potenciadores",
+          "role_title": "Castigador Arcano",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Con 85 de daño base, su pasiva (Dispara una estrella cada vez que un rival aumenta su daño) contrarresta radicalmente a enemigos con mejoras de daño acumulativas. Su poder único (Golpe arcano: 100% de daño y -5% a todas las estadísticas del objetivo) debilita metódicamente al enemigo.",
+          "allies": "Tanques que controlen el ritmo (Armor, Pastank, Cururucken) o disruptores de velocidad que le permitan preparar su Golpe arcano.",
+          "items": "Pico ominoso (cura al equipo 20% del daño en cada ataque); Ojo del vacío (+15% stats si cae aliado); Triflor; Páginas del fénix.",
+          "counter": "No utilizar mejoras de daño continuo frente a Ente, o eliminarlo con atacantes veloces antes de que castigue los aumentos."
+        },
+        "en": {
+          "role": "Arcane Buff Punisher",
+          "role_title": "Arcane Punisher",
+          "duo": "Ideally positioned in Backline (Position 2). High 85 base damage coupled with its passive (Shoots a star whenever a rival increases their damage) hard-counters scaling damage setups. Its signature power (Arcane Strike: 100% damage and -5% to all target stats) dismantles enemy hypercarries.",
+          "allies": "Anchor tanks (Armor, Pastank, Cururucken) or speed-control partners granting turns for Arcane Strike.",
+          "items": "Ominous Beak (team heal on strike); Eye of the Void (+15% all stats upon ally defeat); Triflower; Phoenix Pages.",
+          "counter": "Avoid incremental attack-buff builds, or rush it down with high-speed glass cannons."
+        },
+        "pt": {
+          "role": "Punidor Arcano de Melhorias",
+          "role_title": "Punidor Arcano",
+          "duo": "Retaguarda (Posição 2). Com 85 de dano base, sua passiva (Dispara uma estrela sempre que um rival aumenta seu dano) anula galos que acumulam buffs de dano. Seu poder (Golpe Arcano) reduz todos os atributos do alvo em 5%.",
+          "allies": "Tanques firmes (Armor, Pastank, Cururucken) para segurar a partida.",
+          "items": "Bico Ominoso (cura a equipe ao atacar); Olho do Vazio; Triflor; Páginas da Fênix.",
+          "counter": "Evitar composições que aumentem dano continuamente contra Ente."
+        },
+        "ru": {
+          "role": "Тайный каратель баффов",
+          "role_title": "Тайный каратель",
+          "duo": "Тыл (Позиция 2). С 85 базового урона его пассивная способность (Выпускает звезду каждый раз, когда соперник увеличивает урон) жестко контрит разгоняющихся врагов. Способность «Тайный удар» срезает 5% со всех характеристик цели.",
+          "allies": "Стойкие танки (Armor, Pastank, Cururucken), дающие время на подготовку.",
+          "items": "Зловещий клюв (лечит союзников при атаке); Око Бездны; Трицвет; Страницы феникса.",
+          "counter": "Избегать билдов на разгон урона или быстро устранять его скоростными атаками."
+        }
+      }
+    },
+    {
+      "id": 166,
+      "name": {
+        "es": "Miumiau",
+        "en": "Miumiau",
+        "pt": "Miumiau",
+        "ru": "Miumiau"
+      },
+      "sprite": "images/chickens/166.png",
+      "default_item_id": 3,
+      "power_max": 100,
+      "power_id": 0,
+      "hidden_power_id": 57,
+      "passive_id": 166,
+      "action_type": 0,
+      "stats": {
+        "life": 20,
+        "damage": 100,
+        "armor": 5,
+        "speed": 65,
+        "power_amount": 10
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 10,
+        "es": {
+          "role": "Mímico Hiperofensivo (Reflejo Voraz)",
+          "role_title": "Mímico Ofensivo",
+          "duo": "Se ubica en Vanguardia o Retaguardia con 100 de daño base y 65 de velocidad. Su pasiva (Copia inmediatamente cualquier aumento de daño que obtengan los rivales) garantiza que jamás se quedará rezagado en potencia ofensiva. Su poder base (Ataque doble) desata 2 golpes brutales con su daño ya multiplicado.",
+          "allies": "Compañeros defensivos con Evasión o Revivir (Garra, Pastank, Aelita) para compensar sus 20 puntos de vida.",
+          "items": "Pluma infectada (cura su baja salud al infligir daño rival); Páginas del fénix (indispensable para resistir caídas tempranas); Triflor; Ojo loco (+15% daño).",
+          "counter": "Explotar su extrema fragilidad (20 HP) con ataques directos veloces o daño de área antes de que copie mejoras."
+        },
+        "en": {
+          "role": "Hyper-Offensive Mimic (Voracious Mirror)",
+          "role_title": "Offensive Mimic",
+          "duo": "Frontline or Backline. Boasts a massive 100 base Damage and 65 Speed. Its passive (Immediately copies all stat increases gained by rivals) ensures it matches and mirrors any opponent scaling. Double Attack power delivers 2 lethal strikes with full copied scaling.",
+          "allies": "Protective anchors (Garra, Pastank, Aelita) to shield its vulnerable 20 HP pool.",
+          "items": "Infected Feather (restores HP when enemy takes damage); Phoenix Pages (vital revival backup); Triflower; Crazy Eye (+15% damage).",
+          "counter": "Capitalize on its paper-thin 20 HP with swift burst damage or AoE bombs before copy effects stack."
+        },
+        "pt": {
+          "role": "Mímico Hiperofensivo (Espelho Voraz)",
+          "role_title": "Mímico Ofensivo",
+          "duo": "Posição flexível. Conta com colossais 100 de dano base e 65 de velocidade. Sua passiva (Copia imediatamente qualquer aumento de dano dos rivais) garante igualdade em qualquer escalada de ataque. O Ataque Duplo descarrega 2 golpes devastadores.",
+          "allies": "Tanques de proteção e reviver (Garra, Pastank, Aelita) para cobrir seus 20 de vida.",
+          "items": "Pena Infectada; Páginas da Fênix; Triflor; Olho Loco (+15% dano).",
+          "counter": "Aproveitar seus escassos 20 HP para eliminá-lo logo no primeiro turno com dano explosivo."
+        },
+        "ru": {
+          "role": "Гиператакующий подражатель",
+          "role_title": "Атакующий мимик",
+          "duo": "Гибкая позиция. Обладает 100 базового урона и 65 скорости. Пассивная способность (Мгновенно копирует увеличение урона соперников) позволяет мгновенно сравниваться по мощи с любым врагом. Двойная атака сносит цели на копированных баффах.",
+          "allies": "Танки с возрождением и защитой (Garra, Pastank, Aelita) для прикрытия 20 ОЗ.",
+          "items": "Зараженное перо; Страницы феникса; Трицвет; Сумасшедший глаз (+15% урона).",
+          "counter": "Сфокусировать взрывной урон в его 20 ОЗ до того, как он скопирует вражеские усиления."
+        }
+      }
+    },
+    {
+      "id": 167,
+      "name": {
+        "es": "Shuan",
+        "en": "Shuan",
+        "pt": "Shuan",
+        "ru": "Shuan"
+      },
+      "sprite": "images/chickens/167.png",
+      "default_item_id": 18,
+      "power_max": 100,
+      "power_id": 0,
+      "hidden_power_id": 46,
+      "passive_id": 167,
+      "action_type": 0,
+      "stats": {
+        "life": 30,
+        "damage": 50,
+        "armor": 10,
+        "speed": 100,
+        "power_amount": 10
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 10,
+        "es": {
+          "role": "Velocista Letal (Impacto Cinético)",
+          "role_title": "Velocista Cinético",
+          "duo": "Con la velocidad base más alta del juego (100 de velocidad), actúa siempre en primer lugar. Su pasiva (Los ataques infligen daño adicional según su velocidad (+25% de la velocidad total actual)) añade un impacto plano arrollador a cada golpe. Su poder (Ataque doble) duplica esta ventaja cinética para noquear rivales antes de que respondan.",
+          "allies": "Compañeros que aumenten la velocidad del equipo (Ventora, Nave, Javo) o que paralicen enemigos para asegurar ventaja de turno absoluta.",
+          "items": "Guante de gallina (+15% velocidad); Zapatillas escurridizas (+15% velocidad); Ira (2 ataques extra inmediatos); Triflor.",
+          "counter": "Cambio de ritmo (invierte la velocidad convirtiéndolo en el más lento), o estados de Congelación / Parálisis que arruinen su velocidad."
+        },
+        "en": {
+          "role": "Lethal Speedster (Kinetic Impact)",
+          "role_title": "Kinetic Speedster",
+          "duo": "With the highest natural Speed stat in the game (100 Speed), it practically always acts first. Its passive (Attacks deal extra damage based on speed (+25% current total speed)) injects massive bonus damage into every hit. Double Attack duplicates this momentum for immediate first-turn knockouts.",
+          "allies": "Speed amplifiers (Ventora, Nave, Javo) or paralysis inducers guaranteeing turn supremacy.",
+          "items": "Hen's Glove (+15% speed); Sneaky Sneakers (+15% speed); Wrath (2 extra immediate strikes); Triflower.",
+          "counter": "Rhythm Change (inverts turn order making it act last), or Freeze and Paralysis debilitating its speed engine."
+        },
+        "pt": {
+          "role": "Velocista Letal (Impacto Cinético)",
+          "role_title": "Velocista Cinético",
+          "duo": "Com 100 de velocidade base, atua sempre primeiro. Sua passiva (+25% da velocidade total convertida em dano extra) adiciona impacto massivo a cada golpe, potencializado pelo Ataque Duplo para nocautes relâmpago.",
+          "allies": "Parceiros que amplifiquem velocidade (Ventora, Nave, Javo) ou apliquem paralisia.",
+          "items": "Luva de Galinha (+15% vel); Zapatilhas Escorregadias (+15% vel); Ira (2 ataques extras); Triflor.",
+          "counter": "Mudança de Ritmo (inverte a velocidade tornando-o o último a agir), congelamento ou paralisia."
+        },
+        "ru": {
+          "role": "Смертоносный спидстер (Кинетический удар)",
+          "role_title": "Кинетический спидстер",
+          "duo": "Имеет наивысшую скорость в игре (100 скорости) и практически всегда ходит первым. Пассивная способность (+25% от текущей скорости в виде дополнительного урона) делает базовые удары и Двойную атаку сокрушительными.",
+          "allies": "Ускорители команды (Ventora, Nave, Javo) и накладыватели паралича.",
+          "items": "Перчатка курицы (+15% скорости); Скользкие кроссовки; Гнев (2 дополнительные атаки); Трицвет.",
+          "counter": "«Смена ритма» (инвертирует очередность, делая его последним), заморозка или паралич."
+        }
+      }
+    },
+    {
+      "id": 168,
+      "name": {
+        "es": "Gvi",
+        "en": "Gvi",
+        "pt": "Gvi",
+        "ru": "Gvi"
+      },
+      "sprite": "images/chickens/168.png",
+      "default_item_id": 38,
+      "power_max": 120,
+      "power_id": 55,
+      "hidden_power_id": 15,
+      "passive_id": 168,
+      "action_type": 0,
+      "stats": {
+        "life": 40,
+        "damage": 65,
+        "armor": 25,
+        "speed": 20,
+        "power_amount": 50
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 3,
+        "es": {
+          "role": "Especialista Evasivo y Manipulador Temporal",
+          "role_title": "Manipulador Temporal",
+          "duo": "Se ubica en posición flexible. Su pasiva (Al esquivar un ataque, obtiene el turno inmediatamente y aumenta su daño (+5%)) interrumpe la secuencia de turnos enemiga ante cada esquive. Su poder (Cambio de ritmo) invierte la velocidad de combate, convirtiendo su baja velocidad (20) en prioridad máxima absoluta.",
+          "allies": "Generadores de evasión colectiva (Evil Gatarlos, Polliro, Wicken) para concederle cargas de esquive continuas.",
+          "items": "Zapatillas escurridizas (posibilidad de evasión); Primer shuriken (150% daño al inicio); Triflor; Páginas del fénix.",
+          "counter": "Atacantes que ignoren la evasión (Alectrica) o proyectiles y efectos que no puedan ser esquivados."
+        },
+        "en": {
+          "role": "Evasive Specialist & Tempo Manipulator",
+          "role_title": "Tempo Manipulator",
+          "duo": "Flexible positioning. Its passive (If dodging an attack, gets next turn immediately and +5% damage) completely hijacks enemy momentum on every evade. Its power (Rhythm Change) inverts turn speed order, turning its slow 20 Speed into absolute top priority.",
+          "allies": "Team evasion providers (Evil Gatarlos, Polliro, Wicken) granting repeatable dodges.",
+          "items": "Sneaky Sneakers (dodge chance); First Shuriken (150% opening damage); Triflower; Phoenix Pages.",
+          "counter": "Undodgeable attacks (Alectrica ignores avoid) and indirect status damage bypassing evasion entirely."
+        },
+        "pt": {
+          "role": "Especialista Evasivo e Manipulador Temporal",
+          "role_title": "Manipulador Temporal",
+          "duo": "Posição flexível. Sua passiva (Ao esquivar, ganha o turno imediatamente e +5% dano) quebra a ordem inimiga. O poder (Mudança de Ritmo) inverte a ordem de velocidade, transformando sua velocidade 20 em prioridade máxima.",
+          "allies": "Provedores de esquiva para a equipe (Evil Gatarlos, Polliro, Wicken).",
+          "items": "Zapatilhas Escorregadias; Primeiro Shuriken; Triflor; Páginas da Fênix.",
+          "counter": "Inimigos que ignoram esquiva (Alectrica) ou dano indireto por efeitos."
+        },
+        "ru": {
+          "role": "Специалист по уклонению и манипулятор темпом",
+          "role_title": "Манипулятор темпом",
+          "duo": "Гибкая позиция. Пассивная способность (При уклонении немедленно получает ход и +5% к урону) перехватывает инициативу. Способность «Смена ритма» переворачивает очередность ходов, делая его низкую скорость 20 абсолютным преимуществом.",
+          "allies": "Поставщики уклонений команде (Evil Gatarlos, Polliro, Wicken).",
+          "items": "Скользкие кроссовки; Первый сюрикен; Трицвет; Страницы феникса.",
+          "counter": "Атаки, игнорирующие уклонение (Alectrica), и косвенный урон от эффектов."
+        }
+      }
+    },
+    {
+      "id": 169,
+      "name": {
+        "es": "Sabio",
+        "en": "Sabio",
+        "pt": "Sabio",
+        "ru": "Sabio"
+      },
+      "sprite": "images/chickens/169.png",
+      "default_item_id": 23,
+      "power_max": 120,
+      "power_id": 56,
+      "hidden_power_id": 25,
+      "passive_id": 169,
+      "action_type": 0,
+      "stats": {
+        "life": 10,
+        "damage": 130,
+        "armor": 0,
+        "speed": 15,
+        "power_amount": 45
+      },
+      "stat_total": 200,
+      "habitats": {
+        "wild": [
+          "La fábrica"
+        ],
+        "eggs": [],
+        "wild_ids": [
+          7
+        ],
+        "egg_ids": []
+      },
+      "evolution": null,
+      "tactical_guide": {
+        "turns": 3,
+        "es": {
+          "role": "Coloso Ofensivo y Mártir Retributivo",
+          "role_title": "Mártir Colosal",
+          "duo": "Posee el daño más colosal de toda la historia del juego (130 de daño base) a costa de 10 puntos de vida y 0 de armadura. Al ser golpeado, su pasiva aumenta la vida máxima (+5%) y velocidad (+5%) de su aliado. Su temible poder (Memento mori) sentencia a muerte al enemigo que se atreva a asestarle el golpe final.",
+          "allies": "Compañeros con Revivir (Garra, Easy East) o Páginas del fénix para otorgarle segundas oportunidades de ataque.",
+          "items": "Páginas del fénix (revivir indispensable); Ojos sincronizados (devuelve efectos); Triflor; Dinamita.",
+          "counter": "Rematarlo con veneno, infección o daño indirecto de estados para no activar la retribución mortal de Memento mori."
+        },
+        "en": {
+          "role": "Offensive Colossus & Retributive Martyr",
+          "role_title": "Colossal Martyr",
+          "duo": "Features the highest raw base Damage in the entire game (130 Damage) balanced by 10 HP and 0 Armor. When struck, its passive buffs its partner with +5% max HP and +5% speed. Its terrifying power (Memento Mori) dooms whichever enemy dares deliver its finishing blow.",
+          "allies": "Revive providers (Garra, Easy East, Bjorn) keeping Sabio attacking repeatedly.",
+          "items": "Phoenix Pages (essential extra life); Synchronized Eyes (shares debuffs); Triflower; Dynamite.",
+          "counter": "Finish it off via poison, burn, or passive indirect damage to avoid triggering Memento Mori's strike retribution."
+        },
+        "pt": {
+          "role": "Colosso Ofensivo e Mártir Retributivo",
+          "role_title": "Mártir Colossal",
+          "duo": "O maior dano base de todo o jogo (130 de dano) balanceado por 10 de vida e 0 de armadura. Ao sofrer dano, concede +5% de vida máxima e +5% de velocidade ao aliado. Seu poder (Memento Mori) elimina instantaneamente o atacante que o derrotar.",
+          "allies": "Aliados com mecânica de reviver (Garra, Easy East, Bjorn).",
+          "items": "Páginas da Fênix; Olhos Sincronizados; Triflor; Dinamite.",
+          "counter": "Eliminá-lo com dano indireto de veneno ou infecção para não acionar a retribuição do Memento Mori."
+        },
+        "ru": {
+          "role": "Колоссальный дамагер и мстительный мученик",
+          "role_title": "Колоссальный мученик",
+          "duo": "Обладает самым высоким базовым уроном в игре (130 урона) при 10 ОЗ и 0 брони. При получении удара повышает напарнику макс. здоровье (+5%) и скорость (+5%). Способность «Memento Mori» мгновенно забирает в могилу любого врага, нанесшего смертельный удар.",
+          "allies": "Поставщики возрождений (Garra, Easy East, Bjorn), дающие шанс нанести серию ударов.",
+          "items": "Страницы феникса (обязательно); Синхронные глаза; Трицвет; Динамит.",
+          "counter": "Добивать ядом, горением или косвенным уроном, избегая смертельного возмездия Memento Mori."
+        }
+      }
     }
   ],
   "items": [
@@ -13929,6 +14629,196 @@ window.WIKI_DATA = {
       "shop_price": 80,
       "consumable": false,
       "sprite": "images/items/74.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Exchange Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "name": {
+        "es": "Pico ominoso",
+        "en": "Ominous Beak",
+        "pt": "Bico Ominoso",
+        "ru": "Зловещий клюв"
+      },
+      "description": {
+        "es": "Cura a los aliados al atacar (20% del daño realizado)",
+        "en": "Heals allies when attacking (20% of damage dealt)",
+        "pt": "Cura os aliados ao atacar (20% do dano causado)",
+        "ru": "Лечит союзников при атаке (20% от нанесенного урона)"
+      },
+      "price": 16,
+      "shop_price": 85,
+      "consumable": false,
+      "sprite": "images/items/75.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Exchange Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "name": {
+        "es": "Pluma infectada",
+        "en": "Infected Feather",
+        "pt": "Pena Infectada",
+        "ru": "Зараженное перо"
+      },
+      "description": {
+        "es": "Se cura a sí mismo al ver a enemigos recibir daño (5% de su vida máxima)",
+        "en": "Heals self when seeing enemies take damage (5% max life)",
+        "pt": "Cura a si mesmo ao ver inimigos receberem dano (5% da vida máxima)",
+        "ru": "Лечит себя, когда враги получают урон (5% от макс. здоровья)"
+      },
+      "price": 16,
+      "shop_price": 85,
+      "consumable": false,
+      "sprite": "images/items/76.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Exchange Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": {
+        "es": "Ojo arcano",
+        "en": "Arcane Eye",
+        "pt": "Olho Arcano",
+        "ru": "Тайный глаз"
+      },
+      "description": {
+        "es": "Convierte toda su armadura en daño al iniciar el combate",
+        "en": "Converts all armor into damage at the start of battle",
+        "pt": "Converte toda a sua armadura em dano no início do combate",
+        "ru": "Превращает всю свою броню в урон в начале боя"
+      },
+      "price": 16,
+      "shop_price": 85,
+      "consumable": false,
+      "sprite": "images/items/77.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Exchange Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "name": {
+        "es": "Dinamita",
+        "en": "Dynamite",
+        "pt": "Dinamite",
+        "ru": "Динамит"
+      },
+      "description": {
+        "es": "Usar su poder desata una explosión que daña a todos los enemigos (30% de su daño)",
+        "en": "Using power triggers an explosion damaging all enemies (30% damage)",
+        "pt": "Usar seu poder causa uma explosão que danifica todos os inimigos (30% do dano)",
+        "ru": "Использование способности вызывает взрыв, наносящий урон всем врагам (30% урона)"
+      },
+      "price": 16,
+      "shop_price": 85,
+      "consumable": false,
+      "sprite": "images/items/78.png",
+      "found_in_zones": [
+        "Modo Infinito",
+        "Tablón de Intercambios"
+      ],
+      "found_in_zone_ids": [],
+      "found_in_special": [
+        {
+          "es": "Modo Infinito",
+          "en": "Infinite Mode",
+          "pt": "Modo Infinito",
+          "ru": "Бесконечный режим"
+        },
+        {
+          "es": "Tablón de Intercambios",
+          "en": "Exchange Board",
+          "pt": "Quadro de Trocas",
+          "ru": "Доска обмена"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "name": {
+        "es": "Fragmentos perforantes",
+        "en": "Piercing Shards",
+        "pt": "Fragmentos Perfurantes",
+        "ru": "Пронзающие осколки"
+      },
+      "description": {
+        "es": "Al atacar, reduce la armadura del objetivo (-4%)",
+        "en": "When attacking, reduces target armor (-4%)",
+        "pt": "Ao atacar, reduz a armadura do alvo (-4%)",
+        "ru": "При атаке снижает броню цели (-4%)"
+      },
+      "price": 16,
+      "shop_price": 85,
+      "consumable": false,
+      "sprite": "images/items/79.png",
       "found_in_zones": [
         "Modo Infinito",
         "Tablón de Intercambios"
@@ -17310,6 +18200,216 @@ window.WIKI_DATA = {
           "sprite": "images/chickens/159.png"
         }
       ]
+    },
+    {
+      "id": 160,
+      "description": {
+        "es": "Cuando un aliado usa su poder, lanza un misil al enemigo",
+        "en": "When an ally uses their power, launches a missile",
+        "pt": "Quando um aliado usa seu poder, lança um míssil no inimigo",
+        "ru": "Когда союзник использует способность, выпускает ракету во врага"
+      },
+      "chickens": [
+        {
+          "id": 160,
+          "name": {
+            "es": "Kentucky",
+            "en": "Kentucky",
+            "pt": "Kentucky",
+            "ru": "Kentucky"
+          },
+          "sprite": "images/chickens/160.png"
+        }
+      ]
+    },
+    {
+      "id": 161,
+      "description": {
+        "es": "Al usar su poder, infecta a todos los enemigos",
+        "en": "When using power, infects all enemies",
+        "pt": "Ao usar seu poder, infecta todos os inimigos",
+        "ru": "При использовании способности заражает всех врагов"
+      },
+      "chickens": [
+        {
+          "id": 161,
+          "name": {
+            "es": "Maarek",
+            "en": "Maarek",
+            "pt": "Maarek",
+            "ru": "Maarek"
+          },
+          "sprite": "images/chickens/161.png"
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "description": {
+        "es": "Ignora esquives; roba un 5% de vida máxima al atacar a enemigos paralizados",
+        "en": "Ignores dodges and when attacking paralyzed enemies steals max life (5%)",
+        "pt": "Ignora esquivas; rouba 5% da vida máxima ao atacar inimigos paralisados",
+        "ru": "Игнорирует уклонения; крадет 5% макс. здоровья при атаке парализованных врагов"
+      },
+      "chickens": [
+        {
+          "id": 162,
+          "name": {
+            "es": "Alectrica",
+            "en": "Alectrica",
+            "pt": "Alectrica",
+            "ru": "Alectrica"
+          },
+          "sprite": "images/chickens/162.png"
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "description": {
+        "es": "Inhabilita el enfoque forzado de objetivos del equipo enemigo",
+        "en": "Disables enemy focus targeting",
+        "pt": "Desativa o foco de alvos forçado da equipe inimiga",
+        "ru": "Отключает принудительную фокусировку целей у команды противника"
+      },
+      "chickens": [
+        {
+          "id": 163,
+          "name": {
+            "es": "Aelita",
+            "en": "Aelita",
+            "pt": "Aelita",
+            "ru": "Aelita"
+          },
+          "sprite": "images/chickens/163.png"
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "description": {
+        "es": "Al atacar, cura al equipo si tiene algún efecto (5% vida máxima) y le otorga armadura (+4%)",
+        "en": "When attacking, heals team if affected by status (5% max life) and grants armor (4%)",
+        "pt": "Ao atacar, cura a equipe se estiver sob efeito (5% vida máxima) e concede armadura (+4%)",
+        "ru": "При атаке лечит команду при наличии эффектов (5% макс. HP) и дает броню (+4%)"
+      },
+      "chickens": [
+        {
+          "id": 164,
+          "name": {
+            "es": "Cururucken",
+            "en": "Cururucken",
+            "pt": "Cururucken",
+            "ru": "Cururucken"
+          },
+          "sprite": "images/chickens/164.png"
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "description": {
+        "es": "Dispara una estrella cada vez que un rival aumenta su daño",
+        "en": "Shoots a star whenever a rival increases their damage",
+        "pt": "Dispara uma estrela sempre que um rival aumenta seu dano",
+        "ru": "Выпускает звезду каждый раз, когда соперник увеличивает свой урон"
+      },
+      "chickens": [
+        {
+          "id": 165,
+          "name": {
+            "es": "Ente",
+            "en": "Ente",
+            "pt": "Ente",
+            "ru": "Ente"
+          },
+          "sprite": "images/chickens/165.png"
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "description": {
+        "es": "Copia inmediatamente cualquier aumento de daño que obtengan los rivales",
+        "en": "Immediately copies all stat increases gained by rivals (does not copy copies)",
+        "pt": "Copia imediatamente qualquer aumento de dano obtido pelos rivais",
+        "ru": "Мгновенно копирует любое увеличение урона, полученное соперниками"
+      },
+      "chickens": [
+        {
+          "id": 166,
+          "name": {
+            "es": "Miumiau",
+            "en": "Miumiau",
+            "pt": "Miumiau",
+            "ru": "Miumiau"
+          },
+          "sprite": "images/chickens/166.png"
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "description": {
+        "es": "Los ataques infligen daño adicional según su velocidad (+25% de la velocidad total actual)",
+        "en": "Attacks deal extra damage based on speed (25% of current total speed)",
+        "pt": "Ataques causam dano adicional com base na velocidade (+25% da velocidade total atual)",
+        "ru": "Атаки наносят дополнительный урон в зависимости от скорости (+25% от текущей скорости)"
+      },
+      "chickens": [
+        {
+          "id": 167,
+          "name": {
+            "es": "Shuan",
+            "en": "Shuan",
+            "pt": "Shuan",
+            "ru": "Shuan"
+          },
+          "sprite": "images/chickens/167.png"
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "description": {
+        "es": "Al esquivar un ataque, obtiene el turno inmediatamente y aumenta su daño (+5%)",
+        "en": "If dodging an attack, gets next turn immediately and increases damage (+5%)",
+        "pt": "Ao esquivar de um ataque, ganha o turno imediatamente e aumenta seu dano (+5%)",
+        "ru": "При уклонении от атаки немедленно получает ход и увеличивает урон (+5%)"
+      },
+      "chickens": [
+        {
+          "id": 168,
+          "name": {
+            "es": "Gvi",
+            "en": "Gvi",
+            "pt": "Gvi",
+            "ru": "Gvi"
+          },
+          "sprite": "images/chickens/168.png"
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "description": {
+        "es": "Al recibir daño, aumenta la vida máxima de los aliados (+5%) y otorga velocidad (+5%)",
+        "en": "When hit, increases allies max life (+5%) and grants speed (+5%)",
+        "pt": "Ao receber dano, aumenta a vida máxima dos aliados (+5%) e concede velocidade (+5%)",
+        "ru": "При получении урона увеличивает макс. здоровье союзников (+5%) и дает скорость (+5%)"
+      },
+      "chickens": [
+        {
+          "id": 169,
+          "name": {
+            "es": "Sabio",
+            "en": "Sabio",
+            "pt": "Sabio",
+            "ru": "Sabio"
+          },
+          "sprite": "images/chickens/169.png"
+        }
+      ]
     }
   ],
   "powers": [
@@ -17678,6 +18778,26 @@ window.WIKI_DATA = {
             "ru": "Dactyen"
           },
           "sprite": "images/chickens/153.png"
+        },
+        {
+          "id": 166,
+          "name": {
+            "es": "Miumiau",
+            "en": "Miumiau",
+            "pt": "Miumiau",
+            "ru": "Miumiau"
+          },
+          "sprite": "images/chickens/166.png"
+        },
+        {
+          "id": 167,
+          "name": {
+            "es": "Shuan",
+            "en": "Shuan",
+            "pt": "Shuan",
+            "ru": "Shuan"
+          },
+          "sprite": "images/chickens/167.png"
         }
       ],
       "chickens_hidden": [
@@ -19013,6 +20133,16 @@ window.WIKI_DATA = {
             "ru": "Boomy"
           },
           "sprite": "images/chickens/60.png"
+        },
+        {
+          "id": 168,
+          "name": {
+            "es": "Gvi",
+            "en": "Gvi",
+            "pt": "Gvi",
+            "ru": "Gvi"
+          },
+          "sprite": "images/chickens/168.png"
         }
       ]
     },
@@ -19271,6 +20401,16 @@ window.WIKI_DATA = {
             "ru": "Cow"
           },
           "sprite": "images/chickens/115.png"
+        },
+        {
+          "id": 164,
+          "name": {
+            "es": "Cururucken",
+            "en": "Cururucken",
+            "pt": "Cururucken",
+            "ru": "Cururucken"
+          },
+          "sprite": "images/chickens/164.png"
         }
       ],
       "chickens_hidden": [
@@ -19433,6 +20573,16 @@ window.WIKI_DATA = {
             "ru": "Pais"
           },
           "sprite": "images/chickens/35.png"
+        },
+        {
+          "id": 164,
+          "name": {
+            "es": "Cururucken",
+            "en": "Cururucken",
+            "pt": "Cururucken",
+            "ru": "Cururucken"
+          },
+          "sprite": "images/chickens/164.png"
         }
       ]
     },
@@ -19801,6 +20951,16 @@ window.WIKI_DATA = {
             "ru": "Elfen"
           },
           "sprite": "images/chickens/137.png"
+        },
+        {
+          "id": 169,
+          "name": {
+            "es": "Sabio",
+            "en": "Sabio",
+            "pt": "Sabio",
+            "ru": "Sabio"
+          },
+          "sprite": "images/chickens/169.png"
         }
       ]
     },
@@ -19948,6 +21108,16 @@ window.WIKI_DATA = {
             "ru": "Fingie"
           },
           "sprite": "images/chickens/82.png"
+        },
+        {
+          "id": 165,
+          "name": {
+            "es": "Ente",
+            "en": "Ente",
+            "pt": "Ente",
+            "ru": "Ente"
+          },
+          "sprite": "images/chickens/165.png"
         }
       ]
     },
@@ -20288,6 +21458,16 @@ window.WIKI_DATA = {
             "ru": "Estopeca"
           },
           "sprite": "images/chickens/159.png"
+        },
+        {
+          "id": 160,
+          "name": {
+            "es": "Kentucky",
+            "en": "Kentucky",
+            "pt": "Kentucky",
+            "ru": "Kentucky"
+          },
+          "sprite": "images/chickens/160.png"
         }
       ]
     },
@@ -20462,6 +21642,16 @@ window.WIKI_DATA = {
             "ru": "Pipaluna"
           },
           "sprite": "images/chickens/152.png"
+        },
+        {
+          "id": 160,
+          "name": {
+            "es": "Kentucky",
+            "en": "Kentucky",
+            "pt": "Kentucky",
+            "ru": "Kentucky"
+          },
+          "sprite": "images/chickens/160.png"
         }
       ],
       "chickens_hidden": [
@@ -20820,7 +22010,18 @@ window.WIKI_DATA = {
         "pt": "Concede +5% de dano ao aliado com menos vida e remove seus efeitos de estado",
         "ru": "Дает +5% урона союзнику с наименьшим здоровьем и снимает с него эффекты"
       },
-      "chickens": [],
+      "chickens": [
+        {
+          "id": 163,
+          "name": {
+            "es": "Aelita",
+            "en": "Aelita",
+            "pt": "Aelita",
+            "ru": "Aelita"
+          },
+          "sprite": "images/chickens/163.png"
+        }
+      ],
       "chickens_hidden": [
         {
           "id": 67,
@@ -20841,6 +22042,16 @@ window.WIKI_DATA = {
             "ru": "Corny"
           },
           "sprite": "images/chickens/83.png"
+        },
+        {
+          "id": 163,
+          "name": {
+            "es": "Aelita",
+            "en": "Aelita",
+            "pt": "Aelita",
+            "ru": "Aelita"
+          },
+          "sprite": "images/chickens/163.png"
         }
       ]
     },
@@ -21048,6 +22259,16 @@ window.WIKI_DATA = {
             "ru": "Eggaurus"
           },
           "sprite": "images/chickens/151.png"
+        },
+        {
+          "id": 167,
+          "name": {
+            "es": "Shuan",
+            "en": "Shuan",
+            "pt": "Shuan",
+            "ru": "Shuan"
+          },
+          "sprite": "images/chickens/167.png"
         }
       ]
     },
@@ -21155,7 +22376,18 @@ window.WIKI_DATA = {
         "pt": "Rouba 15% da vida máxima do alvo (aumenta sua própria vida máxima)",
         "ru": "Крадет 15% макс. здоровья цели (увеличивает собственное макс. здоровье)"
       },
-      "chickens": [],
+      "chickens": [
+        {
+          "id": 161,
+          "name": {
+            "es": "Maarek",
+            "en": "Maarek",
+            "pt": "Maarek",
+            "ru": "Maarek"
+          },
+          "sprite": "images/chickens/161.png"
+        }
+      ],
       "chickens_hidden": [
         {
           "id": 23,
@@ -21226,6 +22458,16 @@ window.WIKI_DATA = {
             "ru": "Sinestrer"
           },
           "sprite": "images/chickens/146.png"
+        },
+        {
+          "id": 161,
+          "name": {
+            "es": "Maarek",
+            "en": "Maarek",
+            "pt": "Maarek",
+            "ru": "Maarek"
+          },
+          "sprite": "images/chickens/161.png"
         }
       ]
     },
@@ -21244,7 +22486,18 @@ window.WIKI_DATA = {
         "pt": "Arremessa um ovo elétrico (100% de dano, paralisa e concede +15 de poder aos aliados)",
         "ru": "Бросает электрояйцо (100% урона, парализует и дает +15 силы союзникам)"
       },
-      "chickens": [],
+      "chickens": [
+        {
+          "id": 162,
+          "name": {
+            "es": "Alectrica",
+            "en": "Alectrica",
+            "pt": "Alectrica",
+            "ru": "Alectrica"
+          },
+          "sprite": "images/chickens/162.png"
+        }
+      ],
       "chickens_hidden": [
         {
           "id": 18,
@@ -21295,6 +22548,16 @@ window.WIKI_DATA = {
             "ru": "Cyborg"
           },
           "sprite": "images/chickens/129.png"
+        },
+        {
+          "id": 162,
+          "name": {
+            "es": "Alectrica",
+            "en": "Alectrica",
+            "pt": "Alectrica",
+            "ru": "Alectrica"
+          },
+          "sprite": "images/chickens/162.png"
         }
       ]
     },
@@ -21504,6 +22767,122 @@ window.WIKI_DATA = {
         }
       ],
       "chickens_hidden": []
+    },
+    {
+      "id": 54,
+      "cost": 120,
+      "name": {
+        "es": "Golpe arcano",
+        "en": "Arcane Strike",
+        "pt": "Golpe Arcano",
+        "ru": "Тайный удар"
+      },
+      "description": {
+        "es": "Lanza un proyectil arcano (100% de daño) y reduce todas las estadísticas del objetivo en 5%",
+        "en": "Fires an arcane projectile (100% damage) and reduces all target stats by 5%",
+        "pt": "Dispara um projétil arcano (100% de dano) e reduz todos os atributos do alvo em 5%",
+        "ru": "Выпускает тайный снаряд (100% урона) и снижает все характеристики цели на 5%"
+      },
+      "chickens": [
+        {
+          "id": 165,
+          "name": {
+            "es": "Ente",
+            "en": "Ente",
+            "pt": "Ente",
+            "ru": "Ente"
+          },
+          "sprite": "images/chickens/165.png"
+        }
+      ],
+      "chickens_hidden": []
+    },
+    {
+      "id": 55,
+      "cost": 120,
+      "name": {
+        "es": "Cambio de ritmo",
+        "en": "Rhythm Change",
+        "pt": "Mudança de Ritmo",
+        "ru": "Смена ритма"
+      },
+      "description": {
+        "es": "Invierte el orden de velocidad de los turnos en combate (los más lentos actúan primero)",
+        "en": "Inverts combat turn speed order (slower acts first)",
+        "pt": "Inverte a ordem de velocidade dos turnos em combate (os mais lentos agem primeiro)",
+        "ru": "Инвертирует очередность ходов по скорости (более медленные ходят первыми)"
+      },
+      "chickens": [
+        {
+          "id": 168,
+          "name": {
+            "es": "Gvi",
+            "en": "Gvi",
+            "pt": "Gvi",
+            "ru": "Gvi"
+          },
+          "sprite": "images/chickens/168.png"
+        }
+      ],
+      "chickens_hidden": []
+    },
+    {
+      "id": 56,
+      "cost": 140,
+      "name": {
+        "es": "Memento mori",
+        "en": "Memento Mori",
+        "pt": "Memento Mori",
+        "ru": "Memento Mori"
+      },
+      "description": {
+        "es": "Durante 3 turnos, si es derrotado por un ataque, derrota también a su atacante",
+        "en": "For the next 3 turns, if defeated by an attack, kills the attacker too",
+        "pt": "Durante 3 turnos, se for derrotado por um ataque, derrota também o atacante",
+        "ru": "В течение 3 ходов, если погибает от атаки, уносит с собой и атаковавшего"
+      },
+      "chickens": [
+        {
+          "id": 169,
+          "name": {
+            "es": "Sabio",
+            "en": "Sabio",
+            "pt": "Sabio",
+            "ru": "Sabio"
+          },
+          "sprite": "images/chickens/169.png"
+        }
+      ],
+      "chickens_hidden": []
+    },
+    {
+      "id": 57,
+      "cost": 100,
+      "name": {
+        "es": "Reflejos",
+        "en": "Reflexes",
+        "pt": "Reflexos",
+        "ru": "Рефлексы"
+      },
+      "description": {
+        "es": "Gana 1 punto de evasión y se cura a sí mismo (25% de su daño actual)",
+        "en": "Gains 1 evasion point and heals self (25% current damage)",
+        "pt": "Ganha 1 ponto de esquiva e cura a si mesmo (25% do seu dano atual)",
+        "ru": "Получает 1 уклонение и лечит себя (25% от текущего урона)"
+      },
+      "chickens": [],
+      "chickens_hidden": [
+        {
+          "id": 166,
+          "name": {
+            "es": "Miumiau",
+            "en": "Miumiau",
+            "pt": "Miumiau",
+            "ru": "Miumiau"
+          },
+          "sprite": "images/chickens/166.png"
+        }
+      ]
     }
   ],
   "states": [
@@ -22328,7 +23707,17 @@ window.WIKI_DATA = {
         122,
         123,
         124,
-        125
+        125,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169
       ],
       "egg_pool": [
         11,

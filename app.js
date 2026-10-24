@@ -3930,9 +3930,31 @@
     const container = document.getElementById('wikiContent');
     const logs = [
       {
-        version: "v0.128",
+        version: "v0.132",
         date: "Actual",
         badge: "Versión Actual",
+        highlights: [
+          "<strong>Snapshot de Sesión (_entry.bak) y Restauración:</strong> Creación automática de un respaldo seguro e inmutable cada vez que se ingresa a una partida, con recuperación automática multinivel y botón para restaurar respaldos ante cualquier eventualidad.",
+          "<strong>Corrección Visual en Inspección Online:</strong> El panel de información de 'Poder' en la ventana de detalle de pollos ahora utiliza el marco de interfaz correcto e idéntico al de 'Pasiva'.",
+          "<strong>Ajuste Sutil en Gacha de Pollos Exclusivos:</strong> Incremento muy sutil en la probabilidad de obtención de pollos exclusivos fuera del banner semanal (3.5% base), escalando levemente con el contador de suerte (hasta 6%).",
+          "<strong>Protección en la Nube tras Recompensas:</strong> Sincronización automática e instantánea con la nube cada vez que se otorga una recompensa publicitaria."
+        ]
+      },
+      {
+        version: "v0.130",
+        date: "Reciente",
+        badge: "Reciente",
+        highlights: [
+          "<strong>Blindaje Total de Memoria en Anuncios:</strong> Implementación de purga profunda de memoria nativa (ComponentCallbacks2.TRIM_MEMORY_RUNNING_CRITICAL) en dos fases para la caché de Chromium y decodificadores de hardware de AdMob, eliminando el lag progresivo y los cierres inesperados al ver múltiples anuncios continuos.",
+          "<strong>Sistema de Guardado Atómico & Autorespaldo (.bak):</strong> Protección completa de la partida contra cuelgues o cierres del sistema operativo mediante escritura atómica en archivo temporal (.tmp) y respaldo automático (.bak) con autorrecuperación transparente ante archivos corruptos.",
+          "<strong>Control de Concurrencia y Precarga Segura:</strong> Retraso de seguridad y semáforo anti-duplicados para evitar peticiones simultáneas de anuncios en segundo plano.",
+          "<strong>Reroll Instantáneo en Tienda Diaria:</strong> Actualización directa e inmediata de los artículos generados en la tienda al obtener la recompensa del anuncio, sin requerir salir y volver a entrar."
+        ]
+      },
+      {
+        version: "v0.128",
+        date: "Reciente",
+        badge: "Reciente",
         highlights: [
           "<strong>160 Especies en Pollopedia:</strong> Adición completa de las nuevas especies (#150-#159: Estopeca, Fénix, Aguijón, Alquimista, etc.), sus estadísticas base, poderes y habilidades pasivas.",
           "<strong>Estabilidad de Anuncios y Memoria:</strong> Restauración integral de precarga para formatos Rewarded e Interstitial, prevención de cierres inesperados por reanudación en Android y optimización de recolección de memoria (GC).",

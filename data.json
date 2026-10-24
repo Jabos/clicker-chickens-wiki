@@ -1,5 +1,5 @@
 {
-  "version": "0.129",
+  "version": "0.135",
   "chickens": [
     {
       "id": 0,
@@ -2148,8 +2148,8 @@
       },
       "sprite": "images/chickens/28.png",
       "default_item_id": 4,
-      "power_max": 100,
-      "power_id": 16,
+      "power_max": 120,
+      "power_id": 54,
       "hidden_power_id": 36,
       "passive_id": 28,
       "action_type": 0,
@@ -2183,33 +2183,33 @@
         "es": {
           "role": "Atacante de Fuerza Bruta (Golpeador Pesado)",
           "role_title": "Fuerza Bruta",
-          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Al iniciar el combate, gana 1 punto de evasión) define su estilo de juego, complementada por su poder (Intercambia su multiplicador de daño con el del objetivo) que requiere 100 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Al iniciar el combate, gana 1 punto de evasión) define su estilo de juego, complementada por su poder (Lanza un proyectil arcano (100% de daño) y baja todas las estadísticas al objetivo (5%)) que requiere 120 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
           "allies": "Combina tanto con atacantes rápidos (Chica, Mosca) para cerrar partidas como con tanques defensivos (Pastank, Armor) para un juego más paciente.",
-          "items": "Pico vampiro (se cura con el 15% del daño realizado en cada golpe); Páginas del fénix (seguro de vida ante ataques sorpresa); triflor (+5% a daño, armadura y velocidad); Circuito Vital (cura 700 de salud si baja de 35% de vida).",
+          "items": "Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Pico vampiro (se cura con el 15% del daño realizado en cada golpe); Páginas del fénix (seguro de vida ante ataques sorpresa).",
           "counter": "Observar qué rol cumple en el dúo y aislarlo eliminando primero a su compañero para dejarlo en una situación vulnerable de 2 contra 1."
         },
         "en": {
           "role": "Raw Power Striker (Heavy Hitter)",
           "role_title": "Heavy Hitter",
-          "duo": "Ideally positioned in Backline (Position 2). Its passive (Avoid first attack) dictates its combat style, complemented by its power (Swaps damage multiplier with target) requiring 100 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (Avoid first attack) dictates its combat style, complemented by its power (Shoots an arcane projectile (100% damage) and reduces all target stats by 5%) requiring 120 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
           "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
-          "items": "Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
+          "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
           "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
         },
         "pt": {
           "role": "Atacante de Força Bruta (Golpeador Pesado)",
           "role_title": "Força Bruta",
-          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Desvia do primeiro ataque) define seu estilo de jogo, complementada pelo seu poder (Troca o multiplicador de dano com o alvo) que requer 100 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Desvia do primeiro ataque) define seu estilo de jogo, complementada pelo seu poder (Lança um projétil arcano (100% de dano) e reduz todos os atributos do alvo (5%)) que requer 120 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
           "allies": "Combina perfeitamente tanto com atacantes rápidos (Chica, Mosca) quanto com tanques defensivos (Pastank, Armor).",
-          "items": "Bico Vampírico (cura 15% do dano causado em cada golpe); Páginas da Fênix (seguro de vida contra rajadas inesperadas); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 de vida se cair abaixo de 35% de vida).",
+          "items": "Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bico Vampírico (cura 15% do dano causado em cada golpe); Páginas da Fênix (seguro de vida contra rajadas inesperadas).",
           "counter": "Identificar seu papel na dupla e isolá-lo eliminando primeiro o parceiro para forçar uma situação vulnerável de 2 contra 1."
         },
         "ru": {
           "role": "Атакующий грубой силы (Тяжелый ударник)",
           "role_title": "Грубая сила",
-          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (Избегает первой атаки) определяет стиль боя вместе с активной способностью (Обменивается множителем урона с целью), требующей 100 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (Избегает первой атаки) определяет стиль боя вместе с активной способностью (Выпускает чародейский снаряд (100% урона) и снижает все характеристики цели на 5%), требующей 120 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
           "allies": "Отлично сочетается как с быстрыми атакующими (Chica, Mosca), так и с оборонительными танками (Pastank, Armor).",
-          "items": "Клюв вампира (лечит 15% от нанесенного урона за удар); Страницы феникса (страховка от внезапного взрывного урона); Трицвет (+5% к урону, броне и скорости); Витальная цепь (лечит 700 ОЗ при падении ниже 35% здоровья).",
+          "items": "Насест (начинает со 100% силы и +50 макс. силы для хода 1); Клюв вампира (лечит 15% от нанесенного урона за удар); Страницы феникса (страховка от внезапного взрывного урона).",
           "counter": "Определить его роль в связке и изолировать, сначала устранив напарника для создания преимущества 2 против 1."
         }
       }
@@ -11967,11 +11967,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -11979,36 +11979,36 @@
       "tactical_guide": {
         "turns": 4,
         "es": {
-          "role": "Atacante de Apoyo Reactivo (Artillería Pesada)",
-          "role_title": "Artillería Pesada",
-          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Cuando un aliado usa su poder, lanza un misil al enemigo) define su estilo de juego, complementada por su poder (Lanza una estrella rápida de daño a distancia) que requiere 100 puntos de energía (~4 turnos). Cada vez que su compañero activa un poder, Kentucky responde de inmediato disparando un misil devastador sin gastar su propio turno.",
-          "allies": "Aliados de carga rápida de poder (como Aelita, Eustavio, Cori o Drillen) que utilicen sus habilidades con frecuencia para activar misiles continuos de Kentucky.",
-          "items": "Dinamita (hace explotar en área con su poder); Triflor (+5% daño, armadura, velocidad); Ojo loco (+15% daño); Circuito Vital (+700 HP al caer bajo 35%).",
-          "counter": "Controlar a su compañero con Silencio o Parálisis para evitar que activen poderes, neutralizando los disparos de misil pasivos de Kentucky."
+          "role": "Coloso Ofensivo (Peleador Pesado)",
+          "role_title": "Coloso Ofensivo",
+          "duo": "Se ubica idealmente en Vanguardia o Retaguardia. Su pasiva (Cuando un aliado usa su poder, lanza un misil) define su estilo de juego, complementada por su poder (Lanza una estrella (100% de daño y vacía a 0 el poder del objetivo)) que requiere 100 puntos de energía (carga en aproximadamente ~4 turnos). Su enfoque en proyectiles le permite castigar desde una distancia segura sin exponerse al contraataque físico directo.",
+          "allies": "Combina tanto con atacantes rápidos (Chica, Mosca) para cerrar partidas como con tanques defensivos (Pastank, Armor) para un juego más paciente.",
+          "items": "Primer huevo (proyectil inicial de regalo); Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Picoteador dorado (obtiene el enfoque y atrae todos los ataques hacia su alta defensa); Pico hleado (20% de probabilidad de congelar al agresor cuando recibe un impacto).",
+          "counter": "Equipar Pico blindado para reducir el daño de sus proyectiles y bombas en un 66%, o atacarlo antes con un velocista."
         },
         "en": {
-          "role": "Reactive Support Striker (Heavy Artillery)",
-          "role_title": "Heavy Artillery",
-          "duo": "Ideally positioned in Backline (Position 2). Its passive (When an ally uses their power, launches a missile) defines its playstyle, paired with its power (Throws a swift star for ranged damage) requiring 100 energy (~4 turns). Whenever its ally unleashes a power, Kentucky fires a heavy missile without consuming its turn.",
-          "allies": "Rapid-power charging teammates (such as Aelita, Eustavio, Cori, or Drillen) that trigger frequent powers to keep Kentucky's missile barrage active.",
-          "items": "Dynamite (triggers area explosion on power); Triflower (+5% stats); Crazy Eye (+15% damage); Vital Circuit (+700 HP below 35%).",
-          "counter": "Disrupt its partner with Silence or Paralysis to prevent power casts, neutralizing Kentucky's reactive missile battery."
+          "role": "Offensive Colossus (Bruiser)",
+          "role_title": "Offensive Colossus",
+          "duo": "Ideally positioned in Frontline or Backline. Its passive (When an ally uses their power, launches a missile) dictates its combat style, complemented by its power (Throws a star (100% damage and drains target power to 0)) requiring 100 energy (~4 turns to charge). Its projectile focus punishes opponents from safety without direct melee exposure.",
+          "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
+          "items": "First Egg (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
+          "counter": "Equip Armored Beak to take 66% less damage from its projectiles and bombs, or eliminate it with a faster attacker."
         },
         "pt": {
-          "role": "Atacante de Suporte Reativo (Artilharia Pesada)",
-          "role_title": "Artilharia Pesada",
-          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Quando um aliado usa seu poder, lança um míssil no inimigo) dita seu ritmo, aliada ao poder (Lança uma estrela veloz) que requer 100 de energia (~4 turnos). Sempre que o parceiro ativa uma habilidade, Kentucky dispara um míssil sem gastar seu turno.",
-          "allies": "Companheiros com carga rápida de poder (como Aelita, Eustavio, Cori ou Drillen) para acionar misseis em cadeia.",
-          "items": "Dinamite (explosão em área); Triflor (+5% em tudo); Olho Loco (+15% dano); Circuito Vital (+700 HP).",
-          "counter": "Silenciar ou paralisar o aliado para impedir o uso de poderes e cancelar os disparos automáticos de Kentucky."
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Quando um aliado usa seu poder, lança um míssil) define seu estilo de jogo, complementada pelo seu poder (Arremessa uma estrela (100% de dano e drena o poder do alvo para 0)) que requer 100 pontos de energia (carrega em aproximadamente ~4 turnos). Seu foco em projéteis permite punir oponentes a uma distância segura sem sofrer contra-ataques físicos diretos.",
+          "allies": "Combina perfeitamente tanto com atacantes rápidos (Chica, Mosca) quanto com tanques defensivos (Pastank, Armor).",
+          "items": "Primeiro Ovo (projétil inicial grátis); Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bicador Dourado (obtém o foco e atrai todos os ataques para sua alta defesa); Bico Gélido (20% de chance de congelar o agressor ao receber um impacto).",
+          "counter": "Equipar Bico Blindado para reduzir o dano de projéteis e bombas em 66%, ou eliminá-lo antecipadamente com um velocista."
         },
         "ru": {
-          "role": "Реактивный артиллерист поддержки",
-          "role_title": "Тяжелая артиллерия",
-          "duo": "Идеально подходит для Тыла (Позиция 2). Пассивная способность (При использовании способности союзником выпускает ракету во врага) определяет стиль боя вместе со способностью (Бросает быструю звезду), требующей 100 энергии (~4 хода). Каждый раз, когда союзник применяет способность, Kentucky мгновенно отвечает ракетным залпом.",
-          "allies": "Союзники с быстрой зарядкой энергии (Aelita, Eustavio, Cori, Drillen), вызывающие частые залпы ракет.",
-          "items": "Динамит (взрыв по площади); Трицвет (+5% к характеристикам); Сумасшедший глаз (+15% урона); Витальная цепь (+700 ОЗ).",
-          "counter": "Накладывать на напарника Безмолвие или Паралич, чтобы пресечь активацию ракетных батарей Kentucky."
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Атакующий колосс",
+          "duo": "Идеально подходит для размещения в Авангарде или Тылу. Пассивная способность (Когда союзник использует силу, выпускает ракету) определяет стиль боя вместе с активной способностью (Бросает звезду (100% урона и обнуляет силу цели до 0)), требующей 100 энергии (~4 хода для зарядки). Специализация на снарядах позволяет наказывать соперников с безопасного расстояния, не подставляясь под прямой ответный урон.",
+          "allies": "Отлично сочетается как с быстрыми атакующими (Chica, Mosca), так и с оборонительными танками (Pastank, Armor).",
+          "items": "Первое яйцо (бесплатный снаряд на старте); Насест (начинает со 100% силы и +50 макс. силы для хода 1); Золотой клеватель (стягивает фокус и принимает удары на высокую защиту); Ледяной клюв (20% шанс заморозить нападающего при ударе).",
+          "counter": "Экипировать Бронированный клюв (-66% урона от снарядов и бомб) или опередить скоростным бойцом."
         }
       }
     },
@@ -12021,7 +12021,7 @@
         "ru": "Maarek"
       },
       "sprite": "images/chickens/161.png",
-      "default_item_id": 29,
+      "default_item_id": 30,
       "power_max": 100,
       "power_id": 48,
       "hidden_power_id": 48,
@@ -12037,48 +12037,48 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
-        "turns": 3,
+        "turns": 4,
         "es": {
-          "role": "Tanque Tóxico Contagioso",
-          "role_title": "Tanque Tóxico",
-          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Su pasiva (Al usar su poder, infecta a todos los enemigos) complementa su poder (Roba 15% de vida máxima del objetivo) que requiere 100 de energía (~3 turnos). Posee gran armadura (50) para absorber daño mientras esparce infección continua sobre los dos rivales.",
-          "allies": "Compañeros que aprovechen enemigos infectados (como Elfen, Fingie, o portadores de Pluma infectada) para maximizar la presión de plaga.",
-          "items": "Ojo arcano (convierte su sólida armadura en 50 de daño directo al inicio); Pluma infectada (se cura al ver daño rival); Pico podrido; Diente de cuervo (+15% armadura).",
-          "counter": "Usar curaciones de estado (Poción mágica, Magaurina) o daño directo que perfore armadura antes de que propague la infección."
+          "role": "Muralla Blindada (Tanque Defensivo)",
+          "role_title": "Muralla Blindada",
+          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Su pasiva (Al usar su poder infecta a todos los enemigos) define su estilo de juego, complementada por su poder (Roba 15% de la vida máxima del objetivo (aumenta su propia vida máxima)) que requiere 100 puntos de energía (carga en aproximadamente ~4 turnos). Especializado en aplicar desgaste continuo que ignora la armadura rival y derrite barras de salud grandes.",
+          "allies": "Atacantes de alto impacto que aprovechen la distracción para derribar rivales (como Chica, Zombie, Shiken, Cacho o Mechalex).",
+          "items": "Moco problemático (infecta a un enemigo de entrada); Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Picoteador dorado (obtiene el enfoque y atrae todos los ataques hacia su alta defensa); Pico hleado (20% de probabilidad de congelar al agresor cuando recibe un impacto).",
+          "counter": "Observar qué rol cumple en el dúo y aislarlo eliminando primero a su compañero para dejarlo en una situación vulnerable de 2 contra 1."
         },
         "en": {
-          "role": "Contagious Toxic Tank",
-          "role_title": "Toxic Tank",
-          "duo": "Ideally positioned in Frontline (Position 1). Its passive (When using power, infects all enemies) pairs with its power (Steals 15% max health from target) requiring 100 energy (~3 turns). Sturdy 50 armor absorbs hits while spreading permanent plague to both opponents.",
-          "allies": "Allies synergizing with infection (Elfen, Fingie, or Infected Feather users) to capitalize on widespread plague.",
-          "items": "Arcane Eye (turns its 50 armor into base damage at battle start); Infected Feather (sustained healing); Raven's Tooth (+15% armor).",
-          "counter": "Cleanse status effects with Magic Potion or Magaurina, or focus with armor-piercing damage before infection spreads."
+          "role": "Armored Wall (Defensive Tank)",
+          "role_title": "Armored Wall",
+          "duo": "Ideally positioned in Frontline (Position 1). Its passive (When using power, infects all enemies) dictates its combat style, complemented by its power (Steals 15% max health from target (increases own max health)) requiring 100 energy (~4 turns to charge). Excels at stacking damage-over-time afflictions that bypass enemy armor entirely.",
+          "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
+          "items": "Troubleslime (infects an enemy at battle start); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit).",
+          "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
         },
         "pt": {
-          "role": "Tanque Tóxico Contagioso",
-          "role_title": "Tanque Tóxico",
-          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar seu poder, infecta todos os inimigos) e poder (Rouba 15% de vida máxima) requerem 100 de energia (~3 turnos). Excelente armadura (50) para suportar ataques enquanto espalha peste.",
-          "allies": "Parceiros que sinergizam com infecção (Elfen, Fingie, portadores de Pena Infectada).",
-          "items": "Olho Arcano (converte 50 de armadura em dano); Pena Infectada; Dente de Corvo (+15% armadura).",
-          "counter": "Remover efeitos negativos com Poção Mágica ou Magaurina antes da infecção minar a equipe."
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao usar seu poder, infecta todos os inimigos) define seu estilo de jogo, complementada pelo seu poder (Rouba 15% da vida máxima do alvo (aumenta sua própria vida máxima)) que requer 100 pontos de energia (carrega em aproximadamente ~4 turnos). Especializado em aplicar desgaste contínuo que ignora a armadura adversária e drena grandes reservas de vida.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Gosma Problemática (infecta um inimigo na entrada); Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bicador Dourado (obtém o foco e atrai todos os ataques para sua alta defesa); Bico Gélido (20% de chance de congelar o agressor ao receber um impacto).",
+          "counter": "Identificar seu papel na dupla e isolá-lo eliminando primeiro o parceiro para forçar uma situação vulnerável de 2 contra 1."
         },
         "ru": {
-          "role": "Заразный токсичный танк",
-          "role_title": "Токсичный танк",
-          "duo": "Идеально подходит для Авангарда (Позиция 1). Пассивная способность (При использовании способности заражает всех врагов) дополняет кражу 15% макс. здоровья цели при 100 энергии (~3 хода). Высокая броня (50) позволяет держать удар, разнося чуму.",
-          "allies": "Союзники, усиливающиеся от заражения врагов (Elfen, Fingie, Зараженное перо).",
-          "items": "Тайный глаз (конвертирует 50 брони в урон на старте); Зараженное перо; Зуб ворона (+15% брони).",
-          "counter": "Очищение эффектов Волшебным зельем или Magaurina, либо пробивание брони до распространения заразы."
+          "role": "Бронированная стена (Защитный танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально подходит для размещения в Авангарде (Позиция 1). Пассивная способность (При использовании силы заражает всех врагов) определяет стиль боя вместе с активной способностью (Крадет 15% макс. здоровья цели (увеличивает собственное макс. здоровье)), требующей 100 энергии (~4 хода для зарядки). Специализируется на наложении периодического урона, который полностью игнорирует броню и истощает высокий запас здоровья.",
+          "allies": "Ударники с высоким уроном, реализующие созданное пространство (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Проблемная слизь (заражает врага при вступлении в бой); Насест (начинает со 100% силы и +50 макс. силы для хода 1); Золотой клеватель (стягивает фокус и принимает удары на высокую защиту); Ледяной клюв (20% шанс заморозить нападающего при ударе).",
+          "counter": "Определить его роль в связке и изолировать, сначала устранив напарника для создания преимущества 2 против 1."
         }
       }
     },
@@ -12107,48 +12107,48 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
       "evolution": null,
       "tactical_guide": {
-        "turns": 3,
+        "turns": 4,
         "es": {
-          "role": "Asesino de Precisión Antiesquive",
-          "role_title": "Asesino Eléctrico",
-          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Ignora esquives; roba un 5% de vida máxima al atacar a enemigos paralizados) anula por completo las acumulaciones de Evasión enemigas. Su poder (Lanza huevo eléctrico que paraliza y da +15 poder al equipo) genera el estado ideal para drenar vida permanentemente en cada golpe.",
-          "allies": "Inductores de parálisis rápida (Polliwatt, Miedo, o aliados equipados con Descarga masiva / Pico electrostático).",
-          "items": "Descarga masiva (paraliza a todos al inicio); Dinamita; Ojo loco (+15% daño); Zapatillas escurridizas (+15% velocidad).",
-          "counter": "Protegerse con inmunidad a estados o eliminarla rápido debido a su reducida vida base (25 HP)."
+          "role": "Artillero de Proyectiles (Ataque a Distancia)",
+          "role_title": "Artillero de Proyectiles",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Ignorá los esquives y al atacar enemigos paralizados roba vida máxima (5%)) define su estilo de juego, complementada por su poder (Lanza un huevo eléctrico (100% de daño, aplica parálisis y otorga +15 de poder a los aliados)) que requiere 100 puntos de energía (carga en aproximadamente ~4 turnos). Su enfoque en proyectiles le permite castigar desde una distancia segura sin exponerse al contraataque físico directo.",
+          "allies": "Tanques protectores equipados con Picoteador dorado (como Pastank, Armor, Boomy o Garry) para obligar a los rivales a atacarlos a ellos y darle turnos limpios de ofensiva.",
+          "items": "Primer huevo (proyectil inicial de regalo); Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Pico vampiro (se cura con el 15% del daño realizado en cada golpe); Páginas del fénix (seguro de vida ante ataques sorpresa).",
+          "counter": "Aprovechar su fragilidad: enfocarlo de inmediato con la inteligencia de combate hacia el rival con menor vida, o usar parálisis con Pico Electrostático para reducir su velocidad a la mitad."
         },
         "en": {
-          "role": "Precision Anti-Dodge Assassin",
-          "role_title": "Electric Assassin",
-          "duo": "Ideally positioned in Backline (Position 2). Its passive (Ignores dodges; steals 5% max HP from paralyzed foes) completely invalidates enemy Avoid stacks. Its power (Fires electric egg that paralyzes and grants +15 power to team) fuels perpetual max-life theft on every subsequent strike.",
-          "allies": "Paralysis enablers (Polliwatt, Miedo, or carriers of Mass Discharge / Electrostatic Spike).",
-          "items": "Mass Discharge (paralyzes entire enemy team at start); Dynamite; Crazy Eye (+15% damage); Sneaky Sneakers.",
-          "counter": "Status cleanse or burst damage focus to punish its fragile 25 HP pool before it establishes paralysis loops."
+          "role": "Ranged Artillery (Distance Striker)",
+          "role_title": "Ranged Artillery",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (Ignores dodges and when attacking paralyzed enemies steals max life (5%)) dictates its combat style, complemented by its power (Throws an electric egg (100% damage, paralyzes, and gives +15 power to allies)) requiring 100 energy (~4 turns to charge). Its projectile focus punishes opponents from safety without direct melee exposure.",
+          "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
+          "items": "First Egg (free opening projectile); Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
+          "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
         },
         "pt": {
-          "role": "Assassino de Precisão Antiesquiva",
-          "role_title": "Assassino Elétrico",
-          "duo": "Posiciona-se na Retaguarda (Posição 2). Sua passiva (Ignora esquivas; rouba 5% de vida máxima de alvos paralisados) destrói estratégias baseadas em evasão. O poder (Ovo elétrico que paralisa e concede +15 de poder à equipe) garante roubo contínuo de vida.",
-          "allies": "Geradores de paralisia rápida (Polliwatt, Miedo, Descarga em Massa).",
-          "items": "Descarga em Massa (paralisa a equipe inimiga no início); Dinamite; Olho Loco (+15% dano).",
-          "counter": "Foco rápido de dano para derrubá-la rapidamente antes que comece a drenar vida com seus 25 HP."
+          "role": "Artilheiro de Projéteis (Ataque à Distância)",
+          "role_title": "Artilheiro de Projéteis",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ignora esquivas e ao atacar inimigos paralisados rouba vida máxima (5%)) define seu estilo de jogo, complementada pelo seu poder (Arremessa um ovo elétrico (100% de dano, paralisa e concede +15 de poder aos aliados)) que requer 100 pontos de energia (carrega em aproximadamente ~4 turnos). Seu foco em projéteis permite punir oponentes a uma distância segura sem sofrer contra-ataques físicos diretos.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para atrair ataques inimigos e conceder turnos livres de ataque.",
+          "items": "Primeiro Ovo (projétil inicial grátis); Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bico Vampírico (cura 15% do dano causado em cada golpe); Páginas da Fênix (seguro de vida contra rajadas inesperadas).",
+          "counter": "Aproveitar sua fragilidade: foque-o imediatamente com IA voltada para o inimigo de menor vida, ou use paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
         },
         "ru": {
-          "role": "Электрический убийца против уклонений",
-          "role_title": "Электрический убийца",
-          "duo": "Идеально подходит для Тыла (Позиция 2). Пассивная способность (Игнорирует уклонения; крадет 5% макс. здоровья у парализованных врагов) полностью обесценивает уклонение противника. Активная способность (Электрояйцо с параличом и +15 энергии команде) запускает бесконечный отбор здоровья.",
-          "allies": "Источники паралича (Polliwatt, Miedo, Массовый разряд).",
-          "items": "Массовый разряд (паралич всех врагов на старте); Динамит; Сумасшедший глаз (+15% урона).",
-          "counter": "Быстрый фокус урона, наказывающий за низкий запас здоровья в 25 ОЗ."
+          "role": "Артиллерист (Дистанционный боец)",
+          "role_title": "Артиллерист",
+          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (Игнорирует уклонения и крадёт макс. здоровье (5%) при атаке парализованных врагов) определяет стиль боя вместе с активной способностью (Бросает электрояйцо (100% урона, парализует и дает +15 силы союзникам)), требующей 100 энергии (~4 хода для зарядки). Специализация на снарядах позволяет наказывать соперников с безопасного расстояния, не подставляясь под прямой ответный урон.",
+          "allies": "Защитные танки с Золотой клеватель (Pastank, Armor, Boomy или Garry), перетягивающие на себя вражеский фокус.",
+          "items": "Первое яйцо (бесплатный снаряд на старте); Насест (начинает со 100% силы и +50 макс. силы для хода 1); Клюв вампира (лечит 15% от нанесенного урона за удар); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Использовать низкую выживаемость: фокусить через тактику «цель с наименьшим здоровьем» или парализовать Электрошип."
         }
       }
     },
@@ -12177,11 +12177,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12189,36 +12189,36 @@
       "tactical_guide": {
         "turns": 1,
         "es": {
-          "role": "Batería de Apoyo Táctico (Anti-Provocación)",
-          "role_title": "Soporte Táctico",
-          "duo": "Se ubica en Vanguardia o Retaguardia. Su pasiva (Inhabilita el enfoque forzado de objetivos del equipo enemigo) anula los efectos de Picoteador dorado y pasivas de provocación rivales. Con 100 de Carga de Poder, activa su poder en cada turno, otorgando +5% daño continuo al aliado y limpiándole cualquier alteración de estado.",
-          "allies": "Atacantes de élite que se beneficien de acumulaciones infinitas de daño limpio (Chica, Ente, Miumiau, Magaurina).",
-          "items": "Fragmentos perforantes (reduce armadura rival al golpear); Palo de raíz (inicia con poder al máximo); Triflor; Circuito vital.",
-          "counter": "Aprovechar su bajo ataque directo para eliminar a su compañero atacante o aturdirla con Silencio."
+          "role": "Batería de Habilidades (Lanzador Continuo)",
+          "role_title": "Batería de Habilidades",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Inhabilita el enfoque de los enemigos) define su estilo de juego, complementada por su poder (Otorga +5% de daño al aliado con menor vida y limpia sus efectos de estado) que requiere 100 puntos de energía (carga en aproximadamente ~1 turno). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "allies": "Tanques protectores equipados con Picoteador dorado (como Pastank, Armor, Boomy o Garry) para obligar a los rivales a atacarlos a ellos y darle turnos limpios de ofensiva.",
+          "items": "Arena milagrosa (+5 de poder por cada golpe); triflor (+5% a daño, armadura y velocidad); Circuito Vital (cura 700 de salud si baja de 35% de vida); Poción mágica (limpia cualquier estado alterado).",
+          "counter": "Aprovechar su fragilidad: enfocarlo de inmediato con la inteligencia de combate hacia el rival con menor vida, o usar parálisis con Pico Electrostático para reducir su velocidad a la mitad."
         },
         "en": {
-          "role": "Tactical Energy Battery (Anti-Taunt)",
-          "role_title": "Tactical Support",
-          "duo": "Flexible position. Its passive (Disables enemy focus targeting) nullifies enemy Golden Peckinator and taunt mechanics. With an incredible 100 Power Amount, it fires its power every single turn, giving +5% permanent damage and full status cleanses to its teammate.",
-          "allies": "Elite offensive hypercarries (Chica, Ente, Miumiau, Magaurina) stacking perpetual clean buffs.",
-          "items": "Piercing Shards (reduces foe armor on hit); Roost Stick (starts fully charged); Triflower; Vital Circuit.",
-          "counter": "Capitalize on its low offensive stats by eliminating its offensive partner or applying Silence."
+          "role": "Skill Battery (Continuous Caster)",
+          "role_title": "Skill Battery",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (Disables enemy focus targeting) dictates its combat style, complemented by its power (Grants +5% damage to lowest health ally and cleanses their status effects) requiring 100 energy (~1 turn to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
+          "items": "Miracle Sand (+5 power gain per hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
+          "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
         },
         "pt": {
-          "role": "Bateria de Suporte Tático (Anti-Provocação)",
-          "role_title": "Suporte Tático",
-          "duo": "Posição flexível. Sua passiva (Desativa o foco de alvos forçado da equipe inimiga) anula Bicador Dourado e provocações inimigas. Com 100 de Carga de Poder, ativa seu poder todo turno, concedendo +5% de dano e limpeza de efeitos ao aliado.",
-          "allies": "Atacantes de alto impacto (Chica, Ente, Miumiau, Magaurina).",
-          "items": "Fragmentos Perfurantes; Vara de Poleiro (começa com poder cheio); Triflor.",
-          "counter": "Explorar seu baixo dano direto para eliminar seu parceiro ou aplicar Silêncio."
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Desativa o foco dos inimigos) define seu estilo de jogo, complementada pelo seu poder (Concede +5% de dano ao aliado com menos vida e remove seus efeitos de estado) que requer 100 pontos de energia (carrega em aproximadamente ~1 turno). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para atrair ataques inimigos e conceder turnos livres de ataque.",
+          "items": "Areia Milagrosa (+5 de carga de poder a cada golpe); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 de vida se cair abaixo de 35% de vida); Poção Mágica (remove qualquer efeito de estado alterado).",
+          "counter": "Aproveitar sua fragilidade: foque-o imediatamente com IA voltada para o inimigo de menor vida, ou use paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
         },
         "ru": {
-          "role": "Тактическая батарея поддержки (Анти-провокация)",
-          "role_title": "Тактическая поддержка",
-          "duo": "Любая позиция. Пассивная способность (Отключает принудительную фокусировку целей у врагов) нейтрализует Золотой клеватель и насмешки. С параметром силы 100 применяет способность каждый ход, давая союзнику +5% к урону и полное очищение эффектов.",
-          "allies": "Мощные керри-дамагеры (Chica, Ente, Miumiau, Magaurina).",
-          "items": "Пронзающие осколки; Жердь насеста (старт с полной энергией); Трицвет.",
-          "counter": "Воспользоваться ее минимальным уроном для быстрого устранения напарника или наложить Безмолвие."
+          "role": "Батарея навыков (Постоянный кастер)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (Отключает фокусировку у врагов) определяет стиль боя вместе с активной способностью (Дает +5% урона союзнику с наименьшим здоровьем и снимает с него эффекты), требующей 100 энергии (~1 ход для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "allies": "Защитные танки с Золотой клеватель (Pastank, Armor, Boomy или Garry), перетягивающие на себя вражеский фокус.",
+          "items": "Чудо-песок (+5 к заряду силы за каждый удар); Трицвет (+5% к урону, броне и скорости); Витальная цепь (лечит 700 ОЗ при падении ниже 35% здоровья); Волшебное зелье (снимает любые наложенные эффекты).",
+          "counter": "Использовать низкую выживаемость: фокусить через тактику «цель с наименьшим здоровьем» или парализовать Электрошип."
         }
       }
     },
@@ -12247,11 +12247,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12259,36 +12259,36 @@
       "tactical_guide": {
         "turns": 3,
         "es": {
-          "role": "Muralla Defensiva Simbiótica",
-          "role_title": "Muralla Simbiótica",
-          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Posee una colosal armadura de 70 y 80 de vida. Su pasiva (Al atacar, cura al equipo si tiene algún efecto (5% vida máxima) y le otorga +4% armadura) convierte las quemaduras, venenos o infecciones en fuentes inagotables de regeneración y robustez.",
-          "allies": "Aliados que se autoinfligen efectos (Nama, Intiken, Trinagle) o que combaten en arenas de entorno hostil (Desierto, Volcán).",
-          "items": "Semilla rompepicos (+15% vida máxima); Picoteador dorado (atrae todos los ataques hacia su armadura impenetrable); Diente de cuervo (+15% armadura).",
-          "counter": "Evitar aplicarle efectos de estado para no activar sus curaciones pasivas masivas, o derrotar primero a su compañero."
+          "role": "Muralla Blindada (Tanque Defensivo)",
+          "role_title": "Muralla Blindada",
+          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Su pasiva (Al atacar, cura a su equipo si este tiene un efecto (5% vida máxima) y le otorga armadura (4%)) define su estilo de juego, complementada por su poder (Se cura a sí mismo (25% de su vida máxima) y gana armadura (+15%)) que requiere 100 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aprovechen la distracción para derribar rivales (como Chica, Zombie, Shiken, Cacho o Mechalex).",
+          "items": "Picoteador dorado (obtiene el enfoque y atrae todos los ataques hacia su alta defensa); Pico hleado (20% de probabilidad de congelar al agresor cuando recibe un impacto); triflor (+5% a daño, armadura y velocidad); Circuito Vital (cura 700 de salud si baja de 35% de vida).",
+          "counter": "No desgastarse con ataques físicos directos. Aplicarle daño continuo que ignore armadura como envenenamiento (Gota peligrosa), infección (Moco problemático) o quemadura."
         },
         "en": {
-          "role": "Symbiotic Defensive Wall",
-          "role_title": "Symbiotic Wall",
-          "duo": "Positioned in Frontline (Position 1). Boasts a monumental 70 Armor and 80 HP. Its passive (When attacking, heals team with status by 5% max HP and grants +4% armor) turns burns, poison, and infection into teamwide sustain engines.",
-          "allies": "Self-inflicting allies (Nama, Intiken, Trinagle) or hazardous arena environments (Desert, Vulcan).",
-          "items": "Beak Breaker Seed (+15% max HP); Golden Peckinator (draws all fire into its 70 armor fortress); Raven's Tooth (+15% armor).",
-          "counter": "Withhold status debuffs to deny its passive trigger, or bypass it to target the backline carry."
+          "role": "Armored Wall (Defensive Tank)",
+          "role_title": "Armored Wall",
+          "duo": "Ideally positioned in Frontline (Position 1). Its passive (When attacking, heals team if affected by status (5% max life) and grants armor (4%)) dictates its combat style, complemented by its power (Heals himself (25% max health) and gains armor (+15%)) requiring 100 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "allies": "High-impact strikers who capitalize on the disruption to sweep enemies (such as Chica, Zombie, Shiken, Cacho, or Mechalex).",
+          "items": "Golden peckinator (draws enemy focus onto its high defense); Icy Beak (20% chance to freeze the attacker on hit); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life).",
+          "counter": "Avoid direct physical attacks. Use armor-bypassing afflictions like poison (Danger Drop), infection (Troubleslime), or burn."
         },
         "pt": {
-          "role": "Muralha Defensiva Simbiótica",
-          "role_title": "Muralha Simbiótica",
-          "duo": "Vanguarda (Posição 1). Possui colossais 70 de armadura e 80 de vida. Sua passiva (Ao atacar, cura a equipe sob efeitos em 5% HP e concede +4% armadura) transforma efeitos negativos em cura e proteção constantes.",
-          "allies": "Aliados que se auto-afligem (Nama, Intiken, Trinagle) ou lutas em áreas com efeitos de ambiente.",
-          "items": "Semente Quebra-Bicos (+15% vida); Bicador Dourado (atrai todos os golpes); Dente de Corvo.",
-          "counter": "Evitar aplicar efeitos de estado para não ativar suas curas e focar o parceiro."
+          "role": "Muralha Blindada (Tanque Defensivo)",
+          "role_title": "Muralha Blindada",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ao atacar, cura a equipe se tiver efeito (5% vida máxima) e concede armadura (4%)) define seu estilo de jogo, complementada pelo seu poder (Cura a si mesmo (25% da vida máxima) e ganha armadura (+15%)) que requer 100 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "allies": "Atacantes de alto impacto que aproveitem a distração para derrotar os rivais (como Chica, Zombie, Shiken, Cacho ou Mechalex).",
+          "items": "Bicador Dourado (obtém o foco e atrai todos os ataques para sua alta defesa); Bico Gélido (20% de chance de congelar o agressor ao receber um impacto); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 de vida se cair abaixo de 35% de vida).",
+          "counter": "Não se desgastar com ataques físicos diretos. Aplique dano contínuo que ignora armadura como veneno (Gota Perigosa), infecção (Gosma Problemática) ou queimadura."
         },
         "ru": {
-          "role": "Симбиотическая оборонительная стена",
-          "role_title": "Симбиотическая стена",
-          "duo": "Авангард (Позиция 1). Обладает монументальной броней 70 и 80 ОЗ. Пассивная способность (При атаке лечит союзников с эффектами на 5% макс. HP и дает +4% брони) превращает дебаффы во благо команды.",
-          "allies": "Союзники с самоналожением эффектов (Nama, Intiken, Trinagle) или турниры с постоянными статусами.",
-          "items": "Семя-клюволом (+15% макс. HP); Золотой клеватель (притягивает весь урон на броню 70); Зуб ворона.",
-          "counter": "Не накладывать статусы, чтобы лишить его источника исцеления, или устранять напарника."
+          "role": "Бронированная стена (Защитный танк)",
+          "role_title": "Бронированная стена",
+          "duo": "Идеально подходит для размещения в Авангарде (Позиция 1). Пассивная способность (При атаке лечит команду с эффектом (5% макс. здоровья) и даёт броню (4%)) определяет стиль боя вместе с активной способностью (Лечит себя (25% макс. здоровья) и получает броню (+15%)), требующей 100 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "allies": "Ударники с высоким уроном, реализующие созданное пространство (Chica, Zombie, Shiken, Cacho или Mechalex).",
+          "items": "Золотой клеватель (стягивает фокус и принимает удары на высокую защиту); Ледяной клюв (20% шанс заморозить нападающего при ударе); Трицвет (+5% к урону, броне и скорости); Витальная цепь (лечит 700 ОЗ при падении ниже 35% здоровья).",
+          "counter": "Не тратить ходы на прямой физ. урон. Использовать эффекты в обход брони: яд (Опасная капля), инфекцию (Проблемная слизь) или ожог."
         }
       }
     },
@@ -12317,11 +12317,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12329,36 +12329,36 @@
       "tactical_guide": {
         "turns": 6,
         "es": {
-          "role": "Castigador Arcano de Potenciadores",
-          "role_title": "Castigador Arcano",
-          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Con 85 de daño base, su pasiva (Dispara una estrella cada vez que un rival aumenta su daño) contrarresta radicalmente a enemigos con mejoras de daño acumulativas. Su poder único (Golpe arcano: 100% de daño y -5% a todas las estadísticas del objetivo) debilita metódicamente al enemigo.",
-          "allies": "Tanques que controlen el ritmo (Armor, Pastank, Cururucken) o disruptores de velocidad que le permitan preparar su Golpe arcano.",
-          "items": "Pico ominoso (cura al equipo 20% del daño en cada ataque); Ojo del vacío (+15% stats si cae aliado); Triflor; Páginas del fénix.",
-          "counter": "No utilizar mejoras de daño continuo frente a Ente, o eliminarlo con atacantes veloces antes de que castigue los aumentos."
+          "role": "Coloso Ofensivo (Peleador Pesado)",
+          "role_title": "Coloso Ofensivo",
+          "duo": "Se ubica idealmente en Vanguardia o Retaguardia. Su pasiva (Dispara una estrella siempre que un rival aumente su daño) define su estilo de juego, complementada por su poder (Lanza un proyectil arcano (100% de daño) y baja todas las estadísticas al objetivo (5%)) que requiere 120 puntos de energía (carga en aproximadamente ~6 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "allies": "Combina tanto con atacantes rápidos (Chica, Mosca) para cerrar partidas como con tanques defensivos (Pastank, Armor) para un juego más paciente.",
+          "items": "Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); triflor (+5% a daño, armadura y velocidad); Circuito Vital (cura 700 de salud si baja de 35% de vida); Poción mágica (limpia cualquier estado alterado).",
+          "counter": "Frenar su ofensiva con estados de control: congelarlo con Pico helado / Ojo helado o reducir su cadencia de turnos con parálisis (Pico Electrostático)."
         },
         "en": {
-          "role": "Arcane Buff Punisher",
-          "role_title": "Arcane Punisher",
-          "duo": "Ideally positioned in Backline (Position 2). High 85 base damage coupled with its passive (Shoots a star whenever a rival increases their damage) hard-counters scaling damage setups. Its signature power (Arcane Strike: 100% damage and -5% to all target stats) dismantles enemy hypercarries.",
-          "allies": "Anchor tanks (Armor, Pastank, Cururucken) or speed-control partners granting turns for Arcane Strike.",
-          "items": "Ominous Beak (team heal on strike); Eye of the Void (+15% all stats upon ally defeat); Triflower; Phoenix Pages.",
-          "counter": "Avoid incremental attack-buff builds, or rush it down with high-speed glass cannons."
+          "role": "Offensive Colossus (Bruiser)",
+          "role_title": "Offensive Colossus",
+          "duo": "Ideally positioned in Frontline or Backline. Its passive (Shoots a star whenever a rival increases their damage) dictates its combat style, complemented by its power (Shoots an arcane projectile (100% damage) and reduces all target stats by 5%) requiring 120 energy (~6 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "allies": "Pairs seamlessly with swift attackers (Chica, Mosca) or sturdy anchors (Pastank, Armor) for steady trades.",
+          "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Triflower (+5% damage, armor, and speed); Vital Circuit (heals 700 HP below 35% life); Magic Potion (cleanses all status ailments).",
+          "counter": "Halt its offensive momentum using control: freeze it with Icy Beak / Frozen Eye or halve its turn rate with paralysis (Electrostatic Spike)."
         },
         "pt": {
-          "role": "Punidor Arcano de Melhorias",
-          "role_title": "Punidor Arcano",
-          "duo": "Retaguarda (Posição 2). Com 85 de dano base, sua passiva (Dispara uma estrela sempre que um rival aumenta seu dano) anula galos que acumulam buffs de dano. Seu poder (Golpe Arcano) reduz todos os atributos do alvo em 5%.",
-          "allies": "Tanques firmes (Armor, Pastank, Cururucken) para segurar a partida.",
-          "items": "Bico Ominoso (cura a equipe ao atacar); Olho do Vazio; Triflor; Páginas da Fênix.",
-          "counter": "Evitar composições que aumentem dano continuamente contra Ente."
+          "role": "Colosso Ofensivo (Lutador Pesado)",
+          "role_title": "Colosso Ofensivo",
+          "duo": "Posiciona-se idealmente na Vanguarda ou Retaguarda. Sua passiva (Dispara uma estrela sempre que um rival aumentar seu dano) define seu estilo de jogo, complementada pelo seu poder (Lança um projétil arcano (100% de dano) e reduz todos os atributos do alvo (5%)) que requer 120 pontos de energia (carrega em aproximadamente ~6 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "allies": "Combina perfeitamente tanto com atacantes rápidos (Chica, Mosca) quanto com tanques defensivos (Pastank, Armor).",
+          "items": "Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Triflor (+5% em dano, armadura e velocidade); Circuito Vital (cura 700 de vida se cair abaixo de 35% de vida); Poção Mágica (remove qualquer efeito de estado alterado).",
+          "counter": "Conter sua ofensiva com efeitos de controle: congele-o com Bico Gélido / Olho Congelado ou corte seus turnos com paralisia (Espinho Eletrostático)."
         },
         "ru": {
-          "role": "Тайный каратель баффов",
-          "role_title": "Тайный каратель",
-          "duo": "Тыл (Позиция 2). С 85 базового урона его пассивная способность (Выпускает звезду каждый раз, когда соперник увеличивает урон) жестко контрит разгоняющихся врагов. Способность «Тайный удар» срезает 5% со всех характеристик цели.",
-          "allies": "Стойкие танки (Armor, Pastank, Cururucken), дающие время на подготовку.",
-          "items": "Зловещий клюв (лечит союзников при атаке); Око Бездны; Трицвет; Страницы феникса.",
-          "counter": "Избегать билдов на разгон урона или быстро устранять его скоростными атаками."
+          "role": "Атакующий колосс (Тяжелый боец)",
+          "role_title": "Атакующий колосс",
+          "duo": "Идеально подходит для размещения в Авангарде или Тылу. Пассивная способность (Выпускает звезду каждый раз, когда соперник повышает свой урон) определяет стиль боя вместе с активной способностью (Выпускает чародейский снаряд (100% урона) и снижает все характеристики цели на 5%), требующей 120 энергии (~6 ходов для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "allies": "Отлично сочетается как с быстрыми атакующими (Chica, Mosca), так и с оборонительными танками (Pastank, Armor).",
+          "items": "Насест (начинает со 100% силы и +50 макс. силы для хода 1); Трицвет (+5% к урону, броне и скорости); Витальная цепь (лечит 700 ОЗ при падении ниже 35% здоровья); Волшебное зелье (снимает любые наложенные эффекты).",
+          "counter": "Остановить его агрессию контролем: заморозить Ледяной клюв / Ледяной глаз или снизить темп параличом (Электрошип)."
         }
       }
     },
@@ -12387,11 +12387,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12399,36 +12399,36 @@
       "tactical_guide": {
         "turns": 10,
         "es": {
-          "role": "Mímico Hiperofensivo (Reflejo Voraz)",
-          "role_title": "Mímico Ofensivo",
-          "duo": "Se ubica en Vanguardia o Retaguardia con 100 de daño base y 65 de velocidad. Su pasiva (Copia inmediatamente cualquier aumento de daño que obtengan los rivales) garantiza que jamás se quedará rezagado en potencia ofensiva. Su poder base (Ataque doble) desata 2 golpes brutales con su daño ya multiplicado.",
-          "allies": "Compañeros defensivos con Evasión o Revivir (Garra, Pastank, Aelita) para compensar sus 20 puntos de vida.",
-          "items": "Pluma infectada (cura su baja salud al infligir daño rival); Páginas del fénix (indispensable para resistir caídas tempranas); Triflor; Ojo loco (+15% daño).",
-          "counter": "Explotar su extrema fragilidad (20 HP) con ataques directos veloces o daño de área antes de que copie mejoras."
+          "role": "Cañón de Cristal (Atacante de Ráfaga)",
+          "role_title": "Cañón de Cristal",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Copia inmediatamente todas las subidas de estadísticas que obtenga el rival (No funciona con copias)) define su estilo de juego, complementada por su poder (Ataque doble (realiza 2 ataques consecutivos)) que requiere 100 puntos de energía (carga en aproximadamente ~10 turnos). Su capacidad de asestar ataques múltiples le permite desgastar rápidamente al dúo enemigo o asegurar un remate rápido.",
+          "allies": "Tanques protectores equipados con Picoteador dorado (como Pastank, Armor, Boomy o Garry) para obligar a los rivales a atacarlos a ellos y darle turnos limpios de ofensiva.",
+          "items": "Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Pico vampiro (se cura con el 15% del daño realizado en cada golpe); Páginas del fénix (seguro de vida ante ataques sorpresa).",
+          "counter": "Aprovechar su fragilidad: enfocarlo de inmediato con la inteligencia de combate hacia el rival con menor vida, o usar parálisis con Pico Electrostático para reducir su velocidad a la mitad."
         },
         "en": {
-          "role": "Hyper-Offensive Mimic (Voracious Mirror)",
-          "role_title": "Offensive Mimic",
-          "duo": "Frontline or Backline. Boasts a massive 100 base Damage and 65 Speed. Its passive (Immediately copies all stat increases gained by rivals) ensures it matches and mirrors any opponent scaling. Double Attack power delivers 2 lethal strikes with full copied scaling.",
-          "allies": "Protective anchors (Garra, Pastank, Aelita) to shield its vulnerable 20 HP pool.",
-          "items": "Infected Feather (restores HP when enemy takes damage); Phoenix Pages (vital revival backup); Triflower; Crazy Eye (+15% damage).",
-          "counter": "Capitalize on its paper-thin 20 HP with swift burst damage or AoE bombs before copy effects stack."
+          "role": "Glass Cannon (Burst Striker)",
+          "role_title": "Glass Cannon",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (Immediately copies all stat increases gained by rivals (does not copy copies)) dictates its combat style, complemented by its power (Double attack (performs 2 consecutive attacks)) requiring 100 energy (~10 turns to charge). Its multi-hit capability allows rapid pressure on enemy pairs or decisive knockouts.",
+          "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
+          "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
+          "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
         },
         "pt": {
-          "role": "Mímico Hiperofensivo (Espelho Voraz)",
-          "role_title": "Mímico Ofensivo",
-          "duo": "Posição flexível. Conta com colossais 100 de dano base e 65 de velocidade. Sua passiva (Copia imediatamente qualquer aumento de dano dos rivais) garante igualdade em qualquer escalada de ataque. O Ataque Duplo descarrega 2 golpes devastadores.",
-          "allies": "Tanques de proteção e reviver (Garra, Pastank, Aelita) para cobrir seus 20 de vida.",
-          "items": "Pena Infectada; Páginas da Fênix; Triflor; Olho Loco (+15% dano).",
-          "counter": "Aproveitar seus escassos 20 HP para eliminá-lo logo no primeiro turno com dano explosivo."
+          "role": "Canhão de Cristal (Atacante de Rajada)",
+          "role_title": "Canhão de Cristal",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Copia imediatamente todos os aumentos de atributos obtidos pelo rival) define seu estilo de jogo, complementada pelo seu poder (Ataque duplo (realiza 2 ataques consecutivos)) que requer 100 pontos de energia (carrega em aproximadamente ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla inimiga ou garantir eliminações rápidas.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para atrair ataques inimigos e conceder turnos livres de ataque.",
+          "items": "Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bico Vampírico (cura 15% do dano causado em cada golpe); Páginas da Fênix (seguro de vida contra rajadas inesperadas).",
+          "counter": "Aproveitar sua fragilidade: foque-o imediatamente com IA voltada para o inimigo de menor vida, ou use paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
         },
         "ru": {
-          "role": "Гиператакующий подражатель",
-          "role_title": "Атакующий мимик",
-          "duo": "Гибкая позиция. Обладает 100 базового урона и 65 скорости. Пассивная способность (Мгновенно копирует увеличение урона соперников) позволяет мгновенно сравниваться по мощи с любым врагом. Двойная атака сносит цели на копированных баффах.",
-          "allies": "Танки с возрождением и защитой (Garra, Pastank, Aelita) для прикрытия 20 ОЗ.",
-          "items": "Зараженное перо; Страницы феникса; Трицвет; Сумасшедший глаз (+15% урона).",
-          "counter": "Сфокусировать взрывной урон в его 20 ОЗ до того, как он скопирует вражеские усиления."
+          "role": "Стеклянная пушка (Взрывной урон)",
+          "role_title": "Стеклянная пушка",
+          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (Мгновенно копирует любое повышение характеристик, полученное соперником) определяет стиль боя вместе с активной способностью (Двойная атака (совершает 2 последовательные атаки)), требующей 100 энергии (~10 ходов для зарядки). Способность наносить серию ударов позволяет быстро продавливать вражеский дуэт или оперативно добивать цели.",
+          "allies": "Защитные танки с Золотой клеватель (Pastank, Armor, Boomy или Garry), перетягивающие на себя вражеский фокус.",
+          "items": "Насест (начинает со 100% силы и +50 макс. силы для хода 1); Клюв вампира (лечит 15% от нанесенного урона за удар); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Использовать низкую выживаемость: фокусить через тактику «цель с наименьшим здоровьем» или парализовать Электрошип."
         }
       }
     },
@@ -12457,11 +12457,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12469,36 +12469,36 @@
       "tactical_guide": {
         "turns": 10,
         "es": {
-          "role": "Velocista Letal (Impacto Cinético)",
-          "role_title": "Velocista Cinético",
-          "duo": "Con la velocidad base más alta del juego (100 de velocidad), actúa siempre en primer lugar. Su pasiva (Los ataques infligen daño adicional según su velocidad (+25% de la velocidad total actual)) añade un impacto plano arrollador a cada golpe. Su poder (Ataque doble) duplica esta ventaja cinética para noquear rivales antes de que respondan.",
-          "allies": "Compañeros que aumenten la velocidad del equipo (Ventora, Nave, Javo) o que paralicen enemigos para asegurar ventaja de turno absoluta.",
-          "items": "Guante de gallina (+15% velocidad); Zapatillas escurridizas (+15% velocidad); Ira (2 ataques extra inmediatos); Triflor.",
-          "counter": "Cambio de ritmo (invierte la velocidad convirtiéndolo en el más lento), o estados de Congelación / Parálisis que arruinen su velocidad."
+          "role": "Velocista Ágil (Iniciador de Turno)",
+          "role_title": "Velocista Ágil",
+          "duo": "Se ubica idealmente en Vanguardia (Posición 1). Su pasiva (Sus ataques infligen daño extra en base a su velocidad (25% del total de su velocidad actual)) define su estilo de juego, complementada por su poder (Ataque doble (realiza 2 ataques consecutivos)) que requiere 100 puntos de energía (carga en aproximadamente ~10 turnos). Su capacidad de asestar ataques múltiples le permite desgastar rápidamente al dúo enemigo o asegurar un remate rápido.",
+          "allies": "Tanques protectores equipados con Picoteador dorado (como Pastank, Armor, Boomy o Garry) para obligar a los rivales a atacarlos a ellos y darle turnos limpios de ofensiva.",
+          "items": "Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Pico Electrostático (paraliza al objetivo al inicio y corta su velocidad al 50%); Zapapollos (5% de probabilidad de esquivar ataques cada turno).",
+          "counter": "Aprovechar su fragilidad: enfocarlo de inmediato con la inteligencia de combate hacia el rival con menor vida, o usar parálisis con Pico Electrostático para reducir su velocidad a la mitad."
         },
         "en": {
-          "role": "Lethal Speedster (Kinetic Impact)",
-          "role_title": "Kinetic Speedster",
-          "duo": "With the highest natural Speed stat in the game (100 Speed), it practically always acts first. Its passive (Attacks deal extra damage based on speed (+25% current total speed)) injects massive bonus damage into every hit. Double Attack duplicates this momentum for immediate first-turn knockouts.",
-          "allies": "Speed amplifiers (Ventora, Nave, Javo) or paralysis inducers guaranteeing turn supremacy.",
-          "items": "Hen's Glove (+15% speed); Sneaky Sneakers (+15% speed); Wrath (2 extra immediate strikes); Triflower.",
-          "counter": "Rhythm Change (inverts turn order making it act last), or Freeze and Paralysis debilitating its speed engine."
+          "role": "Agile Speedster (Turn Initiator)",
+          "role_title": "Agile Speedster",
+          "duo": "Ideally positioned in Frontline (Position 1). Its passive (Attacks deal extra damage based on speed (25% of current total speed)) dictates its combat style, complemented by its power (Double attack (performs 2 consecutive attacks)) requiring 100 energy (~10 turns to charge). Its multi-hit capability allows rapid pressure on enemy pairs or decisive knockouts.",
+          "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
+          "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Electrostatic Spike (paralyzes target on start, cutting speed by 50%); Sneaky Sneakers (5% dodge chance each turn).",
+          "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
         },
         "pt": {
-          "role": "Velocista Letal (Impacto Cinético)",
-          "role_title": "Velocista Cinético",
-          "duo": "Com 100 de velocidade base, atua sempre primeiro. Sua passiva (+25% da velocidade total convertida em dano extra) adiciona impacto massivo a cada golpe, potencializado pelo Ataque Duplo para nocautes relâmpago.",
-          "allies": "Parceiros que amplifiquem velocidade (Ventora, Nave, Javo) ou apliquem paralisia.",
-          "items": "Luva de Galinha (+15% vel); Zapatilhas Escorregadias (+15% vel); Ira (2 ataques extras); Triflor.",
-          "counter": "Mudança de Ritmo (inverte a velocidade tornando-o o último a agir), congelamento ou paralisia."
+          "role": "Velocista Ágil (Iniciador de Turnos)",
+          "role_title": "Velocista Ágil",
+          "duo": "Posiciona-se idealmente na Vanguarda (Posição 1). Sua passiva (Ataques causam dano extra baseado na velocidade (25% da velocidade atual)) define seu estilo de jogo, complementada pelo seu poder (Ataque duplo (realiza 2 ataques consecutivos)) que requer 100 pontos de energia (carrega em aproximadamente ~10 turnos). Sua capacidade de desferir ataques múltiplos permite desgastar rapidamente a dupla inimiga ou garantir eliminações rápidas.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para atrair ataques inimigos e conceder turnos livres de ataque.",
+          "items": "Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Espinho Eletrostático (paralisa o alvo no início e reduz sua velocidade pela metade); Tênis Furtivos (5% de chance de esquivar de ataques a cada turno).",
+          "counter": "Aproveitar sua fragilidade: foque-o imediatamente com IA voltada para o inimigo de menor vida, ou use paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
         },
         "ru": {
-          "role": "Смертоносный спидстер (Кинетический удар)",
-          "role_title": "Кинетический спидстер",
-          "duo": "Имеет наивысшую скорость в игре (100 скорости) и практически всегда ходит первым. Пассивная способность (+25% от текущей скорости в виде дополнительного урона) делает базовые удары и Двойную атаку сокрушительными.",
-          "allies": "Ускорители команды (Ventora, Nave, Javo) и накладыватели паралича.",
-          "items": "Перчатка курицы (+15% скорости); Скользкие кроссовки; Гнев (2 дополнительные атаки); Трицвет.",
-          "counter": "«Смена ритма» (инвертирует очередность, делая его последним), заморозка или паралич."
+          "role": "Ловкий скороход (Инициатор хода)",
+          "role_title": "Ловкий скороход",
+          "duo": "Идеально подходит для размещения в Авангарде (Позиция 1). Пассивная способность (Атаки наносят доп. урон в зависимости от скорости (25% от текущей скорости)) определяет стиль боя вместе с активной способностью (Двойная атака (совершает 2 последовательные атаки)), требующей 100 энергии (~10 ходов для зарядки). Способность наносить серию ударов позволяет быстро продавливать вражеский дуэт или оперативно добивать цели.",
+          "allies": "Защитные танки с Золотой клеватель (Pastank, Armor, Boomy или Garry), перетягивающие на себя вражеский фокус.",
+          "items": "Насест (начинает со 100% силы и +50 макс. силы для хода 1); Электрошип (парализует цель на старте, снижая скорость на 50%); Кеды скрытности (5% шанс увернуться от атак каждый ход).",
+          "counter": "Использовать низкую выживаемость: фокусить через тактику «цель с наименьшим здоровьем» или парализовать Электрошип."
         }
       }
     },
@@ -12527,11 +12527,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12539,36 +12539,36 @@
       "tactical_guide": {
         "turns": 3,
         "es": {
-          "role": "Especialista Evasivo y Manipulador Temporal",
-          "role_title": "Manipulador Temporal",
-          "duo": "Se ubica en posición flexible. Su pasiva (Al esquivar un ataque, obtiene el turno inmediatamente y aumenta su daño (+5%)) interrumpe la secuencia de turnos enemiga ante cada esquive. Su poder (Cambio de ritmo) invierte la velocidad de combate, convirtiendo su baja velocidad (20) en prioridad máxima absoluta.",
-          "allies": "Generadores de evasión colectiva (Evil Gatarlos, Polliro, Wicken) para concederle cargas de esquive continuas.",
-          "items": "Zapatillas escurridizas (posibilidad de evasión); Primer shuriken (150% daño al inicio); Triflor; Páginas del fénix.",
-          "counter": "Atacantes que ignoren la evasión (Alectrica) o proyectiles y efectos que no puedan ser esquivados."
+          "role": "Batería de Habilidades (Lanzador Continuo)",
+          "role_title": "Batería de Habilidades",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Si esquiva un ataque, obtiene el próximo turno inmediatamente y aumenta su daño (+5%)) define su estilo de juego, complementada por su poder (Invierte el orden de velocidad de todos los pollos en combate (los más lentos actúan primero)) que requiere 120 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "allies": "Protectores de primera línea que aguanten mientras cicla continuamente su poder especial (Pastank, Boomy, Garry).",
+          "items": "Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Pico vampiro (se cura con el 15% del daño realizado en cada golpe); Páginas del fénix (seguro de vida ante ataques sorpresa).",
+          "counter": "Observar qué rol cumple en el dúo y aislarlo eliminando primero a su compañero para dejarlo en una situación vulnerable de 2 contra 1."
         },
         "en": {
-          "role": "Evasive Specialist & Tempo Manipulator",
-          "role_title": "Tempo Manipulator",
-          "duo": "Flexible positioning. Its passive (If dodging an attack, gets next turn immediately and +5% damage) completely hijacks enemy momentum on every evade. Its power (Rhythm Change) inverts turn speed order, turning its slow 20 Speed into absolute top priority.",
-          "allies": "Team evasion providers (Evil Gatarlos, Polliro, Wicken) granting repeatable dodges.",
-          "items": "Sneaky Sneakers (dodge chance); First Shuriken (150% opening damage); Triflower; Phoenix Pages.",
-          "counter": "Undodgeable attacks (Alectrica ignores avoid) and indirect status damage bypassing evasion entirely."
+          "role": "Skill Battery (Continuous Caster)",
+          "role_title": "Skill Battery",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (If dodging an attack, gets next turn immediately and increases damage (+5%)) dictates its combat style, complemented by its power (Inverts turn speed order for all chickens in combat (slower acts first)) requiring 120 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "allies": "Frontline stalwarts who buy time while it continuously cycles special powers (Pastank, Boomy, Garry).",
+          "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
+          "counter": "Identify its role within the pair and isolate it by taking down its teammate first, forcing an uneven 2-on-1 disadvantage."
         },
         "pt": {
-          "role": "Especialista Evasivo e Manipulador Temporal",
-          "role_title": "Manipulador Temporal",
-          "duo": "Posição flexível. Sua passiva (Ao esquivar, ganha o turno imediatamente e +5% dano) quebra a ordem inimiga. O poder (Mudança de Ritmo) inverte a ordem de velocidade, transformando sua velocidade 20 em prioridade máxima.",
-          "allies": "Provedores de esquiva para a equipe (Evil Gatarlos, Polliro, Wicken).",
-          "items": "Zapatilhas Escorregadias; Primeiro Shuriken; Triflor; Páginas da Fênix.",
-          "counter": "Inimigos que ignoram esquiva (Alectrica) ou dano indireto por efeitos."
+          "role": "Bateria de Habilidades (Conjurador Contínuo)",
+          "role_title": "Bateria de Habilidades",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Se esquivar de um ataque, ganha o próximo turno imediatamente e aumenta o dano (+5%)) define seu estilo de jogo, complementada pelo seu poder (Inverte a ordem de velocidade de todos os frangos em combate (os mais lentos agem primeiro)) que requer 120 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "allies": "Protetores de linha de frente que aguentem a pressão enquanto ele dispara repetidamente seu poder especial (Pastank, Boomy, Garry).",
+          "items": "Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bico Vampírico (cura 15% do dano causado em cada golpe); Páginas da Fênix (seguro de vida contra rajadas inesperadas).",
+          "counter": "Identificar seu papel na dupla e isolá-lo eliminando primeiro o parceiro para forçar uma situação vulnerável de 2 contra 1."
         },
         "ru": {
-          "role": "Специалист по уклонению и манипулятор темпом",
-          "role_title": "Манипулятор темпом",
-          "duo": "Гибкая позиция. Пассивная способность (При уклонении немедленно получает ход и +5% к урону) перехватывает инициативу. Способность «Смена ритма» переворачивает очередность ходов, делая его низкую скорость 20 абсолютным преимуществом.",
-          "allies": "Поставщики уклонений команде (Evil Gatarlos, Polliro, Wicken).",
-          "items": "Скользкие кроссовки; Первый сюрикен; Трицвет; Страницы феникса.",
-          "counter": "Атаки, игнорирующие уклонение (Alectrica), и косвенный урон от эффектов."
+          "role": "Батарея навыков (Постоянный кастер)",
+          "role_title": "Батарея навыков",
+          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (При уклонении от атаки сразу получает следующий ход и увеличивает урон (+5%)) определяет стиль боя вместе с активной способностью (Меняет порядок ходов по скорости на обратный (самые медленные ходят первыми)), требующей 120 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "allies": "Стойкие бойцы передовой, выигрывающие время для циклического применения его способностей (Pastank, Boomy, Garry).",
+          "items": "Насест (начинает со 100% силы и +50 макс. силы для хода 1); Клюв вампира (лечит 15% от нанесенного урона за удар); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Определить его роль в связке и изолировать, сначала устранив напарника для создания преимущества 2 против 1."
         }
       }
     },
@@ -12597,11 +12597,11 @@
       "stat_total": 200,
       "habitats": {
         "wild": [
-          "La fábrica"
+          "Arcana"
         ],
         "eggs": [],
         "wild_ids": [
-          7
+          8
         ],
         "egg_ids": []
       },
@@ -12609,36 +12609,36 @@
       "tactical_guide": {
         "turns": 3,
         "es": {
-          "role": "Coloso Ofensivo y Mártir Retributivo",
-          "role_title": "Mártir Colosal",
-          "duo": "Posee el daño más colosal de toda la historia del juego (130 de daño base) a costa de 10 puntos de vida y 0 de armadura. Al ser golpeado, su pasiva aumenta la vida máxima (+5%) y velocidad (+5%) de su aliado. Su temible poder (Memento mori) sentencia a muerte al enemigo que se atreva a asestarle el golpe final.",
-          "allies": "Compañeros con Revivir (Garra, Easy East) o Páginas del fénix para otorgarle segundas oportunidades de ataque.",
-          "items": "Páginas del fénix (revivir indispensable); Ojos sincronizados (devuelve efectos); Triflor; Dinamita.",
-          "counter": "Rematarlo con veneno, infección o daño indirecto de estados para no activar la retribución mortal de Memento mori."
+          "role": "Atacante de Fuerza Bruta (Golpeador Pesado)",
+          "role_title": "Fuerza Bruta",
+          "duo": "Se ubica idealmente en Retaguardia (Posición 2). Su pasiva (Al ser golpeado, aumenta la vida máxima de los aliados (+5%) y les otorga velocidad (+5%)) define su estilo de juego, complementada por su poder (Durante los próximos 3 turnos, si este pollo es derrotado por un ataque, se lleva a su atacante también) que requiere 120 puntos de energía (carga en aproximadamente ~3 turnos). Cumple un rol versátil buscando generar intercambios favorables para lograr una ventaja numérica de 2 contra 1.",
+          "allies": "Tanques protectores equipados con Picoteador dorado (como Pastank, Armor, Boomy o Garry) para obligar a los rivales a atacarlos a ellos y darle turnos limpios de ofensiva.",
+          "items": "Palo de raíz (inicia con el poder al 100% y +50 poder máximo para usarlo en el turno 1); Pico vampiro (se cura con el 15% del daño realizado en cada golpe); Páginas del fénix (seguro de vida ante ataques sorpresa).",
+          "counter": "Aprovechar su fragilidad: enfocarlo de inmediato con la inteligencia de combate hacia el rival con menor vida, o usar parálisis con Pico Electrostático para reducir su velocidad a la mitad."
         },
         "en": {
-          "role": "Offensive Colossus & Retributive Martyr",
-          "role_title": "Colossal Martyr",
-          "duo": "Features the highest raw base Damage in the entire game (130 Damage) balanced by 10 HP and 0 Armor. When struck, its passive buffs its partner with +5% max HP and +5% speed. Its terrifying power (Memento Mori) dooms whichever enemy dares deliver its finishing blow.",
-          "allies": "Revive providers (Garra, Easy East, Bjorn) keeping Sabio attacking repeatedly.",
-          "items": "Phoenix Pages (essential extra life); Synchronized Eyes (shares debuffs); Triflower; Dynamite.",
-          "counter": "Finish it off via poison, burn, or passive indirect damage to avoid triggering Memento Mori's strike retribution."
+          "role": "Raw Power Striker (Heavy Hitter)",
+          "role_title": "Heavy Hitter",
+          "duo": "Ideally positioned in Backline (Position 2). Its passive (When hit, increases allies max life (+5%) and grants speed (+5%)) dictates its combat style, complemented by its power (For the next 3 turns, if defeated by an attack, kills the attacker too) requiring 120 energy (~3 turns to charge). Fulfills a versatile role aiming for advantageous trades to establish a 2-on-1 team advantage.",
+          "allies": "Protective tanks with Golden peckinator (such as Pastank, Armor, Boomy, or Garry) to draw enemy fire and grant clean offensive turns.",
+          "items": "Roost stick (starts with 100% power and +50 max power for instant turn 1 use); Vampire Beak (heals 15% of damage dealt on strike); Phoenix Pages (life insurance against sudden burst).",
+          "counter": "Exploit its low durability: target it immediately with lowest-health combat focus, or apply paralysis with Electrostatic Spike to halve its speed."
         },
         "pt": {
-          "role": "Colosso Ofensivo e Mártir Retributivo",
-          "role_title": "Mártir Colossal",
-          "duo": "O maior dano base de todo o jogo (130 de dano) balanceado por 10 de vida e 0 de armadura. Ao sofrer dano, concede +5% de vida máxima e +5% de velocidade ao aliado. Seu poder (Memento Mori) elimina instantaneamente o atacante que o derrotar.",
-          "allies": "Aliados com mecânica de reviver (Garra, Easy East, Bjorn).",
-          "items": "Páginas da Fênix; Olhos Sincronizados; Triflor; Dinamite.",
-          "counter": "Eliminá-lo com dano indireto de veneno ou infecção para não acionar a retribuição do Memento Mori."
+          "role": "Atacante de Força Bruta (Golpeador Pesado)",
+          "role_title": "Força Bruta",
+          "duo": "Posiciona-se idealmente na Retaguarda (Posição 2). Sua passiva (Ao ser atingido, aumenta a vida máxima dos aliados (+5%) e concede velocidade (+5%)) define seu estilo de jogo, complementada pelo seu poder (Pelos próximos 3 turnos, se este frango for derrotado por um ataque, leva o atacante junto) que requer 120 pontos de energia (carrega em aproximadamente ~3 turnos). Desempenha um papel versátil buscando trocas vantajosas para conquistar a superioridade numérica de 2 contra 1.",
+          "allies": "Tanques protetores equipados com Bicador Dourado (como Pastank, Armor, Boomy ou Garry) para atrair ataques inimigos e conceder turnos livres de ataque.",
+          "items": "Poleiro (inicia com poder a 100% e +50 poder máximo para usar no turno 1); Bico Vampírico (cura 15% do dano causado em cada golpe); Páginas da Fênix (seguro de vida contra rajadas inesperadas).",
+          "counter": "Aproveitar sua fragilidade: foque-o imediatamente com IA voltada para o inimigo de menor vida, ou use paralisia com Espinho Eletrostático para cortar sua velocidade pela metade."
         },
         "ru": {
-          "role": "Колоссальный дамагер и мстительный мученик",
-          "role_title": "Колоссальный мученик",
-          "duo": "Обладает самым высоким базовым уроном в игре (130 урона) при 10 ОЗ и 0 брони. При получении удара повышает напарнику макс. здоровье (+5%) и скорость (+5%). Способность «Memento Mori» мгновенно забирает в могилу любого врага, нанесшего смертельный удар.",
-          "allies": "Поставщики возрождений (Garra, Easy East, Bjorn), дающие шанс нанести серию ударов.",
-          "items": "Страницы феникса (обязательно); Синхронные глаза; Трицвет; Динамит.",
-          "counter": "Добивать ядом, горением или косвенным уроном, избегая смертельного возмездия Memento Mori."
+          "role": "Атакующий грубой силы (Тяжелый ударник)",
+          "role_title": "Грубая сила",
+          "duo": "Идеально подходит для размещения в Тылу (Позиция 2). Пассивная способность (При получении удара увеличивает макс. здоровье союзников (+5%) и даёт скорость (+5%)) определяет стиль боя вместе с активной способностью (В течение следующих 3 ходов, если эта курочка повержена атакой, атакующий погибает вместе с ней), требующей 120 энергии (~3 хода для зарядки). Выполняет универсальную роль, стремясь к выгодным разменам для создания численного преимущества 2 против 1.",
+          "allies": "Защитные танки с Золотой клеватель (Pastank, Armor, Boomy или Garry), перетягивающие на себя вражеский фокус.",
+          "items": "Насест (начинает со 100% силы и +50 макс. силы для хода 1); Клюв вампира (лечит 15% от нанесенного урона за удар); Страницы феникса (страховка от внезапного взрывного урона).",
+          "counter": "Использовать низкую выживаемость: фокусить через тактику «цель с наименьшим здоровьем» или парализовать Электрошип."
         }
       }
     }
@@ -14658,34 +14658,18 @@
         "ru": "Зловещий клюв"
       },
       "description": {
-        "es": "Cura a los aliados al atacar (20% del daño realizado)",
+        "es": "Cura a los aliados al atacar (20% del daño infligido)",
         "en": "Heals allies when attacking (20% of damage dealt)",
-        "pt": "Cura os aliados ao atacar (20% do dano causado)",
-        "ru": "Лечит союзников при атаке (20% от нанесенного урона)"
+        "pt": "Cura aliados ao atacar (20% do dano causado)",
+        "ru": "Лечит союзников при атаке (20% нанесённого урона)"
       },
       "price": 16,
       "shop_price": 85,
       "consumable": false,
       "sprite": "images/items/75.png",
-      "found_in_zones": [
-        "Modo Infinito",
-        "Tablón de Intercambios"
-      ],
+      "found_in_zones": [],
       "found_in_zone_ids": [],
-      "found_in_special": [
-        {
-          "es": "Modo Infinito",
-          "en": "Infinite Mode",
-          "pt": "Modo Infinito",
-          "ru": "Бесконечный режим"
-        },
-        {
-          "es": "Tablón de Intercambios",
-          "en": "Exchange Board",
-          "pt": "Quadro de Trocas",
-          "ru": "Доска обмена"
-        }
-      ]
+      "found_in_special": []
     },
     {
       "id": 76,
@@ -14693,37 +14677,21 @@
         "es": "Pluma infectada",
         "en": "Infected Feather",
         "pt": "Pena Infectada",
-        "ru": "Зараженное перо"
+        "ru": "Заражённое перо"
       },
       "description": {
         "es": "Se cura a sí mismo al ver a enemigos recibir daño (5% de su vida máxima)",
-        "en": "Heals self when seeing enemies take damage (5% max life)",
-        "pt": "Cura a si mesmo ao ver inimigos receberem dano (5% da vida máxima)",
-        "ru": "Лечит себя, когда враги получают урон (5% от макс. здоровья)"
+        "en": "Heals self when seeing enemies take damage (5% max HP)",
+        "pt": "Cura a si mesmo ao ver inimigos sofrendo dano (5% vida máxima)",
+        "ru": "Лечит себя, когда враги получают урон (5% макс. здоровья)"
       },
       "price": 16,
       "shop_price": 85,
       "consumable": false,
       "sprite": "images/items/76.png",
-      "found_in_zones": [
-        "Modo Infinito",
-        "Tablón de Intercambios"
-      ],
+      "found_in_zones": [],
       "found_in_zone_ids": [],
-      "found_in_special": [
-        {
-          "es": "Modo Infinito",
-          "en": "Infinite Mode",
-          "pt": "Modo Infinito",
-          "ru": "Бесконечный режим"
-        },
-        {
-          "es": "Tablón de Intercambios",
-          "en": "Exchange Board",
-          "pt": "Quadro de Trocas",
-          "ru": "Доска обмена"
-        }
-      ]
+      "found_in_special": []
     },
     {
       "id": 77,
@@ -14731,37 +14699,21 @@
         "es": "Ojo arcano",
         "en": "Arcane Eye",
         "pt": "Olho Arcano",
-        "ru": "Тайный глаз"
+        "ru": "Чародейский глаз"
       },
       "description": {
         "es": "Convierte toda su armadura en daño al iniciar el combate",
-        "en": "Converts all armor into damage at the start of battle",
-        "pt": "Converte toda a sua armadura em dano no início do combate",
-        "ru": "Превращает всю свою броню в урон в начале боя"
+        "en": "Converts all armor into damage at combat start",
+        "pt": "Converte toda sua armadura em dano no início do combate",
+        "ru": "Превращает всю броню в урон в начале боя"
       },
       "price": 16,
       "shop_price": 85,
       "consumable": false,
       "sprite": "images/items/77.png",
-      "found_in_zones": [
-        "Modo Infinito",
-        "Tablón de Intercambios"
-      ],
+      "found_in_zones": [],
       "found_in_zone_ids": [],
-      "found_in_special": [
-        {
-          "es": "Modo Infinito",
-          "en": "Infinite Mode",
-          "pt": "Modo Infinito",
-          "ru": "Бесконечный режим"
-        },
-        {
-          "es": "Tablón de Intercambios",
-          "en": "Exchange Board",
-          "pt": "Quadro de Trocas",
-          "ru": "Доска обмена"
-        }
-      ]
+      "found_in_special": []
     },
     {
       "id": 78,
@@ -14772,34 +14724,18 @@
         "ru": "Динамит"
       },
       "description": {
-        "es": "Usar su poder desata una explosión que daña a todos los enemigos (30% de su daño)",
-        "en": "Using power triggers an explosion damaging all enemies (30% damage)",
-        "pt": "Usar seu poder causa uma explosão que danifica todos os inimigos (30% do dano)",
-        "ru": "Использование способности вызывает взрыв, наносящий урон всем врагам (30% урона)"
+        "es": "Usar tu poder genera una explosión en área",
+        "en": "Using your power triggers an area explosion",
+        "pt": "Usar seu poder gera uma explosão em área",
+        "ru": "Использование силы вызывает взрыв по площади"
       },
       "price": 16,
       "shop_price": 85,
       "consumable": false,
       "sprite": "images/items/78.png",
-      "found_in_zones": [
-        "Modo Infinito",
-        "Tablón de Intercambios"
-      ],
+      "found_in_zones": [],
       "found_in_zone_ids": [],
-      "found_in_special": [
-        {
-          "es": "Modo Infinito",
-          "en": "Infinite Mode",
-          "pt": "Modo Infinito",
-          "ru": "Бесконечный режим"
-        },
-        {
-          "es": "Tablón de Intercambios",
-          "en": "Exchange Board",
-          "pt": "Quadro de Trocas",
-          "ru": "Доска обмена"
-        }
-      ]
+      "found_in_special": []
     },
     {
       "id": 79,
@@ -14819,25 +14755,9 @@
       "shop_price": 85,
       "consumable": false,
       "sprite": "images/items/79.png",
-      "found_in_zones": [
-        "Modo Infinito",
-        "Tablón de Intercambios"
-      ],
+      "found_in_zones": [],
       "found_in_zone_ids": [],
-      "found_in_special": [
-        {
-          "es": "Modo Infinito",
-          "en": "Infinite Mode",
-          "pt": "Modo Infinito",
-          "ru": "Бесконечный режим"
-        },
-        {
-          "es": "Tablón de Intercambios",
-          "en": "Exchange Board",
-          "pt": "Quadro de Trocas",
-          "ru": "Доска обмена"
-        }
-      ]
+      "found_in_special": []
     }
   ],
   "passives": [
@@ -18204,10 +18124,10 @@
     {
       "id": 160,
       "description": {
-        "es": "Cuando un aliado usa su poder, lanza un misil al enemigo",
+        "es": "Cuando un aliado usa su poder, lanza un misil",
         "en": "When an ally uses their power, launches a missile",
-        "pt": "Quando um aliado usa seu poder, lança um míssil no inimigo",
-        "ru": "Когда союзник использует способность, выпускает ракету во врага"
+        "pt": "Quando um aliado usa seu poder, lança um míssil",
+        "ru": "Когда союзник использует силу, выпускает ракету"
       },
       "chickens": [
         {
@@ -18225,10 +18145,10 @@
     {
       "id": 161,
       "description": {
-        "es": "Al usar su poder, infecta a todos los enemigos",
+        "es": "Al usar su poder infecta a todos los enemigos",
         "en": "When using power, infects all enemies",
         "pt": "Ao usar seu poder, infecta todos os inimigos",
-        "ru": "При использовании способности заражает всех врагов"
+        "ru": "При использовании силы заражает всех врагов"
       },
       "chickens": [
         {
@@ -18246,10 +18166,10 @@
     {
       "id": 162,
       "description": {
-        "es": "Ignora esquives; roba un 5% de vida máxima al atacar a enemigos paralizados",
+        "es": "Ignorá los esquives y al atacar enemigos paralizados roba vida máxima (5%)",
         "en": "Ignores dodges and when attacking paralyzed enemies steals max life (5%)",
-        "pt": "Ignora esquivas; rouba 5% da vida máxima ao atacar inimigos paralisados",
-        "ru": "Игнорирует уклонения; крадет 5% макс. здоровья при атаке парализованных врагов"
+        "pt": "Ignora esquivas e ao atacar inimigos paralisados rouba vida máxima (5%)",
+        "ru": "Игнорирует уклонения и крадёт макс. здоровье (5%) при атаке парализованных врагов"
       },
       "chickens": [
         {
@@ -18267,10 +18187,10 @@
     {
       "id": 163,
       "description": {
-        "es": "Inhabilita el enfoque forzado de objetivos del equipo enemigo",
+        "es": "Inhabilita el enfoque de los enemigos",
         "en": "Disables enemy focus targeting",
-        "pt": "Desativa o foco de alvos forçado da equipe inimiga",
-        "ru": "Отключает принудительную фокусировку целей у команды противника"
+        "pt": "Desativa o foco dos inimigos",
+        "ru": "Отключает фокусировку у врагов"
       },
       "chickens": [
         {
@@ -18288,10 +18208,10 @@
     {
       "id": 164,
       "description": {
-        "es": "Al atacar, cura al equipo si tiene algún efecto (5% vida máxima) y le otorga armadura (+4%)",
+        "es": "Al atacar, cura a su equipo si este tiene un efecto (5% vida máxima) y le otorga armadura (4%)",
         "en": "When attacking, heals team if affected by status (5% max life) and grants armor (4%)",
-        "pt": "Ao atacar, cura a equipe se estiver sob efeito (5% vida máxima) e concede armadura (+4%)",
-        "ru": "При атаке лечит команду при наличии эффектов (5% макс. HP) и дает броню (+4%)"
+        "pt": "Ao atacar, cura a equipe se tiver efeito (5% vida máxima) e concede armadura (4%)",
+        "ru": "При атаке лечит команду с эффектом (5% макс. здоровья) и даёт броню (4%)"
       },
       "chickens": [
         {
@@ -18309,10 +18229,10 @@
     {
       "id": 165,
       "description": {
-        "es": "Dispara una estrella cada vez que un rival aumenta su daño",
+        "es": "Dispara una estrella siempre que un rival aumente su daño",
         "en": "Shoots a star whenever a rival increases their damage",
-        "pt": "Dispara uma estrela sempre que um rival aumenta seu dano",
-        "ru": "Выпускает звезду каждый раз, когда соперник увеличивает свой урон"
+        "pt": "Dispara uma estrela sempre que um rival aumentar seu dano",
+        "ru": "Выпускает звезду каждый раз, когда соперник повышает свой урон"
       },
       "chickens": [
         {
@@ -18330,10 +18250,10 @@
     {
       "id": 166,
       "description": {
-        "es": "Copia inmediatamente cualquier aumento de daño que obtengan los rivales",
+        "es": "Copia inmediatamente todas las subidas de estadísticas que obtenga el rival (No funciona con copias)",
         "en": "Immediately copies all stat increases gained by rivals (does not copy copies)",
-        "pt": "Copia imediatamente qualquer aumento de dano obtido pelos rivais",
-        "ru": "Мгновенно копирует любое увеличение урона, полученное соперниками"
+        "pt": "Copia imediatamente todos os aumentos de atributos obtidos pelo rival",
+        "ru": "Мгновенно копирует любое повышение характеристик, полученное соперником"
       },
       "chickens": [
         {
@@ -18351,10 +18271,10 @@
     {
       "id": 167,
       "description": {
-        "es": "Los ataques infligen daño adicional según su velocidad (+25% de la velocidad total actual)",
+        "es": "Sus ataques infligen daño extra en base a su velocidad (25% del total de su velocidad actual)",
         "en": "Attacks deal extra damage based on speed (25% of current total speed)",
-        "pt": "Ataques causam dano adicional com base na velocidade (+25% da velocidade total atual)",
-        "ru": "Атаки наносят дополнительный урон в зависимости от скорости (+25% от текущей скорости)"
+        "pt": "Ataques causam dano extra baseado na velocidade (25% da velocidade atual)",
+        "ru": "Атаки наносят доп. урон в зависимости от скорости (25% от текущей скорости)"
       },
       "chickens": [
         {
@@ -18372,10 +18292,10 @@
     {
       "id": 168,
       "description": {
-        "es": "Al esquivar un ataque, obtiene el turno inmediatamente y aumenta su daño (+5%)",
+        "es": "Si esquiva un ataque, obtiene el próximo turno inmediatamente y aumenta su daño (+5%)",
         "en": "If dodging an attack, gets next turn immediately and increases damage (+5%)",
-        "pt": "Ao esquivar de um ataque, ganha o turno imediatamente e aumenta seu dano (+5%)",
-        "ru": "При уклонении от атаки немедленно получает ход и увеличивает урон (+5%)"
+        "pt": "Se esquivar de um ataque, ganha o próximo turno imediatamente e aumenta o dano (+5%)",
+        "ru": "При уклонении от атаки сразу получает следующий ход и увеличивает урон (+5%)"
       },
       "chickens": [
         {
@@ -18393,10 +18313,10 @@
     {
       "id": 169,
       "description": {
-        "es": "Al recibir daño, aumenta la vida máxima de los aliados (+5%) y otorga velocidad (+5%)",
+        "es": "Al ser golpeado, aumenta la vida máxima de los aliados (+5%) y les otorga velocidad (+5%)",
         "en": "When hit, increases allies max life (+5%) and grants speed (+5%)",
-        "pt": "Ao receber dano, aumenta a vida máxima dos aliados (+5%) e concede velocidade (+5%)",
-        "ru": "При получении урона увеличивает макс. здоровье союзников (+5%) и дает скорость (+5%)"
+        "pt": "Ao ser atingido, aumenta a vida máxima dos aliados (+5%) e concede velocidade (+5%)",
+        "ru": "При получении удара увеличивает макс. здоровье союзников (+5%) и даёт скорость (+5%)"
       },
       "chickens": [
         {
@@ -20161,18 +20081,7 @@
         "pt": "Troca o multiplicador de dano com o alvo",
         "ru": "Обменивается множителем урона с целью"
       },
-      "chickens": [
-        {
-          "id": 28,
-          "name": {
-            "es": "Alien",
-            "en": "Alien",
-            "pt": "Alien",
-            "ru": "Alien"
-          },
-          "sprite": "images/chickens/28.png"
-        }
-      ],
+      "chickens": [],
       "chickens_hidden": [
         {
           "id": 27,
@@ -22772,18 +22681,28 @@
       "id": 54,
       "cost": 120,
       "name": {
-        "es": "Golpe arcano",
-        "en": "Arcane Strike",
-        "pt": "Golpe Arcano",
-        "ru": "Тайный удар"
+        "es": "Lanza un proyectil arcano (100% de daño) y baja todas las estadísticas al objetivo (5%)",
+        "en": "Shoots an arcane projectile (100% damage) and reduces all target stats by 5%",
+        "pt": "Lança um projétil arcano (100% de dano) e reduz todos os atributos do alvo (5%)",
+        "ru": "Выпускает чародейский снаряд (100% урона) и снижает все характеристики цели на 5%"
       },
       "description": {
-        "es": "Lanza un proyectil arcano (100% de daño) y reduce todas las estadísticas del objetivo en 5%",
-        "en": "Fires an arcane projectile (100% damage) and reduces all target stats by 5%",
-        "pt": "Dispara um projétil arcano (100% de dano) e reduz todos os atributos do alvo em 5%",
-        "ru": "Выпускает тайный снаряд (100% урона) и снижает все характеристики цели на 5%"
+        "es": "Lanza un proyectil arcano (100% de daño) y baja todas las estadísticas al objetivo (5%)",
+        "en": "Shoots an arcane projectile (100% damage) and reduces all target stats by 5%",
+        "pt": "Lança um projétil arcano (100% de dano) e reduz todos os atributos do alvo (5%)",
+        "ru": "Выпускает чародейский снаряд (100% урона) и снижает все характеристики цели на 5%"
       },
       "chickens": [
+        {
+          "id": 28,
+          "name": {
+            "es": "Alien",
+            "en": "Alien",
+            "pt": "Alien",
+            "ru": "Alien"
+          },
+          "sprite": "images/chickens/28.png"
+        },
         {
           "id": 165,
           "name": {
@@ -22801,16 +22720,16 @@
       "id": 55,
       "cost": 120,
       "name": {
-        "es": "Cambio de ritmo",
-        "en": "Rhythm Change",
-        "pt": "Mudança de Ritmo",
-        "ru": "Смена ритма"
+        "es": "Invierte el orden de velocidad de todos los pollos en combate (los más lentos actúan primero)",
+        "en": "Inverts turn speed order for all chickens in combat (slower acts first)",
+        "pt": "Inverte a ordem de velocidade de todos os frangos em combate (os mais lentos agem primeiro)",
+        "ru": "Меняет порядок ходов по скорости на обратный (самые медленные ходят первыми)"
       },
       "description": {
-        "es": "Invierte el orden de velocidad de los turnos en combate (los más lentos actúan primero)",
-        "en": "Inverts combat turn speed order (slower acts first)",
-        "pt": "Inverte a ordem de velocidade dos turnos em combate (os mais lentos agem primeiro)",
-        "ru": "Инвертирует очередность ходов по скорости (более медленные ходят первыми)"
+        "es": "Invierte el orden de velocidad de todos los pollos en combate (los más lentos actúan primero)",
+        "en": "Inverts turn speed order for all chickens in combat (slower acts first)",
+        "pt": "Inverte a ordem de velocidade de todos os frangos em combate (os mais lentos agem primeiro)",
+        "ru": "Меняет порядок ходов по скорости на обратный (самые медленные ходят первыми)"
       },
       "chickens": [
         {
@@ -22830,16 +22749,16 @@
       "id": 56,
       "cost": 140,
       "name": {
-        "es": "Memento mori",
-        "en": "Memento Mori",
-        "pt": "Memento Mori",
-        "ru": "Memento Mori"
+        "es": "Durante los próximos 3 turnos, si este pollo es derrotado por un ataque, se lleva a su atacante también",
+        "en": "For the next 3 turns, if defeated by an attack, kills the attacker too",
+        "pt": "Pelos próximos 3 turnos, se este frango for derrotado por um ataque, leva o atacante junto",
+        "ru": "В течение следующих 3 ходов, если эта курочка повержена атакой, атакующий погибает вместе с ней"
       },
       "description": {
-        "es": "Durante 3 turnos, si es derrotado por un ataque, derrota también a su atacante",
+        "es": "Durante los próximos 3 turnos, si este pollo es derrotado por un ataque, se lleva a su atacante también",
         "en": "For the next 3 turns, if defeated by an attack, kills the attacker too",
-        "pt": "Durante 3 turnos, se for derrotado por um ataque, derrota também o atacante",
-        "ru": "В течение 3 ходов, если погибает от атаки, уносит с собой и атаковавшего"
+        "pt": "Pelos próximos 3 turnos, se este frango for derrotado por um ataque, leva o atacante junto",
+        "ru": "В течение следующих 3 ходов, если эта курочка повержена атакой, атакующий погибает вместе с ней"
       },
       "chickens": [
         {
@@ -22859,16 +22778,16 @@
       "id": 57,
       "cost": 100,
       "name": {
-        "es": "Reflejos",
-        "en": "Reflexes",
-        "pt": "Reflexos",
-        "ru": "Рефлексы"
+        "es": "Obtiene 1 punto de evasión y se cura a sí mismo (25% del daño)",
+        "en": "Gains 1 evasion point and heals self (25% of damage)",
+        "pt": "Ganha 1 ponto de evasão e se cura (25% do dano)",
+        "ru": "Получает 1 очко уклонения и восстанавливает здоровье (25% от урона)"
       },
       "description": {
-        "es": "Gana 1 punto de evasión y se cura a sí mismo (25% de su daño actual)",
-        "en": "Gains 1 evasion point and heals self (25% current damage)",
-        "pt": "Ganha 1 ponto de esquiva e cura a si mesmo (25% do seu dano atual)",
-        "ru": "Получает 1 уклонение и лечит себя (25% от текущего урона)"
+        "es": "Obtiene 1 punto de evasión y se cura a sí mismo (25% del daño)",
+        "en": "Gains 1 evasion point and heals self (25% of damage)",
+        "pt": "Ganha 1 ponto de evasão e se cura (25% do dano)",
+        "ru": "Получает 1 очко уклонения и восстанавливает здоровье (25% от урона)"
       },
       "chickens": [],
       "chickens_hidden": [
@@ -23707,17 +23626,7 @@
         122,
         123,
         124,
-        125,
-        160,
-        161,
-        162,
-        163,
-        164,
-        165,
-        166,
-        167,
-        168,
-        169
+        125
       ],
       "egg_pool": [
         11,
@@ -23919,7 +23828,17 @@
         122,
         123,
         124,
-        125
+        125,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169
       ],
       "egg_pool": [
         11
